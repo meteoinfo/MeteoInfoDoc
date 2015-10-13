@@ -1,0 +1,23 @@
+{% extends "!layout.html" %}
+
+
+{% block rootrellink %}
+        <li><a href="{{ pathto('index') }}">home</a>|&nbsp;</li>
+        <li><a href="{{ pathto('products/index') }}">products</a>|&nbsp;</li>
+        <li><a href="{{ pathto('examples/index') }}">examples</a>|&nbsp;</li>
+        <li><a href="{{ pathto('downloads/index') }}">downloads</a>|&nbsp;</li>
+        <li><a href="{{ pathto('docs/index') }}">docs</a>|&raquo;</li>
+{% endblock %}
+
+
+{% block relbar1 %}
+
+<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
+<a href="{{ pathto('index') }}"><h1 style="font-size: 3em;">MeteoInfo</h1></a>
+</div>
+{{ super() }}
+{% endblock %}
+
+{# put the sidebar before the body #}
+{% block sidebar1 %}{{ sidebar() }}{% endblock %}
+{% block sidebar2 %}{% endblock %}

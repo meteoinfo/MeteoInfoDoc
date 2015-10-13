@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>OutlierFlag &mdash; MeteoInfo 1.2.8 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.8',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="MeteoInfo 1.2.8 documentation" href="../index.html" /> 
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
+<a href="../index.html"><h1 style="font-size: 3em;">MeteoInfo</h1></a>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="../index.html">home</a>|&nbsp;</li>
+        <li><a href="index.html">products</a>|&nbsp;</li>
+        <li><a href="../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../docs/index.html">docs</a>|&raquo;</li>
+ 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">OutlierFlag</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction:</a></li>
+<li><a class="reference internal" href="#screen-shots">Screen shots:</a></li>
+</ul>
+</li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/products/outlierflag_features.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="outlierflag">
+<span id="products-outlierflag-features"></span><h1>OutlierFlag<a class="headerlink" href="#outlierflag" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction:<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>Scientific dataset observed by instruments usually includes some outlier values which have to be
+flagged in data quality control process. OutlierFlag was developed to make it accurate and easy
+by providing a suitable outlier data flagging algorithm and a friendly GUI. There are three steps
+of limitation, error and standard deviation checking one by one in the algorithm and several
+parameters are configurable so the algorithm can be used for various datasets. OutlierFlag is open
+source software written in Java and the MeteoInfo library was used for data plotting function.</p>
+<p>The developed outlier data flagging algorithm includes the following three steps: (1)   Limitation
+Check The data points will be determined as outliers if their values are out of the range between
+minimum and maximum limitation values. The limitation values are assigned according the features
+of the observational data series and the environment of observation station. Reasonable limitation
+values are the key to ensure the accuracy of detection results. (2)     Error Check It is generally
+agreed that surrounding points are related to each other and the distribution of them have a
+certain variation and characteristics during a continuous time segment, so the sudden change of
+the data value or the difference between two data points are likely to represent the appearance of
+an error point. In this step, firstly calculate an error list of all data points with an assigned
+surrounding point number (default value is 11), the error of each data point is the subtract of
+its value and the mean value of the all surrounding points. Then get a sub error list for each
+data point using another surrounding point number (default value is 21), and calculate the quantile
+value of the list with an assigned quantile (default value is 0.9). The data point is determined
+as an outlier if its error is bigger than the product of the quantile value and the given zoom
+factor (default value is 2.3). (3) Standard Deviation Check This step is according to the standard
+deviation threshold to do a further detection after Error check. Firstly, construct a data list by
+the values of a certain data point and its surrounding data points with the default data point
+number of 29. Then calculate the error of the data point by subtracting its value to the mean value
+of the data list. Also the standard deviation of the data list is calculated. The data point is
+determined as an outlier if its error is bigger than 3 or other user defined times of the standard
+deviation.</p>
+</div>
+<div class="section" id="screen-shots">
+<h2>Screen shots:<a class="headerlink" href="#screen-shots" title="Permalink to this headline">¶</a></h2>
+<img alt="../_images/outlierflag_1.png" src="../_images/outlierflag_1.png" />
+<img alt="../_images/outlierflag_2.png" src="../_images/outlierflag_2.png" />
+<img alt="../_images/outlierflag_3.png" src="../_images/outlierflag_3.png" />
+<img alt="../_images/outlierflag_4.png" src="../_images/outlierflag_4.png" />
+<img alt="../_images/outlierflag_5.png" src="../_images/outlierflag_5.png" />
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="../index.html">home</a>|&nbsp;</li>
+        <li><a href="index.html">products</a>|&nbsp;</li>
+        <li><a href="../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../docs/index.html">docs</a>|&raquo;</li>
+ 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2015, Yaqiang Wang.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>
