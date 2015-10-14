@@ -37,3 +37,11 @@ Author
 Yaqiang Wang
 
 email: yaqiang.wang@gmail.com
+
+.. toctree::
+   :hidden:
+   
+   products/index.rst
+   examples/index.rst
+   downloads/index.rst
+   docs/index.rst

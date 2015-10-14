@@ -1,5 +1,4 @@
-.. _examples-meteoinfolab-map:
-
+.. _examples-meteoinfolab-map-add_map_layer:
 
 *******************
 Add Map Layer

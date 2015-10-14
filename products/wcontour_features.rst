@@ -1,4 +1,4 @@
-.. _products-wcontour_features:
+.. _projects-wcontour_features:
 
 
 *******************
@@ -38,6 +38,7 @@ Screen shots:
 .. image:: wcontour_image/wcontour_4.png
 .. image:: wcontour_image/wcontour_5.png
 .. image:: wcontour_image/wcontour_6.png
+   :scale: 50
 .. image:: wcontour_image/wcontour_7.png
 .. image:: wcontour_image/wcontour_8.png
 .. image:: wcontour_image/wcontour_9.png

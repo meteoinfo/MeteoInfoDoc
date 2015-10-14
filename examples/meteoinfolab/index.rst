@@ -1,4 +1,4 @@
-.. _examples-meteoinfolab-index:
+.. __examples-meteoinfolab-index:
 
 
 *******************
