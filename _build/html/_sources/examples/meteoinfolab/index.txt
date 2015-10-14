@@ -10,3 +10,4 @@ MeteoInfoLab Examples
    
    tutorial.rst
    map.rst
+   satellite.rst
