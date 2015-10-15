@@ -2,7 +2,7 @@
 
 
 **********************
-MeteoInfoLab Tutorial
+Tutorial
 **********************
 
 1. Create data file (netCDF, HDF, GRIB, GrADS, MICAPS, ARL and others) variable using 

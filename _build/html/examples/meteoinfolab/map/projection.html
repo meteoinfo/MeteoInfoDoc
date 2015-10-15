@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Add map layer &mdash; MeteoInfo 1.2.8 documentation</title>
+    <title>Map projection &mdash; MeteoInfo 1.2.8 documentation</title>
     
     <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -26,8 +26,8 @@
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="top" title="MeteoInfo 1.2.8 documentation" href="../../../index.html" />
     <link rel="up" title="Map" href="../map.html" />
-    <link rel="next" title="Map projection" href="projection.html" />
-    <link rel="prev" title="Map" href="../map.html" /> 
+    <link rel="next" title="Satellite Examples" href="../satellite.html" />
+    <link rel="prev" title="Add map layer" href="add_map_layer.html" /> 
   </head>
   <body>
 
@@ -42,10 +42,10 @@
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="projection.html" title="Map projection"
+          <a href="../satellite.html" title="Satellite Examples"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="../map.html" title="Map"
+          <a href="add_map_layer.html" title="Add map layer"
              accesskey="P">previous</a> |</li>
         <li><a href="../../../index.html">home</a>|&nbsp;</li>
         <li><a href="../../../products/index.html">products</a>|&nbsp;</li>
@@ -62,14 +62,14 @@
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="../map.html"
-                        title="previous chapter">Map</a></p>
+  <p class="topless"><a href="add_map_layer.html"
+                        title="previous chapter">Add map layer</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="projection.html"
-                        title="next chapter">Map projection</a></p>
+  <p class="topless"><a href="../satellite.html"
+                        title="next chapter">Satellite Examples</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
-    <li><a href="../../../_sources/examples/meteoinfolab/map/add_map_layer.txt"
+    <li><a href="../../../_sources/examples/meteoinfolab/map/projection.txt"
            rel="nofollow">Show Source</a></li>
   </ul>
 <div id="searchbox" style="display: none">
@@ -93,20 +93,13 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="add-map-layer">
-<span id="examples-meteoinfolab-map-add-map-layer"></span><h1>Add map layer<a class="headerlink" href="#add-map-layer" title="Permalink to this headline">¶</a></h1>
-<p>Shape file is widely used GIS data format and there are many free online resouces. <strong>shaperead</strong> function is
-used to read shape file as a MILayer object with map coordinates and attribution data. The object can be
-added in an Axesm by <strong>geoshow</strong> function. A deault legend was defined when read shape file as a layer
-and it can be changed in <strong>geoshow</strong> function by setting <strong>facecolor</strong>, <strong>edgecolor</strong>, <strong>size</strong> and so on parameters.
-Also a more complex legen can be creaed using &#8216;makesymbolspec&#8217; function. Following code will create a legend
-with two breaks of Yangtze and Huang He rivers.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">ss</span> <span class="o">=</span> <span class="n">makesymbolspec</span><span class="p">(</span><span class="s">&#39;line&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s">&#39;value&#39;</span><span class="p">:</span><span class="s">&#39;Yangtze&#39;</span><span class="p">,</span> <span class="s">&#39;color&#39;</span><span class="p">:(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">),</span> <span class="s">&#39;size&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span> \
-    <span class="p">{</span><span class="s">&#39;value&#39;</span><span class="p">:</span><span class="s">&#39;Huang He&#39;</span><span class="p">,</span> <span class="s">&#39;color&#39;</span><span class="p">:(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">),</span> <span class="s">&#39;size&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span> <span class="n">field</span><span class="o">=</span><span class="s">&#39;NAME&#39;</span><span class="p">)</span>
-<span class="n">geoshow</span><span class="p">(</span><span class="n">river_layer</span><span class="p">,</span> <span class="n">symbolspec</span><span class="o">=</span><span class="n">ss</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>If a point layer was added, &#8216;labelfield&#8217; and other associated parameters can be used to add labels to points.</p>
+  <div class="section" id="map-projection">
+<span id="examples-meteoinfolab-map-projection"></span><h1>Map projection<a class="headerlink" href="#map-projection" title="Permalink to this headline">¶</a></h1>
+<p>Map projection can be set when creating a map axes using <strong>axesm</strong> function by <strong>projinfo</strong>
+parameter. Projection object can be created using <strong>projinfo</strong> function with Proj4 style
+parameters (ref: <a class="reference external" href="http://remotesensing.org/geotiff/proj_list">http://remotesensing.org/geotiff/proj_list</a> ). <strong>axism</strong> function is used
+to set projected map extent with a list parameter including start and end longtitudes
+and start and end latitudes.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="c">#Set data folders</span>
 <span class="n">basedir</span> <span class="o">=</span> <span class="s">&#39;D:/MyProgram/Distribution/java/MeteoInfo/MeteoInfo&#39;</span>
 <span class="n">mapdir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">basedir</span><span class="p">,</span> <span class="s">&#39;map&#39;</span><span class="p">)</span>
@@ -116,18 +109,19 @@ with two breaks of Yangtze and Huang He rivers.</p>
 <span class="n">river_layer</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mapdir</span><span class="p">,</span> <span class="s">&#39;rivers.shp&#39;</span><span class="p">))</span>
 <span class="n">city_layer</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mapdir</span><span class="p">,</span> <span class="s">&#39;res1_4m.shp&#39;</span><span class="p">))</span>
 <span class="c">#Plot</span>
-<span class="n">axesm</span><span class="p">()</span>
+<span class="n">proj</span> <span class="o">=</span> <span class="n">projinfo</span><span class="p">(</span><span class="n">proj</span><span class="o">=</span><span class="s">&#39;lcc&#39;</span><span class="p">,</span> <span class="n">lon_0</span><span class="o">=</span><span class="mi">105</span><span class="p">,</span> <span class="n">lat_1</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">lat_2</span><span class="o">=</span><span class="mi">47</span><span class="p">)</span>
+<span class="n">axesm</span><span class="p">(</span><span class="n">projinfo</span><span class="o">=</span><span class="n">proj</span><span class="p">,</span> <span class="n">axison</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 <span class="n">geoshow</span><span class="p">(</span><span class="n">bou2_layer</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s">&#39;lightgray&#39;</span><span class="p">)</span>
 <span class="n">geoshow</span><span class="p">(</span><span class="n">bou1_layer</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">))</span>
 <span class="n">ss</span> <span class="o">=</span> <span class="n">makesymbolspec</span><span class="p">(</span><span class="s">&#39;line&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s">&#39;value&#39;</span><span class="p">:</span><span class="s">&#39;Yangtze&#39;</span><span class="p">,</span> <span class="s">&#39;color&#39;</span><span class="p">:(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">),</span> <span class="s">&#39;size&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span> \
     <span class="p">{</span><span class="s">&#39;value&#39;</span><span class="p">:</span><span class="s">&#39;Huang He&#39;</span><span class="p">,</span> <span class="s">&#39;color&#39;</span><span class="p">:(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">),</span> <span class="s">&#39;size&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span> <span class="n">field</span><span class="o">=</span><span class="s">&#39;NAME&#39;</span><span class="p">)</span>
 <span class="n">geoshow</span><span class="p">(</span><span class="n">river_layer</span><span class="p">,</span> <span class="n">symbolspec</span><span class="o">=</span><span class="n">ss</span><span class="p">)</span>
-<span class="n">geoshow</span><span class="p">(</span><span class="n">city_layer</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s">&#39;r&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">labelfield</span><span class="o">=</span><span class="s">&#39;NAME&#39;</span><span class="p">,</span> <span class="n">fontname</span><span class="o">=</span><span class="s">u&#39;楷体&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">yoffset</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-<span class="n">xlim</span><span class="p">(</span><span class="mi">72</span><span class="p">,</span> <span class="mi">136</span><span class="p">)</span>
-<span class="n">ylim</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">55</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="n">city_layer</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s">&#39;r&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">labelfield</span><span class="o">=</span><span class="s">&#39;NAME&#39;</span><span class="p">,</span> <span class="n">fontname</span><span class="o">=</span><span class="s">u&#39;楷体&#39;</span><span class="p">,</span> \
+    <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">yoffset</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">axism</span><span class="p">([</span><span class="mi">78</span><span class="p">,</span> <span class="mi">130</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">53</span><span class="p">])</span>
 </pre></div>
 </div>
-<img alt="../../../_images/add_map_layer.png" src="../../../_images/add_map_layer.png" />
+<img alt="../../../_images/map_projection.png" src="../../../_images/map_projection.png" />
 </div>
 
 
@@ -143,10 +137,10 @@ with two breaks of Yangtze and Huang He rivers.</p>
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="projection.html" title="Map projection"
+          <a href="../satellite.html" title="Satellite Examples"
              >next</a> |</li>
         <li class="right" >
-          <a href="../map.html" title="Map"
+          <a href="add_map_layer.html" title="Add map layer"
              >previous</a> |</li>
         <li><a href="../../../index.html">home</a>|&nbsp;</li>
         <li><a href="../../../products/index.html">products</a>|&nbsp;</li>

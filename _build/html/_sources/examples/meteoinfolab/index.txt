@@ -2,7 +2,7 @@
 
 
 *******************
-MeteoInfoLab Examples
+MeteoInfoLab
 *******************
 
 .. toctree::
@@ -11,3 +11,4 @@ MeteoInfoLab Examples
    tutorial.rst
    map.rst
    satellite.rst
+   trajectory.rst

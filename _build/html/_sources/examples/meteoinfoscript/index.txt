@@ -2,7 +2,7 @@
 
 
 *************************
-MeteoInfo Script Examples
+MeteoInfo Script
 *************************
 
 .. toctree::

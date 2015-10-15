@@ -1,13 +1,13 @@
 .. _examples-meteoinfolab-map-add_map_layer:
 
 *******************
-Add Map Layer
+Add map layer
 *******************
 
-Shape file is widely used GIS data format and there are many free online resouces. 'shaperead' function is
+Shape file is widely used GIS data format and there are many free online resouces. **shaperead** function is
 used to read shape file as a MILayer object with map coordinates and attribution data. The object can be
-added in an Axesm by 'geoshow' function. A deault legend was defined when read shape file as a layer 
-and it can be changed in 'geoshow' function by setting 'facecolor', 'edgecolor', 'size' and so on parameters.
+added in an Axesm by **geoshow** function. A deault legend was defined when read shape file as a layer 
+and it can be changed in **geoshow** function by setting **facecolor**, **edgecolor**, **size** and so on parameters.
 Also a more complex legen can be creaed using 'makesymbolspec' function. Following code will create a legend
 with two breaks of Yangtze and Huang He rivers.
 

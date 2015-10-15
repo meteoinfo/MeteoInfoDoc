@@ -2,7 +2,7 @@
 
 
 *******************
-MeteoInfoMap Examples
+MeteoInfo Desktop
 *******************
 
 .. toctree::

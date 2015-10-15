@@ -2,10 +2,11 @@
 
 
 *******************
-Map Examples
+Map
 *******************
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    
-   Add map layer <map/add_map_layer.rst>
+   map/add_map_layer.rst
+   map/projection.rst
