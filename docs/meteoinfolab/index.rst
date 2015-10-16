@@ -1,11 +1,11 @@
-.. _docs-index:
+.. _docs-meteoinfolab-index:
 
 
 *******************
-Documentation
+MeteoInfoLab
 *******************
 
 .. toctree::
    :maxdepth: 2
-
-   meteoinfolab/index.rst
+   
+   user_guide.rst

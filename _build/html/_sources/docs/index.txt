@@ -5,10 +5,7 @@
 Documentation
 *******************
 
-.. htmlonly::
+.. toctree::
+   :maxdepth: 2
 
-    :Release: |version|
-    :Date: |today|
-
-  .. toctree::
-     :maxdepth: 2
+   meteoinfolab/index.rst

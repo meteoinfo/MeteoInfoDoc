@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Plot tutorial &mdash; MeteoInfo 1.2.8 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.2.8',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="MeteoInfo 1.2.8 documentation" href="../../../index.html" />
+    <link rel="up" title="User’s guide" href="../user_guide.html" />
+    <link rel="prev" title="User’s guide" href="../user_guide.html" /> 
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
+<a href="../../../index.html"><h1 style="font-size: 3em;">MeteoInfo</h1></a>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../user_guide.html" title="User’s guide"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../index.html">docs</a>|&nbsp;</li>
+
+          <li><a href="../../index.html" >Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >MeteoInfoLab</a> &raquo;</li>
+          <li><a href="../user_guide.html" accesskey="U">User&#8217;s guide</a> &raquo;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Plot tutorial</a><ul>
+<li><a class="reference internal" href="#controlling-line-properties">Controlling line properties</a></li>
+<li><a class="reference internal" href="#working-with-multiple-axes">Working with multiple axes</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../user_guide.html"
+                        title="previous chapter">User&#8217;s guide</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/docs/meteoinfolab/userguide/plot_tutorial.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="plot-tutorial">
+<span id="docs-meteoinfolab-user-guid-plot-tutorial"></span><h1>Plot tutorial<a class="headerlink" href="#plot-tutorial" title="Permalink to this headline">¶</a></h1>
+<p>MeteoInfoLab has a collection of command style functions that make MeteoInfoLab work like MATLAB.
+Each plot function makes some change to a figure: e.g., create a figure, create a plotting area
+in a figure, plot some lines in a plotting area, decorate the plot with lables, etc....
+MeteoInfoLab is stateful, in that it keeps track of the current figure and plotting area, and the
+plotting functions are directed to the current axes.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">plot</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;some numbers&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../_images/plot_tutorial-1.png" src="../../../_images/plot_tutorial-1.png" />
+<p>You may be wondering why the x-axis ranges from 0-3 and y-axis from 1-4. If you provide a single list
+or array to the <strong>plot()</strong> command, MeteoInfoLab assumes it is a sequence of y values, and automatically
+generates the x vaues for you. Since python ranges start with 0, the default x vector has the same
+length as y but starts with 0. Hence the x data are [0,1,2,3].</p>
+<p><strong>plot()</strong> is a versatile command, and will take an arbitrary number of arguments. For example, to plot
+x versus y, you can issue the command:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">plot</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">16</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>For every x, y pair of arguments, there is an optional third argument which is the format string that
+indicates the color and line type of the plot. The letters and symbols of the format string are
+from MATLAB, and you concatenate a color string with a line style string. The default format
+string is &#8216;r-&#8216;, which is a solid red line. For example, to plot the above with red circles, you
+would issue</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">plot</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">16</span><span class="p">],</span> <span class="s">&#39;ro&#39;</span><span class="p">)</span>
+<span class="n">axis</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">])</span>
+</pre></div>
+</div>
+<img alt="../../../_images/plot_tutorial-2.png" src="../../../_images/plot_tutorial-2.png" />
+<p>See the <strong>plot()</strong> documentation for a complete list of line styles and format strings. The
+<strong>axis()</strong> command in the example above takes a list of <tt class="docutils literal"><span class="pre">[xmin,</span> <span class="pre">xmax,</span> <span class="pre">ymin,</span> <span class="pre">ymax]</span></tt> and specifies
+the viewport of the axes.</p>
+<p>Arrays are useful for numerical processing. The example below illustrates a plotting several lines
+with different format styles in one command using arrays.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># evenly sampled time at 200ms intervals</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
+
+<span class="c"># red dashes, blue squares and green triangles</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="s">&#39;r--&#39;</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="s">&#39;bs&#39;</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">t</span><span class="o">**</span><span class="mi">3</span><span class="p">,</span> <span class="s">&#39;g^&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="../../../_images/plot_tutorial-3.png" src="../../../_images/plot_tutorial-3.png" />
+<div class="section" id="controlling-line-properties">
+<h2>Controlling line properties<a class="headerlink" href="#controlling-line-properties" title="Permalink to this headline">¶</a></h2>
+<p>Lines have many attributes that you can set: linewidth, style, etc; The way to set line
+properties</p>
+<ul>
+<li><p class="first">Use keyword args:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">2.0</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="working-with-multiple-axes">
+<h2>Working with multiple axes<a class="headerlink" href="#working-with-multiple-axes" title="Permalink to this headline">¶</a></h2>
+<p>MATLAB, and MeteoInfoLab, have the concept of the current figure and the current axes. All plotting
+commands apply to the current axes. Normally, you don&#8217;t have to worry about this, because it is all
+taken care of the behind the scenes. Below is a script to create two subplots.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="p">)</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
+
+<span class="n">t1</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+<span class="n">t2</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">)</span>
+
+<span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="n">f</span><span class="p">(</span><span class="n">t1</span><span class="p">),</span> <span class="s">&#39;bo&#39;</span><span class="p">,</span> <span class="n">t2</span><span class="p">,</span> <span class="n">f</span><span class="p">(</span><span class="n">t2</span><span class="p">),</span> <span class="s">&#39;k&#39;</span><span class="p">)</span>
+
+<span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">t2</span><span class="p">,</span> <span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">t2</span><span class="p">),</span> <span class="s">&#39;r--&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../_images/plot_tutorial-4.png" src="../../../_images/plot_tutorial-4.png" />
+<p>The <strong>subplot()</strong> command specifies <tt class="docutils literal"><span class="pre">numrows,</span> <span class="pre">numcols,</span> <span class="pre">fignum</span></tt> ranges from 1 to <tt class="docutils literal"><span class="pre">numrows*numcols</span></tt>.
+You can create an arbitrary number of subplots and axes. If you want to place an axes manually, i.e.,
+not on a rectangular grid, use the <strong>axes()</strong> command, which allows you to specify the location as
+<tt class="docutils literal"><span class="pre">axes(position=[left,</span> <span class="pre">bottom,</span> <span class="pre">width,</span> <span class="pre">height])</span></tt> where all values are in fractional (0 to 1)
+coordinates.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&#39;Series_1&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">2.0</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">(</span><span class="n">position</span><span class="o">=</span><span class="p">[</span><span class="mf">0.3</span><span class="p">,</span><span class="mf">0.4</span><span class="p">,</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.4</span><span class="p">])</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s">&#39;bo&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../_images/plot_tutorial-5.png" src="../../../_images/plot_tutorial-5.png" />
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../user_guide.html" title="User’s guide"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../index.html">docs</a>|&nbsp;</li>
+
+          <li><a href="../../index.html" >Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >MeteoInfoLab</a> &raquo;</li>
+          <li><a href="../user_guide.html" >User&#8217;s guide</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2015, Yaqiang Wang.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>
