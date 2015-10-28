@@ -27,7 +27,7 @@ wContour
 =====================================
   Java edition
     - `wContour 1.6 class library - Java <files/wContour.jar>`_
-    - `wContour class library demo program - Java <file/wContourDemo_java_2012-11-1.zip>`_  
+    - `wContour class library demo program - Java <files/wContourDemo_java_2012-11-1.zip>`_  
   C# edition
     - `wContour 1.6.1 class library - C# <files/wContour.dll>`_
     - `wContour 1.5 class library for Silverlight <files/wContourSL.dll>`_

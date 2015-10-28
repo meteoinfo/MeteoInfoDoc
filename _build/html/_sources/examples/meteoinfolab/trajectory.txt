@@ -11,3 +11,4 @@ Trajectory
    trajectory/traj_cal.rst
    trajectory/traj_plot.rst
    trajectory/traj_meteo_data.rst
+   trajectory/tropical_cyclone.rst

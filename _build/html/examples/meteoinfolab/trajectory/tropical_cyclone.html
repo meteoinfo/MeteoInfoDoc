@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Tropical cyclone plot &mdash; MeteoInfo 1.2.8 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.2.8',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="MeteoInfo 1.2.8 documentation" href="../../../index.html" />
+    <link rel="up" title="Trajectory" href="../trajectory.html" />
+    <link rel="next" title="Downloads" href="../../../downloads/index.html" />
+    <link rel="prev" title="Get meteorological data along trajectory" href="traj_meteo_data.html" /> 
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../../index.html"><img src="../../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../downloads/index.html" title="Downloads"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="traj_meteo_data.html" title="Get meteorological data along trajectory"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../docs/index.html">docs</a>|&nbsp;</li>
+
+          <li><a href="../../index.html" >Examples</a> &raquo;</li>
+          <li><a href="../index.html" >MeteoInfoLab</a> &raquo;</li>
+          <li><a href="../trajectory.html" accesskey="U">Trajectory</a> &raquo;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Tropical cyclone plot</a><ul>
+<li><a class="reference internal" href="#one-tropical-cyclone">One tropical cyclone</a></li>
+<li><a class="reference internal" href="#multiple-tropical-cyclones">Multiple tropical cyclones</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="traj_meteo_data.html"
+                        title="previous chapter">Get meteorological data along trajectory</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../../../downloads/index.html"
+                        title="next chapter">Downloads</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/examples/meteoinfolab/trajectory/tropical_cyclone.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="tropical-cyclone-plot">
+<span id="examples-meteoinfolab-trajectory-tropical-cyclone"></span><h1>Tropical cyclone plot<a class="headerlink" href="#tropical-cyclone-plot" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="one-tropical-cyclone">
+<h2>One tropical cyclone<a class="headerlink" href="#one-tropical-cyclone" title="Permalink to this headline">¶</a></h2>
+<p>Read an ASCII data file with tropical cyclone data, and extract longitude and latitude data.
+Then plot the cyclone line and points.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># Read tropical cyclone data file</span>
+<span class="n">fn</span> <span class="o">=</span> <span class="s">&#39;D:/Temp/ascii/198214track.dat&#39;</span>
+<span class="n">tf</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+<span class="n">tf</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+<span class="n">aline</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+<span class="nb">id</span> <span class="o">=</span> <span class="n">aline</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">tf</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+<span class="n">lon</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">lat</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">ws</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">aline</span> <span class="ow">in</span> <span class="n">tf</span><span class="p">:</span>
+    <span class="k">print</span> <span class="n">aline</span>
+    <span class="n">datalist</span> <span class="o">=</span> <span class="n">aline</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="n">lat</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">datalist</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+    <span class="n">lon</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">datalist</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">datalist</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+    <span class="n">ws</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">datalist</span><span class="p">[</span><span class="mi">4</span><span class="p">]))</span>
+    <span class="n">stat</span> <span class="o">=</span> <span class="n">datalist</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">datalist</span><span class="p">)</span> <span class="o">==</span> <span class="mi">8</span><span class="p">:</span>
+        <span class="n">stat</span> <span class="o">=</span> <span class="n">stat</span> <span class="o">+</span> <span class="s">&#39; &#39;</span> <span class="o">+</span> <span class="n">datalist</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span>
+
+<span class="c"># Plot</span>
+<span class="n">axesm</span><span class="p">()</span>
+<span class="n">lworld</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="s">&#39;D:/Temp/map/country1.shp&#39;</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="n">lworld</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="p">[</span><span class="mi">200</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">200</span><span class="p">])</span>
+<span class="n">plotm</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">layer</span> <span class="o">=</span> <span class="n">scatterm</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">ws</span><span class="p">)</span>
+<span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+<span class="n">xlim</span><span class="p">(</span><span class="mi">110</span><span class="p">,</span> <span class="mi">140</span><span class="p">)</span>
+<span class="n">ylim</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">45</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s">&#39;Typhoon pathway&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../_images/typhoon_pathway.png" src="../../../_images/typhoon_pathway.png" />
+</div>
+<div class="section" id="multiple-tropical-cyclones">
+<h2>Multiple tropical cyclones<a class="headerlink" href="#multiple-tropical-cyclones" title="Permalink to this headline">¶</a></h2>
+<p>Read mutiple tropical cyclones longitude/latitude data from a netCDF data file
+(<a class="reference external" href="https://climatedataguide.ucar.edu/climate-data/ibtracs-tropical-cyclone-best-track-data">https://climatedataguide.ucar.edu/climate-data/ibtracs-tropical-cyclone-best-track-data</a>)
+and plot them.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fn</span> <span class="o">=</span> <span class="s">&#39;D:/Temp/nc/Allstorms.ibtracs_wmo.v03r06.nc&#39;</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+<span class="n">lons</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;lon_wmo&#39;</span><span class="p">][:</span><span class="mi">200</span><span class="p">,:]</span>
+<span class="n">lats</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;lat_wmo&#39;</span><span class="p">][:</span><span class="mi">200</span><span class="p">,:]</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">MIXYListData</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">lons</span><span class="o">.</span><span class="n">dimlen</span><span class="p">(</span><span class="mi">0</span><span class="p">)):</span>
+    <span class="n">data</span><span class="o">.</span><span class="n">addseries</span><span class="p">(</span><span class="n">lons</span><span class="p">[</span><span class="n">i</span><span class="p">,:],</span> <span class="n">lats</span><span class="p">[</span><span class="n">i</span><span class="p">,:])</span>
+
+<span class="c"># Plot</span>
+<span class="n">axesm</span><span class="p">()</span>
+<span class="n">mlayer</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="s">&#39;D:/Temp/map/country1.shp&#39;</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="n">mlayer</span><span class="p">)</span>
+<span class="n">layer</span> <span class="o">=</span> <span class="n">plotm</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="c">#layer = scatterm(lons[:,0], lats[:,0], facecolor=&#39;b&#39;, size=2)</span>
+<span class="n">title</span><span class="p">(</span><span class="s">&#39;IBTrACS&#39;</span><span class="p">)</span>
+<span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">180</span><span class="p">,</span> <span class="mi">180</span><span class="p">)</span>
+<span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../_images/tropical_cyclone.png" src="../../../_images/tropical_cyclone.png" />
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../downloads/index.html" title="Downloads"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="traj_meteo_data.html" title="Get meteorological data along trajectory"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../docs/index.html">docs</a>|&nbsp;</li>
+
+          <li><a href="../../index.html" >Examples</a> &raquo;</li>
+          <li><a href="../index.html" >MeteoInfoLab</a> &raquo;</li>
+          <li><a href="../trajectory.html" >Trajectory</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2015, Yaqiang Wang.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>
