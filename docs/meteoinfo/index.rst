@@ -1,14 +1,11 @@
-.. __examples-meteoinfolab-index:
+.. docs-meteoinfo-index:
 
 
 *******************
-MeteoInfoLab
+MeteoInfo
 *******************
 
 .. toctree::
    :maxdepth: 2
    
-   tutorial.rst
-   map.rst
-   satellite.rst
-   trajectory.rst
+   meteoinfolib.rst

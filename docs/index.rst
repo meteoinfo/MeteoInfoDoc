@@ -9,4 +9,5 @@ Documentation
    :maxdepth: 2
 
    introduction.rst
+   meteoinfo/index.rst
    meteoinfolab/index.rst

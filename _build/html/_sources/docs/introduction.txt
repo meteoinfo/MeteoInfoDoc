@@ -29,7 +29,8 @@ application, may always be found at http://www.meteothinker.com
 Installing MeteoInfo/MeteoInfoLab
 ==============================================
 
-The complete MeteoInfo Java "Generic" package should, after uncompression, include
+There is no specified installation file, just unzip the downloaded MeteoInfo file. The 
+complete MeteoInfo Java "Generic" package should, after uncompression, include
 the following items:
   
 - MeteoInfo launcher in a shell command files called "meteoinfo.sh" and "milab.sh" for MAC OS, Linux, Unix system.

@@ -9,3 +9,4 @@ MeteoInfoLab
    :maxdepth: 2
    
    user_guide.rst
+   functions.rst

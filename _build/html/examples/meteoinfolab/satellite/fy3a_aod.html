@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>FY-3A AOD data &mdash; MeteoInfo 1.2.8 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.2.8',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="MeteoInfo 1.2.8 documentation" href="../../../index.html" />
+    <link rel="up" title="Satellite data" href="../satellite.html" />
+    <link rel="next" title="FY-3C global fire data" href="fy3c_gfr.html" />
+    <link rel="prev" title="FY-2C cloud data" href="fy2c_clc.html" /> 
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../../index.html"><img src="../../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="fy3c_gfr.html" title="FY-3C global fire data"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="fy2c_clc.html" title="FY-2C cloud data"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../docs/index.html">docs</a>|&nbsp;</li>
+
+          <li><a href="../../index.html" >Examples</a> &raquo;</li>
+          <li><a href="../index.html" >MeteoInfoLab</a> &raquo;</li>
+          <li><a href="../satellite.html" accesskey="U">Satellite data</a> &raquo;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="fy2c_clc.html"
+                        title="previous chapter">FY-2C cloud data</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="fy3c_gfr.html"
+                        title="next chapter">FY-3C global fire data</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/examples/meteoinfolab/satellite/fy3a_aod.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="fy-3a-aod-data">
+<span id="examples-meteoinfolab-satellite-fy3a-aod"></span><h1>FY-3A AOD data<a class="headerlink" href="#fy-3a-aod-data" title="Permalink to this headline">¶</a></h1>
+<p>This example code illustrates how to access and visualize a FY-3A satellite AOD
+(Aerosol Optical Depth) data. It&#8217;s global data with 0.05 degree resolution.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#Add data file</span>
+<span class="n">fn</span> <span class="o">=</span> <span class="s">&#39;D:/Temp/hdf/FY3A_MERSI_GBAL_L3_ASL_MLT_GLL_20140331_AOAM_5000M_MS.HDF&#39;</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+<span class="c">#Get data variable</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;Aerosol_Optical_Thickness_of_MERSI_550nm&#39;</span><span class="p">]</span>
+<span class="c">#Set x/y</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">arange1</span><span class="p">(</span><span class="o">-</span><span class="mf">30.0</span><span class="p">,</span><span class="mi">7200</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">arange1</span><span class="p">(</span><span class="o">-</span><span class="mf">90.0</span><span class="p">,</span><span class="mi">3600</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">)</span>
+<span class="c">#Set x/y dimensions</span>
+<span class="n">v</span><span class="o">.</span><span class="n">setdim</span><span class="p">(</span><span class="s">&#39;Y&#39;</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">v</span><span class="o">.</span><span class="n">setdim</span><span class="p">(</span><span class="s">&#39;X&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="c">#Get data array</span>
+<span class="n">aod</span> <span class="o">=</span> <span class="n">v</span><span class="p">[:,:]</span>
+<span class="c">#aod = v[[15, 55],[70, 140]]</span>
+<span class="n">aod</span> <span class="o">=</span> <span class="n">aod</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">,:]</span> <span class="o">/</span> <span class="mf">10000.</span>
+<span class="n">aod</span> <span class="o">=</span> <span class="n">aod</span><span class="p">[[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">55</span><span class="p">],[</span><span class="mi">70</span><span class="p">,</span> <span class="mi">140</span><span class="p">]]</span>
+<span class="c">#Plot</span>
+<span class="n">axesm</span><span class="p">()</span>
+<span class="n">world</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="s">&#39;D:/Temp/map/country1.shp&#39;</span><span class="p">)</span>
+<span class="n">china</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="s">&#39;D:/Temp/map/bou2_4p.shp&#39;</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="n">china</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="n">world</span><span class="p">)</span>
+<span class="n">levs</span> <span class="o">=</span> <span class="n">arange1</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">)</span>
+<span class="n">cols</span> <span class="o">=</span> <span class="n">makecolors</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">levs</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s">&#39;matlab_jet&#39;</span><span class="p">)</span>
+<span class="n">cols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;w&#39;</span>
+<span class="n">layer</span> <span class="o">=</span> <span class="n">imshowm</span><span class="p">(</span><span class="n">aod</span><span class="p">,</span> <span class="n">levs</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="n">cols</span><span class="p">)</span>
+<span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s">&#39;FY-3A AOD (2014-03-31)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../_images/fy3a_aod.png" src="../../../_images/fy3a_aod.png" />
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="fy3c_gfr.html" title="FY-3C global fire data"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="fy2c_clc.html" title="FY-2C cloud data"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../docs/index.html">docs</a>|&nbsp;</li>
+
+          <li><a href="../../index.html" >Examples</a> &raquo;</li>
+          <li><a href="../index.html" >MeteoInfoLab</a> &raquo;</li>
+          <li><a href="../satellite.html" >Satellite data</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2015, Yaqiang Wang.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>
