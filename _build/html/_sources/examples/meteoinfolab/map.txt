@@ -10,3 +10,5 @@ Map
    
    map/add_map_layer.rst
    map/projection.rst
+   map/china_south_sea.rst
+   map/image_layer.rst
