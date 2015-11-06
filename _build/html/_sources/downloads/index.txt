@@ -10,7 +10,7 @@ MeteoInfo
 MeteoInfo Desktop Application
 -----------------------------
   Java edition
-    - `MeteoInfo 1.2.8R10 - Java (for all systems) <files/MeteoInfo_Java_1.2.8R10_Files.zip>`_   
+    - `MeteoInfo 1.2.8R11 - Java (for all systems) <files/MeteoInfo_Java_1.2.8R11_Files.zip>`_   
   C# edition   
     - `MeteoInfo 1.1.3.4R1 - C# <files/MeteoInfo_1.1.3.4R1_Files.zip>`_
     

@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Read lighting data &mdash; MeteoInfo 1.2.8 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.2.8',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="MeteoInfo 1.2.8 documentation" href="../../../index.html" />
+    <link rel="up" title="File input and output" href="../file_io.html" />
+    <link rel="next" title="Satellite data" href="../satellite.html" />
+    <link rel="prev" title="Read ASCII file" href="read_ascii.html" /> 
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../../index.html"><img src="../../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../satellite.html" title="Satellite data"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="read_ascii.html" title="Read ASCII file"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../docs/index.html">docs</a>|&nbsp;</li>
+
+          <li><a href="../../index.html" >Examples</a> &raquo;</li>
+          <li><a href="../index.html" >MeteoInfoLab</a> &raquo;</li>
+          <li><a href="../file_io.html" accesskey="U">File input and output</a> &raquo;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="read_ascii.html"
+                        title="previous chapter">Read ASCII file</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../satellite.html"
+                        title="next chapter">Satellite data</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/examples/meteoinfolab/file_io/read_lighting.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="read-lighting-data">
+<span id="examples-meteoinfolab-file-io-read-lighting"></span><h1>Read lighting data<a class="headerlink" href="#read-lighting-data" title="Permalink to this headline">¶</a></h1>
+<p>Python ASCII file read functions could be used if the data can not be read by <tt class="docutils literal"><span class="pre">asciiread()</span></tt>
+and <tt class="docutils literal"><span class="pre">readtable()</span></tt> functions. Read data into several Python lists and create arrays from them
+for plotting.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fn</span> <span class="o">=</span> <span class="s">&#39;D:/Temp/ascii/lighting/2009_06_06.txt&#39;</span>
+<span class="n">tf</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+<span class="n">lats</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">lons</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">vs</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">aline</span> <span class="ow">in</span> <span class="n">tf</span><span class="p">:</span>
+    <span class="n">datalist</span> <span class="o">=</span> <span class="n">aline</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="n">lat</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">datalist</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;=&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">lon</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">datalist</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;=&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">datalist</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;=&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">lats</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lat</span><span class="p">)</span>
+    <span class="n">lons</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lon</span><span class="p">)</span>
+    <span class="n">vs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+<span class="n">lon</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="n">lons</span><span class="p">)</span>
+<span class="n">lat</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="n">lats</span><span class="p">)</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="n">vs</span><span class="p">)</span>
+<span class="n">axesm</span><span class="p">()</span>
+<span class="n">mlayer</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="s">&#39;D:/Temp/map/bou2_4p.shp&#39;</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="n">mlayer</span><span class="p">)</span>
+<span class="n">ss</span> <span class="o">=</span> <span class="n">makesymbolspec</span><span class="p">(</span><span class="s">&#39;point&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s">&#39;value&#39;</span><span class="p">:(</span><span class="o">-</span><span class="mi">10000</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="s">&#39;color&#39;</span><span class="p">:</span><span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;marker&#39;</span><span class="p">:</span><span class="s">&#39;m&#39;</span><span class="p">,</span> <span class="s">&#39;size&#39;</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span> <span class="s">&#39;caption&#39;</span><span class="p">:</span><span class="s">&#39;Negative&#39;</span><span class="p">},</span> \
+    <span class="p">{</span><span class="s">&#39;value&#39;</span><span class="p">:(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10000</span><span class="p">),</span> <span class="s">&#39;color&#39;</span><span class="p">:</span><span class="s">&#39;r&#39;</span><span class="p">,</span> <span class="s">&#39;marker&#39;</span><span class="p">:</span><span class="s">&#39;+&#39;</span><span class="p">,</span> <span class="s">&#39;size&#39;</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span> <span class="s">&#39;caption&#39;</span><span class="p">:</span><span class="s">&#39;Positive&#39;</span><span class="p">})</span>
+<span class="n">layer</span> <span class="o">=</span> <span class="n">scatterm</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">symbolspec</span><span class="o">=</span><span class="n">ss</span><span class="p">)</span>
+<span class="n">legend</span><span class="p">(</span><span class="n">legend</span><span class="o">=</span><span class="n">layer</span><span class="o">.</span><span class="n">legend</span><span class="p">(),</span> <span class="n">loc</span><span class="o">=</span><span class="s">&#39;lower left&#39;</span><span class="p">)</span>
+<span class="n">xlim</span><span class="p">(</span><span class="mi">90</span><span class="p">,</span> <span class="mi">130</span><span class="p">)</span>
+<span class="n">ylim</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s">&#39;Lighting locations&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../_images/ascii_lighting.png" src="../../../_images/ascii_lighting.png" />
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../satellite.html" title="Satellite data"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="read_ascii.html" title="Read ASCII file"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../docs/index.html">docs</a>|&nbsp;</li>
+
+          <li><a href="../../index.html" >Examples</a> &raquo;</li>
+          <li><a href="../index.html" >MeteoInfoLab</a> &raquo;</li>
+          <li><a href="../file_io.html" >File input and output</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2015, Yaqiang Wang.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

@@ -10,5 +10,6 @@ MeteoInfoLab
    
    tutorial.rst
    map.rst
+   file_io.rst
    satellite.rst
    trajectory.rst

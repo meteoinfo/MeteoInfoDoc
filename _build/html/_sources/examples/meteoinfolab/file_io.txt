@@ -1,0 +1,12 @@
+.. _examples-meteoinfolab-file_io:
+
+
+*******************
+File input and output
+*******************
+
+.. toctree::
+   :maxdepth: 2
+   
+   file_io/read_ascii.rst
+   file_io/read_lighting.rst

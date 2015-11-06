@@ -9,3 +9,4 @@ Functions
    :maxdepth: 2
    
    functions/array.rst
+   functions/math.rst

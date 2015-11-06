@@ -12,4 +12,5 @@ Array
    array/zeros.rst
    array/ones.rst
    array/arange.rst
+   array/arange1.rst
    array/linspace.rst
