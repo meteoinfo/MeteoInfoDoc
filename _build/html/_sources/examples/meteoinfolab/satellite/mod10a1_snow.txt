@@ -29,3 +29,27 @@ resolution MODIS land products are produced in the Sinusoidal tile grid.
 Zoom to data tile extent:
 
 .. image:: image/mod10a1_snow_zoom.png
+
+The data plot can be reprojected to LongLat projection if no projection assigned in 
+``Axesm()`` function.
+
+::
+
+    f = addfile('D:/Temp/Hdf/MOD10A1.A2010365.h27v05.005.2011002103013.hdf')
+    vname = 'snow_Albedo_Daily_Tile'
+    data = f[vname][:,:]
+    #axesm(projinfo=f.proj, griddx=5, griddy=5, gridline=True)
+    axesm(gridline=True)
+    mlayer = shaperead('D:/Temp/map/country1.shp')
+    geoshow(mlayer, edgecolor='k')
+    levs = arange(0, 100, 5)
+    layer = imshowm(data, 20, proj=f.proj)
+    title(vname)
+    colorbar(layer)
+    axism()
+
+.. image:: image/mod10a1_snow_lonlat.png
+
+Zoom to data tile extent:
+
+.. image:: image/mod10a1_snow_lonlat_zoom.png

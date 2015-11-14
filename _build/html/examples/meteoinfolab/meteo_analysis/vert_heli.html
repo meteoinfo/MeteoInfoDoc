@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Vertical helicity &mdash; MeteoInfo 1.2.8 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.2.8',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="MeteoInfo 1.2.8 documentation" href="../../../index.html" />
+    <link rel="up" title="Meteorological analysis" href="../meteo_analysis.html" />
+    <link rel="next" title="Satellite data" href="../satellite.html" />
+    <link rel="prev" title="Horizontal helicity" href="hori_heli.html" /> 
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../../index.html"><img src="../../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../satellite.html" title="Satellite data"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="hori_heli.html" title="Horizontal helicity"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../docs/index.html">docs</a>|&nbsp;</li>
+
+          <li><a href="../../index.html" >Examples</a> &raquo;</li>
+          <li><a href="../index.html" >MeteoInfoLab</a> &raquo;</li>
+          <li><a href="../meteo_analysis.html" accesskey="U">Meteorological analysis</a> &raquo;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="hori_heli.html"
+                        title="previous chapter">Horizontal helicity</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../satellite.html"
+                        title="next chapter">Satellite data</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/examples/meteoinfolab/meteo_analysis/vert_heli.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="vertical-helicity">
+<span id="examples-meteoinfolab-meteo-analysis-vert-heli"></span><h1>Vertical helicity<a class="headerlink" href="#vertical-helicity" title="Permalink to this headline">¶</a></h1>
+<p>The example to calcluate vertical helicity.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="s">&#39;Open data files...&#39;</span>
+<span class="n">f_uwnd</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="s">&#39;D:/Temp/nc/uwnd.2011.nc&#39;</span><span class="p">)</span>
+<span class="n">f_vwnd</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="s">&#39;D:/Temp/nc/vwnd.2011.nc&#39;</span><span class="p">)</span>
+<span class="n">f_omega</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="s">&#39;D:/Temp/nc/omega.2011.nc&#39;</span><span class="p">)</span>
+
+<span class="k">print</span> <span class="s">&#39;Calculate vertical helicity...&#39;</span>
+<span class="n">tidx</span> <span class="o">=</span> <span class="mi">173</span>    <span class="c"># Jun 23, 2011</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">f_uwnd</span><span class="o">.</span><span class="n">gettime</span><span class="p">(</span><span class="n">tidx</span><span class="p">)</span>
+<span class="n">level</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span>
+<span class="n">lat</span> <span class="o">=</span> <span class="p">[</span><span class="mi">15</span><span class="p">,</span><span class="mi">55</span><span class="p">]</span>
+<span class="n">lon</span> <span class="o">=</span> <span class="p">[</span><span class="mi">70</span><span class="p">,</span><span class="mi">135</span><span class="p">]</span>
+<span class="n">uwnd</span> <span class="o">=</span> <span class="n">f_uwnd</span><span class="p">[</span><span class="s">&#39;uwnd&#39;</span><span class="p">][</span><span class="n">tidx</span><span class="p">,</span><span class="n">level</span><span class="p">,</span><span class="n">lat</span><span class="p">,</span><span class="n">lon</span><span class="p">][:,::</span><span class="o">-</span><span class="mi">1</span><span class="p">,:]</span>
+<span class="n">vwnd</span> <span class="o">=</span> <span class="n">f_vwnd</span><span class="p">[</span><span class="s">&#39;vwnd&#39;</span><span class="p">][</span><span class="n">tidx</span><span class="p">,</span><span class="n">level</span><span class="p">,</span><span class="n">lat</span><span class="p">,</span><span class="n">lon</span><span class="p">][:,::</span><span class="o">-</span><span class="mi">1</span><span class="p">,:]</span>
+<span class="n">omega</span> <span class="o">=</span> <span class="n">f_omega</span><span class="p">[</span><span class="s">&#39;omega&#39;</span><span class="p">][</span><span class="n">tidx</span><span class="p">,</span><span class="n">level</span><span class="p">,</span><span class="n">lat</span><span class="p">,</span><span class="n">lon</span><span class="p">][:,::</span><span class="o">-</span><span class="mi">1</span><span class="p">,:]</span>
+<span class="n">wd</span> <span class="o">=</span> <span class="n">hcurl</span><span class="p">(</span><span class="n">uwnd</span><span class="p">,</span> <span class="n">vwnd</span><span class="p">)</span>
+<span class="n">lx</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="n">wd</span><span class="o">*</span><span class="n">omega</span><span class="o">*</span><span class="mf">10.</span><span class="p">)</span><span class="o">/</span><span class="mf">12.64</span><span class="o">*</span><span class="mf">1e6</span>
+<span class="n">lx1</span> <span class="o">=</span> <span class="n">lx</span><span class="p">[:,[</span><span class="mi">40</span><span class="p">],:]</span>
+<span class="n">lev1</span> <span class="o">=</span> <span class="n">lx1</span><span class="o">.</span><span class="n">dimvalue</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="c">#lev2 = 1000 - lev1</span>
+<span class="n">lev2</span> <span class="o">=</span> <span class="n">p2h</span><span class="p">(</span><span class="n">lev1</span><span class="p">)</span>
+<span class="n">levels</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">lev1</span><span class="p">)):</span>
+    <span class="n">levels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&#39;</span><span class="si">%i</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">lev1</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<span class="n">lx1</span><span class="o">.</span><span class="n">setdimvalue</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">lev2</span><span class="p">)</span>
+
+<span class="k">print</span> <span class="s">&#39;Plot...&#39;</span>
+<span class="n">layer</span> <span class="o">=</span> <span class="n">contourf</span><span class="p">(</span><span class="n">lx1</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s">&#39;Vertical helicity (&#39;</span> <span class="o">+</span> <span class="n">t</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">&#39;%Y-%m-</span><span class="si">%d</span><span class="s">&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s">&#39;)&#39;</span><span class="p">)</span>
+<span class="n">yticks</span><span class="p">(</span><span class="n">lev2</span><span class="p">,</span> <span class="n">levels</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Longitude&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;Pressure (hPa)&#39;</span><span class="p">)</span>
+<span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../_images/vert_heli.png" src="../../../_images/vert_heli.png" />
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../satellite.html" title="Satellite data"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="hori_heli.html" title="Horizontal helicity"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../docs/index.html">docs</a>|&nbsp;</li>
+
+          <li><a href="../../index.html" >Examples</a> &raquo;</li>
+          <li><a href="../index.html" >MeteoInfoLab</a> &raquo;</li>
+          <li><a href="../meteo_analysis.html" >Meteorological analysis</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2015, Yaqiang Wang.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

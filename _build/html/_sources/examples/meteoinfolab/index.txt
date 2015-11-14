@@ -12,5 +12,6 @@ MeteoInfoLab
    plot_types.rst
    map.rst
    file_io.rst
+   meteo_analysis.rst
    satellite.rst
    trajectory.rst

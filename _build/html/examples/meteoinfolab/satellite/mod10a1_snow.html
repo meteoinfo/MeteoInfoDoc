@@ -115,6 +115,25 @@ resolution MODIS land products are produced in the Sinusoidal tile grid.</p>
 <img alt="../../../_images/mod10a1_snow.png" src="../../../_images/mod10a1_snow.png" />
 <p>Zoom to data tile extent:</p>
 <img alt="../../../_images/mod10a1_snow_zoom.png" src="../../../_images/mod10a1_snow_zoom.png" />
+<p>The data plot can be reprojected to LongLat projection if no projection assigned in
+<tt class="docutils literal"><span class="pre">Axesm()</span></tt> function.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="s">&#39;D:/Temp/Hdf/MOD10A1.A2010365.h27v05.005.2011002103013.hdf&#39;</span><span class="p">)</span>
+<span class="n">vname</span> <span class="o">=</span> <span class="s">&#39;snow_Albedo_Daily_Tile&#39;</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="n">vname</span><span class="p">][:,:]</span>
+<span class="c">#axesm(projinfo=f.proj, griddx=5, griddy=5, gridline=True)</span>
+<span class="n">axesm</span><span class="p">(</span><span class="n">gridline</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">mlayer</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="s">&#39;D:/Temp/map/country1.shp&#39;</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="n">mlayer</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">levs</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">layer</span> <span class="o">=</span> <span class="n">imshowm</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">proj</span><span class="o">=</span><span class="n">f</span><span class="o">.</span><span class="n">proj</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="n">vname</span><span class="p">)</span>
+<span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span>
+<span class="n">axism</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="../../../_images/mod10a1_snow_lonlat.png" src="../../../_images/mod10a1_snow_lonlat.png" />
+<p>Zoom to data tile extent:</p>
+<img alt="../../../_images/mod10a1_snow_lonlat_zoom.png" src="../../../_images/mod10a1_snow_lonlat_zoom.png" />
 </div>
 
 
