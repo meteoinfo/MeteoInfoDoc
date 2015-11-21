@@ -19,7 +19,7 @@ according to data series number.
     legend()
     title('Bar chart example')
     
-.. image:: image/bar_1.png
+.. image:: ../../../_static/bar_1.png
 
 The bar width and plot position could be set manually with x array and *width* argument.
 
@@ -42,4 +42,4 @@ The bar width and plot position could be set manually with x array and *width* a
     legend()
     title('Bar chart example')
     
-.. image:: image/bar_2.png
+.. image:: ../../../_static/bar_2.png

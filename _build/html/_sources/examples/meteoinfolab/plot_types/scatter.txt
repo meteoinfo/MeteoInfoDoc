@@ -16,7 +16,7 @@ Scatter plot was created by ``scatter()`` function.
     axis([0,5,0,20])
     title('Scatter plot example', color='b')
     
-.. image:: image/scatter.png
+.. image:: ../../../_static/scatter.png
 
 Scatter map plot was created by ``scatterm()`` function.
 
@@ -42,4 +42,4 @@ Scatter map plot was created by ``scatterm()`` function.
     ylim(15, 55)
     colorbar(layer, orientation='horizontal', shrink=0.8, aspect=30)
     
-.. image:: image/scatterm.png
+.. image:: ../../../_static/scatterm.png

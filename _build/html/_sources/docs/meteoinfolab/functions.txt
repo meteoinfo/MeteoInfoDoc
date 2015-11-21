@@ -10,3 +10,4 @@ Functions
    
    functions/array.rst
    functions/math.rst
+   functions/plot.rst

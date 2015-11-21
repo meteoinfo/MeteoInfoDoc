@@ -10,7 +10,7 @@ MeteoInfo
 MeteoInfo Desktop Application
 -----------------------------
   Java edition
-    - `MeteoInfo 1.2.8R12 - Java (for all systems) <files/MeteoInfo_Java_1.2.8R12_Files.zip>`_   
+    - `MeteoInfo 1.2.8R13 - Java (for all systems) <files/MeteoInfo_Java_1.2.8R13_Files.zip>`_   
   C# edition   
     - `MeteoInfo 1.1.3.4R1 - C# <files/MeteoInfo_1.1.3.4R1_Files.zip>`_
     
@@ -49,4 +49,11 @@ TrajStat
 OutlierFlag
 =====================================
   OutlierFlag Desktop Application
-    - `OutlierFlag 0.9 desktop <files/OutlierFlag_0.9_Files.zip>`_
+    - `OutlierFlag 0.9 <files/OutlierFlag_0.9_Files.zip>`_
+	
+--------------------------------------------------------------------------------------------
+
+EMIPS
+=====================================
+  EMIssion Inventory Processing System
+    - `EMIPS 0.1 <files/EMIPS_0.1_Files.zip>`_

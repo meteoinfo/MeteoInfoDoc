@@ -11,3 +11,4 @@ Products
    wcontour_features.rst
    trajstat_features.rst
    outlierflag_features.rst
+   emips_features.rst
