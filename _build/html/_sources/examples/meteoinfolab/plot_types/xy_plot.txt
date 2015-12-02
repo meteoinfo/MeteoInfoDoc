@@ -21,4 +21,4 @@ XY plot was created by ``plot()`` function. More information could be added usin
     ylabel('Y axis')
     legend()
     
-.. image:: image/xy_plot.png
+.. image:: ../../../_static/xy_plot.png

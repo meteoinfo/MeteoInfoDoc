@@ -26,7 +26,7 @@ Two y axis::
     plot(t, s2, 'r.')
     ylabel('sin', color='r')
     
-.. image:: image/two_y_axis.png
+.. image:: ../../../_static/two_y_axis.png
 
 Multiple y axis::
 
@@ -49,4 +49,4 @@ Multiple y axis::
     lines = [line1, line2, line3]
     legend(lines)
     
-.. image:: image/multiple_y_axis.png
+.. image:: ../../../_static/multiple_y_axis.png

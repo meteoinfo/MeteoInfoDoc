@@ -33,4 +33,4 @@ This example demonstrate how to add China South Sea sum-map using multiple map a
     xlim(106, 123)
     ylim(2, 23)
         
-.. image:: image/china_south_sea.png
+.. image:: ../../../_static/china_south_sea.png

@@ -23,7 +23,7 @@ areas.
     plot(t2, cos(2*pi*t2), 'r--')
     title('Sub plot 2')
     
-.. image:: image/subplot.png
+.. image:: ../../../_static/subplot.png
 
 If you want to place an axes manually, i.e.,not on a rectangular grid, use the **axes()** 
 command, which allows you to specify the location as ``axes(position=[left, bottom, width, height])`` 
@@ -38,4 +38,4 @@ where all values are in fractional (0 to 1) coordinates.
     axes(position=[0.3,0.4,0.2,0.4])
     plot(x, y, 'bo')
     
-.. image:: image/axes.png
+.. image:: ../../../_static/axes.png

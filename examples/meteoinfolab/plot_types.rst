@@ -19,3 +19,4 @@ Plot types
    plot_types/streamline.rst
    plot_types/weather_symbol.rst
    plot_types/station_model.rst
+   plot_types/gif_animation.rst
