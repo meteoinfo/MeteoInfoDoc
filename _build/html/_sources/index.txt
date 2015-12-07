@@ -21,16 +21,6 @@ computation and visualization tool similar with MatLab and/or NCL.
 
   .. image:: _static/meteoinfolab.png
   
-News
-=====================================
-
-MeteoInfo 1.2.8 was released (2015-8-24)
---------------------------------------
-
-MeteoInfo 1.2.8 was released. SYNOP meteorological station observation data format was supported.
-
-  .. image:: _static/news/mi_1.2.8_desktop.png
-  
 Author
 =====================================
 
@@ -42,6 +32,7 @@ email: yaqiang.wang@gmail.com
    :hidden:
    
    products/index.rst
+   news/index.rst
    examples/index.rst
    downloads/index.rst
    docs/index.rst

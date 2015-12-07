@@ -1,8 +1,8 @@
 .. _examples-meteoinfolab-trajectory-traj_cal:
 
-*******************
+************************
 Trajectory calculation
-*******************
+************************
 
 `HYSPLIT <http://ready.arl.noaa.gov/HYSPLIT.php>`_ or TrajStat is needed for air mass 
 trajectory calculation in this example. The following code not includes any MeteoInfoLab
@@ -44,7 +44,7 @@ Calculate one day back trajectories:
     ctf.write(stime.strftime('%y %m %d ') + shour + "\n")
     ctf.write(str(hnum) + '\n')
     for i in range(0,hnum):
-      ctf.write(lat + ' ' + lon + ' ' + heights<i> + '\n')
+      ctf.write(lat + ' ' + lon + ' ' + heights[i] + '\n')
     ctf.write(hours + '\n')
     ctf.write(vertical + '\n')
     ctf.write(top + '\n')
@@ -52,7 +52,7 @@ Calculate one day back trajectories:
     ctf.write(str(fnnum) + '\n')
     for i in range(0,fnnum):
         ctf.write(metDir + '/' + '\n')
-        ctf.write(fns<i> + '\n')
+        ctf.write(fns[i] + '\n')
     ctf.write(outDir + '/' + '\n')
     outfn = stime.strftime('traj_%Y%m%d')
     ctf.write(outfn)
@@ -155,7 +155,7 @@ Calculate multiple days back trajectories:
         ctf.write(stime.strftime('%y %m %d ') + shour + "\n")
         ctf.write(str(hnum) + '\n')
         for i in range(0,hnum):
-            ctf.write(lat + ' ' + lon + ' ' + heights<i> + '\n')
+            ctf.write(lat + ' ' + lon + ' ' + heights[i] + '\n')
         ctf.write(hours + '\n')
         ctf.write(vertical + '\n')
         ctf.write(top + '\n')
@@ -164,7 +164,7 @@ Calculate multiple days back trajectories:
         ctf.write(str(fnnum) + '\n')
         for i in range(0,fnnum):
             ctf.write(metDir + '/' + '\n')
-            ctf.write(fns<i> + '\n')
+            ctf.write(fns[i] + '\n')
         ctf.write(outDir + '/' + '\n')
         outfn = stime.strftime('traj_%Y%m%d')
         ctf.write(outfn)
