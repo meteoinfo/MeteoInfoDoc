@@ -19,3 +19,12 @@ Plot
    plot/bar.rst
    plot/scatter.rst
    plot/savefig.rst
+   plot/clf.rst
+   plot/cla.rst
+   plot/cll.rst
+   plot/title.rst
+   plot/suptitle.rst
+   plot/xlabel.rst
+   plot/ylabel.rst
+   plot/xticks.rst
+   plot/yticks.rst
