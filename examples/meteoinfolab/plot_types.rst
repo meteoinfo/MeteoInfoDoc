@@ -9,6 +9,7 @@ Plot types
    :maxdepth: 2
    
    plot_types/xy_plot.rst
+   plot_types/errorbar.rst
    plot_types/bar.rst
    plot_types/subplot.rst
    plot_types/latex.rst

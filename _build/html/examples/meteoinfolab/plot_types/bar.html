@@ -27,7 +27,7 @@
     <link rel="top" title="MeteoInfo 1.2.8 documentation" href="../../../index.html" />
     <link rel="up" title="Plot types" href="../plot_types.html" />
     <link rel="next" title="Sub-plot" href="subplot.html" />
-    <link rel="prev" title="XY plot" href="xy_plot.html" /> 
+    <link rel="prev" title="Errorbar chart" href="errorbar.html" /> 
   </head>
   <body>
 
@@ -44,7 +44,7 @@
           <a href="subplot.html" title="Sub-plot"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="xy_plot.html" title="XY plot"
+          <a href="errorbar.html" title="Errorbar chart"
              accesskey="P">previous</a> |</li>
         <li><a href="../../../index.html">home</a>|&nbsp;</li>
         <li><a href="../../../products/index.html">products</a>|&nbsp;</li>
@@ -62,8 +62,8 @@
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="xy_plot.html"
-                        title="previous chapter">XY plot</a></p>
+  <p class="topless"><a href="errorbar.html"
+                        title="previous chapter">Errorbar chart</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="subplot.html"
                         title="next chapter">Sub-plot</a></p>
@@ -129,6 +129,32 @@ according to data series number.</p>
 </pre></div>
 </div>
 <img alt="../../../_images/bar_21.png" src="../../../_images/bar_21.png" />
+<p>Y error bar and text labels on bars:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">menMeans</span> <span class="o">=</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">27</span><span class="p">]</span>
+<span class="n">std_men</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">menMeans</span><span class="p">)</span>
+<span class="n">ind</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="n">width</span> <span class="o">=</span> <span class="mf">0.35</span>
+<span class="n">gap</span> <span class="o">=</span> <span class="mf">0.06</span>
+<span class="n">bar</span><span class="p">(</span><span class="n">ind</span><span class="p">,</span> <span class="n">menMeans</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="n">std_men</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;r&#39;</span><span class="p">,</span> <span class="n">ecolor</span><span class="o">=</span><span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&#39;Men&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">text</span><span class="p">(</span><span class="n">ind</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">width</span> <span class="o">/</span> <span class="mi">4</span><span class="p">,</span> <span class="n">menMeans</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">menMeans</span><span class="p">[</span><span class="n">j</span><span class="p">]))</span>
+
+<span class="n">womenMeans</span> <span class="o">=</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">25</span><span class="p">]</span>
+<span class="n">std_women</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">bar</span><span class="p">(</span><span class="n">ind</span> <span class="o">+</span> <span class="n">width</span> <span class="o">+</span> <span class="n">gap</span><span class="p">,</span> <span class="n">womenMeans</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="n">std_women</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;y&#39;</span><span class="p">,</span> <span class="n">ecolor</span><span class="o">=</span><span class="s">&#39;g&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&#39;Women&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">text</span><span class="p">(</span><span class="n">ind</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="o">+</span> <span class="n">width</span> <span class="o">+</span> <span class="n">gap</span> <span class="o">+</span> <span class="n">width</span> <span class="o">/</span> <span class="mi">4</span><span class="p">,</span> <span class="n">womenMeans</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">womenMeans</span><span class="p">[</span><span class="n">j</span><span class="p">]))</span>
+
+<span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;Scores&#39;</span><span class="p">)</span>
+<span class="n">xticks</span><span class="p">(</span><span class="n">ind</span> <span class="o">+</span> <span class="n">width</span> <span class="o">+</span> <span class="n">gap</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="s">&#39;G1&#39;</span><span class="p">,</span><span class="s">&#39;G2&#39;</span><span class="p">,</span><span class="s">&#39;G3&#39;</span><span class="p">,</span><span class="s">&#39;G4&#39;</span><span class="p">,</span><span class="s">&#39;G5&#39;</span><span class="p">])</span>
+<span class="n">legend</span><span class="p">()</span>
+<span class="n">title</span><span class="p">(</span><span class="s">&#39;Scores by group and gender&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../_images/bar_error.png" src="../../../_images/bar_error.png" />
 </div>
 
 
@@ -147,7 +173,7 @@ according to data series number.</p>
           <a href="subplot.html" title="Sub-plot"
              >next</a> |</li>
         <li class="right" >
-          <a href="xy_plot.html" title="XY plot"
+          <a href="errorbar.html" title="Errorbar chart"
              >previous</a> |</li>
         <li><a href="../../../index.html">home</a>|&nbsp;</li>
         <li><a href="../../../products/index.html">products</a>|&nbsp;</li>
