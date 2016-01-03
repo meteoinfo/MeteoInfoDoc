@@ -1,12 +1,9 @@
 .. _news-meteoinfo_1.2.9:
 
 
-******************************
-MeteoInfo 1.2.9 was released
-******************************
-
-2015-12-7
---------------------------------------
+******************************************
+MeteoInfo 1.2.9 was released (2015-12-7)
+******************************************
 
 MeteoInfo 1.2.9 was released. MeteoInfoLab function was improved a lot. GUI of opening meteorological
 data was revised for better usage in Mac OS system.

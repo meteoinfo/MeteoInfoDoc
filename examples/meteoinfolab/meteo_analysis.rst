@@ -13,3 +13,5 @@ Meteorological analysis
    meteo_analysis/hori_heli.rst
    meteo_analysis/vert_heli.rst
    meteo_analysis/water_vapor.rst
+   meteo_analysis/matrix_rotate.rst
+   meteo_analysis/ave_rect.rst

@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Average data along x/y axis of a rectangle &mdash; MeteoInfo 1.2.8 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.2.8',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="MeteoInfo 1.2.8 documentation" href="../../../index.html" />
+    <link rel="up" title="Meteorological analysis" href="../meteo_analysis.html" />
+    <link rel="next" title="Satellite data" href="../satellite.html" />
+    <link rel="prev" title="Matrix rotate" href="matrix_rotate.html" /> 
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../../index.html"><img src="../../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../satellite.html" title="Satellite data"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="matrix_rotate.html" title="Matrix rotate"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../docs/index.html">docs</a>|&nbsp;</li>
+
+          <li><a href="../../index.html" >Examples</a> &raquo;</li>
+          <li><a href="../index.html" >MeteoInfoLab</a> &raquo;</li>
+          <li><a href="../meteo_analysis.html" accesskey="U">Meteorological analysis</a> &raquo;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="matrix_rotate.html"
+                        title="previous chapter">Matrix rotate</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../satellite.html"
+                        title="next chapter">Satellite data</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/examples/meteoinfolab/meteo_analysis/ave_rect.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="average-data-along-x-y-axis-of-a-rectangle">
+<span id="examples-meteoinfolab-meteo-analysis-ave-rect"></span><h1>Average data along x/y axis of a rectangle<a class="headerlink" href="#average-data-along-x-y-axis-of-a-rectangle" title="Permalink to this headline">¶</a></h1>
+<p>Average data along x/y axis of a ractangle, and plot vertical distribution of the average data.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="s">&#39;D:/Temp/nc/uwnd.2011.nc&#39;</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;uwnd&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,:,[</span><span class="mi">10</span><span class="p">,</span><span class="mi">40</span><span class="p">],[</span><span class="mi">70</span><span class="p">,</span><span class="mi">130</span><span class="p">]]</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">mean</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">lev1</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">dimvalue</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="c">#lev2 = 1000 - lev1</span>
+<span class="n">lev2</span> <span class="o">=</span> <span class="n">p2h</span><span class="p">(</span><span class="n">lev1</span><span class="p">)</span>
+<span class="n">levels</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">lev1</span><span class="p">)):</span>
+    <span class="n">levels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&#39;</span><span class="si">%i</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">lev1</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<span class="n">data</span><span class="o">.</span><span class="n">setdimvalue</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">lev2</span><span class="p">)</span>
+<span class="c">#Plot</span>
+<span class="n">layer</span> <span class="o">=</span> <span class="n">contourf</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span>
+<span class="n">yticks</span><span class="p">(</span><span class="n">lev2</span><span class="p">,</span> <span class="n">levels</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Longitude&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;Pressure (hPa)&#39;</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s">&#39;Latitude average uwnd profile&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../_images/ave_rect_profile.png" src="../../../_images/ave_rect_profile.png" />
+<p>Rotated rectangle:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#Read data array</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="s">&#39;D:/Temp/nc/uwnd.2011.nc&#39;</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;uwnd&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,:,[</span><span class="mi">0</span><span class="p">,</span><span class="mi">70</span><span class="p">],[</span><span class="mi">50</span><span class="p">,</span><span class="mi">150</span><span class="p">]]</span>
+
+<span class="c">#Get rotated grid</span>
+<span class="n">lat</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">lon</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mi">70</span><span class="p">,</span> <span class="mi">131</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">xn</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">lon</span><span class="p">)</span>
+<span class="n">yn</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">lat</span><span class="p">)</span>
+<span class="n">lon</span><span class="p">,</span> <span class="n">lat</span> <span class="o">=</span> <span class="n">meshgrid</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">)</span>
+<span class="n">angle</span> <span class="o">=</span> <span class="mi">20</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">/</span> <span class="mi">180</span>
+<span class="n">rotate</span> <span class="o">=</span> <span class="n">array</span><span class="p">([[</span><span class="n">cos</span><span class="p">(</span><span class="n">angle</span><span class="p">),</span><span class="n">sin</span><span class="p">(</span><span class="n">angle</span><span class="p">)],</span> <span class="p">[</span><span class="o">-</span><span class="n">sin</span><span class="p">(</span><span class="n">angle</span><span class="p">),</span><span class="n">cos</span><span class="p">(</span><span class="n">angle</span><span class="p">)]])</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">lon</span><span class="p">)</span>
+<span class="n">xy</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">([</span><span class="n">n</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+<span class="n">xy</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">lon</span> <span class="o">-</span> <span class="mi">70</span>
+<span class="n">xy</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">lat</span> <span class="o">-</span> <span class="mi">10</span>
+<span class="n">xy</span> <span class="o">=</span> <span class="n">dot</span><span class="p">(</span><span class="n">xy</span><span class="p">,</span> <span class="n">rotate</span><span class="p">)</span>    <span class="c">#Matrix multiplication</span>
+<span class="n">xy</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">xy</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mi">70</span>
+<span class="n">xy</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">xy</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">10</span>
+<span class="n">lon</span><span class="p">[:,:]</span> <span class="o">=</span> <span class="n">xy</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">lat</span><span class="p">[:,:]</span> <span class="o">=</span> <span class="n">xy</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="c">#Project data to the grid</span>
+<span class="n">ndata</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">project</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">)</span>
+
+<span class="c">#Average data along tilt latitude</span>
+<span class="n">londata</span> <span class="o">=</span> <span class="n">mean</span><span class="p">(</span><span class="n">ndata</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">latdata</span> <span class="o">=</span> <span class="n">mean</span><span class="p">(</span><span class="n">ndata</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">lev1</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">dimvalue</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">lev2</span> <span class="o">=</span> <span class="n">p2h</span><span class="p">(</span><span class="n">lev1</span><span class="p">)</span>
+<span class="n">levels</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">lev1</span><span class="p">)):</span>
+    <span class="n">levels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&#39;</span><span class="si">%i</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">lev1</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+
+<span class="c">#Plot</span>
+<span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">layer</span> <span class="o">=</span> <span class="n">contourf</span><span class="p">(</span><span class="n">lon</span><span class="p">[</span><span class="mi">0</span><span class="p">,:],</span> <span class="n">lev2</span><span class="p">,</span> <span class="n">londata</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span>
+<span class="n">yticks</span><span class="p">(</span><span class="n">lev2</span><span class="p">,</span> <span class="n">levels</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Longitude&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;Pressure (hPa)&#39;</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s">&#39;Tilt latitude average uwnd profile&#39;</span><span class="p">)</span>
+
+<span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">layer</span> <span class="o">=</span> <span class="n">contourf</span><span class="p">(</span><span class="n">lat</span><span class="p">[</span><span class="mi">0</span><span class="p">,:],</span> <span class="n">lev2</span><span class="p">,</span> <span class="n">latdata</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span>
+<span class="n">yticks</span><span class="p">(</span><span class="n">lev2</span><span class="p">,</span> <span class="n">levels</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Latitude&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;Pressure (hPa)&#39;</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s">&#39;Tilt longitude average uwnd profile&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../_images/ave_rect_tilt_profile.png" src="../../../_images/ave_rect_tilt_profile.png" />
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../satellite.html" title="Satellite data"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="matrix_rotate.html" title="Matrix rotate"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../docs/index.html">docs</a>|&nbsp;</li>
+
+          <li><a href="../../index.html" >Examples</a> &raquo;</li>
+          <li><a href="../index.html" >MeteoInfoLab</a> &raquo;</li>
+          <li><a href="../meteo_analysis.html" >Meteorological analysis</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2015, Yaqiang Wang.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

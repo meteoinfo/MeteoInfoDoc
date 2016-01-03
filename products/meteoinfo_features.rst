@@ -9,8 +9,8 @@ Introduction
 MeteoInfo is a freely available software designed to view and analyze meteorological and spatial 
 data interactively. Some GIS functions were developed from ground level. It has two editions: 
 Java and C#. MeteoInfo may be run in Windows, Mac OS, Linux and Unix. MeteoInfo can also be run 
-automatically using MeteoInfo scripting with the IronPython language (C# edition) or Groovy 
-language (Java edition). The main functions are packed in the MeteoInfo class library, which could 
+automatically using MeteoInfo scripting with the Jython language (Java edition) or IronPython 
+language (C# edition). The main functions are packed in the MeteoInfo class library, which could 
 be used to conveniently develop the software.
 
 MeteoInfoLab is a free software product developed using Java and Jython based on MeteoInfo Java 

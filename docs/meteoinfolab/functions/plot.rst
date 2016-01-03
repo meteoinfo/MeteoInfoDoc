@@ -28,3 +28,9 @@ Plot
    plot/ylabel.rst
    plot/xticks.rst
    plot/yticks.rst
+   plot/text.rst
+   plot/axis.rst
+   plot/grid.rst
+   plot/xlim.rst
+   plot/ylim.rst
+   plot/legend.rst
