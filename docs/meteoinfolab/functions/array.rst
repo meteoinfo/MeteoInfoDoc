@@ -14,3 +14,4 @@ Array
    array/arange.rst
    array/arange1.rst
    array/linspace.rst
+   array/sort.rst

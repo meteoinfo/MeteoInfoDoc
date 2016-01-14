@@ -1,4 +1,4 @@
-.. _projects-wcontour_features:
+.. _projects-wcontour:
 
 
 *******************

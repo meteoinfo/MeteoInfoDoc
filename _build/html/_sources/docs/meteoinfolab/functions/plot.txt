@@ -34,3 +34,16 @@ Plot
    plot/xlim.rst
    plot/ylim.rst
    plot/legend.rst
+   plot/colorbar.rst
+   plot/imshow.rst
+   plot/contour.rst
+   plot/contourf.rst
+   plot/quiver.rst
+   plot/plotm.rst
+   plot/scatterm.rst
+   plot/imshowm.rst
+   plot/contourm.rst
+   plot/contourfm.rst
+   plot/quiverm.rst
+   plot/streamplotm.rst
+   plot/stationmodel.rst

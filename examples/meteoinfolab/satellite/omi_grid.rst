@@ -25,4 +25,4 @@ This example code illustrates how to access and visualize a OMI grid data.
     title('OMI - ' + vname)
     axism()
     
-.. image:: image/omi_grid.png
+.. image:: ../../../_static/omi_grid.png

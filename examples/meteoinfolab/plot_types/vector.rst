@@ -20,4 +20,4 @@ Vector plot was created by ``quiver()`` or ``quiverm()`` (for map axes) function
     yticks([20,40,60])
     colorbar(layer)
     
-.. image:: image/vector.png
+.. image:: ../../../_static/vector.png

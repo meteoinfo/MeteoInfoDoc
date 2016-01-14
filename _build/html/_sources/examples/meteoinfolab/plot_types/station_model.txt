@@ -29,4 +29,4 @@ read by ``smodeldata()`` function of ``DimDataFile`` object.
     xlim(72, 136)
     ylim(16, 55)
     
-.. image:: image/station_model.png
+.. image:: ../../../_static/station_model.png

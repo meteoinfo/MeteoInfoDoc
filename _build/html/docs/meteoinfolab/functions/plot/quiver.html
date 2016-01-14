@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>quiver &mdash; MeteoInfo 1.2.8 documentation</title>
+    
+    <link rel="stylesheet" href="../../../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../',
+        VERSION:     '1.2.8',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="MeteoInfo 1.2.8 documentation" href="../../../../index.html" />
+    <link rel="up" title="Plot" href="../plot.html" />
+    <link rel="next" title="quiverm" href="quiverm.html" />
+    <link rel="prev" title="contourf" href="contourf.html" /> 
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../../../index.html"><img src="../../../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="quiverm.html" title="quiverm"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="contourf.html" title="contourf"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li><a href="../../../index.html" >Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >MeteoInfoLab</a> &raquo;</li>
+          <li><a href="../../functions.html" >Functions</a> &raquo;</li>
+          <li><a href="../plot.html" accesskey="U">Plot</a> &raquo;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="contourf.html"
+                        title="previous chapter">contourf</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="quiverm.html"
+                        title="next chapter">quiverm</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../../_sources/docs/meteoinfolab/functions/plot/quiver.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="quiver">
+<span id="docs-meteoinfolab-funcitons-plot-quiver"></span><h1>quiver<a class="headerlink" href="#quiver" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt>
+<tt class="descname">quiver</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big></dt>
+<dd><p>Plot a 2-D field of arrows.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>x</strong> &#8211; (<em>array_like</em>) Optional. X coordinate array.</li>
+<li><strong>y</strong> &#8211; (<em>array_like</em>) Optional. Y coordinate array.</li>
+<li><strong>u</strong> &#8211; (<em>array_like</em>) U component of the arrow vectors (wind field) or wind direction.</li>
+<li><strong>v</strong> &#8211; (<em>array_like</em>) V component of the arrow vectors (wind field) or wind speed.</li>
+<li><strong>z</strong> &#8211; (<em>array_like</em>) Optional, 2-D z value array.</li>
+<li><strong>cmap</strong> &#8211; (<em>string</em>) Color map string.</li>
+<li><strong>fill_value</strong> &#8211; (<em>float</em>) Fill_value. Default is <tt class="docutils literal"><span class="pre">-9999.0</span></tt>.</li>
+<li><strong>isuv</strong> &#8211; (<em>boolean</em>) Is U/V or direction/speed data array pairs. Default is True.</li>
+<li><strong>size</strong> &#8211; (<em>float</em>) Base size of the arrows.</li>
+<li><strong>order</strong> &#8211; (<em>int</em>) Z-order of created layer for display.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">(<em>VectoryLayer</em>) Created quiver VectoryLayer.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="s">&#39;D:/Temp/GrADS/model.ctl&#39;</span><span class="p">)</span>
+<span class="n">u</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;U&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,[</span><span class="mi">500</span><span class="p">],[</span><span class="mi">10</span><span class="p">,</span><span class="mi">60</span><span class="p">],[</span><span class="mi">60</span><span class="p">,</span><span class="mi">140</span><span class="p">]]</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;V&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,[</span><span class="mi">500</span><span class="p">],[</span><span class="mi">10</span><span class="p">,</span><span class="mi">60</span><span class="p">],[</span><span class="mi">60</span><span class="p">,</span><span class="mi">140</span><span class="p">]]</span>
+<span class="n">speed</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">u</span><span class="o">*</span><span class="n">u</span><span class="o">+</span><span class="n">v</span><span class="o">*</span><span class="n">v</span><span class="p">)</span>
+<span class="n">layer</span> <span class="o">=</span> <span class="n">quiver</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">speed</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s">&#39;Wind field&#39;</span><span class="p">)</span>
+<span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/quiver.png" src="../../../../_images/quiver.png" />
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="quiverm.html" title="quiverm"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="contourf.html" title="contourf"
+             >previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li><a href="../../../index.html" >Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >MeteoInfoLab</a> &raquo;</li>
+          <li><a href="../../functions.html" >Functions</a> &raquo;</li>
+          <li><a href="../plot.html" >Plot</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2015, Yaqiang Wang.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

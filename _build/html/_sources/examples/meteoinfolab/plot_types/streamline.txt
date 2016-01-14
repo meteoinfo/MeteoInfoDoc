@@ -18,4 +18,4 @@ Streamline plot was created by ``streamplot()`` or ``streamplotm()`` (for map ax
     title('Streamline plot example')
     yticks([20,40,60])
     
-.. image:: image/streamline.png
+.. image:: ../../../_static/streamline.png

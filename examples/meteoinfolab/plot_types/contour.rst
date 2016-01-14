@@ -23,7 +23,7 @@ contour plot.
     title('Cone amplitude')
     colorbar(layer)
     
-.. image:: image/contour.png
+.. image:: ../../../_static/contour.png
 
 Corresponding functions for map plot are ``contourm()`` and ``contourfm()`` .
 
@@ -42,4 +42,4 @@ Corresponding functions for map plot are ``contourm()`` and ``contourfm()`` .
     grid()
     colorbar(layer, orientation='horizontal', extendrect=False, shrink=0.8, aspect=12)
     
-.. image:: image/contourm.png
+.. image:: ../../../_static/contourm.png

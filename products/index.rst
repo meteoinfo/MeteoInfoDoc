@@ -7,8 +7,8 @@ Products
 .. toctree::
    :maxdepth: 2
 
-   meteoinfo_features.rst
-   wcontour_features.rst
-   trajstat_features.rst
-   outlierflag_features.rst
-   emips_features.rst
+   meteoinfo.rst
+   wcontour.rst
+   trajstat.rst
+   outlierflag.rst
+   emips.rst

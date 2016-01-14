@@ -1,4 +1,4 @@
-.. _products-meteoinfo_features:
+.. _products-meteoinfo:
 
 
 MeteoInfo

@@ -1,4 +1,4 @@
-.. _projects-emips_features:
+.. _projects-emips:
 
 
 *******************

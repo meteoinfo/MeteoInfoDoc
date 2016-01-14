@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>colorbar &mdash; MeteoInfo 1.2.8 documentation</title>
+    
+    <link rel="stylesheet" href="../../../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../',
+        VERSION:     '1.2.8',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="MeteoInfo 1.2.8 documentation" href="../../../../index.html" />
+    <link rel="up" title="Plot" href="../plot.html" />
+    <link rel="prev" title="legend" href="legend.html" /> 
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../../../index.html"><img src="../../../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="legend.html" title="legend"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li><a href="../../../index.html" >Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >MeteoInfoLab</a> &raquo;</li>
+          <li><a href="../../functions.html" >Functions</a> &raquo;</li>
+          <li><a href="../plot.html" accesskey="U">Plot</a> &raquo;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="legend.html"
+                        title="previous chapter">legend</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../../_sources/docs/meteoinfolab/functions/plot/colorbar.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="colorbar">
+<span id="docs-meteoinfolab-funcitons-plot-colorbar"></span><h1>colorbar<a class="headerlink" href="#colorbar" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt>
+<tt class="descname">colorbar</tt><big>(</big><em>layer</em>, <em>**kwargs</em><big>)</big></dt>
+<dd><p>Add a colorbar to a plot.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>layer</strong> &#8211; (<em>MapLayer</em>) The layer in plot.</li>
+<li><strong>cmap</strong> &#8211; (<em>string</em>) Color map name. Default is None.</li>
+<li><strong>shrink</strong> &#8211; (<em>float</em>) Fraction by which to shrink the colorbar. Default is 1.0.</li>
+<li><strong>orientation</strong> &#8211; (<em>string</em>) Colorbar orientation: <tt class="docutils literal"><span class="pre">vertical</span></tt> or <tt class="docutils literal"><span class="pre">horizontal</span></tt>.</li>
+<li><strong>aspect</strong> &#8211; (<em>int</em>) Ratio of long to short dimensions.</li>
+<li><strong>fontname</strong> &#8211; (<em>string</em>) Font name. Default is <tt class="docutils literal"><span class="pre">Arial</span></tt> .</li>
+<li><strong>fontsize</strong> &#8211; (<em>int</em>) Font size. Default is <tt class="docutils literal"><span class="pre">14</span></tt> .</li>
+<li><strong>bold</strong> &#8211; (<em>boolean</em>) Is bold font or not. Default is <tt class="docutils literal"><span class="pre">False</span></tt> .</li>
+<li><strong>extendrect</strong> &#8211; (<em>boolean</em>) If <tt class="docutils literal"><span class="pre">True</span></tt> the minimum and maximum colorbar extensions will be
+rectangular (the default). If <tt class="docutils literal"><span class="pre">False</span></tt> the extensions will be triangular.</li>
+<li><strong>extendfrac</strong> &#8211; [None | &#8216;auto&#8217; | length] If set to <em>None</em>, both the minimum and maximum triangular
+colorbar extensions with have a length of 5% of the interior colorbar length (the default). If
+set to &#8216;auto&#8217;, makes the triangular colorbar extensions the same lengths as the interior boxes
+. If a scalar, indicates the length of both the minimum and maximum triangle colorbar extensions
+as a fraction of the interior colorbar length.</li>
+<li><strong>ticks</strong> &#8211; [None | list of ticks] If None, ticks are determined automatically from the input.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="s">&#39;D:/Temp/GrADS/model.ctl&#39;</span><span class="p">)</span>
+<span class="n">psv</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;PS&#39;</span><span class="p">]</span>
+<span class="n">ps</span> <span class="o">=</span> <span class="n">psv</span><span class="p">[</span><span class="mi">0</span><span class="p">,[</span><span class="mi">10</span><span class="p">,</span><span class="mi">60</span><span class="p">],[</span><span class="mi">60</span><span class="p">,</span><span class="mi">140</span><span class="p">]]</span>
+<span class="n">axesm</span><span class="p">()</span>
+<span class="n">mlayer</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="s">&#39;D:/Temp/map/country1.shp&#39;</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="n">mlayer</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">))</span>
+<span class="c">#layer = contourm(ps, 20)</span>
+<span class="n">layer</span> <span class="o">=</span> <span class="n">contourfm</span><span class="p">(</span><span class="n">ps</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s">&#39;Pressure&#39;</span><span class="p">)</span>
+<span class="n">yticks</span><span class="p">(</span><span class="n">arange</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">61</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span>
+<span class="n">grid</span><span class="p">()</span>
+<span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s">&#39;horizontal&#39;</span><span class="p">,</span> <span class="n">extendrect</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/contourm1.png" src="../../../../_images/contourm1.png" />
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="legend.html" title="legend"
+             >previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li><a href="../../../index.html" >Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >MeteoInfoLab</a> &raquo;</li>
+          <li><a href="../../functions.html" >Functions</a> &raquo;</li>
+          <li><a href="../plot.html" >Plot</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2015, Yaqiang Wang.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

@@ -30,4 +30,4 @@ created by ``weatherspec()`` function.
     xlim(72, 136)
     ylim(16, 55)
     
-.. image:: image/weather_symbol.png
+.. image:: ../../../_static/weather_symbol.png

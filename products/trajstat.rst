@@ -1,4 +1,4 @@
-.. _products-trajstat_features:
+.. _products-trajstat:
 
 
 TrajStat

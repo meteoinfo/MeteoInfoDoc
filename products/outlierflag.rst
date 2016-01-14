@@ -1,4 +1,4 @@
-.. _products-outlierflag_features:
+.. _products-outlierflag:
 
 
 *******************
@@ -53,6 +53,12 @@ Authors:
 Source code:
 ---------------
 https://bitbucket.org/yaqiang/outlierflag
+
+License:
+---------------
+Copyright (C) 2015 Yaqiang Wang, Shuai Huang, Peng Zhao, Johannes Lüers
+
+Distributed under the `GNU Lesser General Public License <https://www.gnu.org/licenses/lgpl.html>`_.
 
 Screen shots:
 -------------------
