@@ -19,9 +19,9 @@ The example to calcluate vertical helicity.
     level = [1000, 100]
     lat = [15,55]
     lon = [70,135]
-    uwnd = f_uwnd['uwnd'][tidx,level,lat,lon][:,::-1,:]
-    vwnd = f_vwnd['vwnd'][tidx,level,lat,lon][:,::-1,:]
-    omega = f_omega['omega'][tidx,level,lat,lon][:,::-1,:]
+    uwnd = f_uwnd['uwnd'][tidx,level,lat,lon]
+    vwnd = f_vwnd['vwnd'][tidx,level,lat,lon]
+    omega = f_omega['omega'][tidx,level,lat,lon]
     wd = hcurl(uwnd, vwnd)
     lx = -(wd*omega*10.)/12.64*1e6
     lx1 = lx[:,[40],:]

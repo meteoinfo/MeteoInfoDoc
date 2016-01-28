@@ -11,3 +11,5 @@ File input and output
    file_io/read_ascii.rst
    file_io/read_lighting.rst
    file_io/write_nc.rst
+   file_io/read_grib2.rst
+   file_io/read_remote.rst

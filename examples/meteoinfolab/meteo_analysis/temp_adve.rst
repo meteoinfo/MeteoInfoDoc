@@ -18,11 +18,11 @@ Calculate temperature advection from u and v wind components. The mainly used fu
     tidx = 173    # Jun 23, 2011
     t = f_air.gettime(tidx)
     lidx = 0    # 1000 hPa
-    air = f_air['air'][tidx,lidx,::-1,:]
-    uwnd = f_uwnd['uwnd'][tidx,lidx,::-1,:]
-    vwnd = f_vwnd['vwnd'][tidx,lidx,::-1,:]
+    air = f_air['air'][tidx,lidx,:,:]
+    uwnd = f_uwnd['uwnd'][tidx,lidx,:,:]
+    vwnd = f_vwnd['vwnd'][tidx,lidx,:,:]
     lon = f_air['lon'][:]
-    lat = f_air['lat'][::-1]
+    lat = f_air['lat'][:]
     lon, lat = meshgrid(lon, lat)
 
     # Calculate

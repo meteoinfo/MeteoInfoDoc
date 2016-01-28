@@ -18,10 +18,10 @@ The example to calcluate water vapor flux divergency.
     tidx = 173    # Jun 23, 2011
     t = f_air.gettime(tidx)
     lidx = 3    # 700 hPa
-    air = f_air['air'][tidx,lidx,::-1,:]
-    uwnd = f_uwnd['uwnd'][tidx,lidx,::-1,:]
-    vwnd = f_vwnd['vwnd'][tidx,lidx,::-1,:]
-    rhum = f_rhum['rhum'][tidx,lidx,::-1,:]
+    air = f_air['air'][tidx,lidx,:,:]
+    uwnd = f_uwnd['uwnd'][tidx,lidx,:,:]
+    vwnd = f_vwnd['vwnd'][tidx,lidx,:,:]
+    rhum = f_rhum['rhum'][tidx,lidx,:,:]
 
     # Calculate
     print 'Calculate...'

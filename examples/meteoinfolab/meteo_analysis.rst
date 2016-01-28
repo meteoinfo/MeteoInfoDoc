@@ -15,3 +15,4 @@ Meteorological analysis
    meteo_analysis/water_vapor.rst
    meteo_analysis/matrix_rotate.rst
    meteo_analysis/ave_rect.rst
+   meteo_analysis/k_index.rst

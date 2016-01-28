@@ -26,7 +26,7 @@
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="top" title="MeteoInfo 1.2.8 documentation" href="../../../index.html" />
     <link rel="up" title="Meteorological analysis" href="../meteo_analysis.html" />
-    <link rel="next" title="Satellite data" href="../satellite.html" />
+    <link rel="next" title="Matrix rotate" href="matrix_rotate.html" />
     <link rel="prev" title="Vertical helicity" href="vert_heli.html" /> 
   </head>
   <body>
@@ -41,7 +41,7 @@
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="../satellite.html" title="Satellite data"
+          <a href="matrix_rotate.html" title="Matrix rotate"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="vert_heli.html" title="Vertical helicity"
@@ -65,8 +65,8 @@
   <p class="topless"><a href="vert_heli.html"
                         title="previous chapter">Vertical helicity</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="../satellite.html"
-                        title="next chapter">Satellite data</a></p>
+  <p class="topless"><a href="matrix_rotate.html"
+                        title="next chapter">Matrix rotate</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="../../../_sources/examples/meteoinfolab/meteo_analysis/water_vapor.txt"
@@ -106,10 +106,10 @@
 <span class="n">tidx</span> <span class="o">=</span> <span class="mi">173</span>    <span class="c"># Jun 23, 2011</span>
 <span class="n">t</span> <span class="o">=</span> <span class="n">f_air</span><span class="o">.</span><span class="n">gettime</span><span class="p">(</span><span class="n">tidx</span><span class="p">)</span>
 <span class="n">lidx</span> <span class="o">=</span> <span class="mi">3</span>    <span class="c"># 700 hPa</span>
-<span class="n">air</span> <span class="o">=</span> <span class="n">f_air</span><span class="p">[</span><span class="s">&#39;air&#39;</span><span class="p">][</span><span class="n">tidx</span><span class="p">,</span><span class="n">lidx</span><span class="p">,::</span><span class="o">-</span><span class="mi">1</span><span class="p">,:]</span>
-<span class="n">uwnd</span> <span class="o">=</span> <span class="n">f_uwnd</span><span class="p">[</span><span class="s">&#39;uwnd&#39;</span><span class="p">][</span><span class="n">tidx</span><span class="p">,</span><span class="n">lidx</span><span class="p">,::</span><span class="o">-</span><span class="mi">1</span><span class="p">,:]</span>
-<span class="n">vwnd</span> <span class="o">=</span> <span class="n">f_vwnd</span><span class="p">[</span><span class="s">&#39;vwnd&#39;</span><span class="p">][</span><span class="n">tidx</span><span class="p">,</span><span class="n">lidx</span><span class="p">,::</span><span class="o">-</span><span class="mi">1</span><span class="p">,:]</span>
-<span class="n">rhum</span> <span class="o">=</span> <span class="n">f_rhum</span><span class="p">[</span><span class="s">&#39;rhum&#39;</span><span class="p">][</span><span class="n">tidx</span><span class="p">,</span><span class="n">lidx</span><span class="p">,::</span><span class="o">-</span><span class="mi">1</span><span class="p">,:]</span>
+<span class="n">air</span> <span class="o">=</span> <span class="n">f_air</span><span class="p">[</span><span class="s">&#39;air&#39;</span><span class="p">][</span><span class="n">tidx</span><span class="p">,</span><span class="n">lidx</span><span class="p">,:,:]</span>
+<span class="n">uwnd</span> <span class="o">=</span> <span class="n">f_uwnd</span><span class="p">[</span><span class="s">&#39;uwnd&#39;</span><span class="p">][</span><span class="n">tidx</span><span class="p">,</span><span class="n">lidx</span><span class="p">,:,:]</span>
+<span class="n">vwnd</span> <span class="o">=</span> <span class="n">f_vwnd</span><span class="p">[</span><span class="s">&#39;vwnd&#39;</span><span class="p">][</span><span class="n">tidx</span><span class="p">,</span><span class="n">lidx</span><span class="p">,:,:]</span>
+<span class="n">rhum</span> <span class="o">=</span> <span class="n">f_rhum</span><span class="p">[</span><span class="s">&#39;rhum&#39;</span><span class="p">][</span><span class="n">tidx</span><span class="p">,</span><span class="n">lidx</span><span class="p">,:,:]</span>
 
 <span class="c"># Calculate</span>
 <span class="k">print</span> <span class="s">&#39;Calculate...&#39;</span>
@@ -153,7 +153,7 @@
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="../satellite.html" title="Satellite data"
+          <a href="matrix_rotate.html" title="Matrix rotate"
              >next</a> |</li>
         <li class="right" >
           <a href="vert_heli.html" title="Vertical helicity"
