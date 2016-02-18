@@ -11,3 +11,4 @@ Documentation
    introduction.rst
    meteoinfo/index.rst
    meteoinfolab/index.rst
+   wcontour/index.rst

@@ -11,3 +11,4 @@ Functions
    functions/array.rst
    functions/math.rst
    functions/plot.rst
+   functions/file_io.rst

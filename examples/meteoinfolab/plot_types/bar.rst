@@ -72,3 +72,25 @@ Y error bar and text labels on bars:
     title('Scores by group and gender')
     
 .. image:: ../../../_static/bar_error.png
+
+Stacked bar example using *bottom* parameter:
+
+::
+
+    menMeans = [20, 35, 30, 35, 27]
+    n = len(menMeans)
+    ind = arange(n)
+    width = 0.35
+    bar(ind, menMeans, width, color='r', ecolor='b', label='Men')
+
+    womenMeans = [25, 32, 34, 20, 25]
+    bar(ind, womenMeans, width, bottom=menMeans, color='y', ecolor='g', label='Women')
+
+    xlim(-0.2, 5)
+    ylim(0, 80)
+    ylabel('Scores')
+    xticks(ind + width / 2, ['G1','G2','G3','G4','G5'])
+    legend()
+    title('Scores by group and gender')
+    
+.. image:: ../../../_static/bar_stack.png

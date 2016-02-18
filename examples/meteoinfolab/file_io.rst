@@ -13,3 +13,4 @@ File input and output
    file_io/write_nc.rst
    file_io/read_grib2.rst
    file_io/read_remote.rst
+   file_io/write_shapefile.rst

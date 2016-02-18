@@ -25,3 +25,4 @@ Satellite data
    satellite/himawari_8.rst
    satellite/geotiff_rgb.rst
    satellite/calipso.rst
+   satellite/gpm_swath.rst
