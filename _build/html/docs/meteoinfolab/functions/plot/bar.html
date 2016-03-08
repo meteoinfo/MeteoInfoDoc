@@ -98,8 +98,12 @@
 <span id="docs-meteoinfolab-funcitons-plot-bar"></span><h1>bar<a class="headerlink" href="#bar" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt>
-<tt class="descname">bar</tt><big>(</big><em>left</em>, <em>height</em>, <em>width=0.8</em>, <em>color=None</em>, <em>edgecolor='k'</em><big>)</big></dt>
+<tt class="descname">bar</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big></dt>
 <dd><p>Make a bar plot.</p>
+<dl class="docutils">
+<dt>Make a bar plot with rectangles bounded by:</dt>
+<dd>left, left + width, bottom, bottom + height</dd>
+</dl>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -108,10 +112,14 @@
 <li><strong>left</strong> &#8211; (<em>array_like</em>) The x coordinates of the left sides of the bars.</li>
 <li><strong>height</strong> &#8211; (<em>array_like</em>) The height of the bars.</li>
 <li><strong>width</strong> &#8211; (<em>array_like</em>) Optional, the widths of the bars default: 0.8.</li>
+<li><strong>bottom</strong> &#8211; (<em>array_like</em>) Optional, the y coordinates of the bars default: None</li>
 <li><strong>color</strong> &#8211; (<em>Color</em>) Optional, the color of the bar faces.</li>
 <li><strong>edgecolor</strong> &#8211; (<em>Color</em>) Optional, the color of the bar edge.</li>
 <li><strong>linewidth</strong> &#8211; (<em>int</em>) Optional, width of bar edge.</li>
 <li><strong>label</strong> &#8211; (<em>string</em>) Label of the bar series.</li>
+<li><strong>hatch</strong> &#8211; (<em>string</em>) Hatch string.</li>
+<li><strong>hatchsize</strong> &#8211; (<em>int</em>) Hatch size. Default is None (8).</li>
+<li><strong>bgcolor</strong> &#8211; (<em>Color</em>) Background color, only valid with hatch.</li>
 </ul>
 </td>
 </tr>
@@ -120,6 +128,44 @@
 </tr>
 </tbody>
 </table>
+<dl class="docutils">
+<dt>The following format string characters are accepted to control the hatch style:</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="23%" />
+<col width="77%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Character</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>&#8216;-&#8216;</td>
+<td>horizontal hatch style</td>
+</tr>
+<tr class="row-odd"><td>&#8216;|&#8217;</td>
+<td>vertical hatch style</td>
+</tr>
+<tr class="row-even"><td>&#8216;\&#8217;</td>
+<td>forward_diagonal hatch style</td>
+</tr>
+<tr class="row-odd"><td>&#8216;/&#8217;</td>
+<td>backward_diagonal hatch style</td>
+</tr>
+<tr class="row-even"><td>&#8216;+&#8217;</td>
+<td>cross hatch style</td>
+</tr>
+<tr class="row-odd"><td>&#8216;x&#8217;</td>
+<td>diagonal_cross hatch style</td>
+</tr>
+<tr class="row-even"><td>&#8216;.&#8217;</td>
+<td>dot hatch style</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
 <p>Examples:</p>
 <p>The bar width in the chart was decided automatically
 according to data series number.</p>
@@ -155,6 +201,23 @@ according to data series number.</p>
 </pre></div>
 </div>
 <img alt="../../../../_images/bar_2.png" src="../../../../_images/bar_2.png" />
+<p>Hatch fill example using <em>hatch</em> argument:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">menMeans</span> <span class="o">=</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">27</span><span class="p">]</span>
+<span class="n">std_men</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">bar</span><span class="p">(</span><span class="n">menMeans</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="n">std_men</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&#39;Men&#39;</span><span class="p">,</span> <span class="n">hatch</span><span class="o">=</span><span class="s">&#39;-&#39;</span><span class="p">)</span>
+
+<span class="n">womenMeans</span> <span class="o">=</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">25</span><span class="p">]</span>
+<span class="n">std_women</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">bar</span><span class="p">(</span><span class="n">womenMeans</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="n">std_women</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&#39;Women&#39;</span><span class="p">,</span> <span class="n">hatch</span><span class="o">=</span><span class="s">&#39;</span><span class="se">\\</span><span class="s">&#39;</span><span class="p">)</span>
+
+<span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;Mean age&#39;</span><span class="p">)</span>
+<span class="n">xticks</span><span class="p">(</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">menMeans</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="p">[</span><span class="s">&#39;G1&#39;</span><span class="p">,</span><span class="s">&#39;G2&#39;</span><span class="p">,</span><span class="s">&#39;G3&#39;</span><span class="p">,</span><span class="s">&#39;G4&#39;</span><span class="p">,</span><span class="s">&#39;G5&#39;</span><span class="p">])</span>
+<span class="n">legend</span><span class="p">()</span>
+<span class="n">title</span><span class="p">(</span><span class="s">&#39;Bar chart example - Hatch&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/bar_hatch2.png" src="../../../../_images/bar_hatch2.png" />
 </dd></dl>
 
 </div>

@@ -155,7 +155,7 @@ according to data series number.</p>
 </pre></div>
 </div>
 <img alt="../../../_images/bar_error.png" src="../../../_images/bar_error.png" />
-<p>Stacked bar example using <em>bottom</em> parameter:</p>
+<p>Stacked bar example using <em>bottom</em> argument:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">menMeans</span> <span class="o">=</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">27</span><span class="p">]</span>
 <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">menMeans</span><span class="p">)</span>
 <span class="n">ind</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
@@ -174,6 +174,23 @@ according to data series number.</p>
 </pre></div>
 </div>
 <img alt="../../../_images/bar_stack.png" src="../../../_images/bar_stack.png" />
+<p>Hatch fill example using <em>hatch</em> argument:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">menMeans</span> <span class="o">=</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">27</span><span class="p">]</span>
+<span class="n">std_men</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">bar</span><span class="p">(</span><span class="n">menMeans</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="n">std_men</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&#39;Men&#39;</span><span class="p">,</span> <span class="n">hatch</span><span class="o">=</span><span class="s">&#39;-&#39;</span><span class="p">)</span>
+
+<span class="n">womenMeans</span> <span class="o">=</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">25</span><span class="p">]</span>
+<span class="n">std_women</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">bar</span><span class="p">(</span><span class="n">womenMeans</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="n">std_women</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&#39;Women&#39;</span><span class="p">,</span> <span class="n">hatch</span><span class="o">=</span><span class="s">&#39;</span><span class="se">\\</span><span class="s">&#39;</span><span class="p">)</span>
+
+<span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;Mean age&#39;</span><span class="p">)</span>
+<span class="n">xticks</span><span class="p">(</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">menMeans</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="p">[</span><span class="s">&#39;G1&#39;</span><span class="p">,</span><span class="s">&#39;G2&#39;</span><span class="p">,</span><span class="s">&#39;G3&#39;</span><span class="p">,</span><span class="s">&#39;G4&#39;</span><span class="p">,</span><span class="s">&#39;G5&#39;</span><span class="p">])</span>
+<span class="n">legend</span><span class="p">()</span>
+<span class="n">title</span><span class="p">(</span><span class="s">&#39;Bar chart example - Hatch&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../_images/bar_hatch1.png" src="../../../_images/bar_hatch1.png" />
 </div>
 
 
