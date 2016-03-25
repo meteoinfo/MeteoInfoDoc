@@ -16,9 +16,6 @@ This example code illustrates how to access and visualize a FY-2C satellite clou
     #Set x/y
     x = linspace(-5750000.0,5750000.0, 2288)
     y = linspace(-5750000.0,5750000.0, 2288)
-    #Add x/y dimensions
-    v.setdim('Y', y, 0)
-    v.setdim('X', x, 1)
     #Get data array
     cloud = v[:,:]
     #Plot

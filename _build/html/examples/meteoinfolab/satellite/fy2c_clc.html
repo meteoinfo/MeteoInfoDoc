@@ -27,7 +27,7 @@
     <link rel="top" title="MeteoInfo 1.2.8 documentation" href="../../../index.html" />
     <link rel="up" title="Satellite data" href="../satellite.html" />
     <link rel="next" title="FY-3A AOD data" href="fy3a_aod.html" />
-    <link rel="prev" title="AIRS Grid data" href="airs_grid.html" /> 
+    <link rel="prev" title="AMSR-E Land3 data" href="amsr.html" /> 
   </head>
   <body>
 
@@ -44,7 +44,7 @@
           <a href="fy3a_aod.html" title="FY-3A AOD data"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="airs_grid.html" title="AIRS Grid data"
+          <a href="amsr.html" title="AMSR-E Land3 data"
              accesskey="P">previous</a> |</li>
         <li><a href="../../../index.html">home</a>|&nbsp;</li>
         <li><a href="../../../products/index.html">products</a>|&nbsp;</li>
@@ -62,8 +62,8 @@
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="airs_grid.html"
-                        title="previous chapter">AIRS Grid data</a></p>
+  <p class="topless"><a href="amsr.html"
+                        title="previous chapter">AMSR-E Land3 data</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="fy3a_aod.html"
                         title="next chapter">FY-3A AOD data</a></p>
@@ -104,9 +104,6 @@
 <span class="c">#Set x/y</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">5750000.0</span><span class="p">,</span><span class="mf">5750000.0</span><span class="p">,</span> <span class="mi">2288</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">5750000.0</span><span class="p">,</span><span class="mf">5750000.0</span><span class="p">,</span> <span class="mi">2288</span><span class="p">)</span>
-<span class="c">#Add x/y dimensions</span>
-<span class="n">v</span><span class="o">.</span><span class="n">setdim</span><span class="p">(</span><span class="s">&#39;Y&#39;</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<span class="n">v</span><span class="o">.</span><span class="n">setdim</span><span class="p">(</span><span class="s">&#39;X&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="c">#Get data array</span>
 <span class="n">cloud</span> <span class="o">=</span> <span class="n">v</span><span class="p">[:,:]</span>
 <span class="c">#Plot</span>
@@ -138,7 +135,7 @@
           <a href="fy3a_aod.html" title="FY-3A AOD data"
              >next</a> |</li>
         <li class="right" >
-          <a href="airs_grid.html" title="AIRS Grid data"
+          <a href="amsr.html" title="AMSR-E Land3 data"
              >previous</a> |</li>
         <li><a href="../../../index.html">home</a>|&nbsp;</li>
         <li><a href="../../../products/index.html">products</a>|&nbsp;</li>
