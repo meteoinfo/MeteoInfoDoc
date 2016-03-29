@@ -8,7 +8,6 @@ MeteoInfoLab
 .. toctree::
    :maxdepth: 2
    
-   tutorial.rst
    plot_types.rst
    map.rst
    file_io.rst

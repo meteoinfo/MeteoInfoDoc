@@ -132,3 +132,4 @@ MeteoInfo uses Java classes and libraries written by several third-party organiz
 - FreeHEP VectorGraphics: Available at http://java.freehep.org/vectorgraphics/
 - Docking Frames: Available at http://dock.javaforge.com/
 - JLaTeXMath: Available at http://forge.scilab.org/index.php/p/jlatexmath/
+- JTS Topology Suite: Available at http://tsusiatsoftware.net/jts/main.html

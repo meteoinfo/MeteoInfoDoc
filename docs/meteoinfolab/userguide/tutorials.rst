@@ -10,3 +10,5 @@ Tutorials
    
    gui.rst
    plot_tutorial.rst
+   arrays.rst
+   data_tutorial.rst
