@@ -12,3 +12,4 @@ Documentation
    meteoinfo/index.rst
    meteoinfolab/index.rst
    wcontour/index.rst
+   trajstat/index.rst

@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Create Grid Layer &mdash; MeteoInfo 1.2.8 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.2.8',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="MeteoInfo 1.2.8 documentation" href="../../index.html" />
+    <link rel="up" title="Trajectory Statistics" href="trajstatrun.html" />
+    <link rel="next" title="PSCF Analysis" href="pscf.html" />
+    <link rel="prev" title="Cluster Statistics" href="cluster_stat.html" /> 
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../index.html"><img src="../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="pscf.html" title="PSCF Analysis"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="cluster_stat.html" title="Cluster Statistics"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../index.html">docs</a>|&nbsp;</li>
+
+          <li><a href="../index.html" >Documentation</a> &raquo;</li>
+          <li><a href="index.html" >TrajStat</a> &raquo;</li>
+          <li><a href="trajstatrun.html" accesskey="U">Trajectory Statistics</a> &raquo;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="cluster_stat.html"
+                        title="previous chapter">Cluster Statistics</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="pscf.html"
+                        title="next chapter">PSCF Analysis</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../_sources/docs/trajstat/create_grid.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="create-grid-layer">
+<h1>Create Grid Layer<a class="headerlink" href="#create-grid-layer" title="Permalink to this headline">¶</a></h1>
+<p>Before performing PSCF or CWT analysis, a PSCF or CWT layer has to be created. Click ‘Create Grid Layer’ menu item,
+then set the extension, cell size and type of the layer in opened dialog.</p>
+<img alt="../../_images/grid_pscf.png" src="../../_images/grid_pscf.png" />
+<p>Press ‘Create Layer’ button, and then set the filename of the layer in ‘Save As’ dialog. A grid layer will be created
+in ‘PSCF’ group.</p>
+<img alt="../../_images/pscf_layer.png" src="../../_images/pscf_layer.png" />
+<p>ID, N_Traj, Nij, Mij, PSCF and WPSCF fields were added during PSCF layer creation.</p>
+<img alt="../../_images/pscf_table.png" src="../../_images/pscf_table.png" />
+<p>To create CWT layer, type should be selected to ‘CWT’, Then CWT field width and precision should be set.</p>
+<img alt="../../_images/grid_cwt.png" src="../../_images/grid_cwt.png" />
+<p>ID, N_Traj, Nij, CWT, WCWT fields were added to cwt shape file.</p>
+<img alt="../../_images/cwt_table.png" src="../../_images/cwt_table.png" />
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="pscf.html" title="PSCF Analysis"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="cluster_stat.html" title="Cluster Statistics"
+             >previous</a> |</li>
+        <li><a href="../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../index.html">docs</a>|&nbsp;</li>
+
+          <li><a href="../index.html" >Documentation</a> &raquo;</li>
+          <li><a href="index.html" >TrajStat</a> &raquo;</li>
+          <li><a href="trajstatrun.html" >Trajectory Statistics</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2015, Yaqiang Wang.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

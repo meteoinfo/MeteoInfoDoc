@@ -26,7 +26,7 @@
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="top" title="MeteoInfo 1.2.8 documentation" href="../../../index.html" />
     <link rel="up" title="Tutorials" href="tutorials.html" />
-    <link rel="next" title="Functions" href="../functions.html" />
+    <link rel="next" title="Dataset tutorial" href="data_tutorial.html" />
     <link rel="prev" title="Plot tutorial" href="plot_tutorial.html" /> 
   </head>
   <body>
@@ -41,7 +41,7 @@
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="../functions.html" title="Functions"
+          <a href="data_tutorial.html" title="Dataset tutorial"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="plot_tutorial.html" title="Plot tutorial"
@@ -66,8 +66,8 @@
   <p class="topless"><a href="plot_tutorial.html"
                         title="previous chapter">Plot tutorial</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="../functions.html"
-                        title="next chapter">Functions</a></p>
+  <p class="topless"><a href="data_tutorial.html"
+                        title="next chapter">Dataset tutorial</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="../../../_sources/docs/meteoinfolab/userguide/arrays.txt"
@@ -100,7 +100,7 @@
 numbers), all of the same type, indexed by a tuple of positive intergers. Dimensions are also called axes.
 The number of axes is <em>rank</em>.</p>
 <p><strong>Array Creation</strong></p>
-<p>To create an array with four elements in a single row, separate the elements with a comma.</p>
+<p>To create an array with three elements in a single row, separate the elements with a comma.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
 <span class="go">array([1, 2, 3])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">array</span><span class="p">(</span><span class="mf">25.6</span><span class="p">)</span>
@@ -115,7 +115,7 @@ into three-dimensional arrays, and so on.</p>
 </pre></div>
 </div>
 <p>Another way to create a matrix is to use a function, such as <tt class="docutils literal"><span class="pre">ones</span></tt>, <tt class="docutils literal"><span class="pre">zeros</span></tt>, or <tt class="docutils literal"><span class="pre">rand</span></tt>. For example,
-create a 5-by-1 column vector of zeros.</p>
+create a 5 element vector of zeros.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">zeros</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="go">array([0.0, 0.0, 0.0, 0.0, 0.0])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">zeros</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s">&#39;int&#39;</span><span class="p">)</span>
@@ -232,7 +232,7 @@ commas:</p>
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="../functions.html" title="Functions"
+          <a href="data_tutorial.html" title="Dataset tutorial"
              >next</a> |</li>
         <li class="right" >
           <a href="plot_tutorial.html" title="Plot tutorial"

@@ -98,7 +98,7 @@ Get 1-D ``Z`` array along longitude dimension and plot it::
 
     >>> hgt = f['Z'][0,[500],[40],[180,360]]
     >>> clf()             #Clear figure
-    >>> plot(hgt)
+    >>> plot(hgt, 'b-*')
     
 .. image:: ../../../_static/tutorial_hgt_plot.png
 
@@ -158,7 +158,7 @@ First, get 2-D ``TS`` array with latitude and longitude dimensions::
     
 Now say that we want to see the temperature in Fahrenheit instead of Kelvin. We can do the conversion by entering::
 
-    >>> t = (ts-273.16)*9/5+32
+    >>> t = (t-273.16)*9/5+32
 
 Any expression may be entered that involves the standard operators of +, -, *, and /, and which involves operands which may be 
 constants, variables, or functions. An example involving functions::

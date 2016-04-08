@@ -11,7 +11,7 @@ The number of axes is *rank*.
 
 **Array Creation**
 
-To create an array with four elements in a single row, separate the elements with a comma.
+To create an array with three elements in a single row, separate the elements with a comma.
 
 ::
 
@@ -30,7 +30,7 @@ into three-dimensional arrays, and so on.
           [3.0, 4.0]])
 
 Another way to create a matrix is to use a function, such as ``ones``, ``zeros``, or ``rand``. For example, 
-create a 5-by-1 column vector of zeros.
+create a 5 element vector of zeros.
 
 ::
 

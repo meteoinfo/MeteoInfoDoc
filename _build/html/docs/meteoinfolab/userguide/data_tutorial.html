@@ -185,7 +185,7 @@ by fixing time dimension:</p>
 <p>Get 1-D <tt class="docutils literal"><span class="pre">Z</span></tt> array along longitude dimension and plot it:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">hgt</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;Z&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,[</span><span class="mi">500</span><span class="p">],[</span><span class="mi">40</span><span class="p">],[</span><span class="mi">180</span><span class="p">,</span><span class="mi">360</span><span class="p">]]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">clf</span><span class="p">()</span>             <span class="c">#Clear figure</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">plot</span><span class="p">(</span><span class="n">hgt</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plot</span><span class="p">(</span><span class="n">hgt</span><span class="p">,</span> <span class="s">&#39;b-*&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <img alt="../../../_images/tutorial_hgt_plot.png" src="../../../_images/tutorial_hgt_plot.png" />
@@ -241,7 +241,7 @@ First, get 2-D <tt class="docutils literal"><span class="pre">TS</span></tt> arr
 </pre></div>
 </div>
 <p>Now say that we want to see the temperature in Fahrenheit instead of Kelvin. We can do the conversion by entering:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="n">ts</span><span class="o">-</span><span class="mf">273.16</span><span class="p">)</span><span class="o">*</span><span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="o">+</span><span class="mi">32</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="mf">273.16</span><span class="p">)</span><span class="o">*</span><span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="o">+</span><span class="mi">32</span>
 </pre></div>
 </div>
 <p>Any expression may be entered that involves the standard operators of +, -, <a href="#id1"><span class="problematic" id="id2">*</span></a>, and /, and which involves operands which may be

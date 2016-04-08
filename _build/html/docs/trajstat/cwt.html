@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>CWT Analysis &mdash; MeteoInfo 1.2.8 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.2.8',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="MeteoInfo 1.2.8 documentation" href="../../index.html" />
+    <link rel="up" title="Trajectory Statistics" href="trajstatrun.html" />
+    <link rel="next" title="Reference" href="reference.html" />
+    <link rel="prev" title="PSCF Analysis" href="pscf.html" /> 
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../index.html"><img src="../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="reference.html" title="Reference"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="pscf.html" title="PSCF Analysis"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../index.html">docs</a>|&nbsp;</li>
+
+          <li><a href="../index.html" >Documentation</a> &raquo;</li>
+          <li><a href="index.html" >TrajStat</a> &raquo;</li>
+          <li><a href="trajstatrun.html" accesskey="U">Trajectory Statistics</a> &raquo;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="pscf.html"
+                        title="previous chapter">PSCF Analysis</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="reference.html"
+                        title="next chapter">Reference</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../_sources/docs/trajstat/cwt.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="cwt-analysis">
+<h1>CWT Analysis<a class="headerlink" href="#cwt-analysis" title="Permalink to this headline">¶</a></h1>
+<p>A limitation of the PSCF method is that grid cells can have the same PSCF value when sample concentrations are
+either only slightly higher or much higher than the criterion. As a result, it can be difficult to distinguish
+moderate sources from strong ones. In the CWT method (Hsu et al., 2003; Seibert et al., 1994), each grid cell is
+assigned a weighted concentration by averaging the sample concentrations that have associated trajectories that
+crossed that grid cell as follows:</p>
+<img alt="../../_images/formula_8.png" src="../../_images/formula_8.png" />
+<p>where Cij is the average weighted concentration in the ijth cell, l is the index of the trajectory, M is the total
+number of trajectories, Cl is the concentration observed on arrival of trajectory l, and τijl is the time spent
+in the ijth cell by trajectory l. A high value for Cij implies that air parcels traveling over the ijth cell would
+be, on average, associated with high concentrations at the receptor. The arbitrary weighting function described
+above was also used in the CWT analyses to reduce the effect of the small values of nij.</p>
+<p>Click ‘CWT Analysis’ menu item, and set CWT layer, data field, null data and weighting parameters. Then press
+‘Get Nij’, ‘Cal CWT’ and ‘Weight CWT’ button one by one.</p>
+<img alt="../../_images/cwt_analysis.png" src="../../_images/cwt_analysis.png" />
+<p>Set the color scheme of the cwt layer as below.</p>
+<img alt="../../_images/cwt_legend.png" src="../../_images/cwt_legend.png" />
+<p>And set line width to 0 in ‘Legend Editor’ dialog. CWT layer looks as blow.</p>
+<img alt="../../_images/cwt_result.png" src="../../_images/cwt_result.png" />
+<p>In this case, CWT analysis result is similar with PSCF analysis.</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="reference.html" title="Reference"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="pscf.html" title="PSCF Analysis"
+             >previous</a> |</li>
+        <li><a href="../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../index.html">docs</a>|&nbsp;</li>
+
+          <li><a href="../index.html" >Documentation</a> &raquo;</li>
+          <li><a href="index.html" >TrajStat</a> &raquo;</li>
+          <li><a href="trajstatrun.html" >Trajectory Statistics</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2015, Yaqiang Wang.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>
