@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>User Plot Tools &mdash; MeteoInfo 1.2.8 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.2.8',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="MeteoInfo 1.2.8 documentation" href="../../../index.html" />
+    <link rel="up" title="Map and Layout" href="map_layout.html" />
+    <link rel="next" title="Map Projection" href="map_projection.html" />
+    <link rel="prev" title="Mask Out" href="mask_out.html" /> 
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../../index.html"><img src="../../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="map_projection.html" title="Map Projection"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="mask_out.html" title="Mask Out"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../index.html">docs</a>|&nbsp;</li>
+
+          <li><a href="../../index.html" >Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >MeteoInfo</a> &raquo;</li>
+          <li><a href="index.html" >Desktop</a> &raquo;</li>
+          <li><a href="map_layout.html" accesskey="U">Map and Layout</a> &raquo;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="mask_out.html"
+                        title="previous chapter">Mask Out</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="map_projection.html"
+                        title="next chapter">Map Projection</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/docs/meteoinfo/desktop/user_plot.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="user-plot-tools">
+<h1>User Plot Tools<a class="headerlink" href="#user-plot-tools" title="Permalink to this headline">¶</a></h1>
+<p>You can draw label, point, polyline, polygon and rectangle both in ‘Map’ and ‘Layout’ plotting
+regions. The user plotting objects have same coordinates with the map, and the objects will be
+moved or re-projected synchronously with the map. The objects plotted on the layout have fixed
+coordinates which not changed with map view extent.</p>
+<p>Press one of the tool buttons on the user plotting tool strip, then you can plot label or
+geometry objects on map or layout. Label or point object can be plotted by clicking left mouse
+button in the map or layout plotting regions with the label or point tool selected. For drawing
+polyline or polygon object, the end points can be added by clicking left mouse button, and the
+object will be finished by double clicking left mouse button. The objects can be selected by
+clicking left mouse button using ‘Select Elements’ tool  , then the objects can be moved and
+resized, or be removed by pressing ‘Delete’ button on the keyboard. The properties of the object
+can be edited through the property dialog by double clicking the object.</p>
+<img alt="../../../_images/userplot_point.png" src="../../../_images/userplot_point.png" />
+<img alt="../../../_images/userplot_point_character.png" src="../../../_images/userplot_point_character.png" />
+<p>The end points of the polyline or polygon can be moved using ‘Edit Vertices’ tool&nbsp;when the
+object is selected.</p>
+<img alt="../../../_images/userplot_edit_vertices.png" src="../../../_images/userplot_edit_vertices.png" />
+<p>Polyline or polygon object can be smoothed using the ‘Smooth Graphic’ context menu viewed by
+clicking right mouse button.</p>
+<img alt="../../../_images/userplot_smooth_before.png" src="../../../_images/userplot_smooth_before.png" />
+<img alt="../../../_images/userplot_smooth_after.png" src="../../../_images/userplot_smooth_after.png" />
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="map_projection.html" title="Map Projection"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="mask_out.html" title="Mask Out"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../index.html">docs</a>|&nbsp;</li>
+
+          <li><a href="../../index.html" >Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >MeteoInfo</a> &raquo;</li>
+          <li><a href="index.html" >Desktop</a> &raquo;</li>
+          <li><a href="map_layout.html" >Map and Layout</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2015, Yaqiang Wang.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

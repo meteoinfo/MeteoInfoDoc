@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Using Meteorological Data &mdash; MeteoInfo 1.2.8 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.2.8',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="MeteoInfo 1.2.8 documentation" href="../../../index.html" />
+    <link rel="up" title="Desktop" href="index.html" />
+    <link rel="next" title="Open Meteorological Data" href="open_meteo_data.html" />
+    <link rel="prev" title="Web Map Layer" href="webmap_layer.html" /> 
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../../index.html"><img src="../../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="open_meteo_data.html" title="Open Meteorological Data"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="webmap_layer.html" title="Web Map Layer"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../index.html">docs</a>|&nbsp;</li>
+
+          <li><a href="../../index.html" >Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >MeteoInfo</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Desktop</a> &raquo;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="webmap_layer.html"
+                        title="previous chapter">Web Map Layer</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="open_meteo_data.html"
+                        title="next chapter">Open Meteorological Data</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/docs/meteoinfo/desktop/using_meteo_data.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="using-meteorological-data">
+<h1>Using Meteorological Data<a class="headerlink" href="#using-meteorological-data" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="open_meteo_data.html">Open Meteorological Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="grid_data.html">Plot Grid Data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="contour_shaded.html">Contour and Shaded</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fill_point.html">Grid Fill and Grid Point</a></li>
+<li class="toctree-l2"><a class="reference internal" href="raster.html">Raster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vector.html">Vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="barb.html">Barb</a></li>
+<li class="toctree-l2"><a class="reference internal" href="streamline.html">Streamline</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="station_data.html">Plot Station Data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="station_point.html">Station Point</a></li>
+<li class="toctree-l2"><a class="reference internal" href="weather_symbol.html">Weather Symbol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="station_model.html">Station Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="station_vector.html">Station Vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="station_contour.html">Contour and Shaded</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="new_variable.html">Plot New Variable Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hysplit_data.html">Plot HYSPLIT Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lonlat_data.html">Lon/Lat Station Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="section_plot.html">Section Plot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="one_dim_plot.html">One Dimension Plot</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="open_meteo_data.html" title="Open Meteorological Data"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="webmap_layer.html" title="Web Map Layer"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../index.html">docs</a>|&nbsp;</li>
+
+          <li><a href="../../index.html" >Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >MeteoInfo</a> &raquo;</li>
+          <li><a href="index.html" >Desktop</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2015, Yaqiang Wang.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

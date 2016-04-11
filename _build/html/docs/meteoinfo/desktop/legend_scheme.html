@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Legend Scheme &mdash; MeteoInfo 1.2.8 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.2.8',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="MeteoInfo 1.2.8 documentation" href="../../../index.html" />
+    <link rel="up" title="Using Layers" href="using_layers.html" />
+    <link rel="next" title="Transparency Set" href="trans_set.html" />
+    <link rel="prev" title="Add Layer" href="add_layer.html" /> 
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../../index.html"><img src="../../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="trans_set.html" title="Transparency Set"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="add_layer.html" title="Add Layer"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../index.html">docs</a>|&nbsp;</li>
+
+          <li><a href="../../index.html" >Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >MeteoInfo</a> &raquo;</li>
+          <li><a href="index.html" >Desktop</a> &raquo;</li>
+          <li><a href="using_layers.html" accesskey="U">Using Layers</a> &raquo;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="add_layer.html"
+                        title="previous chapter">Add Layer</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="trans_set.html"
+                        title="next chapter">Transparency Set</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/docs/meteoinfo/desktop/legend_scheme.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="legend-scheme">
+<h1>Legend Scheme<a class="headerlink" href="#legend-scheme" title="Permalink to this headline">¶</a></h1>
+<p>The visualization behavior of a layer is base on its legend scheme. The legend scheme of the
+layer could be edited with ‘Legend’ option in layer property dialog.</p>
+<img alt="../../../_images/legend_open.png" src="../../../_images/legend_open.png" />
+<p>Double click the colored rectangle under ‘Symbol’ column to open a ‘Symbol Set’ dialog.</p>
+<img alt="../../../_images/legend_polygonsymbol.png" src="../../../_images/legend_polygonsymbol.png" />
+<p>Now change ‘Fill Color’ and press ‘Apply’ button in ‘Legend Set’ dialog, the color change is
+viewed in map window.</p>
+<img alt="../../../_images/legend_fillcolor.png" src="../../../_images/legend_fillcolor.png" />
+<p>Point symbol setting dialog is showed bellow. The marker types are ‘Simple’, ‘Character’ and
+‘Image’.</p>
+<img alt="../../../_images/legend_pointsymbol_simple.png" src="../../../_images/legend_pointsymbol_simple.png" />
+<img alt="../../../_images/legend_pointsymbol_character.png" src="../../../_images/legend_pointsymbol_character.png" />
+<img alt="../../../_images/legend_pointsymbol_image.png" src="../../../_images/legend_pointsymbol_image.png" />
+<p>Polyline symbol setting dialog is showed bellow.</p>
+<img alt="../../../_images/legend_polylinesymbol.png" src="../../../_images/legend_polylinesymbol.png" />
+<p>There are three legend types in MeteoInfo.</p>
+<ul class="simple">
+<li>‘SingleSymbol’. All shapes of the layer are set in one same symbol.</li>
+<li>‘UniqueValue’. Each shape of the layer has its own symbol.</li>
+<li>‘GraduatedColor’. The shapes are grouped according their values an each group has its own</li>
+</ul>
+<p>symbol.</p>
+<p>For example, after you change the legend type to ‘Unique Value’ and select the ‘Field’ to
+‘CNTRY_NAME’. After press ‘Apply’ button, the map data will show as follow figure.</p>
+<img alt="../../../_images/legend_uniquevalue.png" src="../../../_images/legend_uniquevalue.png" />
+<p>The legend setting could be saved as a legend file with .lgs extension. And the legend file
+could be loaded also. Under ‘UniqueValue’ and ‘GraduatedColor’ types, some tools could be used
+to add/remove and move the break in the legend set. The legend changes will be saved to the
+layer only by pressing ‘OK’ button.</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="trans_set.html" title="Transparency Set"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="add_layer.html" title="Add Layer"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../index.html">docs</a>|&nbsp;</li>
+
+          <li><a href="../../index.html" >Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >MeteoInfo</a> &raquo;</li>
+          <li><a href="index.html" >Desktop</a> &raquo;</li>
+          <li><a href="using_layers.html" >Using Layers</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2015, Yaqiang Wang.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

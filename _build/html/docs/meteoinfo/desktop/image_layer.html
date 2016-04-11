@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Image Layer &mdash; MeteoInfo 1.2.8 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.2.8',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="MeteoInfo 1.2.8 documentation" href="../../../index.html" />
+    <link rel="up" title="Using Layers" href="using_layers.html" />
+    <link rel="next" title="MeteoInfo class library" href="../meteoinfolib.html" />
+    <link rel="prev" title="Attribute Table" href="attr_table.html" /> 
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../../index.html"><img src="../../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../meteoinfolib.html" title="MeteoInfo class library"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="attr_table.html" title="Attribute Table"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../index.html">docs</a>|&nbsp;</li>
+
+          <li><a href="../../index.html" >Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >MeteoInfo</a> &raquo;</li>
+          <li><a href="index.html" >Desktop</a> &raquo;</li>
+          <li><a href="using_layers.html" accesskey="U">Using Layers</a> &raquo;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Image Layer</a><ul>
+<li><a class="reference internal" href="#world-file">World File</a></li>
+<li><a class="reference internal" href="#geo-locate-image">Geo-Locate Image</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="attr_table.html"
+                        title="previous chapter">Attribute Table</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../meteoinfolib.html"
+                        title="next chapter">MeteoInfo class library</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/docs/meteoinfo/desktop/image_layer.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="image-layer">
+<h1>Image Layer<a class="headerlink" href="#image-layer" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="world-file">
+<h2>World File<a class="headerlink" href="#world-file" title="Permalink to this headline">¶</a></h2>
+<p>Images are stored as raster data, where each cell in the image has a row and column number. In
+order to display images in real-world coordinates, it is necessary to establish an image-to-world
+transformation that converts the image coordinates to real-world coordinates. This transformation
+information is typically stored with the image.</p>
+<p>This information was stored in a separate ASCII file. This file is generally referred to as the
+world file, since it contains the real-world transformation information used by the image. World
+files can be created with any editor. They can also be created using MeteoInfo.</p>
+<p>It’s easy to identify the world file which should accompany an image file. The first and third
+characters of the image file’s suffix and a final &#8220;w&#8221; are used for the world file suffix.
+Therefore, for ‘mytown.tif’, the world file would be ‘mytown.tfw’. For ‘redlands.gif’, its world
+file would be ‘redlands.gfw’.</p>
+<p>The contents of the world file will look something like this:</p>
+<blockquote>
+<div>20.17541308822119&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -A</div></blockquote>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.00000000000000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -D</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.00000000000000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -B</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -20.17541308822119&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -E</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 424178.11472601280548&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -C</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4313415.90726399607956&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -F</p>
+<p>When this file is present, MeteoInfo performs the image-to-world transformation.</p>
+<p>A = x-scale; dimension of a pixel in map units in x direction</p>
+<p>B, D = rotation terms</p>
+<p>C, F = translation terms; x,y map coordinates of the center of the upper-left pixel</p>
+<p>E = negative of y-scale; dimension of a pixel in map units in y direction</p>
+<p><strong>Note:</strong> The y-scale (E) is negative because the origins of an image and a geographic coordinate
+system are different. The origin of an image is located in the upper-left corner, whereas the
+origin of the map coordinate system is located in the lower-left corner. Row values in the
+image increase from the origin downward, while y-coordinate values in the map increase from
+the origin upward.</p>
+</div>
+<div class="section" id="geo-locate-image">
+<h2>Geo-Locate Image<a class="headerlink" href="#geo-locate-image" title="Permalink to this headline">¶</a></h2>
+<p>If the image has world file, MeteoInfo will read the transform information and view the image
+according to the information. If the image data has no world file, MeteoInfo will write a
+world file automatically. Then you can adjust the parameters to view the image with correct
+spatial position.</p>
+<p>Add an image without world file. Double click the image layer name in ‘Layers’ area. The
+transform parameters were showed in ‘Layer Set’ dialog. Change the value of ‘XScale’, ‘XUL’,
+‘YScale’, ‘YUL’ to adjust the image in the map. Normally you have to try many times, so be
+patient of it.</p>
+<img alt="../../../_images/geolocate_before.png" src="../../../_images/geolocate_before.png" />
+<p>After adjust correctly.</p>
+<img alt="../../../_images/geolocate_after.png" src="../../../_images/geolocate_after.png" />
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../meteoinfolib.html" title="MeteoInfo class library"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="attr_table.html" title="Attribute Table"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../index.html">docs</a>|&nbsp;</li>
+
+          <li><a href="../../index.html" >Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >MeteoInfo</a> &raquo;</li>
+          <li><a href="index.html" >Desktop</a> &raquo;</li>
+          <li><a href="using_layers.html" >Using Layers</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2015, Yaqiang Wang.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

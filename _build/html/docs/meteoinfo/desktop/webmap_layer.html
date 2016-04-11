@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Web Map Layer &mdash; MeteoInfo 1.2.8 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.2.8',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="MeteoInfo 1.2.8 documentation" href="../../../index.html" />
+    <link rel="up" title="Using Layers" href="using_layers.html" />
+    <link rel="next" title="MeteoInfo class library" href="../meteoinfolib.html" />
+    <link rel="prev" title="Image Layer" href="image_layer.html" /> 
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../../index.html"><img src="../../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../meteoinfolib.html" title="MeteoInfo class library"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="image_layer.html" title="Image Layer"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../index.html">docs</a>|&nbsp;</li>
+
+          <li><a href="../../index.html" >Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >MeteoInfo</a> &raquo;</li>
+          <li><a href="index.html" >Desktop</a> &raquo;</li>
+          <li><a href="using_layers.html" accesskey="U">Using Layers</a> &raquo;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="image_layer.html"
+                        title="previous chapter">Image Layer</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../meteoinfolib.html"
+                        title="next chapter">MeteoInfo class library</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/docs/meteoinfo/desktop/webmap_layer.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="web-map-layer">
+<h1>Web Map Layer<a class="headerlink" href="#web-map-layer" title="Permalink to this headline">¶</a></h1>
+<p>The web tile images could be imported in a web map layer when internet connection is active.
+Currently supported web map providers:</p>
+<ul class="simple">
+<li>OpenStreetMap</li>
+<li>OpenStreetMapQuestSattelite</li>
+<li>BingMap</li>
+<li>BingSatelliteMap</li>
+<li>BingHybridMap</li>
+<li>GoogleMap</li>
+<li>GoogleSatelliteMap</li>
+<li>GoogleTerrainMap</li>
+<li>GoogleHybridMap</li>
+<li>GoogleHybridTerrainMap</li>
+<li>OviMap</li>
+<li>OviSatelliteMap</li>
+<li>OviTerrainMap</li>
+<li>OviHybridMap</li>
+<li>YahooMap</li>
+<li>YahooSatelliteMap</li>
+<li>YahooHybridMap</li>
+</ul>
+<p>The tile images are Mercator projection, so the map should be project to Mercator firstly to
+match the tile images with other layers.</p>
+<img alt="../../../_images/webmap_mercator.png" src="../../../_images/webmap_mercator.png" />
+<p>To add a web map layer, a map frame should be click with right mouse button, then select
+&#8220;Add Web Map Layer&#8221; menu item to add the web map layer.</p>
+<img alt="../../../_images/webmap_addlayer.png" src="../../../_images/webmap_addlayer.png" />
+<p>The map content will be showed automaticlly according to the map extent.</p>
+<img alt="../../../_images/webmap_global.png" src="../../../_images/webmap_global.png" />
+<p>The content of other layers could be overlaied on the web map with transparency color.</p>
+<img alt="../../../_images/webmap_overlay.png" src="../../../_images/webmap_overlay.png" />
+<p>Double click the layer name or right click it and select &#8220;Property&#8221; menu item to open the
+layer property dialog. Several web map providers could be selected.</p>
+<img alt="../../../_images/layerproperty_webmaplayer.png" src="../../../_images/layerproperty_webmaplayer.png" />
+<p>The sample web map providers of Bing map.</p>
+<img alt="../../../_images/webmap_bingmap.png" src="../../../_images/webmap_bingmap.png" />
+<img alt="../../../_images/webmap_bingsatellitemap.png" src="../../../_images/webmap_bingsatellitemap.png" />
+<img alt="../../../_images/webmap_binghybridmap.png" src="../../../_images/webmap_binghybridmap.png" />
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../meteoinfolib.html" title="MeteoInfo class library"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="image_layer.html" title="Image Layer"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../index.html">docs</a>|&nbsp;</li>
+
+          <li><a href="../../index.html" >Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >MeteoInfo</a> &raquo;</li>
+          <li><a href="index.html" >Desktop</a> &raquo;</li>
+          <li><a href="using_layers.html" >Using Layers</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2015, Yaqiang Wang.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>
