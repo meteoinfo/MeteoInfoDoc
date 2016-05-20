@@ -12,3 +12,4 @@ Functions
    functions/math.rst
    functions/plot.rst
    functions/file_io.rst
+   functions/geo.rst

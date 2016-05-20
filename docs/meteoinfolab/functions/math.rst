@@ -19,3 +19,6 @@ Mathematical
    math/exp.rst
    math/log.rst
    math/log10.rst
+   math/dot.rst
+   math/rot90.rst
+   math/trapz.rst

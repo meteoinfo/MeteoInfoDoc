@@ -105,25 +105,39 @@ function which return a MIDataFile object.  The path can be omitted if the data 
 <p>Query data file content including dimensions, attributes and variables by typing the data file
 variable:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span>
-<span class="go">Title: 5 Days of Sample Model Output</span>
-<span class="go">Descriptor: D:\Temp\grads\model.ctl</span>
-<span class="go">Binary: D:\Temp\grads\model.dat</span>
-<span class="go">Type = Gridded</span>
+<span class="go">File Name: D:/Temp/grads/model.ctl</span>
+<span class="go">Dimensions: 5</span>
+<span class="go">    X = 72;</span>
+<span class="go">    Y = 46;</span>
+<span class="go">    Z = 7;</span>
+<span class="go">    T = 5;</span>
+<span class="go">    Z_5 = 5;</span>
 <span class="go">X Dimension: Xmin = 0.0; Xmax = 355.0; Xsize = 72; Xdelta = 5.0</span>
 <span class="go">Y Dimension: Ymin = -90.0; Ymax = 90.0; Ysize = 46; Ydelta = 4.0</span>
-<span class="go">Zsize = 7  Tsize = 5</span>
-<span class="go">Number of Variables = 8</span>
-<span class="go">PS 0 99 Surface</span>
-<span class="go">U 7 99 U</span>
-<span class="go">V 7 99 V</span>
-<span class="go">Z 7 99 Geopotential</span>
-<span class="go">T 7 99 Temperature</span>
-<span class="go">Q 5 99 Specific</span>
-<span class="go">TS 0 99 Surface</span>
-<span class="go">P 0 99 Precipitation</span>
+<span class="go">Global Attributes:</span>
+<span class="go">    : data_format = &quot;GrADS binary&quot;</span>
+<span class="go">    : fill_value = -2.56E33</span>
+<span class="go">    : title = &quot;5 Days of Sample Model Output&quot;</span>
+<span class="go">Variations: 8</span>
+<span class="go">    float PS(T,Y,X);</span>
+<span class="go">        PS: description = &quot;Surface&quot;</span>
+<span class="go">    float U(T,Z,Y,X);</span>
+<span class="go">        U: description = &quot;U&quot;</span>
+<span class="go">    float V(T,Z,Y,X);</span>
+<span class="go">        V: description = &quot;V&quot;</span>
+<span class="go">    float Z(T,Z,Y,X);</span>
+<span class="go">        Z: description = &quot;Geopotential&quot;</span>
+<span class="go">    float T(T,Z,Y,X);</span>
+<span class="go">        T: description = &quot;Temperature&quot;</span>
+<span class="go">    float Q(T,Z_5,Y,X);</span>
+<span class="go">        Q: description = &quot;Specific&quot;</span>
+<span class="go">    float TS(T,Y,X);</span>
+<span class="go">        TS: description = &quot;Surface&quot;</span>
+<span class="go">    float P(T,Y,X);</span>
+<span class="go">        P: description = &quot;Precipitation&quot;</span>
 </pre></div>
 </div>
-<p>Get data variable from data file variable:</p>
+<p>Get data variable from data file object:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;PS&#39;</span><span class="p">]</span>
 </pre></div>
 </div>

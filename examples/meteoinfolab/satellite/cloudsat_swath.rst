@@ -1,4 +1,4 @@
-.. _examples-meteoinfolab-satellite-cloudsate_swath:
+.. _examples-meteoinfolab-satellite-cloudsat_swath:
 
 *******************
 CloudSAT Swath data

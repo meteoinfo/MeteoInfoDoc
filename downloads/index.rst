@@ -10,7 +10,7 @@ MeteoInfo
 MeteoInfo Desktop Application
 -----------------------------
   Java edition
-    - `MeteoInfo 1.3.2R5 - Java (for all systems) <files/MeteoInfo_Java_1.3.2R5_Files.zip>`_   
+    - `MeteoInfo 1.3.2R12 - Java (for all systems) <files/MeteoInfo_Java_1.3.2R12_Files.zip>`_   
   C# edition   
     - `MeteoInfo 1.1.3.4R1 - C# <files/MeteoInfo_1.1.3.4R1_Files.zip>`_
     
@@ -38,7 +38,7 @@ wContour
 TrajStat
 =====================================
   TrajStat - MeteoInfo plugin
-    - `TrajStat 1.4.4R4 plugin for MeteoInfo Java version <files/TrajStat_Plugin_1.4.4R4.zip>`_
+    - `TrajStat 1.4.4R5 plugin for MeteoInfo Java version <files/TrajStat_Plugin_1.4.4R5.zip>`_
     - `TrajStat plugin source code <https://github.com/Yaqiang/TrajStat>`_
     - `TrajStat plugin for MeteoInfo - C# version <files/TrajStat_1.3_plugin.zip>`_
   TrajStat Desktop Application

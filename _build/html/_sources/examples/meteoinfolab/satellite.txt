@@ -27,3 +27,4 @@ Satellite data
    satellite/calipso.rst
    satellite/gpm_swath.rst
    satellite/sea_ice.rst
+   satellite/mls_swath.rst
