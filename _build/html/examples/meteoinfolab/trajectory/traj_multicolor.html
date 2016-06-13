@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Trajectory multi-color plot &mdash; MeteoInfo 1.2.8 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.2.8',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="MeteoInfo 1.2.8 documentation" href="../../../index.html" />
+    <link rel="up" title="Trajectory" href="../trajectory.html" />
+    <link rel="next" title="Downloads" href="../../../downloads/index.html" />
+    <link rel="prev" title="Tropical cyclone plot" href="tropical_cyclone.html" /> 
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../../index.html"><img src="../../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../downloads/index.html" title="Downloads"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="tropical_cyclone.html" title="Tropical cyclone plot"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../docs/index.html">docs</a>|&nbsp;</li>
+
+          <li><a href="../../index.html" >Examples</a> &raquo;</li>
+          <li><a href="../index.html" >MeteoInfoLab</a> &raquo;</li>
+          <li><a href="../trajectory.html" accesskey="U">Trajectory</a> &raquo;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="tropical_cyclone.html"
+                        title="previous chapter">Tropical cyclone plot</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../../../downloads/index.html"
+                        title="next chapter">Downloads</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/examples/meteoinfolab/trajectory/traj_multicolor.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="trajectory-multi-color-plot">
+<span id="examples-meteoinfolab-trajectory-traj-multicolor"></span><h1>Trajectory multi-color plot<a class="headerlink" href="#trajectory-multi-color-plot" title="Permalink to this headline">¶</a></h1>
+<p>Only one color can be assigned to a line in MeteoInfo, so we have to create multi-line pieces to fullfill
+multi-color trajectory plot function. Below is an example to plot a multi-color trajectory according
+to it&#8217;s height. Read the endpoints from the HYSPLIT output trajectory file, and create a layer with
+line shapes from each pair of the adjacent endpoints. Height values were put into the layer&#8217;s attribute
+table. Then we can display the trajectory layer using it&#8217;s height field.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#Read trajectory data file</span>
+<span class="n">fn</span> <span class="o">=</span> <span class="s">&#39;E:/Trajectory/RYO-to Yaqiang/05060306&#39;</span>
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+<span class="n">line</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+<span class="n">mfn</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">mfn</span><span class="p">):</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+<span class="n">line</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+<span class="n">sn</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">sn</span><span class="p">):</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+<span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+<span class="n">lons</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">lats</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">alts</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">dd</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="n">lat</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">dd</span><span class="p">[</span><span class="mi">9</span><span class="p">])</span>
+    <span class="n">lon</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">dd</span><span class="p">[</span><span class="mi">10</span><span class="p">])</span>
+    <span class="n">alt</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">dd</span><span class="p">[</span><span class="mi">11</span><span class="p">])</span>
+    <span class="n">lats</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lat</span><span class="p">)</span>
+    <span class="n">lons</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lon</span><span class="p">)</span>
+    <span class="n">alts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">alt</span><span class="p">)</span>
+<span class="n">alts</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="n">alts</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="c">#Create trajectory layer</span>
+<span class="n">layer</span> <span class="o">=</span> <span class="n">MILayer</span><span class="p">(</span><span class="n">shapetype</span><span class="o">=</span><span class="s">&#39;line&#39;</span><span class="p">)</span>
+<span class="n">layer</span><span class="o">.</span><span class="n">addfield</span><span class="p">(</span><span class="s">&#39;Height&#39;</span><span class="p">,</span> <span class="s">&#39;float&#39;</span><span class="p">)</span>
+<span class="n">lon1</span> <span class="o">=</span> <span class="n">lons</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">lat1</span> <span class="o">=</span> <span class="n">lats</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">lons</span><span class="p">)):</span>
+    <span class="n">lon</span> <span class="o">=</span> <span class="n">lons</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">lat</span> <span class="o">=</span> <span class="n">lats</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">alt</span> <span class="o">=</span> <span class="n">alts</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">layer</span><span class="o">.</span><span class="n">addshape</span><span class="p">([</span><span class="n">lon1</span><span class="p">,</span><span class="n">lon</span><span class="p">],</span> <span class="p">[</span><span class="n">lat1</span><span class="p">,</span> <span class="n">lat</span><span class="p">],</span> <span class="p">[</span><span class="n">alt</span><span class="p">])</span>
+    <span class="n">lon1</span> <span class="o">=</span> <span class="n">lon</span>
+    <span class="n">lat1</span> <span class="o">=</span> <span class="n">lat</span>
+<span class="n">levs</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">cols</span> <span class="o">=</span> <span class="n">makecolors</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">levs</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">ls</span> <span class="o">=</span> <span class="n">makesymbolspec</span><span class="p">(</span><span class="s">&#39;line&#39;</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="n">levs</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="n">cols</span><span class="p">,</span> <span class="n">field</span><span class="o">=</span><span class="s">&#39;Height&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c">#Plot</span>
+<span class="n">axesm</span><span class="p">()</span>
+<span class="n">lworld</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="s">&#39;D:/Temp/map/country1.shp&#39;</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="n">lworld</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="p">(</span><span class="mi">204</span><span class="p">,</span><span class="mi">204</span><span class="p">,</span><span class="mi">204</span><span class="p">),</span> <span class="n">facecolor</span><span class="o">=</span><span class="p">(</span><span class="mi">250</span><span class="p">,</span><span class="mi">235</span><span class="p">,</span><span class="mi">252</span><span class="p">))</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="n">layer</span><span class="p">,</span> <span class="n">symbolspec</span><span class="o">=</span><span class="n">ls</span><span class="p">)</span>
+<span class="n">scatterm</span><span class="p">(</span><span class="n">lons</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">lats</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">size</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">text</span><span class="p">(</span><span class="n">lons</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">lats</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="s">&#39;Fukushima&#39;</span><span class="p">)</span>
+<span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s">&#39;Multi-color line&#39;</span><span class="p">)</span>
+<span class="n">yticks</span><span class="p">(</span><span class="n">arange</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">51</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">xlim</span><span class="p">(</span><span class="mi">130</span><span class="p">,</span> <span class="mi">160</span><span class="p">)</span>
+<span class="n">ylim</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../_images/multicolor_line.png" src="../../../_images/multicolor_line.png" />
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../downloads/index.html" title="Downloads"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="tropical_cyclone.html" title="Tropical cyclone plot"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../docs/index.html">docs</a>|&nbsp;</li>
+
+          <li><a href="../../index.html" >Examples</a> &raquo;</li>
+          <li><a href="../index.html" >MeteoInfoLab</a> &raquo;</li>
+          <li><a href="../trajectory.html" >Trajectory</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2015, Yaqiang Wang.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

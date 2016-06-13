@@ -14,3 +14,4 @@ Trajectory
    trajectory/wrfout2arl.rst
    trajectory/grib2arl.rst
    trajectory/tropical_cyclone.rst
+   trajectory/traj_multicolor.rst

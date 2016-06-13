@@ -50,6 +50,10 @@ Authors:
 * Peng Zhao,
 * Johannes Lüers
 
+Publication:
+-------------------------------------
+- Huang, S., Wang, Y., Xie, Y., Zhao, P. and Lüers, J., 2016. OutlierFlag: A Tool for Scientific Data Quality Control by Outlier Data Flagging. Journal of Open Research Software, 4: e20, DOI: http://dx.doi.org/10.5334/jors.90.
+
 Source code:
 ---------------
 https://bitbucket.org/yaqiang/outlierflag
