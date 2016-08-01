@@ -16,6 +16,7 @@ Plot
    plot/yaxis.rst
    plot/antialias.rst
    plot/plot.rst
+   plot/fill_between.rst
    plot/bar.rst
    plot/scatter.rst
    plot/savefig.rst

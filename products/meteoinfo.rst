@@ -6,14 +6,14 @@ MeteoInfo
 
 Introduction
 ------------------------------------
-MeteoInfo is a freely available software designed to view and analyze meteorological and spatial 
+MeteoInfo is an open source software (LGPL license) designed to view and analyze meteorological and spatial 
 data interactively. Some GIS functions were developed from ground level. It has two editions: 
 Java and C#. MeteoInfo may be run in Windows, Mac OS, Linux and Unix. MeteoInfo can also be run 
 automatically using MeteoInfo scripting with the Jython language (Java edition) or IronPython 
 language (C# edition). The main functions are packed in the MeteoInfo class library, which could 
 be used to conveniently develop the software.
 
-MeteoInfoLab is a free software product developed using Java and Jython based on MeteoInfo Java 
+MeteoInfoLab is an open source software (LGPL license) product developed using Java and Jython based on MeteoInfo Java 
 library (Unidata netCDF Java library is used). The purpose is to provide an optional scientific 
 computation and visualization tool similar with MatLab and/or NCL.
 
@@ -21,6 +21,10 @@ Publication
 -------------------------------------
   - Wang, Y. Q. 2014. MeteoInfo: GIS software for meteorological data visualization and analysis. Meteorological Applications, 21: 360-368.
 
+Source code
+---------------
+https://github.com/meteoinfo
+  
 Supported meteorological data formats
 --------------------------------------
   - GrADS binary grid and station data 

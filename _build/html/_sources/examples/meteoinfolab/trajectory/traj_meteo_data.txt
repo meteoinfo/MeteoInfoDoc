@@ -37,8 +37,8 @@ from the layer and interpolate the meteorological data to the endpoint location 
     uvar = 'UWND'
     idx = 0
     for tline in trajLayer.shapes():
-        t = trajLayer.cellvalue('StartDate', idx)
-        h = trajLayer.cellvalue('StartHour', idx)    
+        t = trajLayer.cellvalue('Date', idx)
+        h = trajLayer.cellvalue('Hour', idx)    
         t.replace(hour=h)
         for ps in tline.getPoints():
             lon = ps.X

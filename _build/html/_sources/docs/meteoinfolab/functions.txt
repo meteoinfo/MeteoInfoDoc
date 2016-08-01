@@ -13,3 +13,4 @@ Functions
    functions/plot.rst
    functions/file_io.rst
    functions/geo.rst
+   functions/statistics.rst

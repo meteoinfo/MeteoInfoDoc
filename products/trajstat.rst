@@ -35,6 +35,10 @@ Publication:
 -------------------------------------
   - Wang, Y.Q., Zhang, X.Y. and Draxler, R., 2009. TrajStat: GIS-based software that uses various trajectory statistical analysis methods to identify potential sources from long-term air pollution measurement data. Environmental Modelling & Software, 24: 938-939
 
+Source code
+---------------
+https://github.com/Yaqiang/TrajStat 
+
 Screen shots:
 -------------------
 .. image:: trajstat_image/TrajStat_1.png

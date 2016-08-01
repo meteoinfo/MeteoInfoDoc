@@ -11,6 +11,7 @@ Plot types
    plot_types/xy_plot.rst
    plot_types/errorbar.rst
    plot_types/bar.rst
+   plot_types/fill_between.rst
    plot_types/subplot.rst
    plot_types/latex.rst
    plot_types/multiple_y_axis.rst
