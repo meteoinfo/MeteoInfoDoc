@@ -14,7 +14,8 @@ of limitation, error and standard deviation checking one by one in the algorithm
 parameters are configurable so the algorithm can be used for various datasets. 
 
 OutlierFlag is open source software written in Java and the MeteoInfo library was used for data 
-plotting function.
+plotting function. OutlierFlag can be run as a standalone desktop program or as a toolbox
+application in MeteoInfoLab.
 
 The developed outlier data flagging algorithm includes the following three steps: 
 

@@ -1,0 +1,225 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Moisture potential vorticity &mdash; MeteoInfo 1.3.3 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.3.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="MeteoInfo 1.3.3 documentation" href="../../../index.html" />
+    <link rel="up" title="Meteorological analysis" href="../meteo_analysis.html" />
+    <link rel="next" title="Satellite data" href="../satellite.html" />
+    <link rel="prev" title="K index" href="k_index.html" /> 
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../../index.html"><img src="../../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../satellite.html" title="Satellite data"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="k_index.html" title="K index"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../docs/index.html">docs</a>|&nbsp;</li>
+
+          <li><a href="../../index.html" >Examples</a> &raquo;</li>
+          <li><a href="../index.html" >MeteoInfoLab</a> &raquo;</li>
+          <li><a href="../meteo_analysis.html" accesskey="U">Meteorological analysis</a> &raquo;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="k_index.html"
+                        title="previous chapter">K index</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../satellite.html"
+                        title="next chapter">Satellite data</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/examples/meteoinfolab/meteo_analysis/moisture_potential_vorticity.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="moisture-potential-vorticity">
+<span id="examples-meteoinfolab-meteo-analysis-moisture-potential-vorticity"></span><h1>Moisture potential vorticity<a class="headerlink" href="#moisture-potential-vorticity" title="Permalink to this headline">¶</a></h1>
+<p>The example to calcluate moisture potential vorticity.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># Calculate moisture potential vorticity</span>
+<span class="c"># Set working directory</span>
+<span class="n">trajDir</span> <span class="o">=</span> <span class="s">&#39;D:/Temp/HYSPLIT&#39;</span>
+<span class="n">meteoDir</span> <span class="o">=</span> <span class="s">r&#39;U:\data\ARL\2015&#39;</span>
+
+<span class="c"># Open meteorological data file</span>
+<span class="k">print</span> <span class="s">&#39;Open meteorological data file...&#39;</span>
+<span class="n">meteofn</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">meteoDir</span><span class="p">,</span> <span class="s">&#39;gdas1.mar15.w5&#39;</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">&#39;Meteorological file: &#39;</span> <span class="o">+</span> <span class="n">meteofn</span>
+<span class="n">meteof</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="n">meteofn</span><span class="p">)</span>
+
+<span class="c"># Read data</span>
+<span class="k">print</span> <span class="s">&#39;Read data...&#39;</span>
+<span class="n">latlim</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">60</span><span class="p">]</span>
+<span class="n">lonlim</span> <span class="o">=</span> <span class="p">[</span><span class="mi">60</span><span class="p">,</span><span class="mi">140</span><span class="p">]</span>
+<span class="n">rh</span> <span class="o">=</span> <span class="n">meteof</span><span class="p">[</span><span class="s">&#39;RELH&#39;</span><span class="p">][:,:,</span><span class="n">latlim</span><span class="p">,</span><span class="n">lonlim</span><span class="p">]</span>
+<span class="n">nx</span> <span class="o">=</span> <span class="n">rh</span><span class="o">.</span><span class="n">dimlen</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">ny</span> <span class="o">=</span> <span class="n">rh</span><span class="o">.</span><span class="n">dimlen</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">nz</span> <span class="o">=</span> <span class="n">rh</span><span class="o">.</span><span class="n">dimlen</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">nt</span> <span class="o">=</span> <span class="n">rh</span><span class="o">.</span><span class="n">dimlen</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">lat</span> <span class="o">=</span> <span class="n">rh</span><span class="o">.</span><span class="n">dimvalue</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">lev</span> <span class="o">=</span> <span class="n">rh</span><span class="o">.</span><span class="n">dimvalue</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">t0</span> <span class="o">=</span> <span class="n">meteof</span><span class="p">[</span><span class="s">&#39;TEMP&#39;</span><span class="p">][:,:</span><span class="n">nz</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">latlim</span><span class="p">,</span><span class="n">lonlim</span><span class="p">]</span>
+<span class="n">uwnd</span> <span class="o">=</span> <span class="n">meteof</span><span class="p">[</span><span class="s">&#39;UWND&#39;</span><span class="p">][:,:</span><span class="n">nz</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">latlim</span><span class="p">,</span><span class="n">lonlim</span><span class="p">]</span>
+<span class="n">vwnd</span> <span class="o">=</span> <span class="n">meteof</span><span class="p">[</span><span class="s">&#39;VWND&#39;</span><span class="p">][:,:</span><span class="n">nz</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">latlim</span><span class="p">,</span><span class="n">lonlim</span><span class="p">]</span>
+<span class="n">vort</span> <span class="o">=</span> <span class="n">hcurl</span><span class="p">(</span><span class="n">uwnd</span><span class="p">,</span> <span class="n">vwnd</span><span class="p">)</span>
+<span class="n">prs</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">([</span><span class="n">nt</span><span class="p">,</span><span class="n">nz</span><span class="p">,</span><span class="n">ny</span><span class="p">,</span><span class="n">nx</span><span class="p">])</span>
+<span class="n">prs</span> <span class="o">=</span> <span class="n">DimArray</span><span class="p">(</span><span class="n">prs</span><span class="p">,</span> <span class="n">rh</span><span class="o">.</span><span class="n">dims</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nz</span><span class="p">):</span>
+    <span class="n">prs</span><span class="p">[:,</span><span class="n">i</span><span class="p">,:,:]</span> <span class="o">=</span> <span class="n">lev</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+<span class="c"># Calculate pseudo-equivalent potential temperature</span>
+<span class="k">print</span> <span class="s">&#39;Clalulate pseudo-equivalent potential temperature...&#39;</span>
+<span class="n">es</span> <span class="o">=</span> <span class="mf">6.1078</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="mf">17.2693882</span><span class="o">*</span><span class="p">(</span><span class="n">t0</span><span class="o">-</span><span class="mf">273.16</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">t0</span><span class="o">-</span><span class="mf">35.86</span><span class="p">))</span>
+<span class="n">qq</span> <span class="o">=</span> <span class="n">rh</span><span class="o">*</span><span class="p">(</span><span class="mf">0.62197</span><span class="o">*</span><span class="n">es</span><span class="o">/</span><span class="p">(</span><span class="n">prs</span><span class="o">-</span><span class="mf">0.378</span><span class="o">*</span><span class="n">es</span><span class="p">))</span><span class="o">/</span><span class="mf">100.</span>
+<span class="n">e</span> <span class="o">=</span> <span class="n">prs</span><span class="o">*</span><span class="n">qq</span><span class="o">/</span><span class="p">(</span><span class="mf">0.62197</span><span class="o">+</span><span class="n">qq</span><span class="p">)</span><span class="o">+</span><span class="mf">1e-10</span>
+<span class="n">tlcl</span> <span class="o">=</span> <span class="mf">55.0</span><span class="o">+</span><span class="mf">2840.0</span><span class="o">/</span><span class="p">(</span><span class="mf">3.5</span><span class="o">*</span><span class="n">log</span><span class="p">(</span><span class="n">t0</span><span class="p">)</span><span class="o">-</span><span class="n">log</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="o">-</span><span class="mf">4.805</span><span class="p">)</span>
+<span class="n">theta</span> <span class="o">=</span> <span class="n">t0</span><span class="o">*</span><span class="nb">pow</span><span class="p">((</span><span class="mi">1000</span><span class="o">/</span><span class="n">prs</span><span class="p">),(</span><span class="mf">0.2854</span><span class="o">*</span><span class="p">(</span><span class="mf">1.0</span><span class="o">-</span><span class="mf">0.28</span><span class="o">*</span><span class="n">qq</span><span class="p">)))</span>
+<span class="n">eqt</span> <span class="o">=</span> <span class="n">theta</span><span class="o">*</span><span class="n">exp</span><span class="p">(((</span><span class="mf">3376.</span><span class="o">/</span><span class="n">tlcl</span><span class="p">)</span><span class="o">-</span><span class="mf">2.54</span><span class="p">)</span><span class="o">*</span><span class="n">qq</span><span class="o">*</span><span class="p">(</span><span class="mf">1.0</span><span class="o">+</span><span class="mf">0.81</span><span class="o">*</span><span class="n">qq</span><span class="p">))</span>
+<span class="n">thse</span> <span class="o">=</span> <span class="n">eqt</span><span class="o">-</span><span class="mf">273.15</span>
+
+<span class="c"># Calculate moisture potential vorticity</span>
+<span class="k">print</span> <span class="s">&#39;Calculate moisture potential vorticity...&#39;</span>
+<span class="n">mpv</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">([</span><span class="n">nt</span><span class="p">,</span><span class="n">nz</span><span class="p">,</span><span class="n">ny</span><span class="p">,</span><span class="n">nx</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="s">&#39;double&#39;</span><span class="p">)</span>
+<span class="n">mpv</span> <span class="o">=</span> <span class="n">DimArray</span><span class="p">(</span><span class="n">mpv</span><span class="p">,</span> <span class="n">rh</span><span class="o">.</span><span class="n">dims</span><span class="p">)</span>
+<span class="n">mpv</span><span class="o">.</span><span class="n">setdimvalue</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">lev</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="n">nz</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nt</span><span class="p">):</span>
+    <span class="n">tt</span> <span class="o">=</span> <span class="n">meteof</span><span class="o">.</span><span class="n">gettime</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+    <span class="k">print</span> <span class="n">tt</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">&#39;%Y-%m-</span><span class="si">%d</span><span class="s"> %H:00&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">z</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">nz</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="c">#print &#39;\tLevel: %i&#39; % z</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">([</span><span class="n">ny</span><span class="p">,</span><span class="n">nx</span><span class="p">])</span>
+        <span class="n">f1</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="mf">7.292</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">lat</span><span class="o">*</span><span class="mf">3.14159</span><span class="o">/</span><span class="mf">180.0</span><span class="p">)</span><span class="o">*</span><span class="mf">0.00001</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nx</span><span class="p">):</span>
+            <span class="n">f</span><span class="p">[:,</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">f1</span>
+        <span class="n">g</span> <span class="o">=</span> <span class="mf">9.8</span>
+        <span class="n">dp</span> <span class="o">=</span> <span class="mi">100</span><span class="o">*</span><span class="p">(</span><span class="n">lev</span><span class="p">[</span><span class="n">z</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">lev</span><span class="p">[</span><span class="n">z</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">deqt</span> <span class="o">=</span> <span class="n">eqt</span><span class="p">[</span><span class="n">t</span><span class="p">,</span><span class="n">z</span><span class="o">-</span><span class="mi">1</span><span class="p">,:,:]</span><span class="o">-</span><span class="n">eqt</span><span class="p">[</span><span class="n">t</span><span class="p">,</span><span class="n">z</span><span class="o">+</span><span class="mi">1</span><span class="p">,:,:]</span>
+        <span class="n">du</span> <span class="o">=</span> <span class="n">uwnd</span><span class="p">[</span><span class="n">t</span><span class="p">,</span><span class="n">z</span><span class="o">-</span><span class="mi">1</span><span class="p">,:,:]</span><span class="o">-</span><span class="n">uwnd</span><span class="p">[</span><span class="n">t</span><span class="p">,</span><span class="n">z</span><span class="o">+</span><span class="mi">1</span><span class="p">,:,:]</span>
+        <span class="n">dv</span> <span class="o">=</span> <span class="n">vwnd</span><span class="p">[</span><span class="n">t</span><span class="p">,</span><span class="n">z</span><span class="o">-</span><span class="mi">1</span><span class="p">,:,:]</span><span class="o">-</span><span class="n">vwnd</span><span class="p">[</span><span class="n">t</span><span class="p">,</span><span class="n">z</span><span class="o">+</span><span class="mi">1</span><span class="p">,:,:]</span>
+        <span class="n">dx1</span> <span class="o">=</span> <span class="mf">2.0</span><span class="o">*</span><span class="mf">6370949.0</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">lat</span><span class="o">*</span><span class="mf">3.14159</span><span class="o">/</span><span class="mf">180.0</span><span class="p">)</span><span class="o">*</span><span class="mf">3.14159</span><span class="o">/</span><span class="mf">180.0</span>
+        <span class="n">dx</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">([</span><span class="n">ny</span><span class="p">,</span><span class="n">nx</span><span class="p">])</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nx</span><span class="p">):</span>
+            <span class="n">dx</span><span class="p">[:,</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">dx1</span>
+        <span class="n">dy</span> <span class="o">=</span> <span class="mf">2.0</span><span class="o">*</span><span class="mf">6370949.0</span><span class="o">*</span><span class="mf">3.14159</span><span class="o">/</span><span class="mf">180.0</span>
+        <span class="n">dtx</span> <span class="o">=</span> <span class="n">cdiff</span><span class="p">(</span><span class="n">eqt</span><span class="p">[</span><span class="n">t</span><span class="p">,</span><span class="n">z</span><span class="p">,:,:],</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">dty</span> <span class="o">=</span> <span class="n">cdiff</span><span class="p">(</span><span class="n">eqt</span><span class="p">[</span><span class="n">t</span><span class="p">,</span><span class="n">z</span><span class="p">,:,:],</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">pv1</span> <span class="o">=</span> <span class="o">-</span><span class="n">g</span><span class="o">*</span><span class="p">(</span><span class="n">vort</span><span class="p">[</span><span class="n">t</span><span class="p">,</span><span class="n">z</span><span class="p">,:,:]</span><span class="o">+</span><span class="n">f</span><span class="p">)</span><span class="o">*</span><span class="n">deqt</span><span class="o">/</span><span class="n">dp</span>
+        <span class="n">pv2</span> <span class="o">=</span> <span class="n">g</span><span class="o">*</span><span class="p">((</span><span class="n">dv</span><span class="o">/</span><span class="n">dp</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">dtx</span><span class="o">/</span><span class="n">dx</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="n">du</span><span class="o">/</span><span class="n">dp</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">dty</span><span class="o">/</span><span class="n">dy</span><span class="p">))</span>
+        <span class="n">pv</span> <span class="o">=</span> <span class="n">pv1</span><span class="o">+</span><span class="n">pv2</span>
+        <span class="n">mpv</span><span class="p">[</span><span class="n">t</span><span class="p">,</span><span class="n">z</span><span class="o">-</span><span class="mi">1</span><span class="p">,:,:]</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">array</span>
+
+<span class="c">#Plot</span>
+<span class="n">axesm</span><span class="p">()</span>
+<span class="n">lworld</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="s">&#39;D:/Temp/Map/country1.shp&#39;</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="n">lworld</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">t</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">tt</span> <span class="o">=</span> <span class="n">meteof</span><span class="o">.</span><span class="n">gettime</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="n">z</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">clevs</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mf">3.1</span><span class="p">,</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">layer</span> <span class="o">=</span> <span class="n">contourfm</span><span class="p">(</span><span class="n">mpv</span><span class="p">[</span><span class="n">t</span><span class="p">,</span><span class="n">z</span><span class="p">,:,:]</span><span class="o">*</span><span class="mf">1e6</span><span class="p">,</span> <span class="n">clevs</span><span class="p">)</span>
+<span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s">&#39;Moisture potential vorticity (</span><span class="si">%i</span><span class="s"> hPa)</span><span class="se">\n</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">lev</span><span class="p">[</span><span class="n">z</span><span class="p">]</span> <span class="o">+</span> \
+    <span class="n">tt</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">&#39;%Y-%m-</span><span class="si">%d</span><span class="s"> %H:00&#39;</span><span class="p">))</span>
+
+<span class="k">print</span> <span class="s">&#39;Finish...&#39;</span>
+</pre></div>
+</div>
+<img alt="../../../_images/moisture_potential_vorticity.png" src="../../../_images/moisture_potential_vorticity.png" />
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../satellite.html" title="Satellite data"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="k_index.html" title="K index"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../docs/index.html">docs</a>|&nbsp;</li>
+
+          <li><a href="../../index.html" >Examples</a> &raquo;</li>
+          <li><a href="../index.html" >MeteoInfoLab</a> &raquo;</li>
+          <li><a href="../meteo_analysis.html" >Meteorological analysis</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2016, Yaqiang Wang.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

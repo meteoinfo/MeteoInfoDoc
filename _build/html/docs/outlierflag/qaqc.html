@@ -1,0 +1,347 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>qaqc Jython module &mdash; MeteoInfo 1.3.3 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.3.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="MeteoInfo 1.3.3 documentation" href="../../index.html" />
+    <link rel="up" title="Using functions in MeteoInfoLab script" href="script.html" />
+    <link rel="prev" title="Using functions in MeteoInfoLab script" href="script.html" /> 
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../index.html"><img src="../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="script.html" title="Using functions in MeteoInfoLab script"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../index.html">docs</a>|&nbsp;</li>
+
+          <li><a href="../index.html" >Documentation</a> &raquo;</li>
+          <li><a href="index.html" >OutlierFlag</a> &raquo;</li>
+          <li><a href="script.html" accesskey="U">Using functions in MeteoInfoLab script</a> &raquo;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="script.html"
+                        title="previous chapter">Using functions in MeteoInfoLab script</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../_sources/docs/outlierflag/qaqc.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="qaqc-jython-module">
+<span id="docs-outlierflag-qaqc"></span><h1>qaqc Jython module<a class="headerlink" href="#qaqc-jython-module" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="timeorder">
+<tt class="descname">timeorder</tt><big>(</big><em>data</em>, <em>stime</em>, <em>etime</em>, <em>tdelta</em>, <em>tunit</em><big>)</big><a class="headerlink" href="#timeorder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Time order of the table data.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>data</strong> &#8211; (<em>TimeTableData</em>) Original data.</li>
+<li><strong>stime</strong> &#8211; (<em>datetime</em>) Start datetime.</li>
+<li><strong>etime</strong> &#8211; (<em>datetime</em>) End datetime.</li>
+<li><strong>tdelta</strong> &#8211; (<em>int</em>) Time delta value.</li>
+<li><strong>tunit</strong> &#8211; (<em>string</em>) Time delta unit. [year|month|day|hour|minute].</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Result table data.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="flagset">
+<tt class="descname">flagset</tt><big>(</big><em>minlim=-10000</em>, <em>maxlim=50000</em>, <em>errornum=11</em>, <em>quantilenum=21</em>, <em>quantil=0.9</em>, <em>factor=2.3</em>, <em>stdnum=29</em>, <em>stdfactor=3</em><big>)</big><a class="headerlink" href="#flagset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create flag setting object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>minlim</strong> &#8211; (<em>float</em>) Minimum limitation.</li>
+<li><strong>maxlim</strong> &#8211; (<em>float</em>) Maximum limitation.</li>
+<li><strong>errornum</strong> &#8211; (<em>int</em>) Error point number.</li>
+<li><strong>quantilenum</strong> &#8211; (<em>int</em>) Quantile point number.</li>
+<li><strong>quantil</strong> &#8211; (<em>float</em>) Quantile value.</li>
+<li><strong>factor</strong> &#8211; (<em>float</em>) Factor value.</li>
+<li><strong>stdnum</strong> &#8211; (<em>int</em>) Standard deviation point number.</li>
+<li><strong>stdfactor</strong> &#8211; (<em>float</em>) Standard deviation factor value.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Flag setting object.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="check_lim">
+<tt class="descname">check_lim</tt><big>(</big><em>data</em>, <em>fset</em><big>)</big><a class="headerlink" href="#check_lim" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check limitation - Get flag code list according to min/max limitation setting.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>data</strong> &#8211; (<em>array</em>) Input data array.</li>
+<li><strong>fset</strong> &#8211; (<em>FlagSetting</em>) FlagSetting.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">(<em>list of string</em>) Flag code list.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="check_error">
+<tt class="descname">check_error</tt><big>(</big><em>data</em>, <em>fset</em>, <em>fcodes</em><big>)</big><a class="headerlink" href="#check_error" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check error - Set flag code list according to error setting.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>data</strong> &#8211; (<em>array</em>) Input data array.</li>
+<li><strong>fset</strong> &#8211; (<em>FlagSetting</em>) FlagSetting.</li>
+<li><strong>fcodes</strong> &#8211; (<em>list of sting</em>) Flag code list.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="check_std">
+<tt class="descname">check_std</tt><big>(</big><em>data</em>, <em>fset</em>, <em>fcodes</em><big>)</big><a class="headerlink" href="#check_std" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check 3 times of standard deviation - Set flag code list according to standard deviation setting.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>data</strong> &#8211; (<em>array</em>) Input data array.</li>
+<li><strong>fset</strong> &#8211; (<em>FlagSetting</em>) FlagSetting.</li>
+<li><strong>fcodes</strong> &#8211; (<em>list of sting</em>) Flag code list.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="check_all">
+<tt class="descname">check_all</tt><big>(</big><em>data</em>, <em>fset</em><big>)</big><a class="headerlink" href="#check_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check all 3 steps.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>data</strong> &#8211; (<em>array</em>) Input data array.</li>
+<li><strong>fset</strong> &#8211; (<em>FlagSetting</em>) FlagSetting.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">(<em>list of string</em>) Flag code list.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="makecolors">
+<tt class="descname">makecolors</tt><big>(</big><em>fcodes</em>, <em>c=None</em><big>)</big><a class="headerlink" href="#makecolors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make colors according to flag codes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>fcodes</strong> &#8211; (<em>list of string</em>) Flag code list.</li>
+<li><strong>c</strong> &#8211; (<em>list of color</em>) Option colors for flag types.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">(<em>list of color</em>) Colors with the length as same as fcodes.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="makearray">
+<tt class="descname">makearray</tt><big>(</big><em>fcodes</em>, <em>v=None</em><big>)</big><a class="headerlink" href="#makearray" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make array according to flag codes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>fcodes</strong> &#8211; (<em>list of string</em>) Flag code list.</li>
+<li><strong>v</strong> &#8211; (<em>list of float</em>) Option values for flag types.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">(<em>array_like</em>) Array with the length as same as fcodes.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="flagchart">
+<tt class="descname">flagchart</tt><big>(</big><em>data</em>, <em>fcodes</em>, <em>dates=None</em>, <em>title='Flag chart'</em><big>)</big><a class="headerlink" href="#flagchart" title="Permalink to this definition">¶</a></dt>
+<dd><p>Open a flag chart form for mannual flagging.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>data</strong> &#8211; (<em>array_like</em>) Data array.</li>
+<li><strong>fcodes</strong> &#8211; (<em>list of string</em>) Flag code list.</li>
+<li><strong>dates</strong> &#8211; (<em>list of datetime</em>) X datetime data.</li>
+<li><strong>title</strong> &#8211; (<em>string</em>) Chart title.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">(<em>list of string</em>) Result flag code list.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bc_loading_effect">
+<tt class="descname">bc_loading_effect</tt><big>(</big><em>bc</em>, <em>atn</em>, <em>avenum=4</em>, <em>refine=True</em>, <em>smooth=True</em>, <em>smoothnum=10</em><big>)</big><a class="headerlink" href="#bc_loading_effect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Black carbon loading effect compensation.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>bc</strong> &#8211; (<em>array</em>) Black carbon data array.</li>
+<li><strong>atn</strong> &#8211; (<em>array</em>) Attenuation data array.</li>
+<li><strong>avenum</strong> &#8211; (<em>int</em>) Point number used for average in compensation parameter calculation.
+Default is <cite>4</cite>.</li>
+<li><strong>refine</strong> &#8211; (<em>boolean</em>) Is refine compensation paramter or not. Default is <cite>True</cite>.</li>
+<li><strong>smooth</strong> &#8211; (<em>boolean</em>) Is smooth compensation paramter or not. Default is <cite>True</cite>.</li>
+<li><strong>smoothnum</strong> &#8211; (<em>int</em>) Point number used for smooth. Default is <cite>10</cite>.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Compensated BC data array and compensation parameters</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="script.html" title="Using functions in MeteoInfoLab script"
+             >previous</a> |</li>
+        <li><a href="../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../index.html">docs</a>|&nbsp;</li>
+
+          <li><a href="../index.html" >Documentation</a> &raquo;</li>
+          <li><a href="index.html" >OutlierFlag</a> &raquo;</li>
+          <li><a href="script.html" >Using functions in MeteoInfoLab script</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2016, Yaqiang Wang.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

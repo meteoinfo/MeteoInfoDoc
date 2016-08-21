@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Automatic outlier flag &mdash; MeteoInfo 1.3.3 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.3.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="MeteoInfo 1.3.3 documentation" href="../../index.html" />
+    <link rel="up" title="Using functions in MeteoInfoLab script" href="script.html" />
+    <link rel="next" title="Manually outlier flag" href="manualflag.html" />
+    <link rel="prev" title="qaqc Jython module" href="qaqc.html" /> 
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../index.html"><img src="../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="manualflag.html" title="Manually outlier flag"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="qaqc.html" title="qaqc Jython module"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../index.html">docs</a>|&nbsp;</li>
+
+          <li><a href="../index.html" >Documentation</a> &raquo;</li>
+          <li><a href="index.html" >OutlierFlag</a> &raquo;</li>
+          <li><a href="script.html" accesskey="U">Using functions in MeteoInfoLab script</a> &raquo;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="qaqc.html"
+                        title="previous chapter">qaqc Jython module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="manualflag.html"
+                        title="next chapter">Manually outlier flag</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../_sources/docs/outlierflag/autoflag.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="automatic-outlier-flag">
+<h1>Automatic outlier flag<a class="headerlink" href="#automatic-outlier-flag" title="Permalink to this headline">¶</a></h1>
+<p>A flag setting object should be created using <tt class="docutils literal"><span class="pre">flagset()</span></tt> function. Then the outliers of data array
+can be automaticly flagged by <tt class="docutils literal"><span class="pre">check_all()</span></tt> function. Following steps were demonstrated in below
+smaple script.</p>
+<blockquote>
+<div><ul class="simple">
+<li>Read data table from example data file using <tt class="docutils literal"><span class="pre">readtable()</span></tt> function.</li>
+<li>Read time and PM2.5 data array from the table by data column name.</li>
+<li>Create a flag setting object using <tt class="docutils literal"><span class="pre">flagset()</span></tt> function with expected arguments.</li>
+<li>Make flag codes using <tt class="docutils literal"><span class="pre">check_all()</span></tt> function from PM2.5 data array and the flag setting.</li>
+<li>Make colors from flag codes by <tt class="docutils literal"><span class="pre">makecolors()</span></tt> function, and plot data with the colors (flagged data were highlighted with blue color).</li>
+<li>Add flag codes to the table and save the result into a new data file.</li>
+</ul>
+</div></blockquote>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#Read data</span>
+<span class="n">fn</span> <span class="o">=</span> <span class="s">r&#39;D:\MyProgram\Distribution\Java\MeteoInfo\MeteoInfo_Run\toolbox\OutlierFlag\sample\54826PMMUL201102_T.txt&#39;</span>
+<span class="n">table</span> <span class="o">=</span> <span class="n">readtable</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s">&#39;,&#39;</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="s">&#39;%{yyyyMMddHHmm}D</span><span class="si">%14i%11f%i%f%i%4f%i%3f</span><span class="s">&#39;</span><span class="p">)</span>
+<span class="n">pm2_5</span> <span class="o">=</span> <span class="n">table</span><span class="p">[</span><span class="s">&#39;PM2.5&#39;</span><span class="p">]</span>
+<span class="n">tt</span> <span class="o">=</span> <span class="n">table</span><span class="p">[</span><span class="s">&#39;BeiJing_Time&#39;</span><span class="p">]</span>
+
+<span class="c">#Set flagset and check - get flag codes</span>
+<span class="n">fset</span> <span class="o">=</span> <span class="n">qaqc</span><span class="o">.</span><span class="n">flagset</span><span class="p">(</span><span class="n">minlim</span><span class="o">=-</span><span class="mi">10</span><span class="p">,</span> <span class="n">maxlim</span><span class="o">=</span><span class="mi">50000</span><span class="p">,</span> <span class="n">errornum</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span> <span class="n">quantilenum</span><span class="o">=</span><span class="mi">21</span><span class="p">,</span> <span class="n">quantil</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">factor</span><span class="o">=</span><span class="mf">2.3</span><span class="p">,</span> <span class="n">stdnum</span><span class="o">=</span><span class="mi">29</span><span class="p">,</span> <span class="n">stdfactor</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">fcodes</span> <span class="o">=</span> <span class="n">qaqc</span><span class="o">.</span><span class="n">check_all</span><span class="p">(</span><span class="n">pm2_5</span><span class="p">,</span> <span class="n">fset</span><span class="p">)</span>
+
+<span class="c">#Plot data - highlight flagged data with blue color</span>
+<span class="n">cols</span> <span class="o">=</span> <span class="n">qaqc</span><span class="o">.</span><span class="n">makecolors</span><span class="p">(</span><span class="n">fcodes</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;r&#39;</span><span class="p">,</span><span class="s">&#39;g&#39;</span><span class="p">,</span><span class="s">&#39;b&#39;</span><span class="p">])</span>
+<span class="n">scatter</span><span class="p">(</span><span class="n">tt</span><span class="p">,</span> <span class="n">pm2_5</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">edge</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">cols</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s">&#39;+&#39;</span><span class="p">)</span>
+<span class="n">xaxis</span><span class="p">(</span><span class="n">axistype</span><span class="o">=</span><span class="s">&#39;time&#39;</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s">&#39;OutlierFlag example&#39;</span><span class="p">)</span>
+
+<span class="c">#Add flag codes to table and save</span>
+<span class="n">table</span><span class="o">.</span><span class="n">addcoldata</span><span class="p">(</span><span class="s">&#39;Flag_PM2.5&#39;</span><span class="p">,</span> <span class="s">&#39;string&#39;</span><span class="p">,</span> <span class="n">fcodes</span><span class="p">)</span>
+<span class="n">outfn</span> <span class="o">=</span> <span class="s">&#39;D:/Temp/flag_test.csv&#39;</span>
+<span class="n">table</span><span class="o">.</span><span class="n">savefile</span><span class="p">(</span><span class="n">outfn</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The scatter plot of the PM2.5 data array with blue color highlighted flagged data points.</p>
+<img alt="../../_images/script_flag-save.png" src="../../_images/script_flag-save.png" />
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="manualflag.html" title="Manually outlier flag"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="qaqc.html" title="qaqc Jython module"
+             >previous</a> |</li>
+        <li><a href="../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../index.html">docs</a>|&nbsp;</li>
+
+          <li><a href="../index.html" >Documentation</a> &raquo;</li>
+          <li><a href="index.html" >OutlierFlag</a> &raquo;</li>
+          <li><a href="script.html" >Using functions in MeteoInfoLab script</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2016, Yaqiang Wang.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

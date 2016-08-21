@@ -10,7 +10,7 @@ MeteoInfo
 MeteoInfo Desktop Application
 -----------------------------
   Java edition (Major development)
-    - `MeteoInfo 1.3.4R2 - Java (for all systems) <files/MeteoInfo_Java_1.3.4R2_Files.zip>`_   
+    - `MeteoInfo 1.3.5R1 - Java (for all systems) <files/MeteoInfo_Java_1.3.5R1_Files.zip>`_   
   C# edition   
     - `MeteoInfo 1.1.3.4R1 - C# <files/MeteoInfo_1.1.3.4R1_Files.zip>`_
     
@@ -38,7 +38,7 @@ wContour
 TrajStat
 =====================================
   TrajStat - MeteoInfo plugin
-    - `TrajStat 1.4.4R5 plugin for MeteoInfo Java version <files/TrajStat_Plugin_1.4.4R5.zip>`_
+    - `TrajStat 1.4.4R6 plugin for MeteoInfo Java version <files/TrajStat_Plugin_1.4.4R6.zip>`_
     
 --------------------------------------------------------------------------------------------
 
@@ -46,6 +46,8 @@ OutlierFlag
 =====================================
   OutlierFlag Desktop Application
     - `OutlierFlag 0.9.1 <files/OutlierFlag_0.9.1_Files.zip>`_
+  OutlierFlag - MeteoInfoLab toolbox
+    - `OutlierFlag 0.9.1 toolbox <files/OutlierFlag_0.9.1_toolbox.zip>`_
 	
 --------------------------------------------------------------------------------------------
 

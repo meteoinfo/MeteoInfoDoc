@@ -16,3 +16,4 @@ Meteorological analysis
    meteo_analysis/matrix_rotate.rst
    meteo_analysis/ave_rect.rst
    meteo_analysis/k_index.rst
+   meteo_analysis/moisture_potential_vorticity.rst

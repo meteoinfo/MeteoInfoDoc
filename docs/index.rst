@@ -13,3 +13,4 @@ Documentation
    meteoinfolab/index.rst
    wcontour/index.rst
    trajstat/index.rst
+   outlierflag/index.rst
