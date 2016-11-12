@@ -22,6 +22,7 @@ Satellite data
    satellite/seawifs_grid.rst
    satellite/omi_grid.rst
    satellite/omi_swath.rst
+   satellite/omi_aai.rst
    satellite/himawari_8.rst
    satellite/geotiff_rgb.rst
    satellite/calipso.rst
