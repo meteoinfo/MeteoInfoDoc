@@ -14,5 +14,6 @@ Array
    array/arange.rst
    array/arange1.rst
    array/linspace.rst
+   array/logspace.rst
    array/sort.rst
    array/reshape.rst

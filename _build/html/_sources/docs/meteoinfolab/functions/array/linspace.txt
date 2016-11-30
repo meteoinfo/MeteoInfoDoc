@@ -20,6 +20,8 @@ linspace
         when endpoint is False.
     :param num: (*number, optional*) Number of samples to generate. Default is 50. Must 
         be non-negative.
+    :param endpoint: (*boolean, optional*) If true, stop is the last sample. Otherwise, it is not included. 
+        Default is True.
     :param dtype: (*dtype*) The type of output array. If dtype is not given, infer the data
         type from the other input arguments.
         

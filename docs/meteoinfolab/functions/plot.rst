@@ -18,11 +18,18 @@ Plot
    plot/plot.rst
    plot/fill_between.rst
    plot/bar.rst
+   plot/hist.rst
    plot/scatter.rst
+   plot/pie.rst
+   plot/boxplot.rst
+   plot/loglog.rst
+   plot/semilogx.rst
+   plot/semilogy.rst
    plot/savefig.rst
    plot/clf.rst
    plot/cla.rst
    plot/cll.rst
+   plot/clear.rst
    plot/title.rst
    plot/suptitle.rst
    plot/xlabel.rst
