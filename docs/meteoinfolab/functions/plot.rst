@@ -47,6 +47,7 @@ Plot
    plot/contour.rst
    plot/contourf.rst
    plot/quiver.rst
+   plot/quiverkey.rst
    plot/plotm.rst
    plot/scatterm.rst
    plot/imshowm.rst

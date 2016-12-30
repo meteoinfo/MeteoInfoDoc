@@ -95,18 +95,21 @@
             
   <div class="section" id="vector-plot">
 <span id="examples-meteoinfolab-plot-types-vector"></span><h1>Vector plot<a class="headerlink" href="#vector-plot" title="Permalink to this headline">¶</a></h1>
-<p>Vector plot was created by <tt class="docutils literal"><span class="pre">quiver()</span></tt> or <tt class="docutils literal"><span class="pre">quiverm()</span></tt> (for map axes) function.</p>
+<p>Vector plot was created by <tt class="docutils literal"><span class="pre">quiver()</span></tt> or <tt class="docutils literal"><span class="pre">quiverm()</span></tt> (for map axes) function. <tt class="docutils literal"><span class="pre">quiverkey</span></tt> function
+can be used to add a key in a quiver plot.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="s">&#39;D:/Temp/GrADS/model.ctl&#39;</span><span class="p">)</span>
 <span class="n">u</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;U&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,[</span><span class="mi">500</span><span class="p">],[</span><span class="mi">10</span><span class="p">,</span><span class="mi">60</span><span class="p">],[</span><span class="mi">60</span><span class="p">,</span><span class="mi">140</span><span class="p">]]</span>
 <span class="n">v</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;V&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,[</span><span class="mi">500</span><span class="p">],[</span><span class="mi">10</span><span class="p">,</span><span class="mi">60</span><span class="p">],[</span><span class="mi">60</span><span class="p">,</span><span class="mi">140</span><span class="p">]]</span>
 <span class="n">speed</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">u</span><span class="o">*</span><span class="n">u</span><span class="o">+</span><span class="n">v</span><span class="o">*</span><span class="n">v</span><span class="p">)</span>
+<span class="c">#Plot</span>
 <span class="n">axesm</span><span class="p">()</span>
-<span class="n">mlayer</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="s">&#39;D:/Temp/map/country1.shp&#39;</span><span class="p">)</span>
-<span class="n">geoshow</span><span class="p">(</span><span class="n">mlayer</span><span class="p">)</span>
+<span class="n">lworld</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="s">&#39;D:/Temp/Map/country1.shp&#39;</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="n">lworld</span><span class="p">)</span>
 <span class="n">layer</span> <span class="o">=</span> <span class="n">quiverm</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">speed</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">quiverkey</span><span class="p">(</span><span class="n">layer</span><span class="p">,</span> <span class="mf">0.74</span><span class="p">,</span> <span class="mf">0.18</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="n">bbox</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;edge&#39;</span><span class="p">:</span><span class="bp">True</span><span class="p">,</span> <span class="s">&#39;fill&#39;</span><span class="p">:</span><span class="bp">True</span><span class="p">})</span>
+<span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span>
 <span class="n">title</span><span class="p">(</span><span class="s">&#39;Wind field&#39;</span><span class="p">)</span>
 <span class="n">yticks</span><span class="p">([</span><span class="mi">20</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">60</span><span class="p">])</span>
-<span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span>
 </pre></div>
 </div>
 <img alt="../../../_images/vector.png" src="../../../_images/vector.png" />
