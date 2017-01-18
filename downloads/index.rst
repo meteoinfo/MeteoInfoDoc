@@ -10,7 +10,7 @@ MeteoInfo
 MeteoInfo Desktop Application
 -----------------------------
   Java edition (Major development)
-    - `MeteoInfo 1.3.9R3 - Java (for all systems) <files/MeteoInfo_Java_1.3.9R3_Files.zip>`_   
+    - `MeteoInfo 1.4R2 - Java (for all systems) <files/MeteoInfo_Java_1.4R2_Files.zip>`_   
   C# edition   
     - `MeteoInfo 1.1.3.4R1 - C# <files/MeteoInfo_1.1.3.4R1_Files.zip>`_
     
@@ -47,7 +47,7 @@ OutlierFlag
   OutlierFlag Desktop Application
     - `OutlierFlag 0.9.1R1 <files/OutlierFlag_0.9.1R1_Files.zip>`_
   OutlierFlag - MeteoInfoLab toolbox
-    - `OutlierFlag 0.9.1R1 toolbox <files/OutlierFlag_0.9.1R1_toolbox.zip>`_
+    - `OutlierFlag 0.9.1R2 toolbox <files/OutlierFlag_0.9.1R2_toolbox.zip>`_
 	
 --------------------------------------------------------------------------------------------
 
