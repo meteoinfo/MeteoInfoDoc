@@ -14,3 +14,4 @@ Map
    map/image_layer.rst
    map/add_shapes.rst
    map/ave_polygons.rst
+   map/webmap.rst

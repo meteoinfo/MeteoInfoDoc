@@ -5,7 +5,7 @@
 Mask Out
 ************************
 
-Mask layer could be set to avoid drawing graphic outside the mask extent. Tick ``IsMaskout`` 
+Mask layer could be set to avoid drawing graphic outside the mask extent. Tick ``Is Maskout`` 
 property, and then select a mask layer from ``Layer Name`` list. But firstly you have to have 
 at least one mask layer in the project. Only polygon layer could be used as mask layer. 
 ``china.shp`` file in ``Map`` folder under the software installation path can be used. Open it, 

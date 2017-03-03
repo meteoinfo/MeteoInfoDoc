@@ -56,3 +56,4 @@ Plot
    plot/quiverm.rst
    plot/streamplotm.rst
    plot/stationmodel.rst
+   plot/webmap.rst

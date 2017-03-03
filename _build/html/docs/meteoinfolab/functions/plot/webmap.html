@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>boxplot &mdash; MeteoInfo 1.3.3 documentation</title>
+    <title>webmap &mdash; MeteoInfo 1.3.3 documentation</title>
     
     <link rel="stylesheet" href="../../../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
@@ -26,8 +26,8 @@
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="top" title="MeteoInfo 1.3.3 documentation" href="../../../../index.html" />
     <link rel="up" title="Plot" href="../plot.html" />
-    <link rel="next" title="loglog" href="loglog.html" />
-    <link rel="prev" title="pie" href="pie.html" /> 
+    <link rel="next" title="File input and output" href="../file_io.html" />
+    <link rel="prev" title="stationmodel" href="stationmodel.html" /> 
   </head>
   <body>
 
@@ -41,10 +41,10 @@
           <a href="../../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="loglog.html" title="loglog"
+          <a href="../file_io.html" title="File input and output"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="pie.html" title="pie"
+          <a href="stationmodel.html" title="stationmodel"
              accesskey="P">previous</a> |</li>
         <li><a href="../../../../index.html">home</a>|&nbsp;</li>
         <li><a href="../../../../products/index.html">products</a>|&nbsp;</li>
@@ -63,14 +63,14 @@
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="pie.html"
-                        title="previous chapter">pie</a></p>
+  <p class="topless"><a href="stationmodel.html"
+                        title="previous chapter">stationmodel</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="loglog.html"
-                        title="next chapter">loglog</a></p>
+  <p class="topless"><a href="../file_io.html"
+                        title="next chapter">File input and output</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
-    <li><a href="../../../../_sources/docs/meteoinfolab/functions/plot/boxplot.txt"
+    <li><a href="../../../../_sources/docs/meteoinfolab/functions/plot/webmap.txt"
            rel="nofollow">Show Source</a></li>
   </ul>
 <div id="searchbox" style="display: none">
@@ -94,54 +94,41 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="boxplot">
-<span id="docs-meteoinfolab-funcitons-plot-boxplot"></span><h1>boxplot<a class="headerlink" href="#boxplot" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="webmap">
+<span id="docs-meteoinfolab-funcitons-plot-webmap"></span><h1>webmap<a class="headerlink" href="#webmap" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt>
-<tt class="descname">boxplot</tt><big>(</big><em>x</em>, <em>sym=None</em>, <em>positions=None</em>, <em>widths=None</em>, <em>color=None</em>, <em>showcaps=True</em>, <em>showfliers=True</em>, <em>showmeans=False</em>, <em>meanline=False</em>, <em>boxprops=None</em>, <em>medianprops=None</em>, <em>meanprops=None</em>, <em>whiskerprops=None</em>, <em>capprops=None</em>, <em>flierprops=None</em><big>)</big></dt>
-<dd><p>Make a box and whisker plot.</p>
-<p>Make a box and whisker plot for each column of x or each vector in sequence x. The box extends from lower
-to upper quartile values of the data, with a line at the median. The whiskers extend from the box to show
-the range of the data. Flier points are those past the end of the whiskers.</p>
+<tt class="descname">webmap</tt><big>(</big><em>provider='OpenStreetMap'</em>, <em>order=0</em><big>)</big></dt>
+<dd><p>Add a new web map layer.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>x</strong> &#8211; (<em>Array or a sequence of vectors</em>) The input data.</li>
-<li><strong>sym</strong> &#8211; (<em>string</em>) The default symbol for flier points. Enter an empty string (&#8216;&#8217;) if you don’t
-want to show fliers. If None, then the fliers default to ‘b+’ If you want more control use the
-flierprops kwarg.</li>
-<li><strong>positions</strong> &#8211; (<em>array_like</em>) Sets the positions of the boxes. The ticks and limits are automatically
-set to match the positions. Defaults to range(1, N+1) where N is the number of boxes to be drawn.</li>
-<li><strong>widths</strong> &#8211; (<em>scalar or array_like</em>) Sets the width of each box either with a scalar or a sequence.
-The default is 0.5, or 0.15*(distance between extreme positions), if that is smaller.</li>
-<li><strong>color</strong> &#8211; (<em>Color</em>) Color for all parts of the box plot. Defaul is None.</li>
-<li><strong>showcaps</strong> &#8211; (<em>boolean</em>) Show the caps on the ends of whiskers. Default is <tt class="docutils literal"><span class="pre">True</span></tt>.</li>
-<li><strong>showfliers</strong> &#8211; (<em>boolean</em>) Show the outliers beyond the caps. Defaul is <tt class="docutils literal"><span class="pre">True</span></tt>.</li>
-<li><strong>showmeans</strong> &#8211; (<em>boolean</em>) Default is <tt class="docutils literal"><span class="pre">False</span></tt>. Show the mean or not.</li>
-<li><strong>meanline</strong> &#8211; (<em>boolean</em>) Default is <tt class="docutils literal"><span class="pre">False</span></tt>. If <tt class="docutils literal"><span class="pre">True</span></tt> (and showmeans is <tt class="docutils literal"><span class="pre">True</span></tt>), will try to render
-the mean as a line spanning. Otherwise, means will be shown as points.</li>
-<li><strong>boxprops</strong> &#8211; (<em>dict</em>) Specifies the style of the box.</li>
-<li><strong>medianprops</strong> &#8211; (<em>dict</em>) Specifies the style of the median.</li>
-<li><strong>meanprops</strong> &#8211; (<em>dict</em>) Specifies the style of the mean.</li>
-<li><strong>whiskerprops</strong> &#8211; (<em>dict</em>) Specifies the style of the whiskers.</li>
-<li><strong>capprops</strong> &#8211; (<em>dict</em>) Specifies the style of the caps.</li>
-<li><strong>flierprops</strong> &#8211; (<em>dict</em>) Specifies the style of the fliers.</li>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>provider</strong> &#8211; (<em>string</em>) Web map provider.</li>
+<li><strong>order</strong> &#8211; (<em>int</em>) Layer order.</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Web map layer</p>
 </td>
 </tr>
 </tbody>
 </table>
-<p>Examples:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>
-    <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">500</span><span class="p">))</span>
-<span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;Box plot demo&#39;</span><span class="p">)</span>
+<p><strong>Example:</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#Add a map axes with mercator projection</span>
+<span class="n">axesm</span><span class="p">(</span><span class="n">position</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">proj</span><span class="o">=</span><span class="s">&#39;merc&#39;</span><span class="p">,</span> <span class="n">griddx</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">griddy</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="c">#Add a web map layer</span>
+<span class="n">wlayer</span> <span class="o">=</span> <span class="n">webmap</span><span class="p">(</span><span class="n">provider</span><span class="o">=</span><span class="s">&#39;BingHybridMap&#39;</span><span class="p">)</span>
+<span class="c">#Add a shape layer</span>
+<span class="n">lchina</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="s">&#39;D:/Temp/Map/bou2_4p.shp&#39;</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="n">lchina</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s">&#39;b&#39;</span><span class="p">)</span>
+<span class="c">#Set lon/lat extent</span>
+<span class="n">axism</span><span class="p">([</span><span class="mi">110</span><span class="p">,</span> <span class="mi">130</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">45</span><span class="p">])</span>
+<span class="n">title</span><span class="p">(</span><span class="s">&#39;Web map example&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<img alt="../../../../_images/boxplot_11.png" src="../../../../_images/boxplot_11.png" />
+<img alt="../../../../_images/webmap_1.png" src="../../../../_images/webmap_1.png" />
 </dd></dl>
 
 </div>
@@ -159,10 +146,10 @@ the mean as a line spanning. Otherwise, means will be shown as points.</li>
           <a href="../../../../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="loglog.html" title="loglog"
+          <a href="../file_io.html" title="File input and output"
              >next</a> |</li>
         <li class="right" >
-          <a href="pie.html" title="pie"
+          <a href="stationmodel.html" title="stationmodel"
              >previous</a> |</li>
         <li><a href="../../../../index.html">home</a>|&nbsp;</li>
         <li><a href="../../../../products/index.html">products</a>|&nbsp;</li>
