@@ -9,7 +9,7 @@ Average data along x/y axis of a ractangle, and plot vertical distribution of th
 ::
 
     f = addfile('D:/Temp/nc/uwnd.2011.nc')
-    data = f['uwnd'][0,:,[10,40],[70,130]]
+    data = f['uwnd'][0,:,'10:40','70:130']
     data = mean(data, axis=1)
     lev1 = data.dimvalue(0)
     #lev2 = 1000 - lev1
@@ -32,7 +32,7 @@ Rotated rectangle::
 
     #Read data array
     f = addfile('D:/Temp/nc/uwnd.2011.nc')
-    data = f['uwnd'][0,:,[0,70],[50,150]]
+    data = f['uwnd'][0,:,'0:70','50:150']
 
     #Get rotated grid
     lat = arange(10, 41, 5)

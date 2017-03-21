@@ -5,6 +5,8 @@
 array
 *******************
 
+.. currentmodule:: minum
+
 .. function:: array(object)
     Create an array.
     

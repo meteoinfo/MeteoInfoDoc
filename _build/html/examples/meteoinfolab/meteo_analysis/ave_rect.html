@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Average data along x/y axis of a rectangle &mdash; MeteoInfo 1.3.3 documentation</title>
+    <title>Average data along x/y axis of a rectangle &mdash; MeteoInfo 1.4.1 documentation</title>
     
     <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.3.3',
+        VERSION:     '1.4.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,7 +24,7 @@
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="MeteoInfo 1.3.3 documentation" href="../../../index.html" />
+    <link rel="top" title="MeteoInfo 1.4.1 documentation" href="../../../index.html" />
     <link rel="up" title="Meteorological analysis" href="../meteo_analysis.html" />
     <link rel="next" title="K index" href="k_index.html" />
     <link rel="prev" title="Matrix rotate" href="matrix_rotate.html" /> 
@@ -97,7 +97,7 @@
 <span id="examples-meteoinfolab-meteo-analysis-ave-rect"></span><h1>Average data along x/y axis of a rectangle<a class="headerlink" href="#average-data-along-x-y-axis-of-a-rectangle" title="Permalink to this headline">¶</a></h1>
 <p>Average data along x/y axis of a ractangle, and plot vertical distribution of the average data.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="s">&#39;D:/Temp/nc/uwnd.2011.nc&#39;</span><span class="p">)</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;uwnd&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,:,[</span><span class="mi">10</span><span class="p">,</span><span class="mi">40</span><span class="p">],[</span><span class="mi">70</span><span class="p">,</span><span class="mi">130</span><span class="p">]]</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;uwnd&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,:,</span><span class="s">&#39;10:40&#39;</span><span class="p">,</span><span class="s">&#39;70:130&#39;</span><span class="p">]</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">mean</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">lev1</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">dimvalue</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="c">#lev2 = 1000 - lev1</span>
@@ -119,7 +119,7 @@
 <p>Rotated rectangle:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="c">#Read data array</span>
 <span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="s">&#39;D:/Temp/nc/uwnd.2011.nc&#39;</span><span class="p">)</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;uwnd&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,:,[</span><span class="mi">0</span><span class="p">,</span><span class="mi">70</span><span class="p">],[</span><span class="mi">50</span><span class="p">,</span><span class="mi">150</span><span class="p">]]</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;uwnd&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,:,</span><span class="s">&#39;0:70&#39;</span><span class="p">,</span><span class="s">&#39;50:150&#39;</span><span class="p">]</span>
 
 <span class="c">#Get rotated grid</span>
 <span class="n">lat</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
@@ -203,7 +203,7 @@
       </ul>
     </div>
     <div class="footer">
-        &copy; Copyright 2016, Yaqiang Wang.
+        &copy; Copyright 2010-2017, Yaqiang Wang.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
     </div>
   </body>

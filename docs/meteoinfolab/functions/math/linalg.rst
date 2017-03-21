@@ -8,9 +8,9 @@ Linear algebra
 .. toctree::
    :maxdepth: 2
    
-   linalg/cholesky.rst
-   linalg/lu.rst
-   linalg/qr.rst
-   linalg/svd.rst
-   linalg/eig.rst
-   linalg/solve.rst
+   ../../numeric/linalg/cholesky.rst
+   ../../numeric/linalg/lu.rst
+   ../../numeric/linalg/qr.rst
+   ../../numeric/linalg/svd.rst
+   ../../numeric/linalg/eig.rst
+   ../../numeric/linalg/solve.rst

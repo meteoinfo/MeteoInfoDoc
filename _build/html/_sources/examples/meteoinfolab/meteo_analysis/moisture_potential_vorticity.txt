@@ -21,8 +21,8 @@ The example to calcluate moisture potential vorticity.
 
     # Read data
     print 'Read data...'
-    latlim = [10,60]
-    lonlim = [60,140]
+    latlim = '10:60'
+    lonlim = '60:140'
     rh = meteof['RELH'][:,:,latlim,lonlim]
     nx = rh.dimlen(3)
     ny = rh.dimlen(2)
@@ -35,7 +35,7 @@ The example to calcluate moisture potential vorticity.
     vwnd = meteof['VWND'][:,:nz-1,latlim,lonlim]
     vort = hcurl(uwnd, vwnd)
     prs = zeros([nt,nz,ny,nx])
-    prs = DimArray(prs, rh.dims)
+    prs = dim_array(prs, rh.dims)
     for i in range(nz):
         prs[:,i,:,:] = lev[i]
 
@@ -52,7 +52,7 @@ The example to calcluate moisture potential vorticity.
     # Calculate moisture potential vorticity
     print 'Calculate moisture potential vorticity...'
     mpv = zeros([nt,nz,ny,nx], dtype='double')
-    mpv = DimArray(mpv, rh.dims)
+    mpv = dim_array(mpv, rh.dims)
     mpv.setdimvalue(1, lev[1:nz-1])
     for t in range(nt):
         tt = meteof.gettime(t)

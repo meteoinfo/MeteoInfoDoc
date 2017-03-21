@@ -9,8 +9,8 @@ Streamline plot was created by ``streamplot()`` or ``streamplotm()`` (for map ax
 ::
 
     f = addfile('D:/Temp/GrADS/model.ctl')
-    u = f['U'][0,[500],[10,60],[60,140]]
-    v = f['V'][0,[500],[10,60],[60,140]]
+    u = f['U'][0,'500','10:60','60:140']
+    v = f['V'][0,'500','10:60','60:140']
     axesm()
     mlayer = shaperead('D:/Temp/map/country1.shp')
     geoshow(mlayer, edgecolor='k')

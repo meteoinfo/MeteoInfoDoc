@@ -22,9 +22,9 @@ This example code illustrates how to access and visualize a FY-3A satellite AOD
     v.setdim('X', x, 1)
     #Get data array
     aod = v[:,:]
-    #aod = v[[15, 55],[70, 140]]
+    #aod = v['15:55','70:140']
     aod = aod[::-1,:] / 10000.
-    aod = aod[[15, 55],[70, 140]]
+    aod = aod['15:55','70:140']
     #Plot
     axesm()
     world = shaperead('D:/Temp/map/country1.shp')

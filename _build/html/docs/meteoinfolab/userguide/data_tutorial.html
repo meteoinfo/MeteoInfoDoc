@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Dataset tutorial &mdash; MeteoInfo 1.3.3 documentation</title>
+    <title>Dataset tutorial &mdash; MeteoInfo 1.4.1 documentation</title>
     
     <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.3.3',
+        VERSION:     '1.4.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,7 +24,7 @@
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="MeteoInfo 1.3.3 documentation" href="../../../index.html" />
+    <link rel="top" title="MeteoInfo 1.4.1 documentation" href="../../../index.html" />
     <link rel="up" title="Tutorials" href="tutorials.html" />
     <link rel="next" title="Functions" href="../functions.html" />
     <link rel="prev" title="Arrays" href="arrays.html" /> 
@@ -191,20 +191,20 @@ by fixing time dimension:</p>
 </pre></div>
 </div>
 <p>Now try to get 0-D <tt class="docutils literal"><span class="pre">Z</span></tt> array (single value) along time dimension by fixing time, level, latitude and longitude dimensions:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">hgt</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;Z&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,[</span><span class="mi">500</span><span class="p">],[</span><span class="mi">40</span><span class="p">],[</span><span class="o">-</span><span class="mi">90</span><span class="p">]]</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">hgt</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;Z&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span><span class="s">&#39;500&#39;</span><span class="p">,</span><span class="s">&#39;40&#39;</span><span class="p">,</span><span class="s">&#39;-90&#39;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">hgt</span>
 <span class="go">5759.111328125</span>
 </pre></div>
 </div>
 <p>Get 1-D <tt class="docutils literal"><span class="pre">Z</span></tt> array along longitude dimension and plot it:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">hgt</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;Z&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,[</span><span class="mi">500</span><span class="p">],[</span><span class="mi">40</span><span class="p">],[</span><span class="mi">180</span><span class="p">,</span><span class="mi">360</span><span class="p">]]</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">hgt</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;Z&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span><span class="s">&#39;500&#39;</span><span class="p">,</span><span class="s">&#39;40&#39;</span><span class="p">,</span><span class="s">&#39;180:360&#39;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">clf</span><span class="p">()</span>             <span class="c">#Clear figure</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">plot</span><span class="p">(</span><span class="n">hgt</span><span class="p">,</span> <span class="s">&#39;b-*&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <img alt="../../../_images/tutorial_hgt_plot.png" src="../../../_images/tutorial_hgt_plot.png" />
 <p>Get and plot 2-D <tt class="docutils literal"><span class="pre">Z</span></tt> array with dimensions of latitude and longitude:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">hgt</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;Z&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,[</span><span class="mi">500</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">90</span><span class="p">],[</span><span class="mi">180</span><span class="p">,</span><span class="mi">360</span><span class="p">]]</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">hgt</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;Z&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span><span class="s">&#39;500&#39;</span><span class="p">,</span><span class="s">&#39;0:90&#39;</span><span class="p">,</span><span class="s">&#39;180:360&#39;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">clf</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">axesm</span><span class="p">()</span>
 <span class="go">(org.meteoinfo.chart.plot.MapPlot@c3d5957, +proj=longlat +lat_0=0 +lon_0=0 +lat_1=30 +lat_2=60 +lat_ts=0 +k=1 +x_0=0 +y_0=0 +h=0 )</span>
@@ -216,19 +216,19 @@ by fixing time dimension:</p>
 <img alt="../../../_images/tutorial_hgt_contourm.png" src="../../../_images/tutorial_hgt_contourm.png" />
 <p>Get and plot 2-D <tt class="docutils literal"><span class="pre">T</span></tt> array with dimensions of level and latitude:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">clf</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">tair</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;T&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,[</span><span class="mi">1000</span><span class="p">,</span><span class="mi">100</span><span class="p">],[</span><span class="o">-</span><span class="mi">90</span><span class="p">,</span><span class="mi">90</span><span class="p">],[</span><span class="mi">270</span><span class="p">]]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">u</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;U&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,[</span><span class="mi">1000</span><span class="p">,</span><span class="mi">100</span><span class="p">],[</span><span class="o">-</span><span class="mi">90</span><span class="p">,</span><span class="mi">90</span><span class="p">],[</span><span class="mi">270</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tair</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;T&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span><span class="s">&#39;1000:100&#39;</span><span class="p">,</span><span class="s">&#39;-90:90&#39;</span><span class="p">,</span><span class="s">&#39;270&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">u</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;U&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span><span class="s">&#39;1000:100&#39;</span><span class="p">,</span><span class="s">&#39;-90:90&#39;</span><span class="p">,</span><span class="s">&#39;270&#39;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">lev1</span> <span class="o">=</span> <span class="n">tair</span><span class="o">.</span><span class="n">dimvalue</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>    <span class="c">#Get level array</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">lev1</span>
 <span class="go">array([1000.0, 850.0, 700.0, 500.0, 300.0, 200.0, 100.0])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">lev2</span><span class="o">=</span> <span class="n">p2h</span><span class="p">(</span><span class="n">lev1</span><span class="p">)</span>    <span class="c">#Convert pressure to height</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lev2</span><span class="o">=</span> <span class="n">meteo</span><span class="o">.</span><span class="n">p2h</span><span class="p">(</span><span class="n">lev1</span><span class="p">)</span>    <span class="c">#Convert pressure to height</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">lev2</span>
 <span class="go">array([118.82072662298948, 1458.904109589041, 3010.198878123406, 5574.761399787911, 9186.842105263158, 11818.421052631578, 16249.554367201426])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tair</span><span class="o">.</span><span class="n">setdimvalue</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">lev2</span><span class="p">)</span>    <span class="c">#Set level dimension value to lev2 array</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">u</span><span class="o">.</span><span class="n">setdimvalue</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">lev2</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">layer</span> <span class="o">=</span> <span class="n">contour</span><span class="p">(</span><span class="n">tair</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">clabel</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ulayer</span> <span class="o">=</span> <span class="n">contour</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ulayer</span> <span class="o">=</span> <span class="n">contour</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="s">&#39;k&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">clabel</span><span class="p">(</span><span class="n">ulayer</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">yticks</span><span class="p">(</span><span class="n">lev2</span><span class="p">,</span> <span class="n">lev1</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Latitude&#39;</span><span class="p">)</span>
@@ -238,7 +238,7 @@ by fixing time dimension:</p>
 <img alt="../../../_images/tutorial_tair_contour.png" src="../../../_images/tutorial_tair_contour.png" />
 <p>Another example, in this case with X and T varying (Hovmoller plot):</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">clf</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">hgt</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;Z&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">,[</span><span class="mi">500</span><span class="p">],[</span><span class="mi">40</span><span class="p">],[</span><span class="mi">180</span><span class="p">,</span><span class="mi">360</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hgt</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;Z&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span><span class="s">&#39;500&#39;</span><span class="p">,</span><span class="s">&#39;40&#39;</span><span class="p">,</span><span class="s">&#39;180:360&#39;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">layer</span> <span class="o">=</span> <span class="n">contour</span><span class="p">(</span><span class="n">hgt</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">clabel</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">yaxis</span><span class="p">(</span><span class="n">axistype</span><span class="o">=</span><span class="s">&#39;time&#39;</span><span class="p">,</span> <span class="n">timetickformat</span><span class="o">=</span><span class="s">&#39;yyy-MM-dd&#39;</span><span class="p">)</span>
@@ -249,9 +249,9 @@ by fixing time dimension:</p>
 </div>
 <img alt="../../../_images/tutorial_hgt_time.png" src="../../../_images/tutorial_hgt_time.png" />
 <p>Now that you know how to select the portion of the data set to view, we will move on to the topic of operations on the data.
-First, get 2-D <tt class="docutils literal"><span class="pre">TS</span></tt> array with latitude and longitude dimensions:</p>
+First, get 2-D <tt class="docutils literal"><span class="pre">T</span></tt> array with latitude and longitude dimensions:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">clf</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;TS&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,[</span><span class="mi">500</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">90</span><span class="p">],[</span><span class="mi">180</span><span class="p">,</span><span class="mi">360</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;T&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span><span class="s">&#39;500&#39;</span><span class="p">,</span><span class="s">&#39;0:90&#39;</span><span class="p">,</span><span class="s">&#39;180:360&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>Now say that we want to see the temperature in Fahrenheit instead of Kelvin. We can do the conversion by entering:</p>
@@ -260,8 +260,8 @@ First, get 2-D <tt class="docutils literal"><span class="pre">TS</span></tt> arr
 </div>
 <p>Any expression may be entered that involves the standard operators of +, -, <a href="#id1"><span class="problematic" id="id2">*</span></a>, and /, and which involves operands which may be
 constants, variables, or functions. An example involving functions:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">u</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;U&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,[</span><span class="mi">500</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">90</span><span class="p">],[</span><span class="mi">180</span><span class="p">,</span><span class="mi">360</span><span class="p">]]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;V&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,[</span><span class="mi">500</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">90</span><span class="p">],[</span><span class="mi">180</span><span class="p">,</span><span class="mi">360</span><span class="p">]]</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">u</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;U&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span><span class="s">&#39;500&#39;</span><span class="p">,</span><span class="s">&#39;0:90&#39;</span><span class="p">,</span><span class="s">&#39;180:360&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;V&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span><span class="s">&#39;500&#39;</span><span class="p">,</span><span class="s">&#39;0:90&#39;</span><span class="p">,</span><span class="s">&#39;180:360&#39;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ws</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">u</span><span class="o">*</span><span class="n">u</span><span class="o">+</span><span class="n">v</span><span class="o">*</span><span class="n">v</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -283,7 +283,7 @@ constants, variables, or functions. An example involving functions:</p>
 <p>Here we are displaying two expressions, the first for the U component of the vector; the 2nd the V component of the vector. We can
 also colorize the vectors by specifying a 3rd field:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">cll</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">q</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;Q&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,[</span><span class="mi">500</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">90</span><span class="p">],[</span><span class="mi">180</span><span class="p">,</span><span class="mi">360</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;Q&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span><span class="s">&#39;500&#39;</span><span class="p">,</span><span class="s">&#39;0:90&#39;</span><span class="p">,</span><span class="s">&#39;180:360&#39;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">layer</span> <span class="o">=</span> <span class="n">quiverm</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">q</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">quiverkey</span><span class="p">(</span><span class="n">layer</span><span class="p">,</span> <span class="mf">0.94</span><span class="p">,</span> <span class="mf">0.18</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">bbox</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;edge&#39;</span><span class="p">:</span><span class="bp">True</span><span class="p">,</span> <span class="s">&#39;fill&#39;</span><span class="p">:</span><span class="bp">True</span><span class="p">})</span>    <span class="c">#Plot wind vector key</span>
 </pre></div>
@@ -294,7 +294,7 @@ also colorize the vectors by specifying a 3rd field:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">axesm</span><span class="p">(</span><span class="n">proj</span><span class="o">=</span><span class="s">&#39;stere&#39;</span><span class="p">,</span> <span class="n">lat_0</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span> <span class="n">lon_0</span><span class="o">=-</span><span class="mi">92</span><span class="p">,</span> <span class="n">gridline</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 <span class="go">(org.meteoinfo.chart.plot.MapPlot@bf0b58a, +proj=stere +lat_0=90 +lon_0=-92 +lat_1=30 +lat_2=60 +lat_ts=0 +k=1 +x_0=0 +y_0=0 +h=0 )</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">geoshow</span><span class="p">(</span><span class="n">mlayer</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s">&#39;gray&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">hgt</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;Z&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,[</span><span class="mi">500</span><span class="p">],[</span><span class="mi">15</span><span class="p">,</span><span class="mi">80</span><span class="p">],[</span><span class="mi">210</span><span class="p">,</span><span class="mi">320</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hgt</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;Z&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span><span class="s">&#39;500&#39;</span><span class="p">,</span><span class="s">&#39;15:80&#39;</span><span class="p">,</span><span class="s">&#39;210:320&#39;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">layer</span> <span class="o">=</span> <span class="n">contourfm</span><span class="p">(</span><span class="n">hgt</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span>
 </pre></div>
@@ -334,7 +334,7 @@ also colorize the vectors by specifying a 3rd field:</p>
       </ul>
     </div>
     <div class="footer">
-        &copy; Copyright 2016, Yaqiang Wang.
+        &copy; Copyright 2010-2017, Yaqiang Wang.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
     </div>
   </body>

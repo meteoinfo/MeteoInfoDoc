@@ -1,8 +1,8 @@
 .. _examples-meteoinfolab-satellite-mod08_aod:
 
-*******************
+***********************
 MODIS AOD data - MOD08
-*******************
+***********************
 
 This example code illustrates how to access and visualize a MODIS AOD (MOD08)
 data.
@@ -18,7 +18,7 @@ data.
     v_aod.setdim('Y', y)
     v_aod.setdim('X', x)
     #Get data
-    aod = v_aod[[15,55],[70,140]]
+    aod = v_aod['15:55','70:140']
     #Plot
     axesm()
     china = shaperead('D:/Temp/map/bou2_4p.shp')

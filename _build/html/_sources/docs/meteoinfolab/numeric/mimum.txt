@@ -1,0 +1,11 @@
+.. _dos-meteoinfolab-numeric:
+
+
+*********************
+Numeric package
+*********************
+
+.. toctree::
+   :maxdepth: 1
+
+   ../functions/array/array.rst

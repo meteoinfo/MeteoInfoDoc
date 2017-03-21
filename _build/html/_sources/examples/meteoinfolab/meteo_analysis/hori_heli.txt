@@ -15,9 +15,9 @@ The example to calcluate horizontal helicity.
     print 'Calculate average wind field from 850 to 600 hpa...'
     tidx = 173    # Jun 23, 2011
     t = f_uwnd.gettime(tidx)
-    level = [850,600]    # 850 - 600 hPa
-    lat = [15,55]
-    lon = [70,135]
+    level = '850:600'    # 850 - 600 hPa
+    lat = '15:55'
+    lon = '70:135'
     uvar = f_uwnd['uwnd']
     vvar = f_vwnd['vwnd']
     uwnd = uvar[tidx,level,lat,lon]

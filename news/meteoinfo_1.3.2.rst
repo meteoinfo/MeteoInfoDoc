@@ -17,7 +17,7 @@ topology analysis functions.
 
 ::
 
-    import mipylib.topology as tp
+    import mipylib.geolib.topology as tp
 
     axesm()
     lworld = shaperead('D:/Temp/map/country1.shp')

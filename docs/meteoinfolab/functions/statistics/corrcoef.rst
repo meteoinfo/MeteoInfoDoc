@@ -30,8 +30,8 @@ corrcoef
     Spatial correlation calculation script::
     
         f = addfile('D:/Temp/GrADS/model.ctl')
-        t = f['T'][0,0,[10,60],[60,140]]
-        q = f['Q'][0,0,[10,60],[60,140]]
+        t = f['T'][0,0,'10:60','60:140']
+        q = f['Q'][0,0,'10:60','60:140']
         R = corrcoef(t, q)
         print R
         r = R[0,1]

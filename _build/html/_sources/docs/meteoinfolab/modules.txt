@@ -1,0 +1,11 @@
+.. _dos-meteoinfolab-modules:
+
+
+*******************
+Modules
+*******************
+
+.. currentmodule:: mitable
+
+.. autoclass:: PyTableData
+   :members:

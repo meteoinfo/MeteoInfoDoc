@@ -31,7 +31,7 @@ contourm
 
         f = addfile('D:/Temp/GrADS/model.ctl')
         psv = f['PS']
-        ps = psv[0,[10,60],[60,140]]
+        ps = psv[0,'10:60','60:140']
         axesm()
         mlayer = shaperead('D:/Temp/map/country1.shp')
         geoshow(mlayer, edgecolor=(0,0,255))

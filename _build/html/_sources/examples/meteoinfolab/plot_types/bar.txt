@@ -114,3 +114,34 @@ Hatch fill example using *hatch* argument:
     title('Bar chart example - Hatch')
     
 .. image:: ../../../_static/bar_hatch.png
+
+An example to draw Darwin Southern Oscillation Index with bar chart:
+
+::
+
+    fn = 'D:/Temp/nc/soi.nc'
+    f = addfile(fn)
+    yms = f['date'][::8]       #Year and month
+    dsoik = f['DSOI_KET'][::8] #Darwin SOI Index via KET 11pt Smth
+    dsoid = f['DSOI_DEC'][::8] #Darwin Decadal SOI Index
+
+    #Set dates and colors
+    dates = []
+    cols = []
+    for ym,d in zip(yms,dsoik):
+        dates.append(datetime.datetime(ym / 100, ym % 100, 1))
+        if d >= 0:
+            cols.append('r')
+        else:
+            cols.append('b')
+
+    #Bar plot
+    bar(dates, dsoik, color=cols, edgecolor=None)
+    xlim(dates[0], dates[-1])
+    ylim(-3, 3)
+    xaxis(axistype='time', minortick=True, tickin=False)
+    yaxis(minortick=True, tickin=False)
+    ylabel('Anomalias')
+    title('Darwin Southern Oscillation Index')
+    
+.. image:: ../../../_static/bar_dsoi.png

@@ -27,8 +27,8 @@ quiver
     ::
 
         f = addfile('D:/Temp/GrADS/model.ctl')
-        u = f['U'][0,[500],[10,60],[60,140]]
-        v = f['V'][0,[500],[10,60],[60,140]]
+        u = f['U'][0,'500','10:60','60:140']
+        v = f['V'][0,'500','10:60','60:140']
         speed = sqrt(u*u+v*v)
         layer = quiver(u, v, speed, 10, size=8)
         title('Wind field')

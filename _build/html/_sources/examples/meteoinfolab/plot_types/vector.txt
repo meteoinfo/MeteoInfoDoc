@@ -10,8 +10,8 @@ can be used to add a key in a quiver plot.
 ::
 
     f = addfile('D:/Temp/GrADS/model.ctl')
-    u = f['U'][0,[500],[10,60],[60,140]]
-    v = f['V'][0,[500],[10,60],[60,140]]
+    u = f['U'][0,'500','10:60','60:140']
+    v = f['V'][0,'500','10:60','60:140']
     speed = sqrt(u*u+v*v)
     #Plot
     axesm()

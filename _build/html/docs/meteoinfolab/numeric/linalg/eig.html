@@ -1,0 +1,186 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Compute eigenvalues &mdash; MeteoInfo 1.4.1 documentation</title>
+    
+    <link rel="stylesheet" href="../../../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../',
+        VERSION:     '1.4.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="MeteoInfo 1.4.1 documentation" href="../../../../index.html" />
+    <link rel="up" title="Linear algebra" href="../../functions/math/linalg.html" />
+    <link rel="next" title="Solve a linear matrix equation" href="solve.html" />
+    <link rel="prev" title="SVD decomposition" href="svd.html" /> 
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../../../index.html"><img src="../../../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="solve.html" title="Solve a linear matrix equation"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="svd.html" title="SVD decomposition"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li><a href="../../../index.html" >Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >MeteoInfoLab</a> &raquo;</li>
+          <li><a href="../../functions.html" >Functions</a> &raquo;</li>
+          <li><a href="../../functions/math.html" >Mathematical</a> &raquo;</li>
+          <li><a href="../../functions/math/linalg.html" accesskey="U">Linear algebra</a> &raquo;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="svd.html"
+                        title="previous chapter">SVD decomposition</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="solve.html"
+                        title="next chapter">Solve a linear matrix equation</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../../_sources/docs/meteoinfolab/numeric/linalg/eig.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="compute-eigenvalues">
+<span id="docs-meteoinfolab-numeric-linalg-eig"></span><h1>Compute eigenvalues<a class="headerlink" href="#compute-eigenvalues" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="numeric.linalg.eig">
+<tt class="descclassname">numeric.linalg.</tt><tt class="descname">eig</tt><big>(</big><em>a</em><big>)</big><a class="headerlink" href="#numeric.linalg.eig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the eigenvalues and right eigenvectors of a square array.</p>
+<p><tt class="docutils literal"><span class="pre">Parameters</span></tt></p>
+<dl class="docutils">
+<dt>a <span class="classifier-delimiter">:</span> <span class="classifier">(M, M) array</span></dt>
+<dd>Matrices for which the eigenvalues and right eigenvectors will
+be computed</dd>
+</dl>
+<p><tt class="docutils literal"><span class="pre">Returns</span></tt></p>
+<dl class="docutils">
+<dt>w <span class="classifier-delimiter">:</span> <span class="classifier">(M) array</span></dt>
+<dd>The eigenvalues, each repeated according to its multiplicity.
+The eigenvalues are not necessarily ordered. The resulting
+array will be of complex type, unless the imaginary part is
+zero in which case it will be cast to a real type. When <tt class="docutils literal"><span class="pre">a</span></tt>
+is real the resulting eigenvalues will be real (0 imaginary
+part) or occur in conjugate pairs</dd>
+<dt>v <span class="classifier-delimiter">:</span> <span class="classifier">(M, M) array</span></dt>
+<dd>The normalized (unit &#8220;length&#8221;) eigenvectors, such that the
+column <tt class="docutils literal"><span class="pre">v[:,i]</span></tt> is the eigenvector corresponding to the
+eigenvalue <tt class="docutils literal"><span class="pre">w[i]</span></tt>.</dd>
+</dl>
+<p>Examples:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">w</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">w</span>
+<span class="k">print</span> <span class="n">v</span>
+</pre></div>
+</div>
+<p>Result:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">run</span> <span class="n">script</span><span class="o">...</span>
+<span class="go">array([1.0, 2.0, 3.0])</span>
+<span class="go">array([[1.0, 0.0, 0.0]</span>
+<span class="go">      [0.0, 1.0, 0.0]</span>
+<span class="go">      [0.0, 0.0, 1.0]])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="solve.html" title="Solve a linear matrix equation"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="svd.html" title="SVD decomposition"
+             >previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li><a href="../../../index.html" >Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >MeteoInfoLab</a> &raquo;</li>
+          <li><a href="../../functions.html" >Functions</a> &raquo;</li>
+          <li><a href="../../functions/math.html" >Mathematical</a> &raquo;</li>
+          <li><a href="../../functions/math/linalg.html" >Linear algebra</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2010-2017, Yaqiang Wang.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

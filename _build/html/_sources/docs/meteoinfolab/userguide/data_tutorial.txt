@@ -104,13 +104,13 @@ Save figure::
     
 Now try to get 0-D ``Z`` array (single value) along time dimension by fixing time, level, latitude and longitude dimensions::
 
-    >>> hgt = f['Z'][0,[500],[40],[-90]]
+    >>> hgt = f['Z'][0,'500','40','-90']
     >>> hgt
     5759.111328125
 
 Get 1-D ``Z`` array along longitude dimension and plot it::
 
-    >>> hgt = f['Z'][0,[500],[40],[180,360]]
+    >>> hgt = f['Z'][0,'500','40','180:360']
     >>> clf()             #Clear figure
     >>> plot(hgt, 'b-*')
     
@@ -118,7 +118,7 @@ Get 1-D ``Z`` array along longitude dimension and plot it::
 
 Get and plot 2-D ``Z`` array with dimensions of latitude and longitude::
 
-    >>> hgt = f['Z'][0,[500],[0,90],[180,360]]
+    >>> hgt = f['Z'][0,'500','0:90','180:360']
     >>> clf()
     >>> axesm()
     (org.meteoinfo.chart.plot.MapPlot@c3d5957, +proj=longlat +lat_0=0 +lon_0=0 +lat_1=30 +lat_2=60 +lat_ts=0 +k=1 +x_0=0 +y_0=0 +h=0 )
@@ -131,19 +131,19 @@ Get and plot 2-D ``Z`` array with dimensions of latitude and longitude::
 Get and plot 2-D ``T`` array with dimensions of level and latitude::
 
     >>> clf()
-    >>> tair = f['T'][0,[1000,100],[-90,90],[270]]
-    >>> u = f['U'][0,[1000,100],[-90,90],[270]]
+    >>> tair = f['T'][0,'1000:100','-90:90','270']
+    >>> u = f['U'][0,'1000:100','-90:90','270']
     >>> lev1 = tair.dimvalue(0)    #Get level array
     >>> lev1
     array([1000.0, 850.0, 700.0, 500.0, 300.0, 200.0, 100.0])
-    >>> lev2= p2h(lev1)    #Convert pressure to height
+    >>> lev2= meteo.p2h(lev1)    #Convert pressure to height
     >>> lev2
     array([118.82072662298948, 1458.904109589041, 3010.198878123406, 5574.761399787911, 9186.842105263158, 11818.421052631578, 16249.554367201426])
     >>> tair.setdimvalue(0, lev2)    #Set level dimension value to lev2 array
     >>> u.setdimvalue(0, lev2)
     >>> layer = contour(tair)
     >>> clabel(layer)
-    >>> ulayer = contour(u)
+    >>> ulayer = contour(u, colors='k')
     >>> clabel(ulayer)
     >>> yticks(lev2, lev1)
     >>> xlabel('Latitude')
@@ -154,7 +154,7 @@ Get and plot 2-D ``T`` array with dimensions of level and latitude::
 Another example, in this case with X and T varying (Hovmoller plot)::
 
     >>> clf()
-    >>> hgt = f['Z'][0:4,[500],[40],[180,360]]
+    >>> hgt = f['Z'][0:4,'500','40','180:360']
     >>> layer = contour(hgt, 10)
     >>> clabel(layer)
     >>> yaxis(axistype='time', timetickformat='yyy-MM-dd')
@@ -165,10 +165,10 @@ Another example, in this case with X and T varying (Hovmoller plot)::
 .. image:: ../../../_static/tutorial_hgt_time.png
 
 Now that you know how to select the portion of the data set to view, we will move on to the topic of operations on the data. 
-First, get 2-D ``TS`` array with latitude and longitude dimensions::
+First, get 2-D ``T`` array with latitude and longitude dimensions::
 
     >>> clf()
-    >>> t = f['TS'][0,[500],[0,90],[180,360]]
+    >>> t = f['T'][0,'500','0:90','180:360']
     
 Now say that we want to see the temperature in Fahrenheit instead of Kelvin. We can do the conversion by entering::
 
@@ -177,8 +177,8 @@ Now say that we want to see the temperature in Fahrenheit instead of Kelvin. We 
 Any expression may be entered that involves the standard operators of +, -, *, and /, and which involves operands which may be 
 constants, variables, or functions. An example involving functions::
 
-    >>> u = f['U'][0,[500],[0,90],[180,360]]
-    >>> v = f['V'][0,[500],[0,90],[180,360]]
+    >>> u = f['U'][0,'500','0:90','180:360']
+    >>> v = f['V'][0,'500','0:90','180:360']
     >>> ws = sqrt(u*u+v*v)
     
 to calculate the magnitude of the wind. A function is provided to do this calculation directly::
@@ -201,7 +201,7 @@ Here we are displaying two expressions, the first for the U component of the vec
 also colorize the vectors by specifying a 3rd field::
 
     >>> cll()
-    >>> q = f['Q'][0,[500],[0,90],[180,360]]
+    >>> q = f['Q'][0,'500','0:90','180:360']
     >>> layer = quiverm(u, v, q)
     >>> quiverkey(layer, 0.94, 0.18, 20, bbox={'edge':True, 'fill':True})    #Plot wind vector key
     
@@ -213,7 +213,7 @@ To alter the projection::
     >>> axesm(proj='stere', lat_0=90, lon_0=-92, gridline=True)
     (org.meteoinfo.chart.plot.MapPlot@bf0b58a, +proj=stere +lat_0=90 +lon_0=-92 +lat_1=30 +lat_2=60 +lat_ts=0 +k=1 +x_0=0 +y_0=0 +h=0 )
     >>> geoshow(mlayer, edgecolor='gray')
-    >>> hgt = f['Z'][0,[500],[15,80],[210,320]]
+    >>> hgt = f['Z'][0,'500','15:80','210:320']
     >>> layer = contourfm(hgt, 20)
     >>> colorbar(layer)
     
