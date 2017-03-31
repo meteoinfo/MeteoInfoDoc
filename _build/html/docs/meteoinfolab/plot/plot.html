@@ -1,0 +1,292 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>plot &mdash; MeteoInfo 1.4.1 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.4.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="MeteoInfo 1.4.1 documentation" href="../../../index.html" />
+    <link rel="up" title="Plotlib package" href="../plotlib.html" />
+    <link rel="next" title="fill_between" href="fill_between.html" />
+    <link rel="prev" title="antialias" href="antialias.html" /> 
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../../index.html"><img src="../../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="fill_between.html" title="fill_between"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="antialias.html" title="antialias"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../index.html">docs</a>|&nbsp;</li>
+
+          <li><a href="../../index.html" >Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >MeteoInfoLab</a> &raquo;</li>
+          <li><a href="../api.html" >The MeteoInfoLab API</a> &raquo;</li>
+          <li><a href="../plotlib.html" accesskey="U">Plotlib package</a> &raquo;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="antialias.html"
+                        title="previous chapter">antialias</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="fill_between.html"
+                        title="next chapter">fill_between</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/docs/meteoinfolab/plot/plot.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="plot">
+<span id="docs-meteoinfolab-funcitons-plot-plot"></span><h1>plot<a class="headerlink" href="#plot" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt>
+<tt class="descname">plot</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big></dt>
+<dd><p>Plot lines and/or markers to the axes. <em>args</em> is a variable length argument, allowing
+for multiple <em>x, y</em> pairs with an optional format string.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>x</strong> &#8211; (<em>array_like</em>) Input x data.</li>
+<li><strong>y</strong> &#8211; (<em>array_like</em>) Input y data.</li>
+<li><strong>style</strong> &#8211; (<em>string</em>) Line style for plot.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Legend breaks of the lines.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>The following format string characters are accepted to control the line style or marker:</p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="29%" />
+<col width="71%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Character</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>&#8216;-&#8216;</td>
+<td>solid line style</td>
+</tr>
+<tr class="row-odd"><td>&#8216;&#8211;&#8217;</td>
+<td>dashed line style</td>
+</tr>
+<tr class="row-even"><td>&#8216;-.&#8217;</td>
+<td>dash-dot line style</td>
+</tr>
+<tr class="row-odd"><td>&#8216;:&#8217;</td>
+<td>dotted line style</td>
+</tr>
+<tr class="row-even"><td>&#8216;.&#8217;</td>
+<td>point marker</td>
+</tr>
+<tr class="row-odd"><td>&#8216;,&#8217;</td>
+<td>pixel marker</td>
+</tr>
+<tr class="row-even"><td>&#8216;o&#8217;</td>
+<td>circle marker</td>
+</tr>
+<tr class="row-odd"><td>&#8216;v&#8217;</td>
+<td>triangle_down marker</td>
+</tr>
+<tr class="row-even"><td>&#8216;^&#8217;</td>
+<td>triangle_up marker</td>
+</tr>
+<tr class="row-odd"><td>&#8216;&lt;&#8217;</td>
+<td>triangle_left marker</td>
+</tr>
+<tr class="row-even"><td>&#8216;&gt;&#8217;</td>
+<td>triangle_right marker</td>
+</tr>
+<tr class="row-odd"><td>&#8216;s&#8217;</td>
+<td>square marker</td>
+</tr>
+<tr class="row-even"><td>&#8216;p&#8217;</td>
+<td>pentagon marker</td>
+</tr>
+<tr class="row-odd"><td>&#8216;*&#8217;</td>
+<td>star marker</td>
+</tr>
+<tr class="row-even"><td>&#8216;x&#8217;</td>
+<td>x marker</td>
+</tr>
+<tr class="row-odd"><td>&#8216;D&#8217;</td>
+<td>diamond marker</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>The following color abbreviations are supported:</p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="56%" />
+<col width="44%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Character</th>
+<th class="head">Color</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>&#8216;b&#8217;</td>
+<td>blue</td>
+</tr>
+<tr class="row-odd"><td>&#8216;g&#8217;</td>
+<td>green</td>
+</tr>
+<tr class="row-even"><td>&#8216;r&#8217;</td>
+<td>red</td>
+</tr>
+<tr class="row-odd"><td>&#8216;c&#8217;</td>
+<td>cyan</td>
+</tr>
+<tr class="row-even"><td>&#8216;m&#8217;</td>
+<td>magenta</td>
+</tr>
+<tr class="row-odd"><td>&#8216;y&#8217;</td>
+<td>yellow</td>
+</tr>
+<tr class="row-even"><td>&#8216;k&#8217;</td>
+<td>black</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Examples:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">16</span><span class="p">]</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>    <span class="c"># plot y using x as index array 0..N-1</span>
+</pre></div>
+</div>
+<img alt="../../../_images/plot_11.png" src="../../../_images/plot_11.png" />
+<div class="highlight-python"><div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">16</span><span class="p">]</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>    <span class="c"># plot x and y using default line style and color</span>
+</pre></div>
+</div>
+<img alt="../../../_images/plot_21.png" src="../../../_images/plot_21.png" />
+<div class="highlight-python"><div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">16</span><span class="p">]</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s">&#39;b--*&#39;</span><span class="p">)</span>    <span class="c"># plot x and y using blue dash line and star marker style</span>
+</pre></div>
+</div>
+<img alt="../../../_images/plot_31.png" src="../../../_images/plot_31.png" />
+<div class="highlight-python"><div class="highlight"><pre><span class="n">t</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="s">&#39;r--&#39;</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="s">&#39;bs&#39;</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">t</span><span class="o">**</span><span class="mi">3</span><span class="p">,</span> <span class="s">&#39;g^&#39;</span><span class="p">)</span>
+<span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s">&#39;custom&#39;</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s">&#39;Multiple lines&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../_images/plot_41.png" src="../../../_images/plot_41.png" />
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="fill_between.html" title="fill_between"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="antialias.html" title="antialias"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../index.html">docs</a>|&nbsp;</li>
+
+          <li><a href="../../index.html" >Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >MeteoInfoLab</a> &raquo;</li>
+          <li><a href="../api.html" >The MeteoInfoLab API</a> &raquo;</li>
+          <li><a href="../plotlib.html" >Plotlib package</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2010-2017, Yaqiang Wang.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

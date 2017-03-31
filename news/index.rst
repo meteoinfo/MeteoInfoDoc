@@ -8,6 +8,7 @@ News
 .. toctree::
    :maxdepth: 2
 
+   meteoinfo_1.4.2.rst
    meteoinfo_1.4.1.rst
    meteoinfo_1.4.rst
    meteoinfo_1.3.9.rst

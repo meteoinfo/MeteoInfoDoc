@@ -10,4 +10,3 @@ MeteoInfoLab
    
    user_guide.rst
    api.rst
-   functions.rst

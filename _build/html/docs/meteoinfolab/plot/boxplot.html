@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>boxplot &mdash; MeteoInfo 1.4.1 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.4.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="MeteoInfo 1.4.1 documentation" href="../../../index.html" />
+    <link rel="up" title="Plotlib package" href="../plotlib.html" />
+    <link rel="next" title="loglog" href="loglog.html" />
+    <link rel="prev" title="pie" href="pie.html" /> 
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../../index.html"><img src="../../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="loglog.html" title="loglog"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="pie.html" title="pie"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../index.html">docs</a>|&nbsp;</li>
+
+          <li><a href="../../index.html" >Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >MeteoInfoLab</a> &raquo;</li>
+          <li><a href="../api.html" >The MeteoInfoLab API</a> &raquo;</li>
+          <li><a href="../plotlib.html" accesskey="U">Plotlib package</a> &raquo;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="pie.html"
+                        title="previous chapter">pie</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="loglog.html"
+                        title="next chapter">loglog</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/docs/meteoinfolab/plot/boxplot.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="boxplot">
+<span id="docs-meteoinfolab-funcitons-plot-boxplot"></span><h1>boxplot<a class="headerlink" href="#boxplot" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt>
+<tt class="descname">boxplot</tt><big>(</big><em>x</em>, <em>sym=None</em>, <em>positions=None</em>, <em>widths=None</em>, <em>color=None</em>, <em>showcaps=True</em>, <em>showfliers=True</em>, <em>showmeans=False</em>, <em>meanline=False</em>, <em>boxprops=None</em>, <em>medianprops=None</em>, <em>meanprops=None</em>, <em>whiskerprops=None</em>, <em>capprops=None</em>, <em>flierprops=None</em><big>)</big></dt>
+<dd><p>Make a box and whisker plot.</p>
+<p>Make a box and whisker plot for each column of x or each vector in sequence x. The box extends from lower
+to upper quartile values of the data, with a line at the median. The whiskers extend from the box to show
+the range of the data. Flier points are those past the end of the whiskers.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>x</strong> &#8211; (<em>Array or a sequence of vectors</em>) The input data.</li>
+<li><strong>sym</strong> &#8211; (<em>string</em>) The default symbol for flier points. Enter an empty string (&#8216;&#8217;) if you don’t
+want to show fliers. If None, then the fliers default to ‘b+’ If you want more control use the
+flierprops kwarg.</li>
+<li><strong>positions</strong> &#8211; (<em>array_like</em>) Sets the positions of the boxes. The ticks and limits are automatically
+set to match the positions. Defaults to range(1, N+1) where N is the number of boxes to be drawn.</li>
+<li><strong>widths</strong> &#8211; (<em>scalar or array_like</em>) Sets the width of each box either with a scalar or a sequence.
+The default is 0.5, or 0.15*(distance between extreme positions), if that is smaller.</li>
+<li><strong>color</strong> &#8211; (<em>Color</em>) Color for all parts of the box plot. Defaul is None.</li>
+<li><strong>showcaps</strong> &#8211; (<em>boolean</em>) Show the caps on the ends of whiskers. Default is <tt class="docutils literal"><span class="pre">True</span></tt>.</li>
+<li><strong>showfliers</strong> &#8211; (<em>boolean</em>) Show the outliers beyond the caps. Defaul is <tt class="docutils literal"><span class="pre">True</span></tt>.</li>
+<li><strong>showmeans</strong> &#8211; (<em>boolean</em>) Default is <tt class="docutils literal"><span class="pre">False</span></tt>. Show the mean or not.</li>
+<li><strong>meanline</strong> &#8211; (<em>boolean</em>) Default is <tt class="docutils literal"><span class="pre">False</span></tt>. If <tt class="docutils literal"><span class="pre">True</span></tt> (and showmeans is <tt class="docutils literal"><span class="pre">True</span></tt>), will try to render
+the mean as a line spanning. Otherwise, means will be shown as points.</li>
+<li><strong>boxprops</strong> &#8211; (<em>dict</em>) Specifies the style of the box.</li>
+<li><strong>medianprops</strong> &#8211; (<em>dict</em>) Specifies the style of the median.</li>
+<li><strong>meanprops</strong> &#8211; (<em>dict</em>) Specifies the style of the mean.</li>
+<li><strong>whiskerprops</strong> &#8211; (<em>dict</em>) Specifies the style of the whiskers.</li>
+<li><strong>capprops</strong> &#8211; (<em>dict</em>) Specifies the style of the caps.</li>
+<li><strong>flierprops</strong> &#8211; (<em>dict</em>) Specifies the style of the fliers.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Examples:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>
+    <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">500</span><span class="p">))</span>
+<span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s">&#39;Box plot demo&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="docs\meteoinfolab\plot\../../../../_static/boxplot_1.png" src="docs\meteoinfolab\plot\../../../../_static/boxplot_1.png" />
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="loglog.html" title="loglog"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="pie.html" title="pie"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../index.html">docs</a>|&nbsp;</li>
+
+          <li><a href="../../index.html" >Documentation</a> &raquo;</li>
+          <li><a href="../index.html" >MeteoInfoLab</a> &raquo;</li>
+          <li><a href="../api.html" >The MeteoInfoLab API</a> &raquo;</li>
+          <li><a href="../plotlib.html" >Plotlib package</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2010-2017, Yaqiang Wang.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

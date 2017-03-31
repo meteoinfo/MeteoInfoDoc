@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>pie &mdash; MeteoInfo 1.4.2 documentation</title>
+    
+    <link rel="stylesheet" href="../../../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../',
+        VERSION:     '1.4.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="MeteoInfo 1.4.2 documentation" href="../../../../index.html" />
+    <link rel="up" title="mipylib.plotlib.miplot" href="../miplot.html" />
+    <link rel="next" title="plot" href="plot.html" />
+    <link rel="prev" title="loglog" href="loglog.html" /> 
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../../../index.html"><img src="../../../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="plot.html" title="plot"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="loglog.html" title="loglog"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li><a href="../../../index.html" >Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >MeteoInfoLab</a> &raquo;</li>
+          <li><a href="../../api.html" >The MeteoInfoLab API</a> &raquo;</li>
+          <li><a href="../../plotlib.html" >Plotlib package</a> &raquo;</li>
+          <li><a href="../miplot.html" accesskey="U">mipylib.plotlib.miplot</a> &raquo;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="loglog.html"
+                        title="previous chapter">loglog</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="plot.html"
+                        title="next chapter">plot</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../../_sources/docs/meteoinfolab/plot/functions/pie.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="pie">
+<span id="docs-meteoinfolab-funcitons-plot-pie"></span><h1>pie<a class="headerlink" href="#pie" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt>
+<tt class="descname">pie(x, explode=None, labels=None, colors=None, autopct=None, pctdistance=0.6, shadow=False,</tt></dt>
+<dt>
+<tt class="descname">labeldistance=1.1, startangle=0, radius=None, hold=None, **kwargs)</tt></dt>
+<dd><p>Plot a pie chart.</p>
+<p>Make a pie chart of array <em>x</em>. The fraction area of each wedge is given by x/sum(x). If
+sum(x) &lt;= 1, then the values of x give the fractional area directly and the array will not
+be normalized. The wedges are plotted counterclockwise, by default starting from the x-axis.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>explode</strong> &#8211; (<em>None | len(x)sequence) If not *None</em>, is a <tt class="docutils literal"><span class="pre">len(x)</span></tt> array which specifies
+the fraction of the radius with which to offset each wedge.</li>
+<li><strong>labels</strong> &#8211; (<em>None | len(x) sequence of colors</em>] A sequence of strings providing the labels
+for each wedge.</li>
+<li><strong>colors</strong> &#8211; (<em>None | color sequence</em>) A sequence of color args through which the pie chart
+will cycle.</li>
+<li><strong>autopct</strong> &#8211; (<em>None | format string | format function) If not *None</em>, is a string or function
+used to label the wedges with their numeric value. The label will be placed inside the wedge.
+If it is a format string, the label will be <tt class="docutils literal"><span class="pre">fmt%pct</span></tt>. If it is a function, it will be called.</li>
+<li><strong>pctdistance</strong> &#8211; (<em>float</em>) The ratio between the center of each pie slice and the start of the
+text generated by <em>autopct</em>. Ignored if autopct is <em>None</em>; default is 0.6.</li>
+<li><strong>labeldistance</strong> &#8211; (<em>float</em>) The ratial distance at which the pie labels are drawn.</li>
+<li><strong>shadow</strong> &#8211; (<em>boolean</em>) Draw a shadow beneath the pie.</li>
+<li><strong>startangle</strong> &#8211; (<em>float</em>) If not <em>0</em>, rotates the start of the pie chart by <em>angle</em> degrees
+counterclockwise from the x-axis.</li>
+<li><strong>fontname</strong> &#8211; (<em>string</em>) Font name. Default is <tt class="docutils literal"><span class="pre">Arial</span></tt> .</li>
+<li><strong>fontsize</strong> &#8211; (<em>int</em>) Font size. Default is <tt class="docutils literal"><span class="pre">14</span></tt> .</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Radius:</th><td class="field-body"><p class="first">(<em>float</em>) The radius of the pie, if <em>radius</em> is <em>None</em> it will be set to 1.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">(<em>tuple</em>) Patches and texts.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Examples:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">pie</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">explode</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">startangle</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span> <span class="n">autopct</span><span class="o">=</span><span class="s">&#39;</span><span class="si">%.1f%%</span><span class="s">&#39;</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s">&#39;Pie chart&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/pie_11.png" src="../../../../_images/pie_11.png" />
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="plot.html" title="plot"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="loglog.html" title="loglog"
+             >previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li><a href="../../../index.html" >Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >MeteoInfoLab</a> &raquo;</li>
+          <li><a href="../../api.html" >The MeteoInfoLab API</a> &raquo;</li>
+          <li><a href="../../plotlib.html" >Plotlib package</a> &raquo;</li>
+          <li><a href="../miplot.html" >mipylib.plotlib.miplot</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2010-2017, Yaqiang Wang.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

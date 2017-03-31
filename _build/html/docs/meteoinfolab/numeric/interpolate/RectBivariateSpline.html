@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>RectBivariateSpline &mdash; MeteoInfo 1.4.1 documentation</title>
+    <title>RectBivariateSpline &mdash; MeteoInfo 1.4.2 documentation</title>
     
     <link rel="stylesheet" href="../../../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../../',
-        VERSION:     '1.4.1',
+        VERSION:     '1.4.2',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,9 +24,9 @@
     <script type="text/javascript" src="../../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../../_static/doctools.js"></script>
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="MeteoInfo 1.4.1 documentation" href="../../../../index.html" />
+    <link rel="top" title="MeteoInfo 1.4.2 documentation" href="../../../../index.html" />
     <link rel="up" title="mipylib.numeric.interpolate" href="../interpolate.html" />
-    <link rel="next" title="Functions" href="../../functions.html" />
+    <link rel="next" title="Plotlib package" href="../../plotlib.html" />
     <link rel="prev" title="interp1d" href="interp1d.html" /> 
   </head>
   <body>
@@ -44,7 +44,7 @@
           <a href="../../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="../../functions.html" title="Functions"
+          <a href="../../plotlib.html" title="Plotlib package"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="interp1d.html" title="interp1d"
@@ -70,8 +70,8 @@
   <p class="topless"><a href="interp1d.html"
                         title="previous chapter">interp1d</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="../../functions.html"
-                        title="next chapter">Functions</a></p>
+  <p class="topless"><a href="../../plotlib.html"
+                        title="next chapter">Plotlib package</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="../../../../_sources/docs/meteoinfolab/numeric/interpolate/RectBivariateSpline.txt"
@@ -121,8 +121,6 @@
 <p>Examples:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">mipylib.numeric</span> <span class="kn">import</span> <span class="n">interpolate</span>
 
-<span class="n">x</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
 <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">meshgrid</span><span class="p">(</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span> <span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span>
 <span class="n">z</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="p">)</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">6.0</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="o">*</span><span class="n">y</span><span class="p">))</span>
 <span class="n">f</span> <span class="o">=</span> <span class="n">interpolate</span><span class="o">.</span><span class="n">RectBivariateSpline</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">,:],</span> <span class="n">y</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">z</span><span class="p">)</span>
@@ -160,7 +158,7 @@
           <a href="../../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="../../functions.html" title="Functions"
+          <a href="../../plotlib.html" title="Plotlib package"
              >next</a> |</li>
         <li class="right" >
           <a href="interp1d.html" title="interp1d"

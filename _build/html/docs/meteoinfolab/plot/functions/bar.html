@@ -1,0 +1,269 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>bar &mdash; MeteoInfo 1.4.2 documentation</title>
+    
+    <link rel="stylesheet" href="../../../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../',
+        VERSION:     '1.4.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="MeteoInfo 1.4.2 documentation" href="../../../../index.html" />
+    <link rel="up" title="mipylib.plotlib.miplot" href="../miplot.html" />
+    <link rel="next" title="boxplot" href="boxplot.html" />
+    <link rel="prev" title="axism" href="axism.html" /> 
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../../../index.html"><img src="../../../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="boxplot.html" title="boxplot"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="axism.html" title="axism"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li><a href="../../../index.html" >Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >MeteoInfoLab</a> &raquo;</li>
+          <li><a href="../../api.html" >The MeteoInfoLab API</a> &raquo;</li>
+          <li><a href="../../plotlib.html" >Plotlib package</a> &raquo;</li>
+          <li><a href="../miplot.html" accesskey="U">mipylib.plotlib.miplot</a> &raquo;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="axism.html"
+                        title="previous chapter">axism</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="boxplot.html"
+                        title="next chapter">boxplot</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../../_sources/docs/meteoinfolab/plot/functions/bar.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="bar">
+<span id="docs-meteoinfolab-funcitons-plot-bar"></span><h1>bar<a class="headerlink" href="#bar" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="mipylib.plotlib.miplot.bar">
+<tt class="descclassname">mipylib.plotlib.miplot.</tt><tt class="descname">bar</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#mipylib.plotlib.miplot.bar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make a bar plot.</p>
+<dl class="docutils">
+<dt>Make a bar plot with rectangles bounded by:</dt>
+<dd>left, left + width, bottom, bottom + height</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>left</strong> &#8211; (<em>array_like</em>) The x coordinates of the left sides of the bars.</li>
+<li><strong>height</strong> &#8211; (<em>array_like</em>) The height of the bars.</li>
+<li><strong>width</strong> &#8211; (<em>array_like</em>) Optional, the widths of the bars default: 0.8.</li>
+<li><strong>bottom</strong> &#8211; (<em>array_like</em>) Optional, the y coordinates of the bars default: None</li>
+<li><strong>color</strong> &#8211; (<em>Color</em>) Optional, the color of the bar faces.</li>
+<li><strong>edgecolor</strong> &#8211; (<em>Color</em>) Optional, the color of the bar edge.</li>
+<li><strong>linewidth</strong> &#8211; (<em>int</em>) Optional, width of bar edge.</li>
+<li><strong>label</strong> &#8211; (<em>string</em>) Label of the bar series.</li>
+<li><strong>hatch</strong> &#8211; (<em>string</em>) Hatch string.</li>
+<li><strong>hatchsize</strong> &#8211; (<em>int</em>) Hatch size. Default is None (8).</li>
+<li><strong>bgcolor</strong> &#8211; (<em>Color</em>) Background color, only valid with hatch.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Bar legend break.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>The following format string characters are accepted to control the hatch style:</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="23%" />
+<col width="77%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Character</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>&#8216;-&#8216;</td>
+<td>horizontal hatch style</td>
+</tr>
+<tr class="row-odd"><td>&#8216;|&#8217;</td>
+<td>vertical hatch style</td>
+</tr>
+<tr class="row-even"><td>&#8216;\&#8217;</td>
+<td>forward_diagonal hatch style</td>
+</tr>
+<tr class="row-odd"><td>&#8216;/&#8217;</td>
+<td>backward_diagonal hatch style</td>
+</tr>
+<tr class="row-even"><td>&#8216;+&#8217;</td>
+<td>cross hatch style</td>
+</tr>
+<tr class="row-odd"><td>&#8216;x&#8217;</td>
+<td>diagonal_cross hatch style</td>
+</tr>
+<tr class="row-even"><td>&#8216;.&#8217;</td>
+<td>dot hatch style</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<p>Examples:</p>
+<p>The bar width in the chart was decided automatically
+according to data series number.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">menMeans</span> <span class="o">=</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">27</span><span class="p">]</span>
+<span class="n">bar</span><span class="p">(</span><span class="n">menMeans</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&#39;Men&#39;</span><span class="p">)</span>
+<span class="n">womenMeans</span> <span class="o">=</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">25</span><span class="p">]</span>
+<span class="n">bar</span><span class="p">(</span><span class="n">womenMeans</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;y&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&#39;Women&#39;</span><span class="p">)</span>
+<span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;Mean age&#39;</span><span class="p">)</span>
+<span class="n">xticks</span><span class="p">(</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">menMeans</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="p">[</span><span class="s">&#39;G1&#39;</span><span class="p">,</span><span class="s">&#39;G2&#39;</span><span class="p">,</span><span class="s">&#39;G3&#39;</span><span class="p">,</span><span class="s">&#39;G4&#39;</span><span class="p">,</span><span class="s">&#39;G5&#39;</span><span class="p">])</span>
+<span class="n">legend</span><span class="p">()</span>
+<span class="n">title</span><span class="p">(</span><span class="s">&#39;Bar chart example&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/bar_12.png" src="../../../../_images/bar_12.png" />
+<p>The bar width and plot position could be set manually with x array and <em>width</em> argument.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">menMeans</span> <span class="o">=</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">27</span><span class="p">]</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">menMeans</span><span class="p">)</span>
+<span class="n">ind</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="n">width</span> <span class="o">=</span> <span class="mf">0.35</span>
+<span class="n">gap</span> <span class="o">=</span> <span class="mf">0.06</span>
+<span class="n">bar</span><span class="p">(</span><span class="n">ind</span><span class="p">,</span> <span class="n">menMeans</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&#39;Men&#39;</span><span class="p">)</span>
+
+<span class="n">womenMeans</span> <span class="o">=</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">25</span><span class="p">]</span>
+<span class="n">bar</span><span class="p">(</span><span class="n">ind</span> <span class="o">+</span> <span class="n">width</span> <span class="o">+</span> <span class="n">gap</span><span class="p">,</span> <span class="n">womenMeans</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;y&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&#39;Women&#39;</span><span class="p">)</span>
+
+<span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;Mean age&#39;</span><span class="p">)</span>
+<span class="n">xticks</span><span class="p">(</span><span class="n">ind</span> <span class="o">+</span> <span class="n">width</span> <span class="o">+</span> <span class="n">gap</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="s">&#39;G1&#39;</span><span class="p">,</span><span class="s">&#39;G2&#39;</span><span class="p">,</span><span class="s">&#39;G3&#39;</span><span class="p">,</span><span class="s">&#39;G4&#39;</span><span class="p">,</span><span class="s">&#39;G5&#39;</span><span class="p">])</span>
+<span class="n">legend</span><span class="p">()</span>
+<span class="n">title</span><span class="p">(</span><span class="s">&#39;Bar chart example&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/bar_2.png" src="../../../../_images/bar_2.png" />
+<p>Hatch fill example using <em>hatch</em> argument:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">menMeans</span> <span class="o">=</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">27</span><span class="p">]</span>
+<span class="n">std_men</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">bar</span><span class="p">(</span><span class="n">menMeans</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="n">std_men</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&#39;Men&#39;</span><span class="p">,</span> <span class="n">hatch</span><span class="o">=</span><span class="s">&#39;-&#39;</span><span class="p">)</span>
+
+<span class="n">womenMeans</span> <span class="o">=</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">25</span><span class="p">]</span>
+<span class="n">std_women</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">bar</span><span class="p">(</span><span class="n">womenMeans</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="n">std_women</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&#39;Women&#39;</span><span class="p">,</span> <span class="n">hatch</span><span class="o">=</span><span class="s">&#39;</span><span class="se">\\</span><span class="s">&#39;</span><span class="p">)</span>
+
+<span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;Mean age&#39;</span><span class="p">)</span>
+<span class="n">xticks</span><span class="p">(</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">menMeans</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="p">[</span><span class="s">&#39;G1&#39;</span><span class="p">,</span><span class="s">&#39;G2&#39;</span><span class="p">,</span><span class="s">&#39;G3&#39;</span><span class="p">,</span><span class="s">&#39;G4&#39;</span><span class="p">,</span><span class="s">&#39;G5&#39;</span><span class="p">])</span>
+<span class="n">legend</span><span class="p">()</span>
+<span class="n">title</span><span class="p">(</span><span class="s">&#39;Bar chart example - Hatch&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/bar_hatch2.png" src="../../../../_images/bar_hatch2.png" />
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="boxplot.html" title="boxplot"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="axism.html" title="axism"
+             >previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li><a href="../../../index.html" >Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >MeteoInfoLab</a> &raquo;</li>
+          <li><a href="../../api.html" >The MeteoInfoLab API</a> &raquo;</li>
+          <li><a href="../../plotlib.html" >Plotlib package</a> &raquo;</li>
+          <li><a href="../miplot.html" >mipylib.plotlib.miplot</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2010-2017, Yaqiang Wang.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

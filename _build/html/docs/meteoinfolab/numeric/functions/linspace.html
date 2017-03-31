@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>linspace &mdash; MeteoInfo 1.4.2 documentation</title>
+    
+    <link rel="stylesheet" href="../../../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../',
+        VERSION:     '1.4.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="MeteoInfo 1.4.2 documentation" href="../../../../index.html" />
+    <link rel="up" title="mipylib.numeric.minum" href="../minum.html" />
+    <link rel="next" title="log" href="log.html" />
+    <link rel="prev" title="exp" href="exp.html" /> 
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../../../index.html"><img src="../../../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="log.html" title="log"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="exp.html" title="exp"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li><a href="../../../index.html" >Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >MeteoInfoLab</a> &raquo;</li>
+          <li><a href="../../api.html" >The MeteoInfoLab API</a> &raquo;</li>
+          <li><a href="../../numeric.html" >Numeric package</a> &raquo;</li>
+          <li><a href="../minum.html" accesskey="U">mipylib.numeric.minum</a> &raquo;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="exp.html"
+                        title="previous chapter">exp</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="log.html"
+                        title="next chapter">log</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../../_sources/docs/meteoinfolab/numeric/functions/linspace.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="linspace">
+<span id="docs-meteoinfolab-numeric-funcitons-linspace"></span><h1>linspace<a class="headerlink" href="#linspace" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="mipylib.numeric.minum.linspace">
+<tt class="descclassname">mipylib.numeric.minum.</tt><tt class="descname">linspace</tt><big>(</big><em>start</em>, <em>stop</em>, <em>num=50</em>, <em>endpoint=True</em>, <em>dtype=None</em><big>)</big><a class="headerlink" href="#mipylib.numeric.minum.linspace" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return evenly spaced numbers over a specified interval.</p>
+<p>Returns <em>num</em> evenly spaced samples, calculated over the interval [<em>start, stop</em>].</p>
+<p>The endpoint of the interval can optionally be excluded.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>start</strong> &#8211; (<em>number</em>) Start of interval. The interval includes this value.</li>
+<li><strong>stop</strong> &#8211; (<em>number</em>) The end value of the sequence, unless endpoint is set to
+False. In that case, the sequence consists of all but the last of <tt class="docutils literal"><span class="pre">num</span> <span class="pre">+</span> <span class="pre">1</span></tt>
+evenly spaced samples, so that stop is excluded. Note that the step size changes
+when endpoint is False.</li>
+<li><strong>num</strong> &#8211; (<em>number, optional</em>) Number of samples to generate. Default is 50. Must
+be non-negative.</li>
+<li><strong>endpoint</strong> &#8211; (<em>boolean, optional</em>) If true, stop is the last sample. Otherwise, it is not included.
+Default is True.</li>
+<li><strong>dtype</strong> &#8211; (<em>dtype</em>) The type of output array. If dtype is not given, infer the data
+type from the other input arguments.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">(<em>MIArray</em>) Array of evenly spaced values.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">linspace</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="go">array([2.0, 2.25, 2.5, 2.75, 3.0])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">linspace</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="go">array([2.0, 2.25, 2.5, 2.75])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="log.html" title="log"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="exp.html" title="exp"
+             >previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li><a href="../../../index.html" >Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >MeteoInfoLab</a> &raquo;</li>
+          <li><a href="../../api.html" >The MeteoInfoLab API</a> &raquo;</li>
+          <li><a href="../../numeric.html" >Numeric package</a> &raquo;</li>
+          <li><a href="../minum.html" >mipylib.numeric.minum</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2010-2017, Yaqiang Wang.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

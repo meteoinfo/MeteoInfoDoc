@@ -1,0 +1,46 @@
+.. _docs-meteoinfolab-plot-windrose:
+
+
+*******************
+windrose
+*******************
+
+.. module:: mipylib.plotlib.miplot
+
+.. function:: windrose(wd, ws, nwdbins=16, wsbins=None, degree=True, colors=None, cmap='matlab_jet', alpha=0.7, rmax=None, rtickloc=None, rticks=None, rlabelpos=60, xticks=None)
+
+    Plot windrose chart.
+    
+    :param wd: (*array_like*) Wind direction.
+    :param ws: (*array_like*) Wind speed.
+    :param nwdbins: (*int*) Number of wind direction bins [4 | 8 | 16].
+    :param wsbins: (*array_like*) Wind speed bins.
+    :param degree: (*boolean*) The unit of wind direction is degree or radians.
+    :param colors: (*color list*) The colors.
+    :param cmap: (*string*) Color map.
+    :param alpha: (*float*) Color alpha (0 - 1).
+    :param rmax: (*float*) Radial maximum value.
+    :param rtickloc: (*list of float*) Radial tick locations.
+    :param rticks: (*list of string*) Radial ticks.
+    :param rlabelpos: (*float*) Radial label position in degree.
+    :param xticks: (*list of string*) X ticks.
+    
+    :returns: Polar axes and bars
+      
+    Examples::
+
+        fn = r'D:\Temp\ascii\windrose.txt'
+        ncol = numasciicol(fn)
+        nrow = numasciirow(fn)
+        a = asciiread(fn,shape=(nrow,ncol))
+        ws=a[:,0]
+        wd=a[:,1]
+
+        n = 16
+        wsbins = arange(0., 21.1, 4)
+        cols = makecolors(['k','y','r','b','g'], alpha=0.7)
+        rtickloc = [0.05,0.1,0.15,0.18]
+        windrose(wd, ws, n, wsbins, rmax=0.18, colors=cols, rtickloc=rtickloc)
+        title('Windrose example')
+        
+    .. image:: ../../../../_static/news/mi_1.4.2_lab_windrose.png

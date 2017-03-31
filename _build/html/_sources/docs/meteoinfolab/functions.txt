@@ -8,9 +8,7 @@ Functions
 .. toctree::
    :maxdepth: 2
    
-   functions/array.rst
    functions/math.rst
-   functions/plot.rst
    functions/file_io.rst
    functions/geo.rst
    functions/statistics.rst

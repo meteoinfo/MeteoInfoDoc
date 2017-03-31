@@ -122,6 +122,7 @@ MeteoInfo uses Java classes and libraries written by several third-party organiz
 
 - NetCDF Java and its dependence libraries: Available at http://www.unidata.ucar.edu/software/thredds/current/netcdf-java/
 - Proj4J: Available at http://trac.osgeo.org/proj4j/wiki
+- Apache Common Math: Available at http://commons.apache.org/proper/commons-math/
 - Groovy: Available at http://groovy.codehaus.org/
 - Jython: Available at http://www.jython.org/
 - wContour: Available at http://www.meteothinker.com/

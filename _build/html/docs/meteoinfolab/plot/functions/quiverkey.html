@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>quiverkey &mdash; MeteoInfo 1.4.2 documentation</title>
+    
+    <link rel="stylesheet" href="../../../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../',
+        VERSION:     '1.4.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="MeteoInfo 1.4.2 documentation" href="../../../../index.html" />
+    <link rel="up" title="mipylib.plotlib.miplot" href="../miplot.html" />
+    <link rel="next" title="quiverm" href="quiverm.html" />
+    <link rel="prev" title="quiver" href="quiver.html" /> 
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../../../index.html"><img src="../../../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="quiverm.html" title="quiverm"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="quiver.html" title="quiver"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li><a href="../../../index.html" >Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >MeteoInfoLab</a> &raquo;</li>
+          <li><a href="../../api.html" >The MeteoInfoLab API</a> &raquo;</li>
+          <li><a href="../../plotlib.html" >Plotlib package</a> &raquo;</li>
+          <li><a href="../miplot.html" accesskey="U">mipylib.plotlib.miplot</a> &raquo;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="quiver.html"
+                        title="previous chapter">quiver</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="quiverm.html"
+                        title="next chapter">quiverm</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../../_sources/docs/meteoinfolab/plot/functions/quiverkey.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="quiverkey">
+<span id="docs-meteoinfolab-funcitons-plot-quiverkey"></span><h1>quiverkey<a class="headerlink" href="#quiverkey" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="mipylib.plotlib.miplot.quiverkey">
+<tt class="descclassname">mipylib.plotlib.miplot.</tt><tt class="descname">quiverkey</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#mipylib.plotlib.miplot.quiverkey" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a key to a quiver plot.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>Q</strong> &#8211; (<em>MILayer</em>) The quiver layer instance returned by a call to quiver/quiverm.</li>
+<li><strong>X</strong> &#8211; (<em>float</em>) The location x of the key.</li>
+<li><strong>Y</strong> &#8211; (<em>float</em>) The location y of the key.</li>
+<li><strong>label</strong> &#8211; (<em>string</em>) A string with the length and units of the key.</li>
+<li><strong>coordinates=[&#8216;axes&#8217;|&#8217;figure&#8217;|&#8217;data&#8217;|&#8217;inches&#8217;]</strong> &#8211; (<em>string</em>) Coordinate system and units for
+<em>X, Y</em>. &#8216;axes&#8217; and &#8216;figure&#8217; are normalized coordinate system with 0,0 in the lower left and
+1,1 in the upper right, &#8216;data&#8217; are the axes data coordinates (used for the locations of the
+vectors in the quiver plot itself); &#8216;inches&#8217; is position in the figure in inches, with 0,0
+at the lower left corner.</li>
+<li><strong>color</strong> &#8211; (<em>Color</em>) Overrides face and edge colors from Q.</li>
+<li><strong>labelpos=[&#8216;N&#8217;|&#8217;S&#8217;|&#8217;E&#8217;|&#8217;W&#8217;]</strong> &#8211; (<em>string</em>) Position the label above, below, to the right, to
+the left of the arrow, respectively.</li>
+<li><strong>labelsep</strong> &#8211; (<em>float</em>) Distance in inches between the arrow and the label. Default is 0.1.</li>
+<li><strong>labelcolor</strong> &#8211; (<em>Color</em>) Label color. Default to default is black.</li>
+<li><strong>fontproperties</strong> &#8211; (<em>dict</em>) A dictionary with keyword arguments accepted by the FontProperties
+initializer: <em>family, style, variant, size, weight</em>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="s">&#39;D:/Temp/GrADS/model.ctl&#39;</span><span class="p">)</span>
+<span class="n">u</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;U&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span><span class="s">&#39;500&#39;</span><span class="p">,</span><span class="s">&#39;10:60&#39;</span><span class="p">,</span><span class="s">&#39;60:140&#39;</span><span class="p">]</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;V&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span><span class="s">&#39;500&#39;</span><span class="p">,</span><span class="s">&#39;10:60&#39;</span><span class="p">,</span><span class="s">&#39;60:140&#39;</span><span class="p">]</span>
+<span class="n">speed</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">u</span><span class="o">*</span><span class="n">u</span><span class="o">+</span><span class="n">v</span><span class="o">*</span><span class="n">v</span><span class="p">)</span>
+<span class="c">#Plot</span>
+<span class="n">axesm</span><span class="p">()</span>
+<span class="n">lworld</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="s">&#39;D:/Temp/Map/country1.shp&#39;</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="n">lworld</span><span class="p">)</span>
+<span class="n">layer</span> <span class="o">=</span> <span class="n">quiverm</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">speed</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">quiverkey</span><span class="p">(</span><span class="n">layer</span><span class="p">,</span> <span class="mf">0.74</span><span class="p">,</span> <span class="mf">0.18</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="n">bbox</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;edge&#39;</span><span class="p">:</span><span class="bp">True</span><span class="p">,</span> <span class="s">&#39;fill&#39;</span><span class="p">:</span><span class="bp">True</span><span class="p">})</span>
+<span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s">&#39;Wind field&#39;</span><span class="p">)</span>
+<span class="n">yticks</span><span class="p">([</span><span class="mi">20</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">60</span><span class="p">])</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/vector2.png" src="../../../../_images/vector2.png" />
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="quiverm.html" title="quiverm"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="quiver.html" title="quiver"
+             >previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li><a href="../../../index.html" >Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >MeteoInfoLab</a> &raquo;</li>
+          <li><a href="../../api.html" >The MeteoInfoLab API</a> &raquo;</li>
+          <li><a href="../../plotlib.html" >Plotlib package</a> &raquo;</li>
+          <li><a href="../miplot.html" >mipylib.plotlib.miplot</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2010-2017, Yaqiang Wang.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

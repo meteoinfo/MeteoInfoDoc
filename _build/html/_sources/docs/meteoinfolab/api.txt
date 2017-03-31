@@ -12,3 +12,5 @@ Libraries
    :maxdepth: 2
 
    numeric.rst
+   plotlib.rst
+   dataset.rst

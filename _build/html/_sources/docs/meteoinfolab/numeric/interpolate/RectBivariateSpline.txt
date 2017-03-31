@@ -21,8 +21,6 @@ RectBivariateSpline
     
         from mipylib.numeric import interpolate
 
-        x = linspace(-1, 1, 20)
-        y = linspace(-1, 1, 20)
         x, y = meshgrid(linspace(-1, 1, 20), linspace(-1, 1, 20))
         z = (x+y) * exp(-6.0*(x*x+y*y))
         f = interpolate.RectBivariateSpline(x[0,:], y[:,0], z)

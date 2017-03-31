@@ -5,7 +5,7 @@
 corrcoef
 *******************
 
-.. currentmodule:: minum
+.. currentmodule:: mipylib.numeric.minum
 
 .. function:: corrcoef(x, y)
 

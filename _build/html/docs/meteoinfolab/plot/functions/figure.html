@@ -1,0 +1,176 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>figure &mdash; MeteoInfo 1.4.2 documentation</title>
+    
+    <link rel="stylesheet" href="../../../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../',
+        VERSION:     '1.4.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="MeteoInfo 1.4.2 documentation" href="../../../../index.html" />
+    <link rel="up" title="mipylib.plotlib.miplot" href="../miplot.html" />
+    <link rel="next" title="fill_between" href="fill_between.html" />
+    <link rel="prev" title="contourfm" href="contourfm.html" /> 
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../../../index.html"><img src="../../../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="fill_between.html" title="fill_between"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="contourfm.html" title="contourfm"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li><a href="../../../index.html" >Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >MeteoInfoLab</a> &raquo;</li>
+          <li><a href="../../api.html" >The MeteoInfoLab API</a> &raquo;</li>
+          <li><a href="../../plotlib.html" >Plotlib package</a> &raquo;</li>
+          <li><a href="../miplot.html" accesskey="U">mipylib.plotlib.miplot</a> &raquo;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="contourfm.html"
+                        title="previous chapter">contourfm</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="fill_between.html"
+                        title="next chapter">fill_between</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../../_sources/docs/meteoinfolab/plot/functions/figure.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="figure">
+<span id="docs-meteoinfolab-funcitons-plot-figure"></span><h1>figure<a class="headerlink" href="#figure" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="mipylib.plotlib.miplot.figure">
+<tt class="descclassname">mipylib.plotlib.miplot.</tt><tt class="descname">figure</tt><big>(</big><em>bgcolor=None</em>, <em>figsize=None</em>, <em>newfig=True</em><big>)</big><a class="headerlink" href="#mipylib.plotlib.miplot.figure" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a figure.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>bgcolor</strong> &#8211; (<em>Color</em>) Optional, background color of the figure. Default is <tt class="docutils literal"><span class="pre">None</span></tt> .</li>
+<li><strong>figsize</strong> &#8211; (<em>list</em>) Optional, width and height of the figure such as <tt class="docutils literal"><span class="pre">[600,</span> <span class="pre">400]</span></tt> .
+Default is <tt class="docutils literal"><span class="pre">None</span></tt> with changable size same as <em>Figures</em> window.</li>
+<li><strong>newfig</strong> &#8211; (<em>boolean</em>) Optional, if creates a new figure. Default is <tt class="docutils literal"><span class="pre">True</span></tt> .</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Examples:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">figure</span><span class="p">()</span>    <span class="c"># Create a new figure</span>
+<span class="n">figure</span><span class="p">(</span><span class="n">bgcolor</span><span class="o">=</span><span class="s">&#39;y&#39;</span><span class="p">)</span>    <span class="c"># Create a new figure with yellow background</span>
+<span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">700</span><span class="p">,</span><span class="mi">550</span><span class="p">],</span> <span class="n">newfig</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>    <span class="c"># Create/set a figure with width and height</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Notes:</dt>
+<dd>The <tt class="docutils literal"><span class="pre">width</span></tt> and <tt class="docutils literal"><span class="pre">height</span></tt> arguments shoud not be given in <tt class="docutils literal"><span class="pre">savefig()</span></tt> function
+if <tt class="docutils literal"><span class="pre">figsize</span></tt> arguments was given in <tt class="docutils literal"><span class="pre">figure()</span></tt> function.</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="fill_between.html" title="fill_between"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="contourfm.html" title="contourfm"
+             >previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li><a href="../../../index.html" >Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >MeteoInfoLab</a> &raquo;</li>
+          <li><a href="../../api.html" >The MeteoInfoLab API</a> &raquo;</li>
+          <li><a href="../../plotlib.html" >Plotlib package</a> &raquo;</li>
+          <li><a href="../miplot.html" >mipylib.plotlib.miplot</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2010-2017, Yaqiang Wang.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

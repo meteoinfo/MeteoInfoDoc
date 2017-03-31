@@ -9,4 +9,3 @@ Mathematical
    :maxdepth: 2
    
    math/general.rst
-   math/linalg.rst
