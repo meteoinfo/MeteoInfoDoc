@@ -23,7 +23,7 @@ Read grid data from ASCII file::
     xlabel('Longitude')
     colorbar(layer)
     
-.. image:: image/ascii_grid.png
+.. image:: ../../../_static/ascii_grid.png
     
 Read station data from ASCII file. ``numasciicol()`` and ``numasciirow()`` functions were used
 to get column and row number of the file::
@@ -46,4 +46,4 @@ to get column and row number of the file::
     xlabel('Longitude')
     colorbar(layer)
     
-.. image:: image/ascii_station.png
+.. image:: ../../../_static/ascii_station.png

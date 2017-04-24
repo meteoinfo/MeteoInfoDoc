@@ -29,3 +29,4 @@ Satellite data
    satellite/gpm_swath.rst
    satellite/sea_ice.rst
    satellite/mls_swath.rst
+   satellite/nsidc_bt.rst

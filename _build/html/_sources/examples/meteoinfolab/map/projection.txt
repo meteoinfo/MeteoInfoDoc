@@ -32,4 +32,4 @@ and start and end latitudes.
         fontsize=16, yoffset=15)
     axism([78, 130, 14, 53])
         
-.. image:: image/map_projection.png
+.. image:: ../../../_static/map_projection.png

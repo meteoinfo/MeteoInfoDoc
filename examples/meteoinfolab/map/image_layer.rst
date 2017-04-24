@@ -21,4 +21,4 @@ function, and the image can be geo-located by creating geo-location file with th
     title('Pressure')
     colorbar(layer, aspect=12)
         
-.. image:: image/image_layer.png
+.. image:: ../../../_static/image_layer.png

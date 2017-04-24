@@ -40,4 +40,4 @@ If a point layer was added, 'labelfield' and other associated parameters can be 
     xlim(72, 136)
     ylim(16, 55)
     
-.. image:: image/add_map_layer.png
+.. image:: ../../../_static/add_map_layer.png

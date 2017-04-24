@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>binread &mdash; MeteoInfo 1.4.2 documentation</title>
+    
+    <link rel="stylesheet" href="../../../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../',
+        VERSION:     '1.4.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="MeteoInfo 1.4.2 documentation" href="../../../../index.html" />
+    <link rel="up" title="mipylib.dataset.midata" href="../midata.html" />
+    <link rel="next" title="binwrite" href="binwrite.html" />
+    <link rel="prev" title="asciiread" href="asciiread.html" /> 
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../../../index.html"><img src="../../../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="binwrite.html" title="binwrite"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="asciiread.html" title="asciiread"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li><a href="../../../index.html" >Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >MeteoInfoLab</a> &raquo;</li>
+          <li><a href="../../api.html" >The MeteoInfoLab API</a> &raquo;</li>
+          <li><a href="../../dataset.html" >Dataset package</a> &raquo;</li>
+          <li><a href="../midata.html" accesskey="U">mipylib.dataset.midata</a> &raquo;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="asciiread.html"
+                        title="previous chapter">asciiread</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="binwrite.html"
+                        title="next chapter">binwrite</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../../_sources/docs/meteoinfolab/dataset/midata/binread.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="binread">
+<span id="docs-meteoinfolab-dataset-midata-binread"></span><h1>binread<a class="headerlink" href="#binread" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="mipylib.dataset.midata.binread">
+<tt class="descclassname">mipylib.dataset.midata.</tt><tt class="descname">binread</tt><big>(</big><em>fn</em>, <em>dim</em>, <em>datatype=None</em>, <em>skip=0</em>, <em>byteorder='little_endian'</em><big>)</big><a class="headerlink" href="#mipylib.dataset.midata.binread" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read data array from a binary file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>fn</strong> &#8211; (<em>string</em>) The binary file name for data reading.</li>
+<li><strong>dim</strong> &#8211; (<em>list</em>) Dimensions.</li>
+<li><strong>datatype</strong> &#8211; (<em>string</em>) Data type string.</li>
+<li><strong>skip</strong> &#8211; (<em>int</em>) Skip bytes number.</li>
+<li><strong>byteorder</strong> &#8211; (<em>string</em>) Byte order. <tt class="docutils literal"><span class="pre">little_endian</span></tt> or <tt class="docutils literal"><span class="pre">big_endian</span></tt>.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">(<em>MIArray</em>) Data array</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>DMSP SSM/I-SSMIS Pathfinder Daily EASE-Grid Brightness Temperatures, Version 2:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#Data source: https://nsidc.org/data/docs/daac/nsidc0032_ssmi_ease_tbs.gd.html</span>
+<span class="c">#DMSP SSM/I-SSMIS Pathfinder Daily EASE-Grid Brightness Temperatures, Version 2</span>
+
+<span class="n">fn</span> <span class="o">=</span> <span class="s">&#39;D:/Temp/binary/ID2-F17-SH2015035D-V2.91V&#39;</span>
+
+<span class="c">#Set projection</span>
+<span class="n">proj</span> <span class="o">=</span> <span class="n">projinfo</span><span class="p">(</span><span class="n">proj</span><span class="o">=</span><span class="s">&#39;laea&#39;</span><span class="p">,</span> <span class="n">lat_0</span><span class="o">=-</span><span class="mi">90</span><span class="p">,</span> <span class="n">lon_0</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">xn</span> <span class="o">=</span> <span class="mi">1441</span>             <span class="c">#Column number</span>
+<span class="n">yn</span> <span class="o">=</span> <span class="mi">1441</span>             <span class="c">#Row number</span>
+<span class="n">dx</span> <span class="o">=</span> <span class="mf">12.5</span> <span class="o">*</span> <span class="mi">1000</span>      <span class="c">#X resolution (m)</span>
+<span class="n">dy</span> <span class="o">=</span> <span class="mf">12.5</span> <span class="o">*</span> <span class="mi">1000</span>      <span class="c">#Y resolution (m)</span>
+<span class="n">x0</span> <span class="o">=</span> <span class="o">-</span><span class="mi">9000</span> <span class="o">*</span> <span class="mi">1000</span> <span class="o">+</span> <span class="n">dx</span> <span class="o">/</span> <span class="mi">2</span>     <span class="c">#Lower left x corner</span>
+<span class="n">y0</span> <span class="o">=</span> <span class="o">-</span><span class="mi">9000</span> <span class="o">*</span> <span class="mi">1000</span> <span class="o">+</span> <span class="n">dy</span> <span class="o">/</span> <span class="mi">2</span>    <span class="c">#Lower left y corner</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">arange1</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">xn</span><span class="p">,</span> <span class="n">dx</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">arange1</span><span class="p">(</span><span class="n">y0</span><span class="p">,</span> <span class="n">yn</span><span class="p">,</span> <span class="n">dy</span><span class="p">)</span>
+
+<span class="c">#Read data</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">binread</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="p">[</span><span class="n">yn</span><span class="p">,</span> <span class="n">xn</span><span class="p">],</span> <span class="s">&#39;short&#39;</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">,:]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s">&#39;float&#39;</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data</span> <span class="o">/</span> <span class="mi">10</span>
+<span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="o">==</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">nan</span>   <span class="c">#0 is missing value</span>
+
+<span class="c">#Plot</span>
+<span class="n">axesm</span><span class="p">(</span><span class="n">projinfo</span><span class="o">=</span><span class="n">proj</span><span class="p">,</span> <span class="n">gridline</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">griddx</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">griddy</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">lworld</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="s">&#39;D:/Temp/Map/country1.shp&#39;</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="n">lworld</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">layer</span> <span class="o">=</span> <span class="n">imshowm</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s">&#39;BlAqGrYeOrRe&#39;</span><span class="p">,</span> <span class="n">proj</span><span class="o">=</span><span class="n">proj</span><span class="p">)</span>
+<span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s">&#39;Brightness Temperatures&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/ssmis_bt_laea1.png" src="../../../../_images/ssmis_bt_laea1.png" />
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="binwrite.html" title="binwrite"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="asciiread.html" title="asciiread"
+             >previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li><a href="../../../index.html" >Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >MeteoInfoLab</a> &raquo;</li>
+          <li><a href="../../api.html" >The MeteoInfoLab API</a> &raquo;</li>
+          <li><a href="../../dataset.html" >Dataset package</a> &raquo;</li>
+          <li><a href="../midata.html" >mipylib.dataset.midata</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2010-2017, Yaqiang Wang.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

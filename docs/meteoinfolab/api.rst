@@ -14,3 +14,4 @@ Libraries
    numeric.rst
    plotlib.rst
    dataset.rst
+   geolib.rst
