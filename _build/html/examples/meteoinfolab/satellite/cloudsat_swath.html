@@ -144,7 +144,7 @@ trajectory map plot.</p>
 
 <span class="c"># The 2nd plot is the trajectory</span>
 <span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">axesm</span><span class="p">()</span>
+<span class="n">axesm</span><span class="p">(</span><span class="n">newaxes</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 <span class="n">lworld</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="s">&#39;D:/Temp/map/country1.shp&#39;</span><span class="p">)</span>
 <span class="n">geoshow</span><span class="p">(</span><span class="n">lworld</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s">&#39;k&#39;</span><span class="p">)</span>
 <span class="n">plotm</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="s">&#39;-b&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>

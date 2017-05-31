@@ -39,7 +39,7 @@ table. Then we can display the trajectory layer using it's height field.
     f.close()
     
     #Create trajectory layer
-    layer = MILayer(shapetype='line')
+    layer = maplayer(shapetype='line')
     layer.addfield('Height', 'float')
     lon1 = lons[0]
     lat1 = lats[0]

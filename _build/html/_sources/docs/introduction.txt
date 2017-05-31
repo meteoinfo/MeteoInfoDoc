@@ -5,7 +5,7 @@
 Introduction
 *******************
 
-MeteoInfo is a GIS application which enables the user to visualize and analyze
+MeteoInfoMap is a GIS application which enables the user to visualize and analyze
 the spatial and meteorological data with multiple data formats.
   
 MeteoInfoLab is a scientific Jython development environment with the ability of 
@@ -26,17 +26,17 @@ Downloading
 The current version of MeteoInfo, along with other information about the
 application, may always be found at http://www.meteothinker.com
 
-Installing MeteoInfo/MeteoInfoLab
+Installing MeteoInfoMap/MeteoInfoLab
 ==============================================
 
 There is no specified installation file, just unzip the downloaded MeteoInfo file. The 
 complete MeteoInfo Java "Generic" package should, after uncompression, include
 the following items:
   
-- MeteoInfo launcher in a shell command files called "meteoinfo.sh" and "milab.sh" for MAC OS, Linux, Unix system.
-- MeteoInfo launcher in a batch command files called "meteoinfo.bat" and "milab.bat" for Windows system.
-- MeteoInfo executable files called "JMeteoInfo.exe" and "MeteoInfoLab.exe" for Windows system.
-- MeteoInfo jar files called "MeteoInfo.jar" and "MeteoInfoLab.jar".
+- MeteoInfo launcher in a shell command files called "mimap.sh" and "milab.sh" for MAC OS, Linux, Unix system.
+- MeteoInfo launcher in a batch command files called "mimap.bat" and "milab.bat" for Windows system.
+- MeteoInfo executable files called "MeteoInfoMap.exe" and "MeteoInfoLab.exe" for Windows system.
+- MeteoInfo jar files called "MeteoInfoMap.jar" and "MeteoInfoLab.jar".
 - Default MeteoInfo project file called "default.mip".
 - Configure file called "config.xml" for MeteoInfo and "milconfig.xml" for MeteoInfoLab.
 - Splash file called "splash.png' for MeteoInfo and "splash_mil.png" for MeteoInfoLab.
@@ -50,27 +50,25 @@ the following items:
 - Synop and METAR station files in a folder called "station".
 - A README file.
 
-Running MeteoInfo/MeteoInfoLab
-============================
+Running MeteoInfoMap/MeteoInfoLab
+=================================
 
-On Windows paltform, you can launch MeteoInfo by double-clicking "JMeteoInfo.exe" file, 
-or by run the batch command file "meteoinfo.bat". The batch command file with parameters will
-run a Jython or Groovy script according to the file suffix ("meteoinfo.bat test.py" or "meteoinfo.bat test.groovy").
+On Windows paltform, you can launch MeteoInfoMap by double-clicking "MeteoInfoMap.exe" file, 
+or by run the batch command file "mimap.bat". The batch command file with parameters will
+run a Jython script ("mimap.bat test.py").
 
-On other platforms, you should run MeteoInfo from the shell command line; 'cd' into
+On other platforms, you should run MeteoInfoMap from the shell command line; 'cd' into
 the directory where the above files are located and then type:
 
-``./meteoinfo.sh``
+``./mimap.sh``
 
 This will execute a one-line command in the shell file which starts
-MeteoInfo and requests that it be allocated 1 GB of memory. To run the script, type:
+MeteoInfoMap and requests that it be allocated 1 GB of memory. To run the script, type:
 
-``./meteoinfo.sh test.py``
-or 
-``./meteoinfo.sh test.groovy``
+``./mimap.sh test.py``
 
 To run the script with headless model, a system configuration in which the display device is lacking, type:
-``./meteoinfo.sh -b test.py``
+``./mimap.sh -b test.py``
 It is specially useful in Unix/Linux crontab.
 
 Run MeteoInfoLab:
@@ -96,7 +94,7 @@ Lib files
 ======================
 
 The folder called lib must remain in the same directory as the
-MeteoInfo.sh application, and all the "jar" files it holds must remain
+mimap.sh application, and all the "jar" files it holds must remain
 in the lib folder. These file contain the MeteoInfo application code
 and (re)moving any of them will break MeteoInfo.
 
@@ -123,6 +121,7 @@ MeteoInfo uses Java classes and libraries written by several third-party organiz
 - NetCDF Java and its dependence libraries: Available at http://www.unidata.ucar.edu/software/thredds/current/netcdf-java/
 - Proj4J: Available at http://trac.osgeo.org/proj4j/wiki
 - Apache Common Math: Available at http://commons.apache.org/proper/commons-math/
+- Apache common Imaging: Available at http://commons.apache.org/proper/commons-imaging/
 - Groovy: Available at http://groovy.codehaus.org/
 - Jython: Available at http://www.jython.org/
 - wContour: Available at http://www.meteothinker.com/
@@ -134,3 +133,4 @@ MeteoInfo uses Java classes and libraries written by several third-party organiz
 - Docking Frames: Available at http://dock.javaforge.com/
 - JLaTeXMath: Available at http://forge.scilab.org/index.php/p/jlatexmath/
 - JTS Topology Suite: Available at http://tsusiatsoftware.net/jts/main.html
+- Jerry's Java Image Processing: Available at http://www.jhlabs.com/ip/index.html

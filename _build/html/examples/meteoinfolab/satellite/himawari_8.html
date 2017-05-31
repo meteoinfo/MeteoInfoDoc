@@ -118,6 +118,28 @@ hight resolution data with 22000 and 22000 of x and y dimensions, so the step is
 </pre></div>
 </div>
 <img alt="../../../_images/himawari_8.png" src="../../../_images/himawari_8.png" />
+<p>The sample code to create Himawari-8 true color image from band 1 (blue), 2 (green) and 3 (red).</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#Add data file</span>
+<span class="n">fn</span> <span class="o">=</span> <span class="s">r&#39;C:\Temp\himawari8\NC_H08_20170508_0040_r14_FLDK.02701_02601.nc&#39;</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+<span class="c">#Read data</span>
+<span class="n">bdata</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;albedo_01&#39;</span><span class="p">][:,:]</span>
+<span class="n">gdata</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;albedo_02&#39;</span><span class="p">][:,:]</span>
+<span class="n">rdata</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;albedo_03&#39;</span><span class="p">][:,:]</span>
+<span class="n">bdata</span><span class="p">[</span><span class="n">bdata</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">gdata</span><span class="p">[</span><span class="n">gdata</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">rdata</span><span class="p">[</span><span class="n">rdata</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="c">#Plot</span>
+<span class="n">axesm</span><span class="p">()</span>
+<span class="n">mlayer</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="s">&#39;D:/Temp/map/country1.shp&#39;</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="n">mlayer</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s">&#39;g&#39;</span><span class="p">)</span>
+<span class="n">layer</span> <span class="o">=</span> <span class="n">imshowm</span><span class="p">([</span><span class="n">rdata</span><span class="p">,</span><span class="n">gdata</span><span class="p">,</span><span class="n">bdata</span><span class="p">])</span>
+<span class="c">#Adjust image</span>
+<span class="n">imfilter</span><span class="o">.</span><span class="n">hsb_adjust</span><span class="p">(</span><span class="n">layer</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s">&#39;Himarari 8 true color image example&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../_images/himawari8_true_color1.png" src="../../../_images/himawari8_true_color1.png" />
 </div>
 
 

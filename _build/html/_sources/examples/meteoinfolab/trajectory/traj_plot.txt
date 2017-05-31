@@ -14,10 +14,14 @@ data, while **trajvardata(11)** is used to get trajectory height data.
 
 ::
 
-    f = addfile_hytraj('D:/MyProgram/Distribution/java/MeteoInfo/MeteoInfo/sample/HYSPLIT/tdump')
+    fn = 'D:/MyProgram/Distribution/java/MeteoInfo/MeteoInfo/sample/HYSPLIT/tdump'
+    f = addfile_hytraj(fn)
     tlayer = f.trajlayer()
     stlayer = f.trajsplayer()
-    axesm(position=[0.1,0.4,0.8,0.6])
+
+    #Plot
+    figure(figsize=[526, 489], newfig=False)
+    axesm(position=[0.12, 0.3, 0.9, 0.7])
     mlayer = shaperead('D:/Temp/map/country1.shp')
     geoshow(mlayer, edgecolor=(0,0,255), facecolor=(230,230,230))
     geoshow(tlayer)
@@ -25,9 +29,10 @@ data, while **trajvardata(11)** is used to get trajectory height data.
     geoshow(stlayer, symbolspec=ss)
     xlim(-92, -55)
     ylim(34, 54)
+    yticks(arange(35, 54, 5))
     title('MeteoInfoLab script demo - Trajectory')
 
-    axes(position=[0.1,0.1,0.8,0.3], yreverse=True, xaxistype='time')
+    axes(outerposition=[0, 0, 1, 0.3], yreverse=True, xaxistype='time')
     data = f.trajvardata(12)
     plot(data, legend=tlayer.legend())
     xlabel('Time')

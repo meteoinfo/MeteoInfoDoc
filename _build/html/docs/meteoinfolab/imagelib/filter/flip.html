@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>flip &mdash; MeteoInfo 1.4.2 documentation</title>
+    
+    <link rel="stylesheet" href="../../../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../',
+        VERSION:     '1.4.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="MeteoInfo 1.4.2 documentation" href="../../../../index.html" />
+    <link rel="up" title="mipylib.imagelib.filter" href="../filter.html" />
+    <link rel="next" title="gray_scale" href="gray_scale.html" />
+    <link rel="prev" title="emboss" href="emboss.html" /> 
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../../../index.html"><img src="../../../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="gray_scale.html" title="gray_scale"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="emboss.html" title="emboss"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li><a href="../../../index.html" >Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >MeteoInfoLab</a> &raquo;</li>
+          <li><a href="../../api.html" >The MeteoInfoLab API</a> &raquo;</li>
+          <li><a href="../../imagelib.html" >Imagelib package</a> &raquo;</li>
+          <li><a href="../filter.html" accesskey="U">mipylib.imagelib.filter</a> &raquo;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="emboss.html"
+                        title="previous chapter">emboss</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="gray_scale.html"
+                        title="next chapter">gray_scale</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../../_sources/docs/meteoinfolab/imagelib/filter/flip.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="flip">
+<span id="docs-meteoinfolab-imagelib-filter-flip"></span><h1>flip<a class="headerlink" href="#flip" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="mipylib.imagelib.filter.flip">
+<tt class="descclassname">mipylib.imagelib.filter.</tt><tt class="descname">flip</tt><big>(</big><em>src</em>, <em>operation=1</em><big>)</big><a class="headerlink" href="#mipylib.imagelib.filter.flip" title="Permalink to this definition">¶</a></dt>
+<dd><p>A filter which flips images or rotates by multiples of 90 degrees.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>src</strong> &#8211; (<em>image</em>) Source image.</li>
+<li><strong>operation</strong> &#8211; (<em>int</em>) Operation. 1: Flip the image horizontally; 2: Flip the image
+vertically; 3: Flip the image horizontally and vertically; 4: Rotate the image 90
+degrees clockwise; 5: Rotate the image 90 degrees counter-clockwise; 6: Rotate the
+image 180 degrees.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Destination image.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<p>Image flip:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fn</span> <span class="o">=</span> <span class="s">&#39;D:/Temp/image/Lenna.png&#39;</span>
+<span class="n">lena</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+<span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span><span class="n">aspect</span><span class="o">=</span><span class="s">&#39;equal&#39;</span><span class="p">,</span> <span class="n">tickline</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">imshow</span><span class="p">(</span><span class="n">lena</span><span class="p">)</span>
+<span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="s">&#39;equal&#39;</span><span class="p">,</span> <span class="n">tickline</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">lena_1</span> <span class="o">=</span> <span class="n">imfilter</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">lena</span><span class="p">)</span>
+<span class="n">imshow</span><span class="p">(</span><span class="n">lena_1</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/image_flip2.png" src="../../../../_images/image_flip2.png" />
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="gray_scale.html" title="gray_scale"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="emboss.html" title="emboss"
+             >previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li><a href="../../../index.html" >Documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >MeteoInfoLab</a> &raquo;</li>
+          <li><a href="../../api.html" >The MeteoInfoLab API</a> &raquo;</li>
+          <li><a href="../../imagelib.html" >Imagelib package</a> &raquo;</li>
+          <li><a href="../filter.html" >mipylib.imagelib.filter</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2010-2017, Yaqiang Wang.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

@@ -2,7 +2,7 @@
 
 
 *******************
-MeteoInfo
+MeteoInfoMap
 *******************
 
 .. toctree::

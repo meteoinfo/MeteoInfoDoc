@@ -53,7 +53,7 @@ trajectory map plot.
 
     # The 2nd plot is the trajectory
     subplot(2, 1, 2)
-    axesm()
+    axesm(newaxes=False)
     lworld = shaperead('D:/Temp/map/country1.shp')
     geoshow(lworld, edgecolor='k')
     plotm(lon, lat, '-b', linewidth=4)

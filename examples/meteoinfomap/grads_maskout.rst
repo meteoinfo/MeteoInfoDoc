@@ -1,11 +1,11 @@
 .. _examples-meteoinfomap-grads_maskout:
 
 
-**********************
+*******************************
 Create GrADS maskout data file
-**********************
+*******************************
 
-1. Load the polygon shape file as a layer in MeteoInfo and select one or more polygon shapes with 
+1. Load the polygon shape file as a layer in MeteoInfoMap and select one or more polygon shapes with 
 maskout borders. All shapes of the layer will be used in following steps if no one shape is selected.
 
 .. image:: image/sel_shape.png

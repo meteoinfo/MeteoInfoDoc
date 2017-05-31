@@ -26,7 +26,7 @@
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="top" title="MeteoInfo 1.4.2 documentation" href="../index.html" />
     <link rel="up" title="Documentation" href="index.html" />
-    <link rel="next" title="MeteoInfo" href="meteoinfo/index.html" />
+    <link rel="next" title="MeteoInfoMap" href="meteoinfo/index.html" />
     <link rel="prev" title="Documentation" href="index.html" /> 
   </head>
   <body>
@@ -44,7 +44,7 @@
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="meteoinfo/index.html" title="MeteoInfo"
+          <a href="meteoinfo/index.html" title="MeteoInfoMap"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="index.html" title="Documentation"
@@ -67,8 +67,8 @@
 <li><a class="reference internal" href="#">Introduction</a><ul>
 <li><a class="reference internal" href="#publication">Publication</a></li>
 <li><a class="reference internal" href="#downloading">Downloading</a></li>
-<li><a class="reference internal" href="#installing-meteoinfo-meteoinfolab">Installing MeteoInfo/MeteoInfoLab</a></li>
-<li><a class="reference internal" href="#running-meteoinfo-meteoinfolab">Running MeteoInfo/MeteoInfoLab</a></li>
+<li><a class="reference internal" href="#installing-meteoinfomap-meteoinfolab">Installing MeteoInfoMap/MeteoInfoLab</a></li>
+<li><a class="reference internal" href="#running-meteoinfomap-meteoinfolab">Running MeteoInfoMap/MeteoInfoLab</a></li>
 <li><a class="reference internal" href="#lib-files">Lib files</a></li>
 <li><a class="reference internal" href="#contact">Contact</a></li>
 <li><a class="reference internal" href="#acknowledgment">Acknowledgment</a></li>
@@ -81,7 +81,7 @@
                         title="previous chapter">Documentation</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="meteoinfo/index.html"
-                        title="next chapter">MeteoInfo</a></p>
+                        title="next chapter">MeteoInfoMap</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="../_sources/docs/introduction.txt"
@@ -110,7 +110,7 @@
             
   <div class="section" id="introduction">
 <span id="docs-instroduction"></span><h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
-<p>MeteoInfo is a GIS application which enables the user to visualize and analyze
+<p>MeteoInfoMap is a GIS application which enables the user to visualize and analyze
 the spatial and meteorological data with multiple data formats.</p>
 <p>MeteoInfoLab is a scientific Jython development environment with the ability of
 multiple array calculation and 2D plotting.</p>
@@ -128,16 +128,16 @@ already installed.</p>
 <p>The current version of MeteoInfo, along with other information about the
 application, may always be found at <a class="reference external" href="http://www.meteothinker.com">http://www.meteothinker.com</a></p>
 </div>
-<div class="section" id="installing-meteoinfo-meteoinfolab">
-<h2>Installing MeteoInfo/MeteoInfoLab<a class="headerlink" href="#installing-meteoinfo-meteoinfolab" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="installing-meteoinfomap-meteoinfolab">
+<h2>Installing MeteoInfoMap/MeteoInfoLab<a class="headerlink" href="#installing-meteoinfomap-meteoinfolab" title="Permalink to this headline">¶</a></h2>
 <p>There is no specified installation file, just unzip the downloaded MeteoInfo file. The
 complete MeteoInfo Java &#8220;Generic&#8221; package should, after uncompression, include
 the following items:</p>
 <ul class="simple">
-<li>MeteoInfo launcher in a shell command files called &#8220;meteoinfo.sh&#8221; and &#8220;milab.sh&#8221; for MAC OS, Linux, Unix system.</li>
-<li>MeteoInfo launcher in a batch command files called &#8220;meteoinfo.bat&#8221; and &#8220;milab.bat&#8221; for Windows system.</li>
-<li>MeteoInfo executable files called &#8220;JMeteoInfo.exe&#8221; and &#8220;MeteoInfoLab.exe&#8221; for Windows system.</li>
-<li>MeteoInfo jar files called &#8220;MeteoInfo.jar&#8221; and &#8220;MeteoInfoLab.jar&#8221;.</li>
+<li>MeteoInfo launcher in a shell command files called &#8220;mimap.sh&#8221; and &#8220;milab.sh&#8221; for MAC OS, Linux, Unix system.</li>
+<li>MeteoInfo launcher in a batch command files called &#8220;mimap.bat&#8221; and &#8220;milab.bat&#8221; for Windows system.</li>
+<li>MeteoInfo executable files called &#8220;MeteoInfoMap.exe&#8221; and &#8220;MeteoInfoLab.exe&#8221; for Windows system.</li>
+<li>MeteoInfo jar files called &#8220;MeteoInfoMap.jar&#8221; and &#8220;MeteoInfoLab.jar&#8221;.</li>
 <li>Default MeteoInfo project file called &#8220;default.mip&#8221;.</li>
 <li>Configure file called &#8220;config.xml&#8221; for MeteoInfo and &#8220;milconfig.xml&#8221; for MeteoInfoLab.</li>
 <li>Splash file called &#8220;splash.png&#8217; for MeteoInfo and &#8220;splash_mil.png&#8221; for MeteoInfoLab.</li>
@@ -152,21 +152,19 @@ the following items:</p>
 <li>A README file.</li>
 </ul>
 </div>
-<div class="section" id="running-meteoinfo-meteoinfolab">
-<h2>Running MeteoInfo/MeteoInfoLab<a class="headerlink" href="#running-meteoinfo-meteoinfolab" title="Permalink to this headline">¶</a></h2>
-<p>On Windows paltform, you can launch MeteoInfo by double-clicking &#8220;JMeteoInfo.exe&#8221; file,
-or by run the batch command file &#8220;meteoinfo.bat&#8221;. The batch command file with parameters will
-run a Jython or Groovy script according to the file suffix (&#8220;meteoinfo.bat test.py&#8221; or &#8220;meteoinfo.bat test.groovy&#8221;).</p>
-<p>On other platforms, you should run MeteoInfo from the shell command line; &#8216;cd&#8217; into
+<div class="section" id="running-meteoinfomap-meteoinfolab">
+<h2>Running MeteoInfoMap/MeteoInfoLab<a class="headerlink" href="#running-meteoinfomap-meteoinfolab" title="Permalink to this headline">¶</a></h2>
+<p>On Windows paltform, you can launch MeteoInfoMap by double-clicking &#8220;MeteoInfoMap.exe&#8221; file,
+or by run the batch command file &#8220;mimap.bat&#8221;. The batch command file with parameters will
+run a Jython script (&#8220;mimap.bat test.py&#8221;).</p>
+<p>On other platforms, you should run MeteoInfoMap from the shell command line; &#8216;cd&#8217; into
 the directory where the above files are located and then type:</p>
-<p><tt class="docutils literal"><span class="pre">./meteoinfo.sh</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">./mimap.sh</span></tt></p>
 <p>This will execute a one-line command in the shell file which starts
-MeteoInfo and requests that it be allocated 1 GB of memory. To run the script, type:</p>
-<p><tt class="docutils literal"><span class="pre">./meteoinfo.sh</span> <span class="pre">test.py</span></tt>
-or
-<tt class="docutils literal"><span class="pre">./meteoinfo.sh</span> <span class="pre">test.groovy</span></tt></p>
+MeteoInfoMap and requests that it be allocated 1 GB of memory. To run the script, type:</p>
+<p><tt class="docutils literal"><span class="pre">./mimap.sh</span> <span class="pre">test.py</span></tt></p>
 <p>To run the script with headless model, a system configuration in which the display device is lacking, type:
-<tt class="docutils literal"><span class="pre">./meteoinfo.sh</span> <span class="pre">-b</span> <span class="pre">test.py</span></tt>
+<tt class="docutils literal"><span class="pre">./mimap.sh</span> <span class="pre">-b</span> <span class="pre">test.py</span></tt>
 It is specially useful in Unix/Linux crontab.</p>
 <p>Run MeteoInfoLab:
 On Windows paltform, you can launch MeteoInfoLab by double-clicking &#8220;MeteoInfoLab.exe&#8221; file,
@@ -185,7 +183,7 @@ It is specially useful in Unix/Linux crontab.</p>
 <div class="section" id="lib-files">
 <h2>Lib files<a class="headerlink" href="#lib-files" title="Permalink to this headline">¶</a></h2>
 <p>The folder called lib must remain in the same directory as the
-MeteoInfo.sh application, and all the &#8220;jar&#8221; files it holds must remain
+mimap.sh application, and all the &#8220;jar&#8221; files it holds must remain
 in the lib folder. These file contain the MeteoInfo application code
 and (re)moving any of them will break MeteoInfo.</p>
 </div>
@@ -207,6 +205,7 @@ Please send bug reports, etc., to:</p>
 <li>NetCDF Java and its dependence libraries: Available at <a class="reference external" href="http://www.unidata.ucar.edu/software/thredds/current/netcdf-java/">http://www.unidata.ucar.edu/software/thredds/current/netcdf-java/</a></li>
 <li>Proj4J: Available at <a class="reference external" href="http://trac.osgeo.org/proj4j/wiki">http://trac.osgeo.org/proj4j/wiki</a></li>
 <li>Apache Common Math: Available at <a class="reference external" href="http://commons.apache.org/proper/commons-math/">http://commons.apache.org/proper/commons-math/</a></li>
+<li>Apache common Imaging: Available at <a class="reference external" href="http://commons.apache.org/proper/commons-imaging/">http://commons.apache.org/proper/commons-imaging/</a></li>
 <li>Groovy: Available at <a class="reference external" href="http://groovy.codehaus.org/">http://groovy.codehaus.org/</a></li>
 <li>Jython: Available at <a class="reference external" href="http://www.jython.org/">http://www.jython.org/</a></li>
 <li>wContour: Available at <a class="reference external" href="http://www.meteothinker.com/">http://www.meteothinker.com/</a></li>
@@ -218,6 +217,7 @@ Please send bug reports, etc., to:</p>
 <li>Docking Frames: Available at <a class="reference external" href="http://dock.javaforge.com/">http://dock.javaforge.com/</a></li>
 <li>JLaTeXMath: Available at <a class="reference external" href="http://forge.scilab.org/index.php/p/jlatexmath/">http://forge.scilab.org/index.php/p/jlatexmath/</a></li>
 <li>JTS Topology Suite: Available at <a class="reference external" href="http://tsusiatsoftware.net/jts/main.html">http://tsusiatsoftware.net/jts/main.html</a></li>
+<li>Jerry&#8217;s Java Image Processing: Available at <a class="reference external" href="http://www.jhlabs.com/ip/index.html">http://www.jhlabs.com/ip/index.html</a></li>
 </ul>
 </div>
 </div>
@@ -238,7 +238,7 @@ Please send bug reports, etc., to:</p>
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="meteoinfo/index.html" title="MeteoInfo"
+          <a href="meteoinfo/index.html" title="MeteoInfoMap"
              >next</a> |</li>
         <li class="right" >
           <a href="index.html" title="Documentation"

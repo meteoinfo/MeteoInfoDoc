@@ -1,9 +1,9 @@
 .. _examples-meteoinfomap-index:
 
 
-*******************
-MeteoInfo Desktop
-*******************
+********************
+MeteoInfoMap Desktop
+********************
 
 .. toctree::
    :maxdepth: 2

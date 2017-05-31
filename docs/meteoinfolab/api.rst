@@ -15,3 +15,5 @@ Libraries
    plotlib.rst
    dataset.rst
    geolib.rst
+   meteolib.rst
+   imagelib.rst
