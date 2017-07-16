@@ -16,7 +16,7 @@ Image flip:
     subplot(1, 2, 1,aspect='equal', tickline=False)
     imshow(lena)
     subplot(1, 2, 2, aspect='equal', tickline=False)
-    lena_1 = imfilter.flip(lena)
+    lena_1 = image.flip(lena)
     imshow(lena_1)
 
 .. image:: ../_static/image_flip.png
@@ -30,7 +30,7 @@ Image gray scale:
     subplot(1, 2, 1,aspect='equal', tickline=False)
     imshow(lena)
     subplot(1, 2, 2, aspect='equal', tickline=False)
-    lena_1 = imfilter.gray_scale(lena)
+    lena_1 = image.gray_scale(lena)
     imshow(lena_1)
     
 .. image:: ../_static/image_gray_scale.png
@@ -44,7 +44,7 @@ Image emboss:
     subplot(1, 2, 1,aspect='equal', tickline=False)
     imshow(lena)
     subplot(1, 2, 2, aspect='equal', tickline=False)
-    lena_1 = imfilter.emboss(lena)
+    lena_1 = image.emboss(lena)
     imshow(lena_1)
     
 .. image:: ../_static/image_emboss.png
@@ -69,7 +69,7 @@ Create Himawari 8 satellite true color image:
     geoshow(mlayer, edgecolor='g')
     layer = imshowm([rdata,gdata,bdata])
     #Adjust image
-    imfilter.hsb_adjust(layer, h=0, s=0.1, b=0.2)
+    image.hsb_adjust(layer, h=0, s=0.1, b=0.2)
     title('Himarari 8 true color image example')
     
 .. image:: ../_static/himawari8_true_color.png

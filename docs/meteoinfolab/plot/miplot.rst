@@ -52,6 +52,7 @@ Functions:
    functions/streamplotm.rst
    functions/subplot.rst
    functions/suptitle.rst
+   functions/surf.rst
    functions/text.rst
    functions/title.rst
    functions/twinx.rst

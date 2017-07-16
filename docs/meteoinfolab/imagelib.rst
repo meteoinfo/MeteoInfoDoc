@@ -9,4 +9,3 @@ Imagelib package
    :maxdepth: 1
 
    imagelib/image.rst
-   imagelib/filter.rst

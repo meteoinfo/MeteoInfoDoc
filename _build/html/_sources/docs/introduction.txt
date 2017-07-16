@@ -118,19 +118,20 @@ Acknowledgment
 
 MeteoInfo uses Java classes and libraries written by several third-party organizations.
 
-- NetCDF Java and its dependence libraries: Available at http://www.unidata.ucar.edu/software/thredds/current/netcdf-java/
+- NetCDF Java and its dependence libraries: Available at http://www.unidata.ucar.edu/software/thredds/current/netcdf-java
 - Proj4J: Available at http://trac.osgeo.org/proj4j/wiki
-- Apache Common Math: Available at http://commons.apache.org/proper/commons-math/
-- Apache common Imaging: Available at http://commons.apache.org/proper/commons-imaging/
-- Groovy: Available at http://groovy.codehaus.org/
-- Jython: Available at http://www.jython.org/
-- wContour: Available at http://www.meteothinker.com/
+- Apache Common Math: Available at http://commons.apache.org/proper/commons-math
+- Apache common Imaging: Available at http://commons.apache.org/proper/commons-imaging
+- Groovy: Available at http://groovy.codehaus.org
+- Jython: Available at http://www.jython.org
+- wContour: Available at http://www.meteothinker.com
 - L2FProd: Available at http://common.L2FProd.com
-- RSyntaxTextArea: Available at http://fifesoft.com/rsyntaxtextarea/
-- JavaHelp: Available at https://javahelp.java.net/
-- BeanShell: Available at http://www.beanshell.org/
-- FreeHEP VectorGraphics: Available at http://java.freehep.org/vectorgraphics/
-- Docking Frames: Available at http://dock.javaforge.com/
-- JLaTeXMath: Available at http://forge.scilab.org/index.php/p/jlatexmath/
-- JTS Topology Suite: Available at http://tsusiatsoftware.net/jts/main.html
+- RSyntaxTextArea: Available at http://bobbylight.github.io/RSyntaxTextArea
+- JavaHelp: Available at https://javahelp.java.net
+- BeanShell: Available at http://www.beanshell.org
+- FreeHEP VectorGraphics: Available at http://java.freehep.org/vectorgraphics
+- Docking Frames: Available at http://www.docking-frames.org
+- JLaTeXMath: Available at https://github.com/opencollab/jlatexmath
+- JTS Topology Suite: Available at https://www.locationtech.org/projects/technology.jts
 - Jerry's Java Image Processing: Available at http://www.jhlabs.com/ip/index.html
+- SurfacePlotter: Available at https://github.com/ericaro/surfaceplotter

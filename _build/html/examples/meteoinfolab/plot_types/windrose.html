@@ -117,6 +117,152 @@
 </pre></div>
 </div>
 <img alt="../../../_images/mi_1.4.2_lab_windrose.png" src="../../../_images/mi_1.4.2_lab_windrose.png" />
+<p>In fact, windrose is plotted in a polar axes. But there are some diffenrence between windrose
+and polar coordinates. The polar angle theta is the counterclockwise angle from the x-axis in
+polar coordinates, meanwhile the polar angle theta is the colockwise angle from the y-axis in
+windrose coordinates. So the wind direction data have to be converted from windrose coordinates
+to polar coordinates for visualization purpose. The conversion processe was done in <tt class="docutils literal"><span class="pre">windorose</span></tt>
+function. Also you can do it in the code to plot windrose without <tt class="docutils literal"><span class="pre">windrose</span></tt> function.</p>
+<p>The below example will plot PM10 concentration with filled contours and wind direction frequency.
+The following data were used.</p>
+<div class="highlight-python"><div class="highlight"><pre>WS WD PM10
+1 335 183.2
+4 350 173.4
+2 0 194
+1 0 175.75
+3 0 203.6
+3 0 161.2
+3 0 142
+2 0 163
+2 0 175.5
+1 0 208.4
+1 0 205
+1 0 171.2
+3 170 143.6
+3 135 116
+3 135 110.6
+2 135 93.2
+5 90 98.2
+4 90 91.8
+6 90 83.6
+4 90 88.4
+2 100 81.4
+1 80 77
+2 0 81.8
+3 0 89.4
+3 0 115.8
+3 0 131.2
+4 0 166.4
+3 0 174
+3 0 170.2
+7 10 152.4
+6 0 184.4
+7 20 203.8
+4 30 212.6
+8 45 627.8
+6 45 1290.4
+6 45 1581.25
+7 80 1711.525
+7 45 1841.8
+6 45 2128.4
+8 75 2406.8
+8 45 2576.8
+8 45 2035.6
+7 45 1615
+5 60 1286.8
+4 45 1202.4
+3 70 1015.2
+3 80 733.8
+1 90 635.6
+2 225 339.2
+2 270 331.4
+2 260 303.2
+2 225 282.6
+</pre></div>
+</div>
+<p>The PM10 data was plotted in a Cartesian axes and the wind direction frequency line was plotted
+in a polar axes. The two axes must have same position.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">windrose2polar</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="mi">360</span> <span class="o">-</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">90</span>
+    <span class="n">r</span><span class="p">[</span><span class="n">r</span><span class="o">&gt;</span><span class="mi">360</span><span class="p">]</span> <span class="o">=</span> <span class="n">r</span> <span class="o">-</span> <span class="mi">360</span>
+    <span class="k">return</span> <span class="n">r</span>
+
+<span class="c">#Read data (wind speed, weed direction, pm10)</span>
+<span class="n">fn</span> <span class="o">=</span> <span class="s">r&#39;D:\Temp\ascii\pm10.txt&#39;</span>
+<span class="n">table</span> <span class="o">=</span> <span class="n">readtable</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="s">&#39;</span><span class="si">%3f</span><span class="s">&#39;</span><span class="p">)</span>
+<span class="n">ws</span> <span class="o">=</span> <span class="n">table</span><span class="p">[</span><span class="s">&#39;WS&#39;</span><span class="p">]</span>
+<span class="n">wd</span> <span class="o">=</span> <span class="n">table</span><span class="p">[</span><span class="s">&#39;WD&#39;</span><span class="p">]</span>
+<span class="n">pm10</span> <span class="o">=</span> <span class="n">table</span><span class="p">[</span><span class="s">&#39;PM10&#39;</span><span class="p">]</span>
+<span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">ws</span><span class="p">)</span>
+
+<span class="c">#Convert from windrose coordinate to polar coordinate</span>
+<span class="n">rwd</span> <span class="o">=</span> <span class="n">windrose2polar</span><span class="p">(</span><span class="n">wd</span><span class="p">)</span>
+
+<span class="c">#Degree to radians</span>
+<span class="n">rwd</span> <span class="o">=</span> <span class="n">radians</span><span class="p">(</span><span class="n">rwd</span><span class="p">)</span>
+
+<span class="c">#Calculate frequency of each wind direction bin</span>
+<span class="n">wdbins</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">pi</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+<span class="n">dwdbins</span> <span class="o">=</span> <span class="n">degrees</span><span class="p">(</span><span class="n">wdbins</span><span class="p">)</span>
+<span class="n">dwdbins</span> <span class="o">=</span> <span class="n">windrose2polar</span><span class="p">(</span><span class="n">dwdbins</span><span class="p">)</span>
+<span class="n">rwdbins</span> <span class="o">=</span> <span class="n">radians</span><span class="p">(</span><span class="n">dwdbins</span><span class="p">)</span>
+<span class="n">wdN</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">wdbins</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="n">theta</span> <span class="o">=</span> <span class="n">ones</span><span class="p">(</span><span class="n">wdN</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">wdN</span><span class="p">):</span>
+    <span class="n">theta</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">rwdbins</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">pi</span><span class="o">/</span><span class="n">wdN</span>
+<span class="n">theta</span><span class="p">[</span><span class="n">wdN</span><span class="p">]</span> <span class="o">=</span> <span class="n">theta</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">wdhist</span> <span class="o">=</span> <span class="n">histogram</span><span class="p">(</span><span class="n">radians</span><span class="p">(</span><span class="n">wd</span><span class="p">),</span> <span class="n">wdbins</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s">&#39;float&#39;</span><span class="p">)</span>
+<span class="n">wdhist</span> <span class="o">=</span> <span class="n">wdhist</span> <span class="o">/</span> <span class="n">N</span>
+<span class="n">nwdhist</span> <span class="o">=</span> <span class="n">wdhist</span><span class="o">.</span><span class="n">aslist</span><span class="p">()</span>
+<span class="n">nwdhist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nwdhist</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">nwdhist</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="n">nwdhist</span><span class="p">)</span>
+
+<span class="c">#Polar coordinate to Cartesian coordinate</span>
+<span class="n">rwdc</span><span class="p">,</span> <span class="n">wsc</span> <span class="o">=</span> <span class="n">pol2cart</span><span class="p">(</span><span class="n">rwd</span><span class="p">,</span> <span class="n">ws</span><span class="p">)</span>
+
+<span class="c">#Get convexhull (minimum outer polygon of the wind points)</span>
+<span class="n">poly</span> <span class="o">=</span> <span class="n">topo</span><span class="o">.</span><span class="n">convexhull</span><span class="p">(</span><span class="n">rwdc</span><span class="p">,</span> <span class="n">wsc</span><span class="p">)</span>
+
+<span class="c">#Get grid data</span>
+<span class="n">dd</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="n">rwdc</span><span class="o">.</span><span class="n">min</span><span class="p">()</span> <span class="o">-</span> <span class="n">dd</span><span class="p">,</span> <span class="n">rwdc</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">+</span> <span class="n">dd</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="n">wsc</span><span class="o">.</span><span class="n">min</span><span class="p">()</span> <span class="o">-</span> <span class="n">dd</span><span class="p">,</span> <span class="n">wsc</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">+</span> <span class="n">dd</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">griddata</span><span class="p">((</span><span class="n">rwdc</span><span class="p">,</span> <span class="n">wsc</span><span class="p">),</span> <span class="n">pm10</span><span class="p">,</span> <span class="n">xi</span><span class="o">=</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="n">method</span><span class="o">=</span><span class="s">&#39;idw&#39;</span><span class="p">,</span> <span class="n">convexhull</span><span class="o">=</span><span class="bp">False</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c">#---------------------------------------</span>
+<span class="c">#Plot figure</span>
+<span class="n">pos</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.13</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.775</span><span class="p">,</span> <span class="mf">0.775</span><span class="p">]</span>
+
+<span class="c">#Cartesian axes</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">(</span><span class="n">position</span><span class="o">=</span><span class="n">pos</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="s">&#39;equal&#39;</span><span class="p">)</span>
+<span class="n">xaxis</span><span class="p">(</span><span class="n">visible</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">yaxis</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="s">&#39;right&#39;</span><span class="p">,</span> <span class="n">visible</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">yaxis</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="s">&#39;left&#39;</span><span class="p">,</span> <span class="n">shift</span> <span class="o">=</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;Wind speed (m/s)&#39;</span><span class="p">)</span>
+<span class="n">levs</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">cg</span> <span class="o">=</span> <span class="n">contourf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">levs</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s">&#39;BlAqGrYeOrRe&#39;</span><span class="p">,</span> <span class="n">visible</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">cg</span> <span class="o">=</span> <span class="n">cg</span><span class="o">.</span><span class="n">clip</span><span class="p">([</span><span class="n">poly</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_graphic</span><span class="p">(</span><span class="n">cg</span><span class="p">)</span>
+<span class="c">#ss = scatter(rwdc, wsc, s=4, fill=False, edgecolor=&#39;b&#39;)</span>
+<span class="c">#patch(poly)</span>
+<span class="n">colorbar</span><span class="p">(</span><span class="n">cg</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">xshift</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">r&#39;$\mu g/m^3$&#39;</span><span class="p">,</span> <span class="n">labelloc</span><span class="o">=</span><span class="s">&#39;bottom&#39;</span><span class="p">)</span>
+<span class="n">maxv</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="n">maxv</span><span class="p">,</span> <span class="n">maxv</span><span class="p">)</span>
+<span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="n">maxv</span><span class="p">,</span> <span class="n">maxv</span><span class="p">)</span>
+
+<span class="c">#Polar axes</span>
+<span class="n">axp</span> <span class="o">=</span> <span class="n">axes</span><span class="p">(</span><span class="n">position</span><span class="o">=</span><span class="n">pos</span><span class="p">,</span> <span class="n">polar</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">nwdhist</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;k&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">axp</span><span class="o">.</span><span class="n">set_rmax</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">axp</span><span class="o">.</span><span class="n">set_rlabel_position</span><span class="p">(</span><span class="mf">25.</span><span class="p">)</span>
+<span class="n">axp</span><span class="o">.</span><span class="n">set_rtick_locations</span><span class="p">([</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.4</span><span class="p">,</span><span class="mf">0.6</span><span class="p">,</span><span class="mf">0.8</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">axp</span><span class="o">.</span><span class="n">set_rticks</span><span class="p">([</span><span class="s">&#39;2&#39;</span><span class="p">,</span><span class="s">&#39;4&#39;</span><span class="p">,</span><span class="s">&#39;6&#39;</span><span class="p">,</span><span class="s">&#39;8&#39;</span><span class="p">,</span><span class="s">&#39;10 m/s&#39;</span><span class="p">])</span>
+<span class="n">axp</span><span class="o">.</span><span class="n">set_xtick_font</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">axp</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([</span><span class="s">&#39;E&#39;</span><span class="p">,</span><span class="s">&#39;NE&#39;</span><span class="p">,</span><span class="s">&#39;N&#39;</span><span class="p">,</span><span class="s">&#39;NW&#39;</span><span class="p">,</span><span class="s">&#39;W&#39;</span><span class="p">,</span><span class="s">&#39;SW&#39;</span><span class="p">,</span><span class="s">&#39;S&#39;</span><span class="p">,</span><span class="s">&#39;SE&#39;</span><span class="p">])</span>
+<span class="n">title</span><span class="p">(</span><span class="s">r&#39;$Windrose \ with \ PM_{10} \ concentrations$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../_images/windrose_contourf.png" src="../../../_images/windrose_contourf.png" />
 </div>
 
 

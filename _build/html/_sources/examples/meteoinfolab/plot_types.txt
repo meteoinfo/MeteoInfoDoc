@@ -28,3 +28,4 @@ Plot types
    plot_types/station_model.rst
    plot_types/gif_animation.rst
    plot_types/image_process.rst
+   plot_types/surf.rst
