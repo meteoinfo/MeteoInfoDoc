@@ -4,7 +4,9 @@
 Gif animation
 *******************
 
-Gif animation image can be created using ``gifanimation(), gifaddframe() and .finish()`` functions.
+Gif animation image can be created using :ref:`gifanimation() <docs-meteoinfolab-funcitons-plot-gifanimation>`, 
+:ref:`gifaddframe() <docs-meteoinfolab-funcitons-plot-gifaddframe>` and :ref:`giffinish() <docs-meteoinfolab-funcitons-plot-giffinish>`
+functions.
 
 ::
 

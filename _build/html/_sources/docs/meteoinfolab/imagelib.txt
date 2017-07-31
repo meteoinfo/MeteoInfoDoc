@@ -8,4 +8,5 @@ Imagelib package
 .. toctree::
    :maxdepth: 1
 
-   imagelib/image.rst
+   imagelib/io.rst
+   imagelib/filter.rst

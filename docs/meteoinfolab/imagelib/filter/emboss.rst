@@ -26,11 +26,11 @@ emboss
     ::
 
         fn = 'D:/Temp/image/Lenna.png'
-        lena = image.imread(fn)
+        lena = imagelib.imread(fn)
         subplot(1, 2, 1,aspect='equal', tickline=False)
         imshow(lena)
         subplot(1, 2, 2, aspect='equal', tickline=False)
-        lena_1 = imfilter.emboss(lena)
+        lena_1 = imagelib.emboss(lena)
         imshow(lena_1)
 
     .. image:: ../../../../_static/image_emboss.png

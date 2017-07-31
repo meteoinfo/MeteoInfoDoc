@@ -13,6 +13,7 @@ Functions:
 .. toctree::
    :maxdepth: 1
 
+   functions/absolute.rst
    functions/acos.rst
    functions/arange.rst
    functions/arange1.rst
@@ -29,6 +30,8 @@ Functions:
    functions/log.rst
    functions/log10.rst
    functions/logspace.rst
+   functions/mean.rst
+   functions/median.rst
    functions/ones.rst
    functions/project.rst
    functions/projinfo.rst
@@ -37,6 +40,8 @@ Functions:
    functions/sin.rst
    functions/sort.rst
    functions/sqrt.rst
+   functions/std.rst
+   functions/sum.rst
    functions/tan.rst
    functions/trapz.rst
    functions/zeros.rst

@@ -22,11 +22,11 @@ invert
     ::
 
         fn = 'D:/Temp/image/Lenna.png'
-        lena = image.imread(fn)
+        lena = imagelib.imread(fn)
         subplot(1, 2, 1,aspect='equal', tickline=False)
         imshow(lena)
         subplot(1, 2, 2, aspect='equal', tickline=False)
-        lena_1 = imfilter.invert(lena)
+        lena_1 = imagelib.invert(lena)
         imshow(lena_1)
 
     .. image:: ../../../../_static/image_invert.png

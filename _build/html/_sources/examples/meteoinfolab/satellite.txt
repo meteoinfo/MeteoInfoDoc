@@ -11,6 +11,7 @@ Satellite data
    satellite/cloudsat_swath.rst
    satellite/airs_swath.rst
    satellite/airs_grid.rst
+   satellite/avhrr_sst.rst
    satellite/amsr.rst
    satellite/fy2c_clc.rst
    satellite/fy3a_aod.rst
@@ -30,3 +31,4 @@ Satellite data
    satellite/sea_ice.rst
    satellite/mls_swath.rst
    satellite/nsidc_bt.rst
+   satellite/toms_ozone.rst

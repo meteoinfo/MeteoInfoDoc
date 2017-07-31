@@ -22,11 +22,11 @@ gray_scale
     ::
 
         fn = 'D:/Temp/image/Lenna.png'
-        lena = image.imread(fn)
+        lena = imagelib.imread(fn)
         subplot(1, 2, 1,aspect='equal', tickline=False)
         imshow(lena)
         subplot(1, 2, 2, aspect='equal', tickline=False)
-        lena_1 = imfilter.gray_scale(lena)
+        lena_1 = imagelib.gray_scale(lena)
         imshow(lena_1)
 
     .. image:: ../../../../_static/image_gray_scale.png

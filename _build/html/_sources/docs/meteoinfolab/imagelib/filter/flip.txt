@@ -26,11 +26,11 @@ flip
     ::
 
         fn = 'D:/Temp/image/Lenna.png'
-        lena = image.imread(fn)
+        lena = imagelib.imread(fn)
         subplot(1, 2, 1,aspect='equal', tickline=False)
         imshow(lena)
         subplot(1, 2, 2, aspect='equal', tickline=False)
-        lena_1 = imfilter.flip(lena)
+        lena_1 = imagelib.flip(lena)
         imshow(lena_1)
 
     .. image:: ../../../../_static/image_flip.png

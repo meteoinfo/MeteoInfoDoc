@@ -117,11 +117,11 @@
 <p><strong>Example:</strong></p>
 <p>Image invert:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">fn</span> <span class="o">=</span> <span class="s">&#39;D:/Temp/image/Lenna.png&#39;</span>
-<span class="n">lena</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+<span class="n">lena</span> <span class="o">=</span> <span class="n">imagelib</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
 <span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span><span class="n">aspect</span><span class="o">=</span><span class="s">&#39;equal&#39;</span><span class="p">,</span> <span class="n">tickline</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 <span class="n">imshow</span><span class="p">(</span><span class="n">lena</span><span class="p">)</span>
 <span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="s">&#39;equal&#39;</span><span class="p">,</span> <span class="n">tickline</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
-<span class="n">lena_1</span> <span class="o">=</span> <span class="n">imfilter</span><span class="o">.</span><span class="n">invert</span><span class="p">(</span><span class="n">lena</span><span class="p">)</span>
+<span class="n">lena_1</span> <span class="o">=</span> <span class="n">imagelib</span><span class="o">.</span><span class="n">invert</span><span class="p">(</span><span class="n">lena</span><span class="p">)</span>
 <span class="n">imshow</span><span class="p">(</span><span class="n">lena_1</span><span class="p">)</span>
 </pre></div>
 </div>

@@ -31,6 +31,10 @@ Functions:
    functions/contourfm.rst
    functions/figure.rst
    functions/fill_between.rst
+   functions/geoshow.rst
+   functions/gifanimation.rst
+   functions/gifaddframe.rst
+   functions/giffinish.rst
    functions/grid.rst
    functions/hist.rst
    functions/imshow.rst

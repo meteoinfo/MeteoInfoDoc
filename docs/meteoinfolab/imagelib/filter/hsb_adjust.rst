@@ -39,7 +39,7 @@ hsb_adjust
         geoshow(mlayer, edgecolor='g')
         layer = imshowm([rdata,gdata,bdata])
         #Adjust image
-        imfilter.hsb_adjust(layer, h=0, s=0.1, b=0.2)
+        imagelib.hsb_adjust(layer, h=0, s=0.1, b=0.2)
         title('Himarari 8 true color image example')
 
     .. image:: ../../../../_static/himawari8_true_color.png
