@@ -10,12 +10,16 @@ according to data series number.
 ::
 
     menMeans = [20, 35, 30, 35, 27]
-    bar(menMeans, color='r', label='Men')
+    n = len(menMeans)
+    ind = arange(n)
+    width = 0.2
+    bar(ind, menMeans, width, color='r', label='Men')
     womenMeans = [25, 32, 34, 20, 25]
-    bar(womenMeans, color='y', label='Women')
+    bar(ind + width, womenMeans, width, color='y', label='Women')
+    xlim(-0.2, 4.6)
     ylim(0, 40)
     ylabel('Mean age')
-    xticks(arange(1, len(menMeans) + 1), ['G1','G2','G3','G4','G5'])
+    xticks(ind + width, ['G1','G2','G3','G4','G5'])
     legend()
     title('Bar chart example')
     

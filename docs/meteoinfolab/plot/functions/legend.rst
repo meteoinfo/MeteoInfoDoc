@@ -18,7 +18,7 @@ legend
         'upper center', 'center' and 'custom'. Default is 'upper right'.
     :param x: (*float*) Location x in normalized (0, 1) units when ``loc='custom'`` .
     :param y: (*float*) Location y in normalized (0, 1) units when ``loc='custom'`` .
-    :param framon: (*boolean*) Control whether a frame should be drawn around the legend. Default
+    :param frameon: (*boolean*) Control whether a frame should be drawn around the legend. Default
         is True.
     :param background: (*None or color*) Set draw background or not and/or background color.
         Default is None which set not draw background.

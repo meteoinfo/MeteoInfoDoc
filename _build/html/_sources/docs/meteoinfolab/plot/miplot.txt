@@ -53,6 +53,7 @@ Functions:
    functions/semilogx.rst
    functions/semilogy.rst
    functions/stationmodel.rst
+   functions/step.rst
    functions/streamplotm.rst
    functions/subplot.rst
    functions/suptitle.rst

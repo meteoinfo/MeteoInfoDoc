@@ -59,18 +59,79 @@ and plot them.
     f = addfile(fn)
     lons = f['lon_wmo'][:200,:]
     lats = f['lat_wmo'][:200,:]
-    data = MIXYListData()
+    lons[lons==-327.67] = nan
+    lats[lats==-327.67] = nan
+    xd = []
+    yd = []
     for i in range(0, lons.dimlen(0)):
-        data.addseries(lons[i,:], lats[i,:])
+        xd.extend(lons[i,:].aslist())
+        yd.extend(lats[i,:].aslist())
+        xd.append(nan)
+        yd.append(nan)
 
     # Plot
     axesm()
-    mlayer = shaperead('D:/Temp/map/country1.shp')
-    geoshow(mlayer)
-    layer = plotm(data)
-    #layer = scatterm(lons[:,0], lats[:,0], facecolor='b', size=2)
+    geoshow('country')
+    layer = plotm(xd, yd)
     title('IBTrACS')
     xlim(-180, 180)
     ylim(-90, 90)
     
 .. image:: image/tropical_cyclone.png
+
+Multiple tropical cyclones with wind speed
+==========================================
+
+Read mutiple tropical cyclones data from a txt data file
+(http://tcdata.typhoon.gov.cn/zjljsjj_zlhq.html)
+and plot them. The colors of the line indicate wind speed.
+
+::
+
+    #Create typhoon layer
+    layer = maplayer(shapetype='line')
+
+    # Read typhoon data file
+    fn = 'D:/Temp/ascii/CH2015BST.txt'
+    tf = open(fn)
+    lons = []
+    lats = []
+    prss = []
+    wss = []
+    for line in tf:
+        print line
+        data = line.split()
+        pn = int(data[2])
+        for i in range(pn):
+            line = tf.readline()
+            data = line.split()
+            lat = float(data[2])        
+            lats.append(lat * 0.1)
+            lon = float(data[3])
+            lons.append(lon * 0.1)
+            t = data[0]
+            prs = float(data[4])
+            prss.append(prs)
+            ws = float(data[5])
+            wss.append(ws)
+        layer.addshape(lons, lats, z=prss, m=wss)
+        lons = []
+        lats = []
+        prss = []
+        wss = []
+
+    #Set typhoon layer legend
+    levs = arange(5, 61, 5)
+    cols = makecolors(len(levs) + 1)
+    ls = makesymbolspec('line', levels=levs, colors=cols, field='Geometry_M', size=2)
+
+    # Plot
+    axesm()
+    geoshow('country', facecolor=[200,200,200])
+    geoshow(layer, symbolspec=ls)
+    colorbar(layer, shrink=0.8, label='Wind speed (m/s)')
+    xlim(100, 210)
+    ylim(0, 60)
+    title('Typhoon pathway with wind speed')
+    
+.. image:: ../../../_static/typhoon_multicolor.png

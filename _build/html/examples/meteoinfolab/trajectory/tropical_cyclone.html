@@ -69,6 +69,7 @@
 <li><a class="reference internal" href="#">Tropical cyclone plot</a><ul>
 <li><a class="reference internal" href="#one-tropical-cyclone">One tropical cyclone</a></li>
 <li><a class="reference internal" href="#multiple-tropical-cyclones">Multiple tropical cyclones</a></li>
+<li><a class="reference internal" href="#multiple-tropical-cyclones-with-wind-speed">Multiple tropical cyclones with wind speed</a></li>
 </ul>
 </li>
 </ul>
@@ -155,22 +156,80 @@ and plot them.</p>
 <span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
 <span class="n">lons</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;lon_wmo&#39;</span><span class="p">][:</span><span class="mi">200</span><span class="p">,:]</span>
 <span class="n">lats</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;lat_wmo&#39;</span><span class="p">][:</span><span class="mi">200</span><span class="p">,:]</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">MIXYListData</span><span class="p">()</span>
+<span class="n">lons</span><span class="p">[</span><span class="n">lons</span><span class="o">==-</span><span class="mf">327.67</span><span class="p">]</span> <span class="o">=</span> <span class="n">nan</span>
+<span class="n">lats</span><span class="p">[</span><span class="n">lats</span><span class="o">==-</span><span class="mf">327.67</span><span class="p">]</span> <span class="o">=</span> <span class="n">nan</span>
+<span class="n">xd</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">yd</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">lons</span><span class="o">.</span><span class="n">dimlen</span><span class="p">(</span><span class="mi">0</span><span class="p">)):</span>
-    <span class="n">data</span><span class="o">.</span><span class="n">addseries</span><span class="p">(</span><span class="n">lons</span><span class="p">[</span><span class="n">i</span><span class="p">,:],</span> <span class="n">lats</span><span class="p">[</span><span class="n">i</span><span class="p">,:])</span>
+    <span class="n">xd</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">lons</span><span class="p">[</span><span class="n">i</span><span class="p">,:]</span><span class="o">.</span><span class="n">aslist</span><span class="p">())</span>
+    <span class="n">yd</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">lats</span><span class="p">[</span><span class="n">i</span><span class="p">,:]</span><span class="o">.</span><span class="n">aslist</span><span class="p">())</span>
+    <span class="n">xd</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nan</span><span class="p">)</span>
+    <span class="n">yd</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nan</span><span class="p">)</span>
 
 <span class="c"># Plot</span>
 <span class="n">axesm</span><span class="p">()</span>
-<span class="n">mlayer</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="s">&#39;D:/Temp/map/country1.shp&#39;</span><span class="p">)</span>
-<span class="n">geoshow</span><span class="p">(</span><span class="n">mlayer</span><span class="p">)</span>
-<span class="n">layer</span> <span class="o">=</span> <span class="n">plotm</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="c">#layer = scatterm(lons[:,0], lats[:,0], facecolor=&#39;b&#39;, size=2)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="s">&#39;country&#39;</span><span class="p">)</span>
+<span class="n">layer</span> <span class="o">=</span> <span class="n">plotm</span><span class="p">(</span><span class="n">xd</span><span class="p">,</span> <span class="n">yd</span><span class="p">)</span>
 <span class="n">title</span><span class="p">(</span><span class="s">&#39;IBTrACS&#39;</span><span class="p">)</span>
 <span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">180</span><span class="p">,</span> <span class="mi">180</span><span class="p">)</span>
 <span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">)</span>
 </pre></div>
 </div>
 <img alt="../../../_images/tropical_cyclone.png" src="../../../_images/tropical_cyclone.png" />
+</div>
+<div class="section" id="multiple-tropical-cyclones-with-wind-speed">
+<h2>Multiple tropical cyclones with wind speed<a class="headerlink" href="#multiple-tropical-cyclones-with-wind-speed" title="Permalink to this headline">¶</a></h2>
+<p>Read mutiple tropical cyclones data from a txt data file
+(<a class="reference external" href="http://tcdata.typhoon.gov.cn/zjljsjj_zlhq.html">http://tcdata.typhoon.gov.cn/zjljsjj_zlhq.html</a>)
+and plot them. The colors of the line indicate wind speed.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#Create typhoon layer</span>
+<span class="n">layer</span> <span class="o">=</span> <span class="n">maplayer</span><span class="p">(</span><span class="n">shapetype</span><span class="o">=</span><span class="s">&#39;line&#39;</span><span class="p">)</span>
+
+<span class="c"># Read typhoon data file</span>
+<span class="n">fn</span> <span class="o">=</span> <span class="s">&#39;D:/Temp/ascii/CH2015BST.txt&#39;</span>
+<span class="n">tf</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+<span class="n">lons</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">lats</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">prss</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">wss</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">tf</span><span class="p">:</span>
+    <span class="k">print</span> <span class="n">line</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="n">pn</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">pn</span><span class="p">):</span>
+        <span class="n">line</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+        <span class="n">lat</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+        <span class="n">lats</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lat</span> <span class="o">*</span> <span class="mf">0.1</span><span class="p">)</span>
+        <span class="n">lon</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+        <span class="n">lons</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lon</span> <span class="o">*</span> <span class="mf">0.1</span><span class="p">)</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">prs</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
+        <span class="n">prss</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">prs</span><span class="p">)</span>
+        <span class="n">ws</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span>
+        <span class="n">wss</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ws</span><span class="p">)</span>
+    <span class="n">layer</span><span class="o">.</span><span class="n">addshape</span><span class="p">(</span><span class="n">lons</span><span class="p">,</span> <span class="n">lats</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="n">prss</span><span class="p">,</span> <span class="n">m</span><span class="o">=</span><span class="n">wss</span><span class="p">)</span>
+    <span class="n">lons</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">lats</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">prss</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">wss</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c">#Set typhoon layer legend</span>
+<span class="n">levs</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">61</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">cols</span> <span class="o">=</span> <span class="n">makecolors</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">levs</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">ls</span> <span class="o">=</span> <span class="n">makesymbolspec</span><span class="p">(</span><span class="s">&#39;line&#39;</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="n">levs</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="n">cols</span><span class="p">,</span> <span class="n">field</span><span class="o">=</span><span class="s">&#39;Geometry_M&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c"># Plot</span>
+<span class="n">axesm</span><span class="p">()</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="s">&#39;country&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="p">[</span><span class="mi">200</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">200</span><span class="p">])</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="n">layer</span><span class="p">,</span> <span class="n">symbolspec</span><span class="o">=</span><span class="n">ls</span><span class="p">)</span>
+<span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&#39;Wind speed (m/s)&#39;</span><span class="p">)</span>
+<span class="n">xlim</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">210</span><span class="p">)</span>
+<span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s">&#39;Typhoon pathway with wind speed&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../_images/typhoon_multicolor.png" src="../../../_images/typhoon_multicolor.png" />
 </div>
 </div>
 

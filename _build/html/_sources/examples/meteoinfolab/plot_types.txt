@@ -10,6 +10,7 @@ Plot types
    
    plot_types/xy_plot.rst
    plot_types/errorbar.rst
+   plot_types/step.rst
    plot_types/bar.rst
    plot_types/hist.rst
    plot_types/fill_between.rst
