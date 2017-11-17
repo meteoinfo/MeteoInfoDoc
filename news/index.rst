@@ -8,6 +8,8 @@ News
 .. toctree::
    :maxdepth: 2
 
+   meteoinfo_1.4.7.rst
+   wcontour_1.6.1.rst
    meteoinfo_1.4.6.rst
    meteoinfo_1.4.5.rst
    meteoinfo_1.4.4.rst

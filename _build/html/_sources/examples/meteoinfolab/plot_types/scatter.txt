@@ -10,7 +10,7 @@ Scatter plot was created by ``scatter()`` function.
 
     x = [1,2,3,4]
     y = [1,4,9,16]
-    scatter(x, y, marker='S', s=14, color='r')
+    scatter(x, y, marker='S', s=14, c='r')
     ylabel('Y Axis')
     xlabel('X Axis')
     axis([0,5,0,20])

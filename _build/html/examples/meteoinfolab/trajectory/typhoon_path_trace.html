@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Tracing typhoon pathway &mdash; MeteoInfo 1.4.4 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.4.4',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="MeteoInfo 1.4.4 documentation" href="../../../index.html" />
+    <link rel="up" title="Trajectory" href="../trajectory.html" />
+    <link rel="next" title="Downloads" href="../../../downloads/index.html" />
+    <link rel="prev" title="Trajectory multi-color plot" href="traj_multicolor.html" /> 
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../../index.html"><img src="../../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../../../downloads/index.html" title="Downloads"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="traj_multicolor.html" title="Trajectory multi-color plot"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../docs/index.html">docs</a>|&nbsp;</li>
+
+          <li><a href="../../index.html" >Examples</a> &raquo;</li>
+          <li><a href="../index.html" >MeteoInfoLab</a> &raquo;</li>
+          <li><a href="../trajectory.html" accesskey="U">Trajectory</a> &raquo;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="traj_multicolor.html"
+                        title="previous chapter">Trajectory multi-color plot</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../../../downloads/index.html"
+                        title="next chapter">Downloads</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/examples/meteoinfolab/trajectory/typhoon_path_trace.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="tracing-typhoon-pathway">
+<span id="examples-meteoinfolab-trajectory-typhoon-path-trace"></span><h1>Tracing typhoon pathway<a class="headerlink" href="#tracing-typhoon-pathway" title="Permalink to this headline">¶</a></h1>
+<p>Read sea surface pressure data and find the minimum value locations as typhoon pathway.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fn</span> <span class="o">=</span> <span class="s">&#39;D:/Temp/GrADS/928slp.ctl&#39;</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+<span class="n">slp</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;slvl&#39;</span><span class="p">]</span>
+<span class="n">lat</span> <span class="o">=</span> <span class="n">slp</span><span class="o">.</span><span class="n">dimvalue</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">lon</span> <span class="o">=</span> <span class="n">slp</span><span class="o">.</span><span class="n">dimvalue</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">tt</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">gettimes</span><span class="p">()</span>
+<span class="n">tlat</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">tlon</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">press</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">timenum</span><span class="p">()</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">slp</span><span class="p">[</span><span class="n">t</span><span class="p">,:,:]</span>
+    <span class="n">idx</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">argmin</span><span class="p">()</span>
+    <span class="n">idx</span> <span class="o">=</span> <span class="n">unravel_index</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    <span class="n">tlat</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lat</span><span class="p">[</span><span class="n">idx</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
+    <span class="n">tlon</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lon</span><span class="p">[</span><span class="n">idx</span><span class="p">[</span><span class="mi">1</span><span class="p">]])</span>
+    <span class="n">press</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">idx</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">idx</span><span class="p">[</span><span class="mi">1</span><span class="p">]])</span>
+
+<span class="c">#Plot</span>
+<span class="n">axesm</span><span class="p">(</span><span class="n">bgcolor</span><span class="o">=</span><span class="p">(</span><span class="mi">204</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">))</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="s">&#39;country&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="p">[</span><span class="mi">200</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">200</span><span class="p">],</span> <span class="n">facecolor</span><span class="o">=</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="mi">251</span><span class="p">,</span><span class="mi">195</span><span class="p">))</span>
+<span class="n">plotm</span><span class="p">(</span><span class="n">tlon</span><span class="p">,</span> <span class="n">tlat</span><span class="p">)</span>
+<span class="n">layer</span> <span class="o">=</span> <span class="n">scatterm</span><span class="p">(</span><span class="n">tlon</span><span class="p">,</span> <span class="n">tlat</span><span class="p">,</span> <span class="n">press</span><span class="p">)</span>
+<span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">timenum</span><span class="p">()</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">):</span>
+    <span class="n">text</span><span class="p">(</span><span class="n">tlon</span><span class="p">[</span><span class="n">t</span><span class="p">]</span><span class="o">+</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">tlat</span><span class="p">[</span><span class="n">t</span><span class="p">],</span> <span class="n">tt</span><span class="p">[</span><span class="n">t</span><span class="p">]</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">&#39;</span><span class="si">%d</span><span class="s">:%H&#39;</span><span class="p">))</span>
+<span class="n">xlim</span><span class="p">(</span><span class="mi">105</span><span class="p">,</span> <span class="mi">120</span><span class="p">)</span>
+<span class="n">ylim</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s">&#39;Typoon path tracing&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../_images/typhoon_path_trace.png" src="../../../_images/typhoon_path_trace.png" />
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../../../downloads/index.html" title="Downloads"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="traj_multicolor.html" title="Trajectory multi-color plot"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../docs/index.html">docs</a>|&nbsp;</li>
+
+          <li><a href="../../index.html" >Examples</a> &raquo;</li>
+          <li><a href="../index.html" >MeteoInfoLab</a> &raquo;</li>
+          <li><a href="../trajectory.html" >Trajectory</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2010-2017, Yaqiang Wang.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

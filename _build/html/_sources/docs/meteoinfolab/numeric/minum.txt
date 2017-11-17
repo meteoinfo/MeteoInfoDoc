@@ -17,6 +17,8 @@ Functions:
    functions/acos.rst
    functions/arange.rst
    functions/arange1.rst
+   functions/argmax.rst
+   functions/argmin.rst
    functions/array.rst
    functions/asin.rst
    functions/atan.rst
@@ -44,4 +46,5 @@ Functions:
    functions/sum.rst
    functions/tan.rst
    functions/trapz.rst
+   functions/unravel_index.rst
    functions/zeros.rst

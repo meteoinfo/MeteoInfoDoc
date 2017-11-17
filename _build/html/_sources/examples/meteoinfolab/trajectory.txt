@@ -15,3 +15,4 @@ Trajectory
    trajectory/grib2arl.rst
    trajectory/tropical_cyclone.rst
    trajectory/traj_multicolor.rst
+   trajectory/typhoon_path_trace.rst

@@ -170,9 +170,8 @@ by fixing time dimension:</p>
 </div>
 <p>Plot map: create a map axes with axesm function; read shape file, view geodata layer:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">axesm</span><span class="p">()</span>    <span class="c">#Create a map axes</span>
-<span class="go">(org.meteoinfo.chart.plot.MapPlot@c3d5957, +proj=longlat +lat_0=0 +lon_0=0 +lat_1=30 +lat_2=60 +lat_ts=0 +k=1 +x_0=0 +y_0=0 +h=0 )</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">mlayer</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="s">&#39;D:/Temp/map/country1.shp&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">geoshow</span><span class="p">(</span><span class="n">mlayer</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">))</span>
+<span class="go">&lt;mipylib.plotlib.axes.MapAxes instance at 0x62&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">geoshow</span><span class="p">(</span><span class="s">&#39;country&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s">&#39;b&#39;</span><span class="p">)</span>    <span class="c">#Read the geodata in &#39;map&#39; folder with file name - .shp can be ignored</span>
 </pre></div>
 </div>
 <img alt="../../../_images/tutorial_map.png" src="../../../_images/tutorial_map.png" />
@@ -295,7 +294,7 @@ also colorize the vectors by specifying a 3rd field:</p>
 <p>To alter the projection:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">clf</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">axesm</span><span class="p">(</span><span class="n">proj</span><span class="o">=</span><span class="s">&#39;stere&#39;</span><span class="p">,</span> <span class="n">lat_0</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span> <span class="n">lon_0</span><span class="o">=-</span><span class="mi">92</span><span class="p">,</span> <span class="n">gridline</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-<span class="go">(org.meteoinfo.chart.plot.MapPlot@bf0b58a, +proj=stere +lat_0=90 +lon_0=-92 +lat_1=30 +lat_2=60 +lat_ts=0 +k=1 +x_0=0 +y_0=0 +h=0 )</span>
+<span class="go">&lt;mipylib.plotlib.axes.MapAxes instance at 0x63&gt;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">geoshow</span><span class="p">(</span><span class="n">mlayer</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s">&#39;gray&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">hgt</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;Z&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span><span class="s">&#39;500&#39;</span><span class="p">,</span><span class="s">&#39;15:80&#39;</span><span class="p">,</span><span class="s">&#39;210:320&#39;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">layer</span> <span class="o">=</span> <span class="n">contourfm</span><span class="p">(</span><span class="n">hgt</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>

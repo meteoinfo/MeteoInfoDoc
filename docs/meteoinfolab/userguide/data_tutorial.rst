@@ -77,9 +77,8 @@ by fixing time dimension::
 Plot map: create a map axes with axesm function; read shape file, view geodata layer::
 
     >>> axesm()    #Create a map axes
-    (org.meteoinfo.chart.plot.MapPlot@c3d5957, +proj=longlat +lat_0=0 +lon_0=0 +lat_1=30 +lat_2=60 +lat_ts=0 +k=1 +x_0=0 +y_0=0 +h=0 )
-    >>> mlayer = shaperead('D:/Temp/map/country1.shp')
-    >>> geoshow(mlayer, edgecolor=(0,0,255))
+    <mipylib.plotlib.axes.MapAxes instance at 0x62>
+    >>> geoshow('country', edgecolor='b')    #Read the geodata in 'map' folder with file name - .shp can be ignored
   
 .. image:: ../../../_static/tutorial_map.png
 
@@ -211,7 +210,7 @@ To alter the projection::
 
     >>> clf()
     >>> axesm(proj='stere', lat_0=90, lon_0=-92, gridline=True)
-    (org.meteoinfo.chart.plot.MapPlot@bf0b58a, +proj=stere +lat_0=90 +lon_0=-92 +lat_1=30 +lat_2=60 +lat_ts=0 +k=1 +x_0=0 +y_0=0 +h=0 )
+    <mipylib.plotlib.axes.MapAxes instance at 0x63>
     >>> geoshow(mlayer, edgecolor='gray')
     >>> hgt = f['Z'][0,'500','15:80','210:320']
     >>> layer = contourfm(hgt, 20)

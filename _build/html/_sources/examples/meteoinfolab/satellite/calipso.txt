@@ -19,8 +19,8 @@ LaRC CALIPSO data file.
     vname = 'Feature_Classification_Flags'
     var = f[vname]
     data = var[:,1256]
-    lon = f['longitude'][:,0]
-    lat = f['latitude'][:,0]
+    lon = f['Longitude'][:,0]
+    lat = f['Latitude'][:,0]
     lon = lon[::10]
     lat = lat[::10]
     data = data[::10]
@@ -55,7 +55,7 @@ LaRC CALIPSO data file.
     vname = 'Feature_Classification_Flags'
     var = f[vname]
     data = var[:,:]
-    lat = f['latitude'][:,0]
+    lat = f['Latitude'][:,0]
 
     # Extract Feature Type only through bitmask.
     data = data & 7
@@ -92,6 +92,125 @@ LaRC CALIPSO data file.
 
 .. image:: ../../../_static/calipso_cloud.png
 
+Vertical feature types.
+
+::
+
+    # Add file
+    fn = 'D:/Temp/hdf/CAL_LID_L2_VFM-Standard-V4-10.2013-12-08T04-46-10ZD.hdf'
+    f = addfile(fn)
+
+    # Read data
+    vname = 'Feature_Classification_Flags'
+    var = f[vname]
+    data = var[:,:]
+    lat = f['Latitude'][:,0]
+
+    # Extract Feature Type only through bitmask.
+    data = data & 7
+
+    # Subset latitude values for the region of interest (40N to 62N).
+    lat = lat[3000:4000]
+    size = lat.shape[0]
+
+    data2d = data[3000:4000, 1165:]  # -0.5km to  8.2km
+    data3d = reshape(data2d, (size, 15, 290))
+    data = data3d[:,0,:]
+
+    # Generate altitude data according to file specification [1].
+    alt = zeros(290)
+    # -0.5km to 8.2km
+    for i in range (0, 290):
+        alt[i] = -0.5 + i*0.03
+
+    # Plot
+    levs = arange(8)
+    cols = [(255,255,255),(0,0,255),(51,255,255),(255,153,0),(255,255,0),(0,255,0),(127,127,127),(0,0,0)]
+    ls = makesymbolspec('image', levels=levs, colors=cols)
+    layer = imshow(lat, alt, rot90(data, 1), symbolspec=ls)
+    colorbar(layer, ticks=['Invalid', 'Clear Air', 'Cloud', 'Aerosol', 'Strato Feature', 'Surface', 'Subsurface', 'No Signal'])
+    basename = os.path.basename(fn)
+    title([basename, 'Feature Type (Bits 1-3) in Feature Classification Flag'])
+    xlabel('Latitude (degrees north)')
+    ylabel('Altitude (km)')
+    xaxis(tickin=False)
+    yaxis(tickin=False)
+    
+.. image:: ../../../_static/calipso_featuretype-vertical.png
+
+Aerosol types.
+
+::
+
+    # Add file
+    fn = 'D:/Temp/hdf/CAL_LID_L2_VFM-Standard-V4-10.2013-12-08T04-46-10ZD.hdf'
+    f = addfile(fn)
+
+    # Read data
+    vname = 'Feature_Classification_Flags'
+    var = f[vname]
+    data = var[:,:]
+    lat = f['Latitude'][:,0]
+    lon = f['Longitude'][:,0]
+
+    # Subset latitude values for the region of interest.
+    lidx1 = 3176
+    lidx2 = 3313
+    lat = lat[lidx1:lidx2]
+    lon = lon[lidx1:lidx2]
+    size = lat.shape[0]
+
+    N = 290    # 290 is sample numbe of low hight data: -0.5km to 8.2km
+    sidx = data.shape[1] - N * 15
+    data2d = data[lidx1:lidx2, sidx:]
+    data3d = reshape(data2d, (size, 15, N))
+    data_l = data3d[:,0,:]
+    #data_l = rot90(data_1, 1)
+
+    sidx1 = sidx - 200 * 5
+    data2d = data[lidx1:lidx2, sidx1:sidx]
+    data3d = reshape(data2d, (size, 5, 200))
+    data_m = data3d[:,0,:]
+    data_m1 = zeros([data_m.shape[0], data_m.shape[1]*2])
+    for i in range(data_m.shape[1]):
+        data_m1[:,i*2] = data_m[:,i]
+        data_m1[:,i*2+1] = data_m[:,i]
+    #data_m = rot90(data_1, 1)
+
+    data = concatenate([data_m1, data_l], axis=1)
+    data = rot90(data, 1)
+
+    # Aerosol type
+    a = data >> 9
+    temp = a & 7
+    type2 = data & 7
+    tmask = (type2 == 3)
+    temp1 = (temp!=0)
+    temp2 = (temp1 & tmask)
+    atype = temp * temp2
+
+    # Generate altitude data according to file specification [1].
+    alt = zeros(N + 200*2)
+    # -0.5km to 20.2km
+    for i in range (0, N+200*2):
+        alt[i] = -0.5 + i * 0.03
+
+    # Plot
+    levs = arange(8)
+    cols = [(204,204,204),(0,0,255),(153,51,0),(0,204,0),(255,241,85),(0,255,255),\
+        (102,102,255),(0,0,0)]
+    ls = makesymbolspec('image', levels=levs, colors=cols)
+    layer = imshow(lat, alt, atype, symbolspec=ls)
+    colorbar(layer, ticks=['Not Determined','Clean Marine','Dust','Polluted Cont.','Clean Cont.',\
+        'Polluted Dust','Smoke','Other'])
+    basename = os.path.basename(fn)
+    title([basename, 'Aerosol types'])
+    xlabel('Latitude (degrees north)')
+    ylabel('Altitude (km)')
+    ylim(-0.5, 12.1)
+    
+.. image:: ../../../_static/calipso_aerosol_type.png
+
 Plot total attenuated backscatter.
 
 ::
@@ -108,7 +227,7 @@ Plot total attenuated backscatter.
     var = f[vname]
     data = var[:1000,:]
     data = rot90(data)
-    lats = f['latitude'][:1000,0]
+    lats = f['Latitude'][:1000,0]
     latstrs = []
     for lat in lats:
         latstrs.append('%.1f' % lat)
@@ -134,7 +253,7 @@ Plot total attenuated backscatter.
     
 The script to make colors (CALIPSO_colors.py)::
 
-    from mipylib.minum import array
+    from mipylib.numeric.minum import array
 
     def makecolors(gray=True):
         """
