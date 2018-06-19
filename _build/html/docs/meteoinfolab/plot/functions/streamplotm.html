@@ -1,40 +1,38 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>streamplotm &mdash; MeteoInfo 1.4.4 documentation</title>
-    
+    <title>streamplotm &#8212; MeteoInfo 1.4.8 documentation</title>
     <link rel="stylesheet" href="../../../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../../',
-        VERSION:     '1.4.4',
+        VERSION:     '1.4.8',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="MeteoInfo 1.4.4 documentation" href="../../../../index.html" />
-    <link rel="up" title="mipylib.plotlib.miplot" href="../miplot.html" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="subplot" href="subplot.html" />
-    <link rel="prev" title="stationmodel" href="stationmodel.html" /> 
+    <link rel="prev" title="step" href="step.html" /> 
   </head>
   <body>
 
 <div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
 <a href="../../../../index.html"><img src="../../../../_static/logo.jpg" border="0"/></a></div>
 
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -47,7 +45,7 @@
           <a href="subplot.html" title="subplot"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="stationmodel.html" title="stationmodel"
+          <a href="step.html" title="step"
              accesskey="P">previous</a> |</li>
         <li><a href="../../../../index.html">home</a>|&nbsp;</li>
         <li><a href="../../../../products/index.html">products</a>|&nbsp;</li>
@@ -56,38 +54,37 @@
         <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
         <li><a href="../../../index.html">docs</a>|&nbsp;</li>
 
-          <li><a href="../../../index.html" >Documentation</a> &raquo;</li>
-          <li><a href="../../index.html" >MeteoInfoLab</a> &raquo;</li>
-          <li><a href="../../api.html" >The MeteoInfoLab API</a> &raquo;</li>
-          <li><a href="../../plotlib.html" >Plotlib package</a> &raquo;</li>
-          <li><a href="../miplot.html" accesskey="U">mipylib.plotlib.miplot</a> &raquo;</li> 
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../../api.html" >The MeteoInfoLab API</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../../plotlib.html" >Plotlib package</a> &#187;</li>
+          <li class="nav-item nav-item-5"><a href="../miplot.html" accesskey="U">mipylib.plotlib.miplot</a> &#187;</li> 
       </ul>
     </div>
 
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="stationmodel.html"
-                        title="previous chapter">stationmodel</a></p>
+  <p class="topless"><a href="step.html"
+                        title="previous chapter">step</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="subplot.html"
                         title="next chapter">subplot</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="../../../../_sources/docs/meteoinfolab/plot/functions/streamplotm.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../_sources/docs/meteoinfolab/plot/functions/streamplotm.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../../../../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -96,30 +93,30 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="streamplotm">
 <span id="docs-meteoinfolab-funcitons-plot-streamplotm"></span><h1>streamplotm<a class="headerlink" href="#streamplotm" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="mipylib.plotlib.miplot.streamplotm">
-<tt class="descclassname">mipylib.plotlib.miplot.</tt><tt class="descname">streamplotm</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#mipylib.plotlib.miplot.streamplotm" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">mipylib.plotlib.miplot.</code><code class="descname">streamplotm</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mipylib.plotlib.miplot.streamplotm" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot streamline in a map.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>x</strong> &#8211; (<em>array_like</em>) Optional. X coordinate array.</li>
-<li><strong>y</strong> &#8211; (<em>array_like</em>) Optional. Y coordinate array.</li>
-<li><strong>u</strong> &#8211; (<em>array_like</em>) U component of the arrow vectors (wind field) or wind direction.</li>
-<li><strong>v</strong> &#8211; (<em>array_like</em>) V component of the arrow vectors (wind field) or wind speed.</li>
-<li><strong>z</strong> &#8211; (<em>array_like</em>) Optional, 2-D z value array.</li>
-<li><strong>color</strong> &#8211; (<em>Color</em>) Streamline color. Default is blue.</li>
-<li><strong>fill_value</strong> &#8211; (<em>float</em>) Fill_value. Default is <tt class="docutils literal"><span class="pre">-9999.0</span></tt>.</li>
-<li><strong>isuv</strong> &#8211; (<em>boolean</em>) Is U/V or direction/speed data array pairs. Default is True.</li>
-<li><strong>density</strong> &#8211; (<em>int</em>) Streamline density. Default is 4.</li>
-<li><strong>proj</strong> &#8211; (<em>ProjectionInfo</em>) Map projection of the data. Default is None.</li>
-<li><strong>order</strong> &#8211; (<em>int</em>) Z-order of created layer for display.</li>
+<li><strong>x</strong> – (<em>array_like</em>) Optional. X coordinate array.</li>
+<li><strong>y</strong> – (<em>array_like</em>) Optional. Y coordinate array.</li>
+<li><strong>u</strong> – (<em>array_like</em>) U component of the arrow vectors (wind field) or wind direction.</li>
+<li><strong>v</strong> – (<em>array_like</em>) V component of the arrow vectors (wind field) or wind speed.</li>
+<li><strong>z</strong> – (<em>array_like</em>) Optional, 2-D z value array.</li>
+<li><strong>color</strong> – (<em>Color</em>) Streamline color. Default is blue.</li>
+<li><strong>fill_value</strong> – (<em>float</em>) Fill_value. Default is <code class="docutils literal"><span class="pre">-9999.0</span></code>.</li>
+<li><strong>isuv</strong> – (<em>boolean</em>) Is U/V or direction/speed data array pairs. Default is True.</li>
+<li><strong>density</strong> – (<em>int</em>) Streamline density. Default is 4.</li>
+<li><strong>proj</strong> – (<em>ProjectionInfo</em>) Map projection of the data. Default is None.</li>
+<li><strong>order</strong> – (<em>int</em>) Z-order of created layer for display.</li>
 </ul>
 </td>
 </tr>
@@ -129,18 +126,18 @@
 </tbody>
 </table>
 <p><strong>Example:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="s">&#39;D:/Temp/GrADS/model.ctl&#39;</span><span class="p">)</span>
-<span class="n">u</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;U&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span><span class="s">&#39;500&#39;</span><span class="p">,</span><span class="s">&#39;10:60&#39;</span><span class="p">,</span><span class="s">&#39;60:140&#39;</span><span class="p">]</span>
-<span class="n">v</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;V&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span><span class="s">&#39;500&#39;</span><span class="p">,</span><span class="s">&#39;10:60&#39;</span><span class="p">,</span><span class="s">&#39;60:140&#39;</span><span class="p">]</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="s1">&#39;D:/Temp/GrADS/model.ctl&#39;</span><span class="p">)</span>
+<span class="n">u</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;U&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;500&#39;</span><span class="p">,</span><span class="s1">&#39;10:60&#39;</span><span class="p">,</span><span class="s1">&#39;60:140&#39;</span><span class="p">]</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;V&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;500&#39;</span><span class="p">,</span><span class="s1">&#39;10:60&#39;</span><span class="p">,</span><span class="s1">&#39;60:140&#39;</span><span class="p">]</span>
 <span class="n">axesm</span><span class="p">()</span>
-<span class="n">mlayer</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="s">&#39;D:/Temp/map/country1.shp&#39;</span><span class="p">)</span>
-<span class="n">geoshow</span><span class="p">(</span><span class="n">mlayer</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">mlayer</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="s1">&#39;D:/Temp/map/country1.shp&#39;</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="n">mlayer</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
 <span class="n">layer</span> <span class="o">=</span> <span class="n">streamplotm</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;Streamline plot example&#39;</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Streamline plot example&#39;</span><span class="p">)</span>
 <span class="n">yticks</span><span class="p">([</span><span class="mi">20</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">60</span><span class="p">])</span>
 </pre></div>
 </div>
-<img alt="../../../../_images/streamline1.png" src="../../../../_images/streamline1.png" />
+<img alt="../../../../_images/streamline.png" src="../../../../_images/streamline.png" />
 </dd></dl>
 
 </div>
@@ -151,7 +148,7 @@
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -164,7 +161,7 @@
           <a href="subplot.html" title="subplot"
              >next</a> |</li>
         <li class="right" >
-          <a href="stationmodel.html" title="stationmodel"
+          <a href="step.html" title="step"
              >previous</a> |</li>
         <li><a href="../../../../index.html">home</a>|&nbsp;</li>
         <li><a href="../../../../products/index.html">products</a>|&nbsp;</li>
@@ -173,16 +170,16 @@
         <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
         <li><a href="../../../index.html">docs</a>|&nbsp;</li>
 
-          <li><a href="../../../index.html" >Documentation</a> &raquo;</li>
-          <li><a href="../../index.html" >MeteoInfoLab</a> &raquo;</li>
-          <li><a href="../../api.html" >The MeteoInfoLab API</a> &raquo;</li>
-          <li><a href="../../plotlib.html" >Plotlib package</a> &raquo;</li>
-          <li><a href="../miplot.html" >mipylib.plotlib.miplot</a> &raquo;</li> 
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../../api.html" >The MeteoInfoLab API</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../../plotlib.html" >Plotlib package</a> &#187;</li>
+          <li class="nav-item nav-item-5"><a href="../miplot.html" >mipylib.plotlib.miplot</a> &#187;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2010-2017, Yaqiang Wang.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2018, Yaqiang Wang.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
   </body>
 </html>

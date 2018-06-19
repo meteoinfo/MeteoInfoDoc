@@ -1,8 +1,8 @@
 .. _examples-meteoinfolab-meteo_analysis-water_vapor:
 
-*******************
+****************************
 Water vapor flux divergency
-*******************
+****************************
 
 The example to calcluate water vapor flux divergency.
 
@@ -39,8 +39,7 @@ The example to calcluate water vapor flux divergency.
     #Plot
     print 'Plot...'
     axesm()
-    mlayer = shaperead('D:/Temp/map/country1.shp')
-    geoshow(mlayer, edgecolor='black')
+    geoshow('country', edgecolor='black')
     #layer = contourfm(qhdivg, 20)
     layer = contourfm(qhdivg, cmap='grads_rainbow')
     title('Water Vapor Flux Divergency (' + t.strftime('%Y-%m-%d') + ')')

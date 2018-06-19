@@ -1,31 +1,29 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>axesm &mdash; MeteoInfo 1.4.4 documentation</title>
-    
+    <title>axesm &#8212; MeteoInfo 1.4.8 documentation</title>
     <link rel="stylesheet" href="../../../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../../',
-        VERSION:     '1.4.4',
+        VERSION:     '1.4.8',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="MeteoInfo 1.4.4 documentation" href="../../../../index.html" />
-    <link rel="up" title="mipylib.plotlib.miplot" href="../miplot.html" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="axis" href="axis.html" />
     <link rel="prev" title="axes" href="axes.html" /> 
   </head>
@@ -34,7 +32,7 @@
 <div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
 <a href="../../../../index.html"><img src="../../../../_static/logo.jpg" border="0"/></a></div>
 
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -56,15 +54,15 @@
         <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
         <li><a href="../../../index.html">docs</a>|&nbsp;</li>
 
-          <li><a href="../../../index.html" >Documentation</a> &raquo;</li>
-          <li><a href="../../index.html" >MeteoInfoLab</a> &raquo;</li>
-          <li><a href="../../api.html" >The MeteoInfoLab API</a> &raquo;</li>
-          <li><a href="../../plotlib.html" >Plotlib package</a> &raquo;</li>
-          <li><a href="../miplot.html" accesskey="U">mipylib.plotlib.miplot</a> &raquo;</li> 
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../../api.html" >The MeteoInfoLab API</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../../plotlib.html" >Plotlib package</a> &#187;</li>
+          <li class="nav-item nav-item-5"><a href="../miplot.html" accesskey="U">mipylib.plotlib.miplot</a> &#187;</li> 
       </ul>
     </div>
 
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="axes.html"
@@ -72,22 +70,21 @@
   <h4>Next topic</h4>
   <p class="topless"><a href="axis.html"
                         title="next chapter">axis</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="../../../../_sources/docs/meteoinfolab/plot/functions/axesm.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../_sources/docs/meteoinfolab/plot/functions/axesm.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../../../../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -96,37 +93,37 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="axesm">
 <span id="docs-meteoinfolab-funcitons-plot-axesm"></span><h1>axesm<a class="headerlink" href="#axesm" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="mipylib.plotlib.miplot.axesm">
-<tt class="descclassname">mipylib.plotlib.miplot.</tt><tt class="descname">axesm</tt><big>(</big><em>**kwarg</em><big>)</big><a class="headerlink" href="#mipylib.plotlib.miplot.axesm" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">mipylib.plotlib.miplot.</code><code class="descname">axesm</code><span class="sig-paren">(</span><em>**kwarg</em><span class="sig-paren">)</span><a class="headerlink" href="#mipylib.plotlib.miplot.axesm" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add an map axes to the figure.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>projinfo</strong> &#8211; (<em>ProjectionInfo</em>) Optional, map projection, default is longlat projection.</li>
-<li><strong>position</strong> &#8211; (<em>list</em>) Optional, axes position specified by <em>position=</em> [left, bottom, width
+<li><strong>projinfo</strong> – (<em>ProjectionInfo</em>) Optional, map projection, default is longlat projection.</li>
+<li><strong>position</strong> – (<em>list</em>) Optional, axes position specified by <em>position=</em> [left, bottom, width
 height] in normalized (0, 1) units. Default is [0.13, 0.11, 0.775, 0.815].</li>
-<li><strong>bgcolor</strong> &#8211; (<em>Color</em>) Optional, axes background color.</li>
-<li><strong>bottomaxis</strong> &#8211; (<em>boolean</em>) Optional, set bottom axis visible or not. Default is <tt class="docutils literal"><span class="pre">True</span></tt> .</li>
-<li><strong>leftaxis</strong> &#8211; (<em>boolean</em>) Optional, set left axis visible or not. Default is <tt class="docutils literal"><span class="pre">True</span></tt> .</li>
-<li><strong>topaxis</strong> &#8211; (<em>boolean</em>) Optional, set top axis visible or not. Default is <tt class="docutils literal"><span class="pre">True</span></tt> .</li>
-<li><strong>rightaxis</strong> &#8211; (<em>boolean</em>) Optional, set right axis visible or not. Default is <tt class="docutils literal"><span class="pre">True</span></tt> .</li>
-<li><strong>xyscale</strong> &#8211; (<em>int</em>) Optional, set scale of x and y axis, default is 1. It is only
+<li><strong>bgcolor</strong> – (<em>Color</em>) Optional, axes background color.</li>
+<li><strong>bottomaxis</strong> – (<em>boolean</em>) Optional, set bottom axis visible or not. Default is <code class="docutils literal"><span class="pre">True</span></code> .</li>
+<li><strong>leftaxis</strong> – (<em>boolean</em>) Optional, set left axis visible or not. Default is <code class="docutils literal"><span class="pre">True</span></code> .</li>
+<li><strong>topaxis</strong> – (<em>boolean</em>) Optional, set top axis visible or not. Default is <code class="docutils literal"><span class="pre">True</span></code> .</li>
+<li><strong>rightaxis</strong> – (<em>boolean</em>) Optional, set right axis visible or not. Default is <code class="docutils literal"><span class="pre">True</span></code> .</li>
+<li><strong>xyscale</strong> – (<em>int</em>) Optional, set scale of x and y axis, default is 1. It is only
 valid in longlat projection.</li>
-<li><strong>gridlabel</strong> &#8211; (<em>boolean</em>) Optional, set axis tick labels visible or not. Default is <tt class="docutils literal"><span class="pre">True</span></tt> .</li>
-<li><strong>gridline</strong> &#8211; (<em>boolean</em>) Optional, set grid line visible or not. Default is <tt class="docutils literal"><span class="pre">False</span></tt> .</li>
-<li><strong>griddx</strong> &#8211; (<em>float</em>) Optional, set x grid line interval. Default is 10 degree.</li>
-<li><strong>griddy</strong> &#8211; (<em>float</em>) Optional, set y grid line interval. Default is 10 degree.</li>
-<li><strong>frameon</strong> &#8211; (<em>boolean</em>) Optional, set frome visible or not. Default is <tt class="docutils literal"><span class="pre">True</span></tt> .</li>
-<li><strong>tickfontname</strong> &#8211; (<em>string</em>) Optional, set axis tick labels font name. Default is <tt class="docutils literal"><span class="pre">Arial</span></tt> .</li>
-<li><strong>tickfontsize</strong> &#8211; (<em>int</em>) Optional, set axis tick labels font size. Default is 14.</li>
-<li><strong>tickbold</strong> &#8211; (<em>boolean</em>) Optional, set axis tick labels font bold or not. Default is <tt class="docutils literal"><span class="pre">False</span></tt> .</li>
+<li><strong>gridlabel</strong> – (<em>boolean</em>) Optional, set axis tick labels visible or not. Default is <code class="docutils literal"><span class="pre">True</span></code> .</li>
+<li><strong>gridline</strong> – (<em>boolean</em>) Optional, set grid line visible or not. Default is <code class="docutils literal"><span class="pre">False</span></code> .</li>
+<li><strong>griddx</strong> – (<em>float</em>) Optional, set x grid line interval. Default is 10 degree.</li>
+<li><strong>griddy</strong> – (<em>float</em>) Optional, set y grid line interval. Default is 10 degree.</li>
+<li><strong>frameon</strong> – (<em>boolean</em>) Optional, set frome visible or not. Default is <code class="docutils literal"><span class="pre">True</span></code> .</li>
+<li><strong>tickfontname</strong> – (<em>string</em>) Optional, set axis tick labels font name. Default is <code class="docutils literal"><span class="pre">Arial</span></code> .</li>
+<li><strong>tickfontsize</strong> – (<em>int</em>) Optional, set axis tick labels font size. Default is 14.</li>
+<li><strong>tickbold</strong> – (<em>boolean</em>) Optional, set axis tick labels font bold or not. Default is <code class="docutils literal"><span class="pre">False</span></code> .</li>
 </ul>
 </td>
 </tr>
@@ -136,33 +133,33 @@ valid in longlat projection.</li>
 </tbody>
 </table>
 <p><strong>Example:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c">#Set data folders</span>
-<span class="n">basedir</span> <span class="o">=</span> <span class="s">&#39;D:/MyProgram/Distribution/java/MeteoInfo/MeteoInfo&#39;</span>
-<span class="n">mapdir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">basedir</span><span class="p">,</span> <span class="s">&#39;map&#39;</span><span class="p">)</span>
-<span class="c">#Read shape files</span>
-<span class="n">bou2_layer</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mapdir</span><span class="p">,</span> <span class="s">&#39;bou2_4p.shp&#39;</span><span class="p">))</span>
-<span class="n">bou1_layer</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mapdir</span><span class="p">,</span> <span class="s">&#39;bou1_4l.shp&#39;</span><span class="p">))</span>
-<span class="n">river_layer</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mapdir</span><span class="p">,</span> <span class="s">&#39;rivers.shp&#39;</span><span class="p">))</span>
-<span class="n">city_layer</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mapdir</span><span class="p">,</span> <span class="s">&#39;res1_4m.shp&#39;</span><span class="p">))</span>
-<span class="c">#Plot</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1">#Set data folders</span>
+<span class="n">basedir</span> <span class="o">=</span> <span class="s1">&#39;D:/MyProgram/Distribution/java/MeteoInfo/MeteoInfo&#39;</span>
+<span class="n">mapdir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">basedir</span><span class="p">,</span> <span class="s1">&#39;map&#39;</span><span class="p">)</span>
+<span class="c1">#Read shape files</span>
+<span class="n">bou2_layer</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mapdir</span><span class="p">,</span> <span class="s1">&#39;bou2_4p.shp&#39;</span><span class="p">))</span>
+<span class="n">bou1_layer</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mapdir</span><span class="p">,</span> <span class="s1">&#39;bou1_4l.shp&#39;</span><span class="p">))</span>
+<span class="n">river_layer</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mapdir</span><span class="p">,</span> <span class="s1">&#39;rivers.shp&#39;</span><span class="p">))</span>
+<span class="n">city_layer</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mapdir</span><span class="p">,</span> <span class="s1">&#39;res1_4m.shp&#39;</span><span class="p">))</span>
+<span class="c1">#Plot</span>
 <span class="n">axesm</span><span class="p">()</span>
-<span class="n">geoshow</span><span class="p">(</span><span class="n">bou2_layer</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s">&#39;lightgray&#39;</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="n">bou2_layer</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;lightgray&#39;</span><span class="p">)</span>
 <span class="n">geoshow</span><span class="p">(</span><span class="n">bou1_layer</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">))</span>
-<span class="n">ss</span> <span class="o">=</span> <span class="n">makesymbolspec</span><span class="p">(</span><span class="s">&#39;line&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s">&#39;value&#39;</span><span class="p">:</span><span class="s">&#39;Yangtze&#39;</span><span class="p">,</span> <span class="s">&#39;color&#39;</span><span class="p">:(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">),</span> <span class="s">&#39;size&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span> \
-    <span class="p">{</span><span class="s">&#39;value&#39;</span><span class="p">:</span><span class="s">&#39;Huang He&#39;</span><span class="p">,</span> <span class="s">&#39;color&#39;</span><span class="p">:(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">),</span> <span class="s">&#39;size&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span> <span class="n">field</span><span class="o">=</span><span class="s">&#39;NAME&#39;</span><span class="p">)</span>
+<span class="n">ss</span> <span class="o">=</span> <span class="n">makesymbolspec</span><span class="p">(</span><span class="s1">&#39;line&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span><span class="s1">&#39;Yangtze&#39;</span><span class="p">,</span> <span class="s1">&#39;color&#39;</span><span class="p">:(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">),</span> <span class="s1">&#39;size&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span> \
+    <span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span><span class="s1">&#39;Huang He&#39;</span><span class="p">,</span> <span class="s1">&#39;color&#39;</span><span class="p">:(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">),</span> <span class="s1">&#39;size&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span> <span class="n">field</span><span class="o">=</span><span class="s1">&#39;NAME&#39;</span><span class="p">)</span>
 <span class="n">geoshow</span><span class="p">(</span><span class="n">river_layer</span><span class="p">,</span> <span class="n">symbolspec</span><span class="o">=</span><span class="n">ss</span><span class="p">)</span>
-<span class="n">geoshow</span><span class="p">(</span><span class="n">city_layer</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s">&#39;r&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">labelfield</span><span class="o">=</span><span class="s">&#39;NAME&#39;</span><span class="p">,</span> <span class="n">fontname</span><span class="o">=</span><span class="s">u&#39;楷体&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">yoffset</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="n">city_layer</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">labelfield</span><span class="o">=</span><span class="s1">&#39;NAME&#39;</span><span class="p">,</span> <span class="n">fontname</span><span class="o">=</span><span class="sa">u</span><span class="s1">&#39;楷体&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">yoffset</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
 <span class="n">xlim</span><span class="p">(</span><span class="mi">72</span><span class="p">,</span> <span class="mi">136</span><span class="p">)</span>
 <span class="n">ylim</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">55</span><span class="p">)</span>
-<span class="c">#Add south China Sea</span>
-<span class="n">sc_layer</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mapdir</span><span class="p">,</span> <span class="s">&#39;bou1_4l.shp&#39;</span><span class="p">))</span>
-<span class="n">axesm</span><span class="p">(</span><span class="n">position</span><span class="o">=</span><span class="p">[</span><span class="mf">0.14</span><span class="p">,</span><span class="mf">0.18</span><span class="p">,</span><span class="mf">0.15</span><span class="p">,</span><span class="mf">0.2</span><span class="p">],</span> <span class="n">axison</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="c1">#Add south China Sea</span>
+<span class="n">sc_layer</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mapdir</span><span class="p">,</span> <span class="s1">&#39;bou1_4l.shp&#39;</span><span class="p">))</span>
+<span class="n">axesm</span><span class="p">(</span><span class="n">position</span><span class="o">=</span><span class="p">[</span><span class="mf">0.14</span><span class="p">,</span><span class="mf">0.18</span><span class="p">,</span><span class="mf">0.15</span><span class="p">,</span><span class="mf">0.2</span><span class="p">],</span> <span class="n">axison</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">geoshow</span><span class="p">(</span><span class="n">sc_layer</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">))</span>
 <span class="n">xlim</span><span class="p">(</span><span class="mi">106</span><span class="p">,</span> <span class="mi">123</span><span class="p">)</span>
 <span class="n">ylim</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">23</span><span class="p">)</span>
 </pre></div>
 </div>
-<img alt="../../../../_images/china_south_sea1.png" src="../../../../_images/china_south_sea1.png" />
+<img alt="../../../../_images/china_south_sea.png" src="../../../../_images/china_south_sea.png" />
 </dd></dl>
 
 </div>
@@ -173,7 +170,7 @@ valid in longlat projection.</li>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -195,16 +192,16 @@ valid in longlat projection.</li>
         <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
         <li><a href="../../../index.html">docs</a>|&nbsp;</li>
 
-          <li><a href="../../../index.html" >Documentation</a> &raquo;</li>
-          <li><a href="../../index.html" >MeteoInfoLab</a> &raquo;</li>
-          <li><a href="../../api.html" >The MeteoInfoLab API</a> &raquo;</li>
-          <li><a href="../../plotlib.html" >Plotlib package</a> &raquo;</li>
-          <li><a href="../miplot.html" >mipylib.plotlib.miplot</a> &raquo;</li> 
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../../api.html" >The MeteoInfoLab API</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../../plotlib.html" >Plotlib package</a> &#187;</li>
+          <li class="nav-item nav-item-5"><a href="../miplot.html" >mipylib.plotlib.miplot</a> &#187;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2010-2017, Yaqiang Wang.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2018, Yaqiang Wang.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
   </body>
 </html>

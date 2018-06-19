@@ -1,31 +1,29 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>CloudSAT Swath data &mdash; MeteoInfo 1.4.4 documentation</title>
-    
+    <title>CloudSAT Swath data &#8212; MeteoInfo 1.4.8 documentation</title>
     <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.4.4',
+        VERSION:     '1.4.8',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="MeteoInfo 1.4.4 documentation" href="../../../index.html" />
-    <link rel="up" title="Satellite data" href="../satellite.html" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="AIRS Swath data" href="airs_swath.html" />
     <link rel="prev" title="Satellite data" href="../satellite.html" /> 
   </head>
@@ -34,7 +32,7 @@
 <div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
 <a href="../../../index.html"><img src="../../../_static/logo.jpg" border="0"/></a></div>
 
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -56,13 +54,13 @@
         <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
         <li><a href="../../../docs/index.html">docs</a>|&nbsp;</li>
 
-          <li><a href="../../index.html" >Examples</a> &raquo;</li>
-          <li><a href="../index.html" >MeteoInfoLab</a> &raquo;</li>
-          <li><a href="../satellite.html" accesskey="U">Satellite data</a> &raquo;</li> 
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Examples</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../satellite.html" accesskey="U">Satellite data</a> &#187;</li> 
       </ul>
     </div>
 
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="../satellite.html"
@@ -70,22 +68,21 @@
   <h4>Next topic</h4>
   <p class="topless"><a href="airs_swath.html"
                         title="next chapter">AIRS Swath data</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="../../../_sources/examples/meteoinfolab/satellite/cloudsat_swath.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/examples/meteoinfolab/satellite/cloudsat_swath.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../../../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -94,35 +91,35 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="cloudsat-swath-data">
 <span id="examples-meteoinfolab-satellite-cloudsat-swath"></span><h1>CloudSAT Swath data<a class="headerlink" href="#cloudsat-swath-data" title="Permalink to this headline">¶</a></h1>
 <p>Open CloudSAT swath HDF data file and add two plots in a figure. Top one is radar
 refrectivity factor image on time and height dimensions. Bottom one is satellite
 trajectory map plot.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c"># Add file</span>
-<span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="s">&#39;D:/Temp/hdf/2010128055614_21420_CS_2B-GEOPROF_GRANULE_P_R04_E03.hdf&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Add file</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="s1">&#39;D:/Temp/hdf/2010128055614_21420_CS_2B-GEOPROF_GRANULE_P_R04_E03.hdf&#39;</span><span class="p">)</span>
 
-<span class="c"># Read data</span>
-<span class="n">vname</span> <span class="o">=</span> <span class="s">&#39;Radar_Reflectivity&#39;</span>
+<span class="c1"># Read data</span>
+<span class="n">vname</span> <span class="o">=</span> <span class="s1">&#39;Radar_Reflectivity&#39;</span>
 <span class="n">v_data</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="n">vname</span><span class="p">]</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">v_data</span><span class="p">[:,:]</span>
-<span class="n">v_height</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;Height&#39;</span><span class="p">]</span>
+<span class="n">v_height</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;Height&#39;</span><span class="p">]</span>
 <span class="n">height</span> <span class="o">=</span> <span class="n">v_height</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span>
-<span class="n">time</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;Profile_time&#39;</span><span class="p">][:]</span>
-<span class="n">lon</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;Longitude&#39;</span><span class="p">][:]</span>
-<span class="n">lat</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;Latitude&#39;</span><span class="p">][:]</span>
+<span class="n">time</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;Profile_time&#39;</span><span class="p">][:]</span>
+<span class="n">lon</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;Longitude&#39;</span><span class="p">][:]</span>
+<span class="n">lat</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;Latitude&#39;</span><span class="p">][:]</span>
 
-<span class="c"># Read attributes</span>
-<span class="n">long_name</span> <span class="o">=</span> <span class="n">v_data</span><span class="o">.</span><span class="n">attrvalue</span><span class="p">(</span><span class="s">&#39;long_name&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">scale_factor</span> <span class="o">=</span> <span class="n">v_data</span><span class="o">.</span><span class="n">attrvalue</span><span class="p">(</span><span class="s">&#39;factor&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">valid_min</span> <span class="o">=</span> <span class="n">v_data</span><span class="o">.</span><span class="n">attrvalue</span><span class="p">(</span><span class="s">&#39;valid_range&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">valid_max</span> <span class="o">=</span> <span class="n">v_data</span><span class="o">.</span><span class="n">attrvalue</span><span class="p">(</span><span class="s">&#39;valid_range&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
-<span class="n">units</span> <span class="o">=</span> <span class="n">v_data</span><span class="o">.</span><span class="n">attrvalue</span><span class="p">(</span><span class="s">&#39;units&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">units_h</span> <span class="o">=</span> <span class="n">v_height</span><span class="o">.</span><span class="n">attrvalue</span><span class="p">(</span><span class="s">&#39;units&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="c1"># Read attributes</span>
+<span class="n">long_name</span> <span class="o">=</span> <span class="n">v_data</span><span class="o">.</span><span class="n">attrvalue</span><span class="p">(</span><span class="s1">&#39;long_name&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">scale_factor</span> <span class="o">=</span> <span class="n">v_data</span><span class="o">.</span><span class="n">attrvalue</span><span class="p">(</span><span class="s1">&#39;factor&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">valid_min</span> <span class="o">=</span> <span class="n">v_data</span><span class="o">.</span><span class="n">attrvalue</span><span class="p">(</span><span class="s1">&#39;valid_range&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">valid_max</span> <span class="o">=</span> <span class="n">v_data</span><span class="o">.</span><span class="n">attrvalue</span><span class="p">(</span><span class="s1">&#39;valid_range&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">units</span> <span class="o">=</span> <span class="n">v_data</span><span class="o">.</span><span class="n">attrvalue</span><span class="p">(</span><span class="s1">&#39;units&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">units_h</span> <span class="o">=</span> <span class="n">v_height</span><span class="o">.</span><span class="n">attrvalue</span><span class="p">(</span><span class="s1">&#39;units&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 
-<span class="c"># Apply scale factor</span>
+<span class="c1"># Apply scale factor</span>
 <span class="n">valid_max</span> <span class="o">=</span> <span class="n">valid_max</span> <span class="o">/</span> <span class="n">scale_factor</span>
 <span class="n">valid_min</span> <span class="o">=</span> <span class="n">valid_min</span> <span class="o">/</span> <span class="n">scale_factor</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">data</span> <span class="o">/</span> <span class="n">scale_factor</span>
@@ -131,28 +128,27 @@ trajectory map plot.</p>
 <span class="n">data</span> <span class="o">=</span> <span class="n">transpose</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">,:]</span>
 
-<span class="c"># Make a split window plot</span>
+<span class="c1"># Make a split window plot</span>
 <span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 
-<span class="c"># Contour the data</span>
+<span class="c1"># Contour the data</span>
 <span class="n">levs</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">38</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">layer</span> <span class="o">=</span> <span class="n">imshow</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">height</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">data</span><span class="p">,</span> <span class="n">levs</span><span class="p">)</span>
+<span class="n">layer</span> <span class="o">=</span> <span class="n">imshow</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">levs</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="p">[</span><span class="n">time</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">time</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="n">height</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="n">height</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
 <span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;Radar Reflectivity Factor&#39;</span><span class="p">)</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Seconds since the start of the granule. (seconds)&#39;</span><span class="p">)</span>
-<span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;Height (m)&#39;</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Radar Reflectivity Factor&#39;</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Seconds since the start of the granule. (seconds)&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Height (m)&#39;</span><span class="p">)</span>
 
-<span class="c"># The 2nd plot is the trajectory</span>
+<span class="c1"># The 2nd plot is the trajectory</span>
 <span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">axesm</span><span class="p">(</span><span class="n">newaxes</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
-<span class="n">lworld</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="s">&#39;D:/Temp/map/country1.shp&#39;</span><span class="p">)</span>
-<span class="n">geoshow</span><span class="p">(</span><span class="n">lworld</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s">&#39;k&#39;</span><span class="p">)</span>
-<span class="n">plotm</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="s">&#39;-b&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-<span class="c">#scatterm(lon, lat, lon, size=4, edge=False, facecolor=&#39;b&#39;)</span>
-<span class="n">scatterm</span><span class="p">(</span><span class="n">lon</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">lat</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">size</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">axesm</span><span class="p">(</span><span class="n">newaxes</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">plotm</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="s1">&#39;-b&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="c1">#scatterm(lon, lat, lon, size=4, edge=False, facecolor=&#39;b&#39;)</span>
+<span class="n">scatterm</span><span class="p">(</span><span class="n">lon</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">lat</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">size</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
 <span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">180</span><span class="p">,</span> <span class="mi">180</span><span class="p">)</span>
 <span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">)</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;Trajectory of Flight Path (starting point in red)&#39;</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Trajectory of Flight Path (starting point in red)&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <img alt="../../../_images/cloudsat_swath.png" src="../../../_images/cloudsat_swath.png" />
@@ -164,7 +160,7 @@ trajectory map plot.</p>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -186,14 +182,14 @@ trajectory map plot.</p>
         <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
         <li><a href="../../../docs/index.html">docs</a>|&nbsp;</li>
 
-          <li><a href="../../index.html" >Examples</a> &raquo;</li>
-          <li><a href="../index.html" >MeteoInfoLab</a> &raquo;</li>
-          <li><a href="../satellite.html" >Satellite data</a> &raquo;</li> 
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Examples</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../satellite.html" >Satellite data</a> &#187;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2010-2017, Yaqiang Wang.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2018, Yaqiang Wang.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
   </body>
 </html>

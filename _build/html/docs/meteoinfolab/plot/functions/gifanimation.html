@@ -1,32 +1,30 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>gifanimation &mdash; MeteoInfo 1.4.4 documentation</title>
-    
+    <title>gifanimation &#8212; MeteoInfo 1.4.8 documentation</title>
     <link rel="stylesheet" href="../../../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../../',
-        VERSION:     '1.4.4',
+        VERSION:     '1.4.8',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="MeteoInfo 1.4.4 documentation" href="../../../../index.html" />
-    <link rel="up" title="mipylib.plotlib.miplot" href="../miplot.html" />
-    <link rel="next" title="grid" href="grid.html" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="gifaddframe" href="gifaddframe.html" />
     <link rel="prev" title="geoshow" href="geoshow.html" /> 
   </head>
   <body>
@@ -34,7 +32,7 @@
 <div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
 <a href="../../../../index.html"><img src="../../../../_static/logo.jpg" border="0"/></a></div>
 
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -44,7 +42,7 @@
           <a href="../../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="grid.html" title="grid"
+          <a href="gifaddframe.html" title="gifaddframe"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="geoshow.html" title="geoshow"
@@ -56,38 +54,37 @@
         <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
         <li><a href="../../../index.html">docs</a>|&nbsp;</li>
 
-          <li><a href="../../../index.html" >Documentation</a> &raquo;</li>
-          <li><a href="../../index.html" >MeteoInfoLab</a> &raquo;</li>
-          <li><a href="../../api.html" >The MeteoInfoLab API</a> &raquo;</li>
-          <li><a href="../../plotlib.html" >Plotlib package</a> &raquo;</li>
-          <li><a href="../miplot.html" accesskey="U">mipylib.plotlib.miplot</a> &raquo;</li> 
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../../api.html" >The MeteoInfoLab API</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../../plotlib.html" >Plotlib package</a> &#187;</li>
+          <li class="nav-item nav-item-5"><a href="../miplot.html" accesskey="U">mipylib.plotlib.miplot</a> &#187;</li> 
       </ul>
     </div>
 
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="geoshow.html"
                         title="previous chapter">geoshow</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="grid.html"
-                        title="next chapter">grid</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="../../../../_sources/docs/meteoinfolab/plot/functions/gifanimation.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+  <p class="topless"><a href="gifaddframe.html"
+                        title="next chapter">gifaddframe</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../_sources/docs/meteoinfolab/plot/functions/gifanimation.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../../../../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -96,13 +93,13 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="gifanimation">
 <span id="docs-meteoinfolab-funcitons-plot-gifanimation"></span><h1>gifanimation<a class="headerlink" href="#gifanimation" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="mipylib.plotlib.miplot.gifanimation">
-<tt class="descclassname">mipylib.plotlib.miplot.</tt><tt class="descname">gifanimation</tt><big>(</big><em>filename</em>, <em>repeat=0</em>, <em>delay=1000</em><big>)</big><a class="headerlink" href="#mipylib.plotlib.miplot.gifanimation" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">mipylib.plotlib.miplot.</code><code class="descname">gifanimation</code><span class="sig-paren">(</span><em>filename</em>, <em>repeat=0</em>, <em>delay=1000</em><span class="sig-paren">)</span><a class="headerlink" href="#mipylib.plotlib.miplot.gifanimation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a gif animation file</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -116,7 +113,7 @@
 </tr>
 </tbody>
 </table>
-<p>Examples: <a class="reference internal" href="../../../../examples/meteoinfolab/plot_types/gif_animation.html#examples-meteoinfolab-plot-types-gif-animation"><em>Create gif animation file</em></a></p>
+<p>Examples: <a class="reference internal" href="../../../../examples/meteoinfolab/plot_types/gif_animation.html#examples-meteoinfolab-plot-types-gif-animation"><span class="std std-ref">Create gif animation file</span></a></p>
 </dd></dl>
 
 </div>
@@ -127,7 +124,7 @@
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -137,7 +134,7 @@
           <a href="../../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="grid.html" title="grid"
+          <a href="gifaddframe.html" title="gifaddframe"
              >next</a> |</li>
         <li class="right" >
           <a href="geoshow.html" title="geoshow"
@@ -149,16 +146,16 @@
         <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
         <li><a href="../../../index.html">docs</a>|&nbsp;</li>
 
-          <li><a href="../../../index.html" >Documentation</a> &raquo;</li>
-          <li><a href="../../index.html" >MeteoInfoLab</a> &raquo;</li>
-          <li><a href="../../api.html" >The MeteoInfoLab API</a> &raquo;</li>
-          <li><a href="../../plotlib.html" >Plotlib package</a> &raquo;</li>
-          <li><a href="../miplot.html" >mipylib.plotlib.miplot</a> &raquo;</li> 
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../../api.html" >The MeteoInfoLab API</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../../plotlib.html" >Plotlib package</a> &#187;</li>
+          <li class="nav-item nav-item-5"><a href="../miplot.html" >mipylib.plotlib.miplot</a> &#187;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2010-2017, Yaqiang Wang.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2018, Yaqiang Wang.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
   </body>
 </html>

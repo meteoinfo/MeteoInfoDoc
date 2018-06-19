@@ -1,31 +1,29 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>pearsonr &mdash; MeteoInfo 1.4.4 documentation</title>
-    
+    <title>pearsonr &#8212; MeteoInfo 1.4.8 documentation</title>
     <link rel="stylesheet" href="../../../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../../',
-        VERSION:     '1.4.4',
+        VERSION:     '1.4.8',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="MeteoInfo 1.4.4 documentation" href="../../../../index.html" />
-    <link rel="up" title="mipylib.numeric.stats" href="../stats.html" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="spearmanr" href="spearmanr.html" />
     <link rel="prev" title="cov" href="cov.html" /> 
   </head>
@@ -34,7 +32,7 @@
 <div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
 <a href="../../../../index.html"><img src="../../../../_static/logo.jpg" border="0"/></a></div>
 
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -56,15 +54,15 @@
         <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
         <li><a href="../../../index.html">docs</a>|&nbsp;</li>
 
-          <li><a href="../../../index.html" >Documentation</a> &raquo;</li>
-          <li><a href="../../index.html" >MeteoInfoLab</a> &raquo;</li>
-          <li><a href="../../api.html" >The MeteoInfoLab API</a> &raquo;</li>
-          <li><a href="../../numeric.html" >Numeric package</a> &raquo;</li>
-          <li><a href="../stats.html" accesskey="U">mipylib.numeric.stats</a> &raquo;</li> 
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../../api.html" >The MeteoInfoLab API</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../../numeric.html" >Numeric package</a> &#187;</li>
+          <li class="nav-item nav-item-5"><a href="../stats.html" accesskey="U">mipylib.numeric.stats</a> &#187;</li> 
       </ul>
     </div>
 
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="cov.html"
@@ -72,22 +70,21 @@
   <h4>Next topic</h4>
   <p class="topless"><a href="spearmanr.html"
                         title="next chapter">spearmanr</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="../../../../_sources/docs/meteoinfolab/numeric/stats/pearsonr.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../_sources/docs/meteoinfolab/numeric/stats/pearsonr.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../../../../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -96,13 +93,13 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="pearsonr">
 <span id="docs-meteoinfolab-numeric-stats-pearsonr"></span><h1>pearsonr<a class="headerlink" href="#pearsonr" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="numeric.stats.pearsonr">
-<tt class="descclassname">numeric.stats.</tt><tt class="descname">pearsonr</tt><big>(</big><em>x</em>, <em>y</em><big>)</big><a class="headerlink" href="#numeric.stats.pearsonr" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">numeric.stats.</code><code class="descname">pearsonr</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#numeric.stats.pearsonr" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculates a Pearson correlation coefficient and the p-value for testing non-correlation.</p>
 <p>The Pearson correlation coefficient measures the linear relationship between two datasets.
 Strictly speaking, Pearson’s correlation requires that each dataset be normally distributed,
@@ -119,8 +116,8 @@ The p-values are not entirely reliable but are probably reasonable for datasets 
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>x</strong> &#8211; (<em>array_like</em>) x data array.</li>
-<li><strong>y</strong> &#8211; (<em>array_like</em>) y data array.</li>
+<li><strong>x</strong> – (<em>array_like</em>) x data array.</li>
+<li><strong>y</strong> – (<em>array_like</em>) y data array.</li>
 </ul>
 </td>
 </tr>
@@ -130,16 +127,16 @@ The p-values are not entirely reliable but are probably reasonable for datasets 
 </tbody>
 </table>
 <p>Examples:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">mipylib.numeric</span> <span class="kn">import</span> <span class="n">stats</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mipylib.numeric</span> <span class="k">import</span> <span class="n">stats</span>
 
 <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mf">29.81</span><span class="p">,</span><span class="mf">30.04</span><span class="p">,</span><span class="mf">41.7</span><span class="p">,</span><span class="mf">43.71</span><span class="p">,</span><span class="mf">28.75</span><span class="p">,</span><span class="mf">37.73</span><span class="p">,</span><span class="mf">52.25</span><span class="p">,</span><span class="mf">32.41</span><span class="p">,</span><span class="mf">25.67</span><span class="p">,</span><span class="mf">28.17</span><span class="p">,</span><span class="mf">25.71</span><span class="p">,</span><span class="mf">36.05</span><span class="p">,</span><span class="mf">37.62</span><span class="p">,</span><span class="mf">34.28</span><span class="p">,</span><span class="mf">38.82</span><span class="p">,</span><span class="mf">40.15</span><span class="p">,</span><span class="mf">35.69</span><span class="p">,</span><span class="mf">28.36</span><span class="p">,</span><span class="mf">39.56</span><span class="p">,</span><span class="mf">52.56</span><span class="p">,</span><span class="mf">54.14</span><span class="p">,</span><span class="mf">50.76</span><span class="p">,</span><span class="mf">39.35</span><span class="p">,</span><span class="mf">43.16</span><span class="p">]</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mf">51.6</span><span class="p">,</span><span class="mi">46</span><span class="p">,</span><span class="mf">64.3</span><span class="p">,</span><span class="mf">83.4</span><span class="p">,</span><span class="mf">65.9</span><span class="p">,</span><span class="mf">49.5</span><span class="p">,</span><span class="mf">88.6</span><span class="p">,</span><span class="mf">101.4</span><span class="p">,</span><span class="mf">55.9</span><span class="p">,</span><span class="mf">41.8</span><span class="p">,</span><span class="mf">33.4</span><span class="p">,</span><span class="mf">57.3</span><span class="p">,</span><span class="mf">66.5</span><span class="p">,</span><span class="mf">40.5</span><span class="p">,</span><span class="mf">72.3</span><span class="p">,</span><span class="mi">70</span><span class="p">,</span><span class="mf">83.3</span><span class="p">,</span><span class="mf">65.8</span><span class="p">,</span><span class="mf">63.1</span><span class="p">,</span><span class="mf">83.4</span><span class="p">,</span><span class="mi">102</span><span class="p">,</span><span class="mi">94</span><span class="p">,</span><span class="mi">77</span><span class="p">,</span><span class="mi">77</span><span class="p">]</span>
 <span class="n">r</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">pearsonr</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="k">print</span> <span class="n">r</span><span class="p">,</span> <span class="n">p</span>
+<span class="nb">print</span> <span class="n">r</span><span class="p">,</span> <span class="n">p</span>
 </pre></div>
 </div>
 <p>Result:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">run</span> <span class="n">script</span><span class="o">...</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">run</span> <span class="n">script</span><span class="o">...</span>
 <span class="go">0.700798023949 0.000136713449709</span>
 </pre></div>
 </div>
@@ -153,7 +150,7 @@ The p-values are not entirely reliable but are probably reasonable for datasets 
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -175,16 +172,16 @@ The p-values are not entirely reliable but are probably reasonable for datasets 
         <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
         <li><a href="../../../index.html">docs</a>|&nbsp;</li>
 
-          <li><a href="../../../index.html" >Documentation</a> &raquo;</li>
-          <li><a href="../../index.html" >MeteoInfoLab</a> &raquo;</li>
-          <li><a href="../../api.html" >The MeteoInfoLab API</a> &raquo;</li>
-          <li><a href="../../numeric.html" >Numeric package</a> &raquo;</li>
-          <li><a href="../stats.html" >mipylib.numeric.stats</a> &raquo;</li> 
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../../api.html" >The MeteoInfoLab API</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../../numeric.html" >Numeric package</a> &#187;</li>
+          <li class="nav-item nav-item-5"><a href="../stats.html" >mipylib.numeric.stats</a> &#187;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2010-2017, Yaqiang Wang.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2018, Yaqiang Wang.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
   </body>
 </html>

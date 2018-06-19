@@ -11,9 +11,7 @@ imshow
 
     Display an image on the axes.
     
-    :param x: (*array_like*) Optional. X coordinate array.
-    :param y: (*array_like*) Optional. Y coordinate array.
-    :param z: (*array_like*) 2-D z value array.
+    :param X: (*array_like*) 2-D or 3-D (RGB or RGBA) image value array or BufferedImage.
     :param levs: (*array_like*) Optional. A list of floating point numbers indicating the level curves 
         to draw, in increasing order.
     :param cmap: (*string*) Color map string.
@@ -22,7 +20,7 @@ imshow
         color args (string, float, rgb, etc), different levels will be plotted in different colors in 
         the order specified.
     
-    :returns: (*RasterLayer*) RasterLayer created from array data.
+    :returns: (*Image graphic*) Image graphic created from array data.
     
     **Example:**
     

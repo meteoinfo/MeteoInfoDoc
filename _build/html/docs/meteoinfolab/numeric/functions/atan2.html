@@ -1,32 +1,30 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>atan2 &mdash; MeteoInfo 1.4.4 documentation</title>
-    
+    <title>atan2 &#8212; MeteoInfo 1.4.8 documentation</title>
     <link rel="stylesheet" href="../../../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../../',
-        VERSION:     '1.4.4',
+        VERSION:     '1.4.8',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="MeteoInfo 1.4.4 documentation" href="../../../../index.html" />
-    <link rel="up" title="mipylib.numeric.minum" href="../minum.html" />
-    <link rel="next" title="corrcoef" href="corrcoef.html" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="concatenate" href="concatenate.html" />
     <link rel="prev" title="atan" href="atan.html" /> 
   </head>
   <body>
@@ -34,7 +32,7 @@
 <div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
 <a href="../../../../index.html"><img src="../../../../_static/logo.jpg" border="0"/></a></div>
 
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -44,7 +42,7 @@
           <a href="../../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="corrcoef.html" title="corrcoef"
+          <a href="concatenate.html" title="concatenate"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="atan.html" title="atan"
@@ -56,38 +54,37 @@
         <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
         <li><a href="../../../index.html">docs</a>|&nbsp;</li>
 
-          <li><a href="../../../index.html" >Documentation</a> &raquo;</li>
-          <li><a href="../../index.html" >MeteoInfoLab</a> &raquo;</li>
-          <li><a href="../../api.html" >The MeteoInfoLab API</a> &raquo;</li>
-          <li><a href="../../numeric.html" >Numeric package</a> &raquo;</li>
-          <li><a href="../minum.html" accesskey="U">mipylib.numeric.minum</a> &raquo;</li> 
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../../api.html" >The MeteoInfoLab API</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../../numeric.html" >Numeric package</a> &#187;</li>
+          <li class="nav-item nav-item-5"><a href="../minum.html" accesskey="U">mipylib.numeric.minum</a> &#187;</li> 
       </ul>
     </div>
 
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="atan.html"
                         title="previous chapter">atan</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="corrcoef.html"
-                        title="next chapter">corrcoef</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="../../../../_sources/docs/meteoinfolab/numeric/functions/atan2.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+  <p class="topless"><a href="concatenate.html"
+                        title="next chapter">concatenate</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../_sources/docs/meteoinfolab/numeric/functions/atan2.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../../../../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -96,15 +93,15 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="atan2">
 <span id="docs-meteoinfolab-numeric-funcitons-atan2"></span><h1>atan2<a class="headerlink" href="#atan2" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="mipylib.numeric.minum.atan2">
-<tt class="descclassname">mipylib.numeric.minum.</tt><tt class="descname">atan2</tt><big>(</big><em>x1</em>, <em>x2</em><big>)</big><a class="headerlink" href="#mipylib.numeric.minum.atan2" title="Permalink to this definition">¶</a></dt>
-<dd><p>Element-wise arc tangent of <tt class="docutils literal"><span class="pre">x1/x2</span></tt> choosing the quadrant correctly.</p>
-<p>The quadrant (i.e., branch) is chosen so that <tt class="docutils literal"><span class="pre">arctan2(x1,</span> <span class="pre">x2)</span></tt> is the signed angle in
+<code class="descclassname">mipylib.numeric.minum.</code><code class="descname">atan2</code><span class="sig-paren">(</span><em>x1</em>, <em>x2</em><span class="sig-paren">)</span><a class="headerlink" href="#mipylib.numeric.minum.atan2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Element-wise arc tangent of <code class="docutils literal"><span class="pre">x1/x2</span></code> choosing the quadrant correctly.</p>
+<p>The quadrant (i.e., branch) is chosen so that <code class="docutils literal"><span class="pre">arctan2(x1,</span> <span class="pre">x2)</span></code> is the signed angle in
 radians between the ray ending at the origin and passing through the point (1,0), and
 the ray ending at the origin and passing through the point (<em>x2, x1</em>). (Note the role
 reversal: the “<em>y</em>-coordinate” is the first function parameter, the “<em>x</em>-coordinate” is
@@ -117,19 +114,19 @@ of complex values, use angle.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>x1</strong> &#8211; (<em>array_like</em>) <em>y</em>-coordinates.</li>
-<li><strong>x2</strong> &#8211; (<em>array_like</em>) <em>x</em>-coordinates. <em>x2</em> must be broadcastable to match the
+<li><strong>x1</strong> – (<em>array_like</em>) <em>y</em>-coordinates.</li>
+<li><strong>x2</strong> – (<em>array_like</em>) <em>x</em>-coordinates. <em>x2</em> must be broadcastable to match the
 shape of <em>x1</em> or vice versa.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">(<em>array_like</em>) Array of angles in radians, in the range <tt class="docutils literal"><span class="pre">[-pi,</span> <span class="pre">pi]</span></tt> .</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">(<em>array_like</em>) Array of angles in radians, in the range <code class="docutils literal"><span class="pre">[-pi,</span> <span class="pre">pi]</span></code> .</p>
 </td>
 </tr>
 </tbody>
 </table>
 <p>Examples:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="o">+</span><span class="mi">1</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">atan2</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="mi">180</span> <span class="o">/</span> <span class="n">pi</span>
 <span class="go">array([-135.00000398439022, -45.000001328130075, 45.000001328130075, 135.00000398439022])</span>
@@ -145,7 +142,7 @@ shape of <em>x1</em> or vice versa.</li>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -155,7 +152,7 @@ shape of <em>x1</em> or vice versa.</li>
           <a href="../../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="corrcoef.html" title="corrcoef"
+          <a href="concatenate.html" title="concatenate"
              >next</a> |</li>
         <li class="right" >
           <a href="atan.html" title="atan"
@@ -167,16 +164,16 @@ shape of <em>x1</em> or vice versa.</li>
         <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
         <li><a href="../../../index.html">docs</a>|&nbsp;</li>
 
-          <li><a href="../../../index.html" >Documentation</a> &raquo;</li>
-          <li><a href="../../index.html" >MeteoInfoLab</a> &raquo;</li>
-          <li><a href="../../api.html" >The MeteoInfoLab API</a> &raquo;</li>
-          <li><a href="../../numeric.html" >Numeric package</a> &raquo;</li>
-          <li><a href="../minum.html" >mipylib.numeric.minum</a> &raquo;</li> 
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../../api.html" >The MeteoInfoLab API</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../../numeric.html" >Numeric package</a> &#187;</li>
+          <li class="nav-item nav-item-5"><a href="../minum.html" >mipylib.numeric.minum</a> &#187;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2010-2017, Yaqiang Wang.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2018, Yaqiang Wang.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
   </body>
 </html>

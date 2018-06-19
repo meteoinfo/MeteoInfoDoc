@@ -1,31 +1,29 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>Gif animation &mdash; MeteoInfo 1.4.4 documentation</title>
-    
+    <title>Gif animation &#8212; MeteoInfo 1.4.8 documentation</title>
     <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.4.4',
+        VERSION:     '1.4.8',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="MeteoInfo 1.4.4 documentation" href="../../../index.html" />
-    <link rel="up" title="Plot types" href="../plot_types.html" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Image process" href="image_process.html" />
     <link rel="prev" title="Station model plot" href="station_model.html" /> 
   </head>
@@ -34,7 +32,7 @@
 <div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
 <a href="../../../index.html"><img src="../../../_static/logo.jpg" border="0"/></a></div>
 
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -56,13 +54,13 @@
         <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
         <li><a href="../../../docs/index.html">docs</a>|&nbsp;</li>
 
-          <li><a href="../../index.html" >Examples</a> &raquo;</li>
-          <li><a href="../index.html" >MeteoInfoLab</a> &raquo;</li>
-          <li><a href="../plot_types.html" accesskey="U">Plot types</a> &raquo;</li> 
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Examples</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../plot_types.html" accesskey="U">Plot types</a> &#187;</li> 
       </ul>
     </div>
 
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="station_model.html"
@@ -70,22 +68,21 @@
   <h4>Next topic</h4>
   <p class="topless"><a href="image_process.html"
                         title="next chapter">Image process</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="../../../_sources/examples/meteoinfolab/plot_types/gif_animation.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/examples/meteoinfolab/plot_types/gif_animation.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../../../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -94,58 +91,58 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="gif-animation">
 <span id="examples-meteoinfolab-plot-types-gif-animation"></span><h1>Gif animation<a class="headerlink" href="#gif-animation" title="Permalink to this headline">¶</a></h1>
-<p>Gif animation image can be created using <a class="reference internal" href="../../../docs/meteoinfolab/plot/functions/gifanimation.html#docs-meteoinfolab-funcitons-plot-gifanimation"><em>gifanimation()</em></a>,
-<a class="reference internal" href="../../../docs/meteoinfolab/plot/functions/gifaddframe.html#docs-meteoinfolab-funcitons-plot-gifaddframe"><em>gifaddframe()</em></a> and <a class="reference internal" href="../../../docs/meteoinfolab/plot/functions/giffinish.html#docs-meteoinfolab-funcitons-plot-giffinish"><em>giffinish()</em></a>
+<p>Gif animation image can be created using <a class="reference internal" href="../../../docs/meteoinfolab/plot/functions/gifanimation.html#docs-meteoinfolab-funcitons-plot-gifanimation"><span class="std std-ref">gifanimation()</span></a>,
+<a class="reference internal" href="../../../docs/meteoinfolab/plot/functions/gifaddframe.html#docs-meteoinfolab-funcitons-plot-gifaddframe"><span class="std std-ref">gifaddframe()</span></a> and <a class="reference internal" href="../../../docs/meteoinfolab/plot/functions/giffinish.html#docs-meteoinfolab-funcitons-plot-giffinish"><span class="std std-ref">giffinish()</span></a>
 functions.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c">#Set data folders</span>
-<span class="n">fcstdir</span> <span class="o">=</span> <span class="s">&#39;W:/CUACE_out/haze_54&#39;</span>
-<span class="n">obsdir</span> <span class="o">=</span> <span class="s">&#39;U:/data/micaps&#39;</span>
-<span class="n">mapdir</span> <span class="o">=</span> <span class="s">&#39;T:/verification/map&#39;</span>
-<span class="n">outdir</span> <span class="o">=</span> <span class="s">&#39;T:/verification/cases/cuace_54km/result&#39;</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1">#Set data folders</span>
+<span class="n">fcstdir</span> <span class="o">=</span> <span class="s1">&#39;W:/CUACE_out/haze_54&#39;</span>
+<span class="n">obsdir</span> <span class="o">=</span> <span class="s1">&#39;U:/data/micaps&#39;</span>
+<span class="n">mapdir</span> <span class="o">=</span> <span class="s1">&#39;T:/verification/map&#39;</span>
+<span class="n">outdir</span> <span class="o">=</span> <span class="s1">&#39;T:/verification/cases/cuace_54km/result&#39;</span>
 
-<span class="c">#Set time</span>
+<span class="c1">#Set time</span>
 <span class="n">st</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">sbjt</span> <span class="o">=</span> <span class="n">st</span> <span class="o">+</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
 
-<span class="c">#Get forecasting data files</span>
-<span class="n">fcstfn</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">fcstdir</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">st</span><span class="o">.</span><span class="n">year</span><span class="p">)</span> <span class="o">+</span> <span class="s">&#39;/&#39;</span> <span class="o">+</span> <span class="n">st</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">&#39;%Y%m&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s">&#39;/&#39;</span> <span class="o">+</span> \
-    <span class="n">st</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">&#39;%Y%m</span><span class="si">%d</span><span class="s">%H&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s">&#39;/produce/haze_post_aero_&#39;</span> <span class="o">+</span> <span class="n">st</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">&#39;%Y%m</span><span class="si">%d</span><span class="s">%H&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s">&#39;.ctl&#39;</span><span class="p">)</span>
-<span class="k">print</span> <span class="s">&#39;Forecasting data file: &#39;</span> <span class="o">+</span> <span class="n">fcstfn</span>
+<span class="c1">#Get forecasting data files</span>
+<span class="n">fcstfn</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">fcstdir</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">st</span><span class="o">.</span><span class="n">year</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="n">st</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y%m&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> \
+    <span class="n">st</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y%m</span><span class="si">%d</span><span class="s1">%H&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;/produce/haze_post_aero_&#39;</span> <span class="o">+</span> <span class="n">st</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y%m</span><span class="si">%d</span><span class="s1">%H&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;.ctl&#39;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="s1">&#39;Forecasting data file: &#39;</span> <span class="o">+</span> <span class="n">fcstfn</span>
 <span class="n">fcstf</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="n">fcstfn</span><span class="p">)</span>
-<span class="n">fcstf</span><span class="o">.</span><span class="n">bigendian</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">fcstf</span><span class="o">.</span><span class="n">bigendian</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 
-<span class="c">#Plot</span>
-<span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">768</span><span class="p">,</span><span class="mi">480</span><span class="p">],</span> <span class="n">newfig</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="c1">#Plot</span>
+<span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">768</span><span class="p">,</span><span class="mi">480</span><span class="p">],</span> <span class="n">newfig</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">axesm</span><span class="p">(</span><span class="n">position</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">xyscale</span><span class="o">=</span><span class="mf">1.2</span><span class="p">,</span> <span class="n">tickfontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
-<span class="n">lworld</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mapdir</span><span class="p">,</span> <span class="s">&#39;country1.shp&#39;</span><span class="p">))</span>
-<span class="n">lchina</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mapdir</span><span class="p">,</span> <span class="s">&#39;bou2_4p.shp&#39;</span><span class="p">))</span>
+<span class="n">lworld</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mapdir</span><span class="p">,</span> <span class="s1">&#39;country1.shp&#39;</span><span class="p">))</span>
+<span class="n">lchina</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mapdir</span><span class="p">,</span> <span class="s1">&#39;bou2_4p.shp&#39;</span><span class="p">))</span>
 <span class="n">geoshow</span><span class="p">(</span><span class="n">lchina</span><span class="p">)</span>
-<span class="n">geoshow</span><span class="p">(</span><span class="n">lworld</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="n">lworld</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
 <span class="n">levs</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">50</span><span class="p">]</span>
 <span class="n">cols</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">192</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),(</span><span class="mi">255</span><span class="p">,</span><span class="mi">69</span><span class="p">,</span><span class="mi">0</span><span class="p">),(</span><span class="mi">255</span><span class="p">,</span><span class="mi">105</span><span class="p">,</span><span class="mi">180</span><span class="p">),(</span><span class="mi">255</span><span class="p">,</span><span class="mi">128</span><span class="p">,</span><span class="mi">0</span><span class="p">),(</span><span class="mi">255</span><span class="p">,</span><span class="mi">192</span><span class="p">,</span><span class="mi">128</span><span class="p">),(</span><span class="mi">51</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">),</span> \
     <span class="p">(</span><span class="mi">153</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">153</span><span class="p">),(</span><span class="mi">204</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">204</span><span class="p">),(</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">)]</span>
-<span class="c">#Set weather list - haze, mist and fog</span>
+<span class="c1">#Set weather list - haze, mist and fog</span>
 <span class="n">weathers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">41</span><span class="p">,</span><span class="mi">42</span><span class="p">,</span><span class="mi">43</span><span class="p">,</span><span class="mi">44</span><span class="p">,</span><span class="mi">45</span><span class="p">,</span><span class="mi">46</span><span class="p">,</span><span class="mi">47</span><span class="p">,</span><span class="mi">48</span><span class="p">,</span><span class="mi">49</span><span class="p">]</span>
 <span class="n">ls</span> <span class="o">=</span> <span class="n">weatherspec</span><span class="p">(</span><span class="n">weathers</span><span class="p">)</span>
-<span class="c">#Add south China Sea</span>
-<span class="n">lscs</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mapdir</span><span class="p">,</span> <span class="s">&#39;bou1_4l.shp&#39;</span><span class="p">))</span>
-<span class="n">axesm</span><span class="p">(</span><span class="n">position</span><span class="o">=</span><span class="p">[</span><span class="mf">0.76</span><span class="p">,</span><span class="mf">0.09</span><span class="p">,</span><span class="mf">0.16</span><span class="p">,</span><span class="mf">0.22</span><span class="p">],</span> <span class="n">axison</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">xyscale</span><span class="o">=</span><span class="mf">1.2</span><span class="p">)</span>
+<span class="c1">#Add south China Sea</span>
+<span class="n">lscs</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mapdir</span><span class="p">,</span> <span class="s1">&#39;bou1_4l.shp&#39;</span><span class="p">))</span>
+<span class="n">axesm</span><span class="p">(</span><span class="n">position</span><span class="o">=</span><span class="p">[</span><span class="mf">0.76</span><span class="p">,</span><span class="mf">0.09</span><span class="p">,</span><span class="mf">0.16</span><span class="p">,</span><span class="mf">0.22</span><span class="p">],</span> <span class="n">axison</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">xyscale</span><span class="o">=</span><span class="mf">1.2</span><span class="p">)</span>
 <span class="n">geoshow</span><span class="p">(</span><span class="n">lscs</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">))</span>
 <span class="n">xlim</span><span class="p">(</span><span class="mi">106</span><span class="p">,</span> <span class="mi">123</span><span class="p">)</span>
 <span class="n">ylim</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">23</span><span class="p">)</span>
-<span class="c">#Set current plot to 1</span>
+<span class="c1">#Set current plot to 1</span>
 <span class="n">currentplot</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 
-<span class="c">#Create gif animation</span>
-<span class="n">giffn</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">outdir</span><span class="p">,</span> <span class="s">&#39;V_vis_&#39;</span> <span class="o">+</span> <span class="n">st</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">&#39;%Y%m</span><span class="si">%d</span><span class="s">&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s">&#39;--loop-.gif&#39;</span><span class="p">)</span>
-<span class="k">print</span> <span class="n">giffn</span>
+<span class="c1">#Create gif animation</span>
+<span class="n">giffn</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">outdir</span><span class="p">,</span> <span class="s1">&#39;V_vis_&#39;</span> <span class="o">+</span> <span class="n">st</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y%m</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;--loop-.gif&#39;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="n">giffn</span>
 <span class="n">animation</span> <span class="o">=</span> <span class="n">gifanimation</span><span class="p">(</span><span class="n">giffn</span><span class="p">)</span>
 
-<span class="c">#Loop</span>
+<span class="c1">#Loop</span>
 <span class="n">tnum</span> <span class="o">=</span> <span class="n">fcstf</span><span class="o">.</span><span class="n">timenum</span><span class="p">()</span>
 <span class="n">nn</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">25</span><span class="p">):</span>
@@ -154,27 +151,27 @@ functions.</p>
         <span class="n">cll</span><span class="p">()</span>
     <span class="n">tt</span> <span class="o">=</span> <span class="n">fcstf</span><span class="o">.</span><span class="n">gettime</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
     <span class="n">bjt</span> <span class="o">=</span> <span class="n">tt</span> <span class="o">+</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
-    <span class="n">obsfn</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">obsdir</span><span class="p">,</span>  <span class="nb">str</span><span class="p">(</span><span class="n">bjt</span><span class="o">.</span><span class="n">year</span><span class="p">)</span> <span class="o">+</span> <span class="s">&#39;/plot/&#39;</span> <span class="o">+</span> <span class="n">bjt</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">&#39;%y%m</span><span class="si">%d</span><span class="s">%H.000&#39;</span><span class="p">))</span>
+    <span class="n">obsfn</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">obsdir</span><span class="p">,</span>  <span class="nb">str</span><span class="p">(</span><span class="n">bjt</span><span class="o">.</span><span class="n">year</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;/plot/&#39;</span> <span class="o">+</span> <span class="n">bjt</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%y%m</span><span class="si">%d</span><span class="s1">%H.000&#39;</span><span class="p">))</span>
     <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">obsfn</span><span class="p">):</span>
-        <span class="k">print</span> <span class="s">&#39;Observation data file: &#39;</span> <span class="o">+</span> <span class="n">obsfn</span>
+        <span class="nb">print</span> <span class="s1">&#39;Observation data file: &#39;</span> <span class="o">+</span> <span class="n">obsfn</span>
         <span class="n">obsf</span> <span class="o">=</span> <span class="n">addfile_micaps</span><span class="p">(</span><span class="n">obsfn</span><span class="p">)</span>
-        <span class="n">fdata</span> <span class="o">=</span> <span class="n">fcstf</span><span class="p">[</span><span class="s">&#39;VIS&#39;</span><span class="p">][</span><span class="n">t</span><span class="p">,:,:]</span>
+        <span class="n">fdata</span> <span class="o">=</span> <span class="n">fcstf</span><span class="p">[</span><span class="s1">&#39;VIS&#39;</span><span class="p">][</span><span class="n">t</span><span class="p">,:,:]</span>
         <span class="n">lfcst</span> <span class="o">=</span> <span class="n">contourfm</span><span class="p">(</span><span class="n">fdata</span><span class="p">,</span> <span class="n">levs</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="n">cols</span><span class="p">,</span> <span class="n">proj</span><span class="o">=</span><span class="n">fcstf</span><span class="o">.</span><span class="n">proj</span><span class="p">)</span>
-        <span class="n">odata</span> <span class="o">=</span> <span class="n">obsf</span><span class="o">.</span><span class="n">stationdata</span><span class="p">(</span><span class="s">&#39;WeatherNow&#39;</span><span class="p">)</span>
+        <span class="n">odata</span> <span class="o">=</span> <span class="n">obsf</span><span class="o">.</span><span class="n">stationdata</span><span class="p">(</span><span class="s1">&#39;WeatherNow&#39;</span><span class="p">)</span>
         <span class="n">lobs</span> <span class="o">=</span> <span class="n">scatterm</span><span class="p">(</span><span class="n">odata</span><span class="p">,</span> <span class="n">symbolspec</span><span class="o">=</span><span class="n">ls</span><span class="p">)</span>
-        <span class="n">title</span><span class="p">(</span><span class="s">&#39;CUACE/Haze-Fog visibility (km) &#39;</span> <span class="o">+</span> <span class="n">sbjt</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">&#39;%Y-%m-</span><span class="si">%d</span><span class="s"> %H:00&#39;</span><span class="p">)</span> <span class="o">+</span> \
-                <span class="s">&#39; +&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">t</span><span class="o">*</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="s">&#39; (&#39;</span> <span class="o">+</span> <span class="n">bjt</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">&#39;%Y-%m-</span><span class="si">%d</span><span class="s"> %H:00&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s">&#39;)&#39;</span><span class="p">,</span> \
-                <span class="n">bold</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+        <span class="n">title</span><span class="p">(</span><span class="s1">&#39;CUACE/Haze-Fog visibility (km) &#39;</span> <span class="o">+</span> <span class="n">sbjt</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1"> %H:00&#39;</span><span class="p">)</span> <span class="o">+</span> \
+                <span class="s1">&#39; +&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">t</span><span class="o">*</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; (&#39;</span> <span class="o">+</span> <span class="n">bjt</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1"> %H:00&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span><span class="p">,</span> \
+                <span class="n">bold</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
         <span class="n">xlim</span><span class="p">(</span><span class="mf">68.6</span><span class="p">,</span> <span class="mf">140.5</span><span class="p">)</span>
         <span class="n">ylim</span><span class="p">(</span><span class="mf">17.3</span><span class="p">,</span> <span class="mi">54</span><span class="p">)</span>
-        <span class="n">colorbar</span><span class="p">(</span><span class="n">lfcst</span><span class="p">,</span> <span class="n">extendrect</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
-        <span class="c">#Add frame to gif animation</span>
+        <span class="n">colorbar</span><span class="p">(</span><span class="n">lfcst</span><span class="p">,</span> <span class="n">extendrect</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+        <span class="c1">#Add frame to gif animation</span>
         <span class="n">gifaddframe</span><span class="p">(</span><span class="n">animation</span><span class="p">)</span>
         <span class="n">nn</span> <span class="o">+=</span> <span class="mi">1</span>
 
-<span class="c">#Finish gif animation</span>
+<span class="c1">#Finish gif animation</span>
 <span class="n">animation</span><span class="o">.</span><span class="n">finish</span><span class="p">()</span>
-<span class="k">print</span> <span class="s">&#39;Finished...&#39;</span>
+<span class="nb">print</span> <span class="s1">&#39;Finished...&#39;</span>
 </pre></div>
 </div>
 <img alt="../../../_images/gif_animation.gif" src="../../../_images/gif_animation.gif" />
@@ -186,7 +183,7 @@ functions.</p>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -208,14 +205,14 @@ functions.</p>
         <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
         <li><a href="../../../docs/index.html">docs</a>|&nbsp;</li>
 
-          <li><a href="../../index.html" >Examples</a> &raquo;</li>
-          <li><a href="../index.html" >MeteoInfoLab</a> &raquo;</li>
-          <li><a href="../plot_types.html" >Plot types</a> &raquo;</li> 
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Examples</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../plot_types.html" >Plot types</a> &#187;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2010-2017, Yaqiang Wang.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2018, Yaqiang Wang.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
   </body>
 </html>

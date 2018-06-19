@@ -1,31 +1,29 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>QR decomposition &mdash; MeteoInfo 1.4.4 documentation</title>
-    
+    <title>QR decomposition &#8212; MeteoInfo 1.4.8 documentation</title>
     <link rel="stylesheet" href="../../../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../../',
-        VERSION:     '1.4.4',
+        VERSION:     '1.4.8',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="MeteoInfo 1.4.4 documentation" href="../../../../index.html" />
-    <link rel="up" title="mipylib.numeric.linalg" href="../linalg.html" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="SVD decomposition" href="svd.html" />
     <link rel="prev" title="LU decomposition" href="lu.html" /> 
   </head>
@@ -34,7 +32,7 @@
 <div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
 <a href="../../../../index.html"><img src="../../../../_static/logo.jpg" border="0"/></a></div>
 
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -56,15 +54,15 @@
         <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
         <li><a href="../../../index.html">docs</a>|&nbsp;</li>
 
-          <li><a href="../../../index.html" >Documentation</a> &raquo;</li>
-          <li><a href="../../index.html" >MeteoInfoLab</a> &raquo;</li>
-          <li><a href="../../api.html" >The MeteoInfoLab API</a> &raquo;</li>
-          <li><a href="../../numeric.html" >Numeric package</a> &raquo;</li>
-          <li><a href="../linalg.html" accesskey="U">mipylib.numeric.linalg</a> &raquo;</li> 
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../../api.html" >The MeteoInfoLab API</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../../numeric.html" >Numeric package</a> &#187;</li>
+          <li class="nav-item nav-item-5"><a href="../linalg.html" accesskey="U">mipylib.numeric.linalg</a> &#187;</li> 
       </ul>
     </div>
 
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="lu.html"
@@ -72,22 +70,21 @@
   <h4>Next topic</h4>
   <p class="topless"><a href="svd.html"
                         title="next chapter">SVD decomposition</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="../../../../_sources/docs/meteoinfolab/numeric/linalg/qr.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../_sources/docs/meteoinfolab/numeric/linalg/qr.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../../../../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -96,37 +93,37 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="qr-decomposition">
 <span id="docs-meteoinfolab-numeric-linalg-qr"></span><h1>QR decomposition<a class="headerlink" href="#qr-decomposition" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="numeric.linalg.qr">
-<tt class="descclassname">numeric.linalg.</tt><tt class="descname">qr</tt><big>(</big><em>a</em><big>)</big><a class="headerlink" href="#numeric.linalg.qr" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">numeric.linalg.</code><code class="descname">qr</code><span class="sig-paren">(</span><em>a</em><span class="sig-paren">)</span><a class="headerlink" href="#numeric.linalg.qr" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute QR decomposition of a matrix.</p>
-<p>Calculate the decomposition <tt class="docutils literal"><span class="pre">A</span> <span class="pre">=</span> <span class="pre">Q</span> <span class="pre">R</span></tt> where Q is unitary/orthogonal and R upper triangular.</p>
-<p><tt class="docutils literal"><span class="pre">Parameters</span></tt></p>
+<p>Calculate the decomposition <code class="docutils literal"><span class="pre">A</span> <span class="pre">=</span> <span class="pre">Q</span> <span class="pre">R</span></code> where Q is unitary/orthogonal and R upper triangular.</p>
+<p><code class="docutils literal"><span class="pre">Parameters</span></code></p>
 <dl class="docutils">
 <dt>a <span class="classifier-delimiter">:</span> <span class="classifier">(M, N) array_like</span></dt>
 <dd>Matrix to be decomposed</dd>
 </dl>
-<p><tt class="docutils literal"><span class="pre">Returns</span></tt></p>
+<p><code class="docutils literal"><span class="pre">Returns</span></code></p>
 <dl class="docutils">
 <dt>Q <span class="classifier-delimiter">:</span> <span class="classifier">float or complex ndarray</span></dt>
-<dd>Of shape (M, M), or (M, K) for <tt class="docutils literal"><span class="pre">mode='economic'</span></tt>.  Not returned
-if <tt class="docutils literal"><span class="pre">mode='r'</span></tt>.</dd>
+<dd>Of shape (M, M), or (M, K) for <code class="docutils literal"><span class="pre">mode='economic'</span></code>.  Not returned
+if <code class="docutils literal"><span class="pre">mode='r'</span></code>.</dd>
 <dt>R <span class="classifier-delimiter">:</span> <span class="classifier">float or complex ndarray</span></dt>
-<dd>Of shape (M, N), or (K, N) for <tt class="docutils literal"><span class="pre">mode='economic'</span></tt>.  <tt class="docutils literal"><span class="pre">K</span> <span class="pre">=</span> <span class="pre">min(M,</span> <span class="pre">N)</span></tt>.</dd>
+<dd>Of shape (M, N), or (K, N) for <code class="docutils literal"><span class="pre">mode='economic'</span></code>.  <code class="docutils literal"><span class="pre">K</span> <span class="pre">=</span> <span class="pre">min(M,</span> <span class="pre">N)</span></code>.</dd>
 </dl>
 <p>Examples:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">a</span> <span class="o">=</span> <span class="n">array</span><span class="p">([[</span><span class="mi">12</span><span class="p">,</span> <span class="o">-</span><span class="mi">51</span><span class="p">,</span>   <span class="mi">4</span><span class="p">],[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">167</span><span class="p">,</span> <span class="o">-</span><span class="mi">68</span><span class="p">],[</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span>  <span class="mi">24</span><span class="p">,</span> <span class="o">-</span><span class="mi">41</span><span class="p">]])</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">array</span><span class="p">([[</span><span class="mi">12</span><span class="p">,</span> <span class="o">-</span><span class="mi">51</span><span class="p">,</span>   <span class="mi">4</span><span class="p">],[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">167</span><span class="p">,</span> <span class="o">-</span><span class="mi">68</span><span class="p">],[</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span>  <span class="mi">24</span><span class="p">,</span> <span class="o">-</span><span class="mi">41</span><span class="p">]])</span>
 <span class="n">q</span><span class="p">,</span><span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">qr</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="k">print</span> <span class="n">q</span>
-<span class="k">print</span> <span class="n">r</span>
+<span class="nb">print</span> <span class="n">q</span>
+<span class="nb">print</span> <span class="n">r</span>
 </pre></div>
 </div>
 <p>Result:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">run</span> <span class="n">script</span><span class="o">...</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">run</span> <span class="n">script</span><span class="o">...</span>
 <span class="go">array([[-0.857142857142857, 0.3942857142857143, -0.3314285714285714]</span>
 <span class="go">      [-0.42857142857142855, -0.9028571428571428, 0.03428571428571431]</span>
 <span class="go">      [0.2857142857142857, -0.17142857142857143, -0.9428571428571428]])</span>
@@ -145,7 +142,7 @@ if <tt class="docutils literal"><span class="pre">mode='r'</span></tt>.</dd>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -167,16 +164,16 @@ if <tt class="docutils literal"><span class="pre">mode='r'</span></tt>.</dd>
         <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
         <li><a href="../../../index.html">docs</a>|&nbsp;</li>
 
-          <li><a href="../../../index.html" >Documentation</a> &raquo;</li>
-          <li><a href="../../index.html" >MeteoInfoLab</a> &raquo;</li>
-          <li><a href="../../api.html" >The MeteoInfoLab API</a> &raquo;</li>
-          <li><a href="../../numeric.html" >Numeric package</a> &raquo;</li>
-          <li><a href="../linalg.html" >mipylib.numeric.linalg</a> &raquo;</li> 
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../../api.html" >The MeteoInfoLab API</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../../numeric.html" >Numeric package</a> &#187;</li>
+          <li class="nav-item nav-item-5"><a href="../linalg.html" >mipylib.numeric.linalg</a> &#187;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2010-2017, Yaqiang Wang.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2018, Yaqiang Wang.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
   </body>
 </html>

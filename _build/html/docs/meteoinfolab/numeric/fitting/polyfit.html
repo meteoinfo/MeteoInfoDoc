@@ -1,40 +1,38 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>polyfit &mdash; MeteoInfo 1.4.4 documentation</title>
-    
+    <title>polyfit &#8212; MeteoInfo 1.4.8 documentation</title>
     <link rel="stylesheet" href="../../../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../../',
-        VERSION:     '1.4.4',
+        VERSION:     '1.4.8',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="MeteoInfo 1.4.4 documentation" href="../../../../index.html" />
-    <link rel="up" title="mipylib.numeric.fitting" href="../fitting.html" />
-    <link rel="next" title="polyval" href="polyval.html" />
-    <link rel="prev" title="mipylib.numeric.fitting" href="../fitting.html" /> 
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="powerfit" href="powerfit.html" />
+    <link rel="prev" title="RectBivariateSpline" href="../interpolate/RectBivariateSpline.html" /> 
   </head>
   <body>
 
 <div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
 <a href="../../../../index.html"><img src="../../../../_static/logo.jpg" border="0"/></a></div>
 
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -44,10 +42,10 @@
           <a href="../../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="polyval.html" title="polyval"
+          <a href="powerfit.html" title="powerfit"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="../fitting.html" title="mipylib.numeric.fitting"
+          <a href="../interpolate/RectBivariateSpline.html" title="RectBivariateSpline"
              accesskey="P">previous</a> |</li>
         <li><a href="../../../../index.html">home</a>|&nbsp;</li>
         <li><a href="../../../../products/index.html">products</a>|&nbsp;</li>
@@ -56,38 +54,35 @@
         <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
         <li><a href="../../../index.html">docs</a>|&nbsp;</li>
 
-          <li><a href="../../../index.html" >Documentation</a> &raquo;</li>
-          <li><a href="../../index.html" >MeteoInfoLab</a> &raquo;</li>
-          <li><a href="../../api.html" >The MeteoInfoLab API</a> &raquo;</li>
-          <li><a href="../../numeric.html" >Numeric package</a> &raquo;</li>
-          <li><a href="../fitting.html" accesskey="U">mipylib.numeric.fitting</a> &raquo;</li> 
+          <li class="nav-item nav-item-1"><a href="../../../../examples/index.html" >Examples</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../../../examples/meteoinfolab/index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../../../../examples/meteoinfolab/math.html" accesskey="U">Math</a> &#187;</li> 
       </ul>
     </div>
 
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="../fitting.html"
-                        title="previous chapter">mipylib.numeric.fitting</a></p>
+  <p class="topless"><a href="../interpolate/RectBivariateSpline.html"
+                        title="previous chapter">RectBivariateSpline</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="polyval.html"
-                        title="next chapter">polyval</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="../../../../_sources/docs/meteoinfolab/numeric/fitting/polyfit.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+  <p class="topless"><a href="powerfit.html"
+                        title="next chapter">powerfit</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../_sources/docs/meteoinfolab/numeric/fitting/polyfit.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../../../../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -96,23 +91,23 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="polyfit">
 <span id="docs-meteoinfolab-numeric-fitting-polyfit"></span><h1>polyfit<a class="headerlink" href="#polyfit" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="numeric.fitting.polyfit">
-<tt class="descclassname">numeric.fitting.</tt><tt class="descname">polyfit</tt><big>(</big><em>x</em>, <em>y</em>, <em>degree</em>, <em>func=False</em><big>)</big><a class="headerlink" href="#numeric.fitting.polyfit" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">numeric.fitting.</code><code class="descname">polyfit</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>degree</em>, <em>func=False</em><span class="sig-paren">)</span><a class="headerlink" href="#numeric.fitting.polyfit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Polynomail fitting.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>x</strong> &#8211; (<em>array_like</em>) x data array.</li>
-<li><strong>y</strong> &#8211; (<em>array_like</em>) y data array.</li>
-<li><strong>degree</strong> &#8211; (<em>int</em>) Degree of the fitting polynomial.</li>
-<li><strong>func</strong> &#8211; (<em>boolean</em>) Return fit function (for predict function) or not. Default is <tt class="docutils literal"><span class="pre">False</span></tt>.</li>
+<li><strong>x</strong> – (<em>array_like</em>) x data array.</li>
+<li><strong>y</strong> – (<em>array_like</em>) y data array.</li>
+<li><strong>degree</strong> – (<em>int</em>) Degree of the fitting polynomial.</li>
+<li><strong>func</strong> – (<em>boolean</em>) Return fit function (for predict function) or not. Default is <code class="docutils literal"><span class="pre">False</span></code>.</li>
 </ul>
 </td>
 </tr>
@@ -122,28 +117,28 @@
 </tbody>
 </table>
 <p>Examples:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">mipylib.numeric</span> <span class="kn">import</span> <span class="n">fitting</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mipylib.numeric</span> <span class="k">import</span> <span class="n">fitting</span>
 
 <span class="n">x</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="o">*</span><span class="n">pi</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
-<span class="c">#Plot data points</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s">&#39;ro&#39;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1">#Plot data points</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;ro&#39;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
-<span class="c">#Use polyfit to fit a 7th-degree polynomial to the points</span>
+<span class="c1">#Use polyfit to fit a 7th-degree polynomial to the points</span>
 <span class="n">r</span> <span class="o">=</span> <span class="n">fitting</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
 
-<span class="c">#Plot fitting line</span>
+<span class="c1">#Plot fitting line</span>
 <span class="n">xx</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="o">*</span><span class="n">pi</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 <span class="n">p</span> <span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">yy</span> <span class="o">=</span> <span class="n">fitting</span><span class="o">.</span><span class="n">polyval</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">xx</span><span class="p">)</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="s">&#39;-b&#39;</span><span class="p">)</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;Polynomial fitting example&#39;</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="s1">&#39;-b&#39;</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Polynomial fitting example&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
 
-<img alt="../../../../_images/mi_1.4.1_lab_polyfit1.png" src="../../../../_images/mi_1.4.1_lab_polyfit1.png" />
+<img alt="../../../../_images/mi_1.4.1_lab_polyfit.png" src="../../../../_images/mi_1.4.1_lab_polyfit.png" />
 </div>
 
 
@@ -152,7 +147,7 @@
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -162,10 +157,10 @@
           <a href="../../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="polyval.html" title="polyval"
+          <a href="powerfit.html" title="powerfit"
              >next</a> |</li>
         <li class="right" >
-          <a href="../fitting.html" title="mipylib.numeric.fitting"
+          <a href="../interpolate/RectBivariateSpline.html" title="RectBivariateSpline"
              >previous</a> |</li>
         <li><a href="../../../../index.html">home</a>|&nbsp;</li>
         <li><a href="../../../../products/index.html">products</a>|&nbsp;</li>
@@ -174,16 +169,14 @@
         <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
         <li><a href="../../../index.html">docs</a>|&nbsp;</li>
 
-          <li><a href="../../../index.html" >Documentation</a> &raquo;</li>
-          <li><a href="../../index.html" >MeteoInfoLab</a> &raquo;</li>
-          <li><a href="../../api.html" >The MeteoInfoLab API</a> &raquo;</li>
-          <li><a href="../../numeric.html" >Numeric package</a> &raquo;</li>
-          <li><a href="../fitting.html" >mipylib.numeric.fitting</a> &raquo;</li> 
+          <li class="nav-item nav-item-1"><a href="../../../../examples/index.html" >Examples</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../../../examples/meteoinfolab/index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../../../../examples/meteoinfolab/math.html" >Math</a> &#187;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2010-2017, Yaqiang Wang.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2018, Yaqiang Wang.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
   </body>
 </html>

@@ -1,31 +1,29 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>K index &mdash; MeteoInfo 1.4.4 documentation</title>
-    
+    <title>K index &#8212; MeteoInfo 1.4.8 documentation</title>
     <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.4.4',
+        VERSION:     '1.4.8',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="MeteoInfo 1.4.4 documentation" href="../../../index.html" />
-    <link rel="up" title="Meteorological analysis" href="../meteo_analysis.html" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Moisture potential vorticity" href="moisture_potential_vorticity.html" />
     <link rel="prev" title="Average data along x/y axis of a rectangle" href="ave_rect.html" /> 
   </head>
@@ -34,7 +32,7 @@
 <div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
 <a href="../../../index.html"><img src="../../../_static/logo.jpg" border="0"/></a></div>
 
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -56,13 +54,13 @@
         <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
         <li><a href="../../../docs/index.html">docs</a>|&nbsp;</li>
 
-          <li><a href="../../index.html" >Examples</a> &raquo;</li>
-          <li><a href="../index.html" >MeteoInfoLab</a> &raquo;</li>
-          <li><a href="../meteo_analysis.html" accesskey="U">Meteorological analysis</a> &raquo;</li> 
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Examples</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../meteo_analysis.html" accesskey="U">Meteorological analysis</a> &#187;</li> 
       </ul>
     </div>
 
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="ave_rect.html"
@@ -70,22 +68,21 @@
   <h4>Next topic</h4>
   <p class="topless"><a href="moisture_potential_vorticity.html"
                         title="next chapter">Moisture potential vorticity</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="../../../_sources/examples/meteoinfolab/meteo_analysis/k_index.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/examples/meteoinfolab/meteo_analysis/k_index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../../../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -94,35 +91,35 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="k-index">
 <span id="examples-meteoinfolab-meteo-analysis-k-index"></span><h1>K index<a class="headerlink" href="#k-index" title="Permalink to this headline">¶</a></h1>
 <p>Calculate k index from FNL data.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c">#Add file</span>
-<span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="s">&#39;D:/Temp/grib/fnl_20110416_00_00&#39;</span><span class="p">)</span>
-<span class="c">#Calculate K index</span>
-<span class="c">#850hPa</span>
-<span class="n">T850</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;Temperature_isobaric&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span><span class="s">&#39;85000.0&#39;</span><span class="p">,</span><span class="s">&#39;10:35&#39;</span><span class="p">,</span><span class="s">&#39;90:125&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="mf">273.16</span>
-<span class="n">rh</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;Relative_humidity_isobaric&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span><span class="s">&#39;85000.0&#39;</span><span class="p">,</span><span class="s">&#39;10:35&#39;</span><span class="p">,</span><span class="s">&#39;90:125&#39;</span><span class="p">]</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1">#Add file</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="s1">&#39;D:/Temp/grib/fnl_20110416_00_00&#39;</span><span class="p">)</span>
+<span class="c1">#Calculate K index</span>
+<span class="c1">#850hPa</span>
+<span class="n">T850</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;Temperature_isobaric&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;85000.0&#39;</span><span class="p">,</span><span class="s1">&#39;10:35&#39;</span><span class="p">,</span><span class="s1">&#39;90:125&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="mf">273.16</span>
+<span class="n">rh</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;Relative_humidity_isobaric&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;85000.0&#39;</span><span class="p">,</span><span class="s1">&#39;10:35&#39;</span><span class="p">,</span><span class="s1">&#39;90:125&#39;</span><span class="p">]</span>
 <span class="n">Td850</span> <span class="o">=</span> <span class="n">T850</span><span class="o">-</span><span class="p">((</span><span class="mf">14.55</span><span class="o">+</span><span class="mf">0.114</span><span class="o">*</span><span class="n">T850</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mf">0.01</span><span class="o">*</span><span class="n">rh</span><span class="p">)</span> <span class="o">+</span> <span class="nb">pow</span><span class="p">((</span><span class="mf">2.5</span><span class="o">+</span><span class="mf">0.007</span><span class="o">*</span><span class="n">T850</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mf">0.01</span><span class="o">*</span><span class="n">rh</span><span class="p">),</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mf">15.9</span><span class="o">+</span><span class="mf">0.117</span><span class="o">*</span><span class="n">T850</span><span class="p">)</span><span class="o">*</span><span class="nb">pow</span><span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="mf">0.01</span><span class="o">*</span><span class="n">rh</span><span class="p">),</span><span class="mi">14</span><span class="p">))</span>
-<span class="c">#700hPa</span>
-<span class="n">T700</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;Temperature_isobaric&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span><span class="s">&#39;70000.0&#39;</span><span class="p">,</span><span class="s">&#39;10:35&#39;</span><span class="p">,</span><span class="s">&#39;90:125&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="mf">273.16</span>
-<span class="n">rh</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;Relative_humidity_isobaric&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span><span class="s">&#39;70000.0&#39;</span><span class="p">,</span><span class="s">&#39;10:35&#39;</span><span class="p">,</span><span class="s">&#39;90:125&#39;</span><span class="p">]</span>
+<span class="c1">#700hPa</span>
+<span class="n">T700</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;Temperature_isobaric&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;70000.0&#39;</span><span class="p">,</span><span class="s1">&#39;10:35&#39;</span><span class="p">,</span><span class="s1">&#39;90:125&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="mf">273.16</span>
+<span class="n">rh</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;Relative_humidity_isobaric&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;70000.0&#39;</span><span class="p">,</span><span class="s1">&#39;10:35&#39;</span><span class="p">,</span><span class="s1">&#39;90:125&#39;</span><span class="p">]</span>
 <span class="n">Td700</span> <span class="o">=</span> <span class="n">T700</span><span class="o">-</span><span class="p">((</span><span class="mf">14.55</span><span class="o">+</span><span class="mf">0.114</span><span class="o">*</span><span class="n">T700</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mf">0.01</span><span class="o">*</span><span class="n">rh</span><span class="p">)</span> <span class="o">+</span> <span class="nb">pow</span><span class="p">((</span><span class="mf">2.5</span><span class="o">+</span><span class="mf">0.007</span><span class="o">*</span><span class="n">T700</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mf">0.01</span><span class="o">*</span><span class="n">rh</span><span class="p">),</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mf">15.9</span><span class="o">+</span><span class="mf">0.117</span><span class="o">*</span><span class="n">T700</span><span class="p">)</span><span class="o">*</span><span class="nb">pow</span><span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="mf">0.01</span><span class="o">*</span><span class="n">rh</span><span class="p">),</span><span class="mi">14</span><span class="p">))</span>
-<span class="c">#500hPa</span>
-<span class="n">T500</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;Temperature_isobaric&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,[</span><span class="mf">50000.0</span><span class="p">],[</span><span class="mi">10</span><span class="p">,</span><span class="mi">35</span><span class="p">],[</span><span class="mi">90</span><span class="p">,</span><span class="mi">125</span><span class="p">]]</span> <span class="o">-</span> <span class="mf">273.16</span>
+<span class="c1">#500hPa</span>
+<span class="n">T500</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;Temperature_isobaric&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,[</span><span class="mf">50000.0</span><span class="p">],[</span><span class="mi">10</span><span class="p">,</span><span class="mi">35</span><span class="p">],[</span><span class="mi">90</span><span class="p">,</span><span class="mi">125</span><span class="p">]]</span> <span class="o">-</span> <span class="mf">273.16</span>
 <span class="n">K</span> <span class="o">=</span> <span class="n">T850</span><span class="o">-</span><span class="n">T500</span><span class="o">+</span><span class="n">Td850</span><span class="o">-</span><span class="p">(</span><span class="n">T700</span><span class="o">-</span><span class="n">Td700</span><span class="p">)</span>
-<span class="c">#Plot</span>
+<span class="c1">#Plot</span>
 <span class="n">axesm</span><span class="p">()</span>
-<span class="n">lworld</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="s">&#39;D:/Temp/Map/country1.shp&#39;</span><span class="p">)</span>
-<span class="n">geoshow</span><span class="p">(</span><span class="n">lworld</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">lworld</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="s1">&#39;D:/Temp/Map/country1.shp&#39;</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="n">lworld</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
 <span class="n">levs</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">40</span><span class="p">,</span><span class="mi">36</span><span class="p">,</span><span class="mf">2.5</span><span class="p">)</span>
 <span class="n">layer</span> <span class="o">=</span> <span class="n">contourm</span><span class="p">(</span><span class="n">K</span><span class="p">,</span> <span class="n">levs</span><span class="p">)</span>
 <span class="n">clabel</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span>
 <span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span>
 <span class="n">t</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">gettime</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;K index (&#39;</span> <span class="o">+</span> <span class="n">t</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">&#39;%Y-%m-</span><span class="si">%d</span><span class="s"> %H:00&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s">&#39;)&#39;</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;K index (&#39;</span> <span class="o">+</span> <span class="n">t</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1"> %H:00&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <img alt="../../../_images/k_index.png" src="../../../_images/k_index.png" />
@@ -134,7 +131,7 @@
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -156,14 +153,14 @@
         <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
         <li><a href="../../../docs/index.html">docs</a>|&nbsp;</li>
 
-          <li><a href="../../index.html" >Examples</a> &raquo;</li>
-          <li><a href="../index.html" >MeteoInfoLab</a> &raquo;</li>
-          <li><a href="../meteo_analysis.html" >Meteorological analysis</a> &raquo;</li> 
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Examples</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../meteo_analysis.html" >Meteorological analysis</a> &#187;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2010-2017, Yaqiang Wang.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2018, Yaqiang Wang.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
   </body>
 </html>

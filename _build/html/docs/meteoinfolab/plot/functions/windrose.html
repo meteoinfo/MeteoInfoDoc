@@ -1,31 +1,29 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>windrose &mdash; MeteoInfo 1.4.4 documentation</title>
-    
+    <title>windrose &#8212; MeteoInfo 1.4.8 documentation</title>
     <link rel="stylesheet" href="../../../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../../',
-        VERSION:     '1.4.4',
+        VERSION:     '1.4.8',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="MeteoInfo 1.4.4 documentation" href="../../../../index.html" />
-    <link rel="up" title="mipylib.plotlib.miplot" href="../miplot.html" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="xlabel" href="xlabel.html" />
     <link rel="prev" title="webmap" href="webmap.html" /> 
   </head>
@@ -34,7 +32,7 @@
 <div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
 <a href="../../../../index.html"><img src="../../../../_static/logo.jpg" border="0"/></a></div>
 
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -56,15 +54,15 @@
         <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
         <li><a href="../../../index.html">docs</a>|&nbsp;</li>
 
-          <li><a href="../../../index.html" >Documentation</a> &raquo;</li>
-          <li><a href="../../index.html" >MeteoInfoLab</a> &raquo;</li>
-          <li><a href="../../api.html" >The MeteoInfoLab API</a> &raquo;</li>
-          <li><a href="../../plotlib.html" >Plotlib package</a> &raquo;</li>
-          <li><a href="../miplot.html" accesskey="U">mipylib.plotlib.miplot</a> &raquo;</li> 
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../../api.html" >The MeteoInfoLab API</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../../plotlib.html" >Plotlib package</a> &#187;</li>
+          <li class="nav-item nav-item-5"><a href="../miplot.html" accesskey="U">mipylib.plotlib.miplot</a> &#187;</li> 
       </ul>
     </div>
 
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="webmap.html"
@@ -72,22 +70,21 @@
   <h4>Next topic</h4>
   <p class="topless"><a href="xlabel.html"
                         title="next chapter">xlabel</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="../../../../_sources/docs/meteoinfolab/plot/functions/windrose.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../_sources/docs/meteoinfolab/plot/functions/windrose.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../../../../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -96,32 +93,32 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="windrose">
 <span id="docs-meteoinfolab-plot-windrose"></span><h1>windrose<a class="headerlink" href="#windrose" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="mipylib.plotlib.miplot.windrose">
-<tt class="descclassname">mipylib.plotlib.miplot.</tt><tt class="descname">windrose</tt><big>(</big><em>wd</em>, <em>ws</em>, <em>nwdbins=16</em>, <em>wsbins=None</em>, <em>degree=True</em>, <em>colors=None</em>, <em>cmap='matlab_jet'</em>, <em>alpha=0.7</em>, <em>rmax=None</em>, <em>rtickloc=None</em>, <em>rticks=None</em>, <em>rlabelpos=60</em>, <em>xticks=None</em><big>)</big><a class="headerlink" href="#mipylib.plotlib.miplot.windrose" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">mipylib.plotlib.miplot.</code><code class="descname">windrose</code><span class="sig-paren">(</span><em>wd</em>, <em>ws</em>, <em>nwdbins=16</em>, <em>wsbins=None</em>, <em>degree=True</em>, <em>colors=None</em>, <em>cmap='matlab_jet'</em>, <em>alpha=0.7</em>, <em>rmax=None</em>, <em>rtickloc=None</em>, <em>rticks=None</em>, <em>rlabelpos=60</em>, <em>xticks=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mipylib.plotlib.miplot.windrose" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot windrose chart.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>wd</strong> &#8211; (<em>array_like</em>) Wind direction.</li>
-<li><strong>ws</strong> &#8211; (<em>array_like</em>) Wind speed.</li>
-<li><strong>nwdbins</strong> &#8211; (<em>int</em>) Number of wind direction bins [4 | 8 | 16].</li>
-<li><strong>wsbins</strong> &#8211; (<em>array_like</em>) Wind speed bins.</li>
-<li><strong>degree</strong> &#8211; (<em>boolean</em>) The unit of wind direction is degree or radians.</li>
-<li><strong>colors</strong> &#8211; (<em>color list</em>) The colors.</li>
-<li><strong>cmap</strong> &#8211; (<em>string</em>) Color map.</li>
-<li><strong>alpha</strong> &#8211; (<em>float</em>) Color alpha (0 - 1).</li>
-<li><strong>rmax</strong> &#8211; (<em>float</em>) Radial maximum value.</li>
-<li><strong>rtickloc</strong> &#8211; (<em>list of float</em>) Radial tick locations.</li>
-<li><strong>rticks</strong> &#8211; (<em>list of string</em>) Radial ticks.</li>
-<li><strong>rlabelpos</strong> &#8211; (<em>float</em>) Radial label position in degree.</li>
-<li><strong>xticks</strong> &#8211; (<em>list of string</em>) X ticks.</li>
+<li><strong>wd</strong> – (<em>array_like</em>) Wind direction.</li>
+<li><strong>ws</strong> – (<em>array_like</em>) Wind speed.</li>
+<li><strong>nwdbins</strong> – (<em>int</em>) Number of wind direction bins [4 | 8 | 16].</li>
+<li><strong>wsbins</strong> – (<em>array_like</em>) Wind speed bins.</li>
+<li><strong>degree</strong> – (<em>boolean</em>) The unit of wind direction is degree or radians.</li>
+<li><strong>colors</strong> – (<em>color list</em>) The colors.</li>
+<li><strong>cmap</strong> – (<em>string</em>) Color map.</li>
+<li><strong>alpha</strong> – (<em>float</em>) Color alpha (0 - 1).</li>
+<li><strong>rmax</strong> – (<em>float</em>) Radial maximum value.</li>
+<li><strong>rtickloc</strong> – (<em>list of float</em>) Radial tick locations.</li>
+<li><strong>rticks</strong> – (<em>list of string</em>) Radial ticks.</li>
+<li><strong>rlabelpos</strong> – (<em>float</em>) Radial label position in degree.</li>
+<li><strong>xticks</strong> – (<em>list of string</em>) X ticks.</li>
 </ul>
 </td>
 </tr>
@@ -131,7 +128,7 @@
 </tbody>
 </table>
 <p>Examples:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">fn</span> <span class="o">=</span> <span class="s">r&#39;D:\Temp\ascii\windrose.txt&#39;</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;D:\Temp\ascii\windrose.txt&#39;</span>
 <span class="n">ncol</span> <span class="o">=</span> <span class="n">numasciicol</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
 <span class="n">nrow</span> <span class="o">=</span> <span class="n">numasciirow</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
 <span class="n">a</span> <span class="o">=</span> <span class="n">asciiread</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">nrow</span><span class="p">,</span><span class="n">ncol</span><span class="p">))</span>
@@ -140,15 +137,15 @@
 
 <span class="n">n</span> <span class="o">=</span> <span class="mi">16</span>
 <span class="n">wsbins</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">21.1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="n">cols</span> <span class="o">=</span> <span class="n">makecolors</span><span class="p">([</span><span class="s">&#39;k&#39;</span><span class="p">,</span><span class="s">&#39;y&#39;</span><span class="p">,</span><span class="s">&#39;r&#39;</span><span class="p">,</span><span class="s">&#39;b&#39;</span><span class="p">,</span><span class="s">&#39;g&#39;</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">cols</span> <span class="o">=</span> <span class="n">makecolors</span><span class="p">([</span><span class="s1">&#39;k&#39;</span><span class="p">,</span><span class="s1">&#39;y&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;g&#39;</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
 <span class="n">rtickloc</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.05</span><span class="p">,</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.15</span><span class="p">,</span><span class="mf">0.18</span><span class="p">]</span>
 <span class="n">ax</span><span class="p">,</span> <span class="n">bars</span> <span class="o">=</span> <span class="n">windrose</span><span class="p">(</span><span class="n">wd</span><span class="p">,</span> <span class="n">ws</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">wsbins</span><span class="p">,</span> <span class="n">rmax</span><span class="o">=</span><span class="mf">0.18</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="n">cols</span><span class="p">,</span> <span class="n">rtickloc</span><span class="o">=</span><span class="n">rtickloc</span><span class="p">)</span>
-<span class="n">colorbar</span><span class="p">(</span><span class="n">bars</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">vmintick</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">vmaxtick</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">xshift</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> \
-    <span class="n">label</span><span class="o">=</span><span class="s">&#39;m/s&#39;</span><span class="p">,</span> <span class="n">labelloc</span><span class="o">=</span><span class="s">&#39;bottom&#39;</span><span class="p">)</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;Windrose example&#39;</span><span class="p">)</span>
+<span class="n">colorbar</span><span class="p">(</span><span class="n">bars</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">vmintick</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">vmaxtick</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">xshift</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> \
+    <span class="n">label</span><span class="o">=</span><span class="s1">&#39;m/s&#39;</span><span class="p">,</span> <span class="n">labelloc</span><span class="o">=</span><span class="s1">&#39;bottom&#39;</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Windrose example&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<img alt="../../../../_images/mi_1.4.2_lab_windrose2.png" src="../../../../_images/mi_1.4.2_lab_windrose2.png" />
+<img alt="../../../../_images/mi_1.4.2_lab_windrose.png" src="../../../../_images/mi_1.4.2_lab_windrose.png" />
 </dd></dl>
 
 </div>
@@ -159,7 +156,7 @@
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -181,16 +178,16 @@
         <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
         <li><a href="../../../index.html">docs</a>|&nbsp;</li>
 
-          <li><a href="../../../index.html" >Documentation</a> &raquo;</li>
-          <li><a href="../../index.html" >MeteoInfoLab</a> &raquo;</li>
-          <li><a href="../../api.html" >The MeteoInfoLab API</a> &raquo;</li>
-          <li><a href="../../plotlib.html" >Plotlib package</a> &raquo;</li>
-          <li><a href="../miplot.html" >mipylib.plotlib.miplot</a> &raquo;</li> 
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../../api.html" >The MeteoInfoLab API</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../../plotlib.html" >Plotlib package</a> &#187;</li>
+          <li class="nav-item nav-item-5"><a href="../miplot.html" >mipylib.plotlib.miplot</a> &#187;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2010-2017, Yaqiang Wang.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2018, Yaqiang Wang.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
   </body>
 </html>

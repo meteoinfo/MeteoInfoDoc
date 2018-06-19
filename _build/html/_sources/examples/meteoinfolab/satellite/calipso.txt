@@ -30,14 +30,13 @@ LaRC CALIPSO data file.
 
     # Plot
     axesm()
-    lworld = shaperead('D:/Temp/map/country1.shp')
-    geoshow(lworld, edgecolor='k')
+    geoshow('country', edgecolor='k')
     levs = arange(8)
     cols = [(0,0,0),(0,0,255),(255,255,0),(0,255,0),(255,0,0), \
         (200,100,255),(100,50,255),(127,127,127)]
     ls = makesymbolspec('point', levels=levs, colors=cols)
     layer = scatterm(lon, lat, data, size=5, edge=False, symbolspec=ls)
-    colorbar(layer, ticks=['invalid', 'clear', 'cloud', 'aerosol', \
+    colorbar(layer, ticklabels=['invalid', 'clear', 'cloud', 'aerosol', \
         'strato', 'surface', 'subsurf', 'no signal'])
     xlim(-180, 180)
     ylim(-90, 90)
@@ -83,8 +82,8 @@ LaRC CALIPSO data file.
     levs = arange(2)
     cols = ['w','b']
     ls = makesymbolspec('image', levels=levs, colors=cols)
-    layer = imshow(lat, alt, rot90(data, 3), symbolspec=ls)
-    colorbar(layer, ticks=['Others','Cloud'])
+    layer = imshow(rot90(data, 3), symbolspec=ls, extent=[lat[0],lat[-1],alt[0],alt[-1])
+    colorbar(layer, ticklabels=['Others','Cloud'])
     basename = os.path.basename(fn)
     title([basename, 'Feature Type (Bits 1-3) in Feature Classification Flag'])
     xlabel('Latitude (degrees north)')
@@ -127,8 +126,8 @@ Vertical feature types.
     levs = arange(8)
     cols = [(255,255,255),(0,0,255),(51,255,255),(255,153,0),(255,255,0),(0,255,0),(127,127,127),(0,0,0)]
     ls = makesymbolspec('image', levels=levs, colors=cols)
-    layer = imshow(lat, alt, rot90(data, 1), symbolspec=ls)
-    colorbar(layer, ticks=['Invalid', 'Clear Air', 'Cloud', 'Aerosol', 'Strato Feature', 'Surface', 'Subsurface', 'No Signal'])
+    layer = imshow(rot90(data, 1), symbolspec=ls, extent=[lat[0],lat[-1],alt[0],alt[-1])
+    colorbar(layer, ticklabels=['Invalid', 'Clear Air', 'Cloud', 'Aerosol', 'Strato Feature', 'Surface', 'Subsurface', 'No Signal'])
     basename = os.path.basename(fn)
     title([basename, 'Feature Type (Bits 1-3) in Feature Classification Flag'])
     xlabel('Latitude (degrees north)')
@@ -200,8 +199,8 @@ Aerosol types.
     cols = [(204,204,204),(0,0,255),(153,51,0),(0,204,0),(255,241,85),(0,255,255),\
         (102,102,255),(0,0,0)]
     ls = makesymbolspec('image', levels=levs, colors=cols)
-    layer = imshow(lat, alt, atype, symbolspec=ls)
-    colorbar(layer, ticks=['Not Determined','Clean Marine','Dust','Polluted Cont.','Clean Cont.',\
+    layer = imshow(atype, symbolspec=ls, extent=[lat[0],lat[-1],alt[0],alt[-1])
+    colorbar(layer, ticklabels=['Not Determined','Clean Marine','Dust','Polluted Cont.','Clean Cont.',\
         'Polluted Dust','Smoke','Other'])
     basename = os.path.basename(fn)
     title([basename, 'Aerosol types'])

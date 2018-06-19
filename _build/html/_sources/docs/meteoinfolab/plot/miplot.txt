@@ -19,6 +19,7 @@ Functions:
    functions/axis.rst
    functions/axism.rst
    functions/bar.rst
+   functions/barh.rst
    functions/boxplot.rst
    functions/cla.rst
    functions/clear.rst
@@ -31,6 +32,7 @@ Functions:
    functions/contourfm.rst
    functions/figure.rst
    functions/fill_between.rst
+   functions/fill_betweenx.rst
    functions/geoshow.rst
    functions/gifanimation.rst
    functions/gifaddframe.rst

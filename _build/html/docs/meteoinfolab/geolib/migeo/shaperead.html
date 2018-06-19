@@ -1,31 +1,29 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>shaperead &mdash; MeteoInfo 1.4.4 documentation</title>
-    
+    <title>shaperead &#8212; MeteoInfo 1.4.8 documentation</title>
     <link rel="stylesheet" href="../../../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../../',
-        VERSION:     '1.4.4',
+        VERSION:     '1.4.8',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="MeteoInfo 1.4.4 documentation" href="../../../../index.html" />
-    <link rel="up" title="mipylib.geolib.migeo" href="../migeo.html" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="georead" href="georead.html" />
     <link rel="prev" title="mipylib.geolib.migeo" href="../migeo.html" /> 
   </head>
@@ -34,7 +32,7 @@
 <div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
 <a href="../../../../index.html"><img src="../../../../_static/logo.jpg" border="0"/></a></div>
 
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -56,15 +54,15 @@
         <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
         <li><a href="../../../index.html">docs</a>|&nbsp;</li>
 
-          <li><a href="../../../index.html" >Documentation</a> &raquo;</li>
-          <li><a href="../../index.html" >MeteoInfoLab</a> &raquo;</li>
-          <li><a href="../../api.html" >The MeteoInfoLab API</a> &raquo;</li>
-          <li><a href="../../geolib.html" >Geolib package</a> &raquo;</li>
-          <li><a href="../migeo.html" accesskey="U">mipylib.geolib.migeo</a> &raquo;</li> 
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../../api.html" >The MeteoInfoLab API</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../../geolib.html" >Geolib package</a> &#187;</li>
+          <li class="nav-item nav-item-5"><a href="../migeo.html" accesskey="U">mipylib.geolib.migeo</a> &#187;</li> 
       </ul>
     </div>
 
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="../migeo.html"
@@ -72,22 +70,21 @@
   <h4>Next topic</h4>
   <p class="topless"><a href="georead.html"
                         title="next chapter">georead</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="../../../../_sources/docs/meteoinfolab/geolib/migeo/shaperead.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../_sources/docs/meteoinfolab/geolib/migeo/shaperead.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../../../../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -96,46 +93,46 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="shaperead">
 <span id="docs-meteoinfolab-geolib-migeo-shaperead"></span><h1>shaperead<a class="headerlink" href="#shaperead" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="mipylib.geolib.migeo.shaperead">
-<tt class="descclassname">mipylib.geolib.migeo.</tt><tt class="descname">shaperead</tt><big>(</big><em>fn</em><big>)</big><a class="headerlink" href="#mipylib.geolib.migeo.shaperead" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">mipylib.geolib.migeo.</code><code class="descname">shaperead</code><span class="sig-paren">(</span><em>fn</em><span class="sig-paren">)</span><a class="headerlink" href="#mipylib.geolib.migeo.shaperead" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a layer readed from a shape file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>fn</strong> &#8211; (<em>string</em>) The shape file name (.shp).</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>fn</strong> – (<em>string</em>) The shape file name (.shp).</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">(<em>MILayer</em>) The created layer.</td>
 </tr>
 </tbody>
 </table>
 <p>Examples:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c">#Set data folders</span>
-<span class="n">basedir</span> <span class="o">=</span> <span class="s">&#39;D:/MyProgram/Distribution/java/MeteoInfo/MeteoInfo&#39;</span>
-<span class="n">mapdir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">basedir</span><span class="p">,</span> <span class="s">&#39;map&#39;</span><span class="p">)</span>
-<span class="c">#Read shape files</span>
-<span class="n">bou2_layer</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mapdir</span><span class="p">,</span> <span class="s">&#39;bou2_4p.shp&#39;</span><span class="p">))</span>
-<span class="n">bou1_layer</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mapdir</span><span class="p">,</span> <span class="s">&#39;bou1_4l.shp&#39;</span><span class="p">))</span>
-<span class="n">river_layer</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mapdir</span><span class="p">,</span> <span class="s">&#39;rivers.shp&#39;</span><span class="p">))</span>
-<span class="n">city_layer</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mapdir</span><span class="p">,</span> <span class="s">&#39;res1_4m.shp&#39;</span><span class="p">))</span>
-<span class="c">#Plot</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1">#Set data folders</span>
+<span class="n">basedir</span> <span class="o">=</span> <span class="s1">&#39;D:/MyProgram/Distribution/java/MeteoInfo/MeteoInfo&#39;</span>
+<span class="n">mapdir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">basedir</span><span class="p">,</span> <span class="s1">&#39;map&#39;</span><span class="p">)</span>
+<span class="c1">#Read shape files</span>
+<span class="n">bou2_layer</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mapdir</span><span class="p">,</span> <span class="s1">&#39;bou2_4p.shp&#39;</span><span class="p">))</span>
+<span class="n">bou1_layer</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mapdir</span><span class="p">,</span> <span class="s1">&#39;bou1_4l.shp&#39;</span><span class="p">))</span>
+<span class="n">river_layer</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mapdir</span><span class="p">,</span> <span class="s1">&#39;rivers.shp&#39;</span><span class="p">))</span>
+<span class="n">city_layer</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mapdir</span><span class="p">,</span> <span class="s1">&#39;res1_4m.shp&#39;</span><span class="p">))</span>
+<span class="c1">#Plot</span>
 <span class="n">axesm</span><span class="p">()</span>
-<span class="n">geoshow</span><span class="p">(</span><span class="n">bou2_layer</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s">&#39;lightgray&#39;</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="n">bou2_layer</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;lightgray&#39;</span><span class="p">)</span>
 <span class="n">geoshow</span><span class="p">(</span><span class="n">bou1_layer</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">))</span>
-<span class="n">ss</span> <span class="o">=</span> <span class="n">makesymbolspec</span><span class="p">(</span><span class="s">&#39;line&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s">&#39;value&#39;</span><span class="p">:</span><span class="s">&#39;Yangtze&#39;</span><span class="p">,</span> <span class="s">&#39;color&#39;</span><span class="p">:(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">),</span> <span class="s">&#39;size&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span> \
-    <span class="p">{</span><span class="s">&#39;value&#39;</span><span class="p">:</span><span class="s">&#39;Huang He&#39;</span><span class="p">,</span> <span class="s">&#39;color&#39;</span><span class="p">:(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">),</span> <span class="s">&#39;size&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span> <span class="n">field</span><span class="o">=</span><span class="s">&#39;NAME&#39;</span><span class="p">)</span>
+<span class="n">ss</span> <span class="o">=</span> <span class="n">makesymbolspec</span><span class="p">(</span><span class="s1">&#39;line&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span><span class="s1">&#39;Yangtze&#39;</span><span class="p">,</span> <span class="s1">&#39;color&#39;</span><span class="p">:(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">),</span> <span class="s1">&#39;size&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span> \
+    <span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span><span class="s1">&#39;Huang He&#39;</span><span class="p">,</span> <span class="s1">&#39;color&#39;</span><span class="p">:(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">),</span> <span class="s1">&#39;size&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span> <span class="n">field</span><span class="o">=</span><span class="s1">&#39;NAME&#39;</span><span class="p">)</span>
 <span class="n">geoshow</span><span class="p">(</span><span class="n">river_layer</span><span class="p">,</span> <span class="n">symbolspec</span><span class="o">=</span><span class="n">ss</span><span class="p">)</span>
-<span class="n">geoshow</span><span class="p">(</span><span class="n">city_layer</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s">&#39;r&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">labelfield</span><span class="o">=</span><span class="s">&#39;NAME&#39;</span><span class="p">,</span> <span class="n">fontname</span><span class="o">=</span><span class="s">u&#39;楷体&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">yoffset</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="n">city_layer</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">labelfield</span><span class="o">=</span><span class="s1">&#39;NAME&#39;</span><span class="p">,</span> <span class="n">fontname</span><span class="o">=</span><span class="sa">u</span><span class="s1">&#39;楷体&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">yoffset</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
 <span class="n">xlim</span><span class="p">(</span><span class="mi">72</span><span class="p">,</span> <span class="mi">136</span><span class="p">)</span>
 <span class="n">ylim</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">55</span><span class="p">)</span>
 </pre></div>
 </div>
-<img alt="../../../../_images/add_map_layer1.png" src="../../../../_images/add_map_layer1.png" />
+<img alt="../../../../_images/add_map_layer.png" src="../../../../_images/add_map_layer.png" />
 </dd></dl>
 
 </div>
@@ -146,7 +143,7 @@
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -168,16 +165,16 @@
         <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
         <li><a href="../../../index.html">docs</a>|&nbsp;</li>
 
-          <li><a href="../../../index.html" >Documentation</a> &raquo;</li>
-          <li><a href="../../index.html" >MeteoInfoLab</a> &raquo;</li>
-          <li><a href="../../api.html" >The MeteoInfoLab API</a> &raquo;</li>
-          <li><a href="../../geolib.html" >Geolib package</a> &raquo;</li>
-          <li><a href="../migeo.html" >mipylib.geolib.migeo</a> &raquo;</li> 
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../../api.html" >The MeteoInfoLab API</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../../geolib.html" >Geolib package</a> &#187;</li>
+          <li class="nav-item nav-item-5"><a href="../migeo.html" >mipylib.geolib.migeo</a> &#187;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2010-2017, Yaqiang Wang.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2018, Yaqiang Wang.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
   </body>
 </html>

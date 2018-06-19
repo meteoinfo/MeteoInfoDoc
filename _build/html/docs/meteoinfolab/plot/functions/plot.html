@@ -1,31 +1,29 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>plot &mdash; MeteoInfo 1.4.4 documentation</title>
-    
+    <title>plot &#8212; MeteoInfo 1.4.8 documentation</title>
     <link rel="stylesheet" href="../../../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../../',
-        VERSION:     '1.4.4',
+        VERSION:     '1.4.8',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="MeteoInfo 1.4.4 documentation" href="../../../../index.html" />
-    <link rel="up" title="mipylib.plotlib.miplot" href="../miplot.html" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="plotm" href="plotm.html" />
     <link rel="prev" title="pie" href="pie.html" /> 
   </head>
@@ -34,7 +32,7 @@
 <div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
 <a href="../../../../index.html"><img src="../../../../_static/logo.jpg" border="0"/></a></div>
 
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -56,15 +54,15 @@
         <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
         <li><a href="../../../index.html">docs</a>|&nbsp;</li>
 
-          <li><a href="../../../index.html" >Documentation</a> &raquo;</li>
-          <li><a href="../../index.html" >MeteoInfoLab</a> &raquo;</li>
-          <li><a href="../../api.html" >The MeteoInfoLab API</a> &raquo;</li>
-          <li><a href="../../plotlib.html" >Plotlib package</a> &raquo;</li>
-          <li><a href="../miplot.html" accesskey="U">mipylib.plotlib.miplot</a> &raquo;</li> 
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../../api.html" >The MeteoInfoLab API</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../../plotlib.html" >Plotlib package</a> &#187;</li>
+          <li class="nav-item nav-item-5"><a href="../miplot.html" accesskey="U">mipylib.plotlib.miplot</a> &#187;</li> 
       </ul>
     </div>
 
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="pie.html"
@@ -72,22 +70,21 @@
   <h4>Next topic</h4>
   <p class="topless"><a href="plotm.html"
                         title="next chapter">plotm</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="../../../../_sources/docs/meteoinfolab/plot/functions/plot.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../_sources/docs/meteoinfolab/plot/functions/plot.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../../../../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -96,13 +93,13 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="plot">
 <span id="docs-meteoinfolab-funcitons-plot-plot"></span><h1>plot<a class="headerlink" href="#plot" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="mipylib.plotlib.miplot.plot">
-<tt class="descclassname">mipylib.plotlib.miplot.</tt><tt class="descname">plot</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#mipylib.plotlib.miplot.plot" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">mipylib.plotlib.miplot.</code><code class="descname">plot</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mipylib.plotlib.miplot.plot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot lines and/or markers to the axes. <em>args</em> is a variable length argument, allowing
 for multiple <em>x, y</em> pairs with an optional format string.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -110,9 +107,9 @@ for multiple <em>x, y</em> pairs with an optional format string.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>x</strong> &#8211; (<em>array_like</em>) Input x data.</li>
-<li><strong>y</strong> &#8211; (<em>array_like</em>) Input y data.</li>
-<li><strong>style</strong> &#8211; (<em>string</em>) Line style for plot.</li>
+<li><strong>x</strong> – (<em>array_like</em>) Input x data.</li>
+<li><strong>y</strong> – (<em>array_like</em>) Input y data.</li>
+<li><strong>style</strong> – (<em>string</em>) Line style for plot.</li>
 </ul>
 </td>
 </tr>
@@ -134,52 +131,52 @@ for multiple <em>x, y</em> pairs with an optional format string.</p>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>&#8216;-&#8216;</td>
+<tr class="row-even"><td>‘-‘</td>
 <td>solid line style</td>
 </tr>
-<tr class="row-odd"><td>&#8216;&#8211;&#8217;</td>
+<tr class="row-odd"><td>‘–’</td>
 <td>dashed line style</td>
 </tr>
-<tr class="row-even"><td>&#8216;-.&#8217;</td>
+<tr class="row-even"><td>‘-.’</td>
 <td>dash-dot line style</td>
 </tr>
-<tr class="row-odd"><td>&#8216;:&#8217;</td>
+<tr class="row-odd"><td>‘:’</td>
 <td>dotted line style</td>
 </tr>
-<tr class="row-even"><td>&#8216;.&#8217;</td>
+<tr class="row-even"><td>‘.’</td>
 <td>point marker</td>
 </tr>
-<tr class="row-odd"><td>&#8216;,&#8217;</td>
+<tr class="row-odd"><td>‘,’</td>
 <td>pixel marker</td>
 </tr>
-<tr class="row-even"><td>&#8216;o&#8217;</td>
+<tr class="row-even"><td>‘o’</td>
 <td>circle marker</td>
 </tr>
-<tr class="row-odd"><td>&#8216;v&#8217;</td>
+<tr class="row-odd"><td>‘v’</td>
 <td>triangle_down marker</td>
 </tr>
-<tr class="row-even"><td>&#8216;^&#8217;</td>
+<tr class="row-even"><td>‘^’</td>
 <td>triangle_up marker</td>
 </tr>
-<tr class="row-odd"><td>&#8216;&lt;&#8217;</td>
+<tr class="row-odd"><td>‘&lt;’</td>
 <td>triangle_left marker</td>
 </tr>
-<tr class="row-even"><td>&#8216;&gt;&#8217;</td>
+<tr class="row-even"><td>‘&gt;’</td>
 <td>triangle_right marker</td>
 </tr>
-<tr class="row-odd"><td>&#8216;s&#8217;</td>
+<tr class="row-odd"><td>‘s’</td>
 <td>square marker</td>
 </tr>
-<tr class="row-even"><td>&#8216;p&#8217;</td>
+<tr class="row-even"><td>‘p’</td>
 <td>pentagon marker</td>
 </tr>
-<tr class="row-odd"><td>&#8216;*&#8217;</td>
+<tr class="row-odd"><td>‘*’</td>
 <td>star marker</td>
 </tr>
-<tr class="row-even"><td>&#8216;x&#8217;</td>
+<tr class="row-even"><td>‘x’</td>
 <td>x marker</td>
 </tr>
-<tr class="row-odd"><td>&#8216;D&#8217;</td>
+<tr class="row-odd"><td>‘D’</td>
 <td>diamond marker</td>
 </tr>
 </tbody>
@@ -198,52 +195,52 @@ for multiple <em>x, y</em> pairs with an optional format string.</p>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>&#8216;b&#8217;</td>
+<tr class="row-even"><td>‘b’</td>
 <td>blue</td>
 </tr>
-<tr class="row-odd"><td>&#8216;g&#8217;</td>
+<tr class="row-odd"><td>‘g’</td>
 <td>green</td>
 </tr>
-<tr class="row-even"><td>&#8216;r&#8217;</td>
+<tr class="row-even"><td>‘r’</td>
 <td>red</td>
 </tr>
-<tr class="row-odd"><td>&#8216;c&#8217;</td>
+<tr class="row-odd"><td>‘c’</td>
 <td>cyan</td>
 </tr>
-<tr class="row-even"><td>&#8216;m&#8217;</td>
+<tr class="row-even"><td>‘m’</td>
 <td>magenta</td>
 </tr>
-<tr class="row-odd"><td>&#8216;y&#8217;</td>
+<tr class="row-odd"><td>‘y’</td>
 <td>yellow</td>
 </tr>
-<tr class="row-even"><td>&#8216;k&#8217;</td>
+<tr class="row-even"><td>‘k’</td>
 <td>black</td>
 </tr>
 </tbody>
 </table>
 </div></blockquote>
 <p>Examples:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">16</span><span class="p">]</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>    <span class="c"># plot y using x as index array 0..N-1</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">16</span><span class="p">]</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>    <span class="c1"># plot y using x as index array 0..N-1</span>
 </pre></div>
 </div>
 <img alt="../../../../_images/plot_1.png" src="../../../../_images/plot_1.png" />
-<div class="highlight-python"><div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
 <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">16</span><span class="p">]</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>    <span class="c"># plot x and y using default line style and color</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>    <span class="c1"># plot x and y using default line style and color</span>
 </pre></div>
 </div>
 <img alt="../../../../_images/plot_2.png" src="../../../../_images/plot_2.png" />
-<div class="highlight-python"><div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
 <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">16</span><span class="p">]</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s">&#39;b--*&#39;</span><span class="p">)</span>    <span class="c"># plot x and y using blue dash line and star marker style</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;b--*&#39;</span><span class="p">)</span>    <span class="c1"># plot x and y using blue dash line and star marker style</span>
 </pre></div>
 </div>
 <img alt="../../../../_images/plot_3.png" src="../../../../_images/plot_3.png" />
-<div class="highlight-python"><div class="highlight"><pre><span class="n">t</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="s">&#39;r--&#39;</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="s">&#39;bs&#39;</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">t</span><span class="o">**</span><span class="mi">3</span><span class="p">,</span> <span class="s">&#39;g^&#39;</span><span class="p">)</span>
-<span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s">&#39;custom&#39;</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;Multiple lines&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="s1">&#39;r--&#39;</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;bs&#39;</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">t</span><span class="o">**</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;g^&#39;</span><span class="p">)</span>
+<span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;custom&#39;</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Multiple lines&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <img alt="../../../../_images/plot_4.png" src="../../../../_images/plot_4.png" />
@@ -257,7 +254,7 @@ for multiple <em>x, y</em> pairs with an optional format string.</p>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -279,16 +276,16 @@ for multiple <em>x, y</em> pairs with an optional format string.</p>
         <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
         <li><a href="../../../index.html">docs</a>|&nbsp;</li>
 
-          <li><a href="../../../index.html" >Documentation</a> &raquo;</li>
-          <li><a href="../../index.html" >MeteoInfoLab</a> &raquo;</li>
-          <li><a href="../../api.html" >The MeteoInfoLab API</a> &raquo;</li>
-          <li><a href="../../plotlib.html" >Plotlib package</a> &raquo;</li>
-          <li><a href="../miplot.html" >mipylib.plotlib.miplot</a> &raquo;</li> 
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../../api.html" >The MeteoInfoLab API</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../../plotlib.html" >Plotlib package</a> &#187;</li>
+          <li class="nav-item nav-item-5"><a href="../miplot.html" >mipylib.plotlib.miplot</a> &#187;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2010-2017, Yaqiang Wang.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2018, Yaqiang Wang.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
   </body>
 </html>

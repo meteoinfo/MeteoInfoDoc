@@ -1,31 +1,29 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>Add map layer &mdash; MeteoInfo 1.4.4 documentation</title>
-    
+    <title>Add map layer &#8212; MeteoInfo 1.4.8 documentation</title>
     <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.4.4',
+        VERSION:     '1.4.8',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="MeteoInfo 1.4.4 documentation" href="../../../index.html" />
-    <link rel="up" title="Map" href="../map.html" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Map projection" href="projection.html" />
     <link rel="prev" title="Map" href="../map.html" /> 
   </head>
@@ -34,7 +32,7 @@
 <div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
 <a href="../../../index.html"><img src="../../../_static/logo.jpg" border="0"/></a></div>
 
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -56,13 +54,13 @@
         <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
         <li><a href="../../../docs/index.html">docs</a>|&nbsp;</li>
 
-          <li><a href="../../index.html" >Examples</a> &raquo;</li>
-          <li><a href="../index.html" >MeteoInfoLab</a> &raquo;</li>
-          <li><a href="../map.html" accesskey="U">Map</a> &raquo;</li> 
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Examples</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../map.html" accesskey="U">Map</a> &#187;</li> 
       </ul>
     </div>
 
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="../map.html"
@@ -70,22 +68,21 @@
   <h4>Next topic</h4>
   <p class="topless"><a href="projection.html"
                         title="next chapter">Map projection</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="../../../_sources/examples/meteoinfolab/map/add_map_layer.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/examples/meteoinfolab/map/add_map_layer.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../../../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -94,7 +91,7 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="add-map-layer">
 <span id="examples-meteoinfolab-map-add-map-layer"></span><h1>Add map layer<a class="headerlink" href="#add-map-layer" title="Permalink to this headline">¶</a></h1>
@@ -102,35 +99,35 @@
 used to read shape file as a MILayer object with map coordinates and attribution data. The object can be
 added in an Axesm by <strong>geoshow</strong> function. A deault legend was defined when read shape file as a layer
 and it can be changed in <strong>geoshow</strong> function by setting <strong>facecolor</strong>, <strong>edgecolor</strong>, <strong>size</strong> and so on parameters.
-Also a more complex legen can be created using &#8216;makesymbolspec&#8217; function. Following code will create a legend
+Also a more complex legen can be created using ‘makesymbolspec’ function. Following code will create a legend
 with two breaks of Yangtze and Huang He rivers.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">ss</span> <span class="o">=</span> <span class="n">makesymbolspec</span><span class="p">(</span><span class="s">&#39;line&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s">&#39;value&#39;</span><span class="p">:</span><span class="s">&#39;Yangtze&#39;</span><span class="p">,</span> <span class="s">&#39;color&#39;</span><span class="p">:(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">),</span> <span class="s">&#39;size&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span> \
-    <span class="p">{</span><span class="s">&#39;value&#39;</span><span class="p">:</span><span class="s">&#39;Huang He&#39;</span><span class="p">,</span> <span class="s">&#39;color&#39;</span><span class="p">:(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">),</span> <span class="s">&#39;size&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span> <span class="n">field</span><span class="o">=</span><span class="s">&#39;NAME&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ss</span> <span class="o">=</span> <span class="n">makesymbolspec</span><span class="p">(</span><span class="s1">&#39;line&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span><span class="s1">&#39;Yangtze&#39;</span><span class="p">,</span> <span class="s1">&#39;color&#39;</span><span class="p">:(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">),</span> <span class="s1">&#39;size&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span> \
+    <span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span><span class="s1">&#39;Huang He&#39;</span><span class="p">,</span> <span class="s1">&#39;color&#39;</span><span class="p">:(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">),</span> <span class="s1">&#39;size&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span> <span class="n">field</span><span class="o">=</span><span class="s1">&#39;NAME&#39;</span><span class="p">)</span>
 <span class="n">geoshow</span><span class="p">(</span><span class="n">river_layer</span><span class="p">,</span> <span class="n">symbolspec</span><span class="o">=</span><span class="n">ss</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>If a point layer was added, &#8216;labelfield&#8217; and other associated parameters can be used to add labels to points.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c">#Set data folders</span>
-<span class="n">basedir</span> <span class="o">=</span> <span class="s">&#39;D:/MyProgram/Distribution/java/MeteoInfo/MeteoInfo&#39;</span>
-<span class="n">mapdir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">basedir</span><span class="p">,</span> <span class="s">&#39;map&#39;</span><span class="p">)</span>
-<span class="c">#Read shape files</span>
-<span class="n">bou2_layer</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mapdir</span><span class="p">,</span> <span class="s">&#39;bou2_4p.shp&#39;</span><span class="p">))</span>
-<span class="n">bou1_layer</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mapdir</span><span class="p">,</span> <span class="s">&#39;bou1_4l.shp&#39;</span><span class="p">))</span>
-<span class="n">river_layer</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mapdir</span><span class="p">,</span> <span class="s">&#39;rivers.shp&#39;</span><span class="p">))</span>
-<span class="n">city_layer</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mapdir</span><span class="p">,</span> <span class="s">&#39;res1_4m.shp&#39;</span><span class="p">))</span>
-<span class="c">#Plot</span>
+<p>If a point layer was added, ‘labelfield’ and other associated parameters can be used to add labels to points.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1">#Set data folders</span>
+<span class="n">basedir</span> <span class="o">=</span> <span class="s1">&#39;D:/MyProgram/Distribution/java/MeteoInfo/MeteoInfo&#39;</span>
+<span class="n">mapdir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">basedir</span><span class="p">,</span> <span class="s1">&#39;map&#39;</span><span class="p">)</span>
+<span class="c1">#Read shape files</span>
+<span class="n">bou2_layer</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mapdir</span><span class="p">,</span> <span class="s1">&#39;bou2_4p.shp&#39;</span><span class="p">))</span>
+<span class="n">bou1_layer</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mapdir</span><span class="p">,</span> <span class="s1">&#39;bou1_4l.shp&#39;</span><span class="p">))</span>
+<span class="n">river_layer</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mapdir</span><span class="p">,</span> <span class="s1">&#39;rivers.shp&#39;</span><span class="p">))</span>
+<span class="n">city_layer</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mapdir</span><span class="p">,</span> <span class="s1">&#39;res1_4m.shp&#39;</span><span class="p">))</span>
+<span class="c1">#Plot</span>
 <span class="n">axesm</span><span class="p">()</span>
-<span class="n">geoshow</span><span class="p">(</span><span class="n">bou2_layer</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s">&#39;lightgray&#39;</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="n">bou2_layer</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;lightgray&#39;</span><span class="p">)</span>
 <span class="n">geoshow</span><span class="p">(</span><span class="n">bou1_layer</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">))</span>
-<span class="n">ss</span> <span class="o">=</span> <span class="n">makesymbolspec</span><span class="p">(</span><span class="s">&#39;line&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s">&#39;value&#39;</span><span class="p">:</span><span class="s">&#39;Yangtze&#39;</span><span class="p">,</span> <span class="s">&#39;color&#39;</span><span class="p">:(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">),</span> <span class="s">&#39;size&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span> \
-    <span class="p">{</span><span class="s">&#39;value&#39;</span><span class="p">:</span><span class="s">&#39;Huang He&#39;</span><span class="p">,</span> <span class="s">&#39;color&#39;</span><span class="p">:(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">),</span> <span class="s">&#39;size&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span> <span class="n">field</span><span class="o">=</span><span class="s">&#39;NAME&#39;</span><span class="p">)</span>
+<span class="n">ss</span> <span class="o">=</span> <span class="n">makesymbolspec</span><span class="p">(</span><span class="s1">&#39;line&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span><span class="s1">&#39;Yangtze&#39;</span><span class="p">,</span> <span class="s1">&#39;color&#39;</span><span class="p">:(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">),</span> <span class="s1">&#39;size&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span> \
+    <span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span><span class="s1">&#39;Huang He&#39;</span><span class="p">,</span> <span class="s1">&#39;color&#39;</span><span class="p">:(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">),</span> <span class="s1">&#39;size&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span> <span class="n">field</span><span class="o">=</span><span class="s1">&#39;NAME&#39;</span><span class="p">)</span>
 <span class="n">geoshow</span><span class="p">(</span><span class="n">river_layer</span><span class="p">,</span> <span class="n">symbolspec</span><span class="o">=</span><span class="n">ss</span><span class="p">)</span>
-<span class="n">geoshow</span><span class="p">(</span><span class="n">city_layer</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s">&#39;r&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">labelfield</span><span class="o">=</span><span class="s">&#39;NAME&#39;</span><span class="p">,</span> <span class="n">fontname</span><span class="o">=</span><span class="s">u&#39;楷体&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">yoffset</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="n">city_layer</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">labelfield</span><span class="o">=</span><span class="s1">&#39;NAME&#39;</span><span class="p">,</span> <span class="n">fontname</span><span class="o">=</span><span class="sa">u</span><span class="s1">&#39;楷体&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">yoffset</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
 <span class="n">xlim</span><span class="p">(</span><span class="mi">72</span><span class="p">,</span> <span class="mi">136</span><span class="p">)</span>
 <span class="n">ylim</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">55</span><span class="p">)</span>
 </pre></div>
 </div>
-<img alt="../../../_images/add_map_layer.png" src="../../../_images/add_map_layer.png" />
+<img alt="../../../_images/add_map_layer1.png" src="../../../_images/add_map_layer1.png" />
 </div>
 
 
@@ -139,7 +136,7 @@ with two breaks of Yangtze and Huang He rivers.</p>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -161,14 +158,14 @@ with two breaks of Yangtze and Huang He rivers.</p>
         <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
         <li><a href="../../../docs/index.html">docs</a>|&nbsp;</li>
 
-          <li><a href="../../index.html" >Examples</a> &raquo;</li>
-          <li><a href="../index.html" >MeteoInfoLab</a> &raquo;</li>
-          <li><a href="../map.html" >Map</a> &raquo;</li> 
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Examples</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../map.html" >Map</a> &#187;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2010-2017, Yaqiang Wang.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2018, Yaqiang Wang.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
   </body>
 </html>

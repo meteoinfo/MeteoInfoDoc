@@ -29,7 +29,7 @@ into three-dimensional arrays, and so on.
     array([[1.0, 2.0]
           [3.0, 4.0]])
 
-Another way to create a matrix is to use a function, such as ``ones``, ``zeros``, or ``rand``. For example, 
+Another way to create an anrray is to use a function, such as ``ones``, ``zeros``, or ``rand``. For example, 
 create a 5 element vector of zeros.
 
 ::
@@ -46,7 +46,6 @@ To create sequences of numbers, MeteoInfoLab provides a function analogous to ra
 
 ::
 
-    >>>
     >>> arange( 10, 30, 5 )
     array([10, 15, 20, 25])
     >>> arange( 0, 2, 0.3 )                 # it accepts float arguments
@@ -85,9 +84,9 @@ arrays. The matrix product can be performed using the dot function or method:
 
 ::
     
-    >>> A = np.array( [[1,1],
+    >>> A = array( [[1,1],
     ...             [0,1]] )
-    >>> B = np.array( [[2,0],
+    >>> B = array( [[2,0],
     ...             [3,4]] )
     >>> A*B                         # elementwise product
     array([[2, 0],

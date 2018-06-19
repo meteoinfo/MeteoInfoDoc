@@ -1,31 +1,29 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>Read BURF data &mdash; MeteoInfo 1.4.4 documentation</title>
-    
+    <title>Read BURF data &#8212; MeteoInfo 1.4.8 documentation</title>
     <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.4.4',
+        VERSION:     '1.4.8',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="MeteoInfo 1.4.4 documentation" href="../../../index.html" />
-    <link rel="up" title="File input and output" href="../file_io.html" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Write shape file" href="write_shapefile.html" />
     <link rel="prev" title="Read remote data" href="read_remote.html" /> 
   </head>
@@ -34,7 +32,7 @@
 <div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
 <a href="../../../index.html"><img src="../../../_static/logo.jpg" border="0"/></a></div>
 
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -56,13 +54,13 @@
         <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
         <li><a href="../../../docs/index.html">docs</a>|&nbsp;</li>
 
-          <li><a href="../../index.html" >Examples</a> &raquo;</li>
-          <li><a href="../index.html" >MeteoInfoLab</a> &raquo;</li>
-          <li><a href="../file_io.html" accesskey="U">File input and output</a> &raquo;</li> 
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Examples</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../file_io.html" accesskey="U">File input and output</a> &#187;</li> 
       </ul>
     </div>
 
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="read_remote.html"
@@ -70,22 +68,21 @@
   <h4>Next topic</h4>
   <p class="topless"><a href="write_shapefile.html"
                         title="next chapter">Write shape file</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="../../../_sources/examples/meteoinfolab/file_io/read_bufr.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/examples/meteoinfolab/file_io/read_bufr.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../../../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -94,48 +91,48 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="read-burf-data">
 <span id="examples-meteoinfolab-file-io-read-bufr"></span><h1>Read BURF data<a class="headerlink" href="#read-burf-data" title="Permalink to this headline">¶</a></h1>
-<p>BURF data file can be opened using <tt class="docutils literal"><span class="pre">addfile()</span></tt> function. Only <tt class="docutils literal"><span class="pre">obs</span></tt> variable exists in the file.
+<p>BURF data file can be opened using <code class="docutils literal"><span class="pre">addfile()</span></code> function. Only <code class="docutils literal"><span class="pre">obs</span></code> variable exists in the file.
 The variable can be read as ArraySequence, then StructureDataIterator was used to read the data
 from its StructureMembers. The members can viewed in console.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span><span class="o">.</span><span class="n">members</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span><span class="o">.</span><span class="n">members</span>
 <span class="go">[CLOUD_INDEX, CLOUD_AMOUNT_IN_SEGMENT-2, CLOUD_PHASE, TEMPERATURE_AIR_TEMPERATURE, PRESSURE]</span>
 </pre></div>
 </div>
 <p>Example script</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">fn</span> <span class="o">=</span> <span class="s">&#39;D:/Temp/bufr/MSG3-SEVI-MSGCLAP-0000-0000-20150101004500.000000000Z-20150101005935-1187380.bfr&#39;</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;D:/Temp/bufr/MSG3-SEVI-MSGCLAP-0000-0000-20150101004500.000000000Z-20150101005935-1187380.bfr&#39;</span>
 <span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
-<span class="c">#print f</span>
-<span class="n">d</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;obs&#39;</span><span class="p">][</span><span class="bp">None</span><span class="p">]</span>
+<span class="c1">#print f</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;obs&#39;</span><span class="p">][</span><span class="kc">None</span><span class="p">]</span>
 <span class="n">iter1</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">getStructureDataIterator</span><span class="p">()</span>
 <span class="k">if</span> <span class="n">iter1</span><span class="o">.</span><span class="n">hasNext</span><span class="p">():</span>
     <span class="n">data</span> <span class="o">=</span> <span class="n">iter1</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>
 <span class="n">iter1</span><span class="o">.</span><span class="n">finish</span><span class="p">()</span>
-<span class="n">mlon</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">findMember</span><span class="p">(</span><span class="s">&#39;LONGITUDE_(HIGH_ACCURACY)&#39;</span><span class="p">)</span>
-<span class="n">mlat</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">findMember</span><span class="p">(</span><span class="s">&#39;LATITUDE_(HIGH_ACCURACY)&#39;</span><span class="p">)</span>
-<span class="n">lon</span> <span class="o">=</span> <span class="p">(</span><span class="n">array</span><span class="p">(</span><span class="n">mlon</span><span class="o">.</span><span class="n">dataArray</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s">&#39;float&#39;</span><span class="p">)</span> <span class="o">-</span> <span class="mf">1.8E7</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1.E-5</span>
-<span class="n">lat</span> <span class="o">=</span> <span class="p">(</span><span class="n">array</span><span class="p">(</span><span class="n">mlat</span><span class="o">.</span><span class="n">dataArray</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s">&#39;float&#39;</span><span class="p">)</span> <span class="o">-</span> <span class="mf">9.E6</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1.E-5</span>
-<span class="n">struct1</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">getArray</span><span class="p">(</span><span class="s">&#39;struct1&#39;</span><span class="p">)</span>
+<span class="n">mlon</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">findMember</span><span class="p">(</span><span class="s1">&#39;LONGITUDE_(HIGH_ACCURACY)&#39;</span><span class="p">)</span>
+<span class="n">mlat</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">findMember</span><span class="p">(</span><span class="s1">&#39;LATITUDE_(HIGH_ACCURACY)&#39;</span><span class="p">)</span>
+<span class="n">lon</span> <span class="o">=</span> <span class="p">(</span><span class="n">array</span><span class="p">(</span><span class="n">mlon</span><span class="o">.</span><span class="n">dataArray</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float&#39;</span><span class="p">)</span> <span class="o">-</span> <span class="mf">1.8E7</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1.E-5</span>
+<span class="n">lat</span> <span class="o">=</span> <span class="p">(</span><span class="n">array</span><span class="p">(</span><span class="n">mlat</span><span class="o">.</span><span class="n">dataArray</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float&#39;</span><span class="p">)</span> <span class="o">-</span> <span class="mf">9.E6</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1.E-5</span>
+<span class="n">struct1</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">getArray</span><span class="p">(</span><span class="s1">&#39;struct1&#39;</span><span class="p">)</span>
 <span class="n">iter1</span> <span class="o">=</span> <span class="n">struct1</span><span class="o">.</span><span class="n">getStructureDataIterator</span><span class="p">()</span>
 <span class="k">if</span> <span class="n">iter1</span><span class="o">.</span><span class="n">hasNext</span><span class="p">():</span>
     <span class="n">data</span> <span class="o">=</span> <span class="n">iter1</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>
 <span class="n">iter1</span><span class="o">.</span><span class="n">finish</span><span class="p">()</span>
-<span class="n">mtemp</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">findMember</span><span class="p">(</span><span class="s">&#39;TEMPERATURE_AIR_TEMPERATURE&#39;</span><span class="p">)</span>
-<span class="n">temp</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="n">mtemp</span><span class="o">.</span><span class="n">dataArray</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s">&#39;float&#39;</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.1</span>
+<span class="n">mtemp</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">findMember</span><span class="p">(</span><span class="s1">&#39;TEMPERATURE_AIR_TEMPERATURE&#39;</span><span class="p">)</span>
+<span class="n">temp</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="n">mtemp</span><span class="o">.</span><span class="n">dataArray</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float&#39;</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.1</span>
 <span class="n">temp</span> <span class="o">=</span> <span class="n">temp</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span>
 
-<span class="c">#Plot</span>
+<span class="c1">#Plot</span>
 <span class="n">axesm</span><span class="p">()</span>
-<span class="n">lworld</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="s">&#39;D:/Temp/map/country1.shp&#39;</span><span class="p">)</span>
-<span class="n">geoshow</span><span class="p">(</span><span class="n">lworld</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s">&#39;k&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="p">(</span><span class="mi">204</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">204</span><span class="p">))</span>
-<span class="n">layer</span> <span class="o">=</span> <span class="n">scatterm</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">temp</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">edge</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">lworld</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="s1">&#39;D:/Temp/map/country1.shp&#39;</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="n">lworld</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="p">(</span><span class="mi">204</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">204</span><span class="p">))</span>
+<span class="n">layer</span> <span class="o">=</span> <span class="n">scatterm</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">temp</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">edge</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span>
 <span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 <span class="n">ylim</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;Bufr data example&#39;</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Bufr data example&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <img alt="../../../_images/bufr_1.png" src="../../../_images/bufr_1.png" />
@@ -147,7 +144,7 @@ from its StructureMembers. The members can viewed in console.</p>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -169,14 +166,14 @@ from its StructureMembers. The members can viewed in console.</p>
         <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
         <li><a href="../../../docs/index.html">docs</a>|&nbsp;</li>
 
-          <li><a href="../../index.html" >Examples</a> &raquo;</li>
-          <li><a href="../index.html" >MeteoInfoLab</a> &raquo;</li>
-          <li><a href="../file_io.html" >File input and output</a> &raquo;</li> 
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Examples</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../file_io.html" >File input and output</a> &#187;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2010-2017, Yaqiang Wang.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2018, Yaqiang Wang.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
   </body>
 </html>

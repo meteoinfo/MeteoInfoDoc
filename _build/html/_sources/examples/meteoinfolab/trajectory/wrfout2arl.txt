@@ -82,7 +82,9 @@ for converting WRF out netCDF data to ARL data.
             temp = inf['T'][t,lidx,:,:]
             #potential to ambient temperature
             temp = (temp + 300.) * (pres / 100000.) ** rovcp        
-            sphu = inf['QVAPOR'][t,lidx,:,:]        
+            sphu = inf['QVAPOR'][t,lidx,:,:]
+            #convert mixing ratio to specific humidity
+            sphu = sphu / (1. + sphu) 
             wwnd = inf['W'][t,lidx+1,:,:]
             #convert vertical velocity from m/s to hPa/s using omega = -W g rho
             wwnd = -wwnd * grav * pres * 0.01 / (rdry * temp * (1.0 + 0.6077 * sphu))

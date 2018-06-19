@@ -1,31 +1,29 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>Trajectory calculation &mdash; MeteoInfo 1.4.4 documentation</title>
-    
+    <title>Trajectory calculation &#8212; MeteoInfo 1.4.8 documentation</title>
     <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.4.4',
+        VERSION:     '1.4.8',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="MeteoInfo 1.4.4 documentation" href="../../../index.html" />
-    <link rel="up" title="Trajectory" href="../trajectory.html" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Trajectory plot" href="traj_plot.html" />
     <link rel="prev" title="Trajectory" href="../trajectory.html" /> 
   </head>
@@ -34,7 +32,7 @@
 <div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
 <a href="../../../index.html"><img src="../../../_static/logo.jpg" border="0"/></a></div>
 
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -56,13 +54,13 @@
         <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
         <li><a href="../../../docs/index.html">docs</a>|&nbsp;</li>
 
-          <li><a href="../../index.html" >Examples</a> &raquo;</li>
-          <li><a href="../index.html" >MeteoInfoLab</a> &raquo;</li>
-          <li><a href="../trajectory.html" accesskey="U">Trajectory</a> &raquo;</li> 
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Examples</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../trajectory.html" accesskey="U">Trajectory</a> &#187;</li> 
       </ul>
     </div>
 
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="../trajectory.html"
@@ -70,22 +68,21 @@
   <h4>Next topic</h4>
   <p class="topless"><a href="traj_plot.html"
                         title="next chapter">Trajectory plot</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="../../../_sources/examples/meteoinfolab/trajectory/traj_cal.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/examples/meteoinfolab/trajectory/traj_cal.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../../../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -94,7 +91,7 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="trajectory-calculation">
 <span id="examples-meteoinfolab-trajectory-traj-cal"></span><h1>Trajectory calculation<a class="headerlink" href="#trajectory-calculation" title="Permalink to this headline">¶</a></h1>
@@ -102,166 +99,166 @@
 trajectory calculation in this example. The following code not includes any MeteoInfoLab
 function, thus they are pure Python code.</p>
 <p>Calculate one day back trajectories:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c"># Set working directory</span>
-<span class="n">metDir</span> <span class="o">=</span> <span class="s">&#39;D:/Temp/arl&#39;</span>
-<span class="n">outDir</span> <span class="o">=</span> <span class="s">&#39;D:/Temp/HYSPLIT&#39;</span>
-<span class="n">workingDir</span> <span class="o">=</span> <span class="s">&#39;C:/hysplit4/working&#39;</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Set working directory</span>
+<span class="n">metDir</span> <span class="o">=</span> <span class="s1">&#39;D:/Temp/arl&#39;</span>
+<span class="n">outDir</span> <span class="o">=</span> <span class="s1">&#39;D:/Temp/HYSPLIT&#39;</span>
+<span class="n">workingDir</span> <span class="o">=</span> <span class="s1">&#39;C:/hysplit4/working&#39;</span>
 <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">workingDir</span><span class="p">)</span>
-<span class="k">print</span> <span class="s">&#39;Current directory: &#39;</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+<span class="nb">print</span> <span class="s1">&#39;Current directory: &#39;</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
 
-<span class="c"># Set parameters</span>
-<span class="n">lon</span> <span class="o">=</span> <span class="s">&#39;115.2&#39;</span>
-<span class="n">lat</span> <span class="o">=</span> <span class="s">&#39;40.1&#39;</span>
-<span class="n">shour</span> <span class="o">=</span> <span class="s">&#39;06&#39;</span>
-<span class="n">heights</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;100.0&#39;</span><span class="p">,</span><span class="s">&#39;500.0&#39;</span><span class="p">,</span><span class="s">&#39;1000.0&#39;</span><span class="p">]</span>
+<span class="c1"># Set parameters</span>
+<span class="n">lon</span> <span class="o">=</span> <span class="s1">&#39;115.2&#39;</span>
+<span class="n">lat</span> <span class="o">=</span> <span class="s1">&#39;40.1&#39;</span>
+<span class="n">shour</span> <span class="o">=</span> <span class="s1">&#39;06&#39;</span>
+<span class="n">heights</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;100.0&#39;</span><span class="p">,</span><span class="s1">&#39;500.0&#39;</span><span class="p">,</span><span class="s1">&#39;1000.0&#39;</span><span class="p">]</span>
 <span class="n">hnum</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">heights</span><span class="p">)</span>
-<span class="n">hours</span> <span class="o">=</span> <span class="s">&#39;-48&#39;</span>
-<span class="n">vertical</span> <span class="o">=</span> <span class="s">&#39;0&#39;</span>
-<span class="n">top</span> <span class="o">=</span> <span class="s">&#39;10000.0&#39;</span>
+<span class="n">hours</span> <span class="o">=</span> <span class="s1">&#39;-48&#39;</span>
+<span class="n">vertical</span> <span class="o">=</span> <span class="s1">&#39;0&#39;</span>
+<span class="n">top</span> <span class="o">=</span> <span class="s1">&#39;10000.0&#39;</span>
 
-<span class="c"># Set meteorological data files</span>
+<span class="c1"># Set meteorological data files</span>
 <span class="n">fns</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">fn</span> <span class="o">=</span> <span class="s">&#39;gdas1.jul09.w5&#39;</span>
+<span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;gdas1.jul09.w5&#39;</span>
 <span class="n">fns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
 
-<span class="c"># Set start/end time</span>
+<span class="c1"># Set start/end time</span>
 <span class="n">stime</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2009</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">31</span><span class="p">)</span>
 
-<span class="c"># Write CONTROL file</span>
-<span class="n">ctFile</span> <span class="o">=</span> <span class="s">&#39;./CONTROL&#39;</span>
-<span class="k">print</span> <span class="n">stime</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">&#39;%Y-%m-</span><span class="si">%d</span><span class="s"> &#39;</span><span class="p">)</span> <span class="o">+</span> <span class="n">shour</span> <span class="o">+</span> <span class="s">&#39;:00&#39;</span>
-<span class="n">ctf</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">ctFile</span><span class="p">,</span> <span class="s">&#39;w&#39;</span><span class="p">)</span>
-<span class="n">ctf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">stime</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">&#39;%y %m </span><span class="si">%d</span><span class="s"> &#39;</span><span class="p">)</span> <span class="o">+</span> <span class="n">shour</span> <span class="o">+</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">)</span>
-<span class="n">ctf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">hnum</span><span class="p">)</span> <span class="o">+</span> <span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">)</span>
+<span class="c1"># Write CONTROL file</span>
+<span class="n">ctFile</span> <span class="o">=</span> <span class="s1">&#39;./CONTROL&#39;</span>
+<span class="nb">print</span> <span class="n">stime</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1"> &#39;</span><span class="p">)</span> <span class="o">+</span> <span class="n">shour</span> <span class="o">+</span> <span class="s1">&#39;:00&#39;</span>
+<span class="n">ctf</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">ctFile</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+<span class="n">ctf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">stime</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%y %m </span><span class="si">%d</span><span class="s1"> &#39;</span><span class="p">)</span> <span class="o">+</span> <span class="n">shour</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">ctf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">hnum</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">hnum</span><span class="p">):</span>
-  <span class="n">ctf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">lat</span> <span class="o">+</span> <span class="s">&#39; &#39;</span> <span class="o">+</span> <span class="n">lon</span> <span class="o">+</span> <span class="s">&#39; &#39;</span> <span class="o">+</span> <span class="n">heights</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">)</span>
-<span class="n">ctf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">hours</span> <span class="o">+</span> <span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">)</span>
-<span class="n">ctf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">vertical</span> <span class="o">+</span> <span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">)</span>
-<span class="n">ctf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">top</span> <span class="o">+</span> <span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">)</span>
+  <span class="n">ctf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">lat</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="n">lon</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="n">heights</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">ctf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">hours</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">ctf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">vertical</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">ctf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">top</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="n">fnnum</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">fns</span><span class="p">)</span>
-<span class="n">ctf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">fnnum</span><span class="p">)</span> <span class="o">+</span> <span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">)</span>
+<span class="n">ctf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">fnnum</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">fnnum</span><span class="p">):</span>
-    <span class="n">ctf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">metDir</span> <span class="o">+</span> <span class="s">&#39;/&#39;</span> <span class="o">+</span> <span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">)</span>
-    <span class="n">ctf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">fns</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">)</span>
-<span class="n">ctf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">outDir</span> <span class="o">+</span> <span class="s">&#39;/&#39;</span> <span class="o">+</span> <span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">)</span>
-<span class="n">outfn</span> <span class="o">=</span> <span class="n">stime</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">&#39;traj_%Y%m</span><span class="si">%d</span><span class="s">&#39;</span><span class="p">)</span>
+    <span class="n">ctf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">metDir</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">ctf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">fns</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">ctf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">outDir</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">outfn</span> <span class="o">=</span> <span class="n">stime</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;traj_%Y%m</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="n">ctf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">outfn</span><span class="p">)</span>
 <span class="n">ctf</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 
-<span class="c"># Calculate trajectories</span>
-<span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s">&#39;c:/hysplit4/exec/hyts_std.exe&#39;</span><span class="p">)</span>
+<span class="c1"># Calculate trajectories</span>
+<span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;c:/hysplit4/exec/hyts_std.exe&#39;</span><span class="p">)</span>
 
-<span class="k">print</span> <span class="s">&#39;Finish...&#39;</span>
+<span class="nb">print</span> <span class="s1">&#39;Finish...&#39;</span>
 </pre></div>
 </div>
 <p>Calculate multiple days back trajectories:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c"># Set working directory</span>
-<span class="n">metDir</span> <span class="o">=</span> <span class="s">&#39;D:/Temp/arl&#39;</span>
-<span class="n">outDir</span> <span class="o">=</span> <span class="s">&#39;D:/Temp/HYSPLIT&#39;</span>
-<span class="n">workingDir</span> <span class="o">=</span> <span class="s">&#39;C:/hysplit4/working&#39;</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Set working directory</span>
+<span class="n">metDir</span> <span class="o">=</span> <span class="s1">&#39;D:/Temp/arl&#39;</span>
+<span class="n">outDir</span> <span class="o">=</span> <span class="s1">&#39;D:/Temp/HYSPLIT&#39;</span>
+<span class="n">workingDir</span> <span class="o">=</span> <span class="s1">&#39;C:/hysplit4/working&#39;</span>
 <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">workingDir</span><span class="p">)</span>
-<span class="k">print</span> <span class="s">&#39;Current directory: &#39;</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+<span class="nb">print</span> <span class="s1">&#39;Current directory: &#39;</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
 
-<span class="c"># Set parameters</span>
-<span class="n">lon</span> <span class="o">=</span> <span class="s">&#39;115.2&#39;</span>
-<span class="n">lat</span> <span class="o">=</span> <span class="s">&#39;40.1&#39;</span>
-<span class="n">shour</span> <span class="o">=</span> <span class="s">&#39;06&#39;</span>
-<span class="n">heights</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;100.0&#39;</span><span class="p">,</span><span class="s">&#39;500.0&#39;</span><span class="p">,</span><span class="s">&#39;1000.0&#39;</span><span class="p">]</span>
+<span class="c1"># Set parameters</span>
+<span class="n">lon</span> <span class="o">=</span> <span class="s1">&#39;115.2&#39;</span>
+<span class="n">lat</span> <span class="o">=</span> <span class="s1">&#39;40.1&#39;</span>
+<span class="n">shour</span> <span class="o">=</span> <span class="s1">&#39;06&#39;</span>
+<span class="n">heights</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;100.0&#39;</span><span class="p">,</span><span class="s1">&#39;500.0&#39;</span><span class="p">,</span><span class="s1">&#39;1000.0&#39;</span><span class="p">]</span>
 <span class="n">hnum</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">heights</span><span class="p">)</span>
-<span class="n">hours</span> <span class="o">=</span> <span class="s">&#39;-48&#39;</span>
-<span class="n">vertical</span> <span class="o">=</span> <span class="s">&#39;0&#39;</span>
-<span class="n">top</span> <span class="o">=</span> <span class="s">&#39;10000.0&#39;</span>
+<span class="n">hours</span> <span class="o">=</span> <span class="s1">&#39;-48&#39;</span>
+<span class="n">vertical</span> <span class="o">=</span> <span class="s1">&#39;0&#39;</span>
+<span class="n">top</span> <span class="o">=</span> <span class="s1">&#39;10000.0&#39;</span>
 
-<span class="c"># Get month abstract string</span>
+<span class="c1"># Get month abstract string</span>
 <span class="k">def</span> <span class="nf">getmonthstr</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
-    <span class="n">mmm</span> <span class="o">=</span> <span class="s">&#39;jan&#39;</span>
+    <span class="n">mmm</span> <span class="o">=</span> <span class="s1">&#39;jan&#39;</span>
     <span class="k">if</span> <span class="n">m</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="n">mmm</span> <span class="o">=</span> <span class="s">&#39;jan&#39;</span>
+        <span class="n">mmm</span> <span class="o">=</span> <span class="s1">&#39;jan&#39;</span>
     <span class="k">elif</span> <span class="n">m</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
-        <span class="n">mmm</span> <span class="o">=</span> <span class="s">&#39;feb&#39;</span>
+        <span class="n">mmm</span> <span class="o">=</span> <span class="s1">&#39;feb&#39;</span>
     <span class="k">elif</span> <span class="n">m</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
-        <span class="n">mmm</span> <span class="o">=</span> <span class="s">&#39;mar&#39;</span>
+        <span class="n">mmm</span> <span class="o">=</span> <span class="s1">&#39;mar&#39;</span>
     <span class="k">elif</span> <span class="n">m</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
-        <span class="n">mmm</span> <span class="o">=</span> <span class="s">&#39;apr&#39;</span>
+        <span class="n">mmm</span> <span class="o">=</span> <span class="s1">&#39;apr&#39;</span>
     <span class="k">elif</span> <span class="n">m</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
-        <span class="n">mmm</span> <span class="o">=</span> <span class="s">&#39;may&#39;</span>
+        <span class="n">mmm</span> <span class="o">=</span> <span class="s1">&#39;may&#39;</span>
     <span class="k">elif</span> <span class="n">m</span> <span class="o">==</span> <span class="mi">6</span><span class="p">:</span>
-        <span class="n">mmm</span> <span class="o">=</span> <span class="s">&#39;jun&#39;</span>
+        <span class="n">mmm</span> <span class="o">=</span> <span class="s1">&#39;jun&#39;</span>
     <span class="k">elif</span> <span class="n">m</span> <span class="o">==</span> <span class="mi">7</span><span class="p">:</span>
-        <span class="n">mmm</span> <span class="o">=</span> <span class="s">&#39;jul&#39;</span>
+        <span class="n">mmm</span> <span class="o">=</span> <span class="s1">&#39;jul&#39;</span>
     <span class="k">elif</span> <span class="n">m</span> <span class="o">==</span> <span class="mi">8</span><span class="p">:</span>
-        <span class="n">mmm</span> <span class="o">=</span> <span class="s">&#39;aug&#39;</span>
+        <span class="n">mmm</span> <span class="o">=</span> <span class="s1">&#39;aug&#39;</span>
     <span class="k">elif</span> <span class="n">m</span> <span class="o">==</span> <span class="mi">9</span><span class="p">:</span>
-        <span class="n">mmm</span> <span class="o">=</span> <span class="s">&#39;sep&#39;</span>
+        <span class="n">mmm</span> <span class="o">=</span> <span class="s1">&#39;sep&#39;</span>
     <span class="k">elif</span> <span class="n">m</span> <span class="o">==</span> <span class="mi">10</span><span class="p">:</span>
-        <span class="n">mmm</span> <span class="o">=</span> <span class="s">&#39;oct&#39;</span>
+        <span class="n">mmm</span> <span class="o">=</span> <span class="s1">&#39;oct&#39;</span>
     <span class="k">elif</span> <span class="n">m</span> <span class="o">==</span> <span class="mi">11</span><span class="p">:</span>
-        <span class="n">mmm</span> <span class="o">=</span> <span class="s">&#39;nov&#39;</span>
+        <span class="n">mmm</span> <span class="o">=</span> <span class="s1">&#39;nov&#39;</span>
     <span class="k">elif</span> <span class="n">m</span> <span class="o">==</span> <span class="mi">12</span><span class="p">:</span>
-        <span class="n">mmm</span> <span class="o">=</span> <span class="s">&#39;dec&#39;</span>
+        <span class="n">mmm</span> <span class="o">=</span> <span class="s1">&#39;dec&#39;</span>
 
     <span class="k">return</span> <span class="n">mmm</span>
 
-<span class="c"># Get GDAS1 meteorological data files by time</span>
+<span class="c1"># Get GDAS1 meteorological data files by time</span>
 <span class="k">def</span> <span class="nf">getmeteofiles</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
     <span class="n">y</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">year</span>
-    <span class="n">ystr</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">&#39;%y&#39;</span><span class="p">)</span>
+    <span class="n">ystr</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%y&#39;</span><span class="p">)</span>
     <span class="n">m</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">month</span>
     <span class="n">mmm</span> <span class="o">=</span> <span class="n">getmonthstr</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
     <span class="n">fns</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="c"># The meteo files of this month</span>
+    <span class="c1"># The meteo files of this month</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">):</span>
-        <span class="n">fn</span> <span class="o">=</span> <span class="s">&#39;gdas1.&#39;</span> <span class="o">+</span> <span class="n">mmm</span> <span class="o">+</span> <span class="n">ystr</span> <span class="o">+</span> <span class="s">&#39;.w&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;gdas1.&#39;</span> <span class="o">+</span> <span class="n">mmm</span> <span class="o">+</span> <span class="n">ystr</span> <span class="o">+</span> <span class="s1">&#39;.w&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">metDir</span><span class="p">,</span> <span class="n">fn</span><span class="p">)):</span>
             <span class="n">fns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
 
-    <span class="c"># The last two meteo files of last month</span>
+    <span class="c1"># The last two meteo files of last month</span>
     <span class="n">m</span> <span class="o">=</span> <span class="n">m</span> <span class="o">-</span> <span class="mi">1</span>
     <span class="k">if</span> <span class="n">m</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="n">m</span> <span class="o">=</span> <span class="mi">12</span>
         <span class="n">ystr</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">2</span><span class="p">:]</span>
     <span class="n">mmm</span> <span class="o">=</span> <span class="n">getmonthstr</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
-    <span class="n">fn</span> <span class="o">=</span> <span class="s">&#39;gdas1.&#39;</span> <span class="o">+</span> <span class="n">mmm</span> <span class="o">+</span> <span class="n">ystr</span> <span class="o">+</span> <span class="s">&#39;.w4&#39;</span>
+    <span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;gdas1.&#39;</span> <span class="o">+</span> <span class="n">mmm</span> <span class="o">+</span> <span class="n">ystr</span> <span class="o">+</span> <span class="s1">&#39;.w4&#39;</span>
     <span class="n">fns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
-    <span class="n">fn</span> <span class="o">=</span> <span class="s">&#39;gdas1.&#39;</span> <span class="o">+</span> <span class="n">mmm</span> <span class="o">+</span> <span class="n">ystr</span> <span class="o">+</span> <span class="s">&#39;.w5&#39;</span>
+    <span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;gdas1.&#39;</span> <span class="o">+</span> <span class="n">mmm</span> <span class="o">+</span> <span class="n">ystr</span> <span class="o">+</span> <span class="s1">&#39;.w5&#39;</span>
     <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">metDir</span><span class="p">,</span> <span class="n">fn</span><span class="p">)):</span>
         <span class="n">fns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">fns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&#39;gdas1.&#39;</span> <span class="o">+</span> <span class="n">mmm</span> <span class="o">+</span> <span class="n">ystr</span> <span class="o">+</span> <span class="s">&#39;.w3&#39;</span><span class="p">)</span>
+        <span class="n">fns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;gdas1.&#39;</span> <span class="o">+</span> <span class="n">mmm</span> <span class="o">+</span> <span class="n">ystr</span> <span class="o">+</span> <span class="s1">&#39;.w3&#39;</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">fns</span>
 
-<span class="c"># Set start/end time</span>
+<span class="c1"># Set start/end time</span>
 <span class="n">stime</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2012</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">etime</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2012</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
 
-<span class="c"># Loop</span>
-<span class="n">ctFile</span> <span class="o">=</span> <span class="s">&#39;./CONTROL&#39;</span>
+<span class="c1"># Loop</span>
+<span class="n">ctFile</span> <span class="o">=</span> <span class="s1">&#39;./CONTROL&#39;</span>
 <span class="k">while</span> <span class="n">stime</span> <span class="o">&lt;=</span> <span class="n">etime</span><span class="p">:</span>
-    <span class="k">print</span> <span class="n">stime</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">&#39;%Y-%m-</span><span class="si">%d</span><span class="s"> &#39;</span><span class="p">)</span> <span class="o">+</span> <span class="n">shour</span> <span class="o">+</span> <span class="s">&#39;:00&#39;</span>
-    <span class="n">ctf</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">ctFile</span><span class="p">,</span> <span class="s">&#39;w&#39;</span><span class="p">)</span>
-    <span class="n">ctf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">stime</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">&#39;%y %m </span><span class="si">%d</span><span class="s"> &#39;</span><span class="p">)</span> <span class="o">+</span> <span class="n">shour</span> <span class="o">+</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">)</span>
-    <span class="n">ctf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">hnum</span><span class="p">)</span> <span class="o">+</span> <span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="n">stime</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1"> &#39;</span><span class="p">)</span> <span class="o">+</span> <span class="n">shour</span> <span class="o">+</span> <span class="s1">&#39;:00&#39;</span>
+    <span class="n">ctf</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">ctFile</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+    <span class="n">ctf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">stime</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%y %m </span><span class="si">%d</span><span class="s1"> &#39;</span><span class="p">)</span> <span class="o">+</span> <span class="n">shour</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">ctf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">hnum</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">hnum</span><span class="p">):</span>
-        <span class="n">ctf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">lat</span> <span class="o">+</span> <span class="s">&#39; &#39;</span> <span class="o">+</span> <span class="n">lon</span> <span class="o">+</span> <span class="s">&#39; &#39;</span> <span class="o">+</span> <span class="n">heights</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">)</span>
-    <span class="n">ctf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">hours</span> <span class="o">+</span> <span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">)</span>
-    <span class="n">ctf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">vertical</span> <span class="o">+</span> <span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">)</span>
-    <span class="n">ctf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">top</span> <span class="o">+</span> <span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">)</span>
+        <span class="n">ctf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">lat</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="n">lon</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="n">heights</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">ctf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">hours</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">ctf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">vertical</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">ctf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">top</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
     <span class="n">fns</span> <span class="o">=</span> <span class="n">getmeteofiles</span><span class="p">(</span><span class="n">stime</span><span class="p">)</span>
     <span class="n">fnnum</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">fns</span><span class="p">)</span>
-    <span class="n">ctf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">fnnum</span><span class="p">)</span> <span class="o">+</span> <span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">)</span>
+    <span class="n">ctf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">fnnum</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">fnnum</span><span class="p">):</span>
-        <span class="n">ctf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">metDir</span> <span class="o">+</span> <span class="s">&#39;/&#39;</span> <span class="o">+</span> <span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">)</span>
-        <span class="n">ctf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">fns</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">)</span>
-    <span class="n">ctf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">outDir</span> <span class="o">+</span> <span class="s">&#39;/&#39;</span> <span class="o">+</span> <span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">)</span>
-    <span class="n">outfn</span> <span class="o">=</span> <span class="n">stime</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">&#39;traj_%Y%m</span><span class="si">%d</span><span class="s">&#39;</span><span class="p">)</span>
+        <span class="n">ctf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">metDir</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">ctf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">fns</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">ctf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">outDir</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">outfn</span> <span class="o">=</span> <span class="n">stime</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;traj_%Y%m</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span>
     <span class="n">ctf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">outfn</span><span class="p">)</span>
     <span class="n">ctf</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s">&#39;c:/hysplit4/exec/hyts_std.exe&#39;</span><span class="p">)</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;c:/hysplit4/exec/hyts_std.exe&#39;</span><span class="p">)</span>
 
     <span class="n">stime</span> <span class="o">=</span> <span class="n">stime</span> <span class="o">+</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
-<span class="k">print</span> <span class="s">&#39;Finish...&#39;</span>
+<span class="nb">print</span> <span class="s1">&#39;Finish...&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -272,7 +269,7 @@ function, thus they are pure Python code.</p>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -294,14 +291,14 @@ function, thus they are pure Python code.</p>
         <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
         <li><a href="../../../docs/index.html">docs</a>|&nbsp;</li>
 
-          <li><a href="../../index.html" >Examples</a> &raquo;</li>
-          <li><a href="../index.html" >MeteoInfoLab</a> &raquo;</li>
-          <li><a href="../trajectory.html" >Trajectory</a> &raquo;</li> 
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Examples</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../trajectory.html" >Trajectory</a> &#187;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2010-2017, Yaqiang Wang.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2018, Yaqiang Wang.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
   </body>
 </html>

@@ -45,7 +45,7 @@ trajectory map plot.
 
     # Contour the data
     levs = arange(-38, 50, 2)
-    layer = imshow(time, height[::-1], data, levs)
+    layer = imshow(data, levs, extent=[time[0],time[-1],height[-1],height[0]])
     colorbar(layer)
     title('Radar Reflectivity Factor')
     xlabel('Seconds since the start of the granule. (seconds)')
@@ -54,8 +54,7 @@ trajectory map plot.
     # The 2nd plot is the trajectory
     subplot(2, 1, 2)
     axesm(newaxes=False)
-    lworld = shaperead('D:/Temp/map/country1.shp')
-    geoshow(lworld, edgecolor='k')
+    geoshow('country', edgecolor='k')
     plotm(lon, lat, '-b', linewidth=4)
     #scatterm(lon, lat, lon, size=4, edge=False, facecolor='b')
     scatterm(lon[0], lat[0], size=6, facecolor='r')

@@ -15,8 +15,7 @@ can be used to add a key in a quiver plot.
     speed = sqrt(u*u+v*v)
     #Plot
     axesm()
-    lworld = shaperead('D:/Temp/Map/country1.shp')
-    geoshow(lworld)
+    geoshow('country')
     layer = quiverm(u, v, speed, 10, size=8)
     quiverkey(layer, 0.74, 0.18, 15, bbox={'edge':True, 'fill':True})
     colorbar(layer)

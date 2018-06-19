@@ -23,6 +23,7 @@ Functions:
    midata/addfile_hytraj.rst
    midata/addfile_hyconc.rst
    midata/asciiread.rst
+   midata/asciiwrite.rst
    midata/binread.rst
    midata/binwrite.rst
    midata/ncwrite.rst

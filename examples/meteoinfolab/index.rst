@@ -15,3 +15,4 @@ MeteoInfoLab
    meteo_analysis.rst
    satellite.rst
    trajectory.rst
+   gui.rst

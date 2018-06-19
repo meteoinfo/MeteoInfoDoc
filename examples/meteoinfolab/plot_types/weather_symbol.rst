@@ -16,10 +16,8 @@ created by ``weatherspec()`` function.
     lat = f['Latitude'][:]
     #Plot
     axesm(bgcolor=(204,255,255))
-    lworld = shaperead('D:/Temp/map/country1.shp')
-    lchina = shaperead('D:/Temp/map/bou2_4p.shp')
-    geoshow(lworld, edgecolor='k', facecolor=(255,251,195))
-    geoshow(lchina, edgecolor='k')
+    geoshow('country', edgecolor='k', facecolor=(255,251,195))
+    geoshow('cn_province', edgecolor='k')
     ls = weatherspec()
     layer = scatterm(lon, lat, data, symbolspec=ls)
     yticks([20,30,40,50])

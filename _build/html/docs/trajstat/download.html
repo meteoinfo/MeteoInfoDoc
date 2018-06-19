@@ -1,31 +1,29 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>Download and Run TrajStat &mdash; MeteoInfo 1.4.4 documentation</title>
-    
+    <title>Download and Run TrajStat &#8212; MeteoInfo 1.4.8 documentation</title>
     <link rel="stylesheet" href="../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.4.4',
+        VERSION:     '1.4.8',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="MeteoInfo 1.4.4 documentation" href="../../index.html" />
-    <link rel="up" title="TrajStat" href="index.html" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Example" href="example.html" />
     <link rel="prev" title="Introduction" href="introduction.html" /> 
   </head>
@@ -34,7 +32,7 @@
 <div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
 <a href="../../index.html"><img src="../../_static/logo.jpg" border="0"/></a></div>
 
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -56,12 +54,12 @@
         <li><a href="../../downloads/index.html">downloads</a>|&nbsp;</li>
         <li><a href="../index.html">docs</a>|&nbsp;</li>
 
-          <li><a href="../index.html" >Documentation</a> &raquo;</li>
-          <li><a href="index.html" accesskey="U">TrajStat</a> &raquo;</li> 
+          <li class="nav-item nav-item-1"><a href="../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="index.html" accesskey="U">TrajStat</a> &#187;</li> 
       </ul>
     </div>
 
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="introduction.html"
@@ -69,22 +67,21 @@
   <h4>Next topic</h4>
   <p class="topless"><a href="example.html"
                         title="next chapter">Example</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="../../_sources/docs/trajstat/download.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/docs/trajstat/download.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -93,24 +90,24 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="download-and-run-trajstat">
 <h1>Download and Run TrajStat<a class="headerlink" href="#download-and-run-trajstat" title="Permalink to this headline">¶</a></h1>
 <p>MeteoInfo Java version and TrajStat Java plugin could be downloaded freely from the website <a class="reference external" href="http://www.meteothinker.com">http://www.meteothinker.com</a>.
 The complete TrajStat Java package should, after uncompression, include the following items:</p>
 <ul class="simple">
-<li>TrajStat plugin library file called &#8220;TrajStat.jar&#8221;.</li>
-<li>Default TrajStat project file called &#8220;default.mip&#8221;.</li>
-<li>Trajectory calculation files in a folder called &#8220;working&#8221;.</li>
-<li>Sample data files in a folder called &#8220;sample&#8221;.</li>
-<li>Legend sample files in a folder called &#8220;legend&#8221;.</li>
-<li>Support data files for trajectory calculation in a folder called &#8220;bdyfiles&#8221;.</li>
+<li>TrajStat plugin library file called “TrajStat.jar”.</li>
+<li>Default TrajStat project file called “default.mip”.</li>
+<li>Trajectory calculation files in a folder called “working”.</li>
+<li>Sample data files in a folder called “sample”.</li>
+<li>Legend sample files in a folder called “legend”.</li>
+<li>Support data files for trajectory calculation in a folder called “bdyfiles”.</li>
 <li>README file.</li>
 </ul>
-<p>Copy the unzipped TrajStat folder into the &#8220;plugins&#8221; folder of MeteoInfo installation path. Start the MeteoInfo program and open
-Plugin Manager dialog, then press &#8220;Update List&#8221; button to add TrajStat plugin in the plugin list. The plugin can be loaded in
-Plugin Manager dialog or by pressing the plugin sub-menu under &#8220;Plugin&#8221; menu. &#8220;TrajStat&#8221; menu will be added after the plugin is
+<p>Copy the unzipped TrajStat folder into the “plugins” folder of MeteoInfo installation path. Start the MeteoInfo program and open
+Plugin Manager dialog, then press “Update List” button to add TrajStat plugin in the plugin list. The plugin can be loaded in
+Plugin Manager dialog or by pressing the plugin sub-menu under “Plugin” menu. “TrajStat” menu will be added after the plugin is
 loaded, and all functions are included under the menu.</p>
 <img alt="../../_images/plugin_manager.png" src="../../_images/plugin_manager.png" />
 <img alt="../../_images/trajstat_plugin.png" src="../../_images/trajstat_plugin.png" />
@@ -122,7 +119,7 @@ loaded, and all functions are included under the menu.</p>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -144,13 +141,13 @@ loaded, and all functions are included under the menu.</p>
         <li><a href="../../downloads/index.html">downloads</a>|&nbsp;</li>
         <li><a href="../index.html">docs</a>|&nbsp;</li>
 
-          <li><a href="../index.html" >Documentation</a> &raquo;</li>
-          <li><a href="index.html" >TrajStat</a> &raquo;</li> 
+          <li class="nav-item nav-item-1"><a href="../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="index.html" >TrajStat</a> &#187;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2010-2017, Yaqiang Wang.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2018, Yaqiang Wang.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
   </body>
 </html>

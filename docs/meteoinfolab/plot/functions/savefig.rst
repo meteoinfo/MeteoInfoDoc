@@ -7,7 +7,7 @@ savefig
 
 .. currentmodule:: mipylib.plotlib.miplot
 
-.. function:: savefig(fname, width=None, height=None)
+.. function:: savefig(fname, width=None, height=None, dpi=None, sleep=None)
 
     Save the current figure.
     
@@ -18,6 +18,8 @@ savefig
         is None, the output figure size is same as *figures* window.
     :param height: (*int*) Optional, height of the output figure with pixel units. Default
         is None, the output figure size is same as *figures* window.
+    :param dpi: (*int*) Optional, figure resolution.
+    :param sleep: (*int*) Optional, sleep seconds. For web map tiles loading.
       
     Examples::
 

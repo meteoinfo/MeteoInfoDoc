@@ -23,6 +23,7 @@ Functions:
    functions/asin.rst
    functions/atan.rst
    functions/atan2.rst
+   functions/concatenate.rst
    functions/corrcoef.rst
    functions/cos.rst
    functions/dot.rst
@@ -37,6 +38,7 @@ Functions:
    functions/ones.rst
    functions/project.rst
    functions/projinfo.rst
+   functions/repeat.rst
    functions/reshape.rst
    functions/rot90.rst
    functions/sin.rst
@@ -45,6 +47,7 @@ Functions:
    functions/std.rst
    functions/sum.rst
    functions/tan.rst
+   functions/tile.rst
    functions/trapz.rst
    functions/unravel_index.rst
    functions/zeros.rst

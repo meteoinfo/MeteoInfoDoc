@@ -1,31 +1,29 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>CALIPSO data &mdash; MeteoInfo 1.4.4 documentation</title>
-    
+    <title>CALIPSO data &#8212; MeteoInfo 1.4.8 documentation</title>
     <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.4.4',
+        VERSION:     '1.4.8',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="MeteoInfo 1.4.4 documentation" href="../../../index.html" />
-    <link rel="up" title="Satellite data" href="../satellite.html" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="GPM swath data" href="gpm_swath.html" />
     <link rel="prev" title="GeoTiff RGB image" href="geotiff_rgb.html" /> 
   </head>
@@ -34,7 +32,7 @@
 <div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
 <a href="../../../index.html"><img src="../../../_static/logo.jpg" border="0"/></a></div>
 
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -56,13 +54,13 @@
         <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
         <li><a href="../../../docs/index.html">docs</a>|&nbsp;</li>
 
-          <li><a href="../../index.html" >Examples</a> &raquo;</li>
-          <li><a href="../index.html" >MeteoInfoLab</a> &raquo;</li>
-          <li><a href="../satellite.html" accesskey="U">Satellite data</a> &raquo;</li> 
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Examples</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../satellite.html" accesskey="U">Satellite data</a> &#187;</li> 
       </ul>
     </div>
 
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="geotiff_rgb.html"
@@ -70,22 +68,21 @@
   <h4>Next topic</h4>
   <p class="topless"><a href="gpm_swath.html"
                         title="next chapter">GPM swath data</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="../../../_sources/examples/meteoinfolab/satellite/calipso.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/examples/meteoinfolab/satellite/calipso.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../../../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -94,161 +91,160 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="calipso-data">
 <span id="examples-meteoinfolab-satellite-calipso"></span><h1>CALIPSO data<a class="headerlink" href="#calipso-data" title="Permalink to this headline">¶</a></h1>
 <p>NASA launched the CloudSat and the Cloud-Aerosol Lidar and Infrared Pathfinder Satellite Observation
-(CALIPSO) spacecraft to study the role that clouds and aerosols play in regulating Earth&#8217;s weather,
+(CALIPSO) spacecraft to study the role that clouds and aerosols play in regulating Earth’s weather,
 climate and air quality. On April 28, 2006. This example illustrates how to access and visualize a
 LaRC CALIPSO data file.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c"># Add file</span>
-<span class="n">fn</span> <span class="o">=</span> <span class="s">&#39;CAL_LID_L2_VFM-ValStage1-V3-02.2011-12-31T23-18-11ZD.hdf&#39;</span>
-<span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="s">&#39;D:/Temp/hdf/&#39;</span> <span class="o">+</span> <span class="n">fn</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Add file</span>
+<span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;CAL_LID_L2_VFM-ValStage1-V3-02.2011-12-31T23-18-11ZD.hdf&#39;</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="s1">&#39;D:/Temp/hdf/&#39;</span> <span class="o">+</span> <span class="n">fn</span><span class="p">)</span>
 
-<span class="c"># Read data</span>
-<span class="n">vname</span> <span class="o">=</span> <span class="s">&#39;Feature_Classification_Flags&#39;</span>
+<span class="c1"># Read data</span>
+<span class="n">vname</span> <span class="o">=</span> <span class="s1">&#39;Feature_Classification_Flags&#39;</span>
 <span class="n">var</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="n">vname</span><span class="p">]</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">var</span><span class="p">[:,</span><span class="mi">1256</span><span class="p">]</span>
-<span class="n">lon</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;Longitude&#39;</span><span class="p">][:,</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">lat</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;Latitude&#39;</span><span class="p">][:,</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">lon</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;Longitude&#39;</span><span class="p">][:,</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">lat</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;Latitude&#39;</span><span class="p">][:,</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">lon</span> <span class="o">=</span> <span class="n">lon</span><span class="p">[::</span><span class="mi">10</span><span class="p">]</span>
 <span class="n">lat</span> <span class="o">=</span> <span class="n">lat</span><span class="p">[::</span><span class="mi">10</span><span class="p">]</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[::</span><span class="mi">10</span><span class="p">]</span>
 
-<span class="c"># Extract Feature Type only through bitmask.</span>
+<span class="c1"># Extract Feature Type only through bitmask.</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">data</span> <span class="o">&amp;</span> <span class="mi">7</span>
 
-<span class="c"># Plot</span>
+<span class="c1"># Plot</span>
 <span class="n">axesm</span><span class="p">()</span>
-<span class="n">lworld</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="s">&#39;D:/Temp/map/country1.shp&#39;</span><span class="p">)</span>
-<span class="n">geoshow</span><span class="p">(</span><span class="n">lworld</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
 <span class="n">levs</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
 <span class="n">cols</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">),(</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">),(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">),(</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> \
     <span class="p">(</span><span class="mi">200</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">255</span><span class="p">),(</span><span class="mi">100</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">255</span><span class="p">),(</span><span class="mi">127</span><span class="p">,</span><span class="mi">127</span><span class="p">,</span><span class="mi">127</span><span class="p">)]</span>
-<span class="n">ls</span> <span class="o">=</span> <span class="n">makesymbolspec</span><span class="p">(</span><span class="s">&#39;point&#39;</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="n">levs</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="n">cols</span><span class="p">)</span>
-<span class="n">layer</span> <span class="o">=</span> <span class="n">scatterm</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">edge</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">symbolspec</span><span class="o">=</span><span class="n">ls</span><span class="p">)</span>
-<span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">,</span> <span class="n">ticks</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;invalid&#39;</span><span class="p">,</span> <span class="s">&#39;clear&#39;</span><span class="p">,</span> <span class="s">&#39;cloud&#39;</span><span class="p">,</span> <span class="s">&#39;aerosol&#39;</span><span class="p">,</span> \
-    <span class="s">&#39;strato&#39;</span><span class="p">,</span> <span class="s">&#39;surface&#39;</span><span class="p">,</span> <span class="s">&#39;subsurf&#39;</span><span class="p">,</span> <span class="s">&#39;no signal&#39;</span><span class="p">])</span>
+<span class="n">ls</span> <span class="o">=</span> <span class="n">makesymbolspec</span><span class="p">(</span><span class="s1">&#39;point&#39;</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="n">levs</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="n">cols</span><span class="p">)</span>
+<span class="n">layer</span> <span class="o">=</span> <span class="n">scatterm</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">edge</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">symbolspec</span><span class="o">=</span><span class="n">ls</span><span class="p">)</span>
+<span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">,</span> <span class="n">ticklabels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;invalid&#39;</span><span class="p">,</span> <span class="s1">&#39;clear&#39;</span><span class="p">,</span> <span class="s1">&#39;cloud&#39;</span><span class="p">,</span> <span class="s1">&#39;aerosol&#39;</span><span class="p">,</span> \
+    <span class="s1">&#39;strato&#39;</span><span class="p">,</span> <span class="s1">&#39;surface&#39;</span><span class="p">,</span> <span class="s1">&#39;subsurf&#39;</span><span class="p">,</span> <span class="s1">&#39;no signal&#39;</span><span class="p">])</span>
 <span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">180</span><span class="p">,</span> <span class="mi">180</span><span class="p">)</span>
 <span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">)</span>
-<span class="n">title</span><span class="p">([</span><span class="n">fn</span><span class="p">,</span> <span class="s">&#39;Feature Type at Altitude = 2500m&#39;</span><span class="p">])</span>
+<span class="n">title</span><span class="p">([</span><span class="n">fn</span><span class="p">,</span> <span class="s1">&#39;Feature Type at Altitude = 2500m&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 <img alt="../../../_images/calipso_featuretype.png" src="../../../_images/calipso_featuretype.png" />
-<div class="highlight-python"><div class="highlight"><pre><span class="c"># Add file</span>
-<span class="n">fn</span> <span class="o">=</span> <span class="s">&#39;D:/Temp/hdf/CAL_LID_L2_VFM-ValStage1-V3-02.2011-12-31T23-18-11ZD.hdf&#39;</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Add file</span>
+<span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;D:/Temp/hdf/CAL_LID_L2_VFM-ValStage1-V3-02.2011-12-31T23-18-11ZD.hdf&#39;</span>
 <span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
 
-<span class="c"># Read data</span>
-<span class="n">vname</span> <span class="o">=</span> <span class="s">&#39;Feature_Classification_Flags&#39;</span>
+<span class="c1"># Read data</span>
+<span class="n">vname</span> <span class="o">=</span> <span class="s1">&#39;Feature_Classification_Flags&#39;</span>
 <span class="n">var</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="n">vname</span><span class="p">]</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">var</span><span class="p">[:,:]</span>
-<span class="n">lat</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;Latitude&#39;</span><span class="p">][:,</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">lat</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;Latitude&#39;</span><span class="p">][:,</span><span class="mi">0</span><span class="p">]</span>
 
-<span class="c"># Extract Feature Type only through bitmask.</span>
+<span class="c1"># Extract Feature Type only through bitmask.</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">data</span> <span class="o">&amp;</span> <span class="mi">7</span>
 
-<span class="c"># Subset latitude values for the region of interest (40N to 62N).</span>
+<span class="c1"># Subset latitude values for the region of interest (40N to 62N).</span>
 <span class="n">lat</span> <span class="o">=</span> <span class="n">lat</span><span class="p">[</span><span class="mi">3500</span><span class="p">:</span><span class="mi">4000</span><span class="p">]</span>
 <span class="n">size</span> <span class="o">=</span> <span class="n">lat</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
-<span class="n">data2d</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">3500</span><span class="p">:</span><span class="mi">4000</span><span class="p">,</span> <span class="mi">1165</span><span class="p">:]</span>  <span class="c"># -0.5km to  8.2km</span>
+<span class="n">data2d</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">3500</span><span class="p">:</span><span class="mi">4000</span><span class="p">,</span> <span class="mi">1165</span><span class="p">:]</span>  <span class="c1"># -0.5km to  8.2km</span>
 <span class="n">data3d</span> <span class="o">=</span> <span class="n">reshape</span><span class="p">(</span><span class="n">data2d</span><span class="p">,</span> <span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">290</span><span class="p">))</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">data3d</span><span class="p">[:,</span><span class="mi">0</span><span class="p">,:]</span>
 
-<span class="c"># Focus on cloud (=2) data only.</span>
+<span class="c1"># Focus on cloud (=2) data only.</span>
 <span class="n">data</span><span class="p">[</span><span class="n">data</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">data</span><span class="p">[</span><span class="n">data</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">data</span><span class="p">[</span><span class="n">data</span> <span class="o">==</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
 
-<span class="c"># Generate altitude data according to file specification [1].</span>
+<span class="c1"># Generate altitude data according to file specification [1].</span>
 <span class="n">alt</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="mi">290</span><span class="p">)</span>
-<span class="c"># -0.5km to 8.2km</span>
+<span class="c1"># -0.5km to 8.2km</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">290</span><span class="p">):</span>
     <span class="n">alt</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.5</span> <span class="o">+</span> <span class="n">i</span><span class="o">*</span><span class="mf">0.03</span>
 
-<span class="c"># Plot</span>
+<span class="c1"># Plot</span>
 <span class="n">levs</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;w&#39;</span><span class="p">,</span><span class="s">&#39;b&#39;</span><span class="p">]</span>
-<span class="n">ls</span> <span class="o">=</span> <span class="n">makesymbolspec</span><span class="p">(</span><span class="s">&#39;image&#39;</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="n">levs</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="n">cols</span><span class="p">)</span>
-<span class="n">layer</span> <span class="o">=</span> <span class="n">imshow</span><span class="p">(</span><span class="n">lat</span><span class="p">,</span> <span class="n">alt</span><span class="p">,</span> <span class="n">rot90</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">symbolspec</span><span class="o">=</span><span class="n">ls</span><span class="p">)</span>
-<span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">,</span> <span class="n">ticks</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;Others&#39;</span><span class="p">,</span><span class="s">&#39;Cloud&#39;</span><span class="p">])</span>
+<span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;w&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">]</span>
+<span class="n">ls</span> <span class="o">=</span> <span class="n">makesymbolspec</span><span class="p">(</span><span class="s1">&#39;image&#39;</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="n">levs</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="n">cols</span><span class="p">)</span>
+<span class="n">layer</span> <span class="o">=</span> <span class="n">imshow</span><span class="p">(</span><span class="n">rot90</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">symbolspec</span><span class="o">=</span><span class="n">ls</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="p">[</span><span class="n">lat</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">lat</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="n">alt</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">alt</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">,</span> <span class="n">ticklabels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Others&#39;</span><span class="p">,</span><span class="s1">&#39;Cloud&#39;</span><span class="p">])</span>
 <span class="n">basename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
-<span class="n">title</span><span class="p">([</span><span class="n">basename</span><span class="p">,</span> <span class="s">&#39;Feature Type (Bits 1-3) in Feature Classification Flag&#39;</span><span class="p">])</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Latitude (degrees north)&#39;</span><span class="p">)</span>
-<span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;Altitude (km)&#39;</span><span class="p">)</span>
+<span class="n">title</span><span class="p">([</span><span class="n">basename</span><span class="p">,</span> <span class="s1">&#39;Feature Type (Bits 1-3) in Feature Classification Flag&#39;</span><span class="p">])</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Latitude (degrees north)&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Altitude (km)&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <img alt="../../../_images/calipso_cloud.png" src="../../../_images/calipso_cloud.png" />
 <p>Vertical feature types.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c"># Add file</span>
-<span class="n">fn</span> <span class="o">=</span> <span class="s">&#39;D:/Temp/hdf/CAL_LID_L2_VFM-Standard-V4-10.2013-12-08T04-46-10ZD.hdf&#39;</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Add file</span>
+<span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;D:/Temp/hdf/CAL_LID_L2_VFM-Standard-V4-10.2013-12-08T04-46-10ZD.hdf&#39;</span>
 <span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
 
-<span class="c"># Read data</span>
-<span class="n">vname</span> <span class="o">=</span> <span class="s">&#39;Feature_Classification_Flags&#39;</span>
+<span class="c1"># Read data</span>
+<span class="n">vname</span> <span class="o">=</span> <span class="s1">&#39;Feature_Classification_Flags&#39;</span>
 <span class="n">var</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="n">vname</span><span class="p">]</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">var</span><span class="p">[:,:]</span>
-<span class="n">lat</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;Latitude&#39;</span><span class="p">][:,</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">lat</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;Latitude&#39;</span><span class="p">][:,</span><span class="mi">0</span><span class="p">]</span>
 
-<span class="c"># Extract Feature Type only through bitmask.</span>
+<span class="c1"># Extract Feature Type only through bitmask.</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">data</span> <span class="o">&amp;</span> <span class="mi">7</span>
 
-<span class="c"># Subset latitude values for the region of interest (40N to 62N).</span>
+<span class="c1"># Subset latitude values for the region of interest (40N to 62N).</span>
 <span class="n">lat</span> <span class="o">=</span> <span class="n">lat</span><span class="p">[</span><span class="mi">3000</span><span class="p">:</span><span class="mi">4000</span><span class="p">]</span>
 <span class="n">size</span> <span class="o">=</span> <span class="n">lat</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
-<span class="n">data2d</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">3000</span><span class="p">:</span><span class="mi">4000</span><span class="p">,</span> <span class="mi">1165</span><span class="p">:]</span>  <span class="c"># -0.5km to  8.2km</span>
+<span class="n">data2d</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">3000</span><span class="p">:</span><span class="mi">4000</span><span class="p">,</span> <span class="mi">1165</span><span class="p">:]</span>  <span class="c1"># -0.5km to  8.2km</span>
 <span class="n">data3d</span> <span class="o">=</span> <span class="n">reshape</span><span class="p">(</span><span class="n">data2d</span><span class="p">,</span> <span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">290</span><span class="p">))</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">data3d</span><span class="p">[:,</span><span class="mi">0</span><span class="p">,:]</span>
 
-<span class="c"># Generate altitude data according to file specification [1].</span>
+<span class="c1"># Generate altitude data according to file specification [1].</span>
 <span class="n">alt</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="mi">290</span><span class="p">)</span>
-<span class="c"># -0.5km to 8.2km</span>
+<span class="c1"># -0.5km to 8.2km</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">290</span><span class="p">):</span>
     <span class="n">alt</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.5</span> <span class="o">+</span> <span class="n">i</span><span class="o">*</span><span class="mf">0.03</span>
 
-<span class="c"># Plot</span>
+<span class="c1"># Plot</span>
 <span class="n">levs</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
 <span class="n">cols</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">),(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">),(</span><span class="mi">51</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">),(</span><span class="mi">255</span><span class="p">,</span><span class="mi">153</span><span class="p">,</span><span class="mi">0</span><span class="p">),(</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">),(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">),(</span><span class="mi">127</span><span class="p">,</span><span class="mi">127</span><span class="p">,</span><span class="mi">127</span><span class="p">),(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)]</span>
-<span class="n">ls</span> <span class="o">=</span> <span class="n">makesymbolspec</span><span class="p">(</span><span class="s">&#39;image&#39;</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="n">levs</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="n">cols</span><span class="p">)</span>
-<span class="n">layer</span> <span class="o">=</span> <span class="n">imshow</span><span class="p">(</span><span class="n">lat</span><span class="p">,</span> <span class="n">alt</span><span class="p">,</span> <span class="n">rot90</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">symbolspec</span><span class="o">=</span><span class="n">ls</span><span class="p">)</span>
-<span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">,</span> <span class="n">ticks</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;Invalid&#39;</span><span class="p">,</span> <span class="s">&#39;Clear Air&#39;</span><span class="p">,</span> <span class="s">&#39;Cloud&#39;</span><span class="p">,</span> <span class="s">&#39;Aerosol&#39;</span><span class="p">,</span> <span class="s">&#39;Strato Feature&#39;</span><span class="p">,</span> <span class="s">&#39;Surface&#39;</span><span class="p">,</span> <span class="s">&#39;Subsurface&#39;</span><span class="p">,</span> <span class="s">&#39;No Signal&#39;</span><span class="p">])</span>
+<span class="n">ls</span> <span class="o">=</span> <span class="n">makesymbolspec</span><span class="p">(</span><span class="s1">&#39;image&#39;</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="n">levs</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="n">cols</span><span class="p">)</span>
+<span class="n">layer</span> <span class="o">=</span> <span class="n">imshow</span><span class="p">(</span><span class="n">rot90</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">symbolspec</span><span class="o">=</span><span class="n">ls</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="p">[</span><span class="n">lat</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">lat</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="n">alt</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">alt</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">,</span> <span class="n">ticklabels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Invalid&#39;</span><span class="p">,</span> <span class="s1">&#39;Clear Air&#39;</span><span class="p">,</span> <span class="s1">&#39;Cloud&#39;</span><span class="p">,</span> <span class="s1">&#39;Aerosol&#39;</span><span class="p">,</span> <span class="s1">&#39;Strato Feature&#39;</span><span class="p">,</span> <span class="s1">&#39;Surface&#39;</span><span class="p">,</span> <span class="s1">&#39;Subsurface&#39;</span><span class="p">,</span> <span class="s1">&#39;No Signal&#39;</span><span class="p">])</span>
 <span class="n">basename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
-<span class="n">title</span><span class="p">([</span><span class="n">basename</span><span class="p">,</span> <span class="s">&#39;Feature Type (Bits 1-3) in Feature Classification Flag&#39;</span><span class="p">])</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Latitude (degrees north)&#39;</span><span class="p">)</span>
-<span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;Altitude (km)&#39;</span><span class="p">)</span>
-<span class="n">xaxis</span><span class="p">(</span><span class="n">tickin</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
-<span class="n">yaxis</span><span class="p">(</span><span class="n">tickin</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">title</span><span class="p">([</span><span class="n">basename</span><span class="p">,</span> <span class="s1">&#39;Feature Type (Bits 1-3) in Feature Classification Flag&#39;</span><span class="p">])</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Latitude (degrees north)&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Altitude (km)&#39;</span><span class="p">)</span>
+<span class="n">xaxis</span><span class="p">(</span><span class="n">tickin</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">yaxis</span><span class="p">(</span><span class="n">tickin</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 <img alt="../../../_images/calipso_featuretype-vertical.png" src="../../../_images/calipso_featuretype-vertical.png" />
 <p>Aerosol types.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c"># Add file</span>
-<span class="n">fn</span> <span class="o">=</span> <span class="s">&#39;D:/Temp/hdf/CAL_LID_L2_VFM-Standard-V4-10.2013-12-08T04-46-10ZD.hdf&#39;</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Add file</span>
+<span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;D:/Temp/hdf/CAL_LID_L2_VFM-Standard-V4-10.2013-12-08T04-46-10ZD.hdf&#39;</span>
 <span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
 
-<span class="c"># Read data</span>
-<span class="n">vname</span> <span class="o">=</span> <span class="s">&#39;Feature_Classification_Flags&#39;</span>
+<span class="c1"># Read data</span>
+<span class="n">vname</span> <span class="o">=</span> <span class="s1">&#39;Feature_Classification_Flags&#39;</span>
 <span class="n">var</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="n">vname</span><span class="p">]</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">var</span><span class="p">[:,:]</span>
-<span class="n">lat</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;Latitude&#39;</span><span class="p">][:,</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">lon</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;Longitude&#39;</span><span class="p">][:,</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">lat</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;Latitude&#39;</span><span class="p">][:,</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">lon</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;Longitude&#39;</span><span class="p">][:,</span><span class="mi">0</span><span class="p">]</span>
 
-<span class="c"># Subset latitude values for the region of interest.</span>
+<span class="c1"># Subset latitude values for the region of interest.</span>
 <span class="n">lidx1</span> <span class="o">=</span> <span class="mi">3176</span>
 <span class="n">lidx2</span> <span class="o">=</span> <span class="mi">3313</span>
 <span class="n">lat</span> <span class="o">=</span> <span class="n">lat</span><span class="p">[</span><span class="n">lidx1</span><span class="p">:</span><span class="n">lidx2</span><span class="p">]</span>
 <span class="n">lon</span> <span class="o">=</span> <span class="n">lon</span><span class="p">[</span><span class="n">lidx1</span><span class="p">:</span><span class="n">lidx2</span><span class="p">]</span>
 <span class="n">size</span> <span class="o">=</span> <span class="n">lat</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
-<span class="n">N</span> <span class="o">=</span> <span class="mi">290</span>    <span class="c"># 290 is sample numbe of low hight data: -0.5km to 8.2km</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">290</span>    <span class="c1"># 290 is sample numbe of low hight data: -0.5km to 8.2km</span>
 <span class="n">sidx</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">N</span> <span class="o">*</span> <span class="mi">15</span>
 <span class="n">data2d</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">lidx1</span><span class="p">:</span><span class="n">lidx2</span><span class="p">,</span> <span class="n">sidx</span><span class="p">:]</span>
 <span class="n">data3d</span> <span class="o">=</span> <span class="n">reshape</span><span class="p">(</span><span class="n">data2d</span><span class="p">,</span> <span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="n">N</span><span class="p">))</span>
 <span class="n">data_l</span> <span class="o">=</span> <span class="n">data3d</span><span class="p">[:,</span><span class="mi">0</span><span class="p">,:]</span>
-<span class="c">#data_l = rot90(data_1, 1)</span>
+<span class="c1">#data_l = rot90(data_1, 1)</span>
 
 <span class="n">sidx1</span> <span class="o">=</span> <span class="n">sidx</span> <span class="o">-</span> <span class="mi">200</span> <span class="o">*</span> <span class="mi">5</span>
 <span class="n">data2d</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">lidx1</span><span class="p">:</span><span class="n">lidx2</span><span class="p">,</span> <span class="n">sidx1</span><span class="p">:</span><span class="n">sidx</span><span class="p">]</span>
@@ -258,12 +254,12 @@ LaRC CALIPSO data file.</p>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">data_m</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
     <span class="n">data_m1</span><span class="p">[:,</span><span class="n">i</span><span class="o">*</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_m</span><span class="p">[:,</span><span class="n">i</span><span class="p">]</span>
     <span class="n">data_m1</span><span class="p">[:,</span><span class="n">i</span><span class="o">*</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_m</span><span class="p">[:,</span><span class="n">i</span><span class="p">]</span>
-<span class="c">#data_m = rot90(data_1, 1)</span>
+<span class="c1">#data_m = rot90(data_1, 1)</span>
 
 <span class="n">data</span> <span class="o">=</span> <span class="n">concatenate</span><span class="p">([</span><span class="n">data_m1</span><span class="p">,</span> <span class="n">data_l</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">rot90</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 
-<span class="c"># Aerosol type</span>
+<span class="c1"># Aerosol type</span>
 <span class="n">a</span> <span class="o">=</span> <span class="n">data</span> <span class="o">&gt;&gt;</span> <span class="mi">9</span>
 <span class="n">temp</span> <span class="o">=</span> <span class="n">a</span> <span class="o">&amp;</span> <span class="mi">7</span>
 <span class="n">type2</span> <span class="o">=</span> <span class="n">data</span> <span class="o">&amp;</span> <span class="mi">7</span>
@@ -272,52 +268,52 @@ LaRC CALIPSO data file.</p>
 <span class="n">temp2</span> <span class="o">=</span> <span class="p">(</span><span class="n">temp1</span> <span class="o">&amp;</span> <span class="n">tmask</span><span class="p">)</span>
 <span class="n">atype</span> <span class="o">=</span> <span class="n">temp</span> <span class="o">*</span> <span class="n">temp2</span>
 
-<span class="c"># Generate altitude data according to file specification [1].</span>
+<span class="c1"># Generate altitude data according to file specification [1].</span>
 <span class="n">alt</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="n">N</span> <span class="o">+</span> <span class="mi">200</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
-<span class="c"># -0.5km to 20.2km</span>
+<span class="c1"># -0.5km to 20.2km</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">N</span><span class="o">+</span><span class="mi">200</span><span class="o">*</span><span class="mi">2</span><span class="p">):</span>
     <span class="n">alt</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.5</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="mf">0.03</span>
 
-<span class="c"># Plot</span>
+<span class="c1"># Plot</span>
 <span class="n">levs</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
 <span class="n">cols</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">204</span><span class="p">,</span><span class="mi">204</span><span class="p">,</span><span class="mi">204</span><span class="p">),(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">),(</span><span class="mi">153</span><span class="p">,</span><span class="mi">51</span><span class="p">,</span><span class="mi">0</span><span class="p">),(</span><span class="mi">0</span><span class="p">,</span><span class="mi">204</span><span class="p">,</span><span class="mi">0</span><span class="p">),(</span><span class="mi">255</span><span class="p">,</span><span class="mi">241</span><span class="p">,</span><span class="mi">85</span><span class="p">),(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">),</span>\
     <span class="p">(</span><span class="mi">102</span><span class="p">,</span><span class="mi">102</span><span class="p">,</span><span class="mi">255</span><span class="p">),(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)]</span>
-<span class="n">ls</span> <span class="o">=</span> <span class="n">makesymbolspec</span><span class="p">(</span><span class="s">&#39;image&#39;</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="n">levs</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="n">cols</span><span class="p">)</span>
-<span class="n">layer</span> <span class="o">=</span> <span class="n">imshow</span><span class="p">(</span><span class="n">lat</span><span class="p">,</span> <span class="n">alt</span><span class="p">,</span> <span class="n">atype</span><span class="p">,</span> <span class="n">symbolspec</span><span class="o">=</span><span class="n">ls</span><span class="p">)</span>
-<span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">,</span> <span class="n">ticks</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;Not Determined&#39;</span><span class="p">,</span><span class="s">&#39;Clean Marine&#39;</span><span class="p">,</span><span class="s">&#39;Dust&#39;</span><span class="p">,</span><span class="s">&#39;Polluted Cont.&#39;</span><span class="p">,</span><span class="s">&#39;Clean Cont.&#39;</span><span class="p">,</span>\
-    <span class="s">&#39;Polluted Dust&#39;</span><span class="p">,</span><span class="s">&#39;Smoke&#39;</span><span class="p">,</span><span class="s">&#39;Other&#39;</span><span class="p">])</span>
+<span class="n">ls</span> <span class="o">=</span> <span class="n">makesymbolspec</span><span class="p">(</span><span class="s1">&#39;image&#39;</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="n">levs</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="n">cols</span><span class="p">)</span>
+<span class="n">layer</span> <span class="o">=</span> <span class="n">imshow</span><span class="p">(</span><span class="n">atype</span><span class="p">,</span> <span class="n">symbolspec</span><span class="o">=</span><span class="n">ls</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="p">[</span><span class="n">lat</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">lat</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="n">alt</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">alt</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">,</span> <span class="n">ticklabels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Not Determined&#39;</span><span class="p">,</span><span class="s1">&#39;Clean Marine&#39;</span><span class="p">,</span><span class="s1">&#39;Dust&#39;</span><span class="p">,</span><span class="s1">&#39;Polluted Cont.&#39;</span><span class="p">,</span><span class="s1">&#39;Clean Cont.&#39;</span><span class="p">,</span>\
+    <span class="s1">&#39;Polluted Dust&#39;</span><span class="p">,</span><span class="s1">&#39;Smoke&#39;</span><span class="p">,</span><span class="s1">&#39;Other&#39;</span><span class="p">])</span>
 <span class="n">basename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
-<span class="n">title</span><span class="p">([</span><span class="n">basename</span><span class="p">,</span> <span class="s">&#39;Aerosol types&#39;</span><span class="p">])</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Latitude (degrees north)&#39;</span><span class="p">)</span>
-<span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;Altitude (km)&#39;</span><span class="p">)</span>
+<span class="n">title</span><span class="p">([</span><span class="n">basename</span><span class="p">,</span> <span class="s1">&#39;Aerosol types&#39;</span><span class="p">])</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Latitude (degrees north)&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Altitude (km)&#39;</span><span class="p">)</span>
 <span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">12.1</span><span class="p">)</span>
 </pre></div>
 </div>
 <img alt="../../../_images/calipso_aerosol_type.png" src="../../../_images/calipso_aerosol_type.png" />
 <p>Plot total attenuated backscatter.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&#39;D:/Working/MIScript/Jython/mis/hdf&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;D:/Working/MIScript/Jython/mis/hdf&#39;</span><span class="p">)</span>
 <span class="kn">import</span> <span class="nn">CALIPSO_colors</span>
 
-<span class="c"># Add file</span>
-<span class="n">fn</span> <span class="o">=</span> <span class="s">&#39;D:/Temp/hdf/CAL_LID_L1-ValStage1-V3-01.2007-06-12T03-42-18ZN.hdf&#39;</span>
+<span class="c1"># Add file</span>
+<span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;D:/Temp/hdf/CAL_LID_L1-ValStage1-V3-01.2007-06-12T03-42-18ZN.hdf&#39;</span>
 <span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
 
-<span class="c"># Read data</span>
-<span class="n">vname</span> <span class="o">=</span> <span class="s">&#39;Total_Attenuated_Backscatter_532&#39;</span>
+<span class="c1"># Read data</span>
+<span class="n">vname</span> <span class="o">=</span> <span class="s1">&#39;Total_Attenuated_Backscatter_532&#39;</span>
 <span class="n">var</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="n">vname</span><span class="p">]</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">var</span><span class="p">[:</span><span class="mi">1000</span><span class="p">,:]</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">rot90</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="n">lats</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;Latitude&#39;</span><span class="p">][:</span><span class="mi">1000</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">lats</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;Latitude&#39;</span><span class="p">][:</span><span class="mi">1000</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">latstrs</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">lat</span> <span class="ow">in</span> <span class="n">lats</span><span class="p">:</span>
-    <span class="n">latstrs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&#39;</span><span class="si">%.1f</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">lat</span><span class="p">)</span>
-<span class="n">height</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;metadata&#39;</span><span class="p">][</span><span class="s">&#39;Lidar_Data_Altitudes&#39;</span><span class="p">]</span>
+    <span class="n">latstrs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%.1f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">lat</span><span class="p">)</span>
+<span class="n">height</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;metadata&#39;</span><span class="p">][</span><span class="s1">&#39;Lidar_Data_Altitudes&#39;</span><span class="p">]</span>
 <span class="n">h</span> <span class="o">=</span> <span class="n">height</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 <span class="n">hstrs</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">hh</span> <span class="ow">in</span> <span class="n">h</span><span class="p">:</span>
-    <span class="n">hstrs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&#39;</span><span class="si">%.1f</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">hh</span><span class="p">)</span>
+    <span class="n">hstrs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%.1f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">hh</span><span class="p">)</span>
 
-<span class="c"># Plot</span>
+<span class="c1"># Plot</span>
 <span class="n">levs</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0001</span><span class="p">,</span><span class="mf">0.0002</span><span class="p">,</span><span class="mf">0.0003</span><span class="p">,</span><span class="mf">0.0004</span><span class="p">,</span><span class="mf">0.0005</span><span class="p">,</span><span class="mf">0.0006</span><span class="p">,</span><span class="mf">0.0007</span><span class="p">,</span><span class="mf">0.0008</span><span class="p">,</span><span class="mf">0.0009</span><span class="p">,</span>\
     <span class="mf">0.001</span><span class="p">,</span><span class="mf">0.0015</span><span class="p">,</span><span class="mf">0.002</span><span class="p">,</span><span class="mf">0.0025</span><span class="p">,</span><span class="mf">0.003</span><span class="p">,</span><span class="mf">0.0035</span><span class="p">,</span><span class="mf">0.004</span><span class="p">,</span><span class="mf">0.0045</span><span class="p">,</span><span class="mf">0.005</span><span class="p">,</span><span class="mf">0.0055</span><span class="p">,</span><span class="mf">0.006</span><span class="p">,</span>\
     <span class="mf">0.0065</span><span class="p">,</span><span class="mf">0.007</span><span class="p">,</span><span class="mf">0.0075</span><span class="p">,</span><span class="mf">0.008</span><span class="p">,</span><span class="mf">0.01</span><span class="p">,</span><span class="mf">0.02</span><span class="p">,</span><span class="mf">0.03</span><span class="p">,</span><span class="mf">0.04</span><span class="p">,</span><span class="mf">0.05</span><span class="p">,</span><span class="mf">0.06</span><span class="p">,</span><span class="mf">0.07</span><span class="p">,</span><span class="mf">0.08</span><span class="p">,</span><span class="mf">0.09</span><span class="p">,</span><span class="mf">0.1</span><span class="p">]</span>
@@ -325,17 +321,17 @@ LaRC CALIPSO data file.</p>
 <span class="n">layer</span> <span class="o">=</span> <span class="n">imshow</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">levs</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="n">colors</span><span class="p">)</span>
 <span class="n">xticks</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">dimvalue</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">latstrs</span><span class="p">)</span>
 <span class="n">yticks</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">dimvalue</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">hstrs</span><span class="p">)</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Latitude&#39;</span><span class="p">)</span>
-<span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;Altitude (km)&#39;</span><span class="p">)</span>
-<span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">,</span> <span class="n">extendrect</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">r&#39;$\rm{km}^{-1}$ \rm{sr}$^{-1}$&#39;</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Latitude&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Altitude (km)&#39;</span><span class="p">)</span>
+<span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">,</span> <span class="n">extendrect</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$\rm</span><span class="si">{km}</span><span class="s1">^{-1}$ \rm</span><span class="si">{sr}</span><span class="s1">$^{-1}$&#39;</span><span class="p">)</span>
 <span class="n">basename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;{0}</span><span class="se">\n</span><span class="s">{1}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">basename</span><span class="p">,</span> <span class="n">vname</span><span class="p">))</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{0}</span><span class="se">\n</span><span class="si">{1}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">basename</span><span class="p">,</span> <span class="n">vname</span><span class="p">))</span>
 </pre></div>
 </div>
 <p>The script to make colors (CALIPSO_colors.py):</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">mipylib.numeric.minum</span> <span class="kn">import</span> <span class="n">array</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mipylib.numeric.minum</span> <span class="k">import</span> <span class="n">array</span>
 
-<span class="k">def</span> <span class="nf">makecolors</span><span class="p">(</span><span class="n">gray</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">makecolors</span><span class="p">(</span><span class="n">gray</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Return colors for CAPLIPSO backscatter data plot.</span>
 
@@ -407,7 +403,7 @@ LaRC CALIPSO data file.</p>
     <span class="n">blue_c</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">blue_c</span><span class="p">[</span><span class="mi">49</span><span class="p">]</span>
 
     <span class="n">color_bar</span> <span class="o">=</span> <span class="n">array</span><span class="p">([</span><span class="mi">130</span><span class="p">,</span><span class="mi">113</span><span class="p">,</span><span class="mi">113</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">57</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span><span class="mi">128</span><span class="p">,</span><span class="mi">144</span><span class="p">,</span>  <span class="mi">7</span><span class="p">,</span>  <span class="mi">7</span><span class="p">,</span><span class="mi">193</span><span class="p">,</span><span class="mi">192</span><span class="p">,</span><span class="mi">191</span><span class="p">,</span><span class="mi">190</span><span class="p">,</span><span class="mi">188</span><span class="p">,</span><span class="mi">155</span><span class="p">,</span><span class="mi">139</span><span class="p">,</span><span class="mi">123</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">49</span><span class="p">])</span>
-    <span class="c">#color_bar = color_bar + 1</span>
+    <span class="c1">#color_bar = color_bar + 1</span>
     <span class="n">colors</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">color_bar</span><span class="p">:</span>
         <span class="n">r</span> <span class="o">=</span> <span class="n">red_c</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
@@ -426,7 +422,7 @@ LaRC CALIPSO data file.</p>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -448,14 +444,14 @@ LaRC CALIPSO data file.</p>
         <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
         <li><a href="../../../docs/index.html">docs</a>|&nbsp;</li>
 
-          <li><a href="../../index.html" >Examples</a> &raquo;</li>
-          <li><a href="../index.html" >MeteoInfoLab</a> &raquo;</li>
-          <li><a href="../satellite.html" >Satellite data</a> &raquo;</li> 
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Examples</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../satellite.html" >Satellite data</a> &#187;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2010-2017, Yaqiang Wang.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2018, Yaqiang Wang.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
   </body>
 </html>

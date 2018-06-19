@@ -1,31 +1,29 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>Contour plot &mdash; MeteoInfo 1.4.4 documentation</title>
-    
+    <title>Contour plot &#8212; MeteoInfo 1.4.8 documentation</title>
     <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.4.4',
+        VERSION:     '1.4.8',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="MeteoInfo 1.4.4 documentation" href="../../../index.html" />
-    <link rel="up" title="Plot types" href="../plot_types.html" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Vector plot" href="vector.html" />
     <link rel="prev" title="Windrose plot" href="windrose.html" /> 
   </head>
@@ -34,7 +32,7 @@
 <div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
 <a href="../../../index.html"><img src="../../../_static/logo.jpg" border="0"/></a></div>
 
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -56,13 +54,13 @@
         <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
         <li><a href="../../../docs/index.html">docs</a>|&nbsp;</li>
 
-          <li><a href="../../index.html" >Examples</a> &raquo;</li>
-          <li><a href="../index.html" >MeteoInfoLab</a> &raquo;</li>
-          <li><a href="../plot_types.html" accesskey="U">Plot types</a> &raquo;</li> 
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Examples</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../plot_types.html" accesskey="U">Plot types</a> &#187;</li> 
       </ul>
     </div>
 
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="windrose.html"
@@ -70,22 +68,21 @@
   <h4>Next topic</h4>
   <p class="topless"><a href="vector.html"
                         title="next chapter">Vector plot</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="../../../_sources/examples/meteoinfolab/plot_types/contour.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/examples/meteoinfolab/plot_types/contour.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../../../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -94,44 +91,44 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="contour-plot">
 <span id="examples-meteoinfolab-plot-types-contour"></span><h1>Contour plot<a class="headerlink" href="#contour-plot" title="Permalink to this headline">¶</a></h1>
-<p>Contour plot was created by <tt class="docutils literal"><span class="pre">contour()</span></tt> function. <tt class="docutils literal"><span class="pre">contourf()</span></tt> function is for filled
+<p>Contour plot was created by <code class="docutils literal"><span class="pre">contour()</span></code> function. <code class="docutils literal"><span class="pre">contourf()</span></code> function is for filled
 contour plot.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="s">&#39;D:/Temp/nc/cone.nc&#39;</span><span class="p">)</span>
-<span class="n">u</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;u&#39;</span><span class="p">][</span><span class="mi">4</span><span class="p">,:,:]</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="s1">&#39;D:/Temp/nc/cone.nc&#39;</span><span class="p">)</span>
+<span class="n">u</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;u&#39;</span><span class="p">][</span><span class="mi">4</span><span class="p">,:,:]</span>
 <span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">layer</span> <span class="o">=</span> <span class="n">contour</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
 <span class="n">clabel</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;Cone amplitude&#39;</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Cone amplitude&#39;</span><span class="p">)</span>
 <span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span>
 
 <span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">u</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;u&#39;</span><span class="p">][</span><span class="mi">5</span><span class="p">,:,:]</span>
+<span class="n">u</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;u&#39;</span><span class="p">][</span><span class="mi">5</span><span class="p">,:,:]</span>
 <span class="n">layer</span> <span class="o">=</span> <span class="n">contourf</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;Cone amplitude&#39;</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Cone amplitude&#39;</span><span class="p">)</span>
 <span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span>
 </pre></div>
 </div>
-<img alt="../../../_images/contour.png" src="../../../_images/contour.png" />
-<p>Corresponding functions for map plot are <tt class="docutils literal"><span class="pre">contourm()</span></tt> and <tt class="docutils literal"><span class="pre">contourfm()</span></tt> .</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="s">&#39;D:/Temp/GrADS/model.ctl&#39;</span><span class="p">)</span>
-<span class="n">psv</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;PS&#39;</span><span class="p">]</span>
-<span class="n">ps</span> <span class="o">=</span> <span class="n">psv</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="s">&#39;10:60&#39;</span><span class="p">,</span><span class="s">&#39;60:140&#39;</span><span class="p">]</span>
+<img alt="../../../_images/contour1.png" src="../../../_images/contour1.png" />
+<p>Corresponding functions for map plot are <code class="docutils literal"><span class="pre">contourm()</span></code> and <code class="docutils literal"><span class="pre">contourfm()</span></code> .</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="s1">&#39;D:/Temp/GrADS/model.ctl&#39;</span><span class="p">)</span>
+<span class="n">psv</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;PS&#39;</span><span class="p">]</span>
+<span class="n">ps</span> <span class="o">=</span> <span class="n">psv</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;10:60&#39;</span><span class="p">,</span><span class="s1">&#39;60:140&#39;</span><span class="p">]</span>
 <span class="n">axesm</span><span class="p">()</span>
-<span class="n">mlayer</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="s">&#39;D:/Temp/map/country1.shp&#39;</span><span class="p">)</span>
+<span class="n">mlayer</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="s1">&#39;D:/Temp/map/country1.shp&#39;</span><span class="p">)</span>
 <span class="n">geoshow</span><span class="p">(</span><span class="n">mlayer</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">))</span>
-<span class="c">#layer = contourm(ps, 20)</span>
+<span class="c1">#layer = contourm(ps, 20)</span>
 <span class="n">layer</span> <span class="o">=</span> <span class="n">contourfm</span><span class="p">(</span><span class="n">ps</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;Pressure&#39;</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Pressure&#39;</span><span class="p">)</span>
 <span class="n">yticks</span><span class="p">(</span><span class="n">arange</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">61</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span>
 <span class="n">grid</span><span class="p">()</span>
-<span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s">&#39;horizontal&#39;</span><span class="p">,</span> <span class="n">extendrect</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;horizontal&#39;</span><span class="p">,</span> <span class="n">extendrect</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
 </pre></div>
 </div>
-<img alt="../../../_images/contourm.png" src="../../../_images/contourm.png" />
+<img alt="../../../_images/contourm1.png" src="../../../_images/contourm1.png" />
 </div>
 
 
@@ -140,7 +137,7 @@ contour plot.</p>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -162,14 +159,14 @@ contour plot.</p>
         <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
         <li><a href="../../../docs/index.html">docs</a>|&nbsp;</li>
 
-          <li><a href="../../index.html" >Examples</a> &raquo;</li>
-          <li><a href="../index.html" >MeteoInfoLab</a> &raquo;</li>
-          <li><a href="../plot_types.html" >Plot types</a> &raquo;</li> 
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Examples</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../plot_types.html" >Plot types</a> &#187;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2010-2017, Yaqiang Wang.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2018, Yaqiang Wang.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
   </body>
 </html>

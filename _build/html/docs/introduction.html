@@ -1,31 +1,29 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>Introduction &mdash; MeteoInfo 1.4.4 documentation</title>
-    
+    <title>Introduction &#8212; MeteoInfo 1.4.8 documentation</title>
     <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.4.4',
+        VERSION:     '1.4.8',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="MeteoInfo 1.4.4 documentation" href="../index.html" />
-    <link rel="up" title="Documentation" href="index.html" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="MeteoInfoMap" href="meteoinfo/index.html" />
     <link rel="prev" title="Documentation" href="index.html" /> 
   </head>
@@ -34,7 +32,7 @@
 <div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
 <a href="../index.html"><img src="../_static/logo.jpg" border="0"/></a></div>
 
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -56,11 +54,11 @@
         <li><a href="../downloads/index.html">downloads</a>|&nbsp;</li>
         <li><a href="index.html">docs</a>|&nbsp;</li>
 
-          <li><a href="index.html" accesskey="U">Documentation</a> &raquo;</li> 
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Documentation</a> &#187;</li> 
       </ul>
     </div>
 
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h3><a href="../index.html">Table Of Contents</a></h3>
   <ul>
@@ -82,22 +80,21 @@
   <h4>Next topic</h4>
   <p class="topless"><a href="meteoinfo/index.html"
                         title="next chapter">MeteoInfoMap</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="../_sources/docs/introduction.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/docs/introduction.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -106,7 +103,7 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="introduction">
 <span id="docs-instroduction"></span><h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
@@ -131,59 +128,59 @@ application, may always be found at <a class="reference external" href="http://w
 <div class="section" id="installing-meteoinfomap-meteoinfolab">
 <h2>Installing MeteoInfoMap/MeteoInfoLab<a class="headerlink" href="#installing-meteoinfomap-meteoinfolab" title="Permalink to this headline">¶</a></h2>
 <p>There is no specified installation file, just unzip the downloaded MeteoInfo file. The
-complete MeteoInfo Java &#8220;Generic&#8221; package should, after uncompression, include
+complete MeteoInfo Java “Generic” package should, after uncompression, include
 the following items:</p>
 <ul class="simple">
-<li>MeteoInfo launcher in a shell command files called &#8220;mimap.sh&#8221; and &#8220;milab.sh&#8221; for MAC OS, Linux, Unix system.</li>
-<li>MeteoInfo launcher in a batch command files called &#8220;mimap.bat&#8221; and &#8220;milab.bat&#8221; for Windows system.</li>
-<li>MeteoInfo executable files called &#8220;MeteoInfoMap.exe&#8221; and &#8220;MeteoInfoLab.exe&#8221; for Windows system.</li>
-<li>MeteoInfo jar files called &#8220;MeteoInfoMap.jar&#8221; and &#8220;MeteoInfoLab.jar&#8221;.</li>
-<li>Default MeteoInfo project file called &#8220;default.mip&#8221;.</li>
-<li>Configure file called &#8220;config.xml&#8221; for MeteoInfo and &#8220;milconfig.xml&#8221; for MeteoInfoLab.</li>
-<li>Splash file called &#8220;splash.png&#8217; for MeteoInfo and &#8220;splash_mil.png&#8221; for MeteoInfoLab.</li>
-<li>Color map files in a folder called &#8220;colormaps&#8221;.</li>
-<li>Image data files in a folder called &#8220;image&#8221;.</li>
-<li>Library files in a folder called &#8220;lib&#8221;.</li>
-<li>Map data files in a folder called &#8220;map&#8221;.</li>
-<li>Plugin files in a folder called &#8220;plugins&#8221; for MeteoInfo.</li>
-<li>Jython program files in a folder called &#8220;pylib&#8221; for MeteoInfoLab.</li>
-<li>Sample data files in a folder called &#8220;sample&#8221;.</li>
-<li>Synop and METAR station files in a folder called &#8220;station&#8221;.</li>
+<li>MeteoInfo launcher in a shell command files called “mimap.sh” and “milab.sh” for MAC OS, Linux, Unix system.</li>
+<li>MeteoInfo launcher in a batch command files called “mimap.bat” and “milab.bat” for Windows system.</li>
+<li>MeteoInfo executable files called “MeteoInfoMap.exe” and “MeteoInfoLab.exe” for Windows system.</li>
+<li>MeteoInfo jar files called “MeteoInfoMap.jar” and “MeteoInfoLab.jar”.</li>
+<li>Default MeteoInfo project file called “default.mip”.</li>
+<li>Configure file called “config.xml” for MeteoInfo and “milconfig.xml” for MeteoInfoLab.</li>
+<li>Splash file called “splash.png’ for MeteoInfo and “splash_mil.png” for MeteoInfoLab.</li>
+<li>Color map files in a folder called “colormaps”.</li>
+<li>Image data files in a folder called “image”.</li>
+<li>Library files in a folder called “lib”.</li>
+<li>Map data files in a folder called “map”.</li>
+<li>Plugin files in a folder called “plugins” for MeteoInfo.</li>
+<li>Jython program files in a folder called “pylib” for MeteoInfoLab.</li>
+<li>Sample data files in a folder called “sample”.</li>
+<li>Synop and METAR station files in a folder called “station”.</li>
 <li>A README file.</li>
 </ul>
 </div>
 <div class="section" id="running-meteoinfomap-meteoinfolab">
 <h2>Running MeteoInfoMap/MeteoInfoLab<a class="headerlink" href="#running-meteoinfomap-meteoinfolab" title="Permalink to this headline">¶</a></h2>
-<p>On Windows paltform, you can launch MeteoInfoMap by double-clicking &#8220;MeteoInfoMap.exe&#8221; file,
-or by run the batch command file &#8220;mimap.bat&#8221;. The batch command file with parameters will
-run a Jython script (&#8220;mimap.bat test.py&#8221;).</p>
-<p>On other platforms, you should run MeteoInfoMap from the shell command line; &#8216;cd&#8217; into
+<p>On Windows paltform, you can launch MeteoInfoMap by double-clicking “MeteoInfoMap.exe” file,
+or by run the batch command file “mimap.bat”. The batch command file with parameters will
+run a Jython script (“mimap.bat test.py”).</p>
+<p>On other platforms, you should run MeteoInfoMap from the shell command line; ‘cd’ into
 the directory where the above files are located and then type:</p>
-<p><tt class="docutils literal"><span class="pre">./mimap.sh</span></tt></p>
+<p><code class="docutils literal"><span class="pre">./mimap.sh</span></code></p>
 <p>This will execute a one-line command in the shell file which starts
 MeteoInfoMap and requests that it be allocated 1 GB of memory. To run the script, type:</p>
-<p><tt class="docutils literal"><span class="pre">./mimap.sh</span> <span class="pre">test.py</span></tt></p>
+<p><code class="docutils literal"><span class="pre">./mimap.sh</span> <span class="pre">test.py</span></code></p>
 <p>To run the script with headless model, a system configuration in which the display device is lacking, type:
-<tt class="docutils literal"><span class="pre">./mimap.sh</span> <span class="pre">-b</span> <span class="pre">test.py</span></tt>
+<code class="docutils literal"><span class="pre">./mimap.sh</span> <span class="pre">-b</span> <span class="pre">test.py</span></code>
 It is specially useful in Unix/Linux crontab.</p>
 <p>Run MeteoInfoLab:
-On Windows paltform, you can launch MeteoInfoLab by double-clicking &#8220;MeteoInfoLab.exe&#8221; file,
-or by run the batch command file &#8220;milab.bat&#8221;. The batch command file with parameters will
+On Windows paltform, you can launch MeteoInfoLab by double-clicking “MeteoInfoLab.exe” file,
+or by run the batch command file “milab.bat”. The batch command file with parameters will
 run a Jython script.</p>
-<p>On other platforms, you should run MeteoInfoLab from the shell command line; &#8216;cd&#8217; into
+<p>On other platforms, you should run MeteoInfoLab from the shell command line; ‘cd’ into
 the directory where the above files are located and then type:</p>
-<p><tt class="docutils literal"><span class="pre">./milab.sh</span></tt></p>
+<p><code class="docutils literal"><span class="pre">./milab.sh</span></code></p>
 <p>This will execute a one-line command in the shell file which starts
 MeteoInfoLab and requests that it be allocated 1 GB of memory. To run the script, type:</p>
-<p><tt class="docutils literal"><span class="pre">./milab.sh</span> <span class="pre">test.py</span></tt></p>
+<p><code class="docutils literal"><span class="pre">./milab.sh</span> <span class="pre">test.py</span></code></p>
 <p>To run the script with headless model, a system configuration in which the display device is lacking, type:
-<tt class="docutils literal"><span class="pre">./milab.sh</span> <span class="pre">-b</span> <span class="pre">test.py</span></tt>
+<code class="docutils literal"><span class="pre">./milab.sh</span> <span class="pre">-b</span> <span class="pre">test.py</span></code>
 It is specially useful in Unix/Linux crontab.</p>
 </div>
 <div class="section" id="lib-files">
 <h2>Lib files<a class="headerlink" href="#lib-files" title="Permalink to this headline">¶</a></h2>
 <p>The folder called lib must remain in the same directory as the
-mimap.sh application, and all the &#8220;jar&#8221; files it holds must remain
+mimap.sh application, and all the “jar” files it holds must remain
 in the lib folder. These file contain the MeteoInfo application code
 and (re)moving any of them will break MeteoInfo.</p>
 </div>
@@ -217,7 +214,7 @@ Please send bug reports, etc., to:</p>
 <li>Docking Frames: Available at <a class="reference external" href="http://www.docking-frames.org">http://www.docking-frames.org</a></li>
 <li>JLaTeXMath: Available at <a class="reference external" href="https://github.com/opencollab/jlatexmath">https://github.com/opencollab/jlatexmath</a></li>
 <li>JTS Topology Suite: Available at <a class="reference external" href="https://www.locationtech.org/projects/technology.jts">https://www.locationtech.org/projects/technology.jts</a></li>
-<li>Jerry&#8217;s Java Image Processing: Available at <a class="reference external" href="http://www.jhlabs.com/ip/index.html">http://www.jhlabs.com/ip/index.html</a></li>
+<li>Jerry’s Java Image Processing: Available at <a class="reference external" href="http://www.jhlabs.com/ip/index.html">http://www.jhlabs.com/ip/index.html</a></li>
 <li>SurfacePlotter: Available at <a class="reference external" href="https://github.com/ericaro/surfaceplotter">https://github.com/ericaro/surfaceplotter</a></li>
 </ul>
 </div>
@@ -229,7 +226,7 @@ Please send bug reports, etc., to:</p>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -251,12 +248,12 @@ Please send bug reports, etc., to:</p>
         <li><a href="../downloads/index.html">downloads</a>|&nbsp;</li>
         <li><a href="index.html">docs</a>|&nbsp;</li>
 
-          <li><a href="index.html" >Documentation</a> &raquo;</li> 
+          <li class="nav-item nav-item-1"><a href="index.html" >Documentation</a> &#187;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2010-2017, Yaqiang Wang.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2018, Yaqiang Wang.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
   </body>
 </html>

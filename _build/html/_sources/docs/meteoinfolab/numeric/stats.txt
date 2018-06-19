@@ -17,3 +17,5 @@ Functions:
    stats/pearsonr.rst
    stats/spearmanr.rst
    stats/kendalltau.rst
+   stats/percentile.rst
+   stats/mlinregress.rst

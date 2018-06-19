@@ -1,31 +1,29 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>Write netCDF data file &mdash; MeteoInfo 1.4.4 documentation</title>
-    
+    <title>Write netCDF data file &#8212; MeteoInfo 1.4.8 documentation</title>
     <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.4.4',
+        VERSION:     '1.4.8',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="MeteoInfo 1.4.4 documentation" href="../../../index.html" />
-    <link rel="up" title="File input and output" href="../file_io.html" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Read GRIB2 radar reflectivity data" href="read_grib2.html" />
     <link rel="prev" title="Read lighting data" href="read_lighting.html" /> 
   </head>
@@ -34,7 +32,7 @@
 <div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
 <a href="../../../index.html"><img src="../../../_static/logo.jpg" border="0"/></a></div>
 
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -56,13 +54,13 @@
         <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
         <li><a href="../../../docs/index.html">docs</a>|&nbsp;</li>
 
-          <li><a href="../../index.html" >Examples</a> &raquo;</li>
-          <li><a href="../index.html" >MeteoInfoLab</a> &raquo;</li>
-          <li><a href="../file_io.html" accesskey="U">File input and output</a> &raquo;</li> 
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Examples</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../file_io.html" accesskey="U">File input and output</a> &#187;</li> 
       </ul>
     </div>
 
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="read_lighting.html"
@@ -70,22 +68,21 @@
   <h4>Next topic</h4>
   <p class="topless"><a href="read_grib2.html"
                         title="next chapter">Read GRIB2 radar reflectivity data</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="../../../_sources/examples/meteoinfolab/file_io/write_nc.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/examples/meteoinfolab/file_io/write_nc.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../../../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -94,98 +91,98 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="write-netcdf-data-file">
 <span id="examples-meteoinfolab-file-io-write-nc"></span><h1>Write netCDF data file<a class="headerlink" href="#write-netcdf-data-file" title="Permalink to this headline">¶</a></h1>
 <p>Several steps are needed to create a netCDF data file and write data in it:</p>
 <ul class="simple">
-<li>Create a writable data file object using <tt class="docutils literal"><span class="pre">addfile()</span></tt> function. The first argument is</li>
+<li>Create a writable data file object using <code class="docutils literal"><span class="pre">addfile()</span></code> function. The first argument is</li>
 </ul>
-<p>file name and the second one is <tt class="docutils literal"><span class="pre">'c'</span></tt> which means creating data file.</p>
+<p>file name and the second one is <code class="docutils literal"><span class="pre">'c'</span></code> which means creating data file.</p>
 <ul class="simple">
-<li>Add dimensions using <tt class="docutils literal"><span class="pre">adddim()</span></tt> function of the data file object. The two arguments</li>
+<li>Add dimensions using <code class="docutils literal"><span class="pre">adddim()</span></code> function of the data file object. The two arguments</li>
 </ul>
 <p>are dimension name and length.</p>
 <ul class="simple">
-<li>Add global attributes using <tt class="docutils literal"><span class="pre">addgroupattr()</span></tt> function of the data file object. The</li>
+<li>Add global attributes using <code class="docutils literal"><span class="pre">addgroupattr()</span></code> function of the data file object. The</li>
 </ul>
 <p>two arguments are attribute name and value.</p>
 <ul class="simple">
-<li>Add variables using <tt class="docutils literal"><span class="pre">addvar()</span></tt> function of the data file object. The three arguments</li>
+<li>Add variables using <code class="docutils literal"><span class="pre">addvar()</span></code> function of the data file object. The three arguments</li>
 </ul>
 <p>are variable name, data type and dimensions.</p>
 <ul class="simple">
-<li>Create netCDF file using <tt class="docutils literal"><span class="pre">create()</span></tt> function of the data file object.</li>
-<li>Write data array to the netCDF file using <tt class="docutils literal"><span class="pre">write()</span></tt> function of the data file object.</li>
-<li>Close netCDF data file by <tt class="docutils literal"><span class="pre">close()</span></tt> function of the data file object.</li>
+<li>Create netCDF file using <code class="docutils literal"><span class="pre">create()</span></code> function of the data file object.</li>
+<li>Write data array to the netCDF file using <code class="docutils literal"><span class="pre">write()</span></code> function of the data file object.</li>
+<li>Close netCDF data file by <code class="docutils literal"><span class="pre">close()</span></code> function of the data file object.</li>
 </ul>
 <p>The below example shows reading 4 netCDF files and joint them into a new netCDF data file.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">datadir</span> <span class="o">=</span> <span class="s">&#39;D:/Temp/nc&#39;</span>
-<span class="n">outfn</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">datadir</span><span class="p">,</span> <span class="s">&#39;join_file.nc&#39;</span><span class="p">)</span>
-<span class="c">#New netCDF file</span>
-<span class="n">ncfile</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="n">outfn</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">)</span>
-<span class="c">#Add dimensions</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">datadir</span> <span class="o">=</span> <span class="s1">&#39;D:/Temp/nc&#39;</span>
+<span class="n">outfn</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">datadir</span><span class="p">,</span> <span class="s1">&#39;join_file.nc&#39;</span><span class="p">)</span>
+<span class="c1">#New netCDF file</span>
+<span class="n">ncfile</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="n">outfn</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">)</span>
+<span class="c1">#Add dimensions</span>
 <span class="n">stn</span> <span class="o">=</span> <span class="mi">26564</span>
-<span class="n">recdim</span> <span class="o">=</span> <span class="n">ncfile</span><span class="o">.</span><span class="n">adddim</span><span class="p">(</span><span class="s">&#39;recNum&#39;</span><span class="p">,</span> <span class="n">stn</span><span class="p">)</span>
-<span class="n">stdim</span> <span class="o">=</span> <span class="n">ncfile</span><span class="o">.</span><span class="n">adddim</span><span class="p">(</span><span class="s">&#39;station&#39;</span><span class="p">,</span> <span class="n">stn</span><span class="p">)</span>
-<span class="n">iddim</span> <span class="o">=</span> <span class="n">ncfile</span><span class="o">.</span><span class="n">adddim</span><span class="p">(</span><span class="s">&#39;id_len&#39;</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
-<span class="n">tdim</span> <span class="o">=</span> <span class="n">ncfile</span><span class="o">.</span><span class="n">adddim</span><span class="p">(</span><span class="s">&#39;time&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="c">#Add global attributes</span>
-<span class="n">ncfile</span><span class="o">.</span><span class="n">addgroupattr</span><span class="p">(</span><span class="s">&#39;Conventions&#39;</span><span class="p">,</span> <span class="s">&#39;Unidata Observation Dataset v1.0&#39;</span><span class="p">)</span>
-<span class="n">ncfile</span><span class="o">.</span><span class="n">addgroupattr</span><span class="p">(</span><span class="s">&#39;cdm_datatype&#39;</span><span class="p">,</span> <span class="s">&#39;Station&#39;</span><span class="p">)</span>
-<span class="n">ncfile</span><span class="o">.</span><span class="n">addgroupattr</span><span class="p">(</span><span class="s">&#39;geospatial_lat_max&#39;</span><span class="p">,</span> <span class="s">&#39;90.0&#39;</span><span class="p">)</span>
-<span class="n">ncfile</span><span class="o">.</span><span class="n">addgroupattr</span><span class="p">(</span><span class="s">&#39;geospatial_lat_min&#39;</span><span class="p">,</span> <span class="s">&#39;-90.0&#39;</span><span class="p">)</span>
-<span class="n">ncfile</span><span class="o">.</span><span class="n">addgroupattr</span><span class="p">(</span><span class="s">&#39;geospatial_lon_max&#39;</span><span class="p">,</span> <span class="s">&#39;180.0&#39;</span><span class="p">)</span>
-<span class="n">ncfile</span><span class="o">.</span><span class="n">addgroupattr</span><span class="p">(</span><span class="s">&#39;geospatial_lon_min&#39;</span><span class="p">,</span> <span class="s">&#39;-180.0&#39;</span><span class="p">)</span>
-<span class="n">ncfile</span><span class="o">.</span><span class="n">addgroupattr</span><span class="p">(</span><span class="s">&#39;stationDimension&#39;</span><span class="p">,</span> <span class="s">&#39;station&#39;</span><span class="p">)</span>
-<span class="n">ncfile</span><span class="o">.</span><span class="n">addgroupattr</span><span class="p">(</span><span class="s">&#39;missing_value&#39;</span><span class="p">,</span> <span class="o">-</span><span class="mf">8.9999998E15</span><span class="p">)</span>
-<span class="n">ncfile</span><span class="o">.</span><span class="n">addgroupattr</span><span class="p">(</span><span class="s">&#39;stream_order_output&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="c">#Add variables</span>
+<span class="n">recdim</span> <span class="o">=</span> <span class="n">ncfile</span><span class="o">.</span><span class="n">adddim</span><span class="p">(</span><span class="s1">&#39;recNum&#39;</span><span class="p">,</span> <span class="n">stn</span><span class="p">)</span>
+<span class="n">stdim</span> <span class="o">=</span> <span class="n">ncfile</span><span class="o">.</span><span class="n">adddim</span><span class="p">(</span><span class="s1">&#39;station&#39;</span><span class="p">,</span> <span class="n">stn</span><span class="p">)</span>
+<span class="n">iddim</span> <span class="o">=</span> <span class="n">ncfile</span><span class="o">.</span><span class="n">adddim</span><span class="p">(</span><span class="s1">&#39;id_len&#39;</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+<span class="n">tdim</span> <span class="o">=</span> <span class="n">ncfile</span><span class="o">.</span><span class="n">adddim</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="c1">#Add global attributes</span>
+<span class="n">ncfile</span><span class="o">.</span><span class="n">addgroupattr</span><span class="p">(</span><span class="s1">&#39;Conventions&#39;</span><span class="p">,</span> <span class="s1">&#39;Unidata Observation Dataset v1.0&#39;</span><span class="p">)</span>
+<span class="n">ncfile</span><span class="o">.</span><span class="n">addgroupattr</span><span class="p">(</span><span class="s1">&#39;cdm_datatype&#39;</span><span class="p">,</span> <span class="s1">&#39;Station&#39;</span><span class="p">)</span>
+<span class="n">ncfile</span><span class="o">.</span><span class="n">addgroupattr</span><span class="p">(</span><span class="s1">&#39;geospatial_lat_max&#39;</span><span class="p">,</span> <span class="s1">&#39;90.0&#39;</span><span class="p">)</span>
+<span class="n">ncfile</span><span class="o">.</span><span class="n">addgroupattr</span><span class="p">(</span><span class="s1">&#39;geospatial_lat_min&#39;</span><span class="p">,</span> <span class="s1">&#39;-90.0&#39;</span><span class="p">)</span>
+<span class="n">ncfile</span><span class="o">.</span><span class="n">addgroupattr</span><span class="p">(</span><span class="s1">&#39;geospatial_lon_max&#39;</span><span class="p">,</span> <span class="s1">&#39;180.0&#39;</span><span class="p">)</span>
+<span class="n">ncfile</span><span class="o">.</span><span class="n">addgroupattr</span><span class="p">(</span><span class="s1">&#39;geospatial_lon_min&#39;</span><span class="p">,</span> <span class="s1">&#39;-180.0&#39;</span><span class="p">)</span>
+<span class="n">ncfile</span><span class="o">.</span><span class="n">addgroupattr</span><span class="p">(</span><span class="s1">&#39;stationDimension&#39;</span><span class="p">,</span> <span class="s1">&#39;station&#39;</span><span class="p">)</span>
+<span class="n">ncfile</span><span class="o">.</span><span class="n">addgroupattr</span><span class="p">(</span><span class="s1">&#39;missing_value&#39;</span><span class="p">,</span> <span class="o">-</span><span class="mf">8.9999998E15</span><span class="p">)</span>
+<span class="n">ncfile</span><span class="o">.</span><span class="n">addgroupattr</span><span class="p">(</span><span class="s1">&#39;stream_order_output&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="c1">#Add variables</span>
 <span class="n">variables</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">var</span> <span class="o">=</span> <span class="n">ncfile</span><span class="o">.</span><span class="n">addvar</span><span class="p">(</span><span class="s">&#39;latitude&#39;</span><span class="p">,</span> <span class="s">&#39;float&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">stdim</span><span class="p">])</span>    <span class="c">#Latitude</span>
-<span class="n">var</span><span class="o">.</span><span class="n">addattr</span><span class="p">(</span><span class="s">&#39;long_name&#39;</span><span class="p">,</span> <span class="s">&#39;station latitude&#39;</span><span class="p">)</span>
-<span class="n">var</span><span class="o">.</span><span class="n">addattr</span><span class="p">(</span><span class="s">&#39;units&#39;</span><span class="p">,</span> <span class="s">&#39;degrees_north&#39;</span><span class="p">)</span>
+<span class="n">var</span> <span class="o">=</span> <span class="n">ncfile</span><span class="o">.</span><span class="n">addvar</span><span class="p">(</span><span class="s1">&#39;latitude&#39;</span><span class="p">,</span> <span class="s1">&#39;float&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">stdim</span><span class="p">])</span>    <span class="c1">#Latitude</span>
+<span class="n">var</span><span class="o">.</span><span class="n">addattr</span><span class="p">(</span><span class="s1">&#39;long_name&#39;</span><span class="p">,</span> <span class="s1">&#39;station latitude&#39;</span><span class="p">)</span>
+<span class="n">var</span><span class="o">.</span><span class="n">addattr</span><span class="p">(</span><span class="s1">&#39;units&#39;</span><span class="p">,</span> <span class="s1">&#39;degrees_north&#39;</span><span class="p">)</span>
 <span class="n">variables</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">var</span><span class="p">)</span>
-<span class="n">var</span> <span class="o">=</span> <span class="n">ncfile</span><span class="o">.</span><span class="n">addvar</span><span class="p">(</span><span class="s">&#39;longitude&#39;</span><span class="p">,</span> <span class="s">&#39;float&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">stdim</span><span class="p">])</span>    <span class="c">#Longitude</span>
-<span class="n">var</span><span class="o">.</span><span class="n">addattr</span><span class="p">(</span><span class="s">&#39;long_name&#39;</span><span class="p">,</span> <span class="s">&#39;station longitude&#39;</span><span class="p">)</span>
-<span class="n">var</span><span class="o">.</span><span class="n">addattr</span><span class="p">(</span><span class="s">&#39;units&#39;</span><span class="p">,</span> <span class="s">&#39;degrees_east&#39;</span><span class="p">)</span>
+<span class="n">var</span> <span class="o">=</span> <span class="n">ncfile</span><span class="o">.</span><span class="n">addvar</span><span class="p">(</span><span class="s1">&#39;longitude&#39;</span><span class="p">,</span> <span class="s1">&#39;float&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">stdim</span><span class="p">])</span>    <span class="c1">#Longitude</span>
+<span class="n">var</span><span class="o">.</span><span class="n">addattr</span><span class="p">(</span><span class="s1">&#39;long_name&#39;</span><span class="p">,</span> <span class="s1">&#39;station longitude&#39;</span><span class="p">)</span>
+<span class="n">var</span><span class="o">.</span><span class="n">addattr</span><span class="p">(</span><span class="s1">&#39;units&#39;</span><span class="p">,</span> <span class="s1">&#39;degrees_east&#39;</span><span class="p">)</span>
 <span class="n">variables</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">var</span><span class="p">)</span>
-<span class="n">var</span> <span class="o">=</span> <span class="n">ncfile</span><span class="o">.</span><span class="n">addvar</span><span class="p">(</span><span class="s">&#39;altitude&#39;</span><span class="p">,</span> <span class="s">&#39;float&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">stdim</span><span class="p">])</span>    <span class="c">#Altitude</span>
-<span class="n">var</span><span class="o">.</span><span class="n">addattr</span><span class="p">(</span><span class="s">&#39;long_name&#39;</span><span class="p">,</span> <span class="s">&#39;station altitude&#39;</span><span class="p">)</span>
-<span class="n">var</span><span class="o">.</span><span class="n">addattr</span><span class="p">(</span><span class="s">&#39;units&#39;</span><span class="p">,</span> <span class="s">&#39;meters&#39;</span><span class="p">)</span>
+<span class="n">var</span> <span class="o">=</span> <span class="n">ncfile</span><span class="o">.</span><span class="n">addvar</span><span class="p">(</span><span class="s1">&#39;altitude&#39;</span><span class="p">,</span> <span class="s1">&#39;float&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">stdim</span><span class="p">])</span>    <span class="c1">#Altitude</span>
+<span class="n">var</span><span class="o">.</span><span class="n">addattr</span><span class="p">(</span><span class="s1">&#39;long_name&#39;</span><span class="p">,</span> <span class="s1">&#39;station altitude&#39;</span><span class="p">)</span>
+<span class="n">var</span><span class="o">.</span><span class="n">addattr</span><span class="p">(</span><span class="s1">&#39;units&#39;</span><span class="p">,</span> <span class="s1">&#39;meters&#39;</span><span class="p">)</span>
 <span class="n">variables</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">var</span><span class="p">)</span>
-<span class="n">var</span> <span class="o">=</span> <span class="n">ncfile</span><span class="o">.</span><span class="n">addvar</span><span class="p">(</span><span class="s">&#39;streamflow&#39;</span><span class="p">,</span> <span class="s">&#39;float&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">tdim</span><span class="p">,</span> <span class="n">stdim</span><span class="p">])</span>    <span class="c">#Stream flow - Add time dimension</span>
-<span class="n">var</span><span class="o">.</span><span class="n">addattr</span><span class="p">(</span><span class="s">&#39;long_name&#39;</span><span class="p">,</span> <span class="s">&#39;River Flow&#39;</span><span class="p">)</span>
-<span class="n">var</span><span class="o">.</span><span class="n">addattr</span><span class="p">(</span><span class="s">&#39;units&#39;</span><span class="p">,</span> <span class="s">&#39;meter^3 / sec&#39;</span><span class="p">)</span>
+<span class="n">var</span> <span class="o">=</span> <span class="n">ncfile</span><span class="o">.</span><span class="n">addvar</span><span class="p">(</span><span class="s1">&#39;streamflow&#39;</span><span class="p">,</span> <span class="s1">&#39;float&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">tdim</span><span class="p">,</span> <span class="n">stdim</span><span class="p">])</span>    <span class="c1">#Stream flow - Add time dimension</span>
+<span class="n">var</span><span class="o">.</span><span class="n">addattr</span><span class="p">(</span><span class="s1">&#39;long_name&#39;</span><span class="p">,</span> <span class="s1">&#39;River Flow&#39;</span><span class="p">)</span>
+<span class="n">var</span><span class="o">.</span><span class="n">addattr</span><span class="p">(</span><span class="s1">&#39;units&#39;</span><span class="p">,</span> <span class="s1">&#39;meter^3 / sec&#39;</span><span class="p">)</span>
 <span class="n">variables</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">var</span><span class="p">)</span>
-<span class="n">tvar</span> <span class="o">=</span> <span class="n">ncfile</span><span class="o">.</span><span class="n">addvar</span><span class="p">(</span><span class="s">&#39;time&#39;</span><span class="p">,</span> <span class="s">&#39;int&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">tdim</span><span class="p">])</span>
-<span class="n">tvar</span><span class="o">.</span><span class="n">addattr</span><span class="p">(</span><span class="s">&#39;long_name&#39;</span><span class="p">,</span> <span class="s">&#39;time&#39;</span><span class="p">)</span>
-<span class="n">tvar</span><span class="o">.</span><span class="n">addattr</span><span class="p">(</span><span class="s">&#39;units&#39;</span><span class="p">,</span> <span class="s">&#39;hours since 1900-01-01 00:00:0.0&#39;</span><span class="p">)</span>
-<span class="c">#Creat netCDF file</span>
+<span class="n">tvar</span> <span class="o">=</span> <span class="n">ncfile</span><span class="o">.</span><span class="n">addvar</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="s1">&#39;int&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">tdim</span><span class="p">])</span>
+<span class="n">tvar</span><span class="o">.</span><span class="n">addattr</span><span class="p">(</span><span class="s1">&#39;long_name&#39;</span><span class="p">,</span> <span class="s1">&#39;time&#39;</span><span class="p">)</span>
+<span class="n">tvar</span><span class="o">.</span><span class="n">addattr</span><span class="p">(</span><span class="s1">&#39;units&#39;</span><span class="p">,</span> <span class="s1">&#39;hours since 1900-01-01 00:00:0.0&#39;</span><span class="p">)</span>
+<span class="c1">#Creat netCDF file</span>
 <span class="n">ncfile</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
-<span class="c">#Write data</span>
+<span class="c1">#Write data</span>
 <span class="n">stime</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">etime</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
 <span class="n">st</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">1900</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">fi</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">while</span> <span class="n">stime</span> <span class="o">&lt;=</span> <span class="n">etime</span><span class="p">:</span>
-    <span class="k">print</span> <span class="n">stime</span>
-    <span class="n">fn</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">datadir</span><span class="p">,</span> <span class="n">stime</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">&#39;%Y%m</span><span class="si">%d</span><span class="s">%H&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s">&#39;00.CHRTOUT_DOMAIN2&#39;</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="n">stime</span>
+    <span class="n">fn</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">datadir</span><span class="p">,</span> <span class="n">stime</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y%m</span><span class="si">%d</span><span class="s1">%H&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;00.CHRTOUT_DOMAIN2&#39;</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">fn</span><span class="p">):</span>
-        <span class="k">print</span> <span class="s">&#39;</span><span class="se">\t</span><span class="s">&#39;</span> <span class="o">+</span> <span class="n">fn</span>
+        <span class="nb">print</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="n">fn</span>
         <span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
         <span class="n">hours</span> <span class="o">=</span> <span class="p">(</span><span class="n">stime</span> <span class="o">-</span> <span class="n">st</span><span class="p">)</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span> <span class="o">//</span> <span class="mi">3600</span>
         <span class="n">origin</span> <span class="o">=</span> <span class="p">[</span><span class="n">fi</span><span class="p">]</span>
         <span class="n">ncfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">tvar</span><span class="p">,</span> <span class="n">array</span><span class="p">([</span><span class="n">hours</span><span class="p">]),</span> <span class="n">origin</span><span class="o">=</span><span class="n">origin</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">fi</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="n">lat</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;latitude&#39;</span><span class="p">][:]</span>
+            <span class="n">lat</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;latitude&#39;</span><span class="p">][:]</span>
             <span class="n">ncfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">variables</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">lat</span><span class="p">)</span>
-            <span class="n">lon</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;longitude&#39;</span><span class="p">][:]</span>
+            <span class="n">lon</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;longitude&#39;</span><span class="p">][:]</span>
             <span class="n">ncfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">variables</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">lon</span><span class="p">)</span>
-            <span class="n">alt</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;altitude&#39;</span><span class="p">][:]</span>
+            <span class="n">alt</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;altitude&#39;</span><span class="p">][:]</span>
             <span class="n">ncfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">variables</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">alt</span><span class="p">)</span>
-        <span class="n">flow</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;streamflow&#39;</span><span class="p">][:]</span>
+        <span class="n">flow</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;streamflow&#39;</span><span class="p">][:]</span>
         <span class="n">origin</span> <span class="o">=</span> <span class="p">[</span><span class="n">fi</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
         <span class="n">shape</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">stn</span><span class="p">]</span>
         <span class="n">flow</span> <span class="o">=</span> <span class="n">flow</span><span class="o">.</span><span class="n">array</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span>
@@ -193,27 +190,27 @@
         <span class="n">fi</span> <span class="o">+=</span> <span class="mi">1</span>
     <span class="n">stime</span> <span class="o">=</span> <span class="n">stime</span> <span class="o">+</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
-<span class="c">#close netCDF file</span>
+<span class="c1">#close netCDF file</span>
 <span class="n">ncfile</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
 <span class="n">ncfile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 
-<span class="k">print</span> <span class="s">&#39;Finished!&#39;</span>
+<span class="nb">print</span> <span class="s1">&#39;Finished!&#39;</span>
 </pre></div>
 </div>
 <p>Read and plot joined netCDF data file:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="s">&#39;D:/Temp/nc/join_file.nc&#39;</span><span class="p">)</span>
-<span class="n">lon</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;longitude&#39;</span><span class="p">][:]</span>
-<span class="n">lat</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;latitude&#39;</span><span class="p">][:]</span>
-<span class="n">var</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;streamflow&#39;</span><span class="p">]</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="s1">&#39;D:/Temp/nc/join_file.nc&#39;</span><span class="p">)</span>
+<span class="n">lon</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;longitude&#39;</span><span class="p">][:]</span>
+<span class="n">lat</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;latitude&#39;</span><span class="p">][:]</span>
+<span class="n">var</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;streamflow&#39;</span><span class="p">]</span>
 <span class="n">flow</span> <span class="o">=</span> <span class="n">var</span><span class="p">[</span><span class="mi">1</span><span class="p">,:]</span>
 <span class="n">axesm</span><span class="p">()</span>
-<span class="n">mlayer</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="s">&#39;D:/Temp/Map/bou2_4p.shp&#39;</span><span class="p">)</span>
+<span class="n">mlayer</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="s1">&#39;D:/Temp/Map/bou2_4p.shp&#39;</span><span class="p">)</span>
 <span class="n">geoshow</span><span class="p">(</span><span class="n">mlayer</span><span class="p">)</span>
 <span class="n">levs</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.005</span><span class="p">)</span>
-<span class="n">layer</span> <span class="o">=</span> <span class="n">scatterm</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">flow</span><span class="p">,</span> <span class="n">levs</span><span class="p">,</span> <span class="n">edge</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">layer</span> <span class="o">=</span> <span class="n">scatterm</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">flow</span><span class="p">,</span> <span class="n">levs</span><span class="p">,</span> <span class="n">edge</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span>
 <span class="n">t</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">gettime</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;River Flow (&#39;</span> <span class="o">+</span> <span class="n">t</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">&#39;%Y-%m-</span><span class="si">%d</span><span class="s"> %Hh)&#39;</span><span class="p">))</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;River Flow (&#39;</span> <span class="o">+</span> <span class="n">t</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1"> %Hh)&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
 <img alt="../../../_images/joined_nc.png" src="../../../_images/joined_nc.png" />
@@ -225,7 +222,7 @@
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -247,14 +244,14 @@
         <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
         <li><a href="../../../docs/index.html">docs</a>|&nbsp;</li>
 
-          <li><a href="../../index.html" >Examples</a> &raquo;</li>
-          <li><a href="../index.html" >MeteoInfoLab</a> &raquo;</li>
-          <li><a href="../file_io.html" >File input and output</a> &raquo;</li> 
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Examples</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../file_io.html" >File input and output</a> &#187;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2010-2017, Yaqiang Wang.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2018, Yaqiang Wang.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
   </body>
 </html>

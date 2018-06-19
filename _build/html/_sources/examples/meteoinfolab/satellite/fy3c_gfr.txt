@@ -12,18 +12,19 @@ data.
     #Add data file
     fn = 'D:/Temp/hdf/FY3C_VIRRX_GBAL_L2_GFR_MLT_GLL_20150811_POAD_1000M_MS.HDF'
     f = addfile(fn)
+    
     #Get data variable
     v = f['FIRES']
+    
     #Get data array
     data = v[:,5]
     lat = v[:,3]
     lon = v[:,4]
+    
     #Plot
     axesm()
-    world = shaperead('D:/Temp/map/country1.shp')
-    china = shaperead('D:/Temp/map/bou2_4p.shp')
-    geoshow(china, edgecolor='gray')
-    geoshow(world, edgecolor=(100,100,100))
+    geoshow('cn_province', edgecolor='gray')
+    geoshow('country', edgecolor=(100,100,100))
     layer = scatterm(lon, lat, data, s=3, colors=['r'], edge=False, marker='+')
     #colorbar(layer)
     title('FY-3C GFR')

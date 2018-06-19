@@ -1,40 +1,38 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>AMSR-E Land3 data &mdash; MeteoInfo 1.4.4 documentation</title>
-    
+    <title>AMSR-E Land3 data &#8212; MeteoInfo 1.4.8 documentation</title>
     <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.4.4',
+        VERSION:     '1.4.8',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="MeteoInfo 1.4.4 documentation" href="../../../index.html" />
-    <link rel="up" title="Satellite data" href="../satellite.html" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="FY-2C cloud data" href="fy2c_clc.html" />
-    <link rel="prev" title="AIRS Grid data" href="airs_grid.html" /> 
+    <link rel="prev" title="AVHRR Grid data" href="avhrr_sst.html" /> 
   </head>
   <body>
 
 <div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
 <a href="../../../index.html"><img src="../../../_static/logo.jpg" border="0"/></a></div>
 
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -47,7 +45,7 @@
           <a href="fy2c_clc.html" title="FY-2C cloud data"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="airs_grid.html" title="AIRS Grid data"
+          <a href="avhrr_sst.html" title="AVHRR Grid data"
              accesskey="P">previous</a> |</li>
         <li><a href="../../../index.html">home</a>|&nbsp;</li>
         <li><a href="../../../products/index.html">products</a>|&nbsp;</li>
@@ -56,36 +54,35 @@
         <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
         <li><a href="../../../docs/index.html">docs</a>|&nbsp;</li>
 
-          <li><a href="../../index.html" >Examples</a> &raquo;</li>
-          <li><a href="../index.html" >MeteoInfoLab</a> &raquo;</li>
-          <li><a href="../satellite.html" accesskey="U">Satellite data</a> &raquo;</li> 
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Examples</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../satellite.html" accesskey="U">Satellite data</a> &#187;</li> 
       </ul>
     </div>
 
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="airs_grid.html"
-                        title="previous chapter">AIRS Grid data</a></p>
+  <p class="topless"><a href="avhrr_sst.html"
+                        title="previous chapter">AVHRR Grid data</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="fy2c_clc.html"
                         title="next chapter">FY-2C cloud data</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="../../../_sources/examples/meteoinfolab/satellite/amsr.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/examples/meteoinfolab/satellite/amsr.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../../../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -94,32 +91,32 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="amsr-e-land3-data">
 <span id="examples-meteoinfolab-satellite-amsr"></span><h1>AMSR-E Land3 data<a class="headerlink" href="#amsr-e-land3-data" title="Permalink to this headline">¶</a></h1>
 <p>This example code illustrates how to access and visualize a AMSR-E land3 data.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c">#Add data file</span>
-<span class="n">fn</span> <span class="o">=</span> <span class="s">&#39;AMSR_E_L3_DailyLand_V06_20091231.hdf&#39;</span>
-<span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s">&#39;D:/Temp/hdf&#39;</span><span class="p">,</span> <span class="n">fn</span><span class="p">))</span>
-<span class="c">#vname = &#39;D_Soil_Moisture&#39;</span>
-<span class="n">vname</span> <span class="o">=</span> <span class="s">&#39;A_TB36.5H_(Res_1)&#39;</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1">#Add data file</span>
+<span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;AMSR_E_L3_DailyLand_V06_20091231.hdf&#39;</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;D:/Temp/hdf&#39;</span><span class="p">,</span> <span class="n">fn</span><span class="p">))</span>
+<span class="c1">#vname = &#39;D_Soil_Moisture&#39;</span>
+<span class="n">vname</span> <span class="o">=</span> <span class="s1">&#39;A_TB36.5H_(Res_1)&#39;</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="n">vname</span><span class="p">][::</span><span class="o">-</span><span class="mi">1</span><span class="p">,:]</span>
 <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="o">==</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">9999</span>
 <span class="n">data</span><span class="o">.</span><span class="n">fill_value</span> <span class="o">=</span> <span class="o">-</span><span class="mi">9999</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">data</span> <span class="o">*</span> <span class="mf">0.1</span>
 <span class="n">yn</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">dimlen</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">xn</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">dimlen</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="c">#Project data</span>
-<span class="n">toproj</span> <span class="o">=</span> <span class="n">projinfo</span><span class="p">()</span>    <span class="c">#longlat projection</span>
+<span class="c1">#Project data</span>
+<span class="n">toproj</span> <span class="o">=</span> <span class="n">projinfo</span><span class="p">()</span>    <span class="c1">#longlat projection</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">180</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="n">xn</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="n">yn</span><span class="p">)</span>
 <span class="n">lon</span><span class="p">,</span> <span class="n">lat</span> <span class="o">=</span> <span class="n">meshgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">project</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">toproj</span><span class="o">=</span><span class="n">toproj</span><span class="p">)</span>
-<span class="c">#Plot</span>
+<span class="c1">#Plot</span>
 <span class="n">axesm</span><span class="p">(</span><span class="n">tickfontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
-<span class="n">mlayer</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="s">&#39;D:/Temp/map/country1.shp&#39;</span><span class="p">)</span>
-<span class="n">geoshow</span><span class="p">(</span><span class="n">mlayer</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">mlayer</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="s1">&#39;D:/Temp/map/country1.shp&#39;</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="n">mlayer</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
 <span class="n">levs</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mi">140</span><span class="p">,</span> <span class="mi">320</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 <span class="n">layer</span> <span class="o">=</span> <span class="n">imshowm</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">levs</span><span class="p">)</span>
 <span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
@@ -137,7 +134,7 @@
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -150,7 +147,7 @@
           <a href="fy2c_clc.html" title="FY-2C cloud data"
              >next</a> |</li>
         <li class="right" >
-          <a href="airs_grid.html" title="AIRS Grid data"
+          <a href="avhrr_sst.html" title="AVHRR Grid data"
              >previous</a> |</li>
         <li><a href="../../../index.html">home</a>|&nbsp;</li>
         <li><a href="../../../products/index.html">products</a>|&nbsp;</li>
@@ -159,14 +156,14 @@
         <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
         <li><a href="../../../docs/index.html">docs</a>|&nbsp;</li>
 
-          <li><a href="../../index.html" >Examples</a> &raquo;</li>
-          <li><a href="../index.html" >MeteoInfoLab</a> &raquo;</li>
-          <li><a href="../satellite.html" >Satellite data</a> &raquo;</li> 
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Examples</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../satellite.html" >Satellite data</a> &#187;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2010-2017, Yaqiang Wang.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2018, Yaqiang Wang.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
   </body>
 </html>

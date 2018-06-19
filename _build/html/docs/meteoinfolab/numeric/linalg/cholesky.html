@@ -1,31 +1,29 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>Cholesky decomposition &mdash; MeteoInfo 1.4.4 documentation</title>
-    
+    <title>Cholesky decomposition &#8212; MeteoInfo 1.4.8 documentation</title>
     <link rel="stylesheet" href="../../../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../../',
-        VERSION:     '1.4.4',
+        VERSION:     '1.4.8',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="MeteoInfo 1.4.4 documentation" href="../../../../index.html" />
-    <link rel="up" title="mipylib.numeric.linalg" href="../linalg.html" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="LU decomposition" href="lu.html" />
     <link rel="prev" title="mipylib.numeric.linalg" href="../linalg.html" /> 
   </head>
@@ -34,7 +32,7 @@
 <div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
 <a href="../../../../index.html"><img src="../../../../_static/logo.jpg" border="0"/></a></div>
 
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -56,15 +54,15 @@
         <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
         <li><a href="../../../index.html">docs</a>|&nbsp;</li>
 
-          <li><a href="../../../index.html" >Documentation</a> &raquo;</li>
-          <li><a href="../../index.html" >MeteoInfoLab</a> &raquo;</li>
-          <li><a href="../../api.html" >The MeteoInfoLab API</a> &raquo;</li>
-          <li><a href="../../numeric.html" >Numeric package</a> &raquo;</li>
-          <li><a href="../linalg.html" accesskey="U">mipylib.numeric.linalg</a> &raquo;</li> 
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../../api.html" >The MeteoInfoLab API</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../../numeric.html" >Numeric package</a> &#187;</li>
+          <li class="nav-item nav-item-5"><a href="../linalg.html" accesskey="U">mipylib.numeric.linalg</a> &#187;</li> 
       </ul>
     </div>
 
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="../linalg.html"
@@ -72,22 +70,21 @@
   <h4>Next topic</h4>
   <p class="topless"><a href="lu.html"
                         title="next chapter">LU decomposition</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="../../../../_sources/docs/meteoinfolab/numeric/linalg/cholesky.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../_sources/docs/meteoinfolab/numeric/linalg/cholesky.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../../../../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -96,43 +93,43 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="cholesky-decomposition">
 <span id="docs-meteoinfolab-numeric-linalg-cholesky"></span><h1>Cholesky decomposition<a class="headerlink" href="#cholesky-decomposition" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="numeric.linalg.cholesky">
-<tt class="descclassname">numeric.linalg.</tt><tt class="descname">cholesky</tt><big>(</big><em>a</em><big>)</big><a class="headerlink" href="#numeric.linalg.cholesky" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">numeric.linalg.</code><code class="descname">cholesky</code><span class="sig-paren">(</span><em>a</em><span class="sig-paren">)</span><a class="headerlink" href="#numeric.linalg.cholesky" title="Permalink to this definition">¶</a></dt>
 <dd><p>Cholesky decomposition.</p>
-<p>Return the Cholesky decomposition, <tt class="docutils literal"><span class="pre">L</span> <span class="pre">*</span> <span class="pre">L.H</span></tt>, of the square matrix <tt class="docutils literal"><span class="pre">a</span></tt>,
-where <tt class="docutils literal"><span class="pre">L</span></tt> is lower-triangular and .H is the conjugate transpose operator
-(which is the ordinary transpose if <tt class="docutils literal"><span class="pre">a</span></tt> is real-valued).  <tt class="docutils literal"><span class="pre">a</span></tt> must be
-Hermitian (symmetric if real-valued) and positive-definite.  Only <tt class="docutils literal"><span class="pre">L</span></tt> is
+<p>Return the Cholesky decomposition, <code class="docutils literal"><span class="pre">L</span> <span class="pre">*</span> <span class="pre">L.H</span></code>, of the square matrix <code class="docutils literal"><span class="pre">a</span></code>,
+where <code class="docutils literal"><span class="pre">L</span></code> is lower-triangular and .H is the conjugate transpose operator
+(which is the ordinary transpose if <code class="docutils literal"><span class="pre">a</span></code> is real-valued).  <code class="docutils literal"><span class="pre">a</span></code> must be
+Hermitian (symmetric if real-valued) and positive-definite.  Only <code class="docutils literal"><span class="pre">L</span></code> is
 actually returned.</p>
-<p><tt class="docutils literal"><span class="pre">Parameters</span></tt></p>
+<p><code class="docutils literal"><span class="pre">Parameters</span></code></p>
 <dl class="docutils">
 <dt>a <span class="classifier-delimiter">:</span> <span class="classifier">(M, M) array_like</span></dt>
 <dd>Hermitian (symmetric if all elements are real), positive-definite
 input matrix.</dd>
 </dl>
-<p><tt class="docutils literal"><span class="pre">Returns</span></tt></p>
+<p><code class="docutils literal"><span class="pre">Returns</span></code></p>
 <dl class="docutils">
 <dt>L <span class="classifier-delimiter">:</span> <span class="classifier">(M, M) array_like</span></dt>
-<dd>Upper or lower-triangular Cholesky factor of <tt class="docutils literal"><span class="pre">a</span></tt>.  Returns a
-matrix object if <tt class="docutils literal"><span class="pre">a</span></tt> is a matrix object.</dd>
+<dd>Upper or lower-triangular Cholesky factor of <code class="docutils literal"><span class="pre">a</span></code>.  Returns a
+matrix object if <code class="docutils literal"><span class="pre">a</span></code> is a matrix object.</dd>
 </dl>
 <p>Examples:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">a1</span> <span class="o">=</span> <span class="n">array</span><span class="p">([[</span><span class="mi">25</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">],[</span><span class="mi">15</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">11</span><span class="p">]])</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">a1</span> <span class="o">=</span> <span class="n">array</span><span class="p">([[</span><span class="mi">25</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">],[</span><span class="mi">15</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">11</span><span class="p">]])</span>
 <span class="n">r1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">cholesky</span><span class="p">(</span><span class="n">a1</span><span class="p">)</span>
-<span class="k">print</span> <span class="n">r1</span>
+<span class="nb">print</span> <span class="n">r1</span>
 
 <span class="n">a2</span> <span class="o">=</span> <span class="n">array</span><span class="p">([[</span><span class="mi">18</span><span class="p">,</span><span class="mi">22</span><span class="p">,</span><span class="mi">54</span><span class="p">,</span><span class="mi">42</span><span class="p">],[</span><span class="mi">22</span><span class="p">,</span><span class="mi">70</span><span class="p">,</span><span class="mi">86</span><span class="p">,</span><span class="mi">62</span><span class="p">],[</span><span class="mi">54</span><span class="p">,</span><span class="mi">86</span><span class="p">,</span><span class="mi">174</span><span class="p">,</span><span class="mi">134</span><span class="p">],[</span><span class="mi">42</span><span class="p">,</span><span class="mi">62</span><span class="p">,</span><span class="mi">134</span><span class="p">,</span><span class="mi">106</span><span class="p">]])</span>
 <span class="n">r2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">cholesky</span><span class="p">(</span><span class="n">a2</span><span class="p">)</span>
-<span class="k">print</span> <span class="n">r2</span>
+<span class="nb">print</span> <span class="n">r2</span>
 </pre></div>
 </div>
 <p>Result:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">run</span> <span class="n">script</span><span class="o">...</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">run</span> <span class="n">script</span><span class="o">...</span>
 <span class="go">array([[5.0, 0.0, 0.0]</span>
 <span class="go">      [3.0, 3.0, 0.0]</span>
 <span class="go">      [-1.0, 1.0, 3.0]])</span>
@@ -152,7 +149,7 @@ matrix object if <tt class="docutils literal"><span class="pre">a</span></tt> is
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -174,16 +171,16 @@ matrix object if <tt class="docutils literal"><span class="pre">a</span></tt> is
         <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
         <li><a href="../../../index.html">docs</a>|&nbsp;</li>
 
-          <li><a href="../../../index.html" >Documentation</a> &raquo;</li>
-          <li><a href="../../index.html" >MeteoInfoLab</a> &raquo;</li>
-          <li><a href="../../api.html" >The MeteoInfoLab API</a> &raquo;</li>
-          <li><a href="../../numeric.html" >Numeric package</a> &raquo;</li>
-          <li><a href="../linalg.html" >mipylib.numeric.linalg</a> &raquo;</li> 
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../../api.html" >The MeteoInfoLab API</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../../numeric.html" >Numeric package</a> &#187;</li>
+          <li class="nav-item nav-item-5"><a href="../linalg.html" >mipylib.numeric.linalg</a> &#187;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2010-2017, Yaqiang Wang.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2018, Yaqiang Wang.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
   </body>
 </html>

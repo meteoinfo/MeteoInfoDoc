@@ -1,32 +1,30 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>asciiread &mdash; MeteoInfo 1.4.4 documentation</title>
-    
+    <title>asciiread &#8212; MeteoInfo 1.4.8 documentation</title>
     <link rel="stylesheet" href="../../../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../../',
-        VERSION:     '1.4.4',
+        VERSION:     '1.4.8',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="MeteoInfo 1.4.4 documentation" href="../../../../index.html" />
-    <link rel="up" title="mipylib.dataset.midata" href="../midata.html" />
-    <link rel="next" title="binread" href="binread.html" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="asciiwrite" href="asciiwrite.html" />
     <link rel="prev" title="addfile_hyconc" href="addfile_hyconc.html" /> 
   </head>
   <body>
@@ -34,7 +32,7 @@
 <div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
 <a href="../../../../index.html"><img src="../../../../_static/logo.jpg" border="0"/></a></div>
 
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -44,7 +42,7 @@
           <a href="../../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="binread.html" title="binread"
+          <a href="asciiwrite.html" title="asciiwrite"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="addfile_hyconc.html" title="addfile_hyconc"
@@ -56,38 +54,37 @@
         <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
         <li><a href="../../../index.html">docs</a>|&nbsp;</li>
 
-          <li><a href="../../../index.html" >Documentation</a> &raquo;</li>
-          <li><a href="../../index.html" >MeteoInfoLab</a> &raquo;</li>
-          <li><a href="../../api.html" >The MeteoInfoLab API</a> &raquo;</li>
-          <li><a href="../../dataset.html" >Dataset package</a> &raquo;</li>
-          <li><a href="../midata.html" accesskey="U">mipylib.dataset.midata</a> &raquo;</li> 
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../../api.html" >The MeteoInfoLab API</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../../dataset.html" >Dataset package</a> &#187;</li>
+          <li class="nav-item nav-item-5"><a href="../midata.html" accesskey="U">mipylib.dataset.midata</a> &#187;</li> 
       </ul>
     </div>
 
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="addfile_hyconc.html"
                         title="previous chapter">addfile_hyconc</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="binread.html"
-                        title="next chapter">binread</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="../../../../_sources/docs/meteoinfolab/dataset/midata/asciiread.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+  <p class="topless"><a href="asciiwrite.html"
+                        title="next chapter">asciiwrite</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../_sources/docs/meteoinfolab/dataset/midata/asciiread.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../../../../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -96,26 +93,26 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="asciiread">
 <span id="docs-meteoinfolab-dataset-midata-asciiread"></span><h1>asciiread<a class="headerlink" href="#asciiread" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="mipylib.dataset.midata.asciiread">
-<tt class="descclassname">mipylib.dataset.midata.</tt><tt class="descname">asciiread</tt><big>(</big><em>filename</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#mipylib.dataset.midata.asciiread" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">mipylib.dataset.midata.</code><code class="descname">asciiread</code><span class="sig-paren">(</span><em>filename</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mipylib.dataset.midata.asciiread" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read data from an ASCII file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>filename</strong> &#8211; (<em>string</em>) The ASCII file name.</li>
-<li><strong>delimiter</strong> &#8211; (<em>string</em>) Field delimiter character. Default is <tt class="docutils literal"><span class="pre">None</span></tt>, means space or tab
+<li><strong>filename</strong> – (<em>string</em>) The ASCII file name.</li>
+<li><strong>delimiter</strong> – (<em>string</em>) Field delimiter character. Default is <code class="docutils literal"><span class="pre">None</span></code>, means space or tab
 delimiter.</li>
-<li><strong>headerlines</strong> &#8211; (<em>int</em>) Lines to skip at beginning of the file. Default is <tt class="docutils literal"><span class="pre">0</span></tt>.</li>
-<li><strong>shape</strong> &#8211; (<em>string</em>) Data array dimension shape. Default is <tt class="docutils literal"><span class="pre">None</span></tt>, the file content will
+<li><strong>headerlines</strong> – (<em>int</em>) Lines to skip at beginning of the file. Default is <code class="docutils literal"><span class="pre">0</span></code>.</li>
+<li><strong>shape</strong> – (<em>string</em>) Data array dimension shape. Default is <code class="docutils literal"><span class="pre">None</span></code>, the file content will
 be readed as one dimension array.</li>
-<li><strong>readfirstcol</strong> &#8211; (<em>boolean</em>) Read first column data or not. Default is <tt class="docutils literal"><span class="pre">True</span></tt>.</li>
+<li><strong>readfirstcol</strong> – (<em>boolean</em>) Read first column data or not. Default is <code class="docutils literal"><span class="pre">True</span></code>.</li>
 </ul>
 </td>
 </tr>
@@ -125,24 +122,24 @@ be readed as one dimension array.</li>
 </tbody>
 </table>
 <p>Read grid data from ASCII file:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">rain</span> <span class="o">=</span> <span class="n">asciiread</span><span class="p">(</span><span class="s">&#39;D:/Temp/ascii/SURF_CLI_CHN_PRE_DAY_GRID_0.5-20120702.txt&#39;</span><span class="p">,</span><span class="n">headerlines</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">72</span><span class="p">,</span><span class="mi">128</span><span class="p">))</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">rain</span> <span class="o">=</span> <span class="n">asciiread</span><span class="p">(</span><span class="s1">&#39;D:/Temp/ascii/SURF_CLI_CHN_PRE_DAY_GRID_0.5-20120702.txt&#39;</span><span class="p">,</span><span class="n">headerlines</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">72</span><span class="p">,</span><span class="mi">128</span><span class="p">))</span>
 <span class="n">rain1</span> <span class="o">=</span> <span class="n">rain</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">,:]</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">arange1</span><span class="p">(</span><span class="mi">72</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">arange1</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
 <span class="n">axesm</span><span class="p">()</span>
-<span class="n">mlayer</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="s">&#39;D:/Temp/map/country1.shp&#39;</span><span class="p">)</span>
+<span class="n">mlayer</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="s1">&#39;D:/Temp/map/country1.shp&#39;</span><span class="p">)</span>
 <span class="n">geoshow</span><span class="p">(</span><span class="n">mlayer</span><span class="p">)</span>
 <span class="n">layer</span> <span class="o">=</span> <span class="n">contourfm</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">rain1</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;Precipitation&#39;</span><span class="p">)</span>
-<span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;Latitude&#39;</span><span class="p">)</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Longitude&#39;</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Precipitation&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Latitude&#39;</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Longitude&#39;</span><span class="p">)</span>
 <span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span>
 </pre></div>
 </div>
-<img alt="../../../../_images/ascii_grid1.png" src="../../../../_images/ascii_grid1.png" />
-<p>Read station data from ASCII file. <tt class="docutils literal"><span class="pre">numasciicol()</span></tt> and <tt class="docutils literal"><span class="pre">numasciirow()</span></tt> functions were used
+<img alt="../../../../_images/ascii_grid.png" src="../../../../_images/ascii_grid.png" />
+<p>Read station data from ASCII file. <code class="docutils literal"><span class="pre">numasciicol()</span></code> and <code class="docutils literal"><span class="pre">numasciirow()</span></code> functions were used
 to get column and row number of the file:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">fn</span> <span class="o">=</span> <span class="s">&#39;D:/Temp/ascii/flood.dat&#39;</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;D:/Temp/ascii/flood.dat&#39;</span>
 <span class="n">ncol</span> <span class="o">=</span> <span class="n">numasciicol</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
 <span class="n">nrow</span> <span class="o">=</span> <span class="n">numasciirow</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
 <span class="n">a</span> <span class="o">=</span> <span class="n">asciiread</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">nrow</span><span class="p">,</span><span class="n">ncol</span><span class="p">))</span>
@@ -150,18 +147,18 @@ to get column and row number of the file:</p>
 <span class="n">lat</span> <span class="o">=</span> <span class="n">a</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span>
 <span class="n">v</span> <span class="o">=</span> <span class="n">a</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span>
 <span class="n">axesm</span><span class="p">()</span>
-<span class="n">mlayer</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="s">&#39;D:/Temp/map/bou2_4p.shp&#39;</span><span class="p">)</span>
-<span class="n">geoshow</span><span class="p">(</span><span class="n">mlayer</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="p">(</span><span class="mi">220</span><span class="p">,</span><span class="mi">220</span><span class="p">,</span><span class="mi">220</span><span class="p">),</span> <span class="n">edgecolor</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
-<span class="n">layer</span> <span class="o">=</span> <span class="n">scatterm</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">edge</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">mlayer</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="s1">&#39;D:/Temp/map/bou2_4p.shp&#39;</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="n">mlayer</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="p">(</span><span class="mi">220</span><span class="p">,</span><span class="mi">220</span><span class="p">,</span><span class="mi">220</span><span class="p">),</span> <span class="n">edgecolor</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">layer</span> <span class="o">=</span> <span class="n">scatterm</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">edge</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">xlim</span><span class="p">(</span><span class="mf">109.2</span><span class="p">,</span> <span class="mi">111</span><span class="p">)</span>
 <span class="n">ylim</span><span class="p">(</span><span class="mf">19.8</span><span class="p">,</span> <span class="mf">21.8</span><span class="p">)</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;Flood plain area&#39;</span><span class="p">)</span>
-<span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;Latitude&#39;</span><span class="p">)</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Longitude&#39;</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Flood plain area&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Latitude&#39;</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Longitude&#39;</span><span class="p">)</span>
 <span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span>
 </pre></div>
 </div>
-<img alt="../../../../_images/ascii_station1.png" src="../../../../_images/ascii_station1.png" />
+<img alt="../../../../_images/ascii_station.png" src="../../../../_images/ascii_station.png" />
 </dd></dl>
 
 </div>
@@ -172,7 +169,7 @@ to get column and row number of the file:</p>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -182,7 +179,7 @@ to get column and row number of the file:</p>
           <a href="../../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="binread.html" title="binread"
+          <a href="asciiwrite.html" title="asciiwrite"
              >next</a> |</li>
         <li class="right" >
           <a href="addfile_hyconc.html" title="addfile_hyconc"
@@ -194,16 +191,16 @@ to get column and row number of the file:</p>
         <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
         <li><a href="../../../index.html">docs</a>|&nbsp;</li>
 
-          <li><a href="../../../index.html" >Documentation</a> &raquo;</li>
-          <li><a href="../../index.html" >MeteoInfoLab</a> &raquo;</li>
-          <li><a href="../../api.html" >The MeteoInfoLab API</a> &raquo;</li>
-          <li><a href="../../dataset.html" >Dataset package</a> &raquo;</li>
-          <li><a href="../midata.html" >mipylib.dataset.midata</a> &raquo;</li> 
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../../api.html" >The MeteoInfoLab API</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../../dataset.html" >Dataset package</a> &#187;</li>
+          <li class="nav-item nav-item-5"><a href="../midata.html" >mipylib.dataset.midata</a> &#187;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2010-2017, Yaqiang Wang.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2018, Yaqiang Wang.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
   </body>
 </html>

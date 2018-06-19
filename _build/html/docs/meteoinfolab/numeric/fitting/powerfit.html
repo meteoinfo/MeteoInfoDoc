@@ -1,40 +1,38 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>powerfit &mdash; MeteoInfo 1.4.4 documentation</title>
-    
+    <title>powerfit &#8212; MeteoInfo 1.4.8 documentation</title>
     <link rel="stylesheet" href="../../../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../../',
-        VERSION:     '1.4.4',
+        VERSION:     '1.4.8',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="MeteoInfo 1.4.4 documentation" href="../../../../index.html" />
-    <link rel="up" title="mipylib.numeric.fitting" href="../fitting.html" />
-    <link rel="next" title="expfit" href="expfit.html" />
-    <link rel="prev" title="polyval" href="polyval.html" /> 
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="Meteorological analysis" href="../../../../examples/meteoinfolab/meteo_analysis.html" />
+    <link rel="prev" title="polyfit" href="polyfit.html" /> 
   </head>
   <body>
 
 <div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
 <a href="../../../../index.html"><img src="../../../../_static/logo.jpg" border="0"/></a></div>
 
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -44,10 +42,10 @@
           <a href="../../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="expfit.html" title="expfit"
+          <a href="../../../../examples/meteoinfolab/meteo_analysis.html" title="Meteorological analysis"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="polyval.html" title="polyval"
+          <a href="polyfit.html" title="polyfit"
              accesskey="P">previous</a> |</li>
         <li><a href="../../../../index.html">home</a>|&nbsp;</li>
         <li><a href="../../../../products/index.html">products</a>|&nbsp;</li>
@@ -56,38 +54,35 @@
         <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
         <li><a href="../../../index.html">docs</a>|&nbsp;</li>
 
-          <li><a href="../../../index.html" >Documentation</a> &raquo;</li>
-          <li><a href="../../index.html" >MeteoInfoLab</a> &raquo;</li>
-          <li><a href="../../api.html" >The MeteoInfoLab API</a> &raquo;</li>
-          <li><a href="../../numeric.html" >Numeric package</a> &raquo;</li>
-          <li><a href="../fitting.html" accesskey="U">mipylib.numeric.fitting</a> &raquo;</li> 
+          <li class="nav-item nav-item-1"><a href="../../../../examples/index.html" >Examples</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../../../examples/meteoinfolab/index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../../../../examples/meteoinfolab/math.html" accesskey="U">Math</a> &#187;</li> 
       </ul>
     </div>
 
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="polyval.html"
-                        title="previous chapter">polyval</a></p>
+  <p class="topless"><a href="polyfit.html"
+                        title="previous chapter">polyfit</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="expfit.html"
-                        title="next chapter">expfit</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="../../../../_sources/docs/meteoinfolab/numeric/fitting/powerfit.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+  <p class="topless"><a href="../../../../examples/meteoinfolab/meteo_analysis.html"
+                        title="next chapter">Meteorological analysis</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../_sources/docs/meteoinfolab/numeric/fitting/powerfit.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../../../../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -96,22 +91,22 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="powerfit">
 <span id="docs-meteoinfolab-numeric-fitting-powerfit"></span><h1>powerfit<a class="headerlink" href="#powerfit" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="numeric.fitting.powerfit">
-<tt class="descclassname">numeric.fitting.</tt><tt class="descname">powerfit</tt><big>(</big><em>x</em>, <em>y</em>, <em>func=False</em><big>)</big><a class="headerlink" href="#numeric.fitting.powerfit" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">numeric.fitting.</code><code class="descname">powerfit</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>func=False</em><span class="sig-paren">)</span><a class="headerlink" href="#numeric.fitting.powerfit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Power law fitting.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>x</strong> &#8211; (<em>array_like</em>) x data array.</li>
-<li><strong>y</strong> &#8211; (<em>array_like</em>) y data array.</li>
-<li><strong>func</strong> &#8211; (<em>boolean</em>) Return fit function (for predict function) or not. Default is <tt class="docutils literal"><span class="pre">False</span></tt>.</li>
+<li><strong>x</strong> – (<em>array_like</em>) x data array.</li>
+<li><strong>y</strong> – (<em>array_like</em>) y data array.</li>
+<li><strong>func</strong> – (<em>boolean</em>) Return fit function (for predict function) or not. Default is <code class="docutils literal"><span class="pre">False</span></code>.</li>
 </ul>
 </td>
 </tr>
@@ -121,9 +116,9 @@
 </tbody>
 </table>
 <p>Examples:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">mipylib.numeric</span> <span class="kn">import</span> <span class="n">fitting</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mipylib.numeric</span> <span class="k">import</span> <span class="n">fitting</span>
 
-<span class="n">fn</span> <span class="o">=</span> <span class="s">&#39;D:/Temp/ascii/PM&amp;vis-1.txt&#39;</span>
+<span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;D:/Temp/ascii/PM&amp;vis-1.txt&#39;</span>
 <span class="n">ncol</span> <span class="o">=</span> <span class="n">numasciicol</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
 <span class="n">nrow</span> <span class="o">=</span> <span class="n">numasciirow</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
 <span class="n">a</span> <span class="o">=</span> <span class="n">asciiread</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">nrow</span><span class="p">,</span><span class="n">ncol</span><span class="p">))</span>
@@ -131,23 +126,23 @@
 <span class="n">y</span><span class="o">=</span><span class="n">a</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span>
 <span class="n">z</span><span class="o">=</span><span class="n">a</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span>
 <span class="n">axes</span><span class="p">(</span><span class="n">tickfontsize</span><span class="o">=</span><span class="mi">17</span><span class="p">)</span>
-<span class="n">ls</span><span class="o">=</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="n">z</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s">&#39;NCV_jet&#39;</span><span class="p">,</span><span class="n">edgecolor</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span><span class="n">cnum</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">ls</span><span class="o">=</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="n">z</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;NCV_jet&#39;</span><span class="p">,</span><span class="n">edgecolor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">cnum</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 <span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">450</span><span class="p">)</span>
 <span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">30</span><span class="p">)</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s">r&#39;$\rm{PM_{2.5}} \ (\mu g \ m^{-3})$&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">17</span><span class="p">)</span>
-<span class="n">ylabel</span><span class="p">(</span><span class="s">r&#39;$\rm{Visibility (km)}$&#39;</span><span class="p">,</span><span class="n">fontname</span><span class="o">=</span><span class="s">&#39;Arial&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">17</span><span class="p">)</span>
-<span class="n">colorbar</span><span class="p">(</span><span class="n">ls</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">17</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s">&#39;RH(%)&#39;</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\rm{PM_</span><span class="si">{2.5}</span><span class="s1">} \ (\mu g \ m^{-3})$&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">17</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\rm{Visibility (km)}$&#39;</span><span class="p">,</span><span class="n">fontname</span><span class="o">=</span><span class="s1">&#39;Arial&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">17</span><span class="p">)</span>
+<span class="n">colorbar</span><span class="p">(</span><span class="n">ls</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">17</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;RH(%)&#39;</span><span class="p">)</span>
 
-<span class="c">#Pow law fitting</span>
-<span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">f</span> <span class="o">=</span> <span class="n">fitting</span><span class="o">.</span><span class="n">powerfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">func</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="c1">#Pow law fitting</span>
+<span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">f</span> <span class="o">=</span> <span class="n">fitting</span><span class="o">.</span><span class="n">powerfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">func</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
-<span class="c">#Plot fitting line</span>
+<span class="c1">#Plot fitting line</span>
 <span class="n">xx</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">x</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="mi">100</span><span class="p">)</span>
-<span class="c">#yy = a*pow(xx, b)</span>
+<span class="c1">#yy = a*pow(xx, b)</span>
 <span class="n">yy</span> <span class="o">=</span> <span class="n">fitting</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">xx</span><span class="p">)</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="s">&#39;-b&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">text</span><span class="p">(</span><span class="mi">250</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="s">r&#39;$y = &#39;</span> <span class="o">+</span> <span class="s">&#39;</span><span class="si">%.4f</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">a</span> <span class="o">+</span> <span class="s">&#39;x^{</span><span class="si">%.4f</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">b</span> <span class="o">+</span> <span class="s">&#39;}$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
-<span class="n">text</span><span class="p">(</span><span class="mi">250</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="s">r&#39;$r^2=</span><span class="si">%.4f</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">r</span> <span class="o">+</span> <span class="s">&#39;$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="s1">&#39;-b&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">text</span><span class="p">(</span><span class="mi">250</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$y = &#39;</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="si">%.4f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">a</span> <span class="o">+</span> <span class="s1">&#39;x^{</span><span class="si">%.4f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">b</span> <span class="o">+</span> <span class="s1">&#39;}$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">text</span><span class="p">(</span><span class="mi">250</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$r^2=</span><span class="si">%.4f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">r</span> <span class="o">+</span> <span class="s1">&#39;$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -161,7 +156,7 @@
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -171,10 +166,10 @@
           <a href="../../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="expfit.html" title="expfit"
+          <a href="../../../../examples/meteoinfolab/meteo_analysis.html" title="Meteorological analysis"
              >next</a> |</li>
         <li class="right" >
-          <a href="polyval.html" title="polyval"
+          <a href="polyfit.html" title="polyfit"
              >previous</a> |</li>
         <li><a href="../../../../index.html">home</a>|&nbsp;</li>
         <li><a href="../../../../products/index.html">products</a>|&nbsp;</li>
@@ -183,16 +178,14 @@
         <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
         <li><a href="../../../index.html">docs</a>|&nbsp;</li>
 
-          <li><a href="../../../index.html" >Documentation</a> &raquo;</li>
-          <li><a href="../../index.html" >MeteoInfoLab</a> &raquo;</li>
-          <li><a href="../../api.html" >The MeteoInfoLab API</a> &raquo;</li>
-          <li><a href="../../numeric.html" >Numeric package</a> &raquo;</li>
-          <li><a href="../fitting.html" >mipylib.numeric.fitting</a> &raquo;</li> 
+          <li class="nav-item nav-item-1"><a href="../../../../examples/index.html" >Examples</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../../../examples/meteoinfolab/index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../../../../examples/meteoinfolab/math.html" >Math</a> &#187;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2010-2017, Yaqiang Wang.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2018, Yaqiang Wang.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
   </body>
 </html>

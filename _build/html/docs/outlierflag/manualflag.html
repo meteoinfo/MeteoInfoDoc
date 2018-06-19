@@ -1,31 +1,29 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>Manually outlier flag &mdash; MeteoInfo 1.4.4 documentation</title>
-    
+    <title>Manually outlier flag &#8212; MeteoInfo 1.4.8 documentation</title>
     <link rel="stylesheet" href="../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.4.4',
+        VERSION:     '1.4.8',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="MeteoInfo 1.4.4 documentation" href="../../index.html" />
-    <link rel="up" title="Using functions in MeteoInfoLab script" href="script.html" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Average data ignoring flagged points" href="average.html" />
     <link rel="prev" title="Automatic outlier flag" href="autoflag.html" /> 
   </head>
@@ -34,7 +32,7 @@
 <div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
 <a href="../../index.html"><img src="../../_static/logo.jpg" border="0"/></a></div>
 
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -56,13 +54,13 @@
         <li><a href="../../downloads/index.html">downloads</a>|&nbsp;</li>
         <li><a href="../index.html">docs</a>|&nbsp;</li>
 
-          <li><a href="../index.html" >Documentation</a> &raquo;</li>
-          <li><a href="index.html" >OutlierFlag</a> &raquo;</li>
-          <li><a href="script.html" accesskey="U">Using functions in MeteoInfoLab script</a> &raquo;</li> 
+          <li class="nav-item nav-item-1"><a href="../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="index.html" >OutlierFlag</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="script.html" accesskey="U">Using functions in MeteoInfoLab script</a> &#187;</li> 
       </ul>
     </div>
 
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="autoflag.html"
@@ -70,22 +68,21 @@
   <h4>Next topic</h4>
   <p class="topless"><a href="average.html"
                         title="next chapter">Average data ignoring flagged points</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="../../_sources/docs/outlierflag/manualflag.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/docs/outlierflag/manualflag.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -94,32 +91,32 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="manually-outlier-flag">
 <h1>Manually outlier flag<a class="headerlink" href="#manually-outlier-flag" title="Permalink to this headline">¶</a></h1>
-<p>A flag chart form can be openned using <tt class="docutils literal"><span class="pre">flagchart()</span></tt> function. The data array were plotted in the
+<p>A flag chart form can be openned using <code class="docutils literal"><span class="pre">flagchart()</span></code> function. The data array were plotted in the
 chart form and users can mannully flag mouse selected data points.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c">#Read data</span>
-<span class="n">fn</span> <span class="o">=</span> <span class="s">r&#39;D:\MyProgram\Distribution\Java\MeteoInfo\MeteoInfo_Run\toolbox\OutlierFlag\sample\54826PMMUL201102_T.txt&#39;</span>
-<span class="n">table</span> <span class="o">=</span> <span class="n">readtable</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s">&#39;,&#39;</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="s">&#39;%{yyyyMMddHHmm}D</span><span class="si">%14i%11f%i%f%i%4f%i%3f</span><span class="s">&#39;</span><span class="p">)</span>
-<span class="n">pm2_5</span> <span class="o">=</span> <span class="n">table</span><span class="p">[</span><span class="s">&#39;PM2.5&#39;</span><span class="p">]</span>
-<span class="n">tt</span> <span class="o">=</span> <span class="n">table</span><span class="p">[</span><span class="s">&#39;BeiJing_Time&#39;</span><span class="p">]</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1">#Read data</span>
+<span class="n">fn</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;D:\MyProgram\Distribution\Java\MeteoInfo\MeteoInfo_Run\toolbox\OutlierFlag\sample\54826PMMUL201102_T.txt&#39;</span>
+<span class="n">table</span> <span class="o">=</span> <span class="n">readtable</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;%</span><span class="si">{yyyyMMddHHmm}</span><span class="s1">D</span><span class="si">%14i%11f%i%f%i%4f%i%3f</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">pm2_5</span> <span class="o">=</span> <span class="n">table</span><span class="p">[</span><span class="s1">&#39;PM2.5&#39;</span><span class="p">]</span>
+<span class="n">tt</span> <span class="o">=</span> <span class="n">table</span><span class="p">[</span><span class="s1">&#39;BeiJing_Time&#39;</span><span class="p">]</span>
 
-<span class="c">#Set flagset and check - get flag codes</span>
+<span class="c1">#Set flagset and check - get flag codes</span>
 <span class="n">fset</span> <span class="o">=</span> <span class="n">qaqc</span><span class="o">.</span><span class="n">flagset</span><span class="p">(</span><span class="n">minlim</span><span class="o">=-</span><span class="mi">10</span><span class="p">,</span> <span class="n">maxlim</span><span class="o">=</span><span class="mi">50000</span><span class="p">,</span> <span class="n">errornum</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span> <span class="n">quantilenum</span><span class="o">=</span><span class="mi">21</span><span class="p">,</span> <span class="n">quantil</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">factor</span><span class="o">=</span><span class="mf">2.3</span><span class="p">,</span> <span class="n">stdnum</span><span class="o">=</span><span class="mi">29</span><span class="p">,</span> <span class="n">stdfactor</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 <span class="n">fcodes</span> <span class="o">=</span> <span class="n">qaqc</span><span class="o">.</span><span class="n">check_all</span><span class="p">(</span><span class="n">pm2_5</span><span class="p">,</span> <span class="n">fset</span><span class="p">)</span>
 
-<span class="c">#Open a flag chart form for mannul data flagging</span>
-<span class="n">nfcodes</span> <span class="o">=</span> <span class="n">qaqc</span><span class="o">.</span><span class="n">flagchart</span><span class="p">(</span><span class="n">pm2_5</span><span class="p">,</span> <span class="n">fcodes</span><span class="p">,</span> <span class="n">tt</span><span class="p">,</span> <span class="s">&#39;PM2.5&#39;</span><span class="p">)</span>
+<span class="c1">#Open a flag chart form for mannul data flagging</span>
+<span class="n">nfcodes</span> <span class="o">=</span> <span class="n">qaqc</span><span class="o">.</span><span class="n">flagchart</span><span class="p">(</span><span class="n">pm2_5</span><span class="p">,</span> <span class="n">fcodes</span><span class="p">,</span> <span class="n">tt</span><span class="p">,</span> <span class="s1">&#39;PM2.5&#39;</span><span class="p">)</span>
 
-<span class="c">#Plot</span>
+<span class="c1">#Plot</span>
 <span class="n">cols</span> <span class="o">=</span> <span class="n">qaqc</span><span class="o">.</span><span class="n">makecolors</span><span class="p">(</span><span class="n">nfcodes</span><span class="p">)</span>
-<span class="n">scatter</span><span class="p">(</span><span class="n">tt</span><span class="p">,</span> <span class="n">pm2_5</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">edge</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">cols</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s">&#39;+&#39;</span><span class="p">)</span>
-<span class="n">xaxis</span><span class="p">(</span><span class="n">axistype</span><span class="o">=</span><span class="s">&#39;time&#39;</span><span class="p">)</span>
+<span class="n">scatter</span><span class="p">(</span><span class="n">tt</span><span class="p">,</span> <span class="n">pm2_5</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">edge</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">cols</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">)</span>
+<span class="n">xaxis</span><span class="p">(</span><span class="n">axistype</span><span class="o">=</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>The openned chart form by <tt class="docutils literal"><span class="pre">flagchart()</span></tt> function.</p>
+<p>The openned chart form by <code class="docutils literal"><span class="pre">flagchart()</span></code> function.</p>
 <img alt="../../_images/script_flagchart.png" src="../../_images/script_flagchart.png" />
 <p>The manually flagged data can be saved in <em>fcodes</em> object which could be used to plot mannul flagged
 data points as blue color.</p>
@@ -132,7 +129,7 @@ data points as blue color.</p>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -154,14 +151,14 @@ data points as blue color.</p>
         <li><a href="../../downloads/index.html">downloads</a>|&nbsp;</li>
         <li><a href="../index.html">docs</a>|&nbsp;</li>
 
-          <li><a href="../index.html" >Documentation</a> &raquo;</li>
-          <li><a href="index.html" >OutlierFlag</a> &raquo;</li>
-          <li><a href="script.html" >Using functions in MeteoInfoLab script</a> &raquo;</li> 
+          <li class="nav-item nav-item-1"><a href="../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="index.html" >OutlierFlag</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="script.html" >Using functions in MeteoInfoLab script</a> &#187;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2010-2017, Yaqiang Wang.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2018, Yaqiang Wang.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
   </body>
 </html>

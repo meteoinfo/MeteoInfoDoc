@@ -1,31 +1,29 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>Convert GRIB data to ARL data &mdash; MeteoInfo 1.4.4 documentation</title>
-    
+    <title>Convert GRIB data to ARL data &#8212; MeteoInfo 1.4.8 documentation</title>
     <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.4.4',
+        VERSION:     '1.4.8',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="MeteoInfo 1.4.4 documentation" href="../../../index.html" />
-    <link rel="up" title="Trajectory" href="../trajectory.html" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Tropical cyclone plot" href="tropical_cyclone.html" />
     <link rel="prev" title="Convert WRF out data to ARL data" href="wrfout2arl.html" /> 
   </head>
@@ -34,7 +32,7 @@
 <div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
 <a href="../../../index.html"><img src="../../../_static/logo.jpg" border="0"/></a></div>
 
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -56,13 +54,13 @@
         <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
         <li><a href="../../../docs/index.html">docs</a>|&nbsp;</li>
 
-          <li><a href="../../index.html" >Examples</a> &raquo;</li>
-          <li><a href="../index.html" >MeteoInfoLab</a> &raquo;</li>
-          <li><a href="../trajectory.html" accesskey="U">Trajectory</a> &raquo;</li> 
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Examples</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../trajectory.html" accesskey="U">Trajectory</a> &#187;</li> 
       </ul>
     </div>
 
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="wrfout2arl.html"
@@ -70,22 +68,21 @@
   <h4>Next topic</h4>
   <p class="topless"><a href="tropical_cyclone.html"
                         title="next chapter">Tropical cyclone plot</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="../../../_sources/examples/meteoinfolab/trajectory/grib2arl.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/examples/meteoinfolab/trajectory/grib2arl.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../../../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -94,39 +91,39 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="convert-grib-data-to-arl-data">
 <span id="examples-meteoinfolab-trajectory-grib2arl"></span><h1>Convert GRIB data to ARL data<a class="headerlink" href="#convert-grib-data-to-arl-data" title="Permalink to this headline">¶</a></h1>
 <p>ARL meteorological data format is specified using in HYSPLIT model. This is an example script
 for converting GRIB data to ARL data.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c">#--------------------------------------------------------</span>
-<span class="c"># Author: Yaqiang Wang</span>
-<span class="c"># Date: 2016-2-4</span>
-<span class="c"># Purpose: Convert GRIB data to ARL data</span>
-<span class="c"># Note: Sample</span>
-<span class="c">#-----------------------------------------------------------</span>
-<span class="c">#---- Set data folder</span>
-<span class="n">datadir</span> <span class="o">=</span> <span class="s">&#39;D:/Temp/grib&#39;</span>
-<span class="c">#---- Set output data file</span>
-<span class="n">outfn</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">datadir</span><span class="p">,</span> <span class="s">&#39;test_grib.arl&#39;</span><span class="p">)</span>
-<span class="c">#if os.path.exists(outfn):</span>
-<span class="c">#    os.remove(outfn)</span>
-<span class="c">#---- Read a GRIB data file</span>
-<span class="n">infn</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">datadir</span><span class="p">,</span> <span class="s">&#39;INGVC_2802_00_024&#39;</span><span class="p">)</span>
-<span class="k">print</span> <span class="n">infn</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1">#--------------------------------------------------------</span>
+<span class="c1"># Author: Yaqiang Wang</span>
+<span class="c1"># Date: 2016-2-4</span>
+<span class="c1"># Purpose: Convert GRIB data to ARL data</span>
+<span class="c1"># Note: Sample</span>
+<span class="c1">#-----------------------------------------------------------</span>
+<span class="c1">#---- Set data folder</span>
+<span class="n">datadir</span> <span class="o">=</span> <span class="s1">&#39;D:/Temp/grib&#39;</span>
+<span class="c1">#---- Set output data file</span>
+<span class="n">outfn</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">datadir</span><span class="p">,</span> <span class="s1">&#39;test_grib.arl&#39;</span><span class="p">)</span>
+<span class="c1">#if os.path.exists(outfn):</span>
+<span class="c1">#    os.remove(outfn)</span>
+<span class="c1">#---- Read a GRIB data file</span>
+<span class="n">infn</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">datadir</span><span class="p">,</span> <span class="s1">&#39;INGVC_2802_00_024&#39;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="n">infn</span>
 <span class="n">inf</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="n">infn</span><span class="p">)</span>
-<span class="k">print</span> <span class="s">&#39;GRIB data file has been opened...&#39;</span>
-<span class="c">#---- Set output ARL data file</span>
-<span class="n">arlf</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="n">outfn</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s">&#39;arl&#39;</span><span class="p">)</span>
-<span class="c">#---- Set variable and level list</span>
-<span class="n">gvar2d</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;Pressure_surface&#39;</span><span class="p">,</span><span class="s">&#39;Temperature_surface&#39;</span><span class="p">,</span><span class="s">&#39;u-component_of_wind_height_above_ground&#39;</span><span class="p">,</span>\
-    <span class="s">&#39;v-component_of_wind_height_above_ground&#39;</span><span class="p">]</span>
-<span class="n">gvar3d</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;Geopotential_isobaric&#39;</span><span class="p">,</span><span class="s">&#39;Temperature_isobaric&#39;</span><span class="p">,</span><span class="s">&#39;Pressure_Vertical_velocity_isobaric&#39;</span><span class="p">,</span>\
-    <span class="s">&#39;u-component_of_wind_isobaric&#39;</span><span class="p">,</span><span class="s">&#39;v-component_of_wind_isobaric&#39;</span><span class="p">,</span><span class="s">&#39;Specific_humidity_isobaric&#39;</span><span class="p">]</span>
-<span class="n">avar2d</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;PRSS&#39;</span><span class="p">,</span><span class="s">&#39;T02M&#39;</span><span class="p">,</span><span class="s">&#39;U10M&#39;</span><span class="p">,</span><span class="s">&#39;V10M&#39;</span><span class="p">]</span>
-<span class="n">avar3d</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;HGTS&#39;</span><span class="p">,</span><span class="s">&#39;TEMP&#39;</span><span class="p">,</span><span class="s">&#39;WWND&#39;</span><span class="p">,</span><span class="s">&#39;UWND&#39;</span><span class="p">,</span><span class="s">&#39;VWND&#39;</span><span class="p">,</span><span class="s">&#39;SPHU&#39;</span><span class="p">]</span>
-<span class="n">gv</span> <span class="o">=</span> <span class="n">inf</span><span class="p">[</span><span class="s">&#39;Geopotential_isobaric&#39;</span><span class="p">]</span>
+<span class="nb">print</span> <span class="s1">&#39;GRIB data file has been opened...&#39;</span>
+<span class="c1">#---- Set output ARL data file</span>
+<span class="n">arlf</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="n">outfn</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;arl&#39;</span><span class="p">)</span>
+<span class="c1">#---- Set variable and level list</span>
+<span class="n">gvar2d</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Pressure_surface&#39;</span><span class="p">,</span><span class="s1">&#39;Temperature_surface&#39;</span><span class="p">,</span><span class="s1">&#39;u-component_of_wind_height_above_ground&#39;</span><span class="p">,</span>\
+    <span class="s1">&#39;v-component_of_wind_height_above_ground&#39;</span><span class="p">]</span>
+<span class="n">gvar3d</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Geopotential_isobaric&#39;</span><span class="p">,</span><span class="s1">&#39;Temperature_isobaric&#39;</span><span class="p">,</span><span class="s1">&#39;Pressure_Vertical_velocity_isobaric&#39;</span><span class="p">,</span>\
+    <span class="s1">&#39;u-component_of_wind_isobaric&#39;</span><span class="p">,</span><span class="s1">&#39;v-component_of_wind_isobaric&#39;</span><span class="p">,</span><span class="s1">&#39;Specific_humidity_isobaric&#39;</span><span class="p">]</span>
+<span class="n">avar2d</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;PRSS&#39;</span><span class="p">,</span><span class="s1">&#39;T02M&#39;</span><span class="p">,</span><span class="s1">&#39;U10M&#39;</span><span class="p">,</span><span class="s1">&#39;V10M&#39;</span><span class="p">]</span>
+<span class="n">avar3d</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;HGTS&#39;</span><span class="p">,</span><span class="s1">&#39;TEMP&#39;</span><span class="p">,</span><span class="s1">&#39;WWND&#39;</span><span class="p">,</span><span class="s1">&#39;UWND&#39;</span><span class="p">,</span><span class="s1">&#39;VWND&#39;</span><span class="p">,</span><span class="s1">&#39;SPHU&#39;</span><span class="p">]</span>
+<span class="n">gv</span> <span class="o">=</span> <span class="n">inf</span><span class="p">[</span><span class="s1">&#39;Geopotential_isobaric&#39;</span><span class="p">]</span>
 <span class="n">nx</span> <span class="o">=</span> <span class="n">gv</span><span class="o">.</span><span class="n">dimlen</span><span class="p">(</span><span class="n">gv</span><span class="o">.</span><span class="n">ndim</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
 <span class="n">ny</span> <span class="o">=</span> <span class="n">gv</span><span class="o">.</span><span class="n">dimlen</span><span class="p">(</span><span class="n">gv</span><span class="o">.</span><span class="n">ndim</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
 <span class="n">levels</span> <span class="o">=</span> <span class="n">gv</span><span class="o">.</span><span class="n">dimvalue</span><span class="p">(</span><span class="n">gv</span><span class="o">.</span><span class="n">ndim</span> <span class="o">-</span> <span class="mi">3</span><span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
@@ -136,54 +133,54 @@ for converting GRIB data to ARL data.</p>
 <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">levels</span><span class="p">:</span>
     <span class="n">arlf</span><span class="o">.</span><span class="n">set3dvar</span><span class="p">(</span><span class="n">avar3d</span><span class="p">)</span>
 
-<span class="c">#---- Write ARL data file</span>
+<span class="c1">#---- Write ARL data file</span>
 <span class="n">arlf</span><span class="o">.</span><span class="n">setx</span><span class="p">(</span><span class="n">gv</span><span class="o">.</span><span class="n">dimvalue</span><span class="p">(</span><span class="n">gv</span><span class="o">.</span><span class="n">ndim</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
 <span class="n">arlf</span><span class="o">.</span><span class="n">sety</span><span class="p">(</span><span class="n">gv</span><span class="o">.</span><span class="n">dimvalue</span><span class="p">(</span><span class="n">gv</span><span class="o">.</span><span class="n">ndim</span> <span class="o">-</span> <span class="mi">2</span><span class="p">))</span>
 <span class="n">tNum</span> <span class="o">=</span> <span class="n">inf</span><span class="o">.</span><span class="n">timenum</span><span class="p">()</span>
 <span class="n">fhour</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">tNum</span><span class="p">):</span>
-    <span class="k">print</span> <span class="s">&#39;Time index: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="s1">&#39;Time index: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
     <span class="n">atime</span> <span class="o">=</span> <span class="n">inf</span><span class="o">.</span><span class="n">gettime</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
-    <span class="k">print</span> <span class="n">atime</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">&#39;%Y-%m-</span><span class="si">%d</span><span class="s"> %H:00&#39;</span><span class="p">)</span>
-    <span class="n">dhead</span> <span class="o">=</span> <span class="n">arlf</span><span class="o">.</span><span class="n">getdatahead</span><span class="p">(</span><span class="n">inf</span><span class="o">.</span><span class="n">proj</span><span class="p">,</span> <span class="s">&#39;RSMC&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">fhour</span><span class="p">)</span>
-    <span class="c">#Pre-write index record without checksum - will be over-write latter</span>
+    <span class="nb">print</span> <span class="n">atime</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1"> %H:00&#39;</span><span class="p">)</span>
+    <span class="n">dhead</span> <span class="o">=</span> <span class="n">arlf</span><span class="o">.</span><span class="n">getdatahead</span><span class="p">(</span><span class="n">inf</span><span class="o">.</span><span class="n">proj</span><span class="p">,</span> <span class="s1">&#39;RSMC&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">fhour</span><span class="p">)</span>
+    <span class="c1">#Pre-write index record without checksum - will be over-write latter</span>
     <span class="n">arlf</span><span class="o">.</span><span class="n">writeindexrec</span><span class="p">(</span><span class="n">atime</span><span class="p">,</span> <span class="n">dhead</span><span class="p">)</span>
-    <span class="c">#Checksum list</span>
+    <span class="c1">#Checksum list</span>
     <span class="n">ksumlist</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="c"># Write 2d variables</span>
+    <span class="c1"># Write 2d variables</span>
     <span class="n">ksums</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">avname</span><span class="p">,</span><span class="n">gvname</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">avar2d</span><span class="p">,</span> <span class="n">gvar2d</span><span class="p">):</span>
-        <span class="k">print</span> <span class="n">avname</span> <span class="o">+</span> <span class="s">&#39; &#39;</span> <span class="o">+</span> <span class="n">gvname</span>
-        <span class="k">if</span> <span class="n">avname</span> <span class="o">==</span> <span class="s">&#39;U10M&#39;</span> <span class="ow">or</span> <span class="n">avname</span> <span class="o">==</span> <span class="s">&#39;V10M&#39;</span><span class="p">:</span>
+        <span class="nb">print</span> <span class="n">avname</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="n">gvname</span>
+        <span class="k">if</span> <span class="n">avname</span> <span class="o">==</span> <span class="s1">&#39;U10M&#39;</span> <span class="ow">or</span> <span class="n">avname</span> <span class="o">==</span> <span class="s1">&#39;V10M&#39;</span><span class="p">:</span>
             <span class="n">gdata</span> <span class="o">=</span> <span class="n">inf</span><span class="p">[</span><span class="n">gvname</span><span class="p">][</span><span class="n">t</span><span class="p">,</span><span class="mi">0</span><span class="p">,:,:]</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">gdata</span> <span class="o">=</span> <span class="n">inf</span><span class="p">[</span><span class="n">gvname</span><span class="p">][</span><span class="n">t</span><span class="p">,:,:]</span>
-        <span class="k">if</span> <span class="n">avname</span> <span class="o">==</span> <span class="s">&#39;PRSS&#39;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">avname</span> <span class="o">==</span> <span class="s1">&#39;PRSS&#39;</span><span class="p">:</span>
             <span class="n">gdata</span> <span class="o">=</span> <span class="n">gdata</span> <span class="o">*</span> <span class="mf">0.01</span>
         <span class="n">ksum</span> <span class="o">=</span> <span class="n">arlf</span><span class="o">.</span><span class="n">writedatarec</span><span class="p">(</span><span class="n">atime</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">avname</span><span class="p">,</span> <span class="n">fhour</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="n">gdata</span><span class="p">)</span>
         <span class="n">ksums</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ksum</span><span class="p">)</span>
     <span class="n">ksumlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ksums</span><span class="p">)</span>
-    <span class="c"># Write 3d variables</span>
+    <span class="c1"># Write 3d variables</span>
     <span class="k">for</span> <span class="n">lidx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">nz</span><span class="p">):</span>
         <span class="n">ksums</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="n">llidx</span> <span class="o">=</span> <span class="n">nz</span> <span class="o">-</span> <span class="n">lidx</span> <span class="o">-</span> <span class="mi">1</span>
-        <span class="k">print</span> <span class="n">lidx</span>
-        <span class="k">print</span> <span class="n">llidx</span>
+        <span class="nb">print</span> <span class="n">lidx</span>
+        <span class="nb">print</span> <span class="n">llidx</span>
         <span class="k">for</span> <span class="n">avname</span><span class="p">,</span><span class="n">gvname</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">avar3d</span><span class="p">,</span> <span class="n">gvar3d</span><span class="p">):</span>
-            <span class="k">print</span> <span class="n">avname</span> <span class="o">+</span> <span class="s">&#39; &#39;</span> <span class="o">+</span> <span class="n">gvname</span>
+            <span class="nb">print</span> <span class="n">avname</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="n">gvname</span>
             <span class="n">gdata</span> <span class="o">=</span> <span class="n">inf</span><span class="p">[</span><span class="n">gvname</span><span class="p">][</span><span class="n">t</span><span class="p">,</span><span class="n">llidx</span><span class="p">,:,:]</span>
-            <span class="k">if</span> <span class="n">avname</span> <span class="o">==</span> <span class="s">&#39;WWND&#39;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">avname</span> <span class="o">==</span> <span class="s1">&#39;WWND&#39;</span><span class="p">:</span>
                 <span class="n">gdata</span> <span class="o">=</span> <span class="n">gdata</span> <span class="o">*</span> <span class="mf">0.01</span>
-            <span class="k">elif</span> <span class="n">avname</span> <span class="o">==</span> <span class="s">&#39;SPHU&#39;</span><span class="p">:</span>
+            <span class="k">elif</span> <span class="n">avname</span> <span class="o">==</span> <span class="s1">&#39;SPHU&#39;</span><span class="p">:</span>
                 <span class="n">gdata</span> <span class="o">=</span> <span class="n">gdata</span> <span class="o">*</span> <span class="mf">1000.</span>
             <span class="n">ksum</span> <span class="o">=</span> <span class="n">arlf</span><span class="o">.</span><span class="n">writedatarec</span><span class="p">(</span><span class="n">atime</span><span class="p">,</span> <span class="n">lidx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">avname</span><span class="p">,</span> <span class="n">fhour</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="n">gdata</span><span class="p">)</span>
             <span class="n">ksums</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ksum</span><span class="p">)</span>
         <span class="n">ksumlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ksums</span><span class="p">)</span>
-    <span class="c">#Re-write index record with checksum</span>
+    <span class="c1">#Re-write index record with checksum</span>
     <span class="n">arlf</span><span class="o">.</span><span class="n">writeindexrec</span><span class="p">(</span><span class="n">atime</span><span class="p">,</span> <span class="n">dhead</span><span class="p">,</span> <span class="n">ksumlist</span><span class="p">)</span>
     <span class="n">fhour</span> <span class="o">+=</span> <span class="mi">1</span>
 <span class="n">arlf</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-<span class="k">print</span> <span class="s">&#39;Finished!&#39;</span>
+<span class="nb">print</span> <span class="s1">&#39;Finished!&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -194,7 +191,7 @@ for converting GRIB data to ARL data.</p>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -216,14 +213,14 @@ for converting GRIB data to ARL data.</p>
         <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
         <li><a href="../../../docs/index.html">docs</a>|&nbsp;</li>
 
-          <li><a href="../../index.html" >Examples</a> &raquo;</li>
-          <li><a href="../index.html" >MeteoInfoLab</a> &raquo;</li>
-          <li><a href="../trajectory.html" >Trajectory</a> &raquo;</li> 
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Examples</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../trajectory.html" >Trajectory</a> &#187;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2010-2017, Yaqiang Wang.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2018, Yaqiang Wang.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
   </body>
 </html>

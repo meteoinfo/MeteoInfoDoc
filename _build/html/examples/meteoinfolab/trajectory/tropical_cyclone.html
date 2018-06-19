@@ -1,31 +1,29 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>Tropical cyclone plot &mdash; MeteoInfo 1.4.4 documentation</title>
-    
+    <title>Tropical cyclone plot &#8212; MeteoInfo 1.4.8 documentation</title>
     <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.4.4',
+        VERSION:     '1.4.8',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="MeteoInfo 1.4.4 documentation" href="../../../index.html" />
-    <link rel="up" title="Trajectory" href="../trajectory.html" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Trajectory multi-color plot" href="traj_multicolor.html" />
     <link rel="prev" title="Convert GRIB data to ARL data" href="grib2arl.html" /> 
   </head>
@@ -34,7 +32,7 @@
 <div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
 <a href="../../../index.html"><img src="../../../_static/logo.jpg" border="0"/></a></div>
 
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -56,13 +54,13 @@
         <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
         <li><a href="../../../docs/index.html">docs</a>|&nbsp;</li>
 
-          <li><a href="../../index.html" >Examples</a> &raquo;</li>
-          <li><a href="../index.html" >MeteoInfoLab</a> &raquo;</li>
-          <li><a href="../trajectory.html" accesskey="U">Trajectory</a> &raquo;</li> 
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Examples</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../trajectory.html" accesskey="U">Trajectory</a> &#187;</li> 
       </ul>
     </div>
 
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h3><a href="../../../index.html">Table Of Contents</a></h3>
   <ul>
@@ -80,22 +78,21 @@
   <h4>Next topic</h4>
   <p class="topless"><a href="traj_multicolor.html"
                         title="next chapter">Trajectory multi-color plot</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="../../../_sources/examples/meteoinfolab/trajectory/tropical_cyclone.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/examples/meteoinfolab/trajectory/tropical_cyclone.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../../../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -104,7 +101,7 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="tropical-cyclone-plot">
 <span id="examples-meteoinfolab-trajectory-tropical-cyclone"></span><h1>Tropical cyclone plot<a class="headerlink" href="#tropical-cyclone-plot" title="Permalink to this headline">¶</a></h1>
@@ -112,8 +109,8 @@
 <h2>One tropical cyclone<a class="headerlink" href="#one-tropical-cyclone" title="Permalink to this headline">¶</a></h2>
 <p>Read an ASCII data file with tropical cyclone data, and extract longitude and latitude data.
 Then plot the cyclone line and points.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c"># Read tropical cyclone data file</span>
-<span class="n">fn</span> <span class="o">=</span> <span class="s">&#39;D:/Temp/ascii/198214track.dat&#39;</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Read tropical cyclone data file</span>
+<span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;D:/Temp/ascii/198214track.dat&#39;</span>
 <span class="n">tf</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
 <span class="n">tf</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
 <span class="n">aline</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
@@ -123,7 +120,7 @@ Then plot the cyclone line and points.</p>
 <span class="n">lat</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">ws</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">aline</span> <span class="ow">in</span> <span class="n">tf</span><span class="p">:</span>
-    <span class="k">print</span> <span class="n">aline</span>
+    <span class="nb">print</span> <span class="n">aline</span>
     <span class="n">datalist</span> <span class="o">=</span> <span class="n">aline</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
     <span class="n">lat</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">datalist</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
     <span class="n">lon</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">datalist</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
@@ -131,18 +128,18 @@ Then plot the cyclone line and points.</p>
     <span class="n">ws</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">datalist</span><span class="p">[</span><span class="mi">4</span><span class="p">]))</span>
     <span class="n">stat</span> <span class="o">=</span> <span class="n">datalist</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">datalist</span><span class="p">)</span> <span class="o">==</span> <span class="mi">8</span><span class="p">:</span>
-        <span class="n">stat</span> <span class="o">=</span> <span class="n">stat</span> <span class="o">+</span> <span class="s">&#39; &#39;</span> <span class="o">+</span> <span class="n">datalist</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span>
+        <span class="n">stat</span> <span class="o">=</span> <span class="n">stat</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="n">datalist</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span>
 
-<span class="c"># Plot</span>
+<span class="c1"># Plot</span>
 <span class="n">axesm</span><span class="p">()</span>
-<span class="n">lworld</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="s">&#39;D:/Temp/map/country1.shp&#39;</span><span class="p">)</span>
+<span class="n">lworld</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="s1">&#39;D:/Temp/map/country1.shp&#39;</span><span class="p">)</span>
 <span class="n">geoshow</span><span class="p">(</span><span class="n">lworld</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="p">[</span><span class="mi">200</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">200</span><span class="p">])</span>
 <span class="n">plotm</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">layer</span> <span class="o">=</span> <span class="n">scatterm</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">ws</span><span class="p">)</span>
 <span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
 <span class="n">xlim</span><span class="p">(</span><span class="mi">110</span><span class="p">,</span> <span class="mi">140</span><span class="p">)</span>
 <span class="n">ylim</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">45</span><span class="p">)</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;Typhoon pathway&#39;</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Typhoon pathway&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <img alt="../../../_images/typhoon_pathway.png" src="../../../_images/typhoon_pathway.png" />
@@ -152,10 +149,10 @@ Then plot the cyclone line and points.</p>
 <p>Read mutiple tropical cyclones longitude/latitude data from a netCDF data file
 (<a class="reference external" href="https://climatedataguide.ucar.edu/climate-data/ibtracs-tropical-cyclone-best-track-data">https://climatedataguide.ucar.edu/climate-data/ibtracs-tropical-cyclone-best-track-data</a>)
 and plot them.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">fn</span> <span class="o">=</span> <span class="s">&#39;D:/Temp/nc/Allstorms.ibtracs_wmo.v03r06.nc&#39;</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;D:/Temp/nc/Allstorms.ibtracs_wmo.v03r06.nc&#39;</span>
 <span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
-<span class="n">lons</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;lon_wmo&#39;</span><span class="p">][:</span><span class="mi">200</span><span class="p">,:]</span>
-<span class="n">lats</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s">&#39;lat_wmo&#39;</span><span class="p">][:</span><span class="mi">200</span><span class="p">,:]</span>
+<span class="n">lons</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;lon_wmo&#39;</span><span class="p">][:</span><span class="mi">200</span><span class="p">,:]</span>
+<span class="n">lats</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;lat_wmo&#39;</span><span class="p">][:</span><span class="mi">200</span><span class="p">,:]</span>
 <span class="n">lons</span><span class="p">[</span><span class="n">lons</span><span class="o">==-</span><span class="mf">327.67</span><span class="p">]</span> <span class="o">=</span> <span class="n">nan</span>
 <span class="n">lats</span><span class="p">[</span><span class="n">lats</span><span class="o">==-</span><span class="mf">327.67</span><span class="p">]</span> <span class="o">=</span> <span class="n">nan</span>
 <span class="n">xd</span> <span class="o">=</span> <span class="p">[]</span>
@@ -166,11 +163,11 @@ and plot them.</p>
     <span class="n">xd</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nan</span><span class="p">)</span>
     <span class="n">yd</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nan</span><span class="p">)</span>
 
-<span class="c"># Plot</span>
+<span class="c1"># Plot</span>
 <span class="n">axesm</span><span class="p">()</span>
-<span class="n">geoshow</span><span class="p">(</span><span class="s">&#39;country&#39;</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">)</span>
 <span class="n">layer</span> <span class="o">=</span> <span class="n">plotm</span><span class="p">(</span><span class="n">xd</span><span class="p">,</span> <span class="n">yd</span><span class="p">)</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;IBTrACS&#39;</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;IBTrACS&#39;</span><span class="p">)</span>
 <span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">180</span><span class="p">,</span> <span class="mi">180</span><span class="p">)</span>
 <span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">)</span>
 </pre></div>
@@ -182,18 +179,18 @@ and plot them.</p>
 <p>Read mutiple tropical cyclones data from a txt data file
 (<a class="reference external" href="http://tcdata.typhoon.gov.cn/zjljsjj_zlhq.html">http://tcdata.typhoon.gov.cn/zjljsjj_zlhq.html</a>)
 and plot them. The colors of the line indicate wind speed.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c">#Create typhoon layer</span>
-<span class="n">layer</span> <span class="o">=</span> <span class="n">maplayer</span><span class="p">(</span><span class="n">shapetype</span><span class="o">=</span><span class="s">&#39;line&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1">#Create typhoon layer</span>
+<span class="n">layer</span> <span class="o">=</span> <span class="n">maplayer</span><span class="p">(</span><span class="n">shapetype</span><span class="o">=</span><span class="s1">&#39;line&#39;</span><span class="p">)</span>
 
-<span class="c"># Read typhoon data file</span>
-<span class="n">fn</span> <span class="o">=</span> <span class="s">&#39;D:/Temp/ascii/CH2015BST.txt&#39;</span>
+<span class="c1"># Read typhoon data file</span>
+<span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;D:/Temp/ascii/CH2015BST.txt&#39;</span>
 <span class="n">tf</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
 <span class="n">lons</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">lats</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">prss</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">wss</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">tf</span><span class="p">:</span>
-    <span class="k">print</span> <span class="n">line</span>
+    <span class="nb">print</span> <span class="n">line</span>
     <span class="n">data</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
     <span class="n">pn</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">pn</span><span class="p">):</span>
@@ -214,19 +211,19 @@ and plot them. The colors of the line indicate wind speed.</p>
     <span class="n">prss</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">wss</span> <span class="o">=</span> <span class="p">[]</span>
 
-<span class="c">#Set typhoon layer legend</span>
+<span class="c1">#Set typhoon layer legend</span>
 <span class="n">levs</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">61</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 <span class="n">cols</span> <span class="o">=</span> <span class="n">makecolors</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">levs</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">ls</span> <span class="o">=</span> <span class="n">makesymbolspec</span><span class="p">(</span><span class="s">&#39;line&#39;</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="n">levs</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="n">cols</span><span class="p">,</span> <span class="n">field</span><span class="o">=</span><span class="s">&#39;Geometry_M&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ls</span> <span class="o">=</span> <span class="n">makesymbolspec</span><span class="p">(</span><span class="s1">&#39;line&#39;</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="n">levs</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="n">cols</span><span class="p">,</span> <span class="n">field</span><span class="o">=</span><span class="s1">&#39;Geometry_M&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 
-<span class="c"># Plot</span>
+<span class="c1"># Plot</span>
 <span class="n">axesm</span><span class="p">()</span>
-<span class="n">geoshow</span><span class="p">(</span><span class="s">&#39;country&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="p">[</span><span class="mi">200</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">200</span><span class="p">])</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="p">[</span><span class="mi">200</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">200</span><span class="p">])</span>
 <span class="n">geoshow</span><span class="p">(</span><span class="n">layer</span><span class="p">,</span> <span class="n">symbolspec</span><span class="o">=</span><span class="n">ls</span><span class="p">)</span>
-<span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&#39;Wind speed (m/s)&#39;</span><span class="p">)</span>
+<span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Wind speed (m/s)&#39;</span><span class="p">)</span>
 <span class="n">xlim</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">210</span><span class="p">)</span>
 <span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;Typhoon pathway with wind speed&#39;</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Typhoon pathway with wind speed&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <img alt="../../../_images/typhoon_multicolor.png" src="../../../_images/typhoon_multicolor.png" />
@@ -239,7 +236,7 @@ and plot them. The colors of the line indicate wind speed.</p>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -261,14 +258,14 @@ and plot them. The colors of the line indicate wind speed.</p>
         <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
         <li><a href="../../../docs/index.html">docs</a>|&nbsp;</li>
 
-          <li><a href="../../index.html" >Examples</a> &raquo;</li>
-          <li><a href="../index.html" >MeteoInfoLab</a> &raquo;</li>
-          <li><a href="../trajectory.html" >Trajectory</a> &raquo;</li> 
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Examples</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../trajectory.html" >Trajectory</a> &#187;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2010-2017, Yaqiang Wang.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2018, Yaqiang Wang.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
   </body>
 </html>
