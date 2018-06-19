@@ -1,0 +1,20 @@
+.. _examples-meteoinfolab-meteo_analysis:
+
+
+*******************
+Meteorological analysis
+*******************
+
+.. toctree::
+   :maxdepth: 2
+   
+   meteo_analysis/hcurl_hdivg.rst
+   meteo_analysis/temp_adve.rst
+   meteo_analysis/hori_heli.rst
+   meteo_analysis/vert_heli.rst
+   meteo_analysis/water_vapor.rst
+   meteo_analysis/matrix_rotate.rst
+   meteo_analysis/ave_rect.rst
+   meteo_analysis/k_index.rst
+   meteo_analysis/moisture_potential_vorticity.rst
+   meteo_analysis/eof.rst
