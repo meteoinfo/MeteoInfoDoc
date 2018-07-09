@@ -25,7 +25,7 @@
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Convert WRF out data to ARL data" href="wrfout2arl.html" />
-    <link rel="prev" title="Trajectory plot" href="traj_plot.html" /> 
+    <link rel="prev" title="HYSPLIT output concentration plot" href="hyconc_plot.html" /> 
   </head>
   <body>
 
@@ -45,7 +45,7 @@
           <a href="wrfout2arl.html" title="Convert WRF out data to ARL data"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="traj_plot.html" title="Trajectory plot"
+          <a href="hyconc_plot.html" title="HYSPLIT output concentration plot"
              accesskey="P">previous</a> |</li>
         <li><a href="../../../index.html">home</a>|&nbsp;</li>
         <li><a href="../../../products/index.html">products</a>|&nbsp;</li>
@@ -63,8 +63,8 @@
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="traj_plot.html"
-                        title="previous chapter">Trajectory plot</a></p>
+  <p class="topless"><a href="hyconc_plot.html"
+                        title="previous chapter">HYSPLIT output concentration plot</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="wrfout2arl.html"
                         title="next chapter">Convert WRF out data to ARL data</a></p>
@@ -97,7 +97,7 @@
 <span id="examples-meteoinfolab-trajectory-traj-meteo-data"></span><h1>Get meteorological data along trajectory<a class="headerlink" href="#get-meteorological-data-along-trajectory" title="Permalink to this headline">¶</a></h1>
 <p>Read trajectory endpoint data file and create trajectory polyline layer. Then read endpoint
 from the layer and interpolate the meteorological data to the endpoint location using
-<strong>tostation</strong> function of the data file object.</p>
+<strong>interpn</strong> function of the data array.</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Set working directory</span>
 <span class="n">trajDir</span> <span class="o">=</span> <span class="s1">&#39;D:/Temp/HYSPLIT&#39;</span>
 <span class="n">meteoDir</span> <span class="o">=</span> <span class="s1">&#39;D:/Temp/arl&#39;</span>
@@ -118,11 +118,11 @@ from the layer and interpolate the meteorological data to the endpoint location 
 
 <span class="c1"># Get meteorological data along trajectory</span>
 <span class="nb">print</span> <span class="s1">&#39;Get meteorological data along trajectory...&#39;</span>
-<span class="n">outfn</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">trajDir</span><span class="p">,</span> <span class="s1">&#39;pblh_traj.txt&#39;</span><span class="p">)</span>
+<span class="n">outfn</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">trajDir</span><span class="p">,</span> <span class="s1">&#39;pblh_traj-1.txt&#39;</span><span class="p">)</span>
 <span class="n">outf</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">outfn</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
 <span class="n">outf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Lon,Lat,Time,Heigh,PBLH,UWND</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="n">pblvar</span> <span class="o">=</span> <span class="s1">&#39;PBLH&#39;</span>
-<span class="n">uvar</span> <span class="o">=</span> <span class="s1">&#39;UWND&#39;</span>
+<span class="n">pbldata</span> <span class="o">=</span> <span class="n">meteof</span><span class="p">[</span><span class="s1">&#39;PBLH&#39;</span><span class="p">][</span><span class="kc">None</span><span class="p">]</span>
+<span class="n">udata</span> <span class="o">=</span> <span class="n">meteof</span><span class="p">[</span><span class="s1">&#39;UWND&#39;</span><span class="p">][</span><span class="kc">None</span><span class="p">]</span>
 <span class="n">idx</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">for</span> <span class="n">tline</span> <span class="ow">in</span> <span class="n">trajLayer</span><span class="o">.</span><span class="n">shapes</span><span class="p">():</span>
     <span class="n">t</span> <span class="o">=</span> <span class="n">trajLayer</span><span class="o">.</span><span class="n">cellvalue</span><span class="p">(</span><span class="s1">&#39;Date&#39;</span><span class="p">,</span> <span class="n">idx</span><span class="p">)</span>
@@ -131,10 +131,10 @@ from the layer and interpolate the meteorological data to the endpoint location 
     <span class="k">for</span> <span class="n">ps</span> <span class="ow">in</span> <span class="n">tline</span><span class="o">.</span><span class="n">getPoints</span><span class="p">():</span>
         <span class="n">lon</span> <span class="o">=</span> <span class="n">ps</span><span class="o">.</span><span class="n">X</span>
         <span class="n">lat</span> <span class="o">=</span> <span class="n">ps</span><span class="o">.</span><span class="n">Y</span>
-        <span class="n">z</span> <span class="o">=</span> <span class="n">ps</span><span class="o">.</span><span class="n">M</span>
-        <span class="n">pres</span> <span class="o">=</span> <span class="n">ps</span><span class="o">.</span><span class="n">Z</span>
-        <span class="n">pbl</span> <span class="o">=</span> <span class="n">meteof</span><span class="o">.</span><span class="n">tostation</span><span class="p">(</span><span class="n">pblvar</span><span class="p">,</span> <span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
-        <span class="n">uwnd</span> <span class="o">=</span> <span class="n">meteof</span><span class="o">.</span><span class="n">tostation</span><span class="p">(</span><span class="n">uvar</span><span class="p">,</span> <span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">pres</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
+        <span class="n">pres</span> <span class="o">=</span> <span class="n">ps</span><span class="o">.</span><span class="n">M</span>
+        <span class="n">z</span> <span class="o">=</span> <span class="n">ps</span><span class="o">.</span><span class="n">Z</span>
+        <span class="n">pbl</span> <span class="o">=</span> <span class="n">pbldata</span><span class="o">.</span><span class="n">interpn</span><span class="p">([</span><span class="n">t</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">])</span>
+        <span class="n">uwnd</span> <span class="o">=</span> <span class="n">udata</span><span class="o">.</span><span class="n">interpn</span><span class="p">([</span><span class="n">t</span><span class="p">,</span> <span class="n">pres</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">])</span>
         <span class="nb">print</span> <span class="s1">&#39;lon: </span><span class="si">%.2f</span><span class="s1">; lat: </span><span class="si">%.2f</span><span class="s1">; time: </span><span class="si">%s</span><span class="s1">; height: </span><span class="si">%.2f</span><span class="s1">; PBLH: </span><span class="si">%.2f</span><span class="s1">; UWND: </span><span class="si">%.2f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">t</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y%m</span><span class="si">%d</span><span class="s1">_%H:%M&#39;</span><span class="p">),</span> <span class="n">z</span><span class="p">,</span> <span class="n">pbl</span><span class="p">,</span> <span class="n">uwnd</span><span class="p">)</span>
         <span class="n">line</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%.4f</span><span class="s1">,</span><span class="si">%.4f</span><span class="s1">,</span><span class="si">%s</span><span class="s1">,</span><span class="si">%.2f</span><span class="s1">,</span><span class="si">%.2f</span><span class="s1">,</span><span class="si">%.2f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">lon</span><span class="p">,</span><span class="n">lat</span><span class="p">,</span><span class="n">t</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y%m</span><span class="si">%d</span><span class="s1">_%H:%M&#39;</span><span class="p">),</span><span class="n">z</span><span class="p">,</span><span class="n">pbl</span><span class="p">,</span><span class="n">uwnd</span><span class="p">)</span>
         <span class="n">outf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">line</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
@@ -167,7 +167,7 @@ from the layer and interpolate the meteorological data to the endpoint location 
           <a href="wrfout2arl.html" title="Convert WRF out data to ARL data"
              >next</a> |</li>
         <li class="right" >
-          <a href="traj_plot.html" title="Trajectory plot"
+          <a href="hyconc_plot.html" title="HYSPLIT output concentration plot"
              >previous</a> |</li>
         <li><a href="../../../index.html">home</a>|&nbsp;</li>
         <li><a href="../../../products/index.html">products</a>|&nbsp;</li>

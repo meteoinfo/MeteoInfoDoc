@@ -5,11 +5,14 @@
 Introduction
 *******************
 
+MeteoInfo is an intergrated framework both for GIS application and scientific computation environment, 
+especially for meteorological community.
+
 MeteoInfoMap is a GIS application which enables the user to visualize and analyze
 the spatial and meteorological data with multiple data formats.
   
-MeteoInfoLab is a scientific Jython development environment with the ability of 
-multiple array calculation and 2D plotting.
+MeteoInfoLab is a scientific computation and visualization environment using Jython scripting with the 
+ability of multiple dimensional array calculation and 2D/3D plotting.
 
 It requires that Java 7 be installed on your computer. See the
 http://www.java.com website for a free download of Java if you do not have it
@@ -19,6 +22,11 @@ Publication
 ======================
   
 - Wang, Y.Q., 2014. MeteoInfo: GIS software for meteorological data visualization and analysis. Meteorological Applications, 21: 360-368.
+  
+Presentation
+======================
+
+- MeteoInfo introduction in 2018 HYSPLIT workshop: `PPT <../downloads/files/MeteoInfo_and_HYSPLIT.pptx>`_ ; `Video <../downloads/files/ARLHysplitWorkshop2018-0614_MeteoInfo.mp4>`_
   
 Downloading
 ======================

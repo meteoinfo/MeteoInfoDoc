@@ -6,7 +6,7 @@ Get meteorological data along trajectory
 
 Read trajectory endpoint data file and create trajectory polyline layer. Then read endpoint 
 from the layer and interpolate the meteorological data to the endpoint location using
-**tostation** function of the data file object.
+**interpn** function of the data array.
 
 ::
 
@@ -30,11 +30,11 @@ from the layer and interpolate the meteorological data to the endpoint location 
 
     # Get meteorological data along trajectory
     print 'Get meteorological data along trajectory...'
-    outfn = os.path.join(trajDir, 'pblh_traj.txt')
+    outfn = os.path.join(trajDir, 'pblh_traj-1.txt')
     outf = open(outfn, 'w')
     outf.write('Lon,Lat,Time,Heigh,PBLH,UWND\n')
-    pblvar = 'PBLH'
-    uvar = 'UWND'
+    pbldata = meteof['PBLH'][None]
+    udata = meteof['UWND'][None]
     idx = 0
     for tline in trajLayer.shapes():
         t = trajLayer.cellvalue('Date', idx)
@@ -43,10 +43,10 @@ from the layer and interpolate the meteorological data to the endpoint location 
         for ps in tline.getPoints():
             lon = ps.X
             lat = ps.Y 
-            z = ps.M
-            pres = ps.Z
-            pbl = meteof.tostation(pblvar, lon, lat, None, t)
-            uwnd = meteof.tostation(uvar, lon, lat, pres, t)
+            pres = ps.M
+            z = ps.Z
+            pbl = pbldata.interpn([t, lat, lon])
+            uwnd = udata.interpn([t, pres, lat, lon])
             print 'lon: %.2f; lat: %.2f; time: %s; height: %.2f; PBLH: %.2f; UWND: %.2f' % (lon, lat, t.strftime('%Y%m%d_%H:%M'), z, pbl, uwnd)
             line = '%.4f,%.4f,%s,%.2f,%.2f,%.2f' % (lon,lat,t.strftime('%Y%m%d_%H:%M'),z,pbl,uwnd)
             outf.write(line + '\n')
