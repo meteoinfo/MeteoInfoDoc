@@ -26,13 +26,13 @@ Publication
 Presentation
 ======================
 
-- MeteoInfo introduction in 2018 HYSPLIT workshop: `PPT <../downloads/files/MeteoInfo_and_HYSPLIT.pptx>`_ ; `Video <../downloads/files/ARLHysplitWorkshop2018-0614_MeteoInfo.mp4>`_
+- MeteoInfo introduction in 2018 HYSPLIT workshop: `PPT <../downloads/files/MeteoInfo_and_HYSPLIT.pptx>`_ ; `Video <../downloads/files/ARLHysplitWorkshop2018-0614_MeteoInfo.zip>`_
   
 Downloading
 ======================
 
 The current version of MeteoInfo, along with other information about the
-application, may always be found at http://www.meteothinker.com
+application, may always be found at http://www.meteothink.org
 
 Installing MeteoInfoMap/MeteoInfoLab
 ==============================================
@@ -129,10 +129,11 @@ MeteoInfo uses Java classes and libraries written by several third-party organiz
 - NetCDF Java and its dependence libraries: Available at http://www.unidata.ucar.edu/software/thredds/current/netcdf-java
 - Proj4J: Available at http://trac.osgeo.org/proj4j/wiki
 - Apache Common Math: Available at http://commons.apache.org/proper/commons-math
+- Efficient Java Matrix Library (EJML): Available at http://ejml.org/wiki/index.php?title=Main_Page
 - Apache common Imaging: Available at http://commons.apache.org/proper/commons-imaging
 - Groovy: Available at http://groovy.codehaus.org
 - Jython: Available at http://www.jython.org
-- wContour: Available at http://www.meteothinker.com
+- wContour: Available at http://www.meteothink.org
 - L2FProd: Available at http://common.L2FProd.com
 - RSyntaxTextArea: Available at http://bobbylight.github.io/RSyntaxTextArea
 - JavaHelp: Available at https://javahelp.java.net
@@ -142,4 +143,6 @@ MeteoInfo uses Java classes and libraries written by several third-party organiz
 - JLaTeXMath: Available at https://github.com/opencollab/jlatexmath
 - JTS Topology Suite: Available at https://www.locationtech.org/projects/technology.jts
 - Jerry's Java Image Processing: Available at http://www.jhlabs.com/ip/index.html
+- JXMapViewer: Available at https://github.com/msteiger/jxmapviewer2
 - SurfacePlotter: Available at https://github.com/ericaro/surfaceplotter
+- Joinery: Available at http://cardillo.github.io/joinery/v1.8/api/reference/joinery/DataFrame.html

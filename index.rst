@@ -37,10 +37,6 @@ email: yaqiang.wang@gmail.com
 
 Research Gate: https://www.researchgate.net/profile/Yaqiang_Wang5
 
-Donations
-=====================================
-Please consider to donate MeteoInfo open source project for its better functions.
-
 
 .. toctree::
    :hidden:

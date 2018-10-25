@@ -14,6 +14,7 @@ Libraries
    numeric.rst
    plotlib.rst
    dataset.rst
+   dataframe.rst
    geolib.rst
    meteolib.rst
    imagelib.rst
