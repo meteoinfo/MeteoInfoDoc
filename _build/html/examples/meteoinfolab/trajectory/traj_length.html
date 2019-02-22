@@ -1,0 +1,214 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Trajectory length calculation &#8212; MeteoInfo 1.6 documentation</title>
+    <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.6',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="HYSPLIT output concentration plot" href="hyconc_plot.html" />
+    <link rel="prev" title="Trajectory plot" href="traj_plot.html" /> 
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../../index.html"><img src="../../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="hyconc_plot.html" title="HYSPLIT output concentration plot"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="traj_plot.html" title="Trajectory plot"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../docs/index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Examples</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../trajectory.html" accesskey="U">Trajectory</a> &#187;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="traj_plot.html"
+                        title="previous chapter">Trajectory plot</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="hyconc_plot.html"
+                        title="next chapter">HYSPLIT output concentration plot</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/examples/meteoinfolab/trajectory/traj_length.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="trajectory-length-calculation">
+<span id="examples-meteoinfolab-trajectory-traj-length"></span><h1>Trajectory length calculation<a class="headerlink" href="#trajectory-length-calculation" title="Permalink to this headline">¶</a></h1>
+<p><cite>distance</cite> function in <cite>migeo</cite> module of <cite>geolib</cite> package can be used to get length of <cite>LineString</cite> object.
+So it can be used to get the length of each trajectory in a trajectory layer.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Open trjactory shape file</span>
+<span class="nb">print</span> <span class="s1">&#39;Open trajectory shape file ...&#39;</span>
+<span class="n">trajfn</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;D:\Temp\traj\2011_MAM\201103.shp&#39;</span>
+<span class="n">trajLayer</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="n">trajfn</span><span class="p">)</span>
+
+<span class="c1"># Chek length of each trajectory</span>
+<span class="nb">print</span> <span class="s1">&#39;Chek length of each trajectory...&#39;</span>
+<span class="n">idx</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">tline</span> <span class="ow">in</span> <span class="n">trajLayer</span><span class="o">.</span><span class="n">shapes</span><span class="p">():</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">distance</span><span class="p">(</span><span class="n">tline</span><span class="p">,</span> <span class="n">islonlat</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">trajLayer</span><span class="o">.</span><span class="n">cellvalue</span><span class="p">(</span><span class="s1">&#39;Date&#39;</span><span class="p">,</span> <span class="n">idx</span><span class="p">)</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="n">trajLayer</span><span class="o">.</span><span class="n">cellvalue</span><span class="p">(</span><span class="s1">&#39;Hour&#39;</span><span class="p">,</span> <span class="n">idx</span><span class="p">)</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">hour</span><span class="o">=</span><span class="n">h</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="n">t</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1"> %H&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;: </span><span class="si">%.2f</span><span class="s1">km&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">d</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">)</span>
+    <span class="n">idx</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="nb">print</span> <span class="s1">&#39;Finish...&#39;</span>
+</pre></div>
+</div>
+<p>The output from the print code in above script:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">run</span> <span class="n">script</span><span class="o">...</span>
+<span class="go">Open trajectory shape file ...</span>
+<span class="go">Chek length of each trajectory...</span>
+<span class="go">2011-03-01 00: 51.13km</span>
+<span class="go">2011-03-02 00: 691.60km</span>
+<span class="go">2011-03-03 00: 456.37km</span>
+<span class="go">2011-03-04 00: 1533.14km</span>
+<span class="go">2011-03-05 00: 1683.81km</span>
+<span class="go">2011-03-06 00: 944.17km</span>
+<span class="go">2011-03-07 00: 501.29km</span>
+<span class="go">2011-03-08 00: 1400.35km</span>
+<span class="go">2011-03-09 00: 1468.49km</span>
+<span class="go">2011-03-10 00: 2138.57km</span>
+<span class="go">2011-03-11 00: 2143.41km</span>
+<span class="go">2011-03-12 00: 762.63km</span>
+<span class="go">2011-03-13 00: 548.47km</span>
+<span class="go">2011-03-14 00: 629.21km</span>
+<span class="go">2011-03-15 00: 535.15km</span>
+<span class="go">2011-03-16 00: 666.08km</span>
+<span class="go">2011-03-17 00: 623.15km</span>
+<span class="go">2011-03-18 00: 1297.56km</span>
+<span class="go">2011-03-19 00: 966.95km</span>
+<span class="go">2011-03-20 00: 998.49km</span>
+<span class="go">2011-03-21 00: 512.22km</span>
+<span class="go">2011-03-22 00: 398.51km</span>
+<span class="go">2011-03-23 00: 1534.89km</span>
+<span class="go">2011-03-24 00: 843.08km</span>
+<span class="go">2011-03-25 00: 1403.16km</span>
+<span class="go">2011-03-26 00: 1956.59km</span>
+<span class="go">2011-03-27 00: 537.35km</span>
+<span class="go">2011-03-28 00: 1760.05km</span>
+<span class="go">2011-03-29 00: 570.91km</span>
+<span class="go">2011-03-30 00: 1386.61km</span>
+<span class="go">2011-03-31 00: 1141.01km</span>
+<span class="go">Finish...</span>
+</pre></div>
+</div>
+<p><cite>distance</cite> function also suport x/y coordinate vlaues:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;D:/MyProgram/Distribution/java/MeteoInfo/MeteoInfo/sample/HYSPLIT/tdump&#39;</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">addfile_hytraj</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+<span class="n">lons</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;lon&#39;</span><span class="p">][:,:]</span>
+<span class="n">lats</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">][:,:]</span>
+<span class="n">tn</span> <span class="o">=</span> <span class="n">lon</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">tn</span><span class="p">):</span>
+    <span class="n">lon</span> <span class="o">=</span> <span class="n">lons</span><span class="p">[</span><span class="n">i</span><span class="p">,:]</span>
+    <span class="n">lat</span> <span class="o">=</span> <span class="n">lats</span><span class="p">[</span><span class="n">i</span><span class="p">,:]</span>
+    <span class="n">wlon</span> <span class="o">=</span> <span class="n">where</span><span class="p">(</span><span class="n">lon</span><span class="o">==</span><span class="n">nan</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">wlon</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">lon</span> <span class="o">=</span> <span class="n">lon</span><span class="p">[:</span><span class="n">wlon</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+        <span class="n">lat</span> <span class="o">=</span> <span class="n">lat</span><span class="p">[:</span><span class="n">wlon</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">distance</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">islonlat</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="s1">&#39;Length: </span><span class="si">%.2f</span><span class="s1">km&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">d</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="hyconc_plot.html" title="HYSPLIT output concentration plot"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="traj_plot.html" title="Trajectory plot"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../docs/index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Examples</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../trajectory.html" >Trajectory</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2018, Yaqiang Wang.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+    </div>
+  </body>
+</html>

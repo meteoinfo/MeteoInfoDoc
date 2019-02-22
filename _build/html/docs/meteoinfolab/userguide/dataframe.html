@@ -1,0 +1,424 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Series and DataFrame &#8212; MeteoInfo 1.6 documentation</title>
+    <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.6',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="MeteoInfo 1.5 was released (2018-7-9)" href="../../../news/meteoinfo_1.5.html" />
+    <link rel="prev" title="MeteoInfo 1.6 was released (2018-8-30)" href="../../../news/meteoinfo_1.6.html" /> 
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../../index.html"><img src="../../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../../../news/meteoinfo_1.5.html" title="MeteoInfo 1.5 was released (2018-7-9)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../../../news/meteoinfo_1.6.html" title="MeteoInfo 1.6 was released (2018-8-30)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../../news/index.html" >News</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../../news/meteoinfo_1.6.html" accesskey="U">MeteoInfo 1.6 was released (2018-8-30)</a> &#187;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Series and DataFrame</a><ul>
+<li><a class="reference internal" href="#series">Series</a></li>
+<li><a class="reference internal" href="#dataframe">DataFrame</a></li>
+<li><a class="reference internal" href="#viewing-data">Viewing Data</a></li>
+<li><a class="reference internal" href="#selection">Selection</a></li>
+<li><a class="reference internal" href="#grouping">Grouping</a></li>
+<li><a class="reference internal" href="#time-resample">Time resample</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../../../news/meteoinfo_1.6.html"
+                        title="previous chapter">MeteoInfo 1.6 was released (2018-8-30)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../../../news/meteoinfo_1.5.html"
+                        title="next chapter">MeteoInfo 1.5 was released (2018-7-9)</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/docs/meteoinfolab/userguide/dataframe.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="series-and-dataframe">
+<span id="docs-meteoinfolab-user-guid-dataframe"></span><h1>Series and DataFrame<a class="headerlink" href="#series-and-dataframe" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="series">
+<h2>Series<a class="headerlink" href="#series" title="Permalink to this headline">¶</a></h2>
+<p>Series is a one-dimensional labeled array. The axis labels are collectively referred to as the <em>index</em>.
+Creating a Series by passing a list of values, letting pandas create a default integer index:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span>
+<span class="go">0   1.0</span>
+<span class="go">1   3.0</span>
+<span class="go">2   5.0</span>
+<span class="go">3   NaN</span>
+<span class="go">4   6.0</span>
+<span class="go">5   8.0</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="dataframe">
+<h2>DataFrame<a class="headerlink" href="#dataframe" title="Permalink to this headline">¶</a></h2>
+<p>DataFrame is a 2-dimensional labeled data structure with columns of potentially different types. Creating a
+DataFrame by passing an array, with a datetime index and labeled columns:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">dates</span> <span class="o">=</span> <span class="n">date_range</span><span class="p">(</span><span class="s1">&#39;20130101&#39;</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dates</span>
+<span class="go">DateTimeIndex([&#39;2013-01-01&#39;, &#39;2013-01-02&#39;, &#39;2013-01-03&#39;, &#39;2013-01-04&#39;, &#39;2013-01-05&#39;, &#39;2013-01-06&#39;])</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">DataFrame</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">index</span><span class="o">=</span><span class="n">dates</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="s1">&#39;ABCD&#39;</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span>
+<span class="go">                   A         B         C         D</span>
+<span class="go">2013-01-01  0.730520  0.088258  0.488905  0.461837</span>
+<span class="go">2013-01-02  0.448598  0.697712  0.277767  0.759961</span>
+<span class="go">2013-01-03  0.219245  0.920414  0.886056  0.222002</span>
+<span class="go">2013-01-04  0.883879  0.439466  0.392876  0.994732</span>
+<span class="go">2013-01-05  0.881501  0.283149  0.247825  0.593564</span>
+<span class="go">2013-01-06  0.511849  0.077208  0.040160  0.683068</span>
+</pre></div>
+</div>
+<p>Creating a DataFrame by passing a dict of objects that can be converted to series-like.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;A&#39;</span> <span class="p">:</span> <span class="mf">1.</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="s1">&#39;C&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="s1">&#39;D&#39;</span> <span class="p">:</span> <span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">]</span> <span class="o">*</span> <span class="mi">4</span><span class="p">),</span>
+<span class="gp">... </span>    <span class="s1">&#39;E&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s1">&#39;test&#39;</span><span class="p">,</span><span class="s1">&#39;train&#39;</span><span class="p">,</span><span class="s1">&#39;test&#39;</span><span class="p">,</span><span class="s1">&#39;train&#39;</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="s1">&#39;F&#39;</span> <span class="p">:</span> <span class="s1">&#39;foo&#39;</span><span class="p">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span>
+<span class="go">     A C D     E   F</span>
+<span class="go">0  1.0 1 3  test foo</span>
+<span class="go">1  1.0 2 3 train foo</span>
+<span class="go">2  1.0 3 3  test foo</span>
+<span class="go">3  1.0 4 3 train foo</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="viewing-data">
+<h2>Viewing Data<a class="headerlink" href="#viewing-data" title="Permalink to this headline">¶</a></h2>
+<p>Here is how to view the top and bottom rows of the frame:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="go">                   A         B         C         D</span>
+<span class="go">2013-01-01  0.730520  0.088258  0.488905  0.461837</span>
+<span class="go">2013-01-02  0.448598  0.697712  0.277767  0.759961</span>
+<span class="go">2013-01-03  0.219245  0.920414  0.886056  0.222002</span>
+<span class="go">2013-01-04  0.883879  0.439466  0.392876  0.994732</span>
+<span class="go">2013-01-05  0.881501  0.283149  0.247825  0.593564</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="go">                   A         B         C         D</span>
+<span class="go">2013-01-04  0.883879  0.439466  0.392876  0.994732</span>
+<span class="go">2013-01-05  0.881501  0.283149  0.247825  0.593564</span>
+<span class="go">2013-01-06  0.511849  0.077208  0.040160  0.683068</span>
+</pre></div>
+</div>
+<p>Display the index, columns, and the underlying array data:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">index</span>
+<span class="go">DateTimeIndex([&#39;2013-01-01&#39;, &#39;2013-01-02&#39;, &#39;2013-01-03&#39;, &#39;2013-01-04&#39;, &#39;2013-01-05&#39;, &#39;2013-01-06&#39;])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">columns</span>
+<span class="go">Index([&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">values</span>
+<span class="go">array([[0.730519863614471, 0.08825840967622589, 0.4889045498516358, 0.461837214623537]</span>
+<span class="go">      [0.4485983912283127, 0.6977123432245299, 0.2777673057578094, 0.7599608278137966]</span>
+<span class="go">      [0.21924450192488787, 0.9204140116502296, 0.886055787176944, 0.22200160212508913]</span>
+<span class="go">      [0.8838785592364334, 0.43946558709097283, 0.3928764411717487, 0.9947320023919717]</span>
+<span class="go">      [0.8815007984632135, 0.2831489393823492, 0.24782537013522343, 0.5935642792213479]</span>
+<span class="go">      [0.5118487849556497, 0.07720751395148084, 0.04016027357410157, 0.6830675875686567]])</span>
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">describe()</span></code> shows a quick statistic summary of the data:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+<span class="go">              A         B         C         D</span>
+<span class="go">count  6.000000  6.000000  6.000000  6.000000</span>
+<span class="go"> mean  0.612598  0.417701  0.388932  0.619194</span>
+<span class="go">  std  0.265172  0.338873  0.286724  0.263857</span>
+<span class="go">  var  0.070316  0.114835  0.082211  0.069621</span>
+<span class="go">  max  0.883879  0.920414  0.886056  0.994732</span>
+<span class="go">  min  0.219245  0.077208  0.040160  0.222002</span>
+</pre></div>
+</div>
+<p>Transposing the data:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">T</span>
+<span class="go">  2013-01-01 2013-01-02 2013-01-03 2013-01-04 2013-01-05 2013-01-06</span>
+<span class="go">A   0.730520   0.448598   0.219245   0.883879   0.881501   0.511849</span>
+<span class="go">B   0.088258   0.697712   0.920414   0.439466   0.283149   0.077208</span>
+<span class="go">C   0.488905   0.277767   0.886056   0.392876   0.247825   0.040160</span>
+<span class="go">D   0.461837   0.759961   0.222002   0.994732   0.593564   0.683068</span>
+</pre></div>
+</div>
+<p>Sorting by index:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">sort_index</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="go">                   A         B         C         D</span>
+<span class="go">2013-01-06  0.511849  0.077208  0.040160  0.683068</span>
+<span class="go">2013-01-05  0.881501  0.283149  0.247825  0.593564</span>
+<span class="go">2013-01-04  0.883879  0.439466  0.392876  0.994732</span>
+<span class="go">2013-01-03  0.219245  0.920414  0.886056  0.222002</span>
+<span class="go">2013-01-02  0.448598  0.697712  0.277767  0.759961</span>
+<span class="go">2013-01-01  0.730520  0.088258  0.488905  0.461837</span>
+</pre></div>
+</div>
+<p>Sorting by values:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;B&#39;</span><span class="p">)</span>
+<span class="go">                   A         B         C         D</span>
+<span class="go">2013-01-06  0.511849  0.077208  0.040160  0.683068</span>
+<span class="go">2013-01-01  0.730520  0.088258  0.488905  0.461837</span>
+<span class="go">2013-01-05  0.881501  0.283149  0.247825  0.593564</span>
+<span class="go">2013-01-04  0.883879  0.439466  0.392876  0.994732</span>
+<span class="go">2013-01-02  0.448598  0.697712  0.277767  0.759961</span>
+<span class="go">2013-01-03  0.219245  0.920414  0.886056  0.222002</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="selection">
+<h2>Selection<a class="headerlink" href="#selection" title="Permalink to this headline">¶</a></h2>
+<p><strong>Getting</strong></p>
+<p>Selecting a single column, which yields a Series, equivalent to df.A:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">]</span>
+<span class="go">2013-01-01  0.730519863614471</span>
+<span class="go">2013-01-02  0.4485983912283127</span>
+<span class="go">2013-01-03  0.21924450192488787</span>
+<span class="go">2013-01-04  0.8838785592364334</span>
+<span class="go">2013-01-05  0.8815007984632135</span>
+<span class="go">2013-01-06  0.5118487849556497</span>
+</pre></div>
+</div>
+<p>Selecting via [], which slices the rows.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+<span class="go">                   A         B         C         D</span>
+<span class="go">2013-01-01  0.730520  0.088258  0.488905  0.461837</span>
+<span class="go">2013-01-02  0.448598  0.697712  0.277767  0.759961</span>
+<span class="go">2013-01-03  0.219245  0.920414  0.886056  0.222002</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;20130102&#39;</span><span class="p">:</span><span class="s1">&#39;20130104&#39;</span><span class="p">]</span>
+<span class="go">                   A         B         C         D</span>
+<span class="go">2013-01-02  0.448598  0.697712  0.277767  0.759961</span>
+<span class="go">2013-01-03  0.219245  0.920414  0.886056  0.222002</span>
+<span class="go">2013-01-04  0.883879  0.439466  0.392876  0.994732</span>
+</pre></div>
+</div>
+<p><strong>Selection by Label</strong></p>
+<p>For getting a cross section using a label:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">dates</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+<span class="go">A  0.730519863614471</span>
+<span class="go">B  0.08825840967622589</span>
+<span class="go">C  0.4889045498516358</span>
+<span class="go">D  0.461837214623537</span>
+</pre></div>
+</div>
+<p>Selecting on a multi-axis by label:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">]]</span>
+<span class="go">                   A         B</span>
+<span class="go">2013-01-01  0.730520  0.088258</span>
+<span class="go">2013-01-02  0.448598  0.697712</span>
+<span class="go">2013-01-03  0.219245  0.920414</span>
+<span class="go">2013-01-04  0.883879  0.439466</span>
+<span class="go">2013-01-05  0.881501  0.283149</span>
+<span class="go">2013-01-06  0.511849  0.077208</span>
+</pre></div>
+</div>
+<p>Showing label slicing, both endpoints are included:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;20130102&#39;</span><span class="p">:</span><span class="s1">&#39;20130104&#39;</span><span class="p">,[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">]]</span>
+<span class="go">                   A         B</span>
+<span class="go">2013-01-02  0.448598  0.697712</span>
+<span class="go">2013-01-03  0.219245  0.920414</span>
+<span class="go">2013-01-04  0.883879  0.439466</span>
+</pre></div>
+</div>
+<p>Reduction in the dimensions of the returned object:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;20130102&#39;</span><span class="p">,[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">]]</span>
+<span class="go">A  0.4485983912283127</span>
+<span class="go">B  0.6977123432245299</span>
+</pre></div>
+</div>
+<p>For getting a scalar value:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="n">dates</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="s1">&#39;A&#39;</span><span class="p">]</span>
+<span class="go">0.730519863614471</span>
+</pre></div>
+</div>
+<p><strong>Selection by Position</strong></p>
+<p>Select via the position of the passed integers:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+<span class="go">A  0.8838785592364334</span>
+<span class="go">B  0.43946558709097283</span>
+<span class="go">C  0.3928764411717487</span>
+<span class="go">D  0.9947320023919717</span>
+</pre></div>
+</div>
+<p>By integer slices:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+<span class="go">                   A         B</span>
+<span class="go">2013-01-04  0.883879  0.439466</span>
+<span class="go">2013-01-05  0.881501  0.283149</span>
+</pre></div>
+</div>
+<p>By lists of integer position locations:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]]</span>
+<span class="go">                   A         C</span>
+<span class="go">2013-01-02  0.448598  0.277767</span>
+<span class="go">2013-01-03  0.219245  0.886056</span>
+<span class="go">2013-01-05  0.881501  0.247825</span>
+</pre></div>
+</div>
+<p>For getting a value explicitly:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+<span class="go">0.6977123432245299</span>
+</pre></div>
+</div>
+<p>For getting fast access to a scalar (equivalent to the prior method):</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">iat</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+<span class="go">0.6977123432245299</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="grouping">
+<h2>Grouping<a class="headerlink" href="#grouping" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;A&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                       <span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;foo&#39;</span><span class="p">],</span>
+<span class="gp">... </span>                <span class="s1">&#39;B&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s1">&#39;one&#39;</span><span class="p">,</span> <span class="s1">&#39;one&#39;</span><span class="p">,</span> <span class="s1">&#39;two&#39;</span><span class="p">,</span> <span class="s1">&#39;three&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                       <span class="s1">&#39;two&#39;</span><span class="p">,</span> <span class="s1">&#39;two&#39;</span><span class="p">,</span> <span class="s1">&#39;one&#39;</span><span class="p">,</span> <span class="s1">&#39;three&#39;</span><span class="p">],</span>
+<span class="gp">... </span>                <span class="s1">&#39;C&#39;</span> <span class="p">:</span> <span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">8</span><span class="p">),</span>
+<span class="gp">... </span>                <span class="s1">&#39;D&#39;</span> <span class="p">:</span> <span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">8</span><span class="p">)})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span>
+<span class="go">    A     B         C         D</span>
+<span class="go">0 foo   one  0.235064  0.235064</span>
+<span class="go">1 bar   one -0.419857 -0.419857</span>
+<span class="go">2 foo   two -0.888507 -0.888507</span>
+<span class="go">3 bar three -3.056019 -3.056019</span>
+<span class="go">4 foo   two -0.476107 -0.476107</span>
+<span class="go">5 bar   two  1.831309  1.831309</span>
+<span class="go">6 foo   one -0.800894 -0.800894</span>
+<span class="go">7 foo three  0.936860  0.936860</span>
+</pre></div>
+</div>
+<p>Grouping and then applying the sum() function to the resulting groups.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="go">             C          D</span>
+<span class="go">foo  -0.993584  -0.993584</span>
+<span class="go">bar  -1.644567  -1.644567</span>
+</pre></div>
+</div>
+<p>Grouping by multiple columns forms a hierarchical index, and again we can apply the sum function.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;A&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="go">             C         D</span>
+<span class="go">[foo, one] -0.565830 -0.565830</span>
+<span class="go">[bar, one] -0.419857 -0.419857</span>
+<span class="go">[foo, two] -1.364614 -1.364614</span>
+<span class="go">[bar, three] -3.056019 -3.056019</span>
+<span class="go">[bar, two]  1.831309  1.831309</span>
+<span class="go">[foo, three]  0.936860  0.936860</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="time-resample">
+<h2>Time resample<a class="headerlink" href="#time-resample" title="Permalink to this headline">¶</a></h2>
+<p>To performing resampling operations during frequency conversion (e.g., converting secondly data into
+5-minutely data):</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">rng</span> <span class="o">=</span> <span class="n">date_range</span><span class="p">(</span><span class="s1">&#39;1/1/2012&#39;</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s1">&#39;S&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ts</span> <span class="o">=</span> <span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">rng</span><span class="p">)),</span> <span class="n">index</span><span class="o">=</span><span class="n">rng</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ts</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;5Min&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="go">2012-01-01 00:00  22561.0</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../../../news/meteoinfo_1.5.html" title="MeteoInfo 1.5 was released (2018-7-9)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../../../news/meteoinfo_1.6.html" title="MeteoInfo 1.6 was released (2018-8-30)"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../../news/index.html" >News</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../../news/meteoinfo_1.6.html" >MeteoInfo 1.6 was released (2018-8-30)</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2018, Yaqiang Wang.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+    </div>
+  </body>
+</html>

@@ -46,19 +46,19 @@ To create sequences of numbers, MeteoInfoLab provides a function analogous to ra
 
 ::
 
-    >>> arange( 10, 30, 5 )
+    >>> arange(10, 30, 5)
     array([10, 15, 20, 25])
-    >>> arange( 0, 2, 0.3 )                 # it accepts float arguments
-    array([ 0. ,  0.3,  0.6,  0.9,  1.2,  1.5,  1.8])
+    >>> arange(0, 2, 0.3)                 # it accepts float arguments
+    array([0. ,  0.3,  0.6,  0.9,  1.2,  1.5,  1.8])
     
 The function ``linspace`` that receives as an argument the number of elements that we want, instead of the 
 step:
 
 ::
 
-    >>> linspace( 0, 2, 9 )                 # 9 numbers from 0 to 2
-    array([ 0.  ,  0.25,  0.5 ,  0.75,  1.  ,  1.25,  1.5 ,  1.75,  2.  ])
-    >>> x = linspace( 0, 2*pi, 100 )        # useful to evaluate function at lots of points
+    >>> linspace(0, 2, 9)                 # 9 numbers from 0 to 2
+    array([0., 0.25, 0.5, 0.75, 1., 1.25, 1.5, 1.75, 2.])
+    >>> x = linspace(0, 2*pi, 100)        # useful to evaluate function at lots of points
     >>> f = sin(x)
     
 **Array Operations**
@@ -67,27 +67,27 @@ Arithmetic operators on arrays apply *elementwise*. A new array is created and f
 
 ::
 
-    >>> a = array( [20,30,40,50] )
-    >>> b = arange( 4 )
+    >>> a = array([20,30,40,50])
+    >>> b = arange(4)
     >>> b
     array([0, 1, 2, 3])
-    >>> c = a-b
+    >>> c = a - b
     >>> c
     array([20, 29, 38, 47])
     >>> b**2
     array([0, 1, 4, 9])
     >>> 10*sin(a)
-    array([ 9.12945251, -9.88031624,  7.4511316 , -2.62374854])
+    array([9.12945251, -9.88031624,  7.4511316 , -2.62374854])
     
 Unlike in many matrix languages such as MATLAB, the product operator * operates elementwise in MeteoInfoLab
 arrays. The matrix product can be performed using the dot function or method:
 
 ::
     
-    >>> A = array( [[1,1],
-    ...             [0,1]] )
-    >>> B = array( [[2,0],
-    ...             [3,4]] )
+    >>> A = array([[1,1],
+    ...            [0,1]])
+    >>> B = array([[2,0],
+    ...            [3,4]])
     >>> A*B                         # elementwise product
     array([[2, 0],
            [0, 4]])
@@ -114,9 +114,9 @@ sequences.
     array([ 8, 27, 64])
     >>> a[:6:2] = -1000    # equivalent to a[0:6:2] = -1000; from start to position 6, exclusive, set every 2nd element to -1000
     >>> a
-    array([-1000,     1, -1000,    27, -1000,   125,   216,   343,   512,   729])
-    >>> a[ : :-1]                                 # reversed a
-    array([  729,   512,   343,   216,   125, -1000,    27, -1000,     1, -1000])
+    array([-1000, 1, -1000, 27, -1000, 125, 216, 343, 512, 729])
+    >>> a[::-1]                                 # reversed a
+    array([729, 512, 343, 216, 125, -1000, 27, -1000, 1, -1000])
     >>> for i in a:
     ...     print(i**(1/3.))
     ...
@@ -139,10 +139,10 @@ commas:
     >>> b = array([[0,1,2,3],[10,11,12,13],[20,21,22,23],[30,31,32,33],[40,41,42,43]])
     >>> b[2,3]
     23
-    >>> b[0:5, 1]                       # each row in the second column of b
-    array([ 1, 11, 21, 31, 41])
-    >>> b[ : ,1]                        # equivalent to the previous example
-    array([ 1, 11, 21, 31, 41])
-    >>> b[1:3, : ]                      # each column in the second and third row of b
+    >>> b[0:5,1]                       # each row in the second column of b
+    array([1, 11, 21, 31, 41])
+    >>> b[:,1]                         # equivalent to the previous example
+    array([1, 11, 21, 31, 41])
+    >>> b[1:3,:]                       # each column in the second and third row of b
     array([[10, 11, 12, 13],
            [20, 21, 22, 23]])

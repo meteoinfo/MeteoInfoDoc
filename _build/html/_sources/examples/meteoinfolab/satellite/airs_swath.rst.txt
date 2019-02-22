@@ -28,7 +28,7 @@ Also **scatterm()** command can be used to plot swath data as scatter points.
     geoshow(mlayer)
     levs = arange(40, 90, 1)
     #layer = scatterm(lon, lat, rad, levs, edge=False)
-    layer = surfacem(lon, lat, rad, levs)
+    layer = pcolorm(lon, lat, rad, levs)
     colorbar(layer, orientation='horizontal')
     title('{0}\n {1}'.format(fns, vname))
     axism()

@@ -32,3 +32,5 @@ Satellite data
    satellite/mls_swath.rst
    satellite/nsidc_bt.rst
    satellite/toms_ozone.rst
+   satellite/geos-16.rst
+   satellite/smap_l4.rst

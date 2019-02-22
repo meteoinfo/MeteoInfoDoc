@@ -31,6 +31,12 @@ The variables X0 and Y0 define the position of the studied site. Note that d12 v
 values occur when two trajectories are in the same and opposite direction, respectively. As defined by equations (2) to 
 (5), d12 is the mean angle between the two backward trajectories, as seen from the studied site.
 
+All trajectories must have same number of end points for cluster calculation, so ``Check point number``
+button should be pressed firstly, and make sure the result of ``All trajectories have same point number...``.
+Otherwise, some trajectories need to be re-calculated due to their abnormal end points numbers.
+Normally, the back trajectories in the first days of a month have this problem if the meteorological
+data files of last month were not included in calculation.
+
 .. image:: ../../_static/trajstat/cluster_cal.png
 
 Press ‘Calculate Cluster’ button to run the clustering program. Then a .txt file with trajectory number and cluster 

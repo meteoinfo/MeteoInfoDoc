@@ -8,6 +8,7 @@ Numeric package
 .. toctree::
    :maxdepth: 1
 
+   numeric/dimarray.rst
    numeric/minum.rst
    numeric/random.rst
    numeric/linalg.rst

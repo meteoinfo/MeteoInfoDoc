@@ -1,0 +1,174 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>GEOS-16 data &#8212; MeteoInfo 1.6 documentation</title>
+    <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.6',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Trajectory" href="../trajectory.html" />
+    <link rel="prev" title="TOMS ozone Grid data" href="toms_ozone.html" /> 
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../../index.html"><img src="../../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../trajectory.html" title="Trajectory"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="toms_ozone.html" title="TOMS ozone Grid data"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../docs/index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Examples</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../satellite.html" accesskey="U">Satellite data</a> &#187;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="toms_ozone.html"
+                        title="previous chapter">TOMS ozone Grid data</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../trajectory.html"
+                        title="next chapter">Trajectory</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/examples/meteoinfolab/satellite/geos-16.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="geos-16-data">
+<span id="examples-meteoinfolab-satellite-geos-16"></span><h1>GEOS-16 data<a class="headerlink" href="#geos-16-data" title="Permalink to this headline">¶</a></h1>
+<p>This example code illustrates how to access and visualize a GEOS-16 data.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;D:/Temp/nc/OR_ABI-L1b-RadC-M4C02_G16_s20161811455312_e20161811500122_c20161811500164.nc&#39;</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+<span class="n">rad</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;Rad&#39;</span><span class="p">][::</span><span class="o">-</span><span class="mi">1</span><span class="p">,:]</span>
+<span class="n">rad</span><span class="p">[</span><span class="n">rad</span><span class="o">&gt;</span><span class="mi">800</span><span class="p">]</span> <span class="o">=</span> <span class="n">nan</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">][:]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">][::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">geos_p</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;goes_imager_projection&#39;</span><span class="p">]</span>
+<span class="n">proj_name</span> <span class="o">=</span> <span class="n">geos_p</span><span class="o">.</span><span class="n">attrvalue</span><span class="p">(</span><span class="s1">&#39;grid_mapping_name&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">h</span> <span class="o">=</span> <span class="n">geos_p</span><span class="o">.</span><span class="n">attrvalue</span><span class="p">(</span><span class="s1">&#39;perspective_point_height&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">geos_p</span><span class="o">.</span><span class="n">attrvalue</span><span class="p">(</span><span class="s1">&#39;semi_major_axis&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">geos_p</span><span class="o">.</span><span class="n">attrvalue</span><span class="p">(</span><span class="s1">&#39;semi_minor_axis&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">rf</span> <span class="o">=</span> <span class="n">geos_p</span><span class="o">.</span><span class="n">attrvalue</span><span class="p">(</span><span class="s1">&#39;inverse_flattening&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">lat_0</span> <span class="o">=</span> <span class="n">geos_p</span><span class="o">.</span><span class="n">attrvalue</span><span class="p">(</span><span class="s1">&#39;latitude_of_projection_origin&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">lon_0</span> <span class="o">=</span> <span class="n">geos_p</span><span class="o">.</span><span class="n">attrvalue</span><span class="p">(</span><span class="s1">&#39;longitude_of_projection_origin&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">sweep</span> <span class="o">=</span> <span class="n">geos_p</span><span class="o">.</span><span class="n">attrvalue</span><span class="p">(</span><span class="s1">&#39;sweep_angle_axis&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">pstr</span> <span class="o">=</span> <span class="s1">&#39;+proj=geos +h=</span><span class="si">%f</span><span class="s1"> +a=</span><span class="si">%f</span><span class="s1"> +b=</span><span class="si">%f</span><span class="s1"> +rf=</span><span class="si">%f</span><span class="s1"> +lat_0=</span><span class="si">%f</span><span class="s1"> +lon_0=</span><span class="si">%f</span><span class="s1">&#39;</span> \
+    <span class="o">%</span> <span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">rf</span><span class="p">,</span> <span class="n">lat_0</span><span class="p">,</span> <span class="n">lon_0</span><span class="p">)</span>
+
+<span class="c1">#Following the simple formula for the projection coordinate,</span>
+<span class="c1">#proj_coor = scan_angle_radians * height</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">h</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">y</span> <span class="o">*</span> <span class="n">h</span>
+
+<span class="c1">#Project</span>
+<span class="n">proj</span> <span class="o">=</span> <span class="n">projinfo</span><span class="p">(</span><span class="n">proj4string</span><span class="o">=</span><span class="n">pstr</span><span class="p">)</span>
+
+<span class="c1">#Plot</span>
+<span class="n">axesm</span><span class="p">(</span><span class="n">projinfo</span><span class="o">=</span><span class="n">proj</span><span class="p">,</span> <span class="n">gridline</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">ls</span> <span class="o">=</span> <span class="n">imshowm</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">rad</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="n">proj</span><span class="o">=</span><span class="n">proj</span><span class="p">)</span>
+<span class="n">colorbar</span><span class="p">(</span><span class="n">ls</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;ABI L1b Radiances&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../_images/geos-16_1.png" src="../../../_images/geos-16_1.png" />
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../trajectory.html" title="Trajectory"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="toms_ozone.html" title="TOMS ozone Grid data"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../docs/index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Examples</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../satellite.html" >Satellite data</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2018, Yaqiang Wang.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+    </div>
+  </body>
+</html>

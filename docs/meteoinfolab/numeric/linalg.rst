@@ -19,3 +19,4 @@ Functions:
    linalg/svd.rst
    linalg/eig.rst
    linalg/solve.rst
+   linalg/lstsq.rst

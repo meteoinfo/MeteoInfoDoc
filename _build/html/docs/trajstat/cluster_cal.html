@@ -5,13 +5,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Cluster Calculation &#8212; MeteoInfo 1.4.8 documentation</title>
+    <title>Cluster Calculation &#8212; MeteoInfo 1.6 documentation</title>
     <link rel="stylesheet" href="../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.4.8',
+        VERSION:     '1.6',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -110,6 +110,11 @@ of the trajectories in clustering, then angle distance should be selected.</p>
 <p>The variables X0 and Y0 define the position of the studied site. Note that d12 varies between 0 and π. The two extreme
 values occur when two trajectories are in the same and opposite direction, respectively. As defined by equations (2) to
 (5), d12 is the mean angle between the two backward trajectories, as seen from the studied site.</p>
+<p>All trajectories must have same number of end points for cluster calculation, so <code class="docutils literal"><span class="pre">Check</span> <span class="pre">point</span> <span class="pre">number</span></code>
+button should be pressed firstly, and make sure the result of <code class="docutils literal"><span class="pre">All</span> <span class="pre">trajectories</span> <span class="pre">have</span> <span class="pre">same</span> <span class="pre">point</span> <span class="pre">number...</span></code>.
+Otherwise, some trajectories need to be re-calculated due to their abnormal end points numbers.
+Normally, the back trajectories in the first days of a month have this problem if the meteorological
+data files of last month were not included in calculation.</p>
 <img alt="../../_images/cluster_cal.png" src="../../_images/cluster_cal.png" />
 <p>Press ‘Calculate Cluster’ button to run the clustering program. Then a .txt file with trajectory number and cluster
 members was created. In this case, maximum cluster number is set to 30 which could be changed if necessary.</p>

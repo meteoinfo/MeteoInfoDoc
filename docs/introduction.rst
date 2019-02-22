@@ -14,7 +14,7 @@ the spatial and meteorological data with multiple data formats.
 MeteoInfoLab is a scientific computation and visualization environment using Jython scripting with the 
 ability of multiple dimensional array calculation and 2D/3D plotting.
 
-It requires that Java 7 be installed on your computer. See the
+It requires that Java 7 or greater be installed on your computer. See the
 http://www.java.com website for a free download of Java if you do not have it
 already installed.
   
@@ -26,13 +26,13 @@ Publication
 Presentation
 ======================
 
-- MeteoInfo introduction in 2018 HYSPLIT workshop: `PPT <../downloads/files/MeteoInfo_and_HYSPLIT.pptx>`_ ; `Video <../downloads/files/ARLHysplitWorkshop2018-0614_MeteoInfo.mp4>`_
+- MeteoInfo introduction in 2018 HYSPLIT workshop: `PPT <../downloads/files/MeteoInfo_and_HYSPLIT.pptx>`_ ; `Video <../downloads/files/ARLHysplitWorkshop2018-0614_MeteoInfo.zip>`_
   
 Downloading
 ======================
 
 The current version of MeteoInfo, along with other information about the
-application, may always be found at http://www.meteothinker.com
+application, may always be found at http://www.meteothink.org
 
 Installing MeteoInfoMap/MeteoInfoLab
 ==============================================
@@ -61,30 +61,33 @@ the following items:
 Running MeteoInfoMap/MeteoInfoLab
 =================================
 
+Run MeteoInfoMap:
+-----------------
+
 On Windows paltform, you can launch MeteoInfoMap by double-clicking "MeteoInfoMap.exe" file, 
 or by run the batch command file "mimap.bat". The batch command file with parameters will
 run a Jython script ("mimap.bat test.py").
 
-On other platforms, you should run MeteoInfoMap from the shell command line; 'cd' into
+On Linux/Unix platforms, you should run MeteoInfoMap from the shell command line; 'cd' into
 the directory where the above files are located and then type:
 
 ``./mimap.sh``
 
 This will execute a one-line command in the shell file which starts
-MeteoInfoMap and requests that it be allocated 1 GB of memory. To run the script, type:
+MeteoInfoMap and requests that it be allocated 1 GB of memory.
 
-``./mimap.sh test.py``
+On Mac OS platform, you can launch MeteoInfoMap similar with Linux paltform but using:
 
-To run the script with headless model, a system configuration in which the display device is lacking, type:
-``./mimap.sh -b test.py``
-It is specially useful in Unix/Linux crontab.
+``./mimap_mac.sh``
 
 Run MeteoInfoLab:
+-----------------
+
 On Windows paltform, you can launch MeteoInfoLab by double-clicking "MeteoInfoLab.exe" file, 
 or by run the batch command file "milab.bat". The batch command file with parameters will
 run a Jython script.
 
-On other platforms, you should run MeteoInfoLab from the shell command line; 'cd' into
+On Linux/Unix platforms, you should run MeteoInfoLab from the shell command line; 'cd' into
 the directory where the above files are located and then type:
 
 ``./milab.sh``
@@ -97,6 +100,10 @@ MeteoInfoLab and requests that it be allocated 1 GB of memory. To run the script
 To run the script with headless model, a system configuration in which the display device is lacking, type:
 ``./milab.sh -b test.py``
 It is specially useful in Unix/Linux crontab.
+
+On Mac OS platform, you can launch MeteoInfoLab similar with Linux paltform but using:
+
+``./milab_mac.sh``
 
 Lib files
 ======================
@@ -129,10 +136,11 @@ MeteoInfo uses Java classes and libraries written by several third-party organiz
 - NetCDF Java and its dependence libraries: Available at http://www.unidata.ucar.edu/software/thredds/current/netcdf-java
 - Proj4J: Available at http://trac.osgeo.org/proj4j/wiki
 - Apache Common Math: Available at http://commons.apache.org/proper/commons-math
+- Efficient Java Matrix Library (EJML): Available at http://ejml.org/wiki/index.php?title=Main_Page
 - Apache common Imaging: Available at http://commons.apache.org/proper/commons-imaging
 - Groovy: Available at http://groovy.codehaus.org
 - Jython: Available at http://www.jython.org
-- wContour: Available at http://www.meteothinker.com
+- wContour: Available at http://www.meteothink.org
 - L2FProd: Available at http://common.L2FProd.com
 - RSyntaxTextArea: Available at http://bobbylight.github.io/RSyntaxTextArea
 - JavaHelp: Available at https://javahelp.java.net
@@ -142,4 +150,6 @@ MeteoInfo uses Java classes and libraries written by several third-party organiz
 - JLaTeXMath: Available at https://github.com/opencollab/jlatexmath
 - JTS Topology Suite: Available at https://www.locationtech.org/projects/technology.jts
 - Jerry's Java Image Processing: Available at http://www.jhlabs.com/ip/index.html
+- JXMapViewer: Available at https://github.com/msteiger/jxmapviewer2
 - SurfacePlotter: Available at https://github.com/ericaro/surfaceplotter
+- Joinery: Available at http://cardillo.github.io/joinery/v1.8/api/reference/joinery/DataFrame.html

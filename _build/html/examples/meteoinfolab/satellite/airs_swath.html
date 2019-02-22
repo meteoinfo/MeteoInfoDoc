@@ -5,13 +5,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>AIRS Swath data &#8212; MeteoInfo 1.4.8 documentation</title>
+    <title>AIRS Swath data &#8212; MeteoInfo 1.6 documentation</title>
     <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.4.8',
+        VERSION:     '1.6',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -116,7 +116,7 @@ Also <strong>scatterm()</strong> command can be used to plot swath data as scatt
 <span class="n">geoshow</span><span class="p">(</span><span class="n">mlayer</span><span class="p">)</span>
 <span class="n">levs</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="c1">#layer = scatterm(lon, lat, rad, levs, edge=False)</span>
-<span class="n">layer</span> <span class="o">=</span> <span class="n">surfacem</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">rad</span><span class="p">,</span> <span class="n">levs</span><span class="p">)</span>
+<span class="n">layer</span> <span class="o">=</span> <span class="n">pcolorm</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">rad</span><span class="p">,</span> <span class="n">levs</span><span class="p">)</span>
 <span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;horizontal&#39;</span><span class="p">)</span>
 <span class="n">title</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{0}</span><span class="se">\n</span><span class="s1"> </span><span class="si">{1}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fns</span><span class="p">,</span> <span class="n">vname</span><span class="p">))</span>
 <span class="n">axism</span><span class="p">()</span>

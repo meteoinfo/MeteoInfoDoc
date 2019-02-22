@@ -10,6 +10,7 @@ Trajectory
    
    trajectory/traj_cal.rst
    trajectory/traj_plot.rst
+   trajectory/traj_length.rst
    trajectory/hyconc_plot.rst
    trajectory/traj_meteo_data.rst
    trajectory/wrfout2arl.rst

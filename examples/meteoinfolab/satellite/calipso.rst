@@ -222,29 +222,46 @@ Plot total attenuated backscatter.
     f = addfile(fn)
 
     # Read data
+    x1 = 0
+    x2 = 1001
+    nx = x2 - x1
+    h1 = 0  # km
+    h2 = 20  # km
+    nz = 500  # Number of pixels in the vertical
     vname = 'Total_Attenuated_Backscatter_532'
     var = f[vname]
-    data = var[:1000,:]
+    data = var[x1:x2,:]
     data = rot90(data)
-    lats = f['Latitude'][:1000,0]
-    latstrs = []
-    for lat in lats:
-        latstrs.append('%.1f' % lat)
+    lats = f['Latitude'][x1:x2,0]
+    lons = f['Longitude'][x1:x2,0]
     height = f['metadata']['Lidar_Data_Altitudes']
-    h = height[::-1]
-    hstrs = []
-    for hh in h:
-        hstrs.append('%.1f' % hh)
+    height = height[::-1]
+    data.setdimvalue(0, height)
+
+    # Interpolate data on a regular grid
+    x = arange(x1, x2)
+    h = linspace(h1, h2, nz)
+    data = np.linint2(data, x, h)
+
+    # X axis ticks
+    xvals = []
+    xstrs = []
+    for i in range(0, nx, 200):
+        xvals.append(i + x1)
+        if i == 0:
+            xstrs.append('Lat: %.2f\nLon: %.2f' % (lats[i],lons[i]))
+        else:
+            xstrs.append('%.2f\n%.2f' % (lats[i],lons[i]))
 
     # Plot
     levs = [0.0001,0.0002,0.0003,0.0004,0.0005,0.0006,0.0007,0.0008,0.0009,\
         0.001,0.0015,0.002,0.0025,0.003,0.0035,0.004,0.0045,0.005,0.0055,0.006,\
         0.0065,0.007,0.0075,0.008,0.01,0.02,0.03,0.04,0.05,0.06,0.07,0.08,0.09,0.1]
     colors = CALIPSO_colors.makecolors()
-    layer = imshow(data, levs, colors=colors)
-    xticks(data.dimvalue(1), latstrs)
-    yticks(data.dimvalue(0), hstrs)
-    xlabel('Latitude')
+    layer = imshow(x, h, data, levs, colors=colors)
+    xaxis(tickin=False)
+    yaxis(tickin=False)
+    xticks(xvals, xstrs)
     ylabel('Altitude (km)')
     colorbar(layer, extendrect=False, label=r'$\rm{km}^{-1}$ \rm{sr}$^{-1}$')
     basename = os.path.basename(fn)

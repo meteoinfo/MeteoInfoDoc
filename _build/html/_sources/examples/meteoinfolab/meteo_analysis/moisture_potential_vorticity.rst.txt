@@ -24,10 +24,7 @@ The example to calcluate moisture potential vorticity.
     latlim = '10:60'
     lonlim = '60:140'
     rh = meteof['RELH'][:,:,latlim,lonlim]
-    nx = rh.dimlen(3)
-    ny = rh.dimlen(2)
-    nz = rh.dimlen(1)
-    nt = rh.dimlen(0)
+    nt,nz,ny,nx = rh.shape
     lat = rh.dimvalue(2)
     lev = rh.dimvalue(1)
     t0 = meteof['TEMP'][:,:nz-1,latlim,lonlim]

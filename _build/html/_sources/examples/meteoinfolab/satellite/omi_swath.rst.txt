@@ -25,7 +25,7 @@ This example code illustrates how to access and visualize a OMI swath data.
     mlayer = shaperead('D:/Temp/map/country1.shp')
     geoshow(mlayer, edgecolor='k')
     #slayer = scatterm(lon, lat, data, edge=False)
-    layer = surfacem(lon, lat, data)
+    layer = pcolorm(lon, lat, data)
     colorbar(layer)
     title('OMI - ' + vname)
     axism()

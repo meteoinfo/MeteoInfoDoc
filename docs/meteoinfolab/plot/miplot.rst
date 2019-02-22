@@ -13,7 +13,10 @@ Functions:
 .. toctree::
    :maxdepth: 1
 
-   functions/antialias.rst   
+   functions/annotate.rst
+   functions/antialias.rst
+   functions/arrow.rst
+   functions/arrowline.rst
    functions/axes.rst
    functions/axesm.rst
    functions/axis.rst

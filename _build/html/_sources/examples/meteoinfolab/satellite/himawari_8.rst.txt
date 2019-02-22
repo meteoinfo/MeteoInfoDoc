@@ -130,24 +130,22 @@ The example to read and plot HSD data:
 
     #Read data files
     segments = range(1, 11)
-    i = 0
     for segment in segments:
         fn = 'E:/Temp/himawari8/HS_H08_20170921_0410_B16_FLDK_R20_S%02i10.DAT' % segment
         print fn
         data1,ncol,nrow1,fln1 = read_h8(fn)
-        if i == 0:
+        if segment == segments[0]:
             data = data1
             fln = fln1
             nrow = nrow1
         else:
             data = concatenate([data, data1], axis=0)
             nrow += nrow1
-        i += 1
     data = data[::-1,:]
         
     #Plot
     sx = -5500000
-    sy = -5500000 + fln * 2000
+    sy = 5500000 - segments[-1] * 550 * 2000
     x = arange1(sx, ncol, 2000)
     y = arange1(sy, nrow, 2000)
     ax = axesm(proj='geos', lon_0=140.7, h=35785863, gridlabel=True, gridline=True, frameon=False)

@@ -5,13 +5,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>CALIPSO data &#8212; MeteoInfo 1.4.8 documentation</title>
+    <title>CALIPSO data &#8212; MeteoInfo 1.6 documentation</title>
     <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.4.8',
+        VERSION:     '1.6',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -299,29 +299,46 @@ LaRC CALIPSO data file.</p>
 <span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
 
 <span class="c1"># Read data</span>
+<span class="n">x1</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="mi">1001</span>
+<span class="n">nx</span> <span class="o">=</span> <span class="n">x2</span> <span class="o">-</span> <span class="n">x1</span>
+<span class="n">h1</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># km</span>
+<span class="n">h2</span> <span class="o">=</span> <span class="mi">20</span>  <span class="c1"># km</span>
+<span class="n">nz</span> <span class="o">=</span> <span class="mi">500</span>  <span class="c1"># Number of pixels in the vertical</span>
 <span class="n">vname</span> <span class="o">=</span> <span class="s1">&#39;Total_Attenuated_Backscatter_532&#39;</span>
 <span class="n">var</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="n">vname</span><span class="p">]</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">var</span><span class="p">[:</span><span class="mi">1000</span><span class="p">,:]</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">var</span><span class="p">[</span><span class="n">x1</span><span class="p">:</span><span class="n">x2</span><span class="p">,:]</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">rot90</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="n">lats</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;Latitude&#39;</span><span class="p">][:</span><span class="mi">1000</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">latstrs</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">lat</span> <span class="ow">in</span> <span class="n">lats</span><span class="p">:</span>
-    <span class="n">latstrs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%.1f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">lat</span><span class="p">)</span>
+<span class="n">lats</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;Latitude&#39;</span><span class="p">][</span><span class="n">x1</span><span class="p">:</span><span class="n">x2</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">lons</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;Longitude&#39;</span><span class="p">][</span><span class="n">x1</span><span class="p">:</span><span class="n">x2</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">height</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;metadata&#39;</span><span class="p">][</span><span class="s1">&#39;Lidar_Data_Altitudes&#39;</span><span class="p">]</span>
-<span class="n">h</span> <span class="o">=</span> <span class="n">height</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-<span class="n">hstrs</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">hh</span> <span class="ow">in</span> <span class="n">h</span><span class="p">:</span>
-    <span class="n">hstrs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%.1f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">hh</span><span class="p">)</span>
+<span class="n">height</span> <span class="o">=</span> <span class="n">height</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">data</span><span class="o">.</span><span class="n">setdimvalue</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
+
+<span class="c1"># Interpolate data on a regular grid</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">)</span>
+<span class="n">h</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="n">h1</span><span class="p">,</span> <span class="n">h2</span><span class="p">,</span> <span class="n">nz</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linint2</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span>
+
+<span class="c1"># X axis ticks</span>
+<span class="n">xvals</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">xstrs</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">nx</span><span class="p">,</span> <span class="mi">200</span><span class="p">):</span>
+    <span class="n">xvals</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="n">x1</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">xstrs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Lat: </span><span class="si">%.2f</span><span class="se">\n</span><span class="s1">Lon: </span><span class="si">%.2f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">lats</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">lons</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">xstrs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%.2f</span><span class="se">\n</span><span class="si">%.2f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">lats</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">lons</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
 
 <span class="c1"># Plot</span>
 <span class="n">levs</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0001</span><span class="p">,</span><span class="mf">0.0002</span><span class="p">,</span><span class="mf">0.0003</span><span class="p">,</span><span class="mf">0.0004</span><span class="p">,</span><span class="mf">0.0005</span><span class="p">,</span><span class="mf">0.0006</span><span class="p">,</span><span class="mf">0.0007</span><span class="p">,</span><span class="mf">0.0008</span><span class="p">,</span><span class="mf">0.0009</span><span class="p">,</span>\
     <span class="mf">0.001</span><span class="p">,</span><span class="mf">0.0015</span><span class="p">,</span><span class="mf">0.002</span><span class="p">,</span><span class="mf">0.0025</span><span class="p">,</span><span class="mf">0.003</span><span class="p">,</span><span class="mf">0.0035</span><span class="p">,</span><span class="mf">0.004</span><span class="p">,</span><span class="mf">0.0045</span><span class="p">,</span><span class="mf">0.005</span><span class="p">,</span><span class="mf">0.0055</span><span class="p">,</span><span class="mf">0.006</span><span class="p">,</span>\
     <span class="mf">0.0065</span><span class="p">,</span><span class="mf">0.007</span><span class="p">,</span><span class="mf">0.0075</span><span class="p">,</span><span class="mf">0.008</span><span class="p">,</span><span class="mf">0.01</span><span class="p">,</span><span class="mf">0.02</span><span class="p">,</span><span class="mf">0.03</span><span class="p">,</span><span class="mf">0.04</span><span class="p">,</span><span class="mf">0.05</span><span class="p">,</span><span class="mf">0.06</span><span class="p">,</span><span class="mf">0.07</span><span class="p">,</span><span class="mf">0.08</span><span class="p">,</span><span class="mf">0.09</span><span class="p">,</span><span class="mf">0.1</span><span class="p">]</span>
 <span class="n">colors</span> <span class="o">=</span> <span class="n">CALIPSO_colors</span><span class="o">.</span><span class="n">makecolors</span><span class="p">()</span>
-<span class="n">layer</span> <span class="o">=</span> <span class="n">imshow</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">levs</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="n">colors</span><span class="p">)</span>
-<span class="n">xticks</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">dimvalue</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">latstrs</span><span class="p">)</span>
-<span class="n">yticks</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">dimvalue</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">hstrs</span><span class="p">)</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Latitude&#39;</span><span class="p">)</span>
+<span class="n">layer</span> <span class="o">=</span> <span class="n">imshow</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">levs</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="n">colors</span><span class="p">)</span>
+<span class="n">xaxis</span><span class="p">(</span><span class="n">tickin</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">yaxis</span><span class="p">(</span><span class="n">tickin</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">xticks</span><span class="p">(</span><span class="n">xvals</span><span class="p">,</span> <span class="n">xstrs</span><span class="p">)</span>
 <span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Altitude (km)&#39;</span><span class="p">)</span>
 <span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">,</span> <span class="n">extendrect</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$\rm</span><span class="si">{km}</span><span class="s1">^{-1}$ \rm</span><span class="si">{sr}</span><span class="s1">$^{-1}$&#39;</span><span class="p">)</span>
 <span class="n">basename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>

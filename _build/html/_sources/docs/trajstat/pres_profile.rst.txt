@@ -12,3 +12,7 @@ legend, or the trajectories could not be selected.** Trajectory could be removed
 ‘Remove Last Trajectory’ and ‘Remove All Trajectories’ button.
 
 .. image:: ../../_static/trajstat/press_profile.png
+
+Press ``3D View`` button to view the trajectories in 3D axes, the 3D axes can be rotated using mouse.
+
+.. image:: ../../_static/trajstat/traj_3d.png

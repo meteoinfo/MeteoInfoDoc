@@ -12,3 +12,4 @@ Tutorials
    plot_tutorial.rst
    arrays.rst
    data_tutorial.rst
+   dataframe.rst

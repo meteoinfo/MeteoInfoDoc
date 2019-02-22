@@ -26,7 +26,7 @@ This example code illustrates how to access and visualize a GPM L1C swath data.
     mlayer = shaperead('D:/Temp/map/country1.shp')
     geoshow(mlayer, edgecolor='k')
     levs = arange(40, 90, 1)
-    layer = surfacem(lon, lat, data, 20)
+    layer = pcolorm(lon, lat, data, 20)
     colorbar(layer, orientation='horizontal', aspect=40, label=units)
     title('{0}{1}'.format(fns, long_name+' (nchannel1=0)'))
     axism()
