@@ -24,6 +24,7 @@ Functions:
    functions/bar.rst
    functions/barh.rst
    functions/boxplot.rst
+   functions/violinplot.rst
    functions/cla.rst
    functions/clear.rst
    functions/clf.rst   
