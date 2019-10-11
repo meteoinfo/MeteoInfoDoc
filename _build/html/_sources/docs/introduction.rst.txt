@@ -22,6 +22,7 @@ Publication
 ======================
   
 - Wang, Y.Q., 2014. MeteoInfo: GIS software for meteorological data visualization and analysis. Meteorological Applications, 21: 360-368.
+- Wang, Y.Q., 2019. An Open Source Software Suite for Multi-Dimensional Meteorological Data Computation and Visualisation. Journal of Open Research Software, 7(1), p.21. DOI: http://doi.org/10.5334/jors.267
   
 Presentation
 ======================

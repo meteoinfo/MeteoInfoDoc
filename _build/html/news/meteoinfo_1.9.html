@@ -1,0 +1,156 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>MeteoInfo 1.9 was released (2019-8-27) &#8212; MeteoInfo 1.8 documentation</title>
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.8',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Sigma to Pressure Interpolation" href="../examples/meteoinfolab/meteo_analysis/sigma2pressure.html" />
+    <link rel="prev" title="News" href="index.html" /> 
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../index.html"><img src="../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../examples/meteoinfolab/meteo_analysis/sigma2pressure.html" title="Sigma to Pressure Interpolation"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="News"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">home</a>|&nbsp;</li>
+        <li><a href="../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="index.html">news</a>|&nbsp;</li>
+        <li><a href="../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../docs/index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">News</a> &#187;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">News</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../examples/meteoinfolab/meteo_analysis/sigma2pressure.html"
+                        title="next chapter">Sigma to Pressure Interpolation</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/news/meteoinfo_1.9.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="meteoinfo-1-9-was-released-2019-8-27">
+<span id="news-meteoinfo-1-9"></span><h1>MeteoInfo 1.9 was released (2019-8-27)<a class="headerlink" href="#meteoinfo-1-9-was-released-2019-8-27" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><ul class="simple">
+<li>Add org.meteoinfo.ndarray package for multiple dimensional array implementation replace ucar.ma2 package.</li>
+<li>Add <code class="docutils literal"><span class="pre">interplate_1d</span></code> function to support vertical coordinate conversion such as sigma to isobaric.</li>
+<li>Support violin and nested pie plots.</li>
+<li>Add position capibility to Axis.</li>
+<li>Add qucksort algorithm and improve 3D plot.</li>
+<li>Update gif animation with dpi setting.</li>
+<li>Speed up interpolation functions using KDTree.</li>
+<li>Replace Apache Sanselan 0.97-incubator with Apache Commons Imaging 1.0-alpha.</li>
+<li>Add <code class="docutils literal"><span class="pre">reproject</span></code> function in <code class="docutils literal"><span class="pre">migeo</span></code> module of geolib package.</li>
+<li>Add percentile and quantile functions to groupby DataFrame.</li>
+<li>Add <code class="docutils literal"><span class="pre">loc</span></code> and <code class="docutils literal"><span class="pre">iloc</span></code> in Series class.</li>
+<li>Distinguish between corner and center when reading ESRI ASCII grid data.</li>
+</ul>
+</div></blockquote>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../examples/meteoinfolab/meteo_analysis/sigma2pressure.html">Sigma to Pressure Interpolation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/meteoinfolab/plot_types/violinplot.html">Violin chart</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../examples/meteoinfolab/meteo_analysis/sigma2pressure.html" title="Sigma to Pressure Interpolation"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="News"
+             >previous</a> |</li>
+        <li><a href="../index.html">home</a>|&nbsp;</li>
+        <li><a href="../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="index.html">news</a>|&nbsp;</li>
+        <li><a href="../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../docs/index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="index.html" >News</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2019, MeteoInfo developers.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+    </div>
+  </body>
+</html>

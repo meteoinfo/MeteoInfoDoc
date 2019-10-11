@@ -29,6 +29,7 @@ Functions:
    functions/dot.rst
    functions/exp.rst
    functions/griddata.rst
+   functions/linint2.rst
    functions/linspace.rst
    functions/log.rst
    functions/log10.rst

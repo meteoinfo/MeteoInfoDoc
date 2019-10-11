@@ -10,7 +10,7 @@ MeteoInfo
 MeteoInfo Desktop Application
 -----------------------------
   Java edition (Major development)
-    - `MeteoInfo 1.8.2 - Java (for all systems) <files/MeteoInfo_1.8.2.zip>`_   
+    - `MeteoInfo 2.0 - Java (for all systems) <files/MeteoInfo_2.0.zip>`_
   C# edition   
     - `MeteoInfo 1.1.3.5R1 - C# <files/MeteoInfo_csharp_1.1.3.5R1.zip>`_
     
@@ -39,6 +39,7 @@ TrajStat
 =====================================
   TrajStat - MeteoInfo plugin
     - `TrajStat 1.4.7 plugin for MeteoInfo Java version <files/TrajStat_Plugin_1.4.7.zip>`_
+    - `TrajStat 1.4.8 beta 1 plugin for MeteoInfo Java version <files/TrajStat_Plugin_1.4.8b1.zip>`_
     
 --------------------------------------------------------------------------------------------
 

@@ -8,6 +8,9 @@ BURF data file can be opened using ``addfile()`` function. Only ``obs`` variable
 The variable can be read as ArraySequence, then StructureDataIterator was used to read the data
 from its StructureMembers. The members can viewed in console.
 
+``keepopen=True`` argument should be added in ``addfile()`` function so the data could be read from opened
+file. The file object should be closed after data reading.
+
 ::
 
     >>> data.members
@@ -18,9 +21,8 @@ Example script
 ::
 
     fn = 'D:/Temp/bufr/MSG3-SEVI-MSGCLAP-0000-0000-20150101004500.000000000Z-20150101005935-1187380.bfr'
-    f = addfile(fn)
-    #print f
-    d = f['obs'][None]
+    f = addfile(fn, keepopen=True)
+    d = f['obs'].read().array
     iter1 = d.getStructureDataIterator()
     if iter1.hasNext():
         data = iter1.next()
@@ -37,11 +39,11 @@ Example script
     mtemp = data.findMember('TEMPERATURE_AIR_TEMPERATURE')
     temp = array(mtemp.dataArray).astype('float') * 0.1
     temp = temp[:,0]
+    f.close()
 
     #Plot
     axesm()
-    lworld = shaperead('D:/Temp/map/country1.shp')
-    geoshow(lworld, edgecolor='k', facecolor=(204,255,204))
+    geoshow('country', edgecolor='k', facecolor=(204,255,204))
     layer = scatterm(lon, lat, temp, size=4, edge=False)
     colorbar(layer)
     xlim(-50, 0)

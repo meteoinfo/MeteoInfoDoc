@@ -102,6 +102,18 @@
 </pre></div>
 </div>
 <img alt="../../../_images/pie_11.png" src="../../../_images/pie_11.png" />
+<p>Nested pie.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">size</span> <span class="o">=</span> <span class="mf">0.3</span>
+<span class="n">vals</span> <span class="o">=</span> <span class="n">array</span><span class="p">([[</span><span class="mf">60.</span><span class="p">,</span> <span class="mf">32.</span><span class="p">],</span> <span class="p">[</span><span class="mf">37.</span><span class="p">,</span> <span class="mf">40.</span><span class="p">],</span> <span class="p">[</span><span class="mf">29.</span><span class="p">,</span> <span class="mf">10.</span><span class="p">]])</span>
+
+<span class="n">pie</span><span class="p">(</span><span class="n">vals</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">radius</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+       <span class="n">wedgeprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="n">size</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">))</span>
+<span class="n">pie</span><span class="p">(</span><span class="n">vals</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span> <span class="n">radius</span><span class="o">=</span><span class="mi">1</span><span class="o">-</span><span class="n">size</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;GMT_seis&#39;</span><span class="p">,</span>
+       <span class="n">wedgeprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="n">size</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">))</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Nested pie plot with `wedgeprops`&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../_images/pie_nested.png" src="../../../_images/pie_nested.png" />
 </div>
 
 

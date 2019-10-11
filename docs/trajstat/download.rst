@@ -5,7 +5,7 @@
 Download and Run TrajStat
 **************************
 
-MeteoInfo Java version and TrajStat Java plugin could be downloaded freely from the website http://www.meteothinker.com. 
+MeteoInfo Java version and TrajStat Java plugin could be downloaded freely from the website http://www.meteothink.org . 
 The complete TrajStat Java package should, after uncompression, include the following items:
 
 - TrajStat plugin library file called "TrajStat.jar".

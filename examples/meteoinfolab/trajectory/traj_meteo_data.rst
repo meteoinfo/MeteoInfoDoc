@@ -4,9 +4,9 @@
 Get meteorological data along trajectory
 *******************
 
-Read trajectory endpoint data file and create trajectory polyline layer. Then read endpoint 
-from the layer and interpolate the meteorological data to the endpoint location using
-**interpn** function of the data array.
+Read trajectory data array from the endpoint data file. Read meteorological data arrays from 
+corresponding meteorological data file. Then interpolate the meteorological data to the endpoint 
+location using **interpn** function of the data array.
 
 ::
 
@@ -19,8 +19,13 @@ from the layer and interpolate the meteorological data to the endpoint location 
     trajfn = os.path.join(trajDir, 'traj_20090731')
     print 'Trajectory file: ' + trajfn
     trajf = addfile_hytraj(trajfn)
-    # Create trajectory layer
-    trajLayer = trajf.trajlayer()
+    # Read coordinates
+    lons = trajf['lon'][:,:]
+    lats = trajf['lat'][:,:]
+    press = trajf['PRESSURE'][:,:]
+    heights = trajf['height'][:,:]
+    tt = trajf['time'][:,:]
+    ntraj, np = lons.shape
 
     # Open meteorological data file
     print 'Open meteorological data file...'
@@ -32,23 +37,23 @@ from the layer and interpolate the meteorological data to the endpoint location 
     print 'Get meteorological data along trajectory...'
     outfn = os.path.join(trajDir, 'pblh_traj-1.txt')
     outf = open(outfn, 'w')
-    outf.write('Lon,Lat,Time,Heigh,PBLH,UWND\n')
-    pbldata = meteof['PBLH'][None]
-    udata = meteof['UWND'][None]
+    outf.write('TrajID,Lon,Lat,Time,Heigh,PBLH,UWND\n')
+    pbldata = meteof['PBLH'][:]
+    udata = meteof['UWND'][:]
     idx = 0
-    for tline in trajLayer.shapes():
-        t = trajLayer.cellvalue('Date', idx)
-        h = trajLayer.cellvalue('Hour', idx)    
-        t.replace(hour=h)
-        for ps in tline.getPoints():
-            lon = ps.X
-            lat = ps.Y 
-            pres = ps.M
-            z = ps.Z
+    for i in range(ntraj):
+        for j in range(np):
+            lon = lons[i,j]
+            lat = lats[i,j]
+            pres = press[i,j]
+            z = heights[i,j]
+            t = tt[i,j]
             pbl = pbldata.interpn([t, lat, lon])
             uwnd = udata.interpn([t, pres, lat, lon])
-            print 'lon: %.2f; lat: %.2f; time: %s; height: %.2f; PBLH: %.2f; UWND: %.2f' % (lon, lat, t.strftime('%Y%m%d_%H:%M'), z, pbl, uwnd)
-            line = '%.4f,%.4f,%s,%.2f,%.2f,%.2f' % (lon,lat,t.strftime('%Y%m%d_%H:%M'),z,pbl,uwnd)
+            t = miutil.num2date(t)
+            print 'TrajID: %i; lon: %.2f; lat: %.2f; time: %s; height: %.2f; PBLH: %.2f; UWND: %.2f' \
+                % (i, lon, lat, t.strftime('%Y%m%d_%H:%M'), z, pbl, uwnd)
+            line = '%i,%.4f,%.4f,%s,%.2f,%.2f,%.2f' % (i,lon,lat,t.strftime('%Y%m%d_%H:%M'),z,pbl,uwnd)
             outf.write(line + '\n')
             t = t + datetime.timedelta(hours=-1)
         idx += 1

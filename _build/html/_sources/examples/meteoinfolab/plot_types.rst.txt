@@ -32,3 +32,4 @@ Plot types
    plot_types/image_process.rst
    plot_types/plot_3d.rst
    plot_types/oblique_section_plot.rst
+   plot_types/plot_3dgl.rst
