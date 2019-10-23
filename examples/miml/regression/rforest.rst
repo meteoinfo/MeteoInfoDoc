@@ -28,7 +28,9 @@ Each tree is constructed using the following algorithm:
     x = df.values
     y = array(df.index.data)
 
-    model = RandomForest(x, y, max_nodes=200)
+    model = RandomForest(max_nodes=200)
+    model.fit(x, y)
+
     print(model.predict(x[:10,:]))
     
 ::

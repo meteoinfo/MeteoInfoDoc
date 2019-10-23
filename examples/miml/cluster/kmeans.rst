@@ -25,8 +25,9 @@ K-Means works very well on Gaussian mixtures.
     df = DataFrame.read_table(fn, header=None, names=['x1','x2'], 
         format='%2f')
     x = df.values
-    clusters = KMeans(x, 6, runs=20)
-    y = clusters.get_cluster_label()
+
+    model = KMeans(6, runs=20)
+    y = model.fit_predict(x)
 
     scatter(x[:,0], x[:,1], c=y, edgecolor=None, s=3)
     title('K-Means clustering example')
@@ -39,15 +40,15 @@ If the clusters are elongated, however, the results may be far from optimal.
 
     from miml import datasets
     from miml.cluster import KMeans
-    from miml.utils import smile_util
 
     fn = os.path.join(datasets.get_data_home(), 'clustering', 'gaussian', 
         'elongate.txt')
     df = DataFrame.read_table(fn, header=None, names=['x1','x2'], 
         format='%2f')
     x = df.values
-    clusters = KMeans(x, 2, runs=20)
-    y = clusters.get_cluster_label()
+
+    model = KMeans(2, runs=20)
+    y = model.fit_predict(x)
 
     scatter(x[:,0], x[:,1], c=y, edgecolor=None, s=3)
     title('K-Means clustering example - elongated')

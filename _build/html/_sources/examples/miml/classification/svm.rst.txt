@@ -28,7 +28,7 @@ maximizing the distance to the nearest cleanly split instances.
 
     model = SVM(kernel='gaussian', C=10, strategy='one_vs_one',
             epochs=1, sigma=1.0)
-    model.learn(X, y)
+    model.fit(X, y)
 
     # Plot the decision boundary. For that, we will assign a color to each
     # point in the mesh [x_min, x_max]x[y_min, y_max].

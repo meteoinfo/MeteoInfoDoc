@@ -21,8 +21,9 @@ K-Means center are Gaussian.
     df = DataFrame.read_table(fn, header=None, names=['x1','x2'], 
         format='%2f')
     x = df.values
-    clusters = GMeans(x)
-    y = clusters.get_cluster_label()
+
+    model = GMeans()
+    y = model.fit_predict(x)
 
     scatter(x[:,0], x[:,1], c=y, edgecolor=None, s=3)
     title('G-Mean clustering example')

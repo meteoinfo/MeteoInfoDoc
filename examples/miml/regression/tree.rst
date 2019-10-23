@@ -22,7 +22,9 @@ value of the target variable, or when splitting no longer adds value to the pred
     x = df.values
     y = array(df.index.data)
 
-    model = RegressionTree(x, y, 200)
+    model = RegressionTree(200)
+    model.fit(x, y)
+
     print(model.predict(x[:10,:]))
     
 ::

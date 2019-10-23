@@ -28,9 +28,9 @@ In fact, the observations themselves are not required: all that is used is a mat
     df = DataFrame.read_table(fn, header=None, names=['x1','x2'], 
         format='%2f')
     x = df.values
-    xx = smile_util.pdist(x)
-    clusters = HierarchicalClustering(xx, 'complete')
-    y = clusters.partition(6)
+
+    model = HierarchicalClustering(6, 'complete')
+    y = model.fit_predict(x)
 
     scatter(x[:,0], x[:,1], c=y, edgecolor=None, s=3)
     title('Hierarchical clustering example')

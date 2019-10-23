@@ -44,9 +44,10 @@ the belief that weight should be small is coded into a prior distribution.
             [554.894,      400.7,        282.7,    130.081, 1962,   70.551]])
     y = array([83.0,  88.5,  88.2,  89.5,  96.2,  98.1,  99.0, 100.0, 101.2,
                104.6, 108.4, 110.8, 112.6, 114.2, 115.7, 116.9])
-    model = RidgeRegression(x, y, 0.0057)
-    r = model.predict(x[0,:])
-    print r
+    model = RidgeRegression(0.0057)
+    model.fit(x, y)
+
+    print(model.predict(x[:10,:]))
     
 ::
 

@@ -113,7 +113,7 @@ fixed size as base learners.</p>
 <span class="n">y</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
 
 <span class="n">model</span> <span class="o">=</span> <span class="n">GradientTreeBoost</span><span class="p">(</span><span class="n">ntrees</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
-<span class="n">model</span><span class="o">.</span><span class="n">learn</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 
 <span class="c1"># Plot the decision boundary. For that, we will assign a color to each</span>
 <span class="c1"># point in the mesh [x_min, x_max]x[y_min, y_max].</span>

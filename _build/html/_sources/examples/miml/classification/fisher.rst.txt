@@ -23,7 +23,8 @@ resulting combination may be used for dimensionality reduction before later clas
     X = df.values
     y = array(df.index.data)
 
-    fld = FisherLinearDiscriminant(X, y)
+    model = FisherLinearDiscriminant()
+    model.fit(X, y)
 
     # Plot the decision boundary. For that, we will assign a color to each
     # point in the mesh [x_min, x_max]x[y_min, y_max].
@@ -33,7 +34,7 @@ resulting combination may be used for dimensionality reduction before later clas
     xx, yy = np.meshgrid(np.linspace(x_min, x_max, n),
                          np.linspace(y_min, y_max, n))
     data = np.vstack((xx.flatten(), yy.flatten())).T
-    Z = fld.predict(data)
+    Z = model.predict(data)
 
     # Put the result into a color plot
     Z = Z.reshape(xx.shape)

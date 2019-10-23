@@ -29,7 +29,7 @@ Each tree is constructed using the following algorithm:
     y = array(df.index.data)
 
     model = RandomForest(ntrees=100, max_nodes=200)
-    model.learn(X, y)
+    model.fit(X, y)
 
     # Plot the decision boundary. For that, we will assign a color to each
     # point in the mesh [x_min, x_max]x[y_min, y_max].

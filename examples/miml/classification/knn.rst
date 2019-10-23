@@ -28,7 +28,8 @@ smoother the boundary.
     y = array(df.index.data)
 
     n_neighbors = 3
-    knn = KNearestNeighbor(X, y, n_neighbors)
+    knn = KNearestNeighbor(n_neighbors)
+    knn.fit(X, y)
 
     # Plot the decision boundary. For that, we will assign a color to each
     # point in the mesh [x_min, x_max]x[y_min, y_max].
@@ -72,7 +73,8 @@ smoother the boundary.
     y = iris.target
 
     n_neighbors = 15
-    knn = KNearestNeighbor(X, y, n_neighbors)
+    model = KNearestNeighbor(n_neighbors)
+    model.fit(X, y)
 
     # Plot the decision boundary. For that, we will assign a color to each
     # point in the mesh [x_min, x_max]x[y_min, y_max].
@@ -82,7 +84,7 @@ smoother the boundary.
     xx, yy = np.meshgrid(np.arange(x_min, x_max, h),
                          np.arange(y_min, y_max, h))
     data = np.vstack((xx.flatten(), yy.flatten())).T
-    Z = knn.predict(data)
+    Z = model.predict(data)
 
     # Put the result into a color plot
     Z = Z.reshape(xx.shape)

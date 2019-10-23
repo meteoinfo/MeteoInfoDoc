@@ -24,7 +24,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Downloads" href="../../../downloads/index.html" />
+    <link rel="next" title="Ridge Regression" href="ridge.html" />
     <link rel="prev" title="Regression" href="../regression.html" /> 
   </head>
   <body>
@@ -42,7 +42,7 @@
           <a href="../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="../../../downloads/index.html" title="Downloads"
+          <a href="ridge.html" title="Ridge Regression"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="../regression.html" title="Regression"
@@ -66,8 +66,8 @@
   <p class="topless"><a href="../regression.html"
                         title="previous chapter">Regression</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="../../../downloads/index.html"
-                        title="next chapter">Downloads</a></p>
+  <p class="topless"><a href="ridge.html"
+                        title="next chapter">Ridge Regression</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -111,8 +111,12 @@ provides minimum-variance mean-unbiased estimation when the errors have finite v
 <span class="n">ds</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_arff</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">x</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">y</span>
-<span class="n">model</span> <span class="o">=</span> <span class="n">OLS</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="n">r</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">,:])</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">OLS</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x</span><span class="p">[:</span><span class="mi">10</span><span class="p">,:])</span>
+
 <span class="nb">print</span> <span class="n">r</span>
 </pre></div>
 </div>
@@ -178,7 +182,7 @@ provides minimum-variance mean-unbiased estimation when the errors have finite v
           <a href="../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="../../../downloads/index.html" title="Downloads"
+          <a href="ridge.html" title="Ridge Regression"
              >next</a> |</li>
         <li class="right" >
           <a href="../regression.html" title="Regression"

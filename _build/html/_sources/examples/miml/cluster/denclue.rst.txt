@@ -19,8 +19,8 @@ allows arbitrary noise levels while still guaranteeing to find the clustering.
         format='%2f')
     x = df.values
 
-    clusters = DENCLUE(x, 1.0, 50)
-    y = clusters.get_cluster_label()
+    model = DENCLUE(1.0, 50)
+    y = model.fit_predict(x)
 
     scatter(x[:,0], x[:,1], c=y, edgecolor=None, s=3)
     title('DENsity CLUstering example')

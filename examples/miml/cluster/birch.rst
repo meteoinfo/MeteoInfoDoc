@@ -17,6 +17,7 @@ that does not require the whole data set in advance.
 
 ::
 
+    from miml import datasets
     from miml.cluster import BIRCH
 
     fn = os.path.join(datasets.get_data_home(), 'clustering', 'gaussian', 
@@ -24,9 +25,10 @@ that does not require the whole data set in advance.
     df = DataFrame.read_table(fn, header=None, names=['x1','x2'], 
         format='%2f')
     x = df.values
+
     k = 6
-    cluster = BIRCH(x, k, min_pts=3, branch=10, radius=1)
-    y = cluster.predict(x)
+    model = BIRCH(k, min_pts=3, branch=10, radius=1)
+    y = model.fit_predict(x)
 
     cols = makecolors(k)
     scatter(x[:,0], x[:,1], c=y, edgecolor=None, s=3, levels=range(k), colors=cols)

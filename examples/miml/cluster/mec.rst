@@ -26,8 +26,8 @@ also correctly reveal the structure of data and effectively identify outliers si
         format='%2f')
     x = df.values
 
-    clusters = MEC(x, k=20, radius=2.0)
-    y = clusters.get_cluster_label()
+    model = MEC(k=20, radius=2.0)
+    y = model.fit_predict(x)
 
     scatter(x[:,0], x[:,1], c=y, edgecolor=None, s=3)
     title('Nonparametric Minimum Conditional Entropy Clustering example')

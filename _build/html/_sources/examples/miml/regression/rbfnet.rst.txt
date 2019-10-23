@@ -21,7 +21,9 @@ function approximation, time series prediction, and control.
     x = df.values
     y = array(df.index.data)
 
-    model = RBFNetwork(x, y, ncenters=10)
+    model = RBFNetwork(ncenters=10)
+    model.fit(x, y)
+
     print(model.predict(x[:10,:]))
     
 ::

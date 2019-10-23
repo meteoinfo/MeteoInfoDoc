@@ -25,7 +25,7 @@ fixed size as base learners.
     y = array(df.index.data)
 
     model = GradientTreeBoost(ntrees=100)
-    model.learn(X, y)
+    model.fit(X, y)
 
     # Plot the decision boundary. For that, we will assign a color to each
     # point in the mesh [x_min, x_max]x[y_min, y_max].

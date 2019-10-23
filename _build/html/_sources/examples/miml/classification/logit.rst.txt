@@ -24,7 +24,8 @@ regression estimates the odds of a certain event (value) occurring.
     y = array(df.index.data)
 
     L = 0.
-    model = LogisticRegression(X, y, L)
+    model = LogisticRegression(L)
+    model.fit(X, y)
 
     # Plot the decision boundary. For that, we will assign a color to each
     # point in the mesh [x_min, x_max]x[y_min, y_max].

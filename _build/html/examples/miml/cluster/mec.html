@@ -113,8 +113,8 @@ also correctly reveal the structure of data and effectively identify outliers si
     <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%2f</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">values</span>
 
-<span class="n">clusters</span> <span class="o">=</span> <span class="n">MEC</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mf">2.0</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">clusters</span><span class="o">.</span><span class="n">get_cluster_label</span><span class="p">()</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">MEC</span><span class="p">(</span><span class="n">k</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mf">2.0</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit_predict</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
 <span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">x</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 <span class="n">title</span><span class="p">(</span><span class="s1">&#39;Nonparametric Minimum Conditional Entropy Clustering example&#39;</span><span class="p">)</span>

@@ -27,7 +27,9 @@ training data close to the model prediction (within the ε threshold).
     x = df.values
     y = array(df.index.data)
 
-    model = SVR(x, y, eps=20, C=10, sigma=0.06)
+    model = SVR(eps=20, C=10, sigma=0.06)
+    model.fit(x, y)
+
     print(model.predict(x[:10,:]))
     
 ::

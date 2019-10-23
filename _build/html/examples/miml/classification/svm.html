@@ -24,7 +24,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Downloads" href="../../../downloads/index.html" />
+    <link rel="next" title="Decision tree" href="tree.html" />
     <link rel="prev" title="Radial basis function network" href="rbfnet.html" /> 
   </head>
   <body>
@@ -42,7 +42,7 @@
           <a href="../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="../../../downloads/index.html" title="Downloads"
+          <a href="tree.html" title="Decision tree"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="rbfnet.html" title="Radial basis function network"
@@ -66,8 +66,8 @@
   <p class="topless"><a href="rbfnet.html"
                         title="previous chapter">Radial basis function network</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="../../../downloads/index.html"
-                        title="next chapter">Downloads</a></p>
+  <p class="topless"><a href="tree.html"
+                        title="next chapter">Decision tree</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -115,7 +115,7 @@ maximizing the distance to the nearest cleanly split instances.</p>
 
 <span class="n">model</span> <span class="o">=</span> <span class="n">SVM</span><span class="p">(</span><span class="n">kernel</span><span class="o">=</span><span class="s1">&#39;gaussian&#39;</span><span class="p">,</span> <span class="n">C</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">strategy</span><span class="o">=</span><span class="s1">&#39;one_vs_one&#39;</span><span class="p">,</span>
         <span class="n">epochs</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
-<span class="n">model</span><span class="o">.</span><span class="n">learn</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 
 <span class="c1"># Plot the decision boundary. For that, we will assign a color to each</span>
 <span class="c1"># point in the mesh [x_min, x_max]x[y_min, y_max].</span>
@@ -163,7 +163,7 @@ maximizing the distance to the nearest cleanly split instances.</p>
           <a href="../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="../../../downloads/index.html" title="Downloads"
+          <a href="tree.html" title="Decision tree"
              >next</a> |</li>
         <li class="right" >
           <a href="rbfnet.html" title="Radial basis function network"

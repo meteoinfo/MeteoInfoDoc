@@ -18,8 +18,8 @@ starting from the estimated density distribution of corresponding nodes.
         format='%2f')
     x = df.values
 
-    clusters = DBSCAN(x, min_pts=20, radius=10)
-    y = clusters.get_cluster_label()
+    model = DBSCAN(min_pts=20, radius=10)
+    y = model.fit_predict(x)
 
     k = 6
     levs = range(k)

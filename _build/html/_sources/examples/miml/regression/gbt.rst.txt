@@ -21,7 +21,9 @@ method which improves the quality of fit of each base learner.
     x = df.values
     y = array(df.index.data)
 
-    model = GradientTreeBoost(x, y)
+    model = GradientTreeBoost()
+    model.fit(x, y)
+
     print(model.predict(x[:10,:]))
     
 ::

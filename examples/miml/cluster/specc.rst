@@ -13,6 +13,7 @@ methods and kernel PCA, which has been empirically observed to perform clusterin
 
 ::
 
+    from miml import datasets
     from miml.cluster import SpectralClustering
 
     fn = os.path.join(datasets.get_data_home(), 'clustering', 'nonconvex', 
@@ -21,8 +22,8 @@ methods and kernel PCA, which has been empirically observed to perform clusterin
         format='%2f')
     x = df.values
 
-    clusters = SpectralClustering(x, 2, sigma=0.2)
-    y = clusters.get_cluster_label()
+    model = SpectralClustering(2, sigma=0.2)
+    y = model.fit_predict(x)
 
     scatter(x[:,0], x[:,1], c=y, edgecolor=None, s=3, levs=[0,1], colors=['r','b'])
     title('Spectral Clustering example')

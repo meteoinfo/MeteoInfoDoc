@@ -23,7 +23,7 @@ target variable, or when splitting no longer adds value to the predictions.
     y = array(df.index.data)
 
     model = DecisionTree()
-    model.learn(X, y)
+    model.fit(X, y)
 
     # Plot the decision boundary. For that, we will assign a color to each
     # point in the mesh [x_min, x_max]x[y_min, y_max].

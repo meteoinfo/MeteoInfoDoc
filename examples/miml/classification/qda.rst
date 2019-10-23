@@ -21,7 +21,8 @@ estimate the class for a given test data.
     X = df.values
     y = array(df.index.data)
 
-    model = QuadraticDiscriminantAnalysis(X, y)
+    model = QuadraticDiscriminantAnalysis()
+    model.fit(X, y)
 
     # Plot the decision boundary. For that, we will assign a color to each
     # point in the mesh [x_min, x_max]x[y_min, y_max].

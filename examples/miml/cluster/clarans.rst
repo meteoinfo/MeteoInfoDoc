@@ -32,8 +32,9 @@ discovered. The entire process is repeated multiple time to find better.
     df = DataFrame.read_table(fn, header=None, names=['x1','x2'], 
         format='%2f')
     x = df.values
-    clusters = CLARANS(x, k=6, max_neighbor=10, nlocal=20)
-    y = clusters.get_cluster_label()
+
+    model = CLARANS(k=6, max_neighbor=10, nlocal=20)
+    y = model.fit_predict(x)
 
     scatter(x[:,0], x[:,1], c=y, edgecolor=None, s=3)
     title('Clustering Large Applications based upon RANdomized Search example')

@@ -23,7 +23,8 @@ purely a function of this linear combination of independent variables.
     X = df.values
     y = array(df.index.data)
 
-    lda = LinearDiscriminantAnalysis(X, y)
+    model = LinearDiscriminantAnalysis()
+    model.fit(X, y)
 
     # Plot the decision boundary. For that, we will assign a color to each
     # point in the mesh [x_min, x_max]x[y_min, y_max].
@@ -33,7 +34,7 @@ purely a function of this linear combination of independent variables.
     xx, yy = np.meshgrid(np.linspace(x_min, x_max, n),
                          np.linspace(y_min, y_max, n))
     data = np.vstack((xx.flatten(), yy.flatten())).T
-    Z = lda.predict(data)
+    Z = model.predict(data)
 
     # Put the result into a color plot
     Z = Z.reshape(xx.shape)

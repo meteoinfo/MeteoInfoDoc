@@ -28,7 +28,9 @@ as Gaussian process regression.
     x = df.values
     y = array(df.index.data)
 
-    model = GaussianProcessRegression(x, y, sigma=0.06, L=0.01)
+    model = GaussianProcessRegression(sigma=0.06, L=0.01)
+    model.fit(x, y)
+
     print(model.predict(x[:10,:]))
     
 ::

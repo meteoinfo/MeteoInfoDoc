@@ -24,8 +24,12 @@ provides minimum-variance mean-unbiased estimation when the errors have finite v
     ds = datasets.load_arff(fn, 10)
     x = ds.x
     y = ds.y
-    model = OLS(x, y)
-    r = model.predict(x[0,:])
+
+    model = OLS()
+    model.fit(x, y)
+
+    r = model.predict(x[:10,:])
+
     print r
     
 ::

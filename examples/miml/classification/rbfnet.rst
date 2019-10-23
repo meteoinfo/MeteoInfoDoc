@@ -21,7 +21,8 @@ approximation, time series prediction, and control.
     X = df.values
     y = array(df.index.data)
 
-    model = RBFNetwork(X, y, ncenters=50)
+    model = RBFNetwork(ncenters=50)
+    model.fit(X, y)
 
     # Plot the decision boundary. For that, we will assign a color to each
     # point in the mesh [x_min, x_max]x[y_min, y_max].

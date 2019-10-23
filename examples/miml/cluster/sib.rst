@@ -25,6 +25,7 @@ implementation, we instead use the regular/unweighted Jensen-Shannon divergence.
 
 ::
 
+    from miml import datasets
     from miml.cluster import SIB
 
     fn = os.path.join(datasets.get_data_home(), 'clustering', 'gaussian', 
@@ -32,8 +33,9 @@ implementation, we instead use the regular/unweighted Jensen-Shannon divergence.
     df = DataFrame.read_table(fn, header=None, names=['x1','x2'], 
         format='%2f')
     x = df.values
-    clusters = SIB(x, k=6, max_iter=100, runs=20)
-    y = clusters.get_cluster_label()
+
+    model = SIB(k=6, max_iter=100, runs=20)
+    y = model.fit_predict(x)
 
     scatter(x[:,0], x[:,1], c=y, edgecolor=None, s=3)
     title('Sequential Information Bottleneck example')

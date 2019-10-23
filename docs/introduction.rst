@@ -14,7 +14,7 @@ the spatial and meteorological data with multiple data formats.
 MeteoInfoLab is a scientific computation and visualization environment using Jython scripting with the 
 ability of multiple dimensional array calculation and 2D/3D plotting.
 
-It requires that Java 7 or greater be installed on your computer. See the
+It requires that Java 8 or greater be installed on your computer. See the
 http://www.java.com website for a free download of Java if you do not have it
 already installed.
   
@@ -154,3 +154,4 @@ MeteoInfo uses Java classes and libraries written by several third-party organiz
 - JXMapViewer: Available at https://github.com/msteiger/jxmapviewer2
 - SurfacePlotter: Available at https://github.com/ericaro/surfaceplotter
 - Joinery: Available at http://cardillo.github.io/joinery/v1.8/api/reference/joinery/DataFrame.html
+- JOGL: Available at https://jogamp.org/jogl/www/

@@ -24,7 +24,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Downloads" href="../../../downloads/index.html" />
+    <link rel="next" title="Regression" href="../regression.html" />
     <link rel="prev" title="Gradient boosted trees" href="gbt.html" /> 
   </head>
   <body>
@@ -42,7 +42,7 @@
           <a href="../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="../../../downloads/index.html" title="Downloads"
+          <a href="../regression.html" title="Regression"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="gbt.html" title="Gradient boosted trees"
@@ -66,8 +66,8 @@
   <p class="topless"><a href="gbt.html"
                         title="previous chapter">Gradient boosted trees</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="../../../downloads/index.html"
-                        title="next chapter">Downloads</a></p>
+  <p class="topless"><a href="../regression.html"
+                        title="next chapter">Regression</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -113,7 +113,7 @@ over-fitting problem than most learning algorithms.</p>
 <span class="n">y</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
 
 <span class="n">model</span> <span class="o">=</span> <span class="n">AdaBoost</span><span class="p">(</span><span class="n">ntrees</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
-<span class="n">model</span><span class="o">.</span><span class="n">learn</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 
 <span class="c1"># Plot the decision boundary. For that, we will assign a color to each</span>
 <span class="c1"># point in the mesh [x_min, x_max]x[y_min, y_max].</span>
@@ -161,7 +161,7 @@ over-fitting problem than most learning algorithms.</p>
           <a href="../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="../../../downloads/index.html" title="Downloads"
+          <a href="../regression.html" title="Regression"
              >next</a> |</li>
         <li class="right" >
           <a href="gbt.html" title="Gradient boosted trees"
