@@ -1,0 +1,610 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Lasso Regression &#8212; MeteoInfo 2.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Radial Basis Function Networks" href="rbfnet.html" />
+    <link rel="prev" title="Ridge Regression" href="ridge.html" /> 
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../../index.html"><img src="../../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="rbfnet.html" title="Radial Basis Function Networks"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="ridge.html" title="Ridge Regression"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../docs/index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Examples</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" >MIML - MeteoInfo Machine Learning Toolbox</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../regression.html" accesskey="U">Regression</a> &#187;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="ridge.html"
+                        title="previous chapter">Ridge Regression</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="rbfnet.html"
+                        title="next chapter">Radial Basis Function Networks</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/examples/miml/regression/lasso.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="lasso-regression">
+<span id="examples-miml-regression-lasso"></span><h1>Lasso Regression<a class="headerlink" href="#lasso-regression" title="Permalink to this headline">¶</a></h1>
+<p>Lasso (least absolute shrinkage and selection operator) regression is a shrinkage and selection
+method for linear regression. It minimizes the usual sum of squared errors, with a bound on the
+sum of the absolute values of the coefficients (i.e. L1-regularized). It has connections to
+soft-thresholding of wavelet coefficients, forward stage-wise regression, and boosting methods.</p>
+<p>The Lasso typically yields a sparse solution, of which the parameter vector β has relatively few
+nonzero coefficients. In contrast, the solution of L2-regularized least squares (i.e. ridge
+regression) typically has all coefficients nonzero. Because it effectively reduces the number
+of variables, the Lasso is useful in some contexts.</p>
+<p>There is no analytic formula or expression for the optimal solution to the L1-regularized least
+squares problems. Therefore, its solution must be computed numerically. The objective function in
+the L1-regularized least squares is convex but not differentiable, so solving it is more of a
+computational challenge than solving the L2-regularized least squares. The Lasso may be solved
+using quadratic programming or more general convex optimization methods, as well as by specific
+algorithms such as the least angle regression algorithm.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">miml</span> <span class="k">import</span> <span class="n">datasets</span>
+<span class="kn">from</span> <span class="nn">miml.regression</span> <span class="k">import</span> <span class="n">LASSO</span>
+
+<span class="n">fn</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">datasets</span><span class="o">.</span><span class="n">get_data_home</span><span class="p">(),</span> <span class="s1">&#39;regression&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;diabetes.csv&#39;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">DataFrame</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span>
+    <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%64f</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">values</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">LASSO</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">LASSO</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">LASSO</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">500</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">run</span> <span class="n">script</span><span class="o">...</span>
+<span class="go">LASSO:</span>
+
+<span class="go">Residuals:</span>
+<span class="go">           Min              1Q          Median              3Q             Max</span>
+<span class="go">     -156.0745        -30.4014         -3.1887         31.4334        149.7378</span>
+
+
+<span class="go">Coefficients:</span>
+<span class="go">            Estimate</span>
+<span class="go">Intercept   152.1335</span>
+
+<span class="go">Var 1            42.2524</span>
+
+<span class="go">Var 2          -257.7338</span>
+
+<span class="go">Var 3           449.3283</span>
+
+<span class="go">Var 4           341.2134</span>
+
+<span class="go">Var 5          -185.8292</span>
+
+<span class="go">Var 6            -1.3917</span>
+
+<span class="go">Var 7          -158.5119</span>
+
+<span class="go">Var 8           121.4534</span>
+
+<span class="go">Var 9           677.1183</span>
+
+<span class="go">Var 10           68.3447</span>
+
+<span class="go">Var 11           70.5993</span>
+
+<span class="go">Var 12           50.9044</span>
+
+<span class="go">Var 13           -7.6045</span>
+
+<span class="go">Var 14          560.1727</span>
+
+<span class="go">Var 15           -1.9227</span>
+
+<span class="go">Var 16          262.6268</span>
+
+<span class="go">Var 17          556.6405</span>
+
+<span class="go">Var 18          480.8531</span>
+
+<span class="go">Var 19          116.6087</span>
+
+<span class="go">Var 20          165.4373</span>
+
+<span class="go">Var 21           -8.5606</span>
+
+<span class="go">Var 22           15.5317</span>
+
+<span class="go">Var 23         -169.8404</span>
+
+<span class="go">Var 24          -63.1208</span>
+
+<span class="go">Var 25          222.9773</span>
+
+<span class="go">Var 26          185.1293</span>
+
+<span class="go">Var 27          114.1537</span>
+
+<span class="go">Var 28           60.7931</span>
+
+<span class="go">Var 29           70.9789</span>
+
+<span class="go">Var 30           86.5622</span>
+
+<span class="go">Var 31          345.4959</span>
+
+<span class="go">Var 32         -289.2375</span>
+
+<span class="go">Var 33          -77.4019</span>
+
+<span class="go">Var 34         -100.5561</span>
+
+<span class="go">Var 35         -115.9185</span>
+
+<span class="go">Var 36           48.2530</span>
+
+<span class="go">Var 37          158.0210</span>
+
+<span class="go">Var 38         -539.1530</span>
+
+<span class="go">Var 39          441.9235</span>
+
+<span class="go">Var 40          197.2877</span>
+
+<span class="go">Var 41          -28.1507</span>
+
+<span class="go">Var 42          156.7630</span>
+
+<span class="go">Var 43           28.3774</span>
+
+<span class="go">Var 44          345.3906</span>
+
+<span class="go">Var 45         -210.9563</span>
+
+<span class="go">Var 46         -127.9888</span>
+
+<span class="go">Var 47          -54.1669</span>
+
+<span class="go">Var 48         -105.2098</span>
+
+<span class="go">Var 49         -143.7805</span>
+
+<span class="go">Var 50         -185.4770</span>
+
+<span class="go">Var 51         -362.4059</span>
+
+<span class="go">Var 52         -697.8575</span>
+
+<span class="go">Var 53         -974.6574</span>
+
+<span class="go">Var 54          -59.0982</span>
+
+<span class="go">Var 55          -88.6933</span>
+
+<span class="go">Var 56          -68.7470</span>
+
+<span class="go">Var 57          782.8276</span>
+
+<span class="go">Var 58          -25.0998</span>
+
+<span class="go">Var 59          508.6851</span>
+
+<span class="go">Var 60          286.4917</span>
+
+<span class="go">Var 61          177.2804</span>
+
+<span class="go">Var 62          -70.9310</span>
+
+<span class="go">Var 63          241.0674</span>
+
+<span class="go">Var 64           39.9994</span>
+
+
+<span class="go">Residual standard error: 53.3841 on 377 degrees of freedom</span>
+
+<span class="go">Multiple R-squared: 0.5901,    Adjusted R-squared: 0.5205</span>
+
+<span class="go">F-statistic: 8.4796 on 64 and 377 DF,  p-value: 4.440e-43</span>
+
+
+<span class="go">LASSO:</span>
+
+<span class="go">Residuals:</span>
+<span class="go">           Min              1Q          Median              3Q             Max</span>
+<span class="go">     -150.8634        -30.2993         -0.9237         31.4198        150.6769</span>
+
+
+<span class="go">Coefficients:</span>
+<span class="go">            Estimate</span>
+<span class="go">Intercept   152.1335</span>
+
+<span class="go">Var 1            36.6525</span>
+
+<span class="go">Var 2          -245.5668</span>
+
+<span class="go">Var 3           463.0968</span>
+
+<span class="go">Var 4           335.7204</span>
+
+<span class="go">Var 5          -158.2084</span>
+
+<span class="go">Var 6            -0.5220</span>
+
+<span class="go">Var 7          -191.6142</span>
+
+<span class="go">Var 8            78.5352</span>
+
+<span class="go">Var 9           646.8603</span>
+
+<span class="go">Var 10           67.2958</span>
+
+<span class="go">Var 11           76.0344</span>
+
+<span class="go">Var 12           51.5637</span>
+
+<span class="go">Var 13          -14.2055</span>
+
+<span class="go">Var 14            0.1245</span>
+
+<span class="go">Var 15            0.0952</span>
+
+<span class="go">Var 16           -4.1430</span>
+
+<span class="go">Var 17          109.8307</span>
+
+<span class="go">Var 18          305.8216</span>
+
+<span class="go">Var 19          109.5986</span>
+
+<span class="go">Var 20          169.0939</span>
+
+<span class="go">Var 21           -7.1909</span>
+
+<span class="go">Var 22           21.3213</span>
+
+<span class="go">Var 23           -0.2355</span>
+
+<span class="go">Var 24         -164.5738</span>
+
+<span class="go">Var 25          125.8486</span>
+
+<span class="go">Var 26          127.8888</span>
+
+<span class="go">Var 27           56.0188</span>
+
+<span class="go">Var 28           41.7694</span>
+
+<span class="go">Var 29           72.5458</span>
+
+<span class="go">Var 30           81.4176</span>
+
+<span class="go">Var 31           73.8387</span>
+
+<span class="go">Var 32          -89.7767</span>
+
+<span class="go">Var 33           46.0889</span>
+
+<span class="go">Var 34          -51.4487</span>
+
+<span class="go">Var 35          -24.2738</span>
+
+<span class="go">Var 36           35.8418</span>
+
+<span class="go">Var 37          159.7508</span>
+
+<span class="go">Var 38         -128.9617</span>
+
+<span class="go">Var 39           65.6612</span>
+
+<span class="go">Var 40           51.4690</span>
+
+<span class="go">Var 41           -1.9807</span>
+
+<span class="go">Var 42           -0.0582</span>
+
+<span class="go">Var 43           30.0582</span>
+
+<span class="go">Var 44           73.7347</span>
+
+<span class="go">Var 45            6.2924</span>
+
+<span class="go">Var 46            1.3435</span>
+
+<span class="go">Var 47          -35.8823</span>
+
+<span class="go">Var 48           -1.5986</span>
+
+<span class="go">Var 49         -128.8626</span>
+
+<span class="go">Var 50          124.5337</span>
+
+<span class="go">Var 51           -0.2666</span>
+
+<span class="go">Var 52         -304.1846</span>
+
+<span class="go">Var 53         -539.6028</span>
+
+<span class="go">Var 54          -40.2991</span>
+
+<span class="go">Var 55          -74.2158</span>
+
+<span class="go">Var 56           -0.4553</span>
+
+<span class="go">Var 57          545.3053</span>
+
+<span class="go">Var 58           -0.7582</span>
+
+<span class="go">Var 59            0.2111</span>
+
+<span class="go">Var 60          177.0759</span>
+
+<span class="go">Var 61          134.8773</span>
+
+<span class="go">Var 62          -62.3075</span>
+
+<span class="go">Var 63          192.0340</span>
+
+<span class="go">Var 64           21.6115</span>
+
+
+<span class="go">Residual standard error: 53.6649 on 377 degrees of freedom</span>
+
+<span class="go">Multiple R-squared: 0.5858,    Adjusted R-squared: 0.5154</span>
+
+<span class="go">F-statistic: 8.3296 on 64 and 377 DF,  p-value: 2.561e-42</span>
+
+
+<span class="go">LASSO:</span>
+
+<span class="go">Residuals:</span>
+<span class="go">           Min              1Q          Median              3Q             Max</span>
+<span class="go">     -145.6406        -34.9690         -1.6296         31.7290        150.4327</span>
+
+
+<span class="go">Coefficients:</span>
+<span class="go">            Estimate</span>
+<span class="go">Intercept   152.1335</span>
+
+<span class="go">Var 1            19.7381</span>
+
+<span class="go">Var 2          -215.2641</span>
+
+<span class="go">Var 3           491.3508</span>
+
+<span class="go">Var 4           318.3337</span>
+
+<span class="go">Var 5           -73.9669</span>
+
+<span class="go">Var 6            -0.1219</span>
+
+<span class="go">Var 7          -271.3485</span>
+
+<span class="go">Var 8             0.3327</span>
+
+<span class="go">Var 9           536.7865</span>
+
+<span class="go">Var 10           56.9666</span>
+
+<span class="go">Var 11           62.4591</span>
+
+<span class="go">Var 12           39.6532</span>
+
+<span class="go">Var 13           -0.0997</span>
+
+<span class="go">Var 14            0.0402</span>
+
+<span class="go">Var 15            0.0367</span>
+
+<span class="go">Var 16            0.0299</span>
+
+<span class="go">Var 17            5.1949</span>
+
+<span class="go">Var 18            0.0054</span>
+
+<span class="go">Var 19          109.8448</span>
+
+<span class="go">Var 20          161.9601</span>
+
+<span class="go">Var 21           -0.0513</span>
+
+<span class="go">Var 22           20.8245</span>
+
+<span class="go">Var 23           -0.0211</span>
+
+<span class="go">Var 24          -74.1101</span>
+
+<span class="go">Var 25           52.2148</span>
+
+<span class="go">Var 26            0.0487</span>
+
+<span class="go">Var 27           76.2901</span>
+
+<span class="go">Var 28           35.3560</span>
+
+<span class="go">Var 29           52.1337</span>
+
+<span class="go">Var 30           67.5079</span>
+
+<span class="go">Var 31           -0.0170</span>
+
+<span class="go">Var 32          -33.3879</span>
+
+<span class="go">Var 33           77.8882</span>
+
+<span class="go">Var 34           -5.6083</span>
+
+<span class="go">Var 35           -0.0811</span>
+
+<span class="go">Var 36            4.2298</span>
+
+<span class="go">Var 37          142.5695</span>
+
+<span class="go">Var 38          -13.2135</span>
+
+<span class="go">Var 39           -0.0544</span>
+
+<span class="go">Var 40            0.0154</span>
+
+<span class="go">Var 41           -0.0150</span>
+
+<span class="go">Var 42            0.0723</span>
+
+<span class="go">Var 43            0.3325</span>
+
+<span class="go">Var 44           25.7653</span>
+
+<span class="go">Var 45            0.2970</span>
+
+<span class="go">Var 46           38.7466</span>
+
+<span class="go">Var 47           -0.0526</span>
+
+<span class="go">Var 48            0.0269</span>
+
+<span class="go">Var 49          -77.7430</span>
+
+<span class="go">Var 50            0.2351</span>
+
+<span class="go">Var 51           11.5565</span>
+
+<span class="go">Var 52          -92.0404</span>
+
+<span class="go">Var 53          -41.8455</span>
+
+<span class="go">Var 54            0.3094</span>
+
+<span class="go">Var 55           -0.0218</span>
+
+<span class="go">Var 56            0.0278</span>
+
+<span class="go">Var 57          163.1993</span>
+
+<span class="go">Var 58            2.8986</span>
+
+<span class="go">Var 59          -94.6948</span>
+
+<span class="go">Var 60            0.0827</span>
+
+<span class="go">Var 61           23.1071</span>
+
+<span class="go">Var 62         -114.8251</span>
+
+<span class="go">Var 63           66.9084</span>
+
+<span class="go">Var 64            0.1338</span>
+
+
+<span class="go">Residual standard error: 54.5366 on 377 degrees of freedom</span>
+
+<span class="go">Multiple R-squared: 0.5722,    Adjusted R-squared: 0.4996</span>
+
+<span class="go">F-statistic: 7.8787 on 64 and 377 DF,  p-value: 5.422e-40</span>
+</pre></div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="rbfnet.html" title="Radial Basis Function Networks"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="ridge.html" title="Ridge Regression"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../docs/index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Examples</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" >MIML - MeteoInfo Machine Learning Toolbox</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../regression.html" >Regression</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2019, MeteoInfo developers.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,213 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Ridge Regression &#8212; MeteoInfo 2.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Lasso Regression" href="lasso.html" />
+    <link rel="prev" title="Ordinary Least Squares" href="ols.html" /> 
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../../index.html"><img src="../../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="lasso.html" title="Lasso Regression"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="ols.html" title="Ordinary Least Squares"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../docs/index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Examples</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" >MIML - MeteoInfo Machine Learning Toolbox</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../regression.html" accesskey="U">Regression</a> &#187;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="ols.html"
+                        title="previous chapter">Ordinary Least Squares</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="lasso.html"
+                        title="next chapter">Lasso Regression</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/examples/miml/regression/ridge.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="ridge-regression">
+<span id="examples-miml-regression-ridge"></span><h1>Ridge Regression<a class="headerlink" href="#ridge-regression" title="Permalink to this headline">¶</a></h1>
+<p>Coefficient estimates for multiple linear regression models rely on the independence of the model
+terms. When terms are correlated and the columns of the design matrix X have an approximate linear
+dependence, the matrix X’X becomes close to singular. As a result, the least-squares estimate becomes
+highly sensitive to random errors in the observed response Y, producing a large variance.</p>
+<p>Ridge regression is one method to address these issues. In ridge regression, the matrix X’X is
+perturbed so as to make its determinant appreciably different from 0.</p>
+<p>Ridge regression is a kind of Tikhonov regularization, which is the most commonly used method of
+regularization of ill-posed problems. Ridge regression shrinks the regression coefficients by
+imposing a penalty on their size. By allowing a small amount of bias in the estimates, more
+reasonable coefficients may often be obtained. Often, small amounts of bias lead to dramatic
+reductions in the variance of the estimated model coefficients.</p>
+<p>Another interpretation of ridge regression is available through Bayesian estimation. In this setting
+the belief that weight should be small is coded into a prior distribution.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">miml</span> <span class="k">import</span> <span class="n">datasets</span>
+<span class="kn">from</span> <span class="nn">miml.regression</span> <span class="k">import</span> <span class="n">RidgeRegression</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">array</span><span class="p">([[</span><span class="mf">234.289</span><span class="p">,</span>      <span class="mf">235.6</span><span class="p">,</span>        <span class="mf">159.0</span><span class="p">,</span>    <span class="mf">107.608</span><span class="p">,</span> <span class="mi">1947</span><span class="p">,</span>   <span class="mf">60.323</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">259.426</span><span class="p">,</span>      <span class="mf">232.5</span><span class="p">,</span>        <span class="mf">145.6</span><span class="p">,</span>    <span class="mf">108.632</span><span class="p">,</span> <span class="mi">1948</span><span class="p">,</span>   <span class="mf">61.122</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">258.054</span><span class="p">,</span>      <span class="mf">368.2</span><span class="p">,</span>        <span class="mf">161.6</span><span class="p">,</span>    <span class="mf">109.773</span><span class="p">,</span> <span class="mi">1949</span><span class="p">,</span>   <span class="mf">60.171</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">284.599</span><span class="p">,</span>      <span class="mf">335.1</span><span class="p">,</span>        <span class="mf">165.0</span><span class="p">,</span>    <span class="mf">110.929</span><span class="p">,</span> <span class="mi">1950</span><span class="p">,</span>   <span class="mf">61.187</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">328.975</span><span class="p">,</span>      <span class="mf">209.9</span><span class="p">,</span>        <span class="mf">309.9</span><span class="p">,</span>    <span class="mf">112.075</span><span class="p">,</span> <span class="mi">1951</span><span class="p">,</span>   <span class="mf">63.221</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">346.999</span><span class="p">,</span>      <span class="mf">193.2</span><span class="p">,</span>        <span class="mf">359.4</span><span class="p">,</span>    <span class="mf">113.270</span><span class="p">,</span> <span class="mi">1952</span><span class="p">,</span>   <span class="mf">63.639</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">365.385</span><span class="p">,</span>      <span class="mf">187.0</span><span class="p">,</span>        <span class="mf">354.7</span><span class="p">,</span>    <span class="mf">115.094</span><span class="p">,</span> <span class="mi">1953</span><span class="p">,</span>   <span class="mf">64.989</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">363.112</span><span class="p">,</span>      <span class="mf">357.8</span><span class="p">,</span>        <span class="mf">335.0</span><span class="p">,</span>    <span class="mf">116.219</span><span class="p">,</span> <span class="mi">1954</span><span class="p">,</span>   <span class="mf">63.761</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">397.469</span><span class="p">,</span>      <span class="mf">290.4</span><span class="p">,</span>        <span class="mf">304.8</span><span class="p">,</span>    <span class="mf">117.388</span><span class="p">,</span> <span class="mi">1955</span><span class="p">,</span>   <span class="mf">66.019</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">419.180</span><span class="p">,</span>      <span class="mf">282.2</span><span class="p">,</span>        <span class="mf">285.7</span><span class="p">,</span>    <span class="mf">118.734</span><span class="p">,</span> <span class="mi">1956</span><span class="p">,</span>   <span class="mf">67.857</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">442.769</span><span class="p">,</span>      <span class="mf">293.6</span><span class="p">,</span>        <span class="mf">279.8</span><span class="p">,</span>    <span class="mf">120.445</span><span class="p">,</span> <span class="mi">1957</span><span class="p">,</span>   <span class="mf">68.169</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">444.546</span><span class="p">,</span>      <span class="mf">468.1</span><span class="p">,</span>        <span class="mf">263.7</span><span class="p">,</span>    <span class="mf">121.950</span><span class="p">,</span> <span class="mi">1958</span><span class="p">,</span>   <span class="mf">66.513</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">482.704</span><span class="p">,</span>      <span class="mf">381.3</span><span class="p">,</span>        <span class="mf">255.2</span><span class="p">,</span>    <span class="mf">123.366</span><span class="p">,</span> <span class="mi">1959</span><span class="p">,</span>   <span class="mf">68.655</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">502.601</span><span class="p">,</span>      <span class="mf">393.1</span><span class="p">,</span>        <span class="mf">251.4</span><span class="p">,</span>    <span class="mf">125.368</span><span class="p">,</span> <span class="mi">1960</span><span class="p">,</span>   <span class="mf">69.564</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">518.173</span><span class="p">,</span>      <span class="mf">480.6</span><span class="p">,</span>        <span class="mf">257.2</span><span class="p">,</span>    <span class="mf">127.852</span><span class="p">,</span> <span class="mi">1961</span><span class="p">,</span>   <span class="mf">69.331</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">554.894</span><span class="p">,</span>      <span class="mf">400.7</span><span class="p">,</span>        <span class="mf">282.7</span><span class="p">,</span>    <span class="mf">130.081</span><span class="p">,</span> <span class="mi">1962</span><span class="p">,</span>   <span class="mf">70.551</span><span class="p">]])</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">array</span><span class="p">([</span><span class="mf">83.0</span><span class="p">,</span>  <span class="mf">88.5</span><span class="p">,</span>  <span class="mf">88.2</span><span class="p">,</span>  <span class="mf">89.5</span><span class="p">,</span>  <span class="mf">96.2</span><span class="p">,</span>  <span class="mf">98.1</span><span class="p">,</span>  <span class="mf">99.0</span><span class="p">,</span> <span class="mf">100.0</span><span class="p">,</span> <span class="mf">101.2</span><span class="p">,</span>
+           <span class="mf">104.6</span><span class="p">,</span> <span class="mf">108.4</span><span class="p">,</span> <span class="mf">110.8</span><span class="p">,</span> <span class="mf">112.6</span><span class="p">,</span> <span class="mf">114.2</span><span class="p">,</span> <span class="mf">115.7</span><span class="p">,</span> <span class="mf">116.9</span><span class="p">])</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">RidgeRegression</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mf">0.0057</span><span class="p">)</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">,:])</span>
+<span class="nb">print</span> <span class="n">r</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">run</span> <span class="n">script</span><span class="o">...</span>
+<span class="go">array([83.71913397911655])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span>
+<span class="go">Ridge Regression:</span>
+
+<span class="go">Residuals:</span>
+<span class="go">           Min              1Q          Median              3Q             Max</span>
+<span class="go">       -2.0691         -0.5736          0.2619          0.4844          1.6328</span>
+
+
+<span class="go">Coefficients:</span>
+<span class="go">            Estimate        Std. Error        t value        Pr(&gt;|t|)</span>
+<span class="go">Intercept  -247.2810                NA             NA              NA</span>
+
+<span class="go">Var 1             0.1789            7.8561         0.0228          0.9823</span>
+
+<span class="go">Var 2             0.0197            2.0319         0.0097          0.9925</span>
+
+<span class="go">Var 3             0.0066            0.8647         0.0076          0.9941</span>
+
+<span class="go">Var 4            -1.3433            4.2777        -0.3140          0.7607</span>
+
+<span class="go">Var 5             0.2216            9.7525         0.0227          0.9824</span>
+
+<span class="go">Var 6            -0.0575            3.7635        -0.0153          0.9881</span>
+
+<span class="go">---------------------------------------------------------------------</span>
+<span class="go">Significance codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</span>
+
+<span class="go">Residual standard error: 1.2361 on 9 degrees of freedom</span>
+
+<span class="go">Multiple R-squared: 0.9921,    Adjusted R-squared: 0.9869</span>
+
+<span class="go">F-statistic: 189.0534 on 6 and 9 DF,  p-value: 6.011e-09</span>
+</pre></div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="lasso.html" title="Lasso Regression"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="ols.html" title="Ordinary Least Squares"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../docs/index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Examples</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" >MIML - MeteoInfo Machine Learning Toolbox</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../regression.html" >Regression</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2019, MeteoInfo developers.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+    </div>
+  </body>
+</html>

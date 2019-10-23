@@ -1,0 +1,169 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Clustering Large Applications based upon RANdomized Search &#8212; MeteoInfo 2.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Balanced Iterative Reducing and Clustering using Hierarchies" href="birch.html" />
+    <link rel="prev" title="G-Means" href="gmeans.html" /> 
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../../index.html"><img src="../../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="birch.html" title="Balanced Iterative Reducing and Clustering using Hierarchies"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="gmeans.html" title="G-Means"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../docs/index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Examples</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" >MIML - MeteoInfo Machine Learning Toolbox</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../cluster.html" accesskey="U">Clustering</a> &#187;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="gmeans.html"
+                        title="previous chapter">G-Means</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="birch.html"
+                        title="next chapter">Balanced Iterative Reducing and Clustering using Hierarchies</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/examples/miml/cluster/clarans.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="clustering-large-applications-based-upon-randomized-search">
+<span id="examples-miml-cluster-clarans"></span><h1>Clustering Large Applications based upon RANdomized Search<a class="headerlink" href="#clustering-large-applications-based-upon-randomized-search" title="Permalink to this headline">¶</a></h1>
+<p>The K-Medoids algorithm is an adaptation of the k-means algorithm. Rather than calculate the mean of
+the items in each cluster, a representative item, or medoid, is chosen for each cluster at each
+iteration. The K-Medoids algorithm attempts to minimize the distance between points labeled to be in a
+cluster and the medoid of that cluster. So a medoid is a most centrally located point in the cluster.
+K-Medoids works with an arbitrary matrix of distances between data points instead of L2. It is also
+more robust to noise and outliers as compared to K-Means.</p>
+<p>The most common realisation of K-Medoids clustering is the Partitioning Around Medoids (PAM) algorithm.
+PAM uses a greedy search which may not find the optimum solution, but it is faster than exhaustive
+search.</p>
+<p>CLARANS (Clustering Large Applications based upon RANdomized Search) is a more efficient medoid-based
+clustering algorithm. In CLARANS, the process of finding k medoids from n objects is viewed abstractly
+as searching through a certain graph. In the graph, a node is represented by a set of k objects as
+selected medoids. Two nodes are neighbors if their sets differ by only one object. In each iteration,
+CLARANS considers a set of randomly chosen neighbor nodes as candidate of new medoids. We will move to
+the neighbor node if the neighbor is a better choice for medoids. Otherwise, a local optima is
+discovered. The entire process is repeated multiple time to find better.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">miml.cluster</span> <span class="k">import</span> <span class="n">CLARANS</span>
+
+<span class="n">fn</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">datasets</span><span class="o">.</span><span class="n">get_data_home</span><span class="p">(),</span> <span class="s1">&#39;clustering&#39;</span><span class="p">,</span> <span class="s1">&#39;gaussian&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;six.txt&#39;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">DataFrame</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;x1&#39;</span><span class="p">,</span><span class="s1">&#39;x2&#39;</span><span class="p">],</span>
+    <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%2f</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">values</span>
+<span class="n">clusters</span> <span class="o">=</span> <span class="n">CLARANS</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">max_neighbor</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">nlocal</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">clusters</span><span class="o">.</span><span class="n">get_cluster_label</span><span class="p">()</span>
+
+<span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">x</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Clustering Large Applications based upon RANdomized Search example&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="examples\miml\cluster\../../../_static/miml/clarans_1.png" src="examples\miml\cluster\../../../_static/miml/clarans_1.png" />
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="birch.html" title="Balanced Iterative Reducing and Clustering using Hierarchies"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="gmeans.html" title="G-Means"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../docs/index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Examples</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" >MIML - MeteoInfo Machine Learning Toolbox</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../cluster.html" >Clustering</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2019, MeteoInfo developers.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+    </div>
+  </body>
+</html>

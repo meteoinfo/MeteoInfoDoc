@@ -11,3 +11,4 @@ Examples
    meteoinfomap/index.rst
    meteoinfoscript/index.rst
    meteoinfolab/index.rst
+   miml/index.rst

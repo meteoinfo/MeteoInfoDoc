@@ -4,7 +4,7 @@
 HYSPLIT output concentration plot
 **********************************
 
-Get a HYSPLIT output concentration data file object using **addfile_hyocnc** function, and 
+Get a HYSPLIT output concentration data file object using **addfile_hyconc** function, and 
 then read 2D array for filled contour plot. Following is an example of cesium-137 simulation
 during 2011 Fukushima nuclear disaster.
 
