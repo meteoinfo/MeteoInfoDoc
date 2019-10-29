@@ -1,33 +1,24 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>MeteoInfo 1.5 was released (2018-7-9) &#8212; MeteoInfo 2.0 documentation</title>
     <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '2.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="TrajStat 1.4.5 was released (2018-6-1)" href="trajstat_1.4.5.html" />
     <link rel="prev" title="Series and DataFrame" href="../docs/meteoinfolab/userguide/dataframe.html" /> 
-  </head>
-  <body>
+  </head><body>
 
 <div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
 <a href="../index.html"><img src="../_static/logo.jpg" border="0"/></a></div>
@@ -74,13 +65,13 @@
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -95,21 +86,21 @@
 <span id="news-meteoinfo-1-5"></span><h1>MeteoInfo 1.5 was released (2018-7-9)<a class="headerlink" href="#meteoinfo-1-5-was-released-2018-7-9" title="Permalink to this headline">¶</a></h1>
 <blockquote>
 <div><ul class="simple">
-<li>Update BIL data reading function.</li>
-<li>Update console display functions.</li>
-<li>Update netCDf files join function.</li>
-<li>Add <code class="docutils literal"><span class="pre">linint2</span></code> function to interpolate from a rectilinear grid to another rectilinear grid using bilinear interpolation.</li>
-<li>Add <code class="docutils literal"><span class="pre">rh2dewpoint</span></code> function to convert relative humidity to dew point.</li>
-<li>Support AMap as web map.</li>
-<li>Support MICAPS 131 data format.</li>
-<li>Update geotiff read function.</li>
-<li>Add <code class="docutils literal"><span class="pre">gridshow</span></code> and <code class="docutils literal"><span class="pre">stem</span></code> plot function.</li>
-<li>Add functions to plot multi color lines.</li>
-<li>Read HYSPLIT trajectory data as 2D array.</li>
+<li><p>Update BIL data reading function.</p></li>
+<li><p>Update console display functions.</p></li>
+<li><p>Update netCDf files join function.</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">linint2</span></code> function to interpolate from a rectilinear grid to another rectilinear grid using bilinear interpolation.</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">rh2dewpoint</span></code> function to convert relative humidity to dew point.</p></li>
+<li><p>Support AMap as web map.</p></li>
+<li><p>Support MICAPS 131 data format.</p></li>
+<li><p>Update geotiff read function.</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">gridshow</span></code> and <code class="docutils literal notranslate"><span class="pre">stem</span></code> plot function.</p></li>
+<li><p>Add functions to plot multi color lines.</p></li>
+<li><p>Read HYSPLIT trajectory data as 2D array.</p></li>
 </ul>
 </div></blockquote>
 <p><strong>3D stem plot</strong>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">z</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">20</span> <span class="o">*</span> <span class="n">z</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">z</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">20</span> <span class="o">*</span> <span class="n">z</span><span class="p">)</span>
 <span class="n">c</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
@@ -157,7 +148,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2019, MeteoInfo developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
     </div>
   </body>
 </html>

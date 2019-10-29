@@ -1,33 +1,24 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>Least-squares &#8212; MeteoInfo 2.0 documentation</title>
     <link rel="stylesheet" href="../../../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../../',
-        VERSION:     '2.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="mipylib.numeric.fitting" href="../fitting.html" />
     <link rel="prev" title="Solve a linear matrix equation" href="solve.html" /> 
-  </head>
-  <body>
+  </head><body>
 
 <div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
 <a href="../../../../index.html"><img src="../../../../_static/logo.jpg" border="0"/></a></div>
@@ -78,13 +69,13 @@
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -99,25 +90,25 @@
 <span id="docs-meteoinfolab-numeric-linalg-lstsq"></span><h1>Least-squares<a class="headerlink" href="#least-squares" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="numeric.linalg.lstsq">
-<code class="descclassname">numeric.linalg.</code><code class="descname">lstsq</code><span class="sig-paren">(</span><em>a</em>, <em>b</em><span class="sig-paren">)</span><a class="headerlink" href="#numeric.linalg.lstsq" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">numeric.linalg.</code><code class="sig-name descname">lstsq</code><span class="sig-paren">(</span><em class="sig-param">a</em>, <em class="sig-param">b</em><span class="sig-paren">)</span><a class="headerlink" href="#numeric.linalg.lstsq" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute least-squares solution to equation Ax = b.</p>
 <p>Compute a vector x such that the 2-norm <a href="#id1"><span class="problematic" id="id2">|b - A x|</span></a> is minimized.</p>
-<p><code class="docutils literal"><span class="pre">Parameters</span></code></p>
-<dl class="docutils">
-<dt>a <span class="classifier-delimiter">:</span> <span class="classifier">(M, N) array</span></dt>
-<dd>Left hand side matrix (2-D array).</dd>
-<dt>b <span class="classifier-delimiter">:</span> <span class="classifier">(M,) array</span></dt>
-<dd>Right hand side vector.</dd>
+<p><code class="docutils literal notranslate"><span class="pre">Parameters</span></code></p>
+<dl class="simple">
+<dt>a<span class="classifier">(M, N) array</span></dt><dd><p>Left hand side matrix (2-D array).</p>
+</dd>
+<dt>b<span class="classifier">(M,) array</span></dt><dd><p>Right hand side vector.</p>
+</dd>
 </dl>
-<p><code class="docutils literal"><span class="pre">Returns</span></code></p>
-<dl class="docutils">
-<dt>x <span class="classifier-delimiter">:</span> <span class="classifier">(N,) array</span></dt>
-<dd>Least-squares solution. Return shape matches shape of b.</dd>
-<dt>residues <span class="classifier-delimiter">:</span> <span class="classifier">(0,) or () or (K,) ndarray</span></dt>
-<dd>Sums of residues, squared 2-norm for each column in b - a x.</dd>
+<p><code class="docutils literal notranslate"><span class="pre">Returns</span></code></p>
+<dl class="simple">
+<dt>x<span class="classifier">(N,) array</span></dt><dd><p>Least-squares solution. Return shape matches shape of b.</p>
+</dd>
+<dt>residues<span class="classifier">(0,) or () or (K,) ndarray</span></dt><dd><p>Sums of residues, squared 2-norm for each column in b - a x.</p>
+</dd>
 </dl>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mf">8.5</span><span class="p">])</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mf">8.5</span><span class="p">])</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">array</span><span class="p">([</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.2</span><span class="p">,</span> <span class="mf">6.6</span><span class="p">,</span> <span class="mf">8.6</span><span class="p">])</span>
 <span class="n">M</span> <span class="o">=</span> <span class="n">ones</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="mi">2</span><span class="p">))</span>
 <span class="n">M</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
@@ -136,7 +127,7 @@
 </pre></div>
 </div>
 <p>Result:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">run</span> <span class="n">script</span><span class="o">...</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">run</span> <span class="n">script</span><span class="o">...</span>
 <span class="go">array([3.0, 2.23606797749979, 2.0, 0.0])</span>
 </pre></div>
 </div>
@@ -182,7 +173,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2019, MeteoInfo developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
     </div>
   </body>
 </html>

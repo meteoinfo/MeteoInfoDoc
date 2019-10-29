@@ -1,33 +1,24 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>griddata &#8212; MeteoInfo 2.0 documentation</title>
     <link rel="stylesheet" href="../../../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../../',
-        VERSION:     '2.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="linint2" href="linint2.html" />
     <link rel="prev" title="exp" href="exp.html" /> 
-  </head>
-  <body>
+  </head><body>
 
 <div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
 <a href="../../../../index.html"><img src="../../../../_static/logo.jpg" border="0"/></a></div>
@@ -78,13 +69,13 @@
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -99,36 +90,32 @@
 <span id="docs-meteoinfolab-numeric-funcitons-griddata"></span><h1>griddata<a class="headerlink" href="#griddata" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="mipylib.numeric.minum.griddata">
-<code class="descclassname">mipylib.numeric.minum.</code><code class="descname">griddata</code><span class="sig-paren">(</span><em>points</em>, <em>values</em>, <em>xi=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mipylib.numeric.minum.griddata" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mipylib.numeric.minum.</code><code class="sig-name descname">griddata</code><span class="sig-paren">(</span><em class="sig-param">points</em>, <em class="sig-param">values</em>, <em class="sig-param">xi=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mipylib.numeric.minum.griddata" title="Permalink to this definition">¶</a></dt>
 <dd><p>Interpolate scattered data to grid data.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>points</strong> – (<em>list</em>) The list contains x and y coordinate arrays of the scattered data.</li>
-<li><strong>values</strong> – (<em>array_like</em>) The scattered data array.</li>
-<li><strong>xi</strong> – (<em>list</em>) The list contains x and y coordinate arrays of the grid data. Default is <code class="docutils literal"><span class="pre">None</span></code>,
-the grid x and y coordinate size were both 500.</li>
-<li><strong>method</strong> – (<em>string</em>) The interpolation method. [idw | cressman | neareast | inside | inside_min
-| inside_max | inside_count | surface]</li>
-<li><strong>fill_value</strong> – (<em>float</em>) Fill value, Default is <code class="docutils literal"><span class="pre">nan</span></code>.</li>
-<li><strong>pointnum</strong> – (<em>int</em>) Only used for ‘idw’ method. The number of the points to be used for each grid
-value interpolation.</li>
-<li><strong>radius</strong> – (<em>float</em>) Used for ‘idw’, ‘cressman’ and ‘neareast’ methods. The searching raduis. Default
-is <code class="docutils literal"><span class="pre">None</span></code> in ‘idw’ method, means no raduis was used. Default is <code class="docutils literal"><span class="pre">[10,</span> <span class="pre">7,</span> <span class="pre">4,</span> <span class="pre">2,</span> <span class="pre">1]</span></code> in cressman
-method.</li>
-<li><strong>convexhull</strong> – (<em>boolean</em>) If the convexhull will be used to mask result grid data. Default is <code class="docutils literal"><span class="pre">False</span></code>.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>points</strong> – (<em>list</em>) The list contains x and y coordinate arrays of the scattered data.</p></li>
+<li><p><strong>values</strong> – (<em>array_like</em>) The scattered data array.</p></li>
+<li><p><strong>xi</strong> – (<em>list</em>) The list contains x and y coordinate arrays of the grid data. Default is <code class="docutils literal notranslate"><span class="pre">None</span></code>,
+the grid x and y coordinate size were both 500.</p></li>
+<li><p><strong>method</strong> – (<em>string</em>) The interpolation method. [idw | cressman | neareast | inside | inside_min
+| inside_max | inside_count | surface]</p></li>
+<li><p><strong>fill_value</strong> – (<em>float</em>) Fill value, Default is <code class="docutils literal notranslate"><span class="pre">nan</span></code>.</p></li>
+<li><p><strong>pointnum</strong> – (<em>int</em>) Only used for ‘idw’ method. The number of the points to be used for each grid
+value interpolation.</p></li>
+<li><p><strong>radius</strong> – (<em>float</em>) Used for ‘idw’, ‘cressman’ and ‘neareast’ methods. The searching raduis. Default
+is <code class="docutils literal notranslate"><span class="pre">None</span></code> in ‘idw’ method, means no raduis was used. Default is <code class="docutils literal notranslate"><span class="pre">[10,</span> <span class="pre">7,</span> <span class="pre">4,</span> <span class="pre">2,</span> <span class="pre">1]</span></code> in cressman
+method.</p></li>
+<li><p><strong>convexhull</strong> – (<em>boolean</em>) If the convexhull will be used to mask result grid data. Default is <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">(<em>array</em>) Interpolated grid data (2-D array)</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(<em>array</em>) Interpolated grid data (2-D array)</p>
+</dd>
+</dl>
 <p><strong>Examples</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="s1">&#39;D:/temp/nc/out.20140421_20140421_JL3KMmeic.nc&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="s1">&#39;D:/temp/nc/out.20140421_20140421_JL3KMmeic.nc&#39;</span><span class="p">)</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;PM25&#39;</span><span class="p">]</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">15</span><span class="p">,</span><span class="mi">1</span><span class="p">,:,:]</span>
 <span class="n">lon</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;lon&#39;</span><span class="p">][:,:]</span>
@@ -193,7 +180,7 @@ method.</li>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2019, MeteoInfo developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
     </div>
   </body>
 </html>

@@ -1,33 +1,24 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>colorbar &#8212; MeteoInfo 2.0 documentation</title>
     <link rel="stylesheet" href="../../../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../../',
-        VERSION:     '2.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="contour" href="contour.html" />
     <link rel="prev" title="cll" href="cll.html" /> 
-  </head>
-  <body>
+  </head><body>
 
 <div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
 <a href="../../../../index.html"><img src="../../../../_static/logo.jpg" border="0"/></a></div>
@@ -78,13 +69,13 @@
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -99,36 +90,32 @@
 <span id="docs-meteoinfolab-funcitons-plot-colorbar"></span><h1>colorbar<a class="headerlink" href="#colorbar" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="mipylib.plotlib.miplot.colorbar">
-<code class="descclassname">mipylib.plotlib.miplot.</code><code class="descname">colorbar</code><span class="sig-paren">(</span><em>layer</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mipylib.plotlib.miplot.colorbar" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mipylib.plotlib.miplot.</code><code class="sig-name descname">colorbar</code><span class="sig-paren">(</span><em class="sig-param">layer</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mipylib.plotlib.miplot.colorbar" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add a colorbar to a plot.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>layer</strong> – (<em>MapLayer</em>) The layer in plot.</li>
-<li><strong>cmap</strong> – (<em>string</em>) Color map name. Default is None.</li>
-<li><strong>shrink</strong> – (<em>float</em>) Fraction by which to shrink the colorbar. Default is 1.0.</li>
-<li><strong>orientation</strong> – (<em>string</em>) Colorbar orientation: <code class="docutils literal"><span class="pre">vertical</span></code> or <code class="docutils literal"><span class="pre">horizontal</span></code>.</li>
-<li><strong>aspect</strong> – (<em>int</em>) Ratio of long to short dimensions.</li>
-<li><strong>fontname</strong> – (<em>string</em>) Font name. Default is <code class="docutils literal"><span class="pre">Arial</span></code> .</li>
-<li><strong>fontsize</strong> – (<em>int</em>) Font size. Default is <code class="docutils literal"><span class="pre">14</span></code> .</li>
-<li><strong>bold</strong> – (<em>boolean</em>) Is bold font or not. Default is <code class="docutils literal"><span class="pre">False</span></code> .</li>
-<li><strong>extendrect</strong> – (<em>boolean</em>) If <code class="docutils literal"><span class="pre">True</span></code> the minimum and maximum colorbar extensions will be
-rectangular (the default). If <code class="docutils literal"><span class="pre">False</span></code> the extensions will be triangular.</li>
-<li><strong>extendfrac</strong> – [None | ‘auto’ | length] If set to <em>None</em>, both the minimum and maximum triangular
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>layer</strong> – (<em>MapLayer</em>) The layer in plot.</p></li>
+<li><p><strong>cmap</strong> – (<em>string</em>) Color map name. Default is None.</p></li>
+<li><p><strong>shrink</strong> – (<em>float</em>) Fraction by which to shrink the colorbar. Default is 1.0.</p></li>
+<li><p><strong>orientation</strong> – (<em>string</em>) Colorbar orientation: <code class="docutils literal notranslate"><span class="pre">vertical</span></code> or <code class="docutils literal notranslate"><span class="pre">horizontal</span></code>.</p></li>
+<li><p><strong>aspect</strong> – (<em>int</em>) Ratio of long to short dimensions.</p></li>
+<li><p><strong>fontname</strong> – (<em>string</em>) Font name. Default is <code class="docutils literal notranslate"><span class="pre">Arial</span></code> .</p></li>
+<li><p><strong>fontsize</strong> – (<em>int</em>) Font size. Default is <code class="docutils literal notranslate"><span class="pre">14</span></code> .</p></li>
+<li><p><strong>bold</strong> – (<em>boolean</em>) Is bold font or not. Default is <code class="docutils literal notranslate"><span class="pre">False</span></code> .</p></li>
+<li><p><strong>extendrect</strong> – (<em>boolean</em>) If <code class="docutils literal notranslate"><span class="pre">True</span></code> the minimum and maximum colorbar extensions will be
+rectangular (the default). If <code class="docutils literal notranslate"><span class="pre">False</span></code> the extensions will be triangular.</p></li>
+<li><p><strong>extendfrac</strong> – [None | ‘auto’ | length] If set to <em>None</em>, both the minimum and maximum triangular
 colorbar extensions with have a length of 5% of the interior colorbar length (the default). If
 set to ‘auto’, makes the triangular colorbar extensions the same lengths as the interior boxes
 . If a scalar, indicates the length of both the minimum and maximum triangle colorbar extensions
-as a fraction of the interior colorbar length.</li>
-<li><strong>ticks</strong> – [None | list of ticks] If None, ticks are determined automatically from the input.</li>
+as a fraction of the interior colorbar length.</p></li>
+<li><p><strong>ticks</strong> – [None | list of ticks] If None, ticks are determined automatically from the input.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p><strong>Example:</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="s1">&#39;D:/Temp/GrADS/model.ctl&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="s1">&#39;D:/Temp/GrADS/model.ctl&#39;</span><span class="p">)</span>
 <span class="n">psv</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;PS&#39;</span><span class="p">]</span>
 <span class="n">ps</span> <span class="o">=</span> <span class="n">psv</span><span class="p">[</span><span class="mi">0</span><span class="p">,[</span><span class="mi">10</span><span class="p">,</span><span class="mi">60</span><span class="p">],[</span><span class="mi">60</span><span class="p">,</span><span class="mi">140</span><span class="p">]]</span>
 <span class="n">axesm</span><span class="p">()</span>
@@ -184,7 +171,7 @@ as a fraction of the interior colorbar length.</li>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2019, MeteoInfo developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
     </div>
   </body>
 </html>

@@ -1,33 +1,24 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>boxplot &#8212; MeteoInfo 2.0 documentation</title>
     <link rel="stylesheet" href="../../../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../../',
-        VERSION:     '2.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="violinplot" href="violinplot.html" />
     <link rel="prev" title="barh" href="barh.html" /> 
-  </head>
-  <body>
+  </head><body>
 
 <div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
 <a href="../../../../index.html"><img src="../../../../_static/logo.jpg" border="0"/></a></div>
@@ -78,13 +69,13 @@
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -99,43 +90,39 @@
 <span id="docs-meteoinfolab-funcitons-plot-boxplot"></span><h1>boxplot<a class="headerlink" href="#boxplot" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="mipylib.plotlib.miplot.boxplot">
-<code class="descclassname">mipylib.plotlib.miplot.</code><code class="descname">boxplot</code><span class="sig-paren">(</span><em>x</em>, <em>sym=None</em>, <em>positions=None</em>, <em>widths=None</em>, <em>color=None</em>, <em>showcaps=True</em>, <em>showfliers=True</em>, <em>showmeans=False</em>, <em>meanline=False</em>, <em>boxprops=None</em>, <em>medianprops=None</em>, <em>meanprops=None</em>, <em>whiskerprops=None</em>, <em>capprops=None</em>, <em>flierprops=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mipylib.plotlib.miplot.boxplot" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mipylib.plotlib.miplot.</code><code class="sig-name descname">boxplot</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">sym=None</em>, <em class="sig-param">positions=None</em>, <em class="sig-param">widths=None</em>, <em class="sig-param">color=None</em>, <em class="sig-param">showcaps=True</em>, <em class="sig-param">showfliers=True</em>, <em class="sig-param">showmeans=False</em>, <em class="sig-param">meanline=False</em>, <em class="sig-param">boxprops=None</em>, <em class="sig-param">medianprops=None</em>, <em class="sig-param">meanprops=None</em>, <em class="sig-param">whiskerprops=None</em>, <em class="sig-param">capprops=None</em>, <em class="sig-param">flierprops=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mipylib.plotlib.miplot.boxplot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Make a box and whisker plot.</p>
 <p>Make a box and whisker plot for each column of x or each vector in sequence x. The box extends from lower
 to upper quartile values of the data, with a line at the median. The whiskers extend from the box to show
 the range of the data. Flier points are those past the end of the whiskers.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>x</strong> – (<em>Array or a sequence of vectors</em>) The input data.</li>
-<li><strong>sym</strong> – (<em>string</em>) The default symbol for flier points. Enter an empty string (‘’) if you don’t
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – (<em>Array or a sequence of vectors</em>) The input data.</p></li>
+<li><p><strong>sym</strong> – (<em>string</em>) The default symbol for flier points. Enter an empty string (‘’) if you don’t
 want to show fliers. If None, then the fliers default to ‘b+’ If you want more control use the
-flierprops kwarg.</li>
-<li><strong>positions</strong> – (<em>array_like</em>) Sets the positions of the boxes. The ticks and limits are automatically
-set to match the positions. Defaults to range(1, N+1) where N is the number of boxes to be drawn.</li>
-<li><strong>widths</strong> – (<em>scalar or array_like</em>) Sets the width of each box either with a scalar or a sequence.
-The default is 0.5, or 0.15*(distance between extreme positions), if that is smaller.</li>
-<li><strong>color</strong> – (<em>Color</em>) Color for all parts of the box plot. Defaul is None.</li>
-<li><strong>showcaps</strong> – (<em>boolean</em>) Show the caps on the ends of whiskers. Default is <code class="docutils literal"><span class="pre">True</span></code>.</li>
-<li><strong>showfliers</strong> – (<em>boolean</em>) Show the outliers beyond the caps. Defaul is <code class="docutils literal"><span class="pre">True</span></code>.</li>
-<li><strong>showmeans</strong> – (<em>boolean</em>) Default is <code class="docutils literal"><span class="pre">False</span></code>. Show the mean or not.</li>
-<li><strong>meanline</strong> – (<em>boolean</em>) Default is <code class="docutils literal"><span class="pre">False</span></code>. If <code class="docutils literal"><span class="pre">True</span></code> (and showmeans is <code class="docutils literal"><span class="pre">True</span></code>), will try to render
-the mean as a line spanning. Otherwise, means will be shown as points.</li>
-<li><strong>boxprops</strong> – (<em>dict</em>) Specifies the style of the box.</li>
-<li><strong>medianprops</strong> – (<em>dict</em>) Specifies the style of the median.</li>
-<li><strong>meanprops</strong> – (<em>dict</em>) Specifies the style of the mean.</li>
-<li><strong>whiskerprops</strong> – (<em>dict</em>) Specifies the style of the whiskers.</li>
-<li><strong>capprops</strong> – (<em>dict</em>) Specifies the style of the caps.</li>
-<li><strong>flierprops</strong> – (<em>dict</em>) Specifies the style of the fliers.</li>
+flierprops kwarg.</p></li>
+<li><p><strong>positions</strong> – (<em>array_like</em>) Sets the positions of the boxes. The ticks and limits are automatically
+set to match the positions. Defaults to range(1, N+1) where N is the number of boxes to be drawn.</p></li>
+<li><p><strong>widths</strong> – (<em>scalar or array_like</em>) Sets the width of each box either with a scalar or a sequence.
+The default is 0.5, or 0.15*(distance between extreme positions), if that is smaller.</p></li>
+<li><p><strong>color</strong> – (<em>Color</em>) Color for all parts of the box plot. Defaul is None.</p></li>
+<li><p><strong>showcaps</strong> – (<em>boolean</em>) Show the caps on the ends of whiskers. Default is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+<li><p><strong>showfliers</strong> – (<em>boolean</em>) Show the outliers beyond the caps. Defaul is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+<li><p><strong>showmeans</strong> – (<em>boolean</em>) Default is <code class="docutils literal notranslate"><span class="pre">False</span></code>. Show the mean or not.</p></li>
+<li><p><strong>meanline</strong> – (<em>boolean</em>) Default is <code class="docutils literal notranslate"><span class="pre">False</span></code>. If <code class="docutils literal notranslate"><span class="pre">True</span></code> (and showmeans is <code class="docutils literal notranslate"><span class="pre">True</span></code>), will try to render
+the mean as a line spanning. Otherwise, means will be shown as points.</p></li>
+<li><p><strong>boxprops</strong> – (<em>dict</em>) Specifies the style of the box.</p></li>
+<li><p><strong>medianprops</strong> – (<em>dict</em>) Specifies the style of the median.</p></li>
+<li><p><strong>meanprops</strong> – (<em>dict</em>) Specifies the style of the mean.</p></li>
+<li><p><strong>whiskerprops</strong> – (<em>dict</em>) Specifies the style of the whiskers.</p></li>
+<li><p><strong>capprops</strong> – (<em>dict</em>) Specifies the style of the caps.</p></li>
+<li><p><strong>flierprops</strong> – (<em>dict</em>) Specifies the style of the fliers.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>
     <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">500</span><span class="p">))</span>
 <span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
@@ -184,7 +171,7 @@ the mean as a line spanning. Otherwise, means will be shown as points.</li>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2019, MeteoInfo developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
     </div>
   </body>
 </html>

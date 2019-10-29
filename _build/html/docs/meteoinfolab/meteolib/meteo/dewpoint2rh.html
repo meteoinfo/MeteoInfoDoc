@@ -1,33 +1,24 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>dewpoint2rh &#8212; MeteoInfo 2.0 documentation</title>
     <link rel="stylesheet" href="../../../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../../',
-        VERSION:     '2.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="Imagelib package" href="../../imagelib.html" />
     <link rel="prev" title="qair2rh" href="qair2rh.html" /> 
-  </head>
-  <body>
+  </head><body>
 
 <div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
 <a href="../../../../index.html"><img src="../../../../_static/logo.jpg" border="0"/></a></div>
@@ -78,13 +69,13 @@
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -99,15 +90,15 @@
 <span id="docs-meteoinfolab-meteolib-meteo-dewpoint2rh"></span><h1>dewpoint2rh<a class="headerlink" href="#dewpoint2rh" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="mipylib.meteolib.meteo.dewpoint2rh">
-<code class="descclassname">mipylib.meteolib.meteo.</code><code class="descname">dewpoint2rh</code><span class="sig-paren">(</span><em>dewpoint</em>, <em>temp</em><span class="sig-paren">)</span><a class="headerlink" href="#mipylib.meteolib.meteo.dewpoint2rh" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mipylib.meteolib.meteo.</code><code class="sig-name descname">dewpoint2rh</code><span class="sig-paren">(</span><em class="sig-param">dewpoint</em>, <em class="sig-param">temp</em><span class="sig-paren">)</span><a class="headerlink" href="#mipylib.meteolib.meteo.dewpoint2rh" title="Permalink to this definition">¶</a></dt>
 <dd><p>Dew point to relative humidity</p>
-<dl class="docutils">
-<dt>dewpoint: DimArray or MIArray or number</dt>
-<dd>Dew point - degree c</dd>
-<dt>temp: DimArray or MIArray or number</dt>
-<dd>Temperature - degree c</dd>
-<dt>return: DimArray or MIArray or number</dt>
-<dd>Relative humidity - %</dd>
+<dl class="simple">
+<dt>dewpoint: DimArray or MIArray or number</dt><dd><p>Dew point - degree c</p>
+</dd>
+<dt>temp: DimArray or MIArray or number</dt><dd><p>Temperature - degree c</p>
+</dd>
+<dt>return: DimArray or MIArray or number</dt><dd><p>Relative humidity - %</p>
+</dd>
 </dl>
 </dd></dl>
 
@@ -150,7 +141,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2019, MeteoInfo developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
     </div>
   </body>
 </html>

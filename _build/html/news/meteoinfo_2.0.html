@@ -1,33 +1,24 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>MeteoInfo 2.0 was released (2019-9-26) &#8212; MeteoInfo 2.0 documentation</title>
     <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '2.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="MeteoInfo 1.9 was released (2019-8-27)" href="meteoinfo_1.9.html" />
     <link rel="prev" title="News" href="index.html" /> 
-  </head>
-  <body>
+  </head><body>
 
 <div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
 <a href="../index.html"><img src="../_static/logo.jpg" border="0"/></a></div>
@@ -74,13 +65,13 @@
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -95,15 +86,15 @@
 <span id="news-meteoinfo-2-0"></span><h1>MeteoInfo 2.0 was released (2019-9-26)<a class="headerlink" href="#meteoinfo-2-0-was-released-2019-9-26" title="Permalink to this headline">¶</a></h1>
 <blockquote>
 <div><ul class="simple">
-<li>Add OpenGL support 3D chart functions through JOGL library.</li>
-<li>Support isosurface 3D plot.</li>
-<li>Several bug fixed.</li>
+<li><p>Add OpenGL support 3D chart functions through JOGL library.</p></li>
+<li><p>Support isosurface 3D plot.</p></li>
+<li><p>Several bug fixed.</p></li>
 </ul>
 </div></blockquote>
-<p>Create an OpenGL support 3D axes (Axes3DGL object) using <code class="docutils literal"><span class="pre">axes3dgl</span></code> function. The usage of plot
+<p>Create an OpenGL support 3D axes (Axes3DGL object) using <code class="docutils literal notranslate"><span class="pre">axes3dgl</span></code> function. The usage of plot
 functions is similar with Axes3D object.</p>
 <p><strong>Relief surface plot</strong>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
 
 <span class="c1">#Relief data</span>
 <span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;D:/Temp/nc/elev.0.25-deg.nc&#39;</span>
@@ -125,9 +116,9 @@ functions is similar with Axes3D object.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">et</span> <span class="o">-</span> <span class="n">st</span><span class="p">)</span>
 </pre></div>
 </div>
-<img alt="../_images/axes3dgl_relief.png" src="../_images/axes3dgl_relief.png" />
+<img alt="../_images/axes3dgl_relief1.png" src="../_images/axes3dgl_relief1.png" />
 <p><strong>Isosurface plot</strong>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">y</span> <span class="o">=</span> <span class="n">z</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mf">3.1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">y</span> <span class="o">=</span> <span class="n">z</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mf">3.1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
 <span class="n">xx</span><span class="p">,</span><span class="n">yy</span><span class="p">,</span><span class="n">zz</span> <span class="o">=</span> <span class="n">meshgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
 <span class="n">v</span> <span class="o">=</span> <span class="n">xx</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">xx</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">yy</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">zz</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 
@@ -138,9 +129,9 @@ functions is similar with Axes3D object.</p>
 <span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
-<img alt="../_images/axes3dgl_isosurface.png" src="../_images/axes3dgl_isosurface.png" />
+<img alt="../_images/axes3dgl_isosurface1.png" src="../_images/axes3dgl_isosurface1.png" />
 <p><strong>3D sand and dust storm plot</strong>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1">#Set date</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Set date</span>
 <span class="n">sdate</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 
 <span class="c1">#Set directory</span>
@@ -190,7 +181,7 @@ functions is similar with Axes3D object.</p>
 <span class="n">title</span><span class="p">(</span><span class="s1">&#39;Dust bigger than 100 ug/m3 (</span><span class="si">%s</span><span class="s1">)&#39;</span> <span class="o">%</span> <span class="n">tt</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1"> %H:00&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
-<img alt="../_images/axes3dgl_dust.png" src="../_images/axes3dgl_dust.png" />
+<img alt="../_images/axes3dgl_dust1.png" src="../_images/axes3dgl_dust1.png" />
 </div>
 
 
@@ -226,7 +217,7 @@ functions is similar with Axes3D object.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2019, MeteoInfo developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
     </div>
   </body>
 </html>

@@ -10,7 +10,7 @@ MeteoInfo
 MeteoInfo Desktop Application
 -----------------------------
   Java edition (Major development)
-    - `MeteoInfo 2.0.2 - Java (for all systems) <files/MeteoInfo_2.0.2.zip>`_
+    - `MeteoInfo 2.0.3 - Java (for all systems) <files/MeteoInfo_2.0.3.zip>`_
   C# edition   
     - `MeteoInfo 1.1.3.5R1 - C# <files/MeteoInfo_csharp_1.1.3.5R1.zip>`_
     
@@ -22,6 +22,11 @@ Software Development Demo Using MeteoInfo Class Library
     - `MeteoInfo C# demo program <files/MeteoInfoDemo_2013-3-2.zip>`_
   
 ----------------------------------------------------------------------------------------
+
+MIML
+=====================================
+  MIML - MeteoInfoLab machine learning toolbox
+    - `MIML 0.3 toolbox <files/miml_0.3.zip>`_
 
 wContour
 =====================================
@@ -37,16 +42,16 @@ wContour
     
 TrajStat
 =====================================
-  TrajStat - MeteoInfo plugin
+  TrajStat - MeteoInfoMap plugin for air mass trajectory statistic
     - `TrajStat 1.4.8 beta 1 plugin for MeteoInfo Java version <files/TrajStat_Plugin_1.4.8b1.zip>`_
     
 --------------------------------------------------------------------------------------------
 
 OutlierFlag
 =====================================
-  OutlierFlag Desktop Application
+  OutlierFlag Desktop Application for outlier data checking
     - `OutlierFlag 0.9.1R1 <files/OutlierFlag_0.9.1R1_Files.zip>`_
-  OutlierFlag - MeteoInfoLab toolbox
+  OutlierFlag - MeteoInfoLab toolbox for outlier data checking
     - `OutlierFlag 0.9.1R2 toolbox <files/OutlierFlag_0.9.1R2_toolbox.zip>`_
 	
 --------------------------------------------------------------------------------------------

@@ -1,33 +1,24 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>kendalltau &#8212; MeteoInfo 2.0 documentation</title>
     <link rel="stylesheet" href="../../../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../../',
-        VERSION:     '2.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="linregress" href="linregress.html" />
     <link rel="prev" title="cov" href="cov.html" /> 
-  </head>
-  <body>
+  </head><body>
 
 <div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
 <a href="../../../../index.html"><img src="../../../../_static/logo.jpg" border="0"/></a></div>
@@ -78,13 +69,13 @@
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -99,31 +90,27 @@
 <span id="docs-meteoinfolab-numeric-stats-kendalltau"></span><h1>kendalltau<a class="headerlink" href="#kendalltau" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="numeric.stats.kendalltau">
-<code class="descclassname">numeric.stats.</code><code class="descname">kendalltau</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#numeric.stats.kendalltau" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">numeric.stats.</code><code class="sig-name descname">kendalltau</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#numeric.stats.kendalltau" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculates Kendall’s tau, a correlation measure for ordinal data.</p>
 <p>Kendall’s tau is a measure of the correspondence between two rankings.
 Values close to 1 indicate strong agreement, values close to -1 indicate
 strong disagreement.  This is the 1945 “tau-b” version of Kendall’s
-tau <a class="footnote-reference" href="#id4" id="id1">[2]</a>, which can account for ties and which reduces to the 1938 “tau-a”
+tau <a class="footnote-reference brackets" href="#id4" id="id1">2</a>, which can account for ties and which reduces to the 1938 “tau-a”
 version <a href="#id7"><span class="problematic" id="id2">[1]_</span></a> in absence of ties.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>x</strong> – (<em>array_like</em>) x data array.</li>
-<li><strong>y</strong> – (<em>array_like</em>) y data array.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – (<em>array_like</em>) x data array.</p></li>
+<li><p><strong>y</strong> – (<em>array_like</em>) y data array.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Correlation.</p>
-</td>
-</tr>
-</tbody>
-</table>
-<dl class="docutils">
-<dt>The definition of Kendall’s tau that is used is <a class="footnote-reference" href="#id4" id="id3">[2]</a>::</dt>
-<dd>tau = (P - Q) / sqrt((P + Q + T) * (P + Q + U))</dd>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Correlation.</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>The definition of Kendall’s tau that is used is <a class="footnote-reference brackets" href="#id4" id="id3">2</a>::</dt><dd><p>tau = (P - Q) / sqrt((P + Q + T) * (P + Q + U))</p>
+</dd>
 </dl>
 <p>where P is the number of concordant pairs, Q the number of discordant
 pairs, T the number of ties only in <cite>x</cite>, and U the number of ties only in
@@ -133,31 +120,25 @@ References
 ———-
 .. [1] Maurice G. Kendall, “A New Measure of Rank Correlation”, Biometrika</p>
 <blockquote>
-<div>Vol. 30, No. 1/2, pp. 81-93, 1938.</div></blockquote>
-<table class="docutils footnote" frame="void" id="id4" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label">[2]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id3">2</a>)</em> Maurice G. Kendall, “The treatment of ties in ranking problems”,
-Biometrika Vol. 33, No. 3, pp. 239-251. 1945.</td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id5" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label">[3]</td><td>Gottfried E. Noether, “Elements of Nonparametric Statistics”, John
-Wiley &amp; Sons, 1967.</td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id6" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label">[4]</td><td>Peter M. Fenwick, “A new data structure for cumulative frequency
+<div><p>Vol. 30, No. 1/2, pp. 81-93, 1938.</p>
+</div></blockquote>
+<dl class="footnote brackets">
+<dt class="label" id="id4"><span class="brackets">2</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id3">2</a>)</span></dt>
+<dd><p>Maurice G. Kendall, “The treatment of ties in ranking problems”,
+Biometrika Vol. 33, No. 3, pp. 239-251. 1945.</p>
+</dd>
+<dt class="label" id="id5"><span class="brackets">3</span></dt>
+<dd><p>Gottfried E. Noether, “Elements of Nonparametric Statistics”, John
+Wiley &amp; Sons, 1967.</p>
+</dd>
+<dt class="label" id="id6"><span class="brackets">4</span></dt>
+<dd><p>Peter M. Fenwick, “A new data structure for cumulative frequency
 tables”, Software: Practice and Experience, Vol. 24, No. 3,
-pp. 327-336, 1994.</td></tr>
-</tbody>
-</table>
+pp. 327-336, 1994.</p>
+</dd>
+</dl>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mipylib.numeric</span> <span class="k">import</span> <span class="n">stats</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mipylib.numeric</span> <span class="k">import</span> <span class="n">stats</span>
 
 <span class="n">x1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
 <span class="n">x2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
@@ -166,7 +147,7 @@ pp. 327-336, 1994.</td></tr>
 </pre></div>
 </div>
 <p>Result:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">run</span> <span class="n">script</span><span class="o">...</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">run</span> <span class="n">script</span><span class="o">...</span>
 <span class="go">-0.471404520791</span>
 </pre></div>
 </div>
@@ -211,7 +192,7 @@ pp. 327-336, 1994.</td></tr>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2019, MeteoInfo developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
     </div>
   </body>
 </html>

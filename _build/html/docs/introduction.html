@@ -1,33 +1,24 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>Introduction &#8212; MeteoInfo 2.0 documentation</title>
     <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '2.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="wContour" href="../products/wcontour.html" />
     <link rel="prev" title="MeteoInfo" href="../products/meteoinfo.html" /> 
-  </head>
-  <body>
+  </head><body>
 
 <div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
 <a href="../index.html"><img src="../_static/logo.jpg" border="0"/></a></div>
@@ -61,7 +52,7 @@
 
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <h3><a href="../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Introduction</a><ul>
 <li><a class="reference internal" href="#publication">Publication</a></li>
@@ -94,13 +85,13 @@
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -125,14 +116,14 @@ already installed.</p>
 <div class="section" id="publication">
 <h2>Publication<a class="headerlink" href="#publication" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Wang, Y.Q., 2014. MeteoInfo: GIS software for meteorological data visualization and analysis. Meteorological Applications, 21: 360-368.</li>
-<li>Wang, Y.Q., 2019. An Open Source Software Suite for Multi-Dimensional Meteorological Data Computation and Visualisation. Journal of Open Research Software, 7(1), p.21. DOI: <a class="reference external" href="http://doi.org/10.5334/jors.267">http://doi.org/10.5334/jors.267</a></li>
+<li><p>Wang, Y.Q., 2014. MeteoInfo: GIS software for meteorological data visualization and analysis. Meteorological Applications, 21: 360-368.</p></li>
+<li><p>Wang, Y.Q., 2019. An Open Source Software Suite for Multi-Dimensional Meteorological Data Computation and Visualisation. Journal of Open Research Software, 7(1), p.21. DOI: <a class="reference external" href="http://doi.org/10.5334/jors.267">http://doi.org/10.5334/jors.267</a></p></li>
 </ul>
 </div>
 <div class="section" id="presentation">
 <h2>Presentation<a class="headerlink" href="#presentation" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>MeteoInfo introduction in 2018 HYSPLIT workshop: <a class="reference external" href="../downloads/files/MeteoInfo_and_HYSPLIT.pptx">PPT</a> ; <a class="reference external" href="../downloads/files/ARLHysplitWorkshop2018-0614_MeteoInfo.zip">Video</a></li>
+<li><p>MeteoInfo introduction in 2018 HYSPLIT workshop: <a class="reference external" href="../downloads/files/MeteoInfo_and_HYSPLIT.pptx">PPT</a> ; <a class="reference external" href="../downloads/files/ARLHysplitWorkshop2018-0614_MeteoInfo.zip">Video</a></p></li>
 </ul>
 </div>
 <div class="section" id="downloading">
@@ -146,22 +137,22 @@ application, may always be found at <a class="reference external" href="http://w
 complete MeteoInfo Java “Generic” package should, after uncompression, include
 the following items:</p>
 <ul class="simple">
-<li>MeteoInfo launcher in a shell command files called “mimap.sh” and “milab.sh” for MAC OS, Linux, Unix system.</li>
-<li>MeteoInfo launcher in a batch command files called “mimap.bat” and “milab.bat” for Windows system.</li>
-<li>MeteoInfo executable files called “MeteoInfoMap.exe” and “MeteoInfoLab.exe” for Windows system.</li>
-<li>MeteoInfo jar files called “MeteoInfoMap.jar” and “MeteoInfoLab.jar”.</li>
-<li>Default MeteoInfo project file called “default.mip”.</li>
-<li>Configure file called “config.xml” for MeteoInfo and “milconfig.xml” for MeteoInfoLab.</li>
-<li>Splash file called “splash.png’ for MeteoInfo and “splash_mil.png” for MeteoInfoLab.</li>
-<li>Color map files in a folder called “colormaps”.</li>
-<li>Image data files in a folder called “image”.</li>
-<li>Library files in a folder called “lib”.</li>
-<li>Map data files in a folder called “map”.</li>
-<li>Plugin files in a folder called “plugins” for MeteoInfo.</li>
-<li>Jython program files in a folder called “pylib” for MeteoInfoLab.</li>
-<li>Sample data files in a folder called “sample”.</li>
-<li>Synop and METAR station files in a folder called “station”.</li>
-<li>A README file.</li>
+<li><p>MeteoInfo launcher in a shell command files called “mimap.sh” and “milab.sh” for MAC OS, Linux, Unix system.</p></li>
+<li><p>MeteoInfo launcher in a batch command files called “mimap.bat” and “milab.bat” for Windows system.</p></li>
+<li><p>MeteoInfo executable files called “MeteoInfoMap.exe” and “MeteoInfoLab.exe” for Windows system.</p></li>
+<li><p>MeteoInfo jar files called “MeteoInfoMap.jar” and “MeteoInfoLab.jar”.</p></li>
+<li><p>Default MeteoInfo project file called “default.mip”.</p></li>
+<li><p>Configure file called “config.xml” for MeteoInfo and “milconfig.xml” for MeteoInfoLab.</p></li>
+<li><p>Splash file called “splash.png’ for MeteoInfo and “splash_mil.png” for MeteoInfoLab.</p></li>
+<li><p>Color map files in a folder called “colormaps”.</p></li>
+<li><p>Image data files in a folder called “image”.</p></li>
+<li><p>Library files in a folder called “lib”.</p></li>
+<li><p>Map data files in a folder called “map”.</p></li>
+<li><p>Plugin files in a folder called “plugins” for MeteoInfo.</p></li>
+<li><p>Jython program files in a folder called “pylib” for MeteoInfoLab.</p></li>
+<li><p>Sample data files in a folder called “sample”.</p></li>
+<li><p>Synop and METAR station files in a folder called “station”.</p></li>
+<li><p>A README file.</p></li>
 </ul>
 </div>
 <div class="section" id="running-meteoinfomap-meteoinfolab">
@@ -173,11 +164,11 @@ or by run the batch command file “mimap.bat”. The batch command file with pa
 run a Jython script (“mimap.bat test.py”).</p>
 <p>On Linux/Unix platforms, you should run MeteoInfoMap from the shell command line; ‘cd’ into
 the directory where the above files are located and then type:</p>
-<p><code class="docutils literal"><span class="pre">./mimap.sh</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">./mimap.sh</span></code></p>
 <p>This will execute a one-line command in the shell file which starts
 MeteoInfoMap and requests that it be allocated 1 GB of memory.</p>
 <p>On Mac OS platform, you can launch MeteoInfoMap similar with Linux paltform but using:</p>
-<p><code class="docutils literal"><span class="pre">./mimap_mac.sh</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">./mimap_mac.sh</span></code></p>
 </div>
 <div class="section" id="run-meteoinfolab">
 <h3>Run MeteoInfoLab:<a class="headerlink" href="#run-meteoinfolab" title="Permalink to this headline">¶</a></h3>
@@ -186,15 +177,15 @@ or by run the batch command file “milab.bat”. The batch command file with pa
 run a Jython script.</p>
 <p>On Linux/Unix platforms, you should run MeteoInfoLab from the shell command line; ‘cd’ into
 the directory where the above files are located and then type:</p>
-<p><code class="docutils literal"><span class="pre">./milab.sh</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">./milab.sh</span></code></p>
 <p>This will execute a one-line command in the shell file which starts
 MeteoInfoLab and requests that it be allocated 1 GB of memory. To run the script, type:</p>
-<p><code class="docutils literal"><span class="pre">./milab.sh</span> <span class="pre">test.py</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">./milab.sh</span> <span class="pre">test.py</span></code></p>
 <p>To run the script with headless model, a system configuration in which the display device is lacking, type:
-<code class="docutils literal"><span class="pre">./milab.sh</span> <span class="pre">-b</span> <span class="pre">test.py</span></code>
+<code class="docutils literal notranslate"><span class="pre">./milab.sh</span> <span class="pre">-b</span> <span class="pre">test.py</span></code>
 It is specially useful in Unix/Linux crontab.</p>
 <p>On Mac OS platform, you can launch MeteoInfoLab similar with Linux paltform but using:</p>
-<p><code class="docutils literal"><span class="pre">./milab_mac.sh</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">./milab_mac.sh</span></code></p>
 </div>
 </div>
 <div class="section" id="lib-files">
@@ -219,27 +210,27 @@ Please send bug reports, etc., to:</p>
 <h2>Acknowledgment<a class="headerlink" href="#acknowledgment" title="Permalink to this headline">¶</a></h2>
 <p>MeteoInfo uses Java classes and libraries written by several third-party organizations.</p>
 <ul class="simple">
-<li>NetCDF Java and its dependence libraries: Available at <a class="reference external" href="http://www.unidata.ucar.edu/software/thredds/current/netcdf-java">http://www.unidata.ucar.edu/software/thredds/current/netcdf-java</a></li>
-<li>Proj4J: Available at <a class="reference external" href="http://trac.osgeo.org/proj4j/wiki">http://trac.osgeo.org/proj4j/wiki</a></li>
-<li>Apache Common Math: Available at <a class="reference external" href="http://commons.apache.org/proper/commons-math">http://commons.apache.org/proper/commons-math</a></li>
-<li>Efficient Java Matrix Library (EJML): Available at <a class="reference external" href="http://ejml.org/wiki/index.php?title=Main_Page">http://ejml.org/wiki/index.php?title=Main_Page</a></li>
-<li>Apache common Imaging: Available at <a class="reference external" href="http://commons.apache.org/proper/commons-imaging">http://commons.apache.org/proper/commons-imaging</a></li>
-<li>Groovy: Available at <a class="reference external" href="http://groovy.codehaus.org">http://groovy.codehaus.org</a></li>
-<li>Jython: Available at <a class="reference external" href="http://www.jython.org">http://www.jython.org</a></li>
-<li>wContour: Available at <a class="reference external" href="http://www.meteothink.org">http://www.meteothink.org</a></li>
-<li>L2FProd: Available at <a class="reference external" href="http://common.L2FProd.com">http://common.L2FProd.com</a></li>
-<li>RSyntaxTextArea: Available at <a class="reference external" href="http://bobbylight.github.io/RSyntaxTextArea">http://bobbylight.github.io/RSyntaxTextArea</a></li>
-<li>JavaHelp: Available at <a class="reference external" href="https://javahelp.java.net">https://javahelp.java.net</a></li>
-<li>BeanShell: Available at <a class="reference external" href="http://www.beanshell.org">http://www.beanshell.org</a></li>
-<li>FreeHEP VectorGraphics: Available at <a class="reference external" href="http://java.freehep.org/vectorgraphics">http://java.freehep.org/vectorgraphics</a></li>
-<li>Docking Frames: Available at <a class="reference external" href="http://www.docking-frames.org">http://www.docking-frames.org</a></li>
-<li>JLaTeXMath: Available at <a class="reference external" href="https://github.com/opencollab/jlatexmath">https://github.com/opencollab/jlatexmath</a></li>
-<li>JTS Topology Suite: Available at <a class="reference external" href="https://www.locationtech.org/projects/technology.jts">https://www.locationtech.org/projects/technology.jts</a></li>
-<li>Jerry’s Java Image Processing: Available at <a class="reference external" href="http://www.jhlabs.com/ip/index.html">http://www.jhlabs.com/ip/index.html</a></li>
-<li>JXMapViewer: Available at <a class="reference external" href="https://github.com/msteiger/jxmapviewer2">https://github.com/msteiger/jxmapviewer2</a></li>
-<li>SurfacePlotter: Available at <a class="reference external" href="https://github.com/ericaro/surfaceplotter">https://github.com/ericaro/surfaceplotter</a></li>
-<li>Joinery: Available at <a class="reference external" href="http://cardillo.github.io/joinery/v1.8/api/reference/joinery/DataFrame.html">http://cardillo.github.io/joinery/v1.8/api/reference/joinery/DataFrame.html</a></li>
-<li>JOGL: Available at <a class="reference external" href="https://jogamp.org/jogl/www/">https://jogamp.org/jogl/www/</a></li>
+<li><p>NetCDF Java and its dependence libraries: Available at <a class="reference external" href="http://www.unidata.ucar.edu/software/thredds/current/netcdf-java">http://www.unidata.ucar.edu/software/thredds/current/netcdf-java</a></p></li>
+<li><p>Proj4J: Available at <a class="reference external" href="http://trac.osgeo.org/proj4j/wiki">http://trac.osgeo.org/proj4j/wiki</a></p></li>
+<li><p>Apache Common Math: Available at <a class="reference external" href="http://commons.apache.org/proper/commons-math">http://commons.apache.org/proper/commons-math</a></p></li>
+<li><p>Efficient Java Matrix Library (EJML): Available at <a class="reference external" href="http://ejml.org/wiki/index.php?title=Main_Page">http://ejml.org/wiki/index.php?title=Main_Page</a></p></li>
+<li><p>Apache common Imaging: Available at <a class="reference external" href="http://commons.apache.org/proper/commons-imaging">http://commons.apache.org/proper/commons-imaging</a></p></li>
+<li><p>Groovy: Available at <a class="reference external" href="http://groovy.codehaus.org">http://groovy.codehaus.org</a></p></li>
+<li><p>Jython: Available at <a class="reference external" href="http://www.jython.org">http://www.jython.org</a></p></li>
+<li><p>wContour: Available at <a class="reference external" href="http://www.meteothink.org">http://www.meteothink.org</a></p></li>
+<li><p>L2FProd: Available at <a class="reference external" href="http://common.L2FProd.com">http://common.L2FProd.com</a></p></li>
+<li><p>RSyntaxTextArea: Available at <a class="reference external" href="http://bobbylight.github.io/RSyntaxTextArea">http://bobbylight.github.io/RSyntaxTextArea</a></p></li>
+<li><p>JavaHelp: Available at <a class="reference external" href="https://javahelp.java.net">https://javahelp.java.net</a></p></li>
+<li><p>BeanShell: Available at <a class="reference external" href="http://www.beanshell.org">http://www.beanshell.org</a></p></li>
+<li><p>FreeHEP VectorGraphics: Available at <a class="reference external" href="http://java.freehep.org/vectorgraphics">http://java.freehep.org/vectorgraphics</a></p></li>
+<li><p>Docking Frames: Available at <a class="reference external" href="http://www.docking-frames.org">http://www.docking-frames.org</a></p></li>
+<li><p>JLaTeXMath: Available at <a class="reference external" href="https://github.com/opencollab/jlatexmath">https://github.com/opencollab/jlatexmath</a></p></li>
+<li><p>JTS Topology Suite: Available at <a class="reference external" href="https://www.locationtech.org/projects/technology.jts">https://www.locationtech.org/projects/technology.jts</a></p></li>
+<li><p>Jerry’s Java Image Processing: Available at <a class="reference external" href="http://www.jhlabs.com/ip/index.html">http://www.jhlabs.com/ip/index.html</a></p></li>
+<li><p>JXMapViewer: Available at <a class="reference external" href="https://github.com/msteiger/jxmapviewer2">https://github.com/msteiger/jxmapviewer2</a></p></li>
+<li><p>SurfacePlotter: Available at <a class="reference external" href="https://github.com/ericaro/surfaceplotter">https://github.com/ericaro/surfaceplotter</a></p></li>
+<li><p>Joinery: Available at <a class="reference external" href="http://cardillo.github.io/joinery/v1.8/api/reference/joinery/DataFrame.html">http://cardillo.github.io/joinery/v1.8/api/reference/joinery/DataFrame.html</a></p></li>
+<li><p>JOGL: Available at <a class="reference external" href="https://jogamp.org/jogl/www/">https://jogamp.org/jogl/www/</a></p></li>
 </ul>
 </div>
 </div>
@@ -278,7 +269,7 @@ Please send bug reports, etc., to:</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2019, MeteoInfo developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
     </div>
   </body>
 </html>

@@ -1,33 +1,24 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>Trajectory length calculation &#8212; MeteoInfo 2.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../',
-        VERSION:     '2.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="HYSPLIT output concentration plot" href="hyconc_plot.html" />
     <link rel="prev" title="Trajectory plot" href="traj_plot.html" /> 
-  </head>
-  <body>
+  </head><body>
 
 <div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
 <a href="../../../index.html"><img src="../../../_static/logo.jpg" border="0"/></a></div>
@@ -76,13 +67,13 @@
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -97,7 +88,7 @@
 <span id="examples-meteoinfolab-trajectory-traj-length"></span><h1>Trajectory length calculation<a class="headerlink" href="#trajectory-length-calculation" title="Permalink to this headline">¶</a></h1>
 <p><cite>distance</cite> function in <cite>migeo</cite> module of <cite>geolib</cite> package can be used to get length of <cite>LineString</cite> object.
 So it can be used to get the length of each trajectory in a trajectory layer.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Open trjactory shape file</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Open trjactory shape file</span>
 <span class="nb">print</span> <span class="s1">&#39;Open trajectory shape file ...&#39;</span>
 <span class="n">trajfn</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;D:\Temp\traj\2011_MAM\201103.shp&#39;</span>
 <span class="n">trajLayer</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="n">trajfn</span><span class="p">)</span>
@@ -117,7 +108,7 @@ So it can be used to get the length of each trajectory in a trajectory layer.</p
 </pre></div>
 </div>
 <p>The output from the print code in above script:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">run</span> <span class="n">script</span><span class="o">...</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">run</span> <span class="n">script</span><span class="o">...</span>
 <span class="go">Open trajectory shape file ...</span>
 <span class="go">Chek length of each trajectory...</span>
 <span class="go">2011-03-01 00: 51.13km</span>
@@ -155,7 +146,7 @@ So it can be used to get the length of each trajectory in a trajectory layer.</p
 </pre></div>
 </div>
 <p><cite>distance</cite> function also suport x/y coordinate vlaues:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;D:/MyProgram/Distribution/java/MeteoInfo/MeteoInfo/sample/HYSPLIT/tdump&#39;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;D:/MyProgram/Distribution/java/MeteoInfo/MeteoInfo/sample/HYSPLIT/tdump&#39;</span>
 <span class="n">f</span> <span class="o">=</span> <span class="n">addfile_hytraj</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
 <span class="n">lons</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;lon&#39;</span><span class="p">][:,:]</span>
 <span class="n">lats</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">][:,:]</span>
@@ -208,7 +199,7 @@ So it can be used to get the length of each trajectory in a trajectory layer.</p
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2019, MeteoInfo developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
     </div>
   </body>
 </html>

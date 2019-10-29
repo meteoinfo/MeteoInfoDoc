@@ -1,33 +1,24 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>Cholesky decomposition &#8212; MeteoInfo 2.0 documentation</title>
     <link rel="stylesheet" href="../../../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../../',
-        VERSION:     '2.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="LU decomposition" href="lu.html" />
     <link rel="prev" title="mipylib.numeric.linalg" href="../linalg.html" /> 
-  </head>
-  <body>
+  </head><body>
 
 <div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
 <a href="../../../../index.html"><img src="../../../../_static/logo.jpg" border="0"/></a></div>
@@ -78,13 +69,13 @@
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -99,27 +90,27 @@
 <span id="docs-meteoinfolab-numeric-linalg-cholesky"></span><h1>Cholesky decomposition<a class="headerlink" href="#cholesky-decomposition" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="numeric.linalg.cholesky">
-<code class="descclassname">numeric.linalg.</code><code class="descname">cholesky</code><span class="sig-paren">(</span><em>a</em><span class="sig-paren">)</span><a class="headerlink" href="#numeric.linalg.cholesky" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">numeric.linalg.</code><code class="sig-name descname">cholesky</code><span class="sig-paren">(</span><em class="sig-param">a</em><span class="sig-paren">)</span><a class="headerlink" href="#numeric.linalg.cholesky" title="Permalink to this definition">¶</a></dt>
 <dd><p>Cholesky decomposition.</p>
-<p>Return the Cholesky decomposition, <code class="docutils literal"><span class="pre">L</span> <span class="pre">*</span> <span class="pre">L.H</span></code>, of the square matrix <code class="docutils literal"><span class="pre">a</span></code>,
-where <code class="docutils literal"><span class="pre">L</span></code> is lower-triangular and .H is the conjugate transpose operator
-(which is the ordinary transpose if <code class="docutils literal"><span class="pre">a</span></code> is real-valued).  <code class="docutils literal"><span class="pre">a</span></code> must be
-Hermitian (symmetric if real-valued) and positive-definite.  Only <code class="docutils literal"><span class="pre">L</span></code> is
+<p>Return the Cholesky decomposition, <code class="docutils literal notranslate"><span class="pre">L</span> <span class="pre">*</span> <span class="pre">L.H</span></code>, of the square matrix <code class="docutils literal notranslate"><span class="pre">a</span></code>,
+where <code class="docutils literal notranslate"><span class="pre">L</span></code> is lower-triangular and .H is the conjugate transpose operator
+(which is the ordinary transpose if <code class="docutils literal notranslate"><span class="pre">a</span></code> is real-valued).  <code class="docutils literal notranslate"><span class="pre">a</span></code> must be
+Hermitian (symmetric if real-valued) and positive-definite.  Only <code class="docutils literal notranslate"><span class="pre">L</span></code> is
 actually returned.</p>
-<p><code class="docutils literal"><span class="pre">Parameters</span></code></p>
-<dl class="docutils">
-<dt>a <span class="classifier-delimiter">:</span> <span class="classifier">(M, M) array_like</span></dt>
-<dd>Hermitian (symmetric if all elements are real), positive-definite
-input matrix.</dd>
+<p><code class="docutils literal notranslate"><span class="pre">Parameters</span></code></p>
+<dl class="simple">
+<dt>a<span class="classifier">(M, M) array_like</span></dt><dd><p>Hermitian (symmetric if all elements are real), positive-definite
+input matrix.</p>
+</dd>
 </dl>
-<p><code class="docutils literal"><span class="pre">Returns</span></code></p>
-<dl class="docutils">
-<dt>L <span class="classifier-delimiter">:</span> <span class="classifier">(M, M) array_like</span></dt>
-<dd>Upper or lower-triangular Cholesky factor of <code class="docutils literal"><span class="pre">a</span></code>.  Returns a
-matrix object if <code class="docutils literal"><span class="pre">a</span></code> is a matrix object.</dd>
+<p><code class="docutils literal notranslate"><span class="pre">Returns</span></code></p>
+<dl class="simple">
+<dt>L<span class="classifier">(M, M) array_like</span></dt><dd><p>Upper or lower-triangular Cholesky factor of <code class="docutils literal notranslate"><span class="pre">a</span></code>.  Returns a
+matrix object if <code class="docutils literal notranslate"><span class="pre">a</span></code> is a matrix object.</p>
+</dd>
 </dl>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">a1</span> <span class="o">=</span> <span class="n">array</span><span class="p">([[</span><span class="mi">25</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">],[</span><span class="mi">15</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">11</span><span class="p">]])</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a1</span> <span class="o">=</span> <span class="n">array</span><span class="p">([[</span><span class="mi">25</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">],[</span><span class="mi">15</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">11</span><span class="p">]])</span>
 <span class="n">r1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">cholesky</span><span class="p">(</span><span class="n">a1</span><span class="p">)</span>
 <span class="nb">print</span> <span class="n">r1</span>
 
@@ -129,7 +120,7 @@ matrix object if <code class="docutils literal"><span class="pre">a</span></code
 </pre></div>
 </div>
 <p>Result:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">run</span> <span class="n">script</span><span class="o">...</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">run</span> <span class="n">script</span><span class="o">...</span>
 <span class="go">array([[5.0, 0.0, 0.0]</span>
 <span class="go">      [3.0, 3.0, 0.0]</span>
 <span class="go">      [-1.0, 1.0, 3.0]])</span>
@@ -180,7 +171,7 @@ matrix object if <code class="docutils literal"><span class="pre">a</span></code
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2019, MeteoInfo developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
     </div>
   </body>
 </html>

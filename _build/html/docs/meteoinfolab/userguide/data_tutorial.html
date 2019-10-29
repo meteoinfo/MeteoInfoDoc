@@ -1,33 +1,24 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>Dataset tutorial &#8212; MeteoInfo 2.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../',
-        VERSION:     '2.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="The MeteoInfoLab API" href="../api.html" />
     <link rel="prev" title="Arrays" href="arrays.html" /> 
-  </head>
-  <body>
+  </head><body>
 
 <div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
 <a href="../../../index.html"><img src="../../../_static/logo.jpg" border="0"/></a></div>
@@ -77,13 +68,13 @@
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -97,14 +88,14 @@
   <div class="section" id="dataset-tutorial">
 <span id="docs-meteoinfolab-user-guid-data-tutorial"></span><h1>Dataset tutorial<a class="headerlink" href="#dataset-tutorial" title="Permalink to this headline">¶</a></h1>
 <p>MeteoInfoLab supports many kinds of scientific data formats such as netCDF, HDF, GRIB, GrADS, ARL, MM5, MICAPS and so on. Unidata
-netCDF Java library was used for reading netCDF, HDF and GRIB data formats. Most data formats file can be opened using <code class="docutils literal"><span class="pre">addfile()</span></code>
+netCDF Java library was used for reading netCDF, HDF and GRIB data formats. Most data formats file can be opened using <code class="docutils literal notranslate"><span class="pre">addfile()</span></code>
 function which return a MIDataFile object.  The path can be omitted if the data file was in the current folder:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="s1">&#39;model.ctl&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="s1">&#39;model.ctl&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Query data file content including dimensions, attributes and variables by typing the data file
 variable:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span>
 <span class="go">File Name: D:/Temp/grads/model.ctl</span>
 <span class="go">Dimensions: 5</span>
 <span class="go">    X = 72;</span>
@@ -138,12 +129,12 @@ variable:</p>
 </pre></div>
 </div>
 <p>Get data variable from data file object:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;PS&#39;</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;PS&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
-<p><code class="docutils literal"><span class="pre">PS</span></code> variable has 3 dimensions of time, latitude and longitude. Get 2 dimension data array from the data variable with slice
+<p><code class="docutils literal notranslate"><span class="pre">PS</span></code> variable has 3 dimensions of time, latitude and longitude. Get 2 dimension data array from the data variable with slice
 by fixing time dimension:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ps</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">,:,:]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ps</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">,:,:]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ps</span>
 <span class="go">array([[670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857,</span>
 <span class="go">      670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857,</span>
@@ -166,19 +157,19 @@ by fixing time dimension:</p>
 </pre></div>
 </div>
 <p>Plot map: create a map axes with axesm function; read shape file, view geodata layer:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">axesm</span><span class="p">()</span>    <span class="c1">#Create a map axes</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">axesm</span><span class="p">()</span>    <span class="c1">#Create a map axes</span>
 <span class="go">&lt;mipylib.plotlib.axes.MapAxes instance at 0x62&gt;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>    <span class="c1">#Read the geodata in &#39;map&#39; folder with file name - .shp can be ignored</span>
 </pre></div>
 </div>
 <img alt="../../../_images/tutorial_map.png" src="../../../_images/tutorial_map.png" />
 <p>Create and plot filled contour layer from the dimension data array (20 is number of contour levels):</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">layer</span> <span class="o">=</span> <span class="n">contourfm</span><span class="p">(</span><span class="n">ps</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">layer</span> <span class="o">=</span> <span class="n">contourfm</span><span class="p">(</span><span class="n">ps</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
 </pre></div>
 </div>
 <img alt="../../../_images/tutorial_ps_contourfm.png" src="../../../_images/tutorial_ps_contourfm.png" />
 <p>Add title, x and y labels and colorbar:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Pressure&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Pressure&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Longitude&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Latitude&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span>
@@ -186,24 +177,24 @@ by fixing time dimension:</p>
 </div>
 <img alt="../../../_images/tutorial_ps_colorbar.png" src="../../../_images/tutorial_ps_colorbar.png" />
 <p>Save figure:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;D:/Temp/test/press.png&#39;</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;D:/Temp/test/press.png&#39;</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Now try to get 0-D <code class="docutils literal"><span class="pre">Z</span></code> array (single value) along time dimension by fixing time, level, latitude and longitude dimensions:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">hgt</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;Z&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;500&#39;</span><span class="p">,</span><span class="s1">&#39;40&#39;</span><span class="p">,</span><span class="s1">&#39;-90&#39;</span><span class="p">]</span>
+<p>Now try to get 0-D <code class="docutils literal notranslate"><span class="pre">Z</span></code> array (single value) along time dimension by fixing time, level, latitude and longitude dimensions:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">hgt</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;Z&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;500&#39;</span><span class="p">,</span><span class="s1">&#39;40&#39;</span><span class="p">,</span><span class="s1">&#39;-90&#39;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">hgt</span>
 <span class="go">5759.111328125</span>
 </pre></div>
 </div>
-<p>Get 1-D <code class="docutils literal"><span class="pre">Z</span></code> array along longitude dimension and plot it:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">hgt</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;Z&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;500&#39;</span><span class="p">,</span><span class="s1">&#39;40&#39;</span><span class="p">,</span><span class="s1">&#39;180:360&#39;</span><span class="p">]</span>
+<p>Get 1-D <code class="docutils literal notranslate"><span class="pre">Z</span></code> array along longitude dimension and plot it:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">hgt</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;Z&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;500&#39;</span><span class="p">,</span><span class="s1">&#39;40&#39;</span><span class="p">,</span><span class="s1">&#39;180:360&#39;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">clf</span><span class="p">()</span>             <span class="c1">#Clear figure</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">plot</span><span class="p">(</span><span class="n">hgt</span><span class="p">,</span> <span class="s1">&#39;b-*&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <img alt="../../../_images/tutorial_hgt_plot.png" src="../../../_images/tutorial_hgt_plot.png" />
-<p>Get and plot 2-D <code class="docutils literal"><span class="pre">Z</span></code> array with dimensions of latitude and longitude:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">hgt</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;Z&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;500&#39;</span><span class="p">,</span><span class="s1">&#39;0:90&#39;</span><span class="p">,</span><span class="s1">&#39;180:360&#39;</span><span class="p">]</span>
+<p>Get and plot 2-D <code class="docutils literal notranslate"><span class="pre">Z</span></code> array with dimensions of latitude and longitude:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">hgt</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;Z&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;500&#39;</span><span class="p">,</span><span class="s1">&#39;0:90&#39;</span><span class="p">,</span><span class="s1">&#39;180:360&#39;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">clf</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">axesm</span><span class="p">()</span>
 <span class="go">(org.meteoinfo.chart.plot.MapPlot@c3d5957, +proj=longlat +lat_0=0 +lon_0=0 +lat_1=30 +lat_2=60 +lat_ts=0 +k=1 +x_0=0 +y_0=0 +h=0 )</span>
@@ -213,8 +204,8 @@ by fixing time dimension:</p>
 </pre></div>
 </div>
 <img alt="../../../_images/tutorial_hgt_contourm.png" src="../../../_images/tutorial_hgt_contourm.png" />
-<p>Get and plot 2-D <code class="docutils literal"><span class="pre">T</span></code> array with dimensions of level and latitude:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">clf</span><span class="p">()</span>
+<p>Get and plot 2-D <code class="docutils literal notranslate"><span class="pre">T</span></code> array with dimensions of level and latitude:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">clf</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tair</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;T&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;1000:100&#39;</span><span class="p">,</span><span class="s1">&#39;-90:90&#39;</span><span class="p">,</span><span class="s1">&#39;270&#39;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">u</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;U&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;1000:100&#39;</span><span class="p">,</span><span class="s1">&#39;-90:90&#39;</span><span class="p">,</span><span class="s1">&#39;270&#39;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">lev1</span> <span class="o">=</span> <span class="n">tair</span><span class="o">.</span><span class="n">dimvalue</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>    <span class="c1">#Get level array</span>
@@ -236,7 +227,7 @@ by fixing time dimension:</p>
 </div>
 <img alt="../../../_images/tutorial_tair_contour.png" src="../../../_images/tutorial_tair_contour.png" />
 <p>Another example, in this case with X and T varying (Hovmoller plot):</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">clf</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">clf</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">hgt</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;Z&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span><span class="s1">&#39;500&#39;</span><span class="p">,</span><span class="s1">&#39;40&#39;</span><span class="p">,</span><span class="s1">&#39;180:360&#39;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">layer</span> <span class="o">=</span> <span class="n">contour</span><span class="p">(</span><span class="n">hgt</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">clabel</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span>
@@ -248,24 +239,24 @@ by fixing time dimension:</p>
 </div>
 <img alt="../../../_images/tutorial_hgt_time.png" src="../../../_images/tutorial_hgt_time.png" />
 <p>Now that you know how to select the portion of the data set to view, we will move on to the topic of operations on the data.
-First, get 2-D <code class="docutils literal"><span class="pre">T</span></code> array with latitude and longitude dimensions:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">clf</span><span class="p">()</span>
+First, get 2-D <code class="docutils literal notranslate"><span class="pre">T</span></code> array with latitude and longitude dimensions:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">clf</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;T&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;500&#39;</span><span class="p">,</span><span class="s1">&#39;0:90&#39;</span><span class="p">,</span><span class="s1">&#39;180:360&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>Now say that we want to see the temperature in Fahrenheit instead of Kelvin. We can do the conversion by entering:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="mf">273.16</span><span class="p">)</span><span class="o">*</span><span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="o">+</span><span class="mi">32</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="mf">273.16</span><span class="p">)</span><span class="o">*</span><span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="o">+</span><span class="mi">32</span>
 </pre></div>
 </div>
 <p>Any expression may be entered that involves the standard operators of +, -, <a href="#id1"><span class="problematic" id="id2">*</span></a>, and /, and which involves operands which may be
 constants, variables, or functions. An example involving functions:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">u</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;U&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;500&#39;</span><span class="p">,</span><span class="s1">&#39;0:90&#39;</span><span class="p">,</span><span class="s1">&#39;180:360&#39;</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">u</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;U&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;500&#39;</span><span class="p">,</span><span class="s1">&#39;0:90&#39;</span><span class="p">,</span><span class="s1">&#39;180:360&#39;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;V&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;500&#39;</span><span class="p">,</span><span class="s1">&#39;0:90&#39;</span><span class="p">,</span><span class="s1">&#39;180:360&#39;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ws</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">u</span><span class="o">*</span><span class="n">u</span><span class="o">+</span><span class="n">v</span><span class="o">*</span><span class="n">v</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>to calculate the magnitude of the wind. A function is provided to do this calculation directly:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ws</span> <span class="o">=</span> <span class="n">magnitude</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ws</span> <span class="o">=</span> <span class="n">magnitude</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">axesm</span><span class="p">()</span>
 <span class="go">(org.meteoinfo.chart.plot.MapPlot@c3d5957, +proj=longlat +lat_0=0 +lon_0=0 +lat_1=30 +lat_2=60 +lat_ts=0 +k=1 +x_0=0 +y_0=0 +h=0 )</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">geoshow</span><span class="p">(</span><span class="n">mlayer</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
@@ -275,13 +266,13 @@ constants, variables, or functions. An example involving functions:</p>
 </div>
 <img alt="../../../_images/tutorial_speed_contourm.png" src="../../../_images/tutorial_speed_contourm.png" />
 <p>View wind vectors:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cll</span><span class="p">()</span>    <span class="c1">#Clear last added layer</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cll</span><span class="p">()</span>    <span class="c1">#Clear last added layer</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">quiverm</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>    <span class="c1">#Plot wind vector</span>
 </pre></div>
 </div>
 <p>Here we are displaying two expressions, the first for the U component of the vector; the 2nd the V component of the vector. We can
 also colorize the vectors by specifying a 3rd field:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cll</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cll</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">q</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;Q&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;500&#39;</span><span class="p">,</span><span class="s1">&#39;0:90&#39;</span><span class="p">,</span><span class="s1">&#39;180:360&#39;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">layer</span> <span class="o">=</span> <span class="n">quiverm</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">q</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">quiverkey</span><span class="p">(</span><span class="n">layer</span><span class="p">,</span> <span class="mf">0.94</span><span class="p">,</span> <span class="mf">0.18</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">bbox</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;edge&#39;</span><span class="p">:</span><span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;fill&#39;</span><span class="p">:</span><span class="kc">True</span><span class="p">})</span>    <span class="c1">#Plot wind vector key</span>
@@ -289,7 +280,7 @@ also colorize the vectors by specifying a 3rd field:</p>
 </div>
 <img alt="../../../_images/tutorial_quiverm.png" src="../../../_images/tutorial_quiverm.png" />
 <p>To alter the projection:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">clf</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">clf</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">axesm</span><span class="p">(</span><span class="n">proj</span><span class="o">=</span><span class="s1">&#39;stere&#39;</span><span class="p">,</span> <span class="n">lat_0</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span> <span class="n">lon_0</span><span class="o">=-</span><span class="mi">92</span><span class="p">,</span> <span class="n">gridline</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="go">&lt;mipylib.plotlib.axes.MapAxes instance at 0x63&gt;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">geoshow</span><span class="p">(</span><span class="n">mlayer</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
@@ -337,7 +328,7 @@ also colorize the vectors by specifying a 3rd field:</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2019, MeteoInfo developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
     </div>
   </body>
 </html>

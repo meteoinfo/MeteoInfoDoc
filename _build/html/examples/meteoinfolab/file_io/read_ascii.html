@@ -1,33 +1,24 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>Read ASCII file &#8212; MeteoInfo 2.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../',
-        VERSION:     '2.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Read lighting data" href="read_lighting.html" />
     <link rel="prev" title="File input and output" href="../file_io.html" /> 
-  </head>
-  <body>
+  </head><body>
 
 <div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
 <a href="../../../index.html"><img src="../../../_static/logo.jpg" border="0"/></a></div>
@@ -76,13 +67,13 @@
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -95,11 +86,11 @@
             
   <div class="section" id="read-ascii-file">
 <span id="examples-meteoinfolab-file-io-read-ascii"></span><h1>Read ASCII file<a class="headerlink" href="#read-ascii-file" title="Permalink to this headline">¶</a></h1>
-<p>The <code class="docutils literal"><span class="pre">asciiread()</span></code> function was used to read array data from an ASCII file. Some header lines could
-be skiped by setting <code class="docutils literal"><span class="pre">headerlines</span></code> argument. The shape of the array could be set using <code class="docutils literal"><span class="pre">shape</span></code>
+<p>The <code class="docutils literal notranslate"><span class="pre">asciiread()</span></code> function was used to read array data from an ASCII file. Some header lines could
+be skiped by setting <code class="docutils literal notranslate"><span class="pre">headerlines</span></code> argument. The shape of the array could be set using <code class="docutils literal notranslate"><span class="pre">shape</span></code>
 argument.</p>
 <p>Read grid data from ASCII file:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">rain</span> <span class="o">=</span> <span class="n">asciiread</span><span class="p">(</span><span class="s1">&#39;D:/Temp/ascii/SURF_CLI_CHN_PRE_DAY_GRID_0.5-20120702.txt&#39;</span><span class="p">,</span><span class="n">headerlines</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">72</span><span class="p">,</span><span class="mi">128</span><span class="p">))</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rain</span> <span class="o">=</span> <span class="n">asciiread</span><span class="p">(</span><span class="s1">&#39;D:/Temp/ascii/SURF_CLI_CHN_PRE_DAY_GRID_0.5-20120702.txt&#39;</span><span class="p">,</span><span class="n">headerlines</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">72</span><span class="p">,</span><span class="mi">128</span><span class="p">))</span>
 <span class="n">rain1</span> <span class="o">=</span> <span class="n">rain</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">,:]</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">arange1</span><span class="p">(</span><span class="mi">72</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">arange1</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
@@ -114,9 +105,9 @@ argument.</p>
 </pre></div>
 </div>
 <img alt="../../../_images/ascii_grid1.png" src="../../../_images/ascii_grid1.png" />
-<p>Read station data from ASCII file. <code class="docutils literal"><span class="pre">numasciicol()</span></code> and <code class="docutils literal"><span class="pre">numasciirow()</span></code> functions were used
+<p>Read station data from ASCII file. <code class="docutils literal notranslate"><span class="pre">numasciicol()</span></code> and <code class="docutils literal notranslate"><span class="pre">numasciirow()</span></code> functions were used
 to get column and row number of the file:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;D:/Temp/ascii/flood.dat&#39;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;D:/Temp/ascii/flood.dat&#39;</span>
 <span class="n">ncol</span> <span class="o">=</span> <span class="n">numasciicol</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
 <span class="n">nrow</span> <span class="o">=</span> <span class="n">numasciirow</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
 <span class="n">a</span> <span class="o">=</span> <span class="n">asciiread</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">nrow</span><span class="p">,</span><span class="n">ncol</span><span class="p">))</span>
@@ -173,7 +164,7 @@ to get column and row number of the file:</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2019, MeteoInfo developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
     </div>
   </body>
 </html>

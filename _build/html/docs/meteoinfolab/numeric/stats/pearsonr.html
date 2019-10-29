@@ -1,33 +1,24 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>pearsonr &#8212; MeteoInfo 2.0 documentation</title>
     <link rel="stylesheet" href="../../../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../../',
-        VERSION:     '2.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="percentile" href="percentile.html" />
     <link rel="prev" title="mlinregress" href="mlinregress.html" /> 
-  </head>
-  <body>
+  </head><body>
 
 <div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
 <a href="../../../../index.html"><img src="../../../../_static/logo.jpg" border="0"/></a></div>
@@ -78,13 +69,13 @@
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -99,7 +90,7 @@
 <span id="docs-meteoinfolab-numeric-stats-pearsonr"></span><h1>pearsonr<a class="headerlink" href="#pearsonr" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="numeric.stats.pearsonr">
-<code class="descclassname">numeric.stats.</code><code class="descname">pearsonr</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#numeric.stats.pearsonr" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">numeric.stats.</code><code class="sig-name descname">pearsonr</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#numeric.stats.pearsonr" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculates a Pearson correlation coefficient and the p-value for testing non-correlation.</p>
 <p>The Pearson correlation coefficient measures the linear relationship between two datasets.
 Strictly speaking, Pearson’s correlation requires that each dataset be normally distributed,
@@ -111,23 +102,19 @@ correlations imply that as x increases, y decreases.</p>
 that have a Pearson correlation at least as extreme as the one computed from these datasets.
 The p-values are not entirely reliable but are probably reasonable for datasets larger than
 500 or so.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>x</strong> – (<em>array_like</em>) x data array.</li>
-<li><strong>y</strong> – (<em>array_like</em>) y data array.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – (<em>array_like</em>) x data array.</p></li>
+<li><p><strong>y</strong> – (<em>array_like</em>) y data array.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Pearson’s correlation coefficient and 2-tailed p-value.</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Pearson’s correlation coefficient and 2-tailed p-value.</p>
+</dd>
+</dl>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mipylib.numeric</span> <span class="k">import</span> <span class="n">stats</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mipylib.numeric</span> <span class="k">import</span> <span class="n">stats</span>
 
 <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mf">29.81</span><span class="p">,</span><span class="mf">30.04</span><span class="p">,</span><span class="mf">41.7</span><span class="p">,</span><span class="mf">43.71</span><span class="p">,</span><span class="mf">28.75</span><span class="p">,</span><span class="mf">37.73</span><span class="p">,</span><span class="mf">52.25</span><span class="p">,</span><span class="mf">32.41</span><span class="p">,</span><span class="mf">25.67</span><span class="p">,</span><span class="mf">28.17</span><span class="p">,</span><span class="mf">25.71</span><span class="p">,</span><span class="mf">36.05</span><span class="p">,</span><span class="mf">37.62</span><span class="p">,</span><span class="mf">34.28</span><span class="p">,</span><span class="mf">38.82</span><span class="p">,</span><span class="mf">40.15</span><span class="p">,</span><span class="mf">35.69</span><span class="p">,</span><span class="mf">28.36</span><span class="p">,</span><span class="mf">39.56</span><span class="p">,</span><span class="mf">52.56</span><span class="p">,</span><span class="mf">54.14</span><span class="p">,</span><span class="mf">50.76</span><span class="p">,</span><span class="mf">39.35</span><span class="p">,</span><span class="mf">43.16</span><span class="p">]</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mf">51.6</span><span class="p">,</span><span class="mi">46</span><span class="p">,</span><span class="mf">64.3</span><span class="p">,</span><span class="mf">83.4</span><span class="p">,</span><span class="mf">65.9</span><span class="p">,</span><span class="mf">49.5</span><span class="p">,</span><span class="mf">88.6</span><span class="p">,</span><span class="mf">101.4</span><span class="p">,</span><span class="mf">55.9</span><span class="p">,</span><span class="mf">41.8</span><span class="p">,</span><span class="mf">33.4</span><span class="p">,</span><span class="mf">57.3</span><span class="p">,</span><span class="mf">66.5</span><span class="p">,</span><span class="mf">40.5</span><span class="p">,</span><span class="mf">72.3</span><span class="p">,</span><span class="mi">70</span><span class="p">,</span><span class="mf">83.3</span><span class="p">,</span><span class="mf">65.8</span><span class="p">,</span><span class="mf">63.1</span><span class="p">,</span><span class="mf">83.4</span><span class="p">,</span><span class="mi">102</span><span class="p">,</span><span class="mi">94</span><span class="p">,</span><span class="mi">77</span><span class="p">,</span><span class="mi">77</span><span class="p">]</span>
@@ -136,7 +123,7 @@ The p-values are not entirely reliable but are probably reasonable for datasets 
 </pre></div>
 </div>
 <p>Result:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">run</span> <span class="n">script</span><span class="o">...</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">run</span> <span class="n">script</span><span class="o">...</span>
 <span class="go">0.700798023949 0.000136713449709</span>
 </pre></div>
 </div>
@@ -181,7 +168,7 @@ The p-values are not entirely reliable but are probably reasonable for datasets 
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2019, MeteoInfo developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
     </div>
   </body>
 </html>

@@ -1,33 +1,24 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>3-D plots &#8212; MeteoInfo 2.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../',
-        VERSION:     '2.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Oblique section plot" href="oblique_section_plot.html" />
     <link rel="prev" title="Image process" href="image_process.html" /> 
-  </head>
-  <body>
+  </head><body>
 
 <div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
 <a href="../../../index.html"><img src="../../../_static/logo.jpg" border="0"/></a></div>
@@ -76,13 +67,13 @@
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -95,12 +86,12 @@
             
   <div class="section" id="d-plots">
 <span id="examples-meteoinfolab-plot-types-plot-3d"></span><h1>3-D plots<a class="headerlink" href="#d-plots" title="Permalink to this headline">¶</a></h1>
-<p>Create a 3D axes using <code class="docutils literal"><span class="pre">ax</span> <span class="pre">=</span> <span class="pre">axes3d()</span></code>, then use the plot functions of the 3D axes object (ax)
-to plot 3D plots. The functions includes: including <code class="docutils literal"><span class="pre">plot()</span></code>, <code class="docutils literal"><span class="pre">scatter()</span></code>,
-<code class="docutils literal"><span class="pre">contour()</span></code>, <code class="docutils literal"><span class="pre">contourf()</span></code>, <code class="docutils literal"><span class="pre">imshow()</span></code>, <code class="docutils literal"><span class="pre">plot_surface()</span></code>, <code class="docutils literal"><span class="pre">plot_wireframe()</span></code> and
-<code class="docutils literal"><span class="pre">plot_layer</span></code>.</p>
+<p>Create a 3D axes using <code class="docutils literal notranslate"><span class="pre">ax</span> <span class="pre">=</span> <span class="pre">axes3d()</span></code>, then use the plot functions of the 3D axes object (ax)
+to plot 3D plots. The functions includes: including <code class="docutils literal notranslate"><span class="pre">plot()</span></code>, <code class="docutils literal notranslate"><span class="pre">scatter()</span></code>,
+<code class="docutils literal notranslate"><span class="pre">contour()</span></code>, <code class="docutils literal notranslate"><span class="pre">contourf()</span></code>, <code class="docutils literal notranslate"><span class="pre">imshow()</span></code>, <code class="docutils literal notranslate"><span class="pre">plot_surface()</span></code>, <code class="docutils literal notranslate"><span class="pre">plot_wireframe()</span></code> and
+<code class="docutils literal notranslate"><span class="pre">plot_layer</span></code>.</p>
 <p><strong>Line plots</strong>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">z</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">20</span> <span class="o">*</span> <span class="n">z</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">z</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">20</span> <span class="o">*</span> <span class="n">z</span><span class="p">)</span>
 
@@ -112,7 +103,7 @@ to plot 3D plots. The functions includes: including <code class="docutils litera
 </div>
 <img alt="../../../_images/plot_3d.png" src="../../../_images/plot_3d.png" />
 <p><strong>Scatter plots</strong>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">z</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">20</span> <span class="o">*</span> <span class="n">z</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">z</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">20</span> <span class="o">*</span> <span class="n">z</span><span class="p">)</span>
 <span class="n">c</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
@@ -126,7 +117,7 @@ to plot 3D plots. The functions includes: including <code class="docutils litera
 </div>
 <img alt="../../../_images/scatter_3d.png" src="../../../_images/scatter_3d.png" />
 <p><strong>Wireframe and contour plots</strong>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.7</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.7</span>
 <span class="n">phi_ext</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">*</span> <span class="mf">0.5</span>
 <span class="n">N</span> <span class="o">=</span> <span class="mi">25</span>
 <span class="n">x1</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
@@ -145,7 +136,7 @@ to plot 3D plots. The functions includes: including <code class="docutils litera
 </div>
 <img alt="../../../_images/wireframe_contour.png" src="../../../_images/wireframe_contour.png" />
 <p><strong>Wireframe and contourf plots</strong>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.7</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.7</span>
 <span class="n">phi_ext</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">*</span> <span class="mf">0.5</span>
 <span class="n">N</span> <span class="o">=</span> <span class="mi">25</span>
 <span class="n">x1</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
@@ -164,7 +155,7 @@ to plot 3D plots. The functions includes: including <code class="docutils litera
 </div>
 <img alt="../../../_images/wireframe_contourf.png" src="../../../_images/wireframe_contourf.png" />
 <p><strong>Surface plots</strong>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.7</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.7</span>
 <span class="n">phi_ext</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">*</span> <span class="mf">0.5</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
@@ -181,7 +172,7 @@ to plot 3D plots. The functions includes: including <code class="docutils litera
 </div>
 <img alt="../../../_images/surface_1.png" src="../../../_images/surface_1.png" />
 <p><strong>Image plots</strong>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;D:/Temp/nc/air_clm.nc&#39;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;D:/Temp/nc/air_clm.nc&#39;</span>
 <span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
 <span class="n">ps</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;aveair&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,:,:,</span><span class="s1">&#39;120&#39;</span><span class="p">]</span>
 <span class="n">yy</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="n">ps</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
@@ -202,7 +193,7 @@ to plot 3D plots. The functions includes: including <code class="docutils litera
 </div>
 <img alt="../../../_images/imshow_xdir_3d.png" src="../../../_images/imshow_xdir_3d.png" />
 <p><strong>Trajectory plots</strong>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1">#Open trajectory data and get trajectory layer</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Open trajectory data and get trajectory layer</span>
 <span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;D:/Temp/HYSPLIT/traj_20131211_00&#39;</span>
 <span class="n">f</span> <span class="o">=</span> <span class="n">addfile_hytraj</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
 <span class="n">tlayer</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">trajlayer</span><span class="p">()</span>
@@ -268,7 +259,7 @@ to plot 3D plots. The functions includes: including <code class="docutils litera
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2019, MeteoInfo developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
     </div>
   </body>
 </html>

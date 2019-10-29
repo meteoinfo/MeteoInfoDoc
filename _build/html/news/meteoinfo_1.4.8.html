@@ -1,33 +1,24 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>MeteoInfo 1.4.8 was released (2018-2-8) &#8212; MeteoInfo 2.0 documentation</title>
     <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '2.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="MeteoInfo 1.4.7 was released (2017-11-2)" href="meteoinfo_1.4.7.html" />
     <link rel="prev" title="MeteoInfo 1.4.9 was released (2018-4-13)" href="meteoinfo_1.4.9.html" /> 
-  </head>
-  <body>
+  </head><body>
 
 <div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
 <a href="../index.html"><img src="../_static/logo.jpg" border="0"/></a></div>
@@ -74,13 +65,13 @@
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -95,18 +86,18 @@
 <span id="news-meteoinfo-1-4-8"></span><h1>MeteoInfo 1.4.8 was released (2018-2-8)<a class="headerlink" href="#meteoinfo-1-4-8-was-released-2018-2-8" title="Permalink to this headline">¶</a></h1>
 <blockquote>
 <div><ul class="simple">
-<li>Add <code class="docutils literal"><span class="pre">mlinregress</span></code> (mutiple linear regression function) and <code class="docutils literal"><span class="pre">percentile</span></code> functions in <code class="docutils literal"><span class="pre">stats</span></code> module.</li>
-<li>Add Add DOUBLE_CIRCLE and CIRCLE_STAR point symbols.</li>
-<li>Add PointZ shape support for shape file.</li>
-<li>Add loadmip method in MapAxes class to load MeteoInfo project file (.mip) in MeteoInfoLab.</li>
-<li>Add <code class="docutils literal"><span class="pre">bilinear</span></code> and <code class="docutils literal"><span class="pre">bicubic</span></code> interpolation property in ImageLayer, also interpolation argument was added in <code class="docutils literal"><span class="pre">imshow</span></code> and <code class="docutils literal"><span class="pre">imshowm</span></code> functions.</li>
-<li>Add <code class="docutils literal"><span class="pre">barh</span></code> function in <code class="docutils literal"><span class="pre">miplot</span></code> module to plot horizontal bar chart.</li>
-<li>Add up folder and folder update buttons in <code class="docutils literal"><span class="pre">File</span> <span class="pre">explorer</span></code> panel.</li>
-<li>Some bug fix and existing functions update.</li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">mlinregress</span></code> (mutiple linear regression function) and <code class="docutils literal notranslate"><span class="pre">percentile</span></code> functions in <code class="docutils literal notranslate"><span class="pre">stats</span></code> module.</p></li>
+<li><p>Add Add DOUBLE_CIRCLE and CIRCLE_STAR point symbols.</p></li>
+<li><p>Add PointZ shape support for shape file.</p></li>
+<li><p>Add loadmip method in MapAxes class to load MeteoInfo project file (.mip) in MeteoInfoLab.</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">bilinear</span></code> and <code class="docutils literal notranslate"><span class="pre">bicubic</span></code> interpolation property in ImageLayer, also interpolation argument was added in <code class="docutils literal notranslate"><span class="pre">imshow</span></code> and <code class="docutils literal notranslate"><span class="pre">imshowm</span></code> functions.</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">barh</span></code> function in <code class="docutils literal notranslate"><span class="pre">miplot</span></code> module to plot horizontal bar chart.</p></li>
+<li><p>Add up folder and folder update buttons in <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">explorer</span></code> panel.</p></li>
+<li><p>Some bug fix and existing functions update.</p></li>
 </ul>
 </div></blockquote>
 <p><strong>Image interpolation</strong>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 
 <span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
 <span class="k">for</span> <span class="n">ax</span><span class="p">,</span> <span class="n">interp</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">axs</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;nearest&#39;</span><span class="p">,</span> <span class="s1">&#39;bilinear&#39;</span><span class="p">,</span> <span class="s1">&#39;bicubic&#39;</span><span class="p">]):</span>
@@ -120,7 +111,7 @@
 </div>
 <img alt="../_images/imshow_interpolation.png" src="../_images/imshow_interpolation.png" />
 <p><strong>Horizontal bar</strong>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">menMeans</span> <span class="o">=</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">27</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">menMeans</span> <span class="o">=</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">27</span><span class="p">]</span>
 <span class="n">std_men</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">menMeans</span><span class="p">)</span>
 <span class="n">ind</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
@@ -179,7 +170,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2019, MeteoInfo developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
     </div>
   </body>
 </html>

@@ -1,33 +1,24 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>asciiwrite &#8212; MeteoInfo 2.0 documentation</title>
     <link rel="stylesheet" href="../../../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../../',
-        VERSION:     '2.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="binread" href="binread.html" />
     <link rel="prev" title="asciiread" href="asciiread.html" /> 
-  </head>
-  <body>
+  </head><body>
 
 <div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
 <a href="../../../../index.html"><img src="../../../../_static/logo.jpg" border="0"/></a></div>
@@ -78,13 +69,13 @@
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -99,25 +90,21 @@
 <span id="docs-meteoinfolab-dataset-midata-asciiwrite"></span><h1>asciiwrite<a class="headerlink" href="#asciiwrite" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="mipylib.dataset.midata.asciiwrite">
-<code class="descclassname">mipylib.dataset.midata.</code><code class="descname">asciiwrite</code><span class="sig-paren">(</span><em>fn</em>, <em>data</em>, <em>colnum=80</em>, <em>format=None</em>, <em>delimiter=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mipylib.dataset.midata.asciiwrite" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mipylib.dataset.midata.</code><code class="sig-name descname">asciiwrite</code><span class="sig-paren">(</span><em class="sig-param">fn</em>, <em class="sig-param">data</em>, <em class="sig-param">colnum=80</em>, <em class="sig-param">format=None</em>, <em class="sig-param">delimiter=None</em><span class="sig-paren">)</span><a class="headerlink" href="#mipylib.dataset.midata.asciiwrite" title="Permalink to this definition">¶</a></dt>
 <dd><p>Write array data into a ASCII data file.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>fn</strong> – (<em>string</em>) Path needed to locate ASCII file.</li>
-<li><strong>data</strong> – (<em>array_like</em>) A numeric array variable of any dimensionality.</li>
-<li><strong>colnum</strong> – (<em>int</em>) Column number of each line.</li>
-<li><strong>format</strong> – (<em>string</em>) Number format.</li>
-<li><strong>delimiter</strong> – (<em>string</em>) Delimiter string.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fn</strong> – (<em>string</em>) Path needed to locate ASCII file.</p></li>
+<li><p><strong>data</strong> – (<em>array_like</em>) A numeric array variable of any dimensionality.</p></li>
+<li><p><strong>colnum</strong> – (<em>int</em>) Column number of each line.</p></li>
+<li><p><strong>format</strong> – (<em>string</em>) Number format.</p></li>
+<li><p><strong>delimiter</strong> – (<em>string</em>) Delimiter string.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p>Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="s1">&#39;D:/Temp/GrADS/model.ctl&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="s1">&#39;D:/Temp/GrADS/model.ctl&#39;</span><span class="p">)</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;PS&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,:,:]</span>
 <span class="n">asciiwrite</span><span class="p">(</span><span class="s1">&#39;C:/Temp/test/test_asciisave.txt&#39;</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%-10.2f</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
@@ -163,7 +150,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2019, MeteoInfo developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
     </div>
   </body>
 </html>

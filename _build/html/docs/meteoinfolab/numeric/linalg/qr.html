@@ -1,33 +1,24 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>QR decomposition &#8212; MeteoInfo 2.0 documentation</title>
     <link rel="stylesheet" href="../../../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../../',
-        VERSION:     '2.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="SVD decomposition" href="svd.html" />
     <link rel="prev" title="LU decomposition" href="lu.html" /> 
-  </head>
-  <body>
+  </head><body>
 
 <div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
 <a href="../../../../index.html"><img src="../../../../_static/logo.jpg" border="0"/></a></div>
@@ -78,13 +69,13 @@
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -99,31 +90,31 @@
 <span id="docs-meteoinfolab-numeric-linalg-qr"></span><h1>QR decomposition<a class="headerlink" href="#qr-decomposition" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="numeric.linalg.qr">
-<code class="descclassname">numeric.linalg.</code><code class="descname">qr</code><span class="sig-paren">(</span><em>a</em><span class="sig-paren">)</span><a class="headerlink" href="#numeric.linalg.qr" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">numeric.linalg.</code><code class="sig-name descname">qr</code><span class="sig-paren">(</span><em class="sig-param">a</em><span class="sig-paren">)</span><a class="headerlink" href="#numeric.linalg.qr" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute QR decomposition of a matrix.</p>
-<p>Calculate the decomposition <code class="docutils literal"><span class="pre">A</span> <span class="pre">=</span> <span class="pre">Q</span> <span class="pre">R</span></code> where Q is unitary/orthogonal and R upper triangular.</p>
-<p><code class="docutils literal"><span class="pre">Parameters</span></code></p>
-<dl class="docutils">
-<dt>a <span class="classifier-delimiter">:</span> <span class="classifier">(M, N) array_like</span></dt>
-<dd>Matrix to be decomposed</dd>
+<p>Calculate the decomposition <code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">=</span> <span class="pre">Q</span> <span class="pre">R</span></code> where Q is unitary/orthogonal and R upper triangular.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Parameters</span></code></p>
+<dl class="simple">
+<dt>a<span class="classifier">(M, N) array_like</span></dt><dd><p>Matrix to be decomposed</p>
+</dd>
 </dl>
-<p><code class="docutils literal"><span class="pre">Returns</span></code></p>
-<dl class="docutils">
-<dt>Q <span class="classifier-delimiter">:</span> <span class="classifier">float or complex ndarray</span></dt>
-<dd>Of shape (M, M), or (M, K) for <code class="docutils literal"><span class="pre">mode='economic'</span></code>.  Not returned
-if <code class="docutils literal"><span class="pre">mode='r'</span></code>.</dd>
-<dt>R <span class="classifier-delimiter">:</span> <span class="classifier">float or complex ndarray</span></dt>
-<dd>Of shape (M, N), or (K, N) for <code class="docutils literal"><span class="pre">mode='economic'</span></code>.  <code class="docutils literal"><span class="pre">K</span> <span class="pre">=</span> <span class="pre">min(M,</span> <span class="pre">N)</span></code>.</dd>
+<p><code class="docutils literal notranslate"><span class="pre">Returns</span></code></p>
+<dl class="simple">
+<dt>Q<span class="classifier">float or complex ndarray</span></dt><dd><p>Of shape (M, M), or (M, K) for <code class="docutils literal notranslate"><span class="pre">mode='economic'</span></code>.  Not returned
+if <code class="docutils literal notranslate"><span class="pre">mode='r'</span></code>.</p>
+</dd>
+<dt>R<span class="classifier">float or complex ndarray</span></dt><dd><p>Of shape (M, N), or (K, N) for <code class="docutils literal notranslate"><span class="pre">mode='economic'</span></code>.  <code class="docutils literal notranslate"><span class="pre">K</span> <span class="pre">=</span> <span class="pre">min(M,</span> <span class="pre">N)</span></code>.</p>
+</dd>
 </dl>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">array</span><span class="p">([[</span><span class="mi">12</span><span class="p">,</span> <span class="o">-</span><span class="mi">51</span><span class="p">,</span>   <span class="mi">4</span><span class="p">],[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">167</span><span class="p">,</span> <span class="o">-</span><span class="mi">68</span><span class="p">],[</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span>  <span class="mi">24</span><span class="p">,</span> <span class="o">-</span><span class="mi">41</span><span class="p">]])</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">array</span><span class="p">([[</span><span class="mi">12</span><span class="p">,</span> <span class="o">-</span><span class="mi">51</span><span class="p">,</span>   <span class="mi">4</span><span class="p">],[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">167</span><span class="p">,</span> <span class="o">-</span><span class="mi">68</span><span class="p">],[</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span>  <span class="mi">24</span><span class="p">,</span> <span class="o">-</span><span class="mi">41</span><span class="p">]])</span>
 <span class="n">q</span><span class="p">,</span><span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">qr</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 <span class="nb">print</span> <span class="n">q</span>
 <span class="nb">print</span> <span class="n">r</span>
 </pre></div>
 </div>
 <p>Result:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">run</span> <span class="n">script</span><span class="o">...</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">run</span> <span class="n">script</span><span class="o">...</span>
 <span class="go">array([[-0.857142857142857, 0.3942857142857143, -0.3314285714285714]</span>
 <span class="go">      [-0.42857142857142855, -0.9028571428571428, 0.03428571428571431]</span>
 <span class="go">      [0.2857142857142857, -0.17142857142857143, -0.9428571428571428]])</span>
@@ -173,7 +164,7 @@ if <code class="docutils literal"><span class="pre">mode='r'</span></code>.</dd>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2019, MeteoInfo developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
     </div>
   </body>
 </html>

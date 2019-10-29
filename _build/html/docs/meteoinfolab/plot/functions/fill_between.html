@@ -1,33 +1,24 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>fill_between &#8212; MeteoInfo 2.0 documentation</title>
     <link rel="stylesheet" href="../../../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../../',
-        VERSION:     '2.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="fill_betweenx" href="fill_betweenx.html" />
     <link rel="prev" title="figure" href="figure.html" /> 
-  </head>
-  <body>
+  </head><body>
 
 <div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
 <a href="../../../../index.html"><img src="../../../../_static/logo.jpg" border="0"/></a></div>
@@ -78,13 +69,13 @@
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -99,25 +90,21 @@
 <span id="docs-meteoinfolab-funcitons-plot-fill-between"></span><h1>fill_between<a class="headerlink" href="#fill-between" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="mipylib.plotlib.miplot.fill_between">
-<code class="descclassname">mipylib.plotlib.miplot.</code><code class="descname">fill_between</code><span class="sig-paren">(</span><em>x</em>, <em>y1</em>, <em>y2=0</em>, <em>where=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mipylib.plotlib.miplot.fill_between" title="Permalink to this definition">¶</a></dt>
-<dd><p>Make filled polygons between two curves (y1 and y2) where <code class="docutils literal"><span class="pre">where==True</span></code>.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>x</strong> – (<em>array_like</em>) An N-length array of the x data.</li>
-<li><strong>y1</strong> – (<em>array_like</em>) An N-length array (or scalar) of the y data.</li>
-<li><strong>y2</strong> – (<em>array_like</em>) An N-length array (or scalar) of the y data.</li>
-<li><strong>where</strong> – (<em>array_like</em>) If None, default to fill between everywhere. If not None, it is an
-N-length boolean array and the fill will only happen over the regions where <code class="docutils literal"><span class="pre">where==True</span></code>.</li>
+<code class="sig-prename descclassname">mipylib.plotlib.miplot.</code><code class="sig-name descname">fill_between</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y1</em>, <em class="sig-param">y2=0</em>, <em class="sig-param">where=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mipylib.plotlib.miplot.fill_between" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make filled polygons between two curves (y1 and y2) where <code class="docutils literal notranslate"><span class="pre">where==True</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – (<em>array_like</em>) An N-length array of the x data.</p></li>
+<li><p><strong>y1</strong> – (<em>array_like</em>) An N-length array (or scalar) of the y data.</p></li>
+<li><p><strong>y2</strong> – (<em>array_like</em>) An N-length array (or scalar) of the y data.</p></li>
+<li><p><strong>where</strong> – (<em>array_like</em>) If None, default to fill between everywhere. If not None, it is an
+N-length boolean array and the fill will only happen over the regions where <code class="docutils literal notranslate"><span class="pre">where==True</span></code>.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p><strong>Examples</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">256</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">256</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">pi</span><span class="p">,</span><span class="n">pi</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">endpoint</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">Y</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">X</span><span class="p">)</span>
 
@@ -174,7 +161,7 @@ N-length boolean array and the fill will only happen over the regions where <cod
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2019, MeteoInfo developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
     </div>
   </body>
 </html>

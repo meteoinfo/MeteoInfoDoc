@@ -1,33 +1,24 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>stem &#8212; MeteoInfo 2.0 documentation</title>
     <link rel="stylesheet" href="../../../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../../',
-        VERSION:     '2.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="step" href="step.html" />
     <link rel="prev" title="stationmodel" href="stationmodel.html" /> 
-  </head>
-  <body>
+  </head><body>
 
 <div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
 <a href="../../../../index.html"><img src="../../../../_static/logo.jpg" border="0"/></a></div>
@@ -78,13 +69,13 @@
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -99,35 +90,37 @@
 <span id="docs-meteoinfolab-funcitons-plot-stem"></span><h1>stem<a class="headerlink" href="#stem" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="mipylib.plotlib.miplot.stem">
-<code class="descclassname">mipylib.plotlib.miplot.</code><code class="descname">stem</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mipylib.plotlib.miplot.stem" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mipylib.plotlib.miplot.</code><code class="sig-name descname">stem</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mipylib.plotlib.miplot.stem" title="Permalink to this definition">¶</a></dt>
 <dd><p>Make a stem plot.</p>
 <blockquote>
 <div><p>A stem plot plots vertical lines at each x location from the baseline to y, and
 places a marker there.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">param x:</th><td class="field-body">(<em>array_like</em>) The x-positions of the stems.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">param y:</th><td class="field-body">(<em>array_like</em>) The y-values of the stem heads.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">param bottom:</th><td class="field-body">(<em>array_like</em>) Optional, The y-position of the baseline.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">param linefmt:</th><td class="field-body">(<em>dict</em>) Optional, stem line format.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">param markerfmt:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">(<em>dict</em>) Optional, stem marker format.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">param color:</th><td class="field-body">(<em>Color</em>) Optional, the color of the stem.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">returns:</th><td class="field-body">Stem line legend break.</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">param x</dt>
+<dd class="field-odd"><p>(<em>array_like</em>) The x-positions of the stems.</p>
+</dd>
+<dt class="field-even">param y</dt>
+<dd class="field-even"><p>(<em>array_like</em>) The y-values of the stem heads.</p>
+</dd>
+<dt class="field-odd">param bottom</dt>
+<dd class="field-odd"><p>(<em>array_like</em>) Optional, The y-position of the baseline.</p>
+</dd>
+<dt class="field-even">param linefmt</dt>
+<dd class="field-even"><p>(<em>dict</em>) Optional, stem line format.</p>
+</dd>
+<dt class="field-odd">param markerfmt</dt>
+<dd class="field-odd"><p>(<em>dict</em>) Optional, stem marker format.</p>
+</dd>
+<dt class="field-even">param color</dt>
+<dd class="field-even"><p>(<em>Color</em>) Optional, the color of the stem.</p>
+</dd>
+<dt class="field-odd">returns</dt>
+<dd class="field-odd"><p>Stem line legend break.</p>
+</dd>
+</dl>
 </div></blockquote>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
 <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">16</span><span class="p">]</span>
 <span class="n">stem</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">basefmt</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;color&#39;</span><span class="p">:</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="s1">&#39;size&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">})</span>
 <span class="n">title</span><span class="p">(</span><span class="s1">&#39;Stem plot example&#39;</span><span class="p">)</span>
@@ -177,7 +170,7 @@ places a marker there.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2019, MeteoInfo developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
     </div>
   </body>
 </html>

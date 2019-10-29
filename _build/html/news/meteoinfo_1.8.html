@@ -1,33 +1,24 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>MeteoInfo 1.8 was released (2019-4-22) &#8212; MeteoInfo 2.0 documentation</title>
     <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '2.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="MeteoInfo 1.7 was released (2018-12-31)" href="meteoinfo_1.7.html" />
     <link rel="prev" title="Violin chart" href="../examples/meteoinfolab/plot_types/violinplot.html" /> 
-  </head>
-  <body>
+  </head><body>
 
 <div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
 <a href="../index.html"><img src="../_static/logo.jpg" border="0"/></a></div>
@@ -74,13 +65,13 @@
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -95,18 +86,18 @@
 <span id="news-meteoinfo-1-8"></span><h1>MeteoInfo 1.8 was released (2019-4-22)<a class="headerlink" href="#meteoinfo-1-8-was-released-2019-4-22" title="Permalink to this headline">¶</a></h1>
 <blockquote>
 <div><ul class="simple">
-<li>Add <code class="docutils literal"><span class="pre">any</span></code>, <code class="docutils literal"><span class="pre">all</span></code>, <code class="docutils literal"><span class="pre">vstack</span></code> and <code class="docutils literal"><span class="pre">hstack</span></code> functions in <code class="docutils literal"><span class="pre">numeric</span></code> package.</li>
-<li>Add <code class="docutils literal"><span class="pre">delnan</span></code>, <code class="docutils literal"><span class="pre">smooth5</span></code> and <code class="docutils literal"><span class="pre">smooth9</span></code> functions in <code class="docutils literal"><span class="pre">numeric</span></code> package.</li>
-<li>Add <code class="docutils literal"><span class="pre">arrow</span></code>, <code class="docutils literal"><span class="pre">arrowline</span></code>,  <code class="docutils literal"><span class="pre">annotate</span></code> functions in <code class="docutils literal"><span class="pre">plotlib</span></code> package.</li>
-<li>Add <code class="docutils literal"><span class="pre">minorticknum</span></code> and <code class="docutils literal"><span class="pre">tickwidth</span></code> arguments in <code class="docutils literal"><span class="pre">xaxis</span></code> and <code class="docutils literal"><span class="pre">yaxis</span></code> functions.</li>
-<li>Use itext as pdf output library for better pdf image output.</li>
-<li>add more distributions in random module.</li>
-<li>Update high dpi image output functions.</li>
-<li>Fixed some bugs.</li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">any</span></code>, <code class="docutils literal notranslate"><span class="pre">all</span></code>, <code class="docutils literal notranslate"><span class="pre">vstack</span></code> and <code class="docutils literal notranslate"><span class="pre">hstack</span></code> functions in <code class="docutils literal notranslate"><span class="pre">numeric</span></code> package.</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">delnan</span></code>, <code class="docutils literal notranslate"><span class="pre">smooth5</span></code> and <code class="docutils literal notranslate"><span class="pre">smooth9</span></code> functions in <code class="docutils literal notranslate"><span class="pre">numeric</span></code> package.</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">arrow</span></code>, <code class="docutils literal notranslate"><span class="pre">arrowline</span></code>,  <code class="docutils literal notranslate"><span class="pre">annotate</span></code> functions in <code class="docutils literal notranslate"><span class="pre">plotlib</span></code> package.</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">minorticknum</span></code> and <code class="docutils literal notranslate"><span class="pre">tickwidth</span></code> arguments in <code class="docutils literal notranslate"><span class="pre">xaxis</span></code> and <code class="docutils literal notranslate"><span class="pre">yaxis</span></code> functions.</p></li>
+<li><p>Use itext as pdf output library for better pdf image output.</p></li>
+<li><p>add more distributions in random module.</p></li>
+<li><p>Update high dpi image output functions.</p></li>
+<li><p>Fixed some bugs.</p></li>
 </ul>
 </div></blockquote>
 <p><strong>Annotate</strong>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">cos</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span>
 <span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">lw</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
 <span class="n">annotate</span><span class="p">(</span><span class="s1">&#39;local max&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mf">1.5</span><span class="p">),</span> <span class="n">yalign</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span>
@@ -116,7 +107,7 @@
 </div>
 <img alt="../_images/annotate_11.png" src="../_images/annotate_11.png" />
 <p><strong>High dpi image output</strong>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="s1">&#39;D:/Temp/GrADS/model.ctl&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="s1">&#39;D:/Temp/GrADS/model.ctl&#39;</span><span class="p">)</span>
 <span class="n">u</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;U&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;500&#39;</span><span class="p">,</span><span class="s1">&#39;10:60&#39;</span><span class="p">,</span><span class="s1">&#39;60:140&#39;</span><span class="p">]</span>
 <span class="n">v</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;V&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;500&#39;</span><span class="p">,</span><span class="s1">&#39;10:60&#39;</span><span class="p">,</span><span class="s1">&#39;60:140&#39;</span><span class="p">]</span>
 <span class="n">speed</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">u</span><span class="o">*</span><span class="n">u</span><span class="o">+</span><span class="n">v</span><span class="o">*</span><span class="n">v</span><span class="p">)</span>
@@ -170,7 +161,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2019, MeteoInfo developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
     </div>
   </body>
 </html>

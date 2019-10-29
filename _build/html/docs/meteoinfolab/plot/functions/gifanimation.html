@@ -1,33 +1,24 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>gifanimation &#8212; MeteoInfo 2.0 documentation</title>
     <link rel="stylesheet" href="../../../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../../',
-        VERSION:     '2.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="gifaddframe" href="gifaddframe.html" />
     <link rel="prev" title="geoshow" href="geoshow.html" /> 
-  </head>
-  <body>
+  </head><body>
 
 <div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
 <a href="../../../../index.html"><img src="../../../../_static/logo.jpg" border="0"/></a></div>
@@ -78,13 +69,13 @@
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -99,20 +90,19 @@
 <span id="docs-meteoinfolab-funcitons-plot-gifanimation"></span><h1>gifanimation<a class="headerlink" href="#gifanimation" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="mipylib.plotlib.miplot.gifanimation">
-<code class="descclassname">mipylib.plotlib.miplot.</code><code class="descname">gifanimation</code><span class="sig-paren">(</span><em>filename</em>, <em>repeat=0</em>, <em>delay=1000</em><span class="sig-paren">)</span><a class="headerlink" href="#mipylib.plotlib.miplot.gifanimation" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mipylib.plotlib.miplot.</code><code class="sig-name descname">gifanimation</code><span class="sig-paren">(</span><em class="sig-param">filename</em>, <em class="sig-param">repeat=0</em>, <em class="sig-param">delay=1000</em><span class="sig-paren">)</span><a class="headerlink" href="#mipylib.plotlib.miplot.gifanimation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a gif animation file</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Param:</th><td class="field-body">repeat: (<em>int, Default 0</em>) Animation repeat time number. 0 means repeat forever.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Param:</th><td class="field-body">delay: (<em>int, Default 1000</em>) Animation frame delay time with units of millsecond.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Gif animation object.</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Param</dt>
+<dd class="field-odd"><p>repeat: (<em>int, Default 0</em>) Animation repeat time number. 0 means repeat forever.</p>
+</dd>
+<dt class="field-even">Param</dt>
+<dd class="field-even"><p>delay: (<em>int, Default 1000</em>) Animation frame delay time with units of millsecond.</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Gif animation object.</p>
+</dd>
+</dl>
 <p>Examples: <a class="reference internal" href="../../../../examples/meteoinfolab/plot_types/gif_animation.html#examples-meteoinfolab-plot-types-gif-animation"><span class="std std-ref">Create gif animation file</span></a></p>
 </dd></dl>
 
@@ -155,7 +145,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2019, MeteoInfo developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
     </div>
   </body>
 </html>

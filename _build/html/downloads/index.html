@@ -1,33 +1,24 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>Downloads &#8212; MeteoInfo 2.0 documentation</title>
     <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '2.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Documentation" href="../docs/index.html" />
-    <link rel="prev" title="Fit Sine" href="../examples/miml/neural_network/fit_sin.html" /> 
-  </head>
-  <body>
+    <link rel="prev" title="Classification" href="../examples/miml/deep_learning/classification.html" /> 
+  </head><body>
 
 <div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
 <a href="../index.html"><img src="../_static/logo.jpg" border="0"/></a></div>
@@ -45,7 +36,7 @@
           <a href="../docs/index.html" title="Documentation"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="../examples/miml/neural_network/fit_sin.html" title="Fit Sine"
+          <a href="../examples/miml/deep_learning/classification.html" title="Classification"
              accesskey="P">previous</a> |</li>
         <li><a href="../index.html">home</a>|&nbsp;</li>
         <li><a href="../products/index.html">products</a>|&nbsp;</li>
@@ -59,7 +50,7 @@
 
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <h3><a href="../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Downloads</a><ul>
 <li><a class="reference internal" href="#meteoinfo">MeteoInfo</a><ul>
@@ -67,6 +58,7 @@
 <li><a class="reference internal" href="#software-development-demo-using-meteoinfo-class-library">Software Development Demo Using MeteoInfo Class Library</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#miml">MIML</a></li>
 <li><a class="reference internal" href="#wcontour">wContour</a></li>
 <li><a class="reference internal" href="#trajstat">TrajStat</a></li>
 <li><a class="reference internal" href="#outlierflag">OutlierFlag</a></li>
@@ -76,8 +68,8 @@
 </ul>
 
   <h4>Previous topic</h4>
-  <p class="topless"><a href="../examples/miml/neural_network/fit_sin.html"
-                        title="previous chapter">Fit Sine</a></p>
+  <p class="topless"><a href="../examples/miml/deep_learning/classification.html"
+                        title="previous chapter">Classification</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="../docs/index.html"
                         title="next chapter">Documentation</a></p>
@@ -89,13 +81,13 @@
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -113,15 +105,13 @@
 <div class="section" id="meteoinfo-desktop-application">
 <h3>MeteoInfo Desktop Application<a class="headerlink" href="#meteoinfo-desktop-application" title="Permalink to this headline">¶</a></h3>
 <blockquote>
-<div><dl class="docutils">
-<dt>Java edition (Major development)</dt>
-<dd><ul class="first last simple">
-<li><a class="reference external" href="files/MeteoInfo_2.0.2.zip">MeteoInfo 2.0.2 - Java (for all systems)</a></li>
+<div><dl class="simple">
+<dt>Java edition (Major development)</dt><dd><ul class="simple">
+<li><p><a class="reference external" href="files/MeteoInfo_2.0.3.zip">MeteoInfo 2.0.3 - Java (for all systems)</a></p></li>
 </ul>
 </dd>
-<dt>C# edition</dt>
-<dd><ul class="first last simple">
-<li><a class="reference external" href="files/MeteoInfo_csharp_1.1.3.5R1.zip">MeteoInfo 1.1.3.5R1 - C#</a></li>
+<dt>C# edition</dt><dd><ul class="simple">
+<li><p><a class="reference external" href="files/MeteoInfo_csharp_1.1.3.5R1.zip">MeteoInfo 1.1.3.5R1 - C#</a></p></li>
 </ul>
 </dd>
 </dl>
@@ -130,15 +120,13 @@
 <div class="section" id="software-development-demo-using-meteoinfo-class-library">
 <h3>Software Development Demo Using MeteoInfo Class Library<a class="headerlink" href="#software-development-demo-using-meteoinfo-class-library" title="Permalink to this headline">¶</a></h3>
 <blockquote>
-<div><dl class="docutils">
-<dt>Java edition</dt>
-<dd><ul class="first last simple">
-<li><a class="reference external" href="files/MeteoInfoDemo_java_2013-12-27.zip">MeteoInfo Java demo program</a></li>
+<div><dl class="simple">
+<dt>Java edition</dt><dd><ul class="simple">
+<li><p><a class="reference external" href="files/MeteoInfoDemo_java_2013-12-27.zip">MeteoInfo Java demo program</a></p></li>
 </ul>
 </dd>
-<dt>C# edition</dt>
-<dd><ul class="first last simple">
-<li><a class="reference external" href="files/MeteoInfoDemo_2013-3-2.zip">MeteoInfo C# demo program</a></li>
+<dt>C# edition</dt><dd><ul class="simple">
+<li><p><a class="reference external" href="files/MeteoInfoDemo_2013-3-2.zip">MeteoInfo C# demo program</a></p></li>
 </ul>
 </dd>
 </dl>
@@ -146,21 +134,30 @@
 </div>
 </div>
 <hr class="docutils" />
+<div class="section" id="miml">
+<h2>MIML<a class="headerlink" href="#miml" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl class="simple">
+<dt>MIML - MeteoInfoLab machine learning toolbox</dt><dd><ul class="simple">
+<li><p><a class="reference external" href="files/miml_0.3.zip">MIML 0.3 toolbox</a></p></li>
+</ul>
+</dd>
+</dl>
+</div></blockquote>
+</div>
 <div class="section" id="wcontour">
 <h2>wContour<a class="headerlink" href="#wcontour" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><dl class="docutils">
-<dt>Java edition</dt>
-<dd><ul class="first last simple">
-<li><a class="reference external" href="files/wContour.jar">wContour 1.6.1 class library - Java</a></li>
-<li><a class="reference external" href="files/wContourDemo_java_2012-11-1.zip">wContour class library demo program - Java</a></li>
+<div><dl class="simple">
+<dt>Java edition</dt><dd><ul class="simple">
+<li><p><a class="reference external" href="files/wContour.jar">wContour 1.6.1 class library - Java</a></p></li>
+<li><p><a class="reference external" href="files/wContourDemo_java_2012-11-1.zip">wContour class library demo program - Java</a></p></li>
 </ul>
 </dd>
-<dt>C# edition</dt>
-<dd><ul class="first last simple">
-<li><a class="reference external" href="files/wContour.dll">wContour 1.6.2 class library - C#</a></li>
-<li><a class="reference external" href="files/wContourSL.dll">wContour 1.5 class library for Silverlight</a></li>
-<li><a class="reference external" href="files/wContourDemo_2015-1-29.zip">wContour class library demo program - C#</a></li>
+<dt>C# edition</dt><dd><ul class="simple">
+<li><p><a class="reference external" href="files/wContour.dll">wContour 1.6.2 class library - C#</a></p></li>
+<li><p><a class="reference external" href="files/wContourSL.dll">wContour 1.5 class library for Silverlight</a></p></li>
+<li><p><a class="reference external" href="files/wContourDemo_2015-1-29.zip">wContour class library demo program - C#</a></p></li>
 </ul>
 </dd>
 </dl>
@@ -170,10 +167,9 @@
 <div class="section" id="trajstat">
 <h2>TrajStat<a class="headerlink" href="#trajstat" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><dl class="docutils">
-<dt>TrajStat - MeteoInfo plugin</dt>
-<dd><ul class="first last simple">
-<li><a class="reference external" href="files/TrajStat_Plugin_1.4.8b1.zip">TrajStat 1.4.8 beta 1 plugin for MeteoInfo Java version</a></li>
+<div><dl class="simple">
+<dt>TrajStat - MeteoInfoMap plugin for air mass trajectory statistic</dt><dd><ul class="simple">
+<li><p><a class="reference external" href="files/TrajStat_Plugin_1.4.8b1.zip">TrajStat 1.4.8 beta 1 plugin for MeteoInfo Java version</a></p></li>
 </ul>
 </dd>
 </dl>
@@ -183,15 +179,13 @@
 <div class="section" id="outlierflag">
 <h2>OutlierFlag<a class="headerlink" href="#outlierflag" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><dl class="docutils">
-<dt>OutlierFlag Desktop Application</dt>
-<dd><ul class="first last simple">
-<li><a class="reference external" href="files/OutlierFlag_0.9.1R1_Files.zip">OutlierFlag 0.9.1R1</a></li>
+<div><dl class="simple">
+<dt>OutlierFlag Desktop Application for outlier data checking</dt><dd><ul class="simple">
+<li><p><a class="reference external" href="files/OutlierFlag_0.9.1R1_Files.zip">OutlierFlag 0.9.1R1</a></p></li>
 </ul>
 </dd>
-<dt>OutlierFlag - MeteoInfoLab toolbox</dt>
-<dd><ul class="first last simple">
-<li><a class="reference external" href="files/OutlierFlag_0.9.1R2_toolbox.zip">OutlierFlag 0.9.1R2 toolbox</a></li>
+<dt>OutlierFlag - MeteoInfoLab toolbox for outlier data checking</dt><dd><ul class="simple">
+<li><p><a class="reference external" href="files/OutlierFlag_0.9.1R2_toolbox.zip">OutlierFlag 0.9.1R2 toolbox</a></p></li>
 </ul>
 </dd>
 </dl>
@@ -201,10 +195,9 @@
 <div class="section" id="emips">
 <h2>EMIPS<a class="headerlink" href="#emips" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><dl class="docutils">
-<dt>EMIssion Inventory Processing System</dt>
-<dd><ul class="first last simple">
-<li><a class="reference external" href="files/EMIPS_0.1_Files.zip">EMIPS 0.1</a></li>
+<div><dl class="simple">
+<dt>EMIssion Inventory Processing System</dt><dd><ul class="simple">
+<li><p><a class="reference external" href="files/EMIPS_0.1_Files.zip">EMIPS 0.1</a></p></li>
 </ul>
 </dd>
 </dl>
@@ -231,7 +224,7 @@
           <a href="../docs/index.html" title="Documentation"
              >next</a> |</li>
         <li class="right" >
-          <a href="../examples/miml/neural_network/fit_sin.html" title="Fit Sine"
+          <a href="../examples/miml/deep_learning/classification.html" title="Classification"
              >previous</a> |</li>
         <li><a href="../index.html">home</a>|&nbsp;</li>
         <li><a href="../products/index.html">products</a>|&nbsp;</li>
@@ -244,7 +237,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2019, MeteoInfo developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
     </div>
   </body>
 </html>

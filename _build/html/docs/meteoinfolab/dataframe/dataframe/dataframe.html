@@ -1,33 +1,24 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>DataFrame &#8212; MeteoInfo 2.0 documentation</title>
     <link rel="stylesheet" href="../../../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../../',
-        VERSION:     '2.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="shape" href="shape.html" />
     <link rel="prev" title="mipylib.dataframe.dataframe" href="../dataframe.html" /> 
-  </head>
-  <body>
+  </head><body>
 
 <div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
 <a href="../../../../index.html"><img src="../../../../_static/logo.jpg" border="0"/></a></div>
@@ -64,7 +55,7 @@
 
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../../../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../../../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">DataFrame</a><ul>
 <li><a class="reference internal" href="#attributes">Attributes:</a></li>
@@ -87,13 +78,13 @@
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -108,24 +99,20 @@
 <span id="docs-meteoinfolab-dataframe-dataframe-dataframe"></span><h1>DataFrame<a class="headerlink" href="#dataframe" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="mipylib.dataframe.dataframe.DataFrame">
-<em class="property">class </em><code class="descclassname">mipylib.dataframe.dataframe.</code><code class="descname">DataFrame</code><a class="headerlink" href="#mipylib.dataframe.dataframe.DataFrame" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">mipylib.dataframe.dataframe.</code><code class="sig-name descname">DataFrame</code><a class="headerlink" href="#mipylib.dataframe.dataframe.DataFrame" title="Permalink to this definition">¶</a></dt>
 <dd><p>Two-dimensional size-mutable, potentially heterogeneous tabular data structure with
 labeled axes (rows and columns). Arithmetic operations align on both row and column
 labels. Can be thought of as a dict-like container for Series objects.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>data</strong> – (<em>array_like</em>) Two-dimensional array data or list of one-dimensional arrays.</li>
-<li><strong>index</strong> – (<em>list</em>) Data index list. Values must be unique and hashable, same length as data.</li>
-<li><strong>columns</strong> – (<em>list</em>) Column labels to use for resulting frame. Will default to
-arange(n) if no column labels are provided</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – (<em>array_like</em>) Two-dimensional array data or list of one-dimensional arrays.</p></li>
+<li><p><strong>index</strong> – (<em>list</em>) Data index list. Values must be unique and hashable, same length as data.</p></li>
+<li><p><strong>columns</strong> – (<em>list</em>) Column labels to use for resulting frame. Will default to
+arange(n) if no column labels are provided</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <div class="section" id="attributes">
@@ -187,7 +174,7 @@ arange(n) if no column labels are provided</li>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2019, MeteoInfo developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
     </div>
   </body>
 </html>

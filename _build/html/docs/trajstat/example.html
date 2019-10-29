@@ -1,33 +1,24 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>Example &#8212; MeteoInfo 2.0 documentation</title>
     <link rel="stylesheet" href="../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '2.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Trajectory Statistics" href="trajstatrun.html" />
     <link rel="prev" title="Download and Run TrajStat" href="download.html" /> 
-  </head>
-  <body>
+  </head><body>
 
 <div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
 <a href="../../index.html"><img src="../../_static/logo.jpg" border="0"/></a></div>
@@ -75,13 +66,13 @@
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -100,20 +91,20 @@ such analysis to Jiuquan which is located in northwest of China. We have the dat
 at Jiuquan in springtime from 2004 to 2006. Following is the steps to implement the job:</p>
 <blockquote>
 <div><ol class="arabic simple">
-<li>Add Jiuquan station into the project..</li>
-<li>Calculate 3-day back trajectories during PM10 data measurement period.</li>
-<li>Convert end point files to .tgs files. Then join .tgs files to one file.</li>
-<li>Convert .tgs file to trajectory line shape file and add the shape file into the project.</li>
-<li>Show press profile of the trajectories.</li>
-<li>Add measurement data into the trajectories.</li>
-<li>Select polluted trajectories.</li>
-<li>Cluster calculation to the trajectories.</li>
-<li>Calculate mean trajectory of cluster and add the cluster line shape file into the project.</li>
-<li>Decide cluster number.</li>
-<li>Add cluster to each trajectory.</li>
-<li>Do cluster statistics and find the pathways of SDS.</li>
-<li>Create grid polygon shape layers of PSCF and CWT.</li>
-<li>PSCF and CWT analysis.</li>
+<li><p>Add Jiuquan station into the project..</p></li>
+<li><p>Calculate 3-day back trajectories during PM10 data measurement period.</p></li>
+<li><p>Convert end point files to .tgs files. Then join .tgs files to one file.</p></li>
+<li><p>Convert .tgs file to trajectory line shape file and add the shape file into the project.</p></li>
+<li><p>Show press profile of the trajectories.</p></li>
+<li><p>Add measurement data into the trajectories.</p></li>
+<li><p>Select polluted trajectories.</p></li>
+<li><p>Cluster calculation to the trajectories.</p></li>
+<li><p>Calculate mean trajectory of cluster and add the cluster line shape file into the project.</p></li>
+<li><p>Decide cluster number.</p></li>
+<li><p>Add cluster to each trajectory.</p></li>
+<li><p>Do cluster statistics and find the pathways of SDS.</p></li>
+<li><p>Create grid polygon shape layers of PSCF and CWT.</p></li>
+<li><p>PSCF and CWT analysis.</p></li>
 </ol>
 </div></blockquote>
 <p>Three sample files ‘JiuquanSpr.tgs’, ‘Stations.txt’ and ‘Jiuquan_PM10_Spr_DA.csv’ could be found in ‘Sample’ folder
@@ -155,7 +146,7 @@ need large meteorological data. Please read HYSPLIT help documents for details o
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2019, MeteoInfo developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
     </div>
   </body>
 </html>

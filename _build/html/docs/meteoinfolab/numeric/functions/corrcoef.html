@@ -1,33 +1,24 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>corrcoef &#8212; MeteoInfo 2.0 documentation</title>
     <link rel="stylesheet" href="../../../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../../',
-        VERSION:     '2.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="cos" href="cos.html" />
     <link rel="prev" title="concatenate" href="concatenate.html" /> 
-  </head>
-  <body>
+  </head><body>
 
 <div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
 <a href="../../../../index.html"><img src="../../../../_static/logo.jpg" border="0"/></a></div>
@@ -78,13 +69,13 @@
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -99,33 +90,29 @@
 <span id="docs-meteoinfolab-numeric-funcitons-corrcoef"></span><h1>corrcoef<a class="headerlink" href="#corrcoef" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="mipylib.numeric.minum.corrcoef">
-<code class="descclassname">mipylib.numeric.minum.</code><code class="descname">corrcoef</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#mipylib.numeric.minum.corrcoef" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mipylib.numeric.minum.</code><code class="sig-name descname">corrcoef</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#mipylib.numeric.minum.corrcoef" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return Pearson product-moment correlation coefficients.</p>
 <p>The relationship between the correlation coefficient matrix, <cite>R</cite>, and the
 covariance matrix, <cite>C</cite>, is</p>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[R_{ij} = \frac{C_{ij}} {\sqrt{C_{ii} * C_{jj}}}\]</div>
 <p>The values of <cite>R</cite> are between -1 and 1, inclusive.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>x</strong> – (<em>array_like</em>) A 1-D or 2-D array containing multiple variables and observations.
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – (<em>array_like</em>) A 1-D or 2-D array containing multiple variables and observations.
 Each row of x represents a variable, and each column a single observation of all those
-variables.</li>
-<li><strong>y</strong> – (<em>array_like</em>) An additional set of variables and observations. y has the same
-shape as x.</li>
+variables.</p></li>
+<li><p><strong>y</strong> – (<em>array_like</em>) An additional set of variables and observations. y has the same
+shape as x.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The correlation coefficient matrix of the variables.</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The correlation coefficient matrix of the variables.</p>
+</dd>
+</dl>
 <p><strong>Examples</strong></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mf">29.81</span><span class="p">,</span><span class="mf">30.04</span><span class="p">,</span><span class="mf">41.7</span><span class="p">,</span><span class="mf">43.71</span><span class="p">,</span><span class="mf">28.75</span><span class="p">,</span><span class="mf">37.73</span><span class="p">,</span><span class="mf">52.25</span><span class="p">,</span><span class="mf">32.41</span><span class="p">,</span><span class="mf">25.67</span><span class="p">,</span><span class="mf">28.17</span><span class="p">,</span><span class="mf">25.71</span><span class="p">,</span><span class="mf">36.05</span><span class="p">,</span><span class="mf">37.62</span><span class="p">,</span><span class="mf">34.28</span><span class="p">,</span><span class="mf">38.82</span><span class="p">,</span><span class="mf">40.15</span><span class="p">,</span><span class="mf">35.69</span><span class="p">,</span><span class="mf">28.36</span><span class="p">,</span><span class="mf">39.56</span><span class="p">,</span><span class="mf">52.56</span><span class="p">,</span><span class="mf">54.14</span><span class="p">,</span><span class="mf">50.76</span><span class="p">,</span><span class="mf">39.35</span><span class="p">,</span><span class="mf">43.16</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mf">29.81</span><span class="p">,</span><span class="mf">30.04</span><span class="p">,</span><span class="mf">41.7</span><span class="p">,</span><span class="mf">43.71</span><span class="p">,</span><span class="mf">28.75</span><span class="p">,</span><span class="mf">37.73</span><span class="p">,</span><span class="mf">52.25</span><span class="p">,</span><span class="mf">32.41</span><span class="p">,</span><span class="mf">25.67</span><span class="p">,</span><span class="mf">28.17</span><span class="p">,</span><span class="mf">25.71</span><span class="p">,</span><span class="mf">36.05</span><span class="p">,</span><span class="mf">37.62</span><span class="p">,</span><span class="mf">34.28</span><span class="p">,</span><span class="mf">38.82</span><span class="p">,</span><span class="mf">40.15</span><span class="p">,</span><span class="mf">35.69</span><span class="p">,</span><span class="mf">28.36</span><span class="p">,</span><span class="mf">39.56</span><span class="p">,</span><span class="mf">52.56</span><span class="p">,</span><span class="mf">54.14</span><span class="p">,</span><span class="mf">50.76</span><span class="p">,</span><span class="mf">39.35</span><span class="p">,</span><span class="mf">43.16</span><span class="p">]</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mf">51.6</span><span class="p">,</span><span class="mi">46</span><span class="p">,</span><span class="mf">64.3</span><span class="p">,</span><span class="mf">83.4</span><span class="p">,</span><span class="mf">65.9</span><span class="p">,</span><span class="mf">49.5</span><span class="p">,</span><span class="mf">88.6</span><span class="p">,</span><span class="mf">101.4</span><span class="p">,</span><span class="mf">55.9</span><span class="p">,</span><span class="mf">41.8</span><span class="p">,</span><span class="mf">33.4</span><span class="p">,</span><span class="mf">57.3</span><span class="p">,</span><span class="mf">66.5</span><span class="p">,</span><span class="mf">40.5</span><span class="p">,</span><span class="mf">72.3</span><span class="p">,</span><span class="mi">70</span><span class="p">,</span><span class="mf">83.3</span><span class="p">,</span><span class="mf">65.8</span><span class="p">,</span><span class="mf">63.1</span><span class="p">,</span><span class="mf">83.4</span><span class="p">,</span><span class="mi">102</span><span class="p">,</span><span class="mi">94</span><span class="p">,</span><span class="mi">77</span><span class="p">,</span><span class="mi">77</span><span class="p">]</span>
 <span class="n">r</span> <span class="o">=</span> <span class="n">corrcoef</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 <span class="nb">print</span> <span class="n">r</span>
@@ -135,7 +122,7 @@ shape as x.</li>
 </pre></div>
 </div>
 <p>Output:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">run</span> <span class="n">script</span><span class="o">...</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">run</span> <span class="n">script</span><span class="o">...</span>
 <span class="go">array([[1.0, 0.7007980346679688]</span>
 <span class="go">      [0.7007980346679688, 1.0]])</span>
 <span class="go">array([[1.0, 1.0]</span>
@@ -183,7 +170,7 @@ shape as x.</li>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2019, MeteoInfo developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
     </div>
   </body>
 </html>

@@ -1,33 +1,24 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>Plot tutorial &#8212; MeteoInfo 2.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../',
-        VERSION:     '2.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Arrays" href="arrays.html" />
     <link rel="prev" title="MeteoInfoLab GUI" href="gui.html" /> 
-  </head>
-  <body>
+  </head><body>
 
 <div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
 <a href="../../../index.html"><img src="../../../_static/logo.jpg" border="0"/></a></div>
@@ -63,7 +54,7 @@
 
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Plot tutorial</a><ul>
 <li><a class="reference internal" href="#controlling-line-properties">Controlling line properties</a></li>
@@ -86,13 +77,13 @@
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -110,7 +101,7 @@ Each plot function makes some change to a figure: e.g., create a figure, create 
 in a figure, plot some lines in a plotting area, decorate the plot with lables, etc….
 MeteoInfoLab is stateful, in that it keeps track of the current figure and plotting area, and the
 plotting functions are directed to the current axes.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
 <span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;some numbers&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -121,7 +112,7 @@ generates the x vaues for you. Since python ranges start with 0, the default x v
 length as y but starts with 0. Hence the x data are [0,1,2,3].</p>
 <p><strong>plot()</strong> is a versatile command, and will take an arbitrary number of arguments. For example, to plot
 x versus y, you can issue the command:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">16</span><span class="p">])</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">16</span><span class="p">])</span>
 </pre></div>
 </div>
 <p>For every x, y pair of arguments, there is an optional third argument which is the format string that
@@ -129,17 +120,17 @@ indicates the color and line type of the plot. The letters and symbols of the fo
 from MATLAB, and you concatenate a color string with a line style string. The default format
 string is ‘r-‘, which is a solid red line. For example, to plot the above with red circles, you
 would issue</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">16</span><span class="p">],</span> <span class="s1">&#39;ro&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">16</span><span class="p">],</span> <span class="s1">&#39;ro&#39;</span><span class="p">)</span>
 <span class="n">axis</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">])</span>
 </pre></div>
 </div>
 <img alt="../../../_images/plot_tutorial-2.png" src="../../../_images/plot_tutorial-2.png" />
 <p>See the <strong>plot()</strong> documentation for a complete list of line styles and format strings. The
-<strong>axis()</strong> command in the example above takes a list of <code class="docutils literal"><span class="pre">[xmin,</span> <span class="pre">xmax,</span> <span class="pre">ymin,</span> <span class="pre">ymax]</span></code> and specifies
+<strong>axis()</strong> command in the example above takes a list of <code class="docutils literal notranslate"><span class="pre">[xmin,</span> <span class="pre">xmax,</span> <span class="pre">ymin,</span> <span class="pre">ymax]</span></code> and specifies
 the viewport of the axes.</p>
 <p>Arrays are useful for numerical processing. The example below illustrates a plotting several lines
 with different format styles in one command using arrays.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># evenly sampled time at 200ms intervals</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># evenly sampled time at 200ms intervals</span>
 <span class="n">t</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
 
 <span class="c1"># red dashes, blue squares and green triangles</span>
@@ -152,8 +143,8 @@ with different format styles in one command using arrays.</p>
 <p>Lines have many attributes that you can set: linewidth, style, etc; The way to set line
 properties</p>
 <ul>
-<li><p class="first">Use keyword args:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">2.0</span><span class="p">)</span>
+<li><p>Use keyword args:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">2.0</span><span class="p">)</span>
 </pre></div>
 </div>
 </li>
@@ -164,7 +155,7 @@ properties</p>
 <p>MATLAB, and MeteoInfoLab, have the concept of the current figure and the current axes. All plotting
 commands apply to the current axes. Normally, you don’t have to worry about this, because it is all
 taken care of the behind the scenes. Below is a script to create two subplots.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="p">)</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
 
 <span class="n">t1</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
@@ -178,12 +169,12 @@ taken care of the behind the scenes. Below is a script to create two subplots.</
 </pre></div>
 </div>
 <img alt="../../../_images/plot_tutorial-4.png" src="../../../_images/plot_tutorial-4.png" />
-<p>The <strong>subplot()</strong> command specifies <code class="docutils literal"><span class="pre">numrows,</span> <span class="pre">numcols,</span> <span class="pre">fignum</span></code> ranges from 1 to <code class="docutils literal"><span class="pre">numrows*numcols</span></code>.
+<p>The <strong>subplot()</strong> command specifies <code class="docutils literal notranslate"><span class="pre">numrows,</span> <span class="pre">numcols,</span> <span class="pre">fignum</span></code> ranges from 1 to <code class="docutils literal notranslate"><span class="pre">numrows*numcols</span></code>.
 You can create an arbitrary number of subplots and axes. If you want to place an axes manually, i.e.,
 not on a rectangular grid, use the <strong>axes()</strong> command, which allows you to specify the location as
-<code class="docutils literal"><span class="pre">axes(position=[left,</span> <span class="pre">bottom,</span> <span class="pre">width,</span> <span class="pre">height])</span></code> where all values are in fractional (0 to 1)
+<code class="docutils literal notranslate"><span class="pre">axes(position=[left,</span> <span class="pre">bottom,</span> <span class="pre">width,</span> <span class="pre">height])</span></code> where all values are in fractional (0 to 1)
 coordinates.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
 <span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Series_1&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">2.0</span><span class="p">)</span>
 <span class="n">axes</span><span class="p">(</span><span class="n">position</span><span class="o">=</span><span class="p">[</span><span class="mf">0.3</span><span class="p">,</span><span class="mf">0.4</span><span class="p">,</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.4</span><span class="p">])</span>
@@ -230,7 +221,7 @@ coordinates.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2019, MeteoInfo developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
     </div>
   </body>
 </html>
