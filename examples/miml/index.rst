@@ -13,3 +13,4 @@ MIML - MeteoInfo Machine Learning Toolbox
    cluster.rst
    neural_network.rst
    deep_learning.rst
+   model_selection.rst

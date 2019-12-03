@@ -10,7 +10,7 @@ MeteoInfo
 MeteoInfo Desktop Application
 -----------------------------
   Java edition (Major development)
-    - `MeteoInfo 2.0.3 - Java (for all systems) <files/MeteoInfo_2.0.3.zip>`_
+    - `MeteoInfo 2.0.4 - Java (for all systems) <files/MeteoInfo_2.0.4.zip>`_
   C# edition   
     - `MeteoInfo 1.1.3.5R1 - C# <files/MeteoInfo_csharp_1.1.3.5R1.zip>`_
     
@@ -26,7 +26,7 @@ Software Development Demo Using MeteoInfo Class Library
 MIML
 =====================================
   MIML - MeteoInfoLab machine learning toolbox
-    - `MIML 0.3 toolbox <files/miml_0.3.zip>`_
+    - `MIML 0.4 toolbox <files/miml_0.4.zip>`_
 
 wContour
 =====================================

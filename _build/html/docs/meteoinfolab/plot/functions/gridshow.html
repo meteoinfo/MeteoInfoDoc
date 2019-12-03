@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>gridshow &#8212; MeteoInfo 2.0 documentation</title>
+    <link rel="stylesheet" href="../../../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="legend" href="legend.html" />
+    <link rel="prev" title="imshowm" href="imshowm.html" /> 
+  </head><body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../../../index.html"><img src="../../../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="legend.html" title="legend"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="imshowm.html" title="imshowm"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../../api.html" >The MeteoInfoLab API</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../../plotlib.html" >Plotlib package</a> &#187;</li>
+          <li class="nav-item nav-item-5"><a href="../miplot.html" accesskey="U">mipylib.plotlib.miplot</a> &#187;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="imshowm.html"
+                        title="previous chapter">imshowm</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="legend.html"
+                        title="next chapter">legend</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../_sources/docs/meteoinfolab/plot/functions/gridshow.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="gridshow">
+<span id="docs-meteoinfolab-funcitons-plot-gridshow"></span><h1>gridshow<a class="headerlink" href="#gridshow" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="mipylib.plotlib.miplot.gridshow">
+<code class="sig-prename descclassname">mipylib.plotlib.miplot.</code><code class="sig-name descname">gridshow</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mipylib.plotlib.miplot.gridshow" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display an grid plot.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – (<em>array_like</em>) Optional. X coordinate array.</p></li>
+<li><p><strong>y</strong> – (<em>array_like</em>) Optional. Y coordinate array.</p></li>
+<li><p><strong>z</strong> – (<em>array_like</em>) 2-D z value array.</p></li>
+<li><p><strong>levs</strong> – (<em>array_like</em>) Optional. A list of floating point numbers indicating the level curves
+to draw, in increasing order.</p></li>
+<li><p><strong>cmap</strong> – (<em>string</em>) Color map string.</p></li>
+<li><p><strong>colors</strong> – (<em>list</em>) If None (default), the colormap specified by cmap will be used. If a
+string, like ‘r’ or ‘red’, all levels will be plotted in this color. If a tuple of matplotlib
+color args (string, float, rgb, etc), different levels will be plotted in different colors in
+the order specified.</p></li>
+<li><p><strong>fill_value</strong> – (<em>float</em>) Fill_value. Default is <code class="docutils literal notranslate"><span class="pre">-9999.0</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(<em>GraphicCollection</em>) Polygon graphic collection.</p>
+</dd>
+</dl>
+<p><strong>Example:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">gg</span> <span class="o">=</span> <span class="n">gridshow</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;MPL_summer&#39;</span><span class="p">)</span>
+<span class="n">colorbar</span><span class="p">(</span><span class="n">gg</span><span class="p">)</span>
+<span class="n">xaxis</span><span class="p">(</span><span class="n">tickin</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">xaxis</span><span class="p">(</span><span class="n">tickline</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">location</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">)</span>
+<span class="n">yaxis</span><span class="p">(</span><span class="n">tickin</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">yaxis</span><span class="p">(</span><span class="n">tickline</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">location</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">)):</span>
+        <span class="n">text</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="nb">str</span><span class="p">(</span><span class="n">z</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="p">]),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">xalign</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">yalign</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;gridshow example&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/gridshow_1.png" src="../../../../_images/gridshow_1.png" />
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="legend.html" title="legend"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="imshowm.html" title="imshowm"
+             >previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../../api.html" >The MeteoInfoLab API</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../../plotlib.html" >Plotlib package</a> &#187;</li>
+          <li class="nav-item nav-item-5"><a href="../miplot.html" >mipylib.plotlib.miplot</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2019, MeteoInfo developers.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+    </div>
+  </body>
+</html>

@@ -45,6 +45,7 @@ Functions:
    functions/hist.rst
    functions/imshow.rst
    functions/imshowm.rst
+   functions/gridshow.rst
    functions/legend.rst
    functions/loglog.rst
    functions/pie.rst

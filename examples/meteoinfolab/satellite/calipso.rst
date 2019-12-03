@@ -269,7 +269,7 @@ Plot total attenuated backscatter.
     
 The script to make colors (CALIPSO_colors.py)::
 
-    from mipylib.numeric.minum import array
+    import mipylib.numeric as np
 
     def makecolors(gray=True):
         """
@@ -342,7 +342,7 @@ The script to make colors (CALIPSO_colors.py)::
         green_c[0] = green_c[49]
         blue_c[0] = blue_c[49]
         
-        color_bar = array([130,113,113, 64, 57, 50, 43, 36, 29,128,144,  7,  7,193,192,191,190,188,155,139,123, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 49])
+        color_bar = np.array([130,113,113, 64, 57, 50, 43, 36, 29,128,144,  7,  7,193,192,191,190,188,155,139,123, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 49])
         #color_bar = color_bar + 1
         colors = []
         for j in color_bar:
