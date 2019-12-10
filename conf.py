@@ -104,11 +104,19 @@ pygments_style = 'sphinx'
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 html_theme = 'sphinxdoc'
+# html_theme = "alabaster"
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
-#html_theme_options = {}
+# html_theme_options = {
+    # "show_powered_by": False,
+    # "github_user": "meteoinfo",
+    # "github_repo": "meteoinfo",
+    # "github_banner": True,
+    # "show_related": False,
+    # "note_bg": "#FFF59C",
+# }
 
 # Add any paths that contain custom themes here, relative to this directory.
 #html_theme_path = []

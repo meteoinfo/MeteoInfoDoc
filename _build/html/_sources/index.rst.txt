@@ -6,21 +6,19 @@
 Introduction
 =====================================
 
+**MeteoInfo** is an intergrated framework both for GIS application and scientific computation environment, 
+especially for meteorological community.
+
 MeteoInfo is an open source software (LGPL license) suite, which includes two major applications:
 ``MeteoInfoMap`` and ``MeteoInfoLab``.
 
-MeteoInfoMap was designed to view and analyze meteorological and
-spatial data interactively. Some GIS functions were developed from ground level. It has two
-editions: Java and C#. MeteoInfoMap may be run in Windows, Mac OS, Linux and Unix. MeteoInfoMap can
-also be run automatically using MeteoInfoMap scripting with the Jython language (Java edition) or
-IronPython language (C# edition). The main functions are packed in the MeteoInfo class library,
-which could be used to conveniently develop the software.
+**MeteoInfoMap** is a GIS application which enables the user to visualize and analyze the spatial and 
+meteorological data with multiple data formats.
 
   .. image:: _static/meteoinfomap.png
 
-MeteoInfoLab was developed using Java and Jython based on MeteoInfo Java
-library (Unidata netCDF Java library is used). The purpose is to provide an optional scientific 
-computation and visualization tool similar with MatLab and/or NCL. 
+**MeteoInfoLab** is a scientific computation and visualization environment using Jython scripting with the 
+ability of multiple dimensional array calculation and 2D/3D plotting.
 
   .. image:: _static/meteoinfolab.png
 

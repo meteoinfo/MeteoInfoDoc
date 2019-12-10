@@ -19,6 +19,21 @@ pathto("_static/logo.jpg", 1) }}" border="0"/></a></div>
 {{ super() }}
 {% endblock %}
 
+{% block document %}
+{{super()}}
+    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
+        <img style="position: fixed; top: 0; right: 0; border: 0;" 
+        src="{{ pathto("_static/forkme_right_orange_ff7600.png", 1) }}" 
+        alt="Fork me on GitHub">
+    </a>
+    <a target="_blank" href="https://gitter.im/meteoinfo/community">
+        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
+        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
+        alt="Join the chat at Gitter">
+    </a>
+{% endblock %}
+
 {# put the sidebar before the body #}
 {% block sidebar1 %}{{ sidebar() }}{% endblock %}
-{% block sidebar2 %}{% endblock %}
+{% block sidebar2 %}
+{% endblock %}
