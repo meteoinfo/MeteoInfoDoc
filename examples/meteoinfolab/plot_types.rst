@@ -21,6 +21,7 @@ Plot types
    plot_types/pie.rst
    plot_types/boxplot.rst
    plot_types/violinplot.rst
+   plot_types/taylor_diagram.rst
    plot_types/polar.rst
    plot_types/windrose.rst
    plot_types/contour.rst
