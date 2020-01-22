@@ -1,30 +1,14 @@
-.. _news-meteoinfo_2.1:
+.. _examples-meteoinfolab-plot_types-taylor_diagram:
 
+*********************
+Taylor diagram chart
+*********************
 
-******************************************
-MeteoInfo 2.1 was released (2020-1-22)
-******************************************
+Taylor diagrams provide a visual framework for comparing a suite of variables from one or more test data sets to one or
+more reference data sets. Commonly, the test data sets are model experiments while the reference data set is a control
+experiment or some reference observations.
 
-  - Add 3D bar plot.
-  - Support log axis in 3D plot.
-  - Add taylor_diagram plot.
-  - Add streamline support in Plot2D.
-  - Add multiple look and feel support, including ``Darcular``.
-  - Add find/replace, comment, insert tab, delete tab functions to code editor.
-  - Update ``rsyntaxtextarea`` to version 3.0.4.
-  - Update ``proj4j`` to version 1.1.0.
-  - Update ``JTS`` to version 1.16.1.
-  - Add base attribute to Array.
-  - Add min max gaussian filter functions.
-  - Source code set to Java 8.
-  - Several bug fixed.
-
-**Darcula look & feel and 3D bar plot**
-    
-.. image:: ../_static/news/mi_2.1_Darcula_3d_bar.png
-   :scale: 60
-
-**taylor_diagram plot**::
+::
 
     case = ['Case A', 'Case B']
     ncase = len(case)
@@ -70,4 +54,4 @@ MeteoInfo 2.1 was released (2020-1-22)
         i += 1
     ax.text(0.05, 0.5, models, fontsize=12)
     
-.. image:: ../_static/taylor_diagram_1.png
+.. image:: ../../../_static/taylor_diagram_1.png
