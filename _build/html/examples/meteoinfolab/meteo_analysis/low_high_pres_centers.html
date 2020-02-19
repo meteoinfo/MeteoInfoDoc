@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Plot low and high pressure centers &#8212; MeteoInfo 2.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="EOF analysis" href="eof.html" />
+    <link rel="prev" title="Moisture potential vorticity" href="moisture_potential_vorticity.html" /> 
+  </head><body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../../index.html"><img src="../../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="eof.html" title="EOF analysis"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="moisture_potential_vorticity.html" title="Moisture potential vorticity"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../docs/index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Examples</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../meteo_analysis.html" accesskey="U">Meteorological analysis</a> &#187;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="moisture_potential_vorticity.html"
+                        title="previous chapter">Moisture potential vorticity</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="eof.html"
+                        title="next chapter">EOF analysis</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/examples/meteoinfolab/meteo_analysis/low_high_pres_centers.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="plot-low-and-high-pressure-centers">
+<span id="examples-meteoinfolab-meteo-analysis-low-high-pres-centers"></span><h1>Plot low and high pressure centers<a class="headerlink" href="#plot-low-and-high-pressure-centers" title="Permalink to this headline">¶</a></h1>
+<p>Location lon and high pressure centers using <code class="docutils literal notranslate"><span class="pre">minimum_filter</span></code> and <code class="docutils literal notranslate"><span class="pre">maximum_filter</span></code> functions.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="s1">&#39;D:/Temp/GrADS/model.ctl&#39;</span><span class="p">)</span>
+<span class="n">pres</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;PS&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;-60:70&#39;</span><span class="p">,</span><span class="s1">&#39;50:280&#39;</span><span class="p">]</span>
+<span class="n">lat</span> <span class="o">=</span> <span class="n">pres</span><span class="o">.</span><span class="n">dimvalue</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">lon</span> <span class="o">=</span> <span class="n">pres</span><span class="o">.</span><span class="n">dimvalue</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">pres</span> <span class="o">=</span> <span class="n">imagelib</span><span class="o">.</span><span class="n">gaussian_filter</span><span class="p">(</span><span class="n">pres</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mf">3.0</span><span class="p">)</span>
+<span class="n">mxdata</span> <span class="o">=</span> <span class="n">imagelib</span><span class="o">.</span><span class="n">minimum_filter</span><span class="p">(</span><span class="n">pres</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+<span class="n">mxy</span><span class="p">,</span> <span class="n">mxx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">mxdata</span> <span class="o">==</span> <span class="n">pres</span><span class="p">)</span>
+<span class="n">midata</span> <span class="o">=</span> <span class="n">imagelib</span><span class="o">.</span><span class="n">maximum_filter</span><span class="p">(</span><span class="n">pres</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+<span class="n">miy</span><span class="p">,</span> <span class="n">mix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">midata</span> <span class="o">==</span> <span class="n">pres</span><span class="p">)</span>
+
+<span class="c1">#Plot</span>
+<span class="n">axesm</span><span class="p">()</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">)</span>
+<span class="n">layer</span> <span class="o">=</span> <span class="n">contourm</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">pres</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">153</span><span class="p">,</span><span class="mi">204</span><span class="p">))</span>
+<span class="n">clabel</span><span class="p">(</span><span class="n">layer</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mxy</span><span class="p">)):</span>
+    <span class="n">geoshow</span><span class="p">(</span><span class="n">lat</span><span class="p">[</span><span class="n">mxy</span><span class="p">[</span><span class="n">i</span><span class="p">]],</span> <span class="n">lon</span><span class="p">[</span><span class="n">mxx</span><span class="p">[</span><span class="n">i</span><span class="p">]],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">text</span><span class="p">(</span><span class="n">lon</span><span class="p">[</span><span class="n">mxx</span><span class="p">[</span><span class="n">i</span><span class="p">]],</span> <span class="n">lat</span><span class="p">[</span><span class="n">mxy</span><span class="p">[</span><span class="n">i</span><span class="p">]],</span> <span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">xalign</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span>
+        <span class="n">yalign</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">mxdata</span><span class="p">[</span><span class="n">mxy</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">mxx</span><span class="p">[</span><span class="n">i</span><span class="p">]])</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">miy</span><span class="p">)):</span>
+    <span class="n">geoshow</span><span class="p">(</span><span class="n">lat</span><span class="p">[</span><span class="n">miy</span><span class="p">[</span><span class="n">i</span><span class="p">]],</span> <span class="n">lon</span><span class="p">[</span><span class="n">mix</span><span class="p">[</span><span class="n">i</span><span class="p">]],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">text</span><span class="p">(</span><span class="n">lon</span><span class="p">[</span><span class="n">mix</span><span class="p">[</span><span class="n">i</span><span class="p">]],</span> <span class="n">lat</span><span class="p">[</span><span class="n">miy</span><span class="p">[</span><span class="n">i</span><span class="p">]],</span> <span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">xalign</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span>
+        <span class="n">yalign</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">midata</span><span class="p">[</span><span class="n">miy</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">mix</span><span class="p">[</span><span class="n">i</span><span class="p">]])</span>
+
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Plot low and high pressure centers&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../_images/low_high_pres_centers.png" src="../../../_images/low_high_pres_centers.png" />
+</div>
+
+
+          </div>
+        </div>
+      </div>
+    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
+        <img style="position: fixed; top: 0; right: 0; border: 0;" 
+        src="../../../_static/forkme_right_orange_ff7600.png" 
+        alt="Fork me on GitHub">
+    </a>
+    <a target="_blank" href="https://gitter.im/meteoinfo/community">
+        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
+        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
+        alt="Join the chat at Gitter">
+    </a>
+
+
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="eof.html" title="EOF analysis"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="moisture_potential_vorticity.html" title="Moisture potential vorticity"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../docs/index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Examples</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../meteo_analysis.html" >Meteorological analysis</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2020, MeteoInfo developers.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+    </div>
+  </body>
+</html>
