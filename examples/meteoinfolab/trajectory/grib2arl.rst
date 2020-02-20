@@ -90,7 +90,12 @@ for converting GRIB data to ARL data.
     arlf.close()
     print 'Finished!'
 	
-Convert ERA5 grib data to ARL data.
+Convert ERA5 grib data to ARL data. The optional field DIFF is recognized as the difference 
+between the original data and the packed data: DIFF=ORIGINAL-PACKED. The effect of this is to 
+increase the precision of variables that have this additional field. When the DIFF field is 
+read by HYSPLIT, the values are added to the data field resulting in values closer to the 
+original data. Currently only DIFW and DIFR (vertical velocity and precipitation) are 
+recognized as valid DIFF fields (https://ready.arl.noaa.gov/hysplitusersguide/S141.htm ).
 
 ::
 
@@ -99,7 +104,7 @@ Convert ERA5 grib data to ARL data.
     #---- Set data folder
     datadir = r'D:/Temp/grib'
     #---- Set output data file
-    outfn = os.path.join(datadir, 'test_era5_grib-1.arl')
+    outfn = os.path.join(datadir, 'test_era5_grib_diff.arl')
     #---- Read a GRIB data file
     infn3d = addfile('{}/ERA5_2017.Aug22.3dpl.grib'.format(datadir))
     infn2d = addfile('{}/ERA5_2017.Aug22.2dpl.all.grib  '.format(datadir))
@@ -107,17 +112,24 @@ Convert ERA5 grib data to ARL data.
     print 'GRIB data file has been opened...'
     #---- Set output ARL data file
     arlf = addfile(outfn, 'c', dtype='arl')
-    ##---- Set variable and level list
+
+    #---- Set variable and level list
+    #---- Variable names in ERA5 data file
     gvar2d = ['Surface_pressure_surface','2_metre_temperature_surface','10_metre_U_wind_component_surface',\
         '10_metre_V_wind_component_surface','Boundary_layer_height_surface','Convective_available_potential_energy_surface',\
         'Instantaneous_eastward_turbulent_surface_stress_surface','Instantaneous_northward_turbulent_surface_stress_surface']
 
     gvar3d = ['Geopotential_isobaric','Temperature_isobaric','Vertical_velocity_isobaric',\
         'U_component_of_wind_isobaric','V_component_of_wind_isobaric','Relative_humidity_isobaric']
-    #
-    avar2d = ['PRSS','T02M','U10M','V10M','PBLH','CAPE','UMOF','VMOF',]
-    avar3d = ['HGTS','TEMP','WWND','UWND','VWND','RELH']
 
+    #---- Corresponding variable names in ARL data file
+    avar2d = ['PRSS','T02M','U10M','V10M','PBLH','CAPE','UMOF','VMOF']
+    avar3d = ['HGTS','TEMP','WWND','UWND','VWND','RELH']
+    #--- Add DIFF fields - difference between the original data and the packed data
+    avar3d_diff = list(avar3d)
+    avar3d_diff.append('DIFW')
+
+    #---- Set parameters of ARL data file
     gv = infn3d['Geopotential_isobaric']
     nx = gv.dimlen(gv.ndim - 1)
     ny = gv.dimlen(gv.ndim - 2)
@@ -126,11 +138,11 @@ Convert ERA5 grib data to ARL data.
     arlf.setlevels(levels)
     arlf.set2dvar(avar2d)
     for l in levels:
-        arlf.set3dvar(avar3d)
-
-    #---- Write ARL data file
+        arlf.set3dvar(avar3d_diff)
     arlf.setx(gv.dimvalue(gv.ndim - 1))
     arlf.sety(gv.dimvalue(gv.ndim - 2))
+
+    #---- Write ARL data file
     tNum = infn3d.timenum()
     fhour = 0
     for t in range(0, tNum):
@@ -155,17 +167,20 @@ Convert ERA5 grib data to ARL data.
         for lidx in range(0, nz):
             ksums = []
             llidx = nz - lidx - 1
-            print(lidx,llidx)
+            print(lidx,llidx)        
             for avname,gvname in zip(avar3d, gvar3d):
-                gdata = infn3d[gvname][t,llidx,:,:]
+                gdata = infn3d[gvname][t,llidx,:,:]            
                 if avname == 'WWND':
                     gdata = gdata * 0.01
+                    difw = arlf.diff_origin_pack(gdata)
                 elif avname == 'SPHU':
                     gdata = gdata * 1000.
                 elif avname == 'HGTS':
                     gdata = gdata / 9.80665
                 ksum = arlf.writedatarec(atime, lidx + 1, avname, fhour, 99, gdata)
                 ksums.append(ksum)
+            ksum = arlf.writedatarec(atime, lidx + 1, 'DIFW', fhour, 99, difw)
+            ksums.append(ksum)
             ksumlist.append(ksums)
         #Re-write index record with checksum
         arlf.writeindexrec(atime, dhead, ksumlist)
@@ -180,29 +195,40 @@ to the lossy compression algorithm of ARL data format.
 
     ddir = 'D:/Temp/grib'
     f_era5_3d = addfile(os.path.join(ddir, 'ERA5_2017.Aug22.3dpl.grib'))
-    w1 = f_era5_3d['Vertical_velocity_isobaric'][0,-1]
-    f = addfile(os.path.join(ddir, 'test_era5_grib-1.arl'))
+    w1 = f_era5_3d['Vertical_velocity_isobaric'][0,-1]    #Pa s**-1
+    f = addfile(os.path.join(ddir, 'test_era5_grib_diff.arl'))
     vname = 'WWND'
-    w = f[vname][0,0]
+    w = f[vname][0,0]    #hPa s**-1
+    difw = f['DIFW'][0,0]
+    w2 = w + difw
     w = w * 100
+    w2 = w2 * 100
 
     subplot(2,2,1,axestype='map')
-    geoshow('country', edgecolor='k')
+    geoshow('country')
     levs = arange(-1, 1, 0.02)
-    layer = imshowm(w, levs)
-    colorbar(layer)
-    title('ARL ({})'.format(vname))
-
-    subplot(2,2,2,axestype='map')
-    geoshow('country', edgecolor='k')
     layer1 = imshowm(w1, levs)
     colorbar(layer1)
     title('ERA5 ({})'.format(vname))
 
+    subplot(2,2,2,axestype='map')
+    geoshow('country')
+    layer = imshowm(w2, levs)
+    colorbar(layer)
+    title('ARL + DIFF ({})'.format(vname))
+
     subplot(2,2,3,axestype='map')
-    geoshow('country', edgecolor='k')
+    geoshow('country')
     layer2 = imshowm(w1 - w, 20)
     colorbar(layer2)
     title('ERA5 - ARL ({})'.format(vname))
+
+    subplot(2,2,4,axestype='map')
+    geoshow('country')
+    layer2 = imshowm(w1 - w2, 20)
+    colorbar(layer2)
+    title('ERA5 - ARL + DIFF ({})'.format(vname))
+
+    savefig('D:/Temp/test/era2arl_diff.png', 650, 370)
 	
 .. image:: ../../../_static/era5_arl.png
