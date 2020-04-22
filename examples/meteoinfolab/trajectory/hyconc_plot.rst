@@ -32,3 +32,21 @@ during 2011 Fukushima nuclear disaster.
     title('Simulation of cesium-137 emitted from Fukushima (%s)' % t.strftime('%Y-%m-%d'))
     
 .. image:: ../../../_static/hy_conc_nuclear.png
+
+Extract temporal data at a specific location.
+
+::
+
+	lat = 38.0
+	lon = 145.0
+
+	fn = r'D:\Working\MIScript\JapanNuclear\cdump15'
+	f = addfile_hyconc(fn)
+	data = f['C137'][:,0,str(lat),str(lon)]
+
+	#Plot
+	plot(data, '-bo')
+	ylabel('C137')
+	title('C137 at (Lat: %.2f, Lon: %.2f)' % (lat, lon))
+	
+.. image:: ../../../_static/hy_conc_loc.png

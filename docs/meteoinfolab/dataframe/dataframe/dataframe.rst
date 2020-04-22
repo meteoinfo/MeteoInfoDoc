@@ -34,7 +34,9 @@ Methods:
 .. toctree::
    :maxdepth: 1
 
-   head.rst
-   tail.rst
-   transpose.rst
    append.rst
+   head.rst
+   read_table.rst
+   tail.rst
+   to_csv.rst
+   transpose.rst   

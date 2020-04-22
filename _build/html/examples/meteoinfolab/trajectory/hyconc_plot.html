@@ -113,6 +113,21 @@ during 2011 Fukushima nuclear disaster.</p>
 </pre></div>
 </div>
 <img alt="../../../_images/hy_conc_nuclear.png" src="../../../_images/hy_conc_nuclear.png" />
+<p>Extract temporal data at a specific location.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">lat</span> <span class="o">=</span> <span class="mf">38.0</span>
+<span class="n">lon</span> <span class="o">=</span> <span class="mf">145.0</span>
+
+<span class="n">fn</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;D:\Working\MIScript\JapanNuclear\cdump15&#39;</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">addfile_hyconc</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;C137&#39;</span><span class="p">][:,</span><span class="mi">0</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="n">lat</span><span class="p">),</span><span class="nb">str</span><span class="p">(</span><span class="n">lon</span><span class="p">)]</span>
+
+<span class="c1">#Plot</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s1">&#39;-bo&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;C137&#39;</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;C137 at (Lat: </span><span class="si">%.2f</span><span class="s1">, Lon: </span><span class="si">%.2f</span><span class="s1">)&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">))</span>
+</pre></div>
+</div>
+<img alt="../../../_images/hy_conc_loc.png" src="../../../_images/hy_conc_loc.png" />
 </div>
 
 

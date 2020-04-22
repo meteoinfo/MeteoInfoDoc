@@ -65,9 +65,8 @@ Running MeteoInfoMap/MeteoInfoLab
 Run MeteoInfoMap:
 -----------------
 
-On Windows paltform, you can launch MeteoInfoMap by double-clicking "MeteoInfoMap.exe" file, 
-or by run the batch command file "mimap.bat". The batch command file with parameters will
-run a Jython script ("mimap.bat test.py").
+On Windows paltform, you can launch MeteoInfoMap by double-clicking ``MeteoInfoMap.exe`` file, 
+or by run the batch command file ``mimap.bat``.
 
 On Linux/Unix platforms, you should run MeteoInfoMap from the shell command line; 'cd' into
 the directory where the above files are located and then type:
@@ -84,9 +83,11 @@ On Mac OS platform, you can launch MeteoInfoMap similar with Linux paltform but 
 Run MeteoInfoLab:
 -----------------
 
-On Windows paltform, you can launch MeteoInfoLab by double-clicking "MeteoInfoLab.exe" file, 
-or by run the batch command file "milab.bat". The batch command file with parameters will
-run a Jython script.
+On Windows paltform, you can launch MeteoInfoLab by double-clicking ``MeteoInfoLab.exe`` file, 
+or by run the batch command file ``milab.bat``. The batch command file with parameters will
+run a Jython script:
+
+``milab.bat test.py``
 
 On Linux/Unix platforms, you should run MeteoInfoLab from the shell command line; 'cd' into
 the directory where the above files are located and then type:

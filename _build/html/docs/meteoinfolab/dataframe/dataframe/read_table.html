@@ -1,0 +1,216 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>read_table &#8212; MeteoInfo 2.0 documentation</title>
+    <link rel="stylesheet" href="../../../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="tail" href="tail.html" />
+    <link rel="prev" title="head" href="head.html" /> 
+  </head><body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../../../index.html"><img src="../../../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="tail.html" title="tail"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="head.html" title="head"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../../api.html" >The MeteoInfoLab API</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../../dataframe.html" >dataframe package</a> &#187;</li>
+          <li class="nav-item nav-item-5"><a href="../dataframe.html" >mipylib.dataframe.dataframe</a> &#187;</li>
+          <li class="nav-item nav-item-6"><a href="dataframe.html" accesskey="U">DataFrame</a> &#187;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="head.html"
+                        title="previous chapter">head</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="tail.html"
+                        title="next chapter">tail</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../_sources/docs/meteoinfolab/dataframe/dataframe/read_table.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="read-table">
+<span id="docs-meteoinfolab-dataframe-dataframe-dataframe-read-table"></span><h1>read_table<a class="headerlink" href="#read-table" title="Permalink to this headline">¶</a></h1>
+<dl class="method">
+<dt id="DataFrame.read_table">
+<code class="sig-prename descclassname">DataFrame.</code><code class="sig-name descname">read_table</code><span class="sig-paren">(</span><em class="sig-param">cls</em>, <em class="sig-param">filepath</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#DataFrame.read_table" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create DataFrame by reading column oriented data from a file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filepath</strong> – (<em>string</em>) File path for reading.</p></li>
+<li><p><strong>delimiter</strong> – (<em>string</em>) Variable delimiter character. Default is <code class="docutils literal notranslate"><span class="pre">None</span></code>, means space or tab
+delimiter.</p></li>
+<li><p><strong>format</strong> – (<em>string</em>) Colomn format of the file. Default is <code class="docutils literal notranslate"><span class="pre">None</span></code>, means all columns were
+read as string variable. <code class="docutils literal notranslate"><span class="pre">%s</span></code>: string; <code class="docutils literal notranslate"><span class="pre">%i</span></code>: integer; <code class="docutils literal notranslate"><span class="pre">%f</span></code>: float; <code class="docutils literal notranslate"><span class="pre">%{yyyyMMdd...}D</span></code>:
+date time.</p></li>
+<li><p><strong>skiprows</strong> – (<em>int</em>) Lines to skip at beginning of the file. Default is <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p></li>
+<li><p><strong>skipfooter</strong> – (<em>int</em>) Number of lines at bottom of file to skip.</p></li>
+<li><p><strong>encoding</strong> – (<em>string</em>) Character encoding scheme associated with the file. Default is <code class="docutils literal notranslate"><span class="pre">UTF8</span></code>.</p></li>
+<li><p><strong>names</strong> – (<em>array_like</em>) List of column names to use. If file contains no header row, then you should
+explicitly pass header=None. Default is None.</p></li>
+<li><p><strong>header</strong> – (<em>int</em>) Row number to use as the column names. If column names are passed explicitly
+then the behavior is identical to <code class="docutils literal notranslate"><span class="pre">header=None</span></code>.</p></li>
+<li><p><strong>index_col</strong> – (<em>int</em>) Column to use as the row labels (index) of the DataFrame.</p></li>
+<li><p><strong>index_format</strong> – (<em>string</em>) Index column format.</p></li>
+<li><p><strong>usecols</strong> – (<em>list</em>) Return a subset of the columns. If list-like, all elements
+must either be positional (i.e. integer indices into the document columns) or
+strings that correspond to column names provided either by the user in names or
+inferred from the document header row(s).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(<em>DataFrame</em>) The DataFrame.</p>
+</dd>
+</dl>
+<p>Examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;D:/MyProgram/java/MeteoInfoDev/toolbox/OutlierFlag/sample/54826PMMUL201102_T.txt&#39;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">DataFrame</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%3f</span><span class="s1">&#39;</span><span class="p">,</span> \
+    <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">index_format</span><span class="o">=</span><span class="s1">&#39;%</span><span class="si">{yyyyMMddHHmm}</span><span class="s1">D&#39;</span><span class="p">,</span> <span class="n">usecols</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;PM10&#39;</span><span class="p">,</span><span class="s1">&#39;PM2.5&#39;</span><span class="p">,</span><span class="s1">&#39;PM1&#39;</span><span class="p">])</span>
+<span class="nb">print</span> <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="n">pm2_5</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;PM2.5&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">pm2_5</span><span class="p">[</span><span class="n">pm2_5</span><span class="o">&lt;-</span><span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="n">nan</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;PM2.5&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pm2_5</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">data</span>
+
+<span class="c1">#Hour average</span>
+<span class="n">dfh</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;H&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">pm2_5</span> <span class="o">=</span> <span class="n">dfh</span><span class="p">[</span><span class="s1">&#39;PM2.5&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">dfh</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">data</span>
+
+<span class="c1">#Plot</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">pm2_5</span><span class="p">,</span> <span class="s1">&#39;-b&#39;</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\rm</span><span class="si">{PM}</span><span class="s1">_\textbf</span><span class="si">{2.5}</span><span class="s1">$&#39;</span> <span class="o">+</span> <span class="sa">u</span><span class="s1">&#39; (µg/m&#39;</span> <span class="o">+</span> <span class="sa">r</span><span class="s1">&#39;$\rm{^</span><span class="si">{3}</span><span class="s1">)}$&#39;</span><span class="p">)</span>
+<span class="n">tvalues</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">tlabels</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">st</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">day</span><span class="p">)</span>
+<span class="k">while</span> <span class="n">st</span> <span class="o">&lt;=</span> <span class="n">t</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+    <span class="n">tvalues</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">st</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">st</span><span class="o">.</span><span class="n">day</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">tlabels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">st</span><span class="o">.</span><span class="n">day</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">st</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m&#39;</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">tlabels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">st</span><span class="o">.</span><span class="n">day</span><span class="p">))</span>
+    <span class="n">st</span> <span class="o">=</span> <span class="n">st</span> <span class="o">+</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">xticks</span><span class="p">(</span><span class="n">tvalues</span><span class="p">,</span> <span class="n">tlabels</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Time series&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/dataframe_read_table.png" src="../../../../_images/dataframe_read_table.png" />
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
+        <img style="position: fixed; top: 0; right: 0; border: 0;" 
+        src="../../../../_static/forkme_right_orange_ff7600.png" 
+        alt="Fork me on GitHub">
+    </a>
+    <a target="_blank" href="https://gitter.im/meteoinfo/community">
+        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
+        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
+        alt="Join the chat at Gitter">
+    </a>
+
+
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="tail.html" title="tail"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="head.html" title="head"
+             >previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../products/index.html">products</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../../api.html" >The MeteoInfoLab API</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../../dataframe.html" >dataframe package</a> &#187;</li>
+          <li class="nav-item nav-item-5"><a href="../dataframe.html" >mipylib.dataframe.dataframe</a> &#187;</li>
+          <li class="nav-item nav-item-6"><a href="dataframe.html" >DataFrame</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2020, MeteoInfo developers.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+    </div>
+  </body>
+</html>

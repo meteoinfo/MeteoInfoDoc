@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>DataFrame &#8212; MeteoInfo 2.0 documentation</title>
+    <title>to_csv &#8212; MeteoInfo 2.0 documentation</title>
     <link rel="stylesheet" href="../../../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
@@ -16,8 +16,8 @@
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="shape" href="shape.html" />
-    <link rel="prev" title="mipylib.dataframe.dataframe" href="../dataframe.html" /> 
+    <link rel="next" title="transpose" href="transpose.html" />
+    <link rel="prev" title="tail" href="tail.html" /> 
   </head><body>
 
 <div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
@@ -33,10 +33,10 @@
           <a href="../../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="shape.html" title="shape"
+          <a href="transpose.html" title="transpose"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="../dataframe.html" title="mipylib.dataframe.dataframe"
+          <a href="tail.html" title="tail"
              accesskey="P">previous</a> |</li>
         <li><a href="../../../../index.html">home</a>|&nbsp;</li>
         <li><a href="../../../../products/index.html">products</a>|&nbsp;</li>
@@ -49,31 +49,23 @@
           <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoLab</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="../../api.html" >The MeteoInfoLab API</a> &#187;</li>
           <li class="nav-item nav-item-4"><a href="../../dataframe.html" >dataframe package</a> &#187;</li>
-          <li class="nav-item nav-item-5"><a href="../dataframe.html" accesskey="U">mipylib.dataframe.dataframe</a> &#187;</li> 
+          <li class="nav-item nav-item-5"><a href="../dataframe.html" >mipylib.dataframe.dataframe</a> &#187;</li>
+          <li class="nav-item nav-item-6"><a href="dataframe.html" accesskey="U">DataFrame</a> &#187;</li> 
       </ul>
     </div>
 
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../../../../index.html">Table of Contents</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">DataFrame</a><ul>
-<li><a class="reference internal" href="#attributes">Attributes:</a></li>
-<li><a class="reference internal" href="#methods">Methods:</a></li>
-</ul>
-</li>
-</ul>
-
   <h4>Previous topic</h4>
-  <p class="topless"><a href="../dataframe.html"
-                        title="previous chapter">mipylib.dataframe.dataframe</a></p>
+  <p class="topless"><a href="tail.html"
+                        title="previous chapter">tail</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="shape.html"
-                        title="next chapter">shape</a></p>
+  <p class="topless"><a href="transpose.html"
+                        title="next chapter">transpose</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../../../../_sources/docs/meteoinfolab/dataframe/dataframe/dataframe.rst.txt"
+      <li><a href="../../../../_sources/docs/meteoinfolab/dataframe/dataframe/to_csv.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -96,48 +88,33 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="dataframe">
-<span id="docs-meteoinfolab-dataframe-dataframe-dataframe"></span><h1>DataFrame<a class="headerlink" href="#dataframe" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
-<dt id="mipylib.dataframe.dataframe.DataFrame">
-<em class="property">class </em><code class="sig-prename descclassname">mipylib.dataframe.dataframe.</code><code class="sig-name descname">DataFrame</code><a class="headerlink" href="#mipylib.dataframe.dataframe.DataFrame" title="Permalink to this definition">¶</a></dt>
-<dd><p>Two-dimensional size-mutable, potentially heterogeneous tabular data structure with
-labeled axes (rows and columns). Arithmetic operations align on both row and column
-labels. Can be thought of as a dict-like container for Series objects.</p>
+  <div class="section" id="to-csv">
+<span id="docs-meteoinfolab-dataframe-dataframe-dataframe-to-csv"></span><h1>to_csv<a class="headerlink" href="#to-csv" title="Permalink to this headline">¶</a></h1>
+<dl class="method">
+<dt id="DataFrame.to_csv">
+<code class="sig-prename descclassname">DataFrame.</code><code class="sig-name descname">to_csv</code><span class="sig-paren">(</span><em class="sig-param">filepath</em>, <em class="sig-param">delimiter='</em>, <em class="sig-param">'</em>, <em class="sig-param">format=None</em>, <em class="sig-param">date_format=None</em>, <em class="sig-param">float_format=None</em>, <em class="sig-param">index=True</em><span class="sig-paren">)</span><a class="headerlink" href="#DataFrame.to_csv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save the data to an csv file.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>data</strong> – (<em>array_like</em>) Two-dimensional array data or list of one-dimensional arrays.</p></li>
-<li><p><strong>index</strong> – (<em>list</em>) Data index list. Values must be unique and hashable, same length as data.</p></li>
-<li><p><strong>columns</strong> – (<em>list</em>) Column labels to use for resulting frame. Will default to
-arange(n) if no column labels are provided</p></li>
+<li><p><strong>filename</strong> – (<em>string</em>) The file name.</p></li>
+<li><p><strong>delimiter</strong> – (<em>string</em>) Field delimiter character. Default is <code class="docutils literal notranslate"><span class="pre">,</span></code>.</p></li>
+<li><p><strong>format</strong> – (<em>string</em>) Format string.</p></li>
+<li><p><strong>date_format</strong> – (<em>string</em>) Date format string. i.e. ‘yyyyMMddHH’.</p></li>
+<li><p><strong>float_format</strong> – (<em>string</em>) Float format string. i.e. ‘%.2f’.</p></li>
+<li><p><strong>index</strong> – (<em>boolean</em>) Write index or not.</p></li>
 </ul>
 </dd>
 </dl>
+<p>Examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Raphael&#39;</span><span class="p">,</span> <span class="s1">&#39;Donatello&#39;</span><span class="p">],</span>
+           <span class="s1">&#39;mask&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;purple&#39;</span><span class="p">],</span>
+           <span class="s1">&#39;weapon&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;sai&#39;</span><span class="p">,</span> <span class="s1">&#39;bo staff&#39;</span><span class="p">]})</span>
+<span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;D:/Test/out.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
 </dd></dl>
 
-<div class="section" id="attributes">
-<h2>Attributes:<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="shape.html">shape</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dtypes.html">dtypes</a></li>
-</ul>
-</div>
-</div>
-<div class="section" id="methods">
-<h2>Methods:<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="append.html">append</a></li>
-<li class="toctree-l1"><a class="reference internal" href="head.html">head</a></li>
-<li class="toctree-l1"><a class="reference internal" href="read_table.html">read_table</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tail.html">tail</a></li>
-<li class="toctree-l1"><a class="reference internal" href="to_csv.html">to_csv</a></li>
-<li class="toctree-l1"><a class="reference internal" href="transpose.html">transpose</a></li>
-</ul>
-</div>
-</div>
 </div>
 
 
@@ -168,10 +145,10 @@ arange(n) if no column labels are provided</p></li>
           <a href="../../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="shape.html" title="shape"
+          <a href="transpose.html" title="transpose"
              >next</a> |</li>
         <li class="right" >
-          <a href="../dataframe.html" title="mipylib.dataframe.dataframe"
+          <a href="tail.html" title="tail"
              >previous</a> |</li>
         <li><a href="../../../../index.html">home</a>|&nbsp;</li>
         <li><a href="../../../../products/index.html">products</a>|&nbsp;</li>
@@ -184,7 +161,8 @@ arange(n) if no column labels are provided</p></li>
           <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoLab</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="../../api.html" >The MeteoInfoLab API</a> &#187;</li>
           <li class="nav-item nav-item-4"><a href="../../dataframe.html" >dataframe package</a> &#187;</li>
-          <li class="nav-item nav-item-5"><a href="../dataframe.html" >mipylib.dataframe.dataframe</a> &#187;</li> 
+          <li class="nav-item nav-item-5"><a href="../dataframe.html" >mipylib.dataframe.dataframe</a> &#187;</li>
+          <li class="nav-item nav-item-6"><a href="dataframe.html" >DataFrame</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
