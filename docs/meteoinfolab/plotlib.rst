@@ -9,3 +9,4 @@ Plotlib package
    :maxdepth: 1
 
    plot/miplot.rst
+   plot/axes3dgl.rst
