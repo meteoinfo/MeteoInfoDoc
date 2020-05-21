@@ -9,8 +9,8 @@ Introduction
 **MeteoInfo** is an intergrated framework both for GIS application and scientific computation environment, 
 especially for meteorological community.
 
-MeteoInfo is an open source software (LGPL license) suite, which includes two major applications:
-``MeteoInfoMap`` and ``MeteoInfoLab``.
+MeteoInfo is an open source software (LGPL license) suite, which can be used for free. It includes two major
+applications: ``MeteoInfoMap`` and ``MeteoInfoLab``.
 
 **MeteoInfoMap** is a GIS application which enables the user to visualize and analyze the spatial and 
 meteorological data with multiple data formats.
