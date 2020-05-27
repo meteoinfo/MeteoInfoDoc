@@ -1,12 +1,10 @@
-.. _projects-wcontour:
+.. docs-wcontour-introduction:
 
 
 *******************
-wContour
+Introduction
 *******************
 
-Introduction:
-------------------------------------
 The wContour class library was developed using Java and C# to implement the contour-related 
 algorithms used in software development for data analysis in the geosciences using the Java or 
 .NET environment. The comprehensive description of the algorithms for contour line tracing, 
@@ -27,18 +25,21 @@ Supported Algorithms:
   - Cressman interpolation 
   - Tracing contour lines from complex grid data
   - Tracing contour polygons
-  - Streamline analysis 
-  
+  - Streamline analysis
+
+Source code
+---------------
+https://github.com/meteoinfo/wContour
 
 Screen shots:
 -------------------
-.. image:: wcontour_image/wcontour_1.png
-.. image:: wcontour_image/wcontour_2.png
-.. image:: wcontour_image/wcontour_3.png
-.. image:: wcontour_image/wcontour_4.png
-.. image:: wcontour_image/wcontour_5.png
-.. image:: wcontour_image/wcontour_6.png
+.. image:: images/wcontour_1.png
+.. image:: images/wcontour_2.png
+.. image:: images/wcontour_3.png
+.. image:: images/wcontour_4.png
+.. image:: images/wcontour_5.png
+.. image:: images/wcontour_6.png
    :scale: 50
-.. image:: wcontour_image/wcontour_7.png
-.. image:: wcontour_image/wcontour_8.png
-.. image:: wcontour_image/wcontour_9.png
+.. image:: images/wcontour_7.png
+.. image:: images/wcontour_8.png
+.. image:: images/wcontour_9.png

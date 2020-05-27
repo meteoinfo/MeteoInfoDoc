@@ -9,4 +9,3 @@ dataframe package
    :maxdepth: 1
 
    dataframe/dataframe.rst
-   dataframe/series.rst

@@ -78,3 +78,11 @@ if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330,
 Distributed under the `GNU Lesser General Public License <https://www.gnu.org/licenses/lgpl.html>`_.
 
 Chinese Academy of Meteorological Sciences, CMA
+
+Screen shots:
+-------------------
+.. image:: images/outlierflag_1.png
+.. image:: images/outlierflag_2.png
+.. image:: images/outlierflag_3.png
+.. image:: images/outlierflag_4.png
+.. image:: images/outlierflag_5.png

@@ -9,6 +9,5 @@ Examples
    :maxdepth: 2
 
    meteoinfomap/index.rst
-   meteoinfoscript/index.rst
    meteoinfolab/index.rst
    miml/index.rst

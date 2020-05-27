@@ -1,4 +1,4 @@
-.. docs-trajstat-introduction:
+.. _docs-trajstat-introduction:
 
 
 *******************
@@ -43,3 +43,7 @@ Yaqiang Wang
 email: yaqiang.wang@gmail.com
 
 Chinese Academy of Meteorological Sciences, CMA
+
+Source code
+---------------
+https://github.com/meteoinfo/TrajStat

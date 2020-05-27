@@ -41,7 +41,6 @@ Research Gate: https://www.researchgate.net/profile/Yaqiang_Wang5
 .. toctree::
    :hidden:
    
-   products/index.rst
    news/index.rst
    examples/index.rst
    downloads/index.rst

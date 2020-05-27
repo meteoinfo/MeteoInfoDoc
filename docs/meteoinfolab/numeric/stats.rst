@@ -26,7 +26,8 @@ Statistical functions
    :maxdepth: 1
 
    stats/chisquare.rst
-   stats/cov.rst   
+   stats/cov.rst
+   stats/covariance.rst
    stats/kendalltau.rst
    stats/linregress.rst
    stats/mlinregress.rst

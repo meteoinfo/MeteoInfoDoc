@@ -14,7 +14,9 @@ Clustering
    cluster/gmeans.rst
    cluster/clarans.rst
    cluster/birch.rst
+   cluster/dac.rst
    cluster/dbscan.rst
    cluster/denclue.rst
+   cluster/sib.rst
    cluster/specc.rst
    cluster/mec.rst

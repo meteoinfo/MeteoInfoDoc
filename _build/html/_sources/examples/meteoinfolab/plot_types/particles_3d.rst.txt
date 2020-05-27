@@ -1,0 +1,12 @@
+.. _examples-meteoinfolab-plot_types-particles_3d:
+
+*********************
+Plot 3d particles
+*********************
+
+3d array can be plotted as particles using ``plot_particles`` function in ``Axes3DGL`` class.
+
+.. contents::
+   :depth: 2
+
+   ../../../docs/meteoinfolab/plot/axes3dgl/plot_particles.rst
