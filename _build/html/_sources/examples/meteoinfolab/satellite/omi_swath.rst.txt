@@ -13,17 +13,14 @@ This example code illustrates how to access and visualize a OMI swath data.
     fns = 'OMI-Aura_L2-OMNO2_2008m0720t2016-o21357_v003-2008m0721t101450.he5'
     fn = folder + fns
     f = addfile(fn)
-    lon_v = f['Longitude']
-    lat_v = f['Latitude']
-    lon = lon_v[:,:]
-    lat = lat_v[:,:]
+    lon = f['Longitude'][:]
+    lat = f['Latitude'][:]
     vname = 'CloudFraction'
-    v = f[vname]
-    data = v[:,:]*0.001
+    data = f[vname][:]*0.001
+
     #Plot
     axesm()
-    mlayer = shaperead('D:/Temp/map/country1.shp')
-    geoshow(mlayer, edgecolor='k')
+    geoshow('country')
     #slayer = scatterm(lon, lat, data, edge=False)
     layer = pcolorm(lon, lat, data)
     colorbar(layer)
