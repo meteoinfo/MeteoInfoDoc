@@ -59,7 +59,10 @@
 <li><a class="reference internal" href="#installing-meteoinfomap-meteoinfolab">Installing MeteoInfoMap/MeteoInfoLab</a></li>
 <li><a class="reference internal" href="#running-meteoinfomap-meteoinfolab">Running MeteoInfoMap/MeteoInfoLab</a><ul>
 <li><a class="reference internal" href="#run-meteoinfomap">Run MeteoInfoMap:</a></li>
-<li><a class="reference internal" href="#run-meteoinfolab">Run MeteoInfoLab:</a></li>
+<li><a class="reference internal" href="#run-meteoinfolab">Run MeteoInfoLab:</a><ul>
+<li><a class="reference internal" href="#run-meteoinfo-with-more-memory">Run MeteoInfo with more memory:</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a class="reference internal" href="#lib-files">Lib files</a></li>
@@ -185,6 +188,16 @@ MeteoInfoLab and requests that it be allocated 1 GB of memory. To run the script
 It is specially useful in Unix/Linux crontab.</p>
 <p>On Mac OS platform, you can launch MeteoInfoLab similar with Linux paltform but using:</p>
 <p><code class="docutils literal notranslate"><span class="pre">./milab_mac.sh</span></code></p>
+<div class="section" id="run-meteoinfo-with-more-memory">
+<h4>Run MeteoInfo with more memory:<a class="headerlink" href="#run-meteoinfo-with-more-memory" title="Permalink to this headline">¶</a></h4>
+<p>JVM will be started with <code class="docutils literal notranslate"><span class="pre">Xms</span></code> amount of memory and will be able to use a maximum of <code class="docutils literal notranslate"><span class="pre">Xmx</span></code> amount of memory.
+For example, starting a JVM like below will start it with 128 MB of memory and will allow the process to use
+up to 1 GB of memory:</p>
+<p><code class="docutils literal notranslate"><span class="pre">java</span> <span class="pre">-Xmx1G</span> <span class="pre">-Xms128m</span></code></p>
+<p>Try to increase <code class="docutils literal notranslate"><span class="pre">Xmx</span></code> value in the <code class="docutils literal notranslate"><span class="pre">MeteoInfoMap</span></code> and <code class="docutils literal notranslate"><span class="pre">MeteoInfoLab</span></code> starting files when you encounter
+a <code class="docutils literal notranslate"><span class="pre">java.lang.OutOfMemoryError</span></code>. The starting files are <code class="docutils literal notranslate"><span class="pre">mimap.bat</span></code> and <code class="docutils literal notranslate"><span class="pre">milab.bat</span></code> in Windows,
+<code class="docutils literal notranslate"><span class="pre">mimap.sh</span></code> and <code class="docutils literal notranslate"><span class="pre">milab.sh</span></code> in Linux and Unix, <code class="docutils literal notranslate"><span class="pre">mimap_mac.sh</span></code> and <code class="docutils literal notranslate"><span class="pre">milab_mac.sh</span></code> in Mac OS.</p>
+</div>
 </div>
 </div>
 <div class="section" id="lib-files">
