@@ -10,7 +10,7 @@ MeteoInfo
 MeteoInfo Desktop Application
 -----------------------------
   Java edition (Major development)
-    - `MeteoInfo 2.2.4 - Java (for all systems) <files/MeteoInfo_2.2.4.zip>`_
+    - `MeteoInfo 2.2.5 - Java (for all systems) <files/MeteoInfo_2.2.5.zip>`_
   C# edition   
     - `MeteoInfo 1.1.3.5R1 - C# <files/MeteoInfo_csharp_1.1.3.5R1.zip>`_
 
@@ -52,4 +52,4 @@ OutlierFlag
 EMIPS
 =====================================
   EMIssion Inventory Processing System
-    - `EMIPS 0.1 <files/EMIPS_0.1_Files.zip>`_
+    - `EMIPS 0.2 <files/EMIPS_0.2.zip>`_
