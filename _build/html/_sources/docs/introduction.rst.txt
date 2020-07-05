@@ -107,6 +107,19 @@ On Mac OS platform, you can launch MeteoInfoLab similar with Linux paltform but 
 
 ``./milab_mac.sh``
 
+Run MeteoInfo with more memory:
+_______________________________
+
+JVM will be started with ``Xms`` amount of memory and will be able to use a maximum of ``Xmx`` amount of memory.
+For example, starting a JVM like below will start it with 128 MB of memory and will allow the process to use
+up to 1 GB of memory:
+
+``java -Xmx1G -Xms128m``
+
+Try to increase ``Xmx`` value in the ``MeteoInfoMap`` and ``MeteoInfoLab`` starting files when you encounter
+a ``java.lang.OutOfMemoryError``. The starting files are ``mimap.bat`` and ``milab.bat`` in Windows,
+``mimap.sh`` and ``milab.sh`` in Linux and Unix, ``mimap_mac.sh`` and ``milab_mac.sh`` in Mac OS.
+
 Lib files
 ======================
 
