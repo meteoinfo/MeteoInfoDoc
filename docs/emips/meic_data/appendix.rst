@@ -5,7 +5,9 @@
 Appendix
 ***********
 
-**Source classfication code (scc)**
+**Default souce classification code (scc)**
+
+These are the default values in the software and can be customized.
 
 +-----------------+-----------------+
 |                 |                 | 
