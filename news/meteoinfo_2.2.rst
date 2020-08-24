@@ -5,7 +5,7 @@
 MeteoInfo 2.2 was released (2020-4-17)
 ******************************************
 
-  - Update Jython to version 2.7.2.  
+  - Update Jython to version 2.7.2.
   - Update time package as Java 8 time package.
   - Add 3D particle and slice plot functions.
   - Add ``FlatLaf`` look and feel.
@@ -61,7 +61,7 @@ MeteoInfo 2.2 was released (2020-4-17)
     #zticks(arange(len(levels))[1:], levels[1:])
     tt = st + datetime.timedelta(hours=t*3)
     title('Dust concentration ug/m3 (%s)' % tt.strftime('%Y-%m-%d %H:00'))
-    
+
 .. image:: ../_static/particle_3d.png
 
 **3D slice plot**::
@@ -77,5 +77,5 @@ MeteoInfo 2.2 was released (2020-4-17)
     gs = ax.plot_slice(X,Y,Z,V,xslice=xslice,yslice=yslice,zslice=zslice)
     colorbar(gs[0])
     title('Slice example')
-    
+
 .. image:: ../_static/slice_3d.png
