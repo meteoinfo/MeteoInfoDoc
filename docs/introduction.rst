@@ -170,4 +170,3 @@ MeteoInfo uses Java classes and libraries written by several third-party organiz
 - Joinery: Available at http://cardillo.github.io/joinery/v1.8/api/reference/joinery/DataFrame.html
 - JOGL: Available at https://jogamp.org/jogl/www/
 - FlatLaf: Available at https://www.formdev.com/flatlaf/
-...
