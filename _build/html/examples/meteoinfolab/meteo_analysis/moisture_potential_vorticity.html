@@ -158,13 +158,12 @@
 
 <span class="c1">#Plot</span>
 <span class="n">axesm</span><span class="p">()</span>
-<span class="n">lworld</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="s1">&#39;D:/Temp/Map/country1.shp&#39;</span><span class="p">)</span>
-<span class="n">geoshow</span><span class="p">(</span><span class="n">lworld</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
 <span class="n">t</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">tt</span> <span class="o">=</span> <span class="n">meteof</span><span class="o">.</span><span class="n">gettime</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
 <span class="n">z</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="n">clevs</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mf">3.1</span><span class="p">,</span><span class="mf">0.5</span><span class="p">)</span>
-<span class="n">layer</span> <span class="o">=</span> <span class="n">contourfm</span><span class="p">(</span><span class="n">mpv</span><span class="p">[</span><span class="n">t</span><span class="p">,</span><span class="n">z</span><span class="p">,:,:]</span><span class="o">*</span><span class="mf">1e6</span><span class="p">,</span> <span class="n">clevs</span><span class="p">)</span>
+<span class="n">layer</span> <span class="o">=</span> <span class="n">contourf</span><span class="p">(</span><span class="n">mpv</span><span class="p">[</span><span class="n">t</span><span class="p">,</span><span class="n">z</span><span class="p">,:,:]</span><span class="o">*</span><span class="mf">1e6</span><span class="p">,</span> <span class="n">clevs</span><span class="p">)</span>
 <span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span>
 <span class="n">title</span><span class="p">(</span><span class="s1">&#39;Moisture potential vorticity (</span><span class="si">%i</span><span class="s1"> hPa)</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">lev</span><span class="p">[</span><span class="n">z</span><span class="p">]</span> <span class="o">+</span> \
     <span class="n">tt</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1"> %H:00&#39;</span><span class="p">))</span>

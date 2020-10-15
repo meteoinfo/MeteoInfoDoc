@@ -34,10 +34,9 @@ This example code illustrates how to access and visualize a SeaWiFS grid data.
     data = log(data)
     #Plot
     axesm()
-    world = shaperead('D:/Temp/map/country1.shp')
-    geoshow(world)
+    geoshow('country')
     levs = arange(-6, 4, 0.2)
-    layer = imshowm(data, levs)
+    layer = imshow(data, levs)
     colorbar(layer)
     title('SeaWiFS - ' + vname + ' (log scale)')
     

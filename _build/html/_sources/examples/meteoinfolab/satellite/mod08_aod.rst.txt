@@ -21,12 +21,10 @@ data.
     aod = v_aod['15:55','70:140']
     #Plot
     axesm()
-    china = shaperead('D:/Temp/map/bou2_4p.shp')
-    geoshow(china, linecolor='gray')
-    world = shaperead('D:/Temp/map/country1.shp')
-    geoshow(world)
+    geoshow('cn_province', edgecolor='gray')
+    geoshow('country')
     levels = arange(0, 1.0, 0.02)
-    layer = contourfm(aod, levels, interpolate=True)
+    layer = contourf(aod, levels, interpolate=True)
     title('Aerosol Optical Depth at 550 nm')
     colorbar(layer)
     

@@ -21,8 +21,8 @@ during 2011 Fukushima nuclear disaster.
     geoshow('country', edgecolor='b')
     levs = [1e-14,1e-13,1e-12,1e-11]
     cols = ['w',(0,255,255),'g','y','r']
-    layer = contourfm(data, levs, colors=cols, smooth=False)
-    scatterm(141.0, 37.5, size=10, marker='S', color='r')
+    layer = contourf(data, levs, colors=cols, smooth=False)
+    scatter(141.0, 37.5, size=10, marker='S', color='r')
     text(142.5, 39, 'Fukushima', bold=True)
     xlim(110, 200)
     ylim(15, 70)

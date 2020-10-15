@@ -27,11 +27,10 @@ for plotting.
     lat = array(lats)  
     v = array(vs)
     axesm()
-    mlayer = shaperead('D:/Temp/map/bou2_4p.shp')
-    geoshow(mlayer)
+    geoshow('cn_province')
     ss = makesymbolspec('point', {'value':(-10000,0), 'color':'b', 'marker':'m', 'size':6, 'caption':'Negative'}, \
         {'value':(0,10000), 'color':'r', 'marker':'+', 'size':6, 'caption':'Positive'})
-    layer = scatterm(lon, lat, v, symbolspec=ss)
+    layer = scatter(lon, lat, v, symbolspec=ss)
     legend(legend=layer.legend(), loc='lower left')
     xlim(90, 130)
     ylim(20, 50) 

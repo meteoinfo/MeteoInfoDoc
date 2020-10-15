@@ -35,10 +35,9 @@ Then plot the cyclone line and points.
 
     # Plot
     axesm()
-    lworld = shaperead('D:/Temp/map/country1.shp')
-    geoshow(lworld, facecolor=[200,200,200])
-    plotm(lon, lat, linewidth=2)
-    layer = scatterm(lon, lat, ws)
+    geoshow('country', facecolor=[200,200,200])
+    plot(lon, lat, linewidth=2)
+    layer = scatter(lon, lat, ws)
     colorbar(layer, shrink=0.8)
     xlim(110, 140)
     ylim(15, 45)

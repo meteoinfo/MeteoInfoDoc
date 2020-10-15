@@ -10,14 +10,13 @@ The example for matrix rotate.
 
     #Plot
     axesm(tickfontsize=12)
-    lworld = shaperead('D:/Temp/map/country1.shp')
-    geoshow(lworld, edgecolor='k')
+    geoshow('country', edgecolor='k')
 
     #Original matrix
     lat = arange(10, 41, 5)
     lon = arange(70, 131, 5)
     lon, lat = meshgrid(lon, lat)
-    scatterm(lon, lat, facecolor='b', size=8, edge=False)
+    scatter(lon, lat, facecolor='b', size=8, edge=False)
 
     #Rotate matrix
     angle = 20 * pi / 180
@@ -29,7 +28,7 @@ The example for matrix rotate.
     xy = dot(xy, rotate)    #Matrix multiplication
     xy[:,0] = xy[:,0] + 70
     xy[:,1] = xy[:,1] + 10
-    scatterm(xy[:,0], xy[:,1], facecolor='r', size=8, edge=False)
+    scatter(xy[:,0], xy[:,1], facecolor='r', size=8, edge=False)
 
     xticks(arange(0, 361, 10))
     yticks(arange(-90, 91, 10))

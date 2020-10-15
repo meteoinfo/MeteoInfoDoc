@@ -19,7 +19,7 @@ function, and the image can be geo-located by creating geo-location file with th
     axesm()
     geoshow(lrelief)
     geoshow('country', edgecolor=[0,0,255])
-    layer = contourfm(ps, edgecolor='gray', zorder=1, alpha=0.5)
+    layer = contourf(ps, edgecolor='gray', zorder=1, alpha=0.5)
     title('Pressure')
     colorbar(layer, aspect=20)
         

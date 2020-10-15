@@ -9,12 +9,6 @@ for converting WRF out netCDF data to ARL data.
 
 ::
 
-    #--------------------------------------------------------        
-    # Author: Yaqiang Wang                                           
-    # Date: 2015-12-2                                            
-    # Purpose: Convert WRF out netCDF data to ARL data  
-    # Note: Sample                                                   
-    #-----------------------------------------------------------
     #---- Set data folder
     datadir = 'E:/Temp/Yaqiang'
     #---- Set output data file

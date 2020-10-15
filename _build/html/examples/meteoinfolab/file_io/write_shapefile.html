@@ -98,10 +98,10 @@ can be used in MeteoInfo desktop or other GIS softwares such as ArcGIS.</p>
 <span class="c1">#Get 2-D temperature data at specific time and level</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;Temperature_isobaric&#39;</span><span class="p">][</span><span class="n">tidx</span><span class="p">,</span><span class="n">lidx</span><span class="p">,:,:]</span>
 <span class="c1">#Plot</span>
-<span class="c1">#axesm()</span>
+<span class="n">axesm</span><span class="p">()</span>
 <span class="c1">#Specific legend setting</span>
 <span class="n">vlevs</span> <span class="o">=</span> <span class="p">[</span><span class="mi">240</span><span class="p">,</span><span class="mi">245</span><span class="p">,</span><span class="mi">250</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">265</span><span class="p">,</span><span class="mi">270</span><span class="p">,</span><span class="mi">275</span><span class="p">,</span><span class="mi">280</span><span class="p">,</span><span class="mi">285</span><span class="p">,</span><span class="mi">290</span><span class="p">,</span><span class="mi">295</span><span class="p">,</span><span class="mi">300</span><span class="p">]</span>
-<span class="n">layer</span> <span class="o">=</span> <span class="n">contourfm</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">vlevs</span><span class="p">,</span> <span class="n">isplot</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">layer</span> <span class="o">=</span> <span class="n">contourf</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">vlevs</span><span class="p">,</span> <span class="n">isplot</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">outfn</span> <span class="o">=</span> <span class="s1">&#39;D:/Temp/test/temp_test.shp&#39;</span>
 <span class="n">layer</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">outfn</span><span class="p">)</span>
 <span class="nb">print</span> <span class="s1">&#39;Finished!&#39;</span>

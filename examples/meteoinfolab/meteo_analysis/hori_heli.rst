@@ -47,9 +47,8 @@ The example to calcluate horizontal helicity.
 
     print 'Plot...'
     axesm()
-    mlayer = shaperead('D:/Temp/map/country1.shp')
-    geoshow(mlayer, edgecolor='black')
-    layer = contourfm(Hrs, 20)
+    geoshow('country', edgecolor='black')
+    layer = contourf(Hrs, 20)
     title('Horizontal helicity (' + t.strftime('%Y-%m-%d') + ')')
     colorbar(layer)
     

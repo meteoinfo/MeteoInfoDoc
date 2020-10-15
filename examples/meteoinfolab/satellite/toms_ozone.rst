@@ -16,8 +16,8 @@ This example code illustrates how to access and visualize a TOMS ozone grid data
     ozone = f['Ozone'][::-1,:]
     #Plot
     axesm()
-    geoshow('country', edgecolor='k')
-    layer = imshowm(ozone, 20)
+    geoshow('country')
+    layer = imshow(ozone, 20)
     colorbar(layer, orientation='horizontal')
     title('TOMS - Column Amount Ozone')
     axism([-180,180,-90,90])

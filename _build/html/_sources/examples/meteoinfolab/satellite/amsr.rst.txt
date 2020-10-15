@@ -29,7 +29,7 @@ This example code illustrates how to access and visualize a AMSR-E land3 data.
     axesm(tickfontsize=12)
     geoshow('country', edgecolor='k')
     levs = arange(140, 320, 10)
-    layer = imshowm(x, y, data, levs)
+    layer = imshow(x, y, data, levs)
     colorbar(layer, fontsize=12)
     xticks(arange(-180, 181, 30))
     yticks(arange(-90, 91, 30))

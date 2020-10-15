@@ -23,9 +23,8 @@ This example code illustrates how to access and visualize a TRMM 3B43 data.
     lon = arange(-179.875, 179.876, 0.25)
     #Plot
     axesm()
-    mlayer = shaperead('D:/Temp/map/country1.shp')
-    geoshow(mlayer)
-    layer = imshowm(lon, lat, rain, 20)
+    geoshow('country')
+    layer = imshow(lon, lat, rain, 20)
     colorbar(layer, orientation='horizontal')
     title(vname + 'at scan=0 (mm/hr)')
     axism()

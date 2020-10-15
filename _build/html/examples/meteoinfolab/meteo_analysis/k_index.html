@@ -103,10 +103,9 @@
 <span class="n">K</span> <span class="o">=</span> <span class="n">T850</span><span class="o">-</span><span class="n">T500</span><span class="o">+</span><span class="n">Td850</span><span class="o">-</span><span class="p">(</span><span class="n">T700</span><span class="o">-</span><span class="n">Td700</span><span class="p">)</span>
 <span class="c1">#Plot</span>
 <span class="n">axesm</span><span class="p">()</span>
-<span class="n">lworld</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="s1">&#39;D:/Temp/Map/country1.shp&#39;</span><span class="p">)</span>
-<span class="n">geoshow</span><span class="p">(</span><span class="n">lworld</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
 <span class="n">levs</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">40</span><span class="p">,</span><span class="mi">36</span><span class="p">,</span><span class="mf">2.5</span><span class="p">)</span>
-<span class="n">layer</span> <span class="o">=</span> <span class="n">contourm</span><span class="p">(</span><span class="n">K</span><span class="p">,</span> <span class="n">levs</span><span class="p">)</span>
+<span class="n">layer</span> <span class="o">=</span> <span class="n">contour</span><span class="p">(</span><span class="n">K</span><span class="p">,</span> <span class="n">levs</span><span class="p">)</span>
 <span class="n">clabel</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span>
 <span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span>
 <span class="n">t</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">gettime</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>

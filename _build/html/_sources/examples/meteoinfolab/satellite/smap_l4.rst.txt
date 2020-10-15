@@ -33,7 +33,7 @@ This example code illustrates how to access and visualize a SMAP L4 data.
     print 'Plot...'
     axesm()
     geoshow('country', edgecolor='k')
-    layer = imshowm(lon1, lat1, data1, 20, cmap='wcgyr_1000', interpolation='bilinear')
+    layer = imshow(lon1, lat1, data1, 20, cmap='wcgyr_1000', interpolation='bilinear')
     colorbar(layer, label=units)
     title('{0}\n {1}'.format(fn, longname))
     print 'Finish!'

@@ -88,12 +88,8 @@
 <span id="examples-meteoinfolab-plot-types-station-model"></span><h1>Station model plot<a class="headerlink" href="#station-model-plot" title="Permalink to this headline">¶</a></h1>
 <p>Station model plot was created by <code class="docutils literal notranslate"><span class="pre">stationmodel()</span></code> function from station model data object
 read by <code class="docutils literal notranslate"><span class="pre">smodeldata()</span></code> function of <code class="docutils literal notranslate"><span class="pre">DimDataFile</span></code> object.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Set data folders</span>
-<span class="n">basedir</span> <span class="o">=</span> <span class="s1">&#39;D:/MyProgram/Distribution/java/MeteoInfo/MeteoInfo&#39;</span>
-<span class="n">datadir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">basedir</span><span class="p">,</span> <span class="s1">&#39;sample/MICAPS&#39;</span><span class="p">)</span>
-
-<span class="c1">#Read station data</span>
-<span class="n">f</span> <span class="o">=</span> <span class="n">addfile_micaps</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">datadir</span><span class="p">,</span> <span class="s1">&#39;10101414.000&#39;</span><span class="p">))</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">migl</span><span class="o">.</span><span class="n">get_sample_folder</span><span class="p">(),</span> <span class="s1">&#39;MICAPS&#39;</span><span class="p">,</span> <span class="s1">&#39;10101414.000&#39;</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">addfile_micaps</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">smodeldata</span><span class="p">()</span>
 <span class="c1">#Plot</span>
 <span class="n">axesm</span><span class="p">(</span><span class="n">bgcolor</span><span class="o">=</span><span class="p">(</span><span class="mi">204</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">))</span>

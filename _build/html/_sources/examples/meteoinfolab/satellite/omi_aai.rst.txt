@@ -35,10 +35,9 @@ downloaded from this webpage: http://www.temis.nl/airpollution/absaai/#OMI_AAI
     lat = arange1(-89.5, yn, 1.0)
     #Plot
     axesm()
-    lworld = shaperead('U:/map/country1.shp')
-    geoshow(lworld, edgecolor=[50,50,50])
+    geoshow('country', edgecolor=[50,50,50])
     levs = arange(0, 3.1, 0.1)
-    layer = imshowm(lon, lat, data, levs, cmap='wh-bl-gr-ye-re', fill_color='lightgray')
+    layer = imshow(lon, lat, data, levs, cmap='wh-bl-gr-ye-re', fill_color='lightgray')
     colorbar(layer)
     title('Absorbing Aerosol Index (' + tt.strftime('%Y-%m-%d') + ')')
     

@@ -19,10 +19,10 @@ can be used in MeteoInfo desktop or other GIS softwares such as ArcGIS.
     #Get 2-D temperature data at specific time and level
     data = f['Temperature_isobaric'][tidx,lidx,:,:]
     #Plot
-    #axesm()
+    axesm()
     #Specific legend setting
     vlevs = [240,245,250,255,265,270,275,280,285,290,295,300]
-    layer = contourfm(data, vlevs, isplot=False)
+    layer = contourf(data, vlevs, isplot=False)
     outfn = 'D:/Temp/test/temp_test.shp'
     layer.save(outfn)
     print 'Finished!'

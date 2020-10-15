@@ -13,9 +13,8 @@ Microwave Sea Ice Concentration data.
     data = f['seaice_conc_cdr'][0,:,:]
     #Plot
     axesm(projinfo=f.proj, gridline=True)
-    lworld = shaperead('D:/Temp/map/country1.shp')
-    geoshow(lworld)
-    layer = imshowm(data, 20, cmap='WhBlGrYeRe', proj=f.proj)
+    geoshow('country')
+    layer = imshow(data, 20, cmap='WhBlGrYeRe', proj=f.proj)
     colorbar(layer)
     t = f.gettime(0)
     title('Sea ice concentration (' + t.strftime('%Y-%m-%d') + ')')

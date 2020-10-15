@@ -24,10 +24,9 @@ Calculate k index from FNL data.
     K = T850-T500+Td850-(T700-Td700)
     #Plot
     axesm()
-    lworld = shaperead('D:/Temp/Map/country1.shp')
-    geoshow(lworld, edgecolor='k')
+    geoshow('country', edgecolor='k')
     levs = arange(-40,36,2.5)
-    layer = contourm(K, levs)
+    layer = contour(K, levs)
     clabel(layer)
     colorbar(layer)
     t = f.gettime(0)

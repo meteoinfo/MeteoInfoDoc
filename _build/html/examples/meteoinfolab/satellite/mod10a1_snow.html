@@ -95,10 +95,9 @@ resolution MODIS land products are produced in the Sinusoidal tile grid.</p>
 <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="n">vname</span><span class="p">][:,:]</span>
 <span class="n">axesm</span><span class="p">(</span><span class="n">projinfo</span><span class="o">=</span><span class="n">f</span><span class="o">.</span><span class="n">proj</span><span class="p">,</span> <span class="n">griddx</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">griddy</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">gridline</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="c1">#axesm(griddx=30, griddy=30, gridline=True)</span>
-<span class="n">mlayer</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="s1">&#39;D:/Temp/map/country1.shp&#39;</span><span class="p">)</span>
-<span class="n">geoshow</span><span class="p">(</span><span class="n">mlayer</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
 <span class="n">levs</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-<span class="n">layer</span> <span class="o">=</span> <span class="n">imshowm</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">proj</span><span class="o">=</span><span class="n">f</span><span class="o">.</span><span class="n">proj</span><span class="p">)</span>
+<span class="n">layer</span> <span class="o">=</span> <span class="n">imshow</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">proj</span><span class="o">=</span><span class="n">f</span><span class="o">.</span><span class="n">proj</span><span class="p">)</span>
 <span class="n">title</span><span class="p">(</span><span class="n">vname</span><span class="p">)</span>
 <span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span>
 <span class="n">axism</span><span class="p">()</span>
@@ -114,10 +113,9 @@ resolution MODIS land products are produced in the Sinusoidal tile grid.</p>
 <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="n">vname</span><span class="p">][:,:]</span>
 <span class="c1">#axesm(projinfo=f.proj, griddx=5, griddy=5, gridline=True)</span>
 <span class="n">axesm</span><span class="p">(</span><span class="n">gridline</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">mlayer</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="s1">&#39;D:/Temp/map/country1.shp&#39;</span><span class="p">)</span>
-<span class="n">geoshow</span><span class="p">(</span><span class="n">mlayer</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
 <span class="n">levs</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-<span class="n">layer</span> <span class="o">=</span> <span class="n">imshowm</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">proj</span><span class="o">=</span><span class="n">f</span><span class="o">.</span><span class="n">proj</span><span class="p">)</span>
+<span class="n">layer</span> <span class="o">=</span> <span class="n">imshow</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">proj</span><span class="o">=</span><span class="n">f</span><span class="o">.</span><span class="n">proj</span><span class="p">)</span>
 <span class="n">title</span><span class="p">(</span><span class="n">vname</span><span class="p">)</span>
 <span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span>
 <span class="n">axism</span><span class="p">()</span>

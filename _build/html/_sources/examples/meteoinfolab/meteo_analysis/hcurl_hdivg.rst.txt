@@ -14,17 +14,16 @@ Calculate vorticity and divergence from u and v wind components using ``hcurl()`
     v = f['V'][0,0,:,:]
     vort = hcurl(u, v)
     divg = hdivg(u, v)
-    mlayer = shaperead('D:/Temp/map/country1.shp')
-    subplot(2,1,1)
-    axesm()
-    geoshow(mlayer)
-    layer = contourfm(vort, 20)
+
+    subplot(2,1,1,axestype='map')
+    geoshow('country')
+    layer = contourf(vort, 20)
     title('Vorticity')
     colorbar(layer, orientation='horizontal', aspect=50)
-    subplot(2,1,2)
-    axesm()
-    geoshow(mlayer)
-    layer = contourfm(divg, 20)
+
+    subplot(2,1,2,axestype='map')
+    geoshow('country')
+    layer = contourf(divg, 20)
     title('Divergence')
     colorbar(layer, orientation='horizontal', aspect=50)
     

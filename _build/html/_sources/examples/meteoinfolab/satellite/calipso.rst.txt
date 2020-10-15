@@ -35,7 +35,7 @@ LaRC CALIPSO data file.
     cols = [(0,0,0),(0,0,255),(255,255,0),(0,255,0),(255,0,0), \
         (200,100,255),(100,50,255),(127,127,127)]
     ls = makesymbolspec('point', levels=levs, colors=cols)
-    layer = scatterm(lon, lat, data, size=5, edge=False, symbolspec=ls)
+    layer = scatter(lon, lat, data, size=5, edge=False, symbolspec=ls)
     colorbar(layer, ticklabels=['invalid', 'clear', 'cloud', 'aerosol', \
         'strato', 'surface', 'subsurf', 'no signal'])
     xlim(-180, 180)

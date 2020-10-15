@@ -36,7 +36,7 @@ Example script
     #Plot
     axesm()
     geoshow('country')
-    layer = scatterm(lon, lat, temp, 20, size=4, edge=False, zorder=0)
+    layer = scatter(lon, lat, temp, 20, size=4, edge=False, zorder=0)
     colorbar(layer)
     title('Bufr data example')
     

@@ -119,8 +119,8 @@
 <span class="nb">print</span> <span class="s1">&#39;Plot...&#39;</span>
 <span class="n">axesm</span><span class="p">()</span>
 <span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
-<span class="c1">#layer = contourfm(qhdivg, 20)</span>
-<span class="n">layer</span> <span class="o">=</span> <span class="n">contourfm</span><span class="p">(</span><span class="n">qhdivg</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;grads_rainbow&#39;</span><span class="p">)</span>
+<span class="c1">#layer = contourf(qhdivg, 20)</span>
+<span class="n">layer</span> <span class="o">=</span> <span class="n">contourf</span><span class="p">(</span><span class="n">qhdivg</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;grads_rainbow&#39;</span><span class="p">)</span>
 <span class="n">title</span><span class="p">(</span><span class="s1">&#39;Water Vapor Flux Divergency (&#39;</span> <span class="o">+</span> <span class="n">t</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span><span class="p">)</span>
 <span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span>
 <span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">360</span><span class="p">)</span>

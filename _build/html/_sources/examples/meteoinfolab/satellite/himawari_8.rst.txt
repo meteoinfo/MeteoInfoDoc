@@ -24,7 +24,7 @@ hight resolution data with 22000 and 22000 of x and y dimensions, so the step is
     ax = axesm(proj='geos', lon_0=104.7, h=35785863, gridlabel=True, gridline=True, frameon=False)
     geoshow('country')
     levs = arange(0, 1, 0.1)
-    layer = imshowm(data, levs, proj=ax.proj)
+    layer = imshow(data, levs, proj=ax.proj)
     colorbar(layer)
     
 .. image:: image/himawari_8.png

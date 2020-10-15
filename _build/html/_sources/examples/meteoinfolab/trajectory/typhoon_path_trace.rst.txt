@@ -28,8 +28,8 @@ Read sea surface pressure data and find the minimum value locations as typhoon p
     #Plot
     axesm(bgcolor=(204,255,255))
     geoshow('country', edgecolor=[200,200,200], facecolor=(255,251,195))
-    plotm(tlon, tlat)
-    layer = scatterm(tlon, tlat, press)
+    plot(tlon, tlat)
+    layer = scatter(tlon, tlat, press)
     colorbar(layer)
     for t in range(0, f.timenum()-1, 4):
         text(tlon[t]+0.1, tlat[t], tt[t].strftime('%d:%H'))
