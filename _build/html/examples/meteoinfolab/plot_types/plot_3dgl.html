@@ -16,7 +16,6 @@
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Map" href="../map.html" />
     <link rel="prev" title="Oblique section plot" href="oblique_section_plot.html" /> 
   </head><body>
 
@@ -32,9 +31,6 @@
         <li class="right" >
           <a href="../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="right" >
-          <a href="../map.html" title="Map"
-             accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="oblique_section_plot.html" title="Oblique section plot"
              accesskey="P">previous</a> |</li>
@@ -55,9 +51,6 @@
   <h4>Previous topic</h4>
   <p class="topless"><a href="oblique_section_plot.html"
                         title="previous chapter">Oblique section plot</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="../map.html"
-                        title="next chapter">Map</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -86,8 +79,8 @@
             
   <div class="section" id="d-plots-with-opengl">
 <span id="examples-meteoinfolab-plot-types-plot-3dgl"></span><h1>3-D plots with OpenGL<a class="headerlink" href="#d-plots-with-opengl" title="Permalink to this headline">¶</a></h1>
-<p>Create an OpenGL support 3D axes (Axes3DGL object) using <code class="docutils literal notranslate"><span class="pre">axes3dgl</span></code> function. The usage of plot
-functions is similar with Axes3D object.</p>
+<p>Create an OpenGL support 3D axes (Axes3DGL object) using <code class="docutils literal notranslate"><span class="pre">axes3d</span></code> function. The 3d plot functions can
+create 3D axes automatically.</p>
 <p><strong>Relief surface plot</strong>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
 
@@ -101,11 +94,10 @@ functions is similar with Axes3D object.</p>
 
 <span class="c1">#Plot</span>
 <span class="n">st</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">clock</span><span class="p">()</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">axes3dgl</span><span class="p">()</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_lighting</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">ambient</span><span class="o">=</span><span class="p">[</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.2</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
-<span class="n">ls</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot_surface</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">elev</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;MPL_terrain&#39;</span><span class="p">,</span> <span class="n">edge</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">lighting</span><span class="p">(</span><span class="n">position</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">ambient</span><span class="o">=</span><span class="p">[</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.2</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">surf</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">elev</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;MPL_terrain&#39;</span><span class="p">,</span> <span class="n">edge</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">zlim</span><span class="p">(</span><span class="o">-</span><span class="mi">8000</span><span class="p">,</span> <span class="mi">20000</span><span class="p">)</span>
-<span class="n">colorbar</span><span class="p">(</span><span class="n">ls</span><span class="p">,</span><span class="n">shrink</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+<span class="n">colorbar</span><span class="p">(</span><span class="n">shrink</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
 <span class="n">title</span><span class="p">(</span><span class="s1">&#39;Surface 3D plot example&#39;</span><span class="p">)</span>
 <span class="n">et</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">clock</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">et</span> <span class="o">-</span> <span class="n">st</span><span class="p">)</span>
@@ -118,9 +110,8 @@ functions is similar with Axes3D object.</p>
 <span class="n">v</span> <span class="o">=</span> <span class="n">xx</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">xx</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">yy</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">zz</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 
 <span class="c1">#Plot</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">axes3dgl</span><span class="p">()</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_lighting</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot_isosurface</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="mf">1e-5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="n">edge</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">nthread</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">lighting</span><span class="p">(</span><span class="n">position</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">isosurface</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="mf">1e-5</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">nthread</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 <span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -154,15 +145,15 @@ functions is similar with Axes3D object.</p>
 <span class="n">lon1</span><span class="p">,</span> <span class="n">lat1</span> <span class="o">=</span> <span class="n">meshgrid</span><span class="p">(</span><span class="n">lon1</span><span class="p">,</span> <span class="n">lat1</span><span class="p">)</span>
 
 <span class="c1">#Plot</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">axes3dgl</span><span class="p">(</span><span class="n">bbox</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">axes3d</span><span class="p">()</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_rotation</span><span class="p">(</span><span class="mi">348</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_elevation</span><span class="p">(</span><span class="o">-</span><span class="mi">29</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_lighting</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">lighting</span><span class="p">()</span>
 <span class="n">levs</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6000</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
 <span class="n">cols</span> <span class="o">=</span> <span class="n">makecolors</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">levs</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;MPL_terrain&#39;</span><span class="p">)</span>
 <span class="n">cols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;w&#39;</span>
-<span class="n">ls</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot_surface</span><span class="p">(</span><span class="n">lon1</span><span class="p">,</span> <span class="n">lat1</span><span class="p">,</span> <span class="n">elev</span><span class="p">,</span> <span class="n">levs</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="n">cols</span><span class="p">,</span> <span class="n">edge</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot_isosurface</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">dust</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mi">255</span><span class="p">,</span><span class="mi">180</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">],</span> \
+<span class="n">ls</span> <span class="o">=</span> <span class="n">surf</span><span class="p">(</span><span class="n">lon1</span><span class="p">,</span> <span class="n">lat1</span><span class="p">,</span> <span class="n">elev</span><span class="p">,</span> <span class="n">levs</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="n">cols</span><span class="p">,</span> <span class="n">edge</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">isosurface</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">dust</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mi">255</span><span class="p">,</span><span class="mi">180</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">],</span> \
     <span class="n">edge</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">nthread</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 <span class="n">colorbar</span><span class="p">(</span><span class="n">ls</span><span class="p">)</span>
 <span class="n">xlim</span><span class="p">(</span><span class="mi">65</span><span class="p">,</span> <span class="mi">155</span><span class="p">)</span>
@@ -206,9 +197,6 @@ functions is similar with Axes3D object.</p>
         <li class="right" >
           <a href="../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="right" >
-          <a href="../map.html" title="Map"
-             >next</a> |</li>
         <li class="right" >
           <a href="oblique_section_plot.html" title="Oblique section plot"
              >previous</a> |</li>
