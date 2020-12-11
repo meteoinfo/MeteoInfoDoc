@@ -1,0 +1,9 @@
+.. _downloads-data:
+
+*******************
+Example data files
+*******************
+
+- `500_previous <data/500_previous>`_
+- `elev.0.25-deg.nc <data/elev.0.25-deg.nc>`_
+- `WMO_SDS-WAS_Asian_Center_Model_Forecasting_CUACE-DUST_CMA_2019041500.nc <data/WMO_SDS-WAS_Asian_Center_Model_Forecasting_CUACE-DUST_CMA_2019041500.nc>`_
