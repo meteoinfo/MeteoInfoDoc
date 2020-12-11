@@ -5,7 +5,7 @@ Example data files
 *******************
 
 - `500_previous <data/500_previous>`_
-_ `928slp.ctl <data/928slp.ctl>`_    `928slp.dat <data/928slp.dat>`_
+- `928slp.ctl <data/928slp.ctl>`_    `928slp.dat <data/928slp.dat>`_
 - `air.2011.nc <data/air.2011.nc>`_
 - `uwnd.2011.nc <data/uwnd.2011.nc>`_
 - `vwnd.2011.nc <data/vwnd.2011.nc>`_
@@ -13,9 +13,9 @@ _ `928slp.ctl <data/928slp.ctl>`_    `928slp.dat <data/928slp.dat>`_
 - `elev.0.25-deg.nc <data/elev.0.25-deg.nc>`_
 - `wrfout_d01_2005-08-28_00-00-00 <data/wrfout_d01_2005-08-28_00-00-00>`_
 - `fnl_20170101_00_00.grib2 <data/fnl_20170101_00_00.grib2>`_
-- `fnl_20170101_00_00.grib2 <data/fnl_20170101_06_00.grib2>`_
-- `fnl_20170101_00_00.grib2 <data/fnl_20170101_12_00.grib2>`_
-- `fnl_20170101_00_00.grib2 <data/fnl_20170101_18_00.grib2>`_
+- `fnl_20170101_06_00.grib2 <data/fnl_20170101_06_00.grib2>`_
+- `fnl_20170101_12_00.grib2 <data/fnl_20170101_12_00.grib2>`_
+- `fnl_20170101_18_00.grib2 <data/fnl_20170101_18_00.grib2>`_
 - `WMO_SDS-WAS_Asian_Center_Model_Forecasting_CUACE-DUST_CMA_2019041500.nc <data/WMO_SDS-WAS_Asian_Center_Model_Forecasting_CUACE-DUST_CMA_2019041500.nc>`_
 - `gdas1.mar15.w5 <data/gdas1.mar15.w5>`_
 - `Z_SURF_I_57377_20200225000000_O_AWS_FTM.BIN <data/Z_SURF_I_57377_20200225000000_O_AWS_FTM.BIN>`_
