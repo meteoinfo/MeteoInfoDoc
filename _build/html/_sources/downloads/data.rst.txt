@@ -10,6 +10,7 @@ Example data files
 - `uwnd.2011.nc <data/uwnd.2011.nc>`_
 - `vwnd.2011.nc <data/vwnd.2011.nc>`_
 - `rhum.2011.nc <data/rhum.2011.nc>`_
+- `omega.2011.nc <data/omega.2011.nc>`_
 - `elev.0.25-deg.nc <data/elev.0.25-deg.nc>`_
 - `wrfout_d01_2005-08-28_00-00-00 <data/wrfout_d01_2005-08-28_00-00-00>`_
 - `fnl_20170101_00_00.grib2 <data/fnl_20170101_00_00.grib2>`_
