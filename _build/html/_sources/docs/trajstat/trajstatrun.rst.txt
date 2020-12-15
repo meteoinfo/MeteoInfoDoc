@@ -19,3 +19,4 @@ Trajectory Statistics
    create_grid.rst
    pscf.rst
    cwt.rst
+   output_griddata.rst
