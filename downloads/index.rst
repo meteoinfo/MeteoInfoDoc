@@ -8,7 +8,7 @@ Downloads
 MeteoInfo
 =====================================
   Java edition (Major development)
-    - `MeteoInfo 2.4.1 - Java (for all systems) <files/MeteoInfo_2.4.1.zip>`_
+    - `MeteoInfo 2.4.2 - Java (for all systems) <files/MeteoInfo_2.4.2.zip>`_
   C# edition   
     - `MeteoInfo 1.1.3.5R1 - C# <files/MeteoInfo_csharp_1.1.3.5R1.zip>`_
   Example data files
@@ -20,7 +20,9 @@ MeteoInfo
 MIML
 =====================================
   MIML - MeteoInfoLab machine learning toolbox
-    - `MIML 0.7 toolbox <files/miml_0.7.zip>`_
+    - `MIML 0.8 toolbox - Windows <files/miml_0.8_windows.zip>`_
+    - `MIML 0.8 toolbox - Linux <files/miml_0.8_linux.zip>`_
+    - `MIML 0.8 toolbox - MacOS <files/miml_0.8_macosx.zip>`_
 
 wContour
 =====================================

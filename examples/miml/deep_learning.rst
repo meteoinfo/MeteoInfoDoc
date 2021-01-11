@@ -8,4 +8,6 @@ Deep learning
 .. toctree::
    :maxdepth: 2
    
-   deep_learning/classification.rst
+   deep_learning/classifer_linear.rst
+   deep_learning/classifer_iris.rst
+   deep_learning/convolution_mnist.rst

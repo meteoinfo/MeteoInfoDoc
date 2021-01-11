@@ -1,7 +1,7 @@
-.. _examples-miml-deep_learning-classification:
+.. _examples-miml-deep_learning-classifer_linear:
 
 *************************************
-Classification
+Classification linear
 *************************************
 
 MultiLayerNetwork linear classification example.
@@ -9,27 +9,32 @@ MultiLayerNetwork linear classification example.
 ::
 
     from miml import datasets
-    from miml.deep_learning import Network
-    from miml.deep_learning import Dense, Output
+    from miml.deep_learning import Network, Activation, WeightInit, LossFunction
+    from miml.deep_learning import Nesterovs
+    from miml.deep_learning import DenseLayer, OutputLayer
 
     fn = os.path.join(datasets.get_data_home(), 'classification',
         'linear_data_train.csv')
-    df = DataFrame.read_table(fn, delimiter=',', header=None, names=['x1','x2'], 
+    df = DataFrame.read_table(fn, delimiter=',', header=None, names=['x1','x2'],
+        format='%2f', index_col=0)
+    tfn = os.path.join(datasets.get_data_home(), 'classification',
+        'linear_data_train.csv')
+    tdf = DataFrame.read_table(tfn, delimiter=',', header=None, names=['x1','x2'],
         format='%2f', index_col=0)
 
     X = df.values
     y = array(df.index.data)
 
-    model = Network(seed=123, weight_init='xavier', learn_rate=0.01, momentum=0.9)
-    model.add(Dense(nin=2, nout=20, activation='relu'))
-    model.add(Output(loss='negativeloglikelihood', nin=20, nout=2, activation='softmax'))
+    model = Network(seed=123, weight_init=WeightInit.XAVIER,
+        updater=Nesterovs(learn_rate=0.01, momentum=0.9))
+    model.add(DenseLayer(nin=2, nout=20, activation=Activation.RELU))
+    model.add(OutputLayer(loss=LossFunction.NEGATIVELOGLIKELIHOOD, nin=20, nout=2,
+        activation=Activation.SOFTMAX))
     model.compile()
-    for i in range(30):
-        print 'Epoch: %i' % (i + 1)
-        si = 0
-        while si < len(X):
-            model.fit(X[si:si+50], y[si:si+50])
-            si += 50
+    model.fit(X, y, epochs=30, batchsize=50)
+
+    meval = model.eval(tdf.values, array(tdf.index.data), batchsize=50)
+    print(meval)
 
     # Plot the decision boundary. For that, we will assign a color to each
     # point in the mesh [x_min, x_max]x[y_min, y_max].
@@ -48,7 +53,7 @@ MultiLayerNetwork linear classification example.
     # Create color maps
     cmap_light = ['#FFAAAA', '#AAAAFF']
     cmap_bold = ['#FF0000', '#0000FF']
-    gg = imshow(xx[0,:], yy[:,0], Z, 40, cmap='MPL_gist_gray', interpolation='bilinear')
+    gg = imshow(xx[0,:], yy[:,0], Z, 40, cmap='MPL_gist_gray', interpolation='None')
     # Plot also the training points
     plt.scatter(X[:, 0], X[:, 1], c=y,
         edgecolor=None, s=4, levels=[0,1], colors=cmap_bold)
