@@ -4,8 +4,8 @@
 3-D plots with OpenGL
 *********************
 
-Create an OpenGL support 3D axes (Axes3DGL object) using ``axes3dgl`` function. The usage of plot 
-functions is similar with Axes3D object.
+Create an OpenGL support 3D axes (Axes3DGL object) using ``axes3d`` function. The 3d plot functions can
+create 3D axes automatically.
 
 **Relief surface plot**::
 
@@ -21,11 +21,10 @@ functions is similar with Axes3D object.
 
     #Plot
     st = time.clock()
-    ax = axes3dgl()
-    ax.set_lighting(True, position=[0,0,1,0], ambient=[0.2,0.2,0.2,1])
-    ls = ax.plot_surface(lon, lat, elev, 20, cmap='MPL_terrain', edge=False)
+    lighting(position=[0,0,1,0], ambient=[0.2,0.2,0.2,1])
+    surf(lon, lat, elev, 20, cmap='MPL_terrain', edge=False)
     zlim(-8000, 20000)
-    colorbar(ls,shrink=0.8)
+    colorbar(shrink=0.8)
     title('Surface 3D plot example')
     et = time.clock()
     print(et - st)
@@ -39,9 +38,8 @@ functions is similar with Axes3D object.
     v = xx*exp(-xx**2 - yy**2 - zz**2)
 
     #Plot
-    ax = axes3dgl()
-    ax.set_lighting(True, position=[-1,-1,1,1])
-    ax.plot_isosurface(x, y, z, v, 1e-5, color='c', edge=False, nthread=4)
+    lighting(position=[-1,-1,1,1])
+    isosurface(x, y, z, v, 1e-5, facecolor='c', edgecolor=None, nthread=4)
     xlim(-3, 3)
     
 .. image:: ../../../_static/axes3dgl_isosurface.png
@@ -76,15 +74,15 @@ functions is similar with Axes3D object.
     lon1, lat1 = meshgrid(lon1, lat1)
 
     #Plot
-    ax = axes3dgl(bbox=True)
+    ax = axes3d()
     ax.set_rotation(348)
     ax.set_elevation(-29)
-    ax.set_lighting(True)
+    lighting()
     levs = arange(0, 6000, 200)
     cols = makecolors(len(levs) + 1, cmap='MPL_terrain')
     cols[0] = 'w'
-    ls = ax.plot_surface(lon1, lat1, elev, levs, colors=cols, edge=False)
-    ax.plot_isosurface(lon, lat, height, dust, 100, color=[255,180,0,10], \
+    ls = surf(lon1, lat1, elev, levs, colors=cols, edge=False)
+    isosurface(lon, lat, height, dust, 100, color=[255,180,0,10], \
         edge=False, nthread=4)
     colorbar(ls)
     xlim(65, 155)

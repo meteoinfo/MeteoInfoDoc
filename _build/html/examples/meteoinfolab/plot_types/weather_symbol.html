@@ -86,10 +86,11 @@
             
   <div class="section" id="weather-symbol-plot">
 <span id="examples-meteoinfolab-plot-types-weather-symbol"></span><h1>Weather symbol plot<a class="headerlink" href="#weather-symbol-plot" title="Permalink to this headline">¶</a></h1>
-<p>Weather symbol plot was created by <code class="docutils literal notranslate"><span class="pre">scatterm()</span></code> function with weather specific legend
+<p>Weather symbol plot was created by <code class="docutils literal notranslate"><span class="pre">scatter()</span></code> function with weather specific legend
 created by <code class="docutils literal notranslate"><span class="pre">weatherspec()</span></code> function.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Add file and read data array</span>
-<span class="n">f</span> <span class="o">=</span> <span class="n">addfile_micaps</span><span class="p">(</span><span class="s1">&#39;D:/Temp/micaps/10101414.000&#39;</span><span class="p">)</span>
+<span class="n">fn</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">migl</span><span class="o">.</span><span class="n">get_sample_folder</span><span class="p">(),</span> <span class="s1">&#39;MICAPS&#39;</span><span class="p">,</span> <span class="s1">&#39;10101414.000&#39;</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">addfile_micaps</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;WeatherNow&#39;</span><span class="p">][:]</span>
 <span class="n">lon</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;Longitude&#39;</span><span class="p">][:]</span>
 <span class="n">lat</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;Latitude&#39;</span><span class="p">][:]</span>
@@ -98,7 +99,7 @@ created by <code class="docutils literal notranslate"><span class="pre">weathers
 <span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="mi">251</span><span class="p">,</span><span class="mi">195</span><span class="p">))</span>
 <span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;cn_province&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
 <span class="n">ls</span> <span class="o">=</span> <span class="n">weatherspec</span><span class="p">()</span>
-<span class="n">layer</span> <span class="o">=</span> <span class="n">scatterm</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">symbolspec</span><span class="o">=</span><span class="n">ls</span><span class="p">)</span>
+<span class="n">layer</span> <span class="o">=</span> <span class="n">scatter</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">symbolspec</span><span class="o">=</span><span class="n">ls</span><span class="p">)</span>
 <span class="n">yticks</span><span class="p">([</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">50</span><span class="p">])</span>
 <span class="n">title</span><span class="p">(</span><span class="s1">&#39;Weather symbol plot example&#39;</span><span class="p">)</span>
 <span class="n">xlim</span><span class="p">(</span><span class="mi">72</span><span class="p">,</span> <span class="mi">136</span><span class="p">)</span>

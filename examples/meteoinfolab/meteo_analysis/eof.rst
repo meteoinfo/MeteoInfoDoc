@@ -38,7 +38,7 @@ temperature of a certain month with dimensions of 71 * 144 * 62.
     axesm(newaxes=False)
     geoshow('country', edgecolor='k')
     levs = arange(-0.02, 0.021, 0.002)
-    layer = contourfm(lon, lat, eof1, levs, smooth=False)
+    layer = contourf(lon, lat, eof1, levs, smooth=False)
     colorbar(layer)
     title('EOF mode 1')
     #REOF mode 1
@@ -46,7 +46,7 @@ temperature of a certain month with dimensions of 71 * 144 * 62.
     axesm(newaxes=False)
     geoshow('country', edgecolor='k')
     levs = arange(-0.02, 0.021, 0.002)
-    layer = contourfm(lon, lat, reof1, levs, smooth=False)
+    layer = contourf(lon, lat, reof1, levs, smooth=False)
     colorbar(layer)
     title('REOF mode 1')
     
@@ -100,7 +100,7 @@ El Nino and La Nina events.
     axesm(newaxes=False)
     geoshow('continent', edgecolor='k', facecolor='w')
     levs = arange(-0.8, 1, 0.2)
-    layer = contourfm(lon, lat, eof1_cor, levs, smooth=False, order=0)
+    layer = contourf(lon, lat, eof1_cor, levs, smooth=False, order=0)
     yticks(arange(-20, 61, 40))
     colorbar(layer)
     title('EOF mode 1 expressed as correlation (%.1f%%)' % e1)

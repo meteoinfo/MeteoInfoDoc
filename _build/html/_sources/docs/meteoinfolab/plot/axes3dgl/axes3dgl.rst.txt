@@ -30,5 +30,5 @@ Methods:
 .. toctree::
    :maxdepth: 1
 
-   plot_isosurface.rst
-   plot_particles.rst
+   isosurface.rst
+   particles.rst

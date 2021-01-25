@@ -1,11 +1,11 @@
-.. _docs-meteoinfolab-plotlib-_axes3dgl-Axes3DGL-plot_particles:
+.. _docs-meteoinfolab-plotlib-_axes3dgl-Axes3DGL-particles:
 
 
 *******************
-plot_particles
+particles
 *******************
 
-.. method:: Axes3DGL.plot_particles(*args, **kwargs):
+.. method:: Axes3DGL.particles(*args, **kwargs):
 
     creates a three-dimensional particles plot
 
@@ -68,23 +68,23 @@ plot_particles
         walt = walt + h
 
         #Plot
-        ax = axes3dgl(bbox=True)
+        ax = axes3d()
         ax.set_elevation(-20)
         ax.set_rotation(335)
         rlevs = arange(0, 6000, 200)
         cols = makecolors(len(rlevs) + 1, cmap='MPL_gist_yarg', alpha=1)
         cols[0] = [51,153,255]
-        ax.plot_surface(lon1, lat1, elev, rlevs, colors=cols, edge=False)
-        ax.plot(clon, clat, calt, color=[255,153,255])
-        ax.plot(wlon, wlat, walt, color='b')
+        surf(lon1, lat1, elev, rlevs, colors=cols, edge=False)
+        plot(clon, clat, calt, color=[255,153,255])
+        plot(wlon, wlat, walt, color='b')
         #Beijing location
-        ax.plot([116.39,116.39], [39.91,39.91], [0,12000])
-        #ax.set_lighting(True, position=[1,1,1,1], mat_specular=[0.5,0.5,0.5,1])
+        plot([116.39,116.39], [39.91,39.91], [0,12000])
+        #lighting(position=[1,1,1,1], mat_specular=[0.5,0.5,0.5,1])
         levs = [50,100,200,300,400,500]
         #levs = [100,200,300,400,500]
         cmap='WhiteBlueGreenYellowRed'
         #cmap = 'MPL_Oranges'
-        pp = ax.plot_particles(lon, lat, height, dust, levs, vmin=20, s=2, \
+        pp = particles(lon, lat, height, dust, levs, vmin=20, s=2, \
             cmap=cmap, alpha_min=0.1, alpha_max=0.7, density=1)
         colorbar(pp, aspect=30)
         xlim(65, 155)
@@ -146,18 +146,18 @@ plot_particles
         walt = walt + h
 
         #Plot
-        ax = axes3dgl(bbox=True)
+        ax = axes3d()
         ax.set_elevation(-20)
         ax.set_rotation(335)
         rlevs = arange(0, 6000, 200)
         cols = makecolors(len(rlevs) + 1, cmap='MPL_gist_yarg', alpha=1)
         cols[0] = [51,153,255]
-        ax.plot_surface(lon1, lat1, elev, rlevs, colors=cols, edge=False)
-        ax.plot(clon, clat, calt, color=[255,153,255])
-        ax.plot(wlon, wlat, walt, color='b')
+        surf(lon1, lat1, elev, rlevs, colors=cols, edge=False)
+        plot(clon, clat, calt, color=[255,153,255])
+        plot(wlon, wlat, walt, color='b')
         #Beijing location
-        ax.plot([116.39,116.39], [39.91,39.91], [0,12000])
-        #ax.set_lighting(True, position=[1,1,1,1], mat_specular=[0.5,0.5,0.5,1])
+        plot([116.39,116.39], [39.91,39.91], [0,12000])
+        #lighting(position=[1,1,1,1], mat_specular=[0.5,0.5,0.5,1])
         levs = [50,100,150,200,300,400,500,1000]
         cmap='WhiteBlueGreenYellowRed'
         #cmap = 'MPL_Oranges'
@@ -173,7 +173,7 @@ plot_particles
             if t > 1:
                 cll()
             dust = f['CONC_DUST'][t]
-            pp = ax.plot_particles(lon, lat, height, dust, levs, vmin=20, s=2, \
+            pp = particles(lon, lat, height, dust, levs, vmin=20, s=2, \
                 cmap=cmap, alpha_min=0.1, alpha_max=0.7, density=1)
             colorbar(pp, newlegend=False, aspect=30)
             xlim(65, 155)

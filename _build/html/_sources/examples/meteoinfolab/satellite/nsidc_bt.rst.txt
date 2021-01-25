@@ -33,9 +33,8 @@ DMSP SSM/I-SSMIS Daily Polar Gridded Brightness Temperatures, Version 4
 
     #Plot
     axesm(projinfo=proj, gridline=True, griddx=30)
-    lworld = shaperead('D:/Temp/Map/country1.shp')
-    geoshow(lworld, edgecolor='k')
-    layer = imshowm(x, y, data, 20, cmap='BlAqGrYeOrRe', proj=proj)
+    geoshow('country', edgecolor='k')
+    layer = imshow(x, y, data, 20, cmap='BlAqGrYeOrRe', proj=proj)
     colorbar(layer)
     title('Brightness Temperatures')
     

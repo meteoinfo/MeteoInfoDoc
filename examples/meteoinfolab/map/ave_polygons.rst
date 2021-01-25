@@ -26,11 +26,10 @@ Below script will get average, min, max temporature of each state in US.
         i += 1 
 
     #Plot 
-    axesm() 
-    world = shaperead('D:/Temp/map/country1.shp') 
-    geoshow(world) 
+    axesm()
+    geoshow('country')
     geoshow(us, edgecolor=[0,0,255]) 
-    layer = contourfm(tdata,20) 
+    layer = contourf(tdata,20)
     title('Temporature distribution map') 
     colorbar(layer)
     

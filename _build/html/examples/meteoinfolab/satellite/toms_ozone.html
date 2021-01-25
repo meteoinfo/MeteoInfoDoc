@@ -95,8 +95,8 @@
 <span class="n">ozone</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;Ozone&#39;</span><span class="p">][::</span><span class="o">-</span><span class="mi">1</span><span class="p">,:]</span>
 <span class="c1">#Plot</span>
 <span class="n">axesm</span><span class="p">()</span>
-<span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
-<span class="n">layer</span> <span class="o">=</span> <span class="n">imshowm</span><span class="p">(</span><span class="n">ozone</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">)</span>
+<span class="n">layer</span> <span class="o">=</span> <span class="n">imshow</span><span class="p">(</span><span class="n">ozone</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
 <span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;horizontal&#39;</span><span class="p">)</span>
 <span class="n">title</span><span class="p">(</span><span class="s1">&#39;TOMS - Column Amount Ozone&#39;</span><span class="p">)</span>
 <span class="n">axism</span><span class="p">([</span><span class="o">-</span><span class="mi">180</span><span class="p">,</span><span class="mi">180</span><span class="p">,</span><span class="o">-</span><span class="mi">90</span><span class="p">,</span><span class="mi">90</span><span class="p">])</span>

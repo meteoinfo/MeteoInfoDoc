@@ -18,9 +18,8 @@ This example code illustrates how to access and visualize a OMI grid data.
     data = v[:,:]
     #Plot
     axesm()
-    mlayer = shaperead('D:/Temp/map/country1.shp')
-    geoshow(mlayer, edgecolor='k')
-    layer = imshowm(data, 20)
+    geoshow('country', edgecolor='k')
+    layer = imshow(data, 20)
     colorbar(layer)
     title('OMI - ' + vname)
     axism()

@@ -8,8 +8,8 @@ ARL meteorological data format is specified using in HYSPLIT model. This is an e
 for converting GRIB data to ARL data.
 
 ::
-                                         
-    # Convert GRIB data to ARL data  
+
+    # Convert GRIB data to ARL data
 
     #---- Set data folder
     datadir = 'D:/Temp/grib'
@@ -207,25 +207,25 @@ to the lossy compression algorithm of ARL data format.
     subplot(2,2,1,axestype='map')
     geoshow('country')
     levs = arange(-1, 1, 0.02)
-    layer1 = imshowm(w1, levs)
+    layer1 = imshow(w1, levs)
     colorbar(layer1)
     title('ERA5 ({})'.format(vname))
 
     subplot(2,2,2,axestype='map')
     geoshow('country')
-    layer = imshowm(w2, levs)
+    layer = imshow(w2, levs)
     colorbar(layer)
     title('ARL + DIFF ({})'.format(vname))
 
     subplot(2,2,3,axestype='map')
     geoshow('country')
-    layer2 = imshowm(w1 - w, 20)
+    layer2 = imshow(w1 - w, 20)
     colorbar(layer2)
     title('ERA5 - ARL ({})'.format(vname))
 
     subplot(2,2,4,axestype='map')
     geoshow('country')
-    layer2 = imshowm(w1 - w2, 20)
+    layer2 = imshow(w1 - w2, 20)
     colorbar(layer2)
     title('ERA5 - ARL + DIFF ({})'.format(vname))
 

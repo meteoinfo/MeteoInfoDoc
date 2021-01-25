@@ -31,9 +31,9 @@ The example to interpolate the data with sigma as the vertical coordinate to iso
     geoshow('country', edgecolor=(0,0,255))
     levs = arange(-20, 20, 1)
     cols = makecolors(len(levs)+1, 'MPL_RdBu', reverse=True)
-    layer = contourfm(lon, lat, temp[FH,0,:,:], levs, colors=cols, proj=f.proj)
+    layer = contourf(lon, lat, temp[FH,0,:,:], levs, colors=cols, proj=f.proj)
     colorbar(layer, label='Celsius')
-    cs = contourm(lon, lat, height[FH,0,:,:], arange(2880,4000,60), colors='k', proj=f.proj)
+    cs = contour(lon, lat, height[FH,0,:,:], arange(2880,4000,60), colors='k', proj=f.proj)
     clabel(cs, fontsize=10, drawshadow=False)
     t = f.gettime(FH)
     title('WRF-ARW Forecast VALID: %s UTC' % t.strftime('%Y-%m-%d %H:00') + \

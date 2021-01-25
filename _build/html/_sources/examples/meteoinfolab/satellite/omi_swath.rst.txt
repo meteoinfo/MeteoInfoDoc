@@ -21,8 +21,8 @@ This example code illustrates how to access and visualize a OMI swath data.
     #Plot
     axesm()
     geoshow('country')
-    #slayer = scatterm(lon, lat, data, edge=False)
-    layer = pcolorm(lon, lat, data)
+    #slayer = scatter(lon, lat, data, edge=False)
+    layer = pcolor(lon, lat, data)
     colorbar(layer)
     title('OMI - ' + vname)
     axism()

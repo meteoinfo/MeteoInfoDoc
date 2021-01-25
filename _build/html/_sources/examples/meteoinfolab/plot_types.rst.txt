@@ -34,4 +34,4 @@ Plot types
    plot_types/plot_3d.rst
    plot_types/oblique_section_plot.rst
    plot_types/plot_3dgl.rst
-   ../../docs/meteoinfolab/plot/axes3dgl/plot_particles.rst
+   ../../docs/meteoinfolab/plot/axes3dgl/particles.rst

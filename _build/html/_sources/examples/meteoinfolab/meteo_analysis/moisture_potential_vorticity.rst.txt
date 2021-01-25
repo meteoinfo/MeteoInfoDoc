@@ -79,13 +79,12 @@ The example to calcluate moisture potential vorticity.
 
     #Plot
     axesm()
-    lworld = shaperead('D:/Temp/Map/country1.shp')
-    geoshow(lworld, edgecolor='k')
+    geoshow('country', edgecolor='k')
     t = 0
     tt = meteof.gettime(t)
     z = 5
     clevs = arange(-3,3.1,0.5)
-    layer = contourfm(mpv[t,z,:,:]*1e6, clevs)
+    layer = contourf(mpv[t,z,:,:]*1e6, clevs)
     colorbar(layer)
     title('Moisture potential vorticity (%i hPa)\n' % lev[z] + \
         tt.strftime('%Y-%m-%d %H:00'))

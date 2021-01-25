@@ -100,12 +100,10 @@ data.</p>
 <span class="n">aod</span> <span class="o">=</span> <span class="n">v_aod</span><span class="p">[</span><span class="s1">&#39;15:55&#39;</span><span class="p">,</span><span class="s1">&#39;70:140&#39;</span><span class="p">]</span>
 <span class="c1">#Plot</span>
 <span class="n">axesm</span><span class="p">()</span>
-<span class="n">china</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="s1">&#39;D:/Temp/map/bou2_4p.shp&#39;</span><span class="p">)</span>
-<span class="n">geoshow</span><span class="p">(</span><span class="n">china</span><span class="p">,</span> <span class="n">linecolor</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
-<span class="n">world</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="s1">&#39;D:/Temp/map/country1.shp&#39;</span><span class="p">)</span>
-<span class="n">geoshow</span><span class="p">(</span><span class="n">world</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;cn_province&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">)</span>
 <span class="n">levels</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">)</span>
-<span class="n">layer</span> <span class="o">=</span> <span class="n">contourfm</span><span class="p">(</span><span class="n">aod</span><span class="p">,</span> <span class="n">levels</span><span class="p">,</span> <span class="n">interpolate</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">layer</span> <span class="o">=</span> <span class="n">contourf</span><span class="p">(</span><span class="n">aod</span><span class="p">,</span> <span class="n">levels</span><span class="p">,</span> <span class="n">interpolate</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">title</span><span class="p">(</span><span class="s1">&#39;Aerosol Optical Depth at 550 nm&#39;</span><span class="p">)</span>
 <span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span>
 </pre></div>

@@ -21,7 +21,7 @@ Location lon and high pressure centers using ``minimum_filter`` and ``maximum_fi
     #Plot
     axesm()
     geoshow('country')
-    layer = contourm(lon, lat, pres, 10, color=(0,153,204))
+    layer = contour(lon, lat, pres, 10, color=(0,153,204))
     clabel(layer, fontsize=10)
 
     for i in range(len(mxy)):

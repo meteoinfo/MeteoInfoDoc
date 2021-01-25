@@ -25,18 +25,18 @@ contour plot.
     
 .. image:: ../../../_static/contour.png
 
-Corresponding functions for map plot are ``contourm()`` and ``contourfm()`` .
+Contour plot for map axes.
 
 ::
 
-    f = addfile('D:/Temp/GrADS/model.ctl')
+    fn = os.path.join(migl.get_sample_folder(), 'GrADS', 'model.ctl')
+    f = addfile(fn)
     psv = f['PS']
     ps = psv[0,'10:60','60:140']
     axesm()
-    mlayer = shaperead('D:/Temp/map/country1.shp')
-    geoshow(mlayer, edgecolor=(0,0,255))
-    #layer = contourm(ps, 20)
-    layer = contourfm(ps, 20)
+    geoshow('country', edgecolor=(0,0,255))
+    #layer = contour(ps, 20)
+    layer = contourf(ps, 20)
     title('Pressure')
     yticks(arange(20, 61, 20))
     grid()

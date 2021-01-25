@@ -14,4 +14,6 @@ Functions:
    :maxdepth: 1
 
    interpolate/interp1d.rst
+   interpolate/interp2d.rst
    interpolate/RectBivariateSpline.rst
+   interpolate/NearestNDInterpolator.rst

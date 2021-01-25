@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>3-D plots &#8212; MeteoInfo 2.0 documentation</title>
+    <title>3-D plots without OpenGL &#8212; MeteoInfo 2.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
@@ -84,9 +84,9 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="d-plots">
-<span id="examples-meteoinfolab-plot-types-plot-3d"></span><h1>3-D plots<a class="headerlink" href="#d-plots" title="Permalink to this headline">¶</a></h1>
-<p>Create a 3D axes using <code class="docutils literal notranslate"><span class="pre">ax</span> <span class="pre">=</span> <span class="pre">axes3d()</span></code>, then use the plot functions of the 3D axes object (ax)
+  <div class="section" id="d-plots-without-opengl">
+<span id="examples-meteoinfolab-plot-types-plot-3d"></span><h1>3-D plots without OpenGL<a class="headerlink" href="#d-plots-without-opengl" title="Permalink to this headline">¶</a></h1>
+<p>Create a 3D axes without OpenGL using <code class="docutils literal notranslate"><span class="pre">ax</span> <span class="pre">=</span> <span class="pre">axes3d(opengl=False)</span></code>, then use the plot functions of the 3D axes object (ax)
 to plot 3D plots. The functions includes: including <code class="docutils literal notranslate"><span class="pre">plot()</span></code>, <code class="docutils literal notranslate"><span class="pre">scatter()</span></code>,
 <code class="docutils literal notranslate"><span class="pre">contour()</span></code>, <code class="docutils literal notranslate"><span class="pre">contourf()</span></code>, <code class="docutils literal notranslate"><span class="pre">imshow()</span></code>, <code class="docutils literal notranslate"><span class="pre">plot_surface()</span></code>, <code class="docutils literal notranslate"><span class="pre">plot_wireframe()</span></code> and
 <code class="docutils literal notranslate"><span class="pre">plot_layer</span></code>.</p>
@@ -96,7 +96,7 @@ to plot 3D plots. The functions includes: including <code class="docutils litera
 <span class="n">y</span> <span class="o">=</span> <span class="n">z</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">20</span> <span class="o">*</span> <span class="n">z</span><span class="p">)</span>
 
 <span class="c1">#Plot</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">axes3d</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">axes3d</span><span class="p">(</span><span class="n">opengl</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="s1">&#39;-b&#39;</span><span class="p">)</span>
 <span class="n">title</span><span class="p">(</span><span class="s1">&#39;3D plot example&#39;</span><span class="p">)</span>
 </pre></div>
@@ -109,7 +109,7 @@ to plot 3D plots. The functions includes: including <code class="docutils litera
 <span class="n">c</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
 
 <span class="c1">#Plot</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">axes3d</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">axes3d</span><span class="p">(</span><span class="n">opengl</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">points</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">c</span><span class="p">)</span>
 <span class="n">colorbar</span><span class="p">(</span><span class="n">points</span><span class="p">,</span><span class="n">shrink</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
 <span class="n">title</span><span class="p">(</span><span class="s1">&#39;Point 3D plot example&#39;</span><span class="p">)</span>
@@ -127,7 +127,7 @@ to plot 3D plots. The functions includes: including <code class="docutils litera
 <span class="n">z</span> <span class="o">=</span> <span class="n">z</span><span class="o">.</span><span class="n">T</span>
 
 <span class="c1">#Plot</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">axes3d</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">axes3d</span><span class="p">(</span><span class="n">opengl</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">lines</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">offset</span><span class="o">=-</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">plot_wireframe</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
 <span class="n">colorbar</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
@@ -146,7 +146,7 @@ to plot 3D plots. The functions includes: including <code class="docutils litera
 <span class="n">z</span> <span class="o">=</span> <span class="n">z</span><span class="o">.</span><span class="n">T</span>
 
 <span class="c1">#Plot</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">axes3d</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">axes3d</span><span class="p">(</span><span class="n">opengl</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">lines</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">offset</span><span class="o">=-</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">plot_wireframe</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
 <span class="n">colorbar</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
@@ -164,7 +164,7 @@ to plot 3D plots. The functions includes: including <code class="docutils litera
 <span class="n">z</span> <span class="o">=</span> <span class="n">z</span><span class="o">.</span><span class="n">T</span>
 
 <span class="c1">#Plot</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">axes3d</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">axes3d</span><span class="p">(</span><span class="n">opengl</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">ls</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot_surface</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">edge</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">colorbar</span><span class="p">(</span><span class="n">ls</span><span class="p">,</span><span class="n">shrink</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
 <span class="n">title</span><span class="p">(</span><span class="s1">&#39;Surface 3D plot example&#39;</span><span class="p">)</span>
@@ -182,7 +182,7 @@ to plot 3D plots. The functions includes: including <code class="docutils litera
 <span class="n">layer</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="s1">&#39;D:/Temp/map/110m-land.shp&#39;</span><span class="p">)</span>
 
 <span class="c1">#Plot</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">axes3d</span><span class="p">(</span><span class="n">bbox</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">axes3d</span><span class="p">(</span><span class="n">opengl</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">plot_layer</span><span class="p">(</span><span class="n">layer</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
 <span class="n">ls</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">ps</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mi">120</span><span class="p">,</span> <span class="n">zdir</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
 <span class="n">colorbar</span><span class="p">(</span><span class="n">ls</span><span class="p">)</span>
@@ -210,7 +210,7 @@ to plot 3D plots. The functions includes: including <code class="docutils litera
 <span class="n">elev</span><span class="p">[</span><span class="n">elev</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
 
 <span class="c1">#Plot</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">axes3d</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">axes3d</span><span class="p">(</span><span class="n">opengl</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">ls</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot_surface</span><span class="p">(</span><span class="n">elev</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;MPL_terrain&#39;</span><span class="p">,</span> <span class="n">edge</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">plot_layer</span><span class="p">(</span><span class="n">layer</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">plot_layer</span><span class="p">(</span><span class="n">tlayer</span><span class="p">)</span>

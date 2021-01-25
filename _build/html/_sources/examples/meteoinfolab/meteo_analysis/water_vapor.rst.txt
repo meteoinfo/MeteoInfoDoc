@@ -40,8 +40,8 @@ The example to calcluate water vapor flux divergency.
     print 'Plot...'
     axesm()
     geoshow('country', edgecolor='black')
-    #layer = contourfm(qhdivg, 20)
-    layer = contourfm(qhdivg, cmap='grads_rainbow')
+    #layer = contourf(qhdivg, 20)
+    layer = contourf(qhdivg, cmap='grads_rainbow')
     title('Water Vapor Flux Divergency (' + t.strftime('%Y-%m-%d') + ')')
     colorbar(layer)
     xlim(0, 360)

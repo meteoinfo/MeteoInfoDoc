@@ -27,7 +27,7 @@ This example code illustrates how to access and visualize a FY-2C satellite clou
     geoshow('country', edgecolor=(0,0,255))
     cols = makecolors(10, cmap='hotcold_18lev')
     cols[0] = 'w'
-    layer = imshowm(x, y, cloud, proj=ax.proj, colors=cols)
+    layer = imshow(x, y, cloud, proj=ax.proj, colors=cols)
     colorbar(layer)
     
 .. image:: image/fy2c_clc.png

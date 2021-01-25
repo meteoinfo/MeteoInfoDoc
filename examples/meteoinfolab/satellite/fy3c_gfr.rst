@@ -25,7 +25,7 @@ data.
     axesm()
     geoshow('cn_province', edgecolor='gray')
     geoshow('country', edgecolor=(100,100,100))
-    layer = scatterm(lon, lat, data, s=3, colors=['r'], edge=False, marker='+')
+    layer = scatter(lon, lat, data, s=3, colors=['r'], edge=False, marker='+')
     #colorbar(layer)
     title('FY-3C GFR')
     axism()

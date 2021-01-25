@@ -15,9 +15,8 @@ Read grid data from ASCII file::
     x = arange1(72, 128, 0.5)
     y = arange1(18, 72, 0.5)
     axesm()
-    mlayer = shaperead('D:/Temp/map/country1.shp')
-    geoshow(mlayer)
-    layer = contourfm(x, y, rain1, 20)
+    geoshow('country')
+    layer = contourf(x, y, rain1, 20)
     title('Precipitation')
     ylabel('Latitude')
     xlabel('Longitude')
@@ -36,9 +35,8 @@ to get column and row number of the file::
     lat = a[:,1]
     v = a[:,2]
     axesm()
-    mlayer = shaperead('D:/Temp/map/bou2_4p.shp')
-    geoshow(mlayer, facecolor=(220,220,220), edgecolor=None)
-    layer = scatterm(lon, lat, v, edge=False, size=2)
+    geoshow('cn_province', facecolor=(220,220,220), edgecolor=None)
+    layer = scatter(lon, lat, v, edge=False, size=2)
     xlim(109.2, 111)
     ylim(19.8, 21.8) 
     title('Flood plain area')

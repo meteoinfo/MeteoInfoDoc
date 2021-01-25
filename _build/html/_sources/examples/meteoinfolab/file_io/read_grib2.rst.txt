@@ -5,7 +5,7 @@ Read GRIB2 radar reflectivity data
 ***********************************
 
 GRIB data file can be opened using ``addfile()`` function. Then read variable data array from file object.
-The high resolution US radar reflectivity data include big piece of missing value data. ``imshowm()``
+The high resolution US radar reflectivity data include big piece of missing value data. ``imshow()``
 function was applied to create a raster layer (display as an image) and plot on a map. 
 
 ::
@@ -16,7 +16,7 @@ function was applied to create a raster layer (display as an image) and plot on 
     axesm(projinfo=f.proj)
     lstates = shaperead('D:/Temp/Map/states.shp')
     geoshow(lstates, facecolor=[220,220,220], edgecolor='k')
-    layer = imshowm(data, 20, proj=f.proj, order=1)
+    layer = imshow(data, 20, proj=f.proj, order=1)
     colorbar(layer)
     title('Base reflectivity (' + t.strftime('%Y-%m-%d %H:%M') + ')')
     

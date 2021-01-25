@@ -30,10 +30,8 @@ functions.
     #Plot
     figure(figsize=[768,480], newfig=False)
     axesm(position=[0,0,1,1], xyscale=1.2, tickfontsize=12)
-    lworld = shaperead(os.path.join(mapdir, 'country1.shp'))
-    lchina = shaperead(os.path.join(mapdir, 'bou2_4p.shp'))
-    geoshow(lchina)
-    geoshow(lworld, edgecolor='k')
+    geoshow('cn_province')
+    geoshow('country', edgecolor='k')
     levs = [0.1, 0.5, 1, 5, 10, 20, 30, 50]
     cols = [(192,0,0),(255,69,0),(255,105,180),(255,128,0),(255,192,128),(51,255,255), \
         (153,255,153),(204,255,204),(255,255,255)]
@@ -41,9 +39,8 @@ functions.
     weathers = [5,10,11,12,40,41,42,43,44,45,46,47,48,49]
     ls = weatherspec(weathers)
     #Add south China Sea
-    lscs = shaperead(os.path.join(mapdir, 'bou1_4l.shp'))
     axesm(position=[0.76,0.09,0.16,0.22], axison=False, xyscale=1.2)
-    geoshow(lscs, facecolor=(0,0,255))
+    geoshow('cn_border', facecolor=(0,0,255))
     xlim(106, 123)
     ylim(2, 23)
     #Set current plot to 1
@@ -68,9 +65,9 @@ functions.
             print 'Observation data file: ' + obsfn    
             obsf = addfile_micaps(obsfn)
             fdata = fcstf['VIS'][t,:,:]
-            lfcst = contourfm(fdata, levs, colors=cols, proj=fcstf.proj)
+            lfcst = contourf(fdata, levs, colors=cols, proj=fcstf.proj)
             odata = obsf.stationdata('WeatherNow')
-            lobs = scatterm(odata, symbolspec=ls)
+            lobs = scatter(odata, symbolspec=ls)
             title('CUACE/Haze-Fog visibility (km) ' + sbjt.strftime('%Y-%m-%d %H:00') + \
                     ' +' + str(t*3) + ' (' + bjt.strftime('%Y-%m-%d %H:00') + ')', \
                     bold=False)

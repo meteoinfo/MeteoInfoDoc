@@ -22,10 +22,9 @@ This example code illustrates how to access and visualize a TRMM 2A12 data.
     water = water / 1000
     #Plot
     axesm()
-    mlayer = shaperead('D:/Temp/map/country1.shp')
-    geoshow(mlayer, edgecolor='k')
+    geoshow('country', edgecolor='k')
     levs = arange(0, 10, 0.5)
-    layer = surfacem(lon, lat, water, levs)
+    layer = pcolor(lon, lat, water, levs)
     colorbar(layer, orientation='horizontal')
     title([fns, vname])
     axism([-180, 180, -90, 90])

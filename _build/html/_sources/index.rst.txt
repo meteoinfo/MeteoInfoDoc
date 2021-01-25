@@ -15,12 +15,14 @@ applications: ``MeteoInfoMap`` and ``MeteoInfoLab``.
 **MeteoInfoMap** is a GIS application which enables the user to visualize and analyze the spatial and 
 meteorological data with multiple data formats.
 
-  .. image:: _static/meteoinfomap.png
+  .. image:: _static/news/mimap_2.3.PNG
+     :scale: 50
 
 **MeteoInfoLab** is a scientific computation and visualization environment using Jython scripting with the 
 ability of multiple dimensional array calculation and 2D/3D plotting.
 
-  .. image:: _static/meteoinfolab.png
+  .. image:: _static/news/milab_2.3.PNG
+     :scale: 50
 
 Source code
 =====================================

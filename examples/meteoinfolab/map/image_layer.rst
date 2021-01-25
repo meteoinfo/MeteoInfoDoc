@@ -9,16 +9,18 @@ function, and the image can be geo-located by creating geo-location file with th
 
 ::
 
-    f = addfile('D:/Temp/GrADS/model.ctl')
-    ps = f['PS'][0,[10,60],[70,140]]
-    lrelief = georead('D:/Temp/Map/GLOBALeb3colshade.jpg')
-    world = georead('D:/Temp/Map/country1.shp')
+    fn = os.path.join(migl.get_sample_folder(), 'GrADS', 'model.ctl')
+    f = addfile(fn)
+    ps = f['PS'][0,'10:60','70:140']
+    imfn = os.path.join(migl.get_map_folder(), 'global_shade.jpg')
+    lrelief = georead(imfn)
+
+    #Plot
     axesm()
     geoshow(lrelief)
-    geoshow(world, edgecolor=[0,0,255])
-    cols = makecolors(20, alpha=128)
-    layer = contourfm(ps, colors=cols, edgecolor='gray', order=1)
+    geoshow('country', edgecolor=[0,0,255])
+    layer = contourf(ps, edgecolor='gray', zorder=1, alpha=0.5)
     title('Pressure')
-    colorbar(layer, aspect=12)
+    colorbar(layer, aspect=20)
         
 .. image:: ../../../_static/image_layer.png

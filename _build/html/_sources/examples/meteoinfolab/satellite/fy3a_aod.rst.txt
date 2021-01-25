@@ -37,7 +37,7 @@ This example code illustrates how to access and visualize a FY-3A satellite AOD
     levs = arange1(0, 20, 0.05)
     cols = makecolors(len(levs)+1, cmap='matlab_jet')
     cols[0] = 'w'
-    layer = imshowm(aod, levs, colors=cols)
+    layer = imshow(aod, levs, colors=cols)
     colorbar(layer)
     title('FY-3A AOD (2014-03-31)')
     

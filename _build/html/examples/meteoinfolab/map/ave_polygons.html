@@ -106,10 +106,9 @@ Below script will get average, min, max temporature of each state in US.</p>
 
 <span class="c1">#Plot</span>
 <span class="n">axesm</span><span class="p">()</span>
-<span class="n">world</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="s1">&#39;D:/Temp/map/country1.shp&#39;</span><span class="p">)</span>
-<span class="n">geoshow</span><span class="p">(</span><span class="n">world</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">)</span>
 <span class="n">geoshow</span><span class="p">(</span><span class="n">us</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">])</span>
-<span class="n">layer</span> <span class="o">=</span> <span class="n">contourfm</span><span class="p">(</span><span class="n">tdata</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">layer</span> <span class="o">=</span> <span class="n">contourf</span><span class="p">(</span><span class="n">tdata</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
 <span class="n">title</span><span class="p">(</span><span class="s1">&#39;Temporature distribution map&#39;</span><span class="p">)</span>
 <span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span>
 </pre></div>

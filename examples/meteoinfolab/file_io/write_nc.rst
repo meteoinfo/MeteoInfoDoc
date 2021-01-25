@@ -114,10 +114,9 @@ Read and plot joined netCDF data file::
     var = f['streamflow']
     flow = var[1,:]
     axesm()
-    mlayer = shaperead('D:/Temp/Map/bou2_4p.shp')
-    geoshow(mlayer)
+    geoshow('cn_province')
     levs = arange(0, 0.1, 0.005)
-    layer = scatterm(lon, lat, flow, levs, edge=False)
+    layer = scatter(lon, lat, flow, levs, edge=False)
     colorbar(layer)
     t = f.gettime(1)
     title('River Flow (' + t.strftime('%Y-%m-%d %Hh)'))

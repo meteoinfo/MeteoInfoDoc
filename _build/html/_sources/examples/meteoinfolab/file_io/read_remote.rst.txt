@@ -15,9 +15,8 @@ data files.
     ps = v[0,:,:]
     #Plot
     axesm(tickfontsize=12)
-    mlayer = shaperead('D:/Temp/map/country1.shp')
-    geoshow(mlayer)
-    layer = contourfm(ps, 20)
+    geoshow('country')
+    layer = contourf(ps, 20)
     colorbar(layer, orientation='horizontal', fontsize=12)
     title(fn)
     
@@ -31,9 +30,8 @@ data files.
     data = f[vname][:,:]
     #Plot
     axesm()
-    mlayer = shaperead('D:/Temp/map/country1.shp')
-    geoshow(mlayer)
-    layer = imshowm(data, 20)
+    geoshow('country')
+    layer = imshow(data, 20)
     colorbar(layer, orientation='horizontal')
     title(vname)
     

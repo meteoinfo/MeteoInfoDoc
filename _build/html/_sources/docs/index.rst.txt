@@ -14,3 +14,4 @@ Documentation
    wcontour/index.rst
    trajstat/index.rst
    outlierflag/index.rst
+   emips/index.rst

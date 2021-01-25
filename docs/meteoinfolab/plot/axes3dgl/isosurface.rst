@@ -1,11 +1,11 @@
-.. _docs-meteoinfolab-plotlib-_axes3dgl-Axes3DGL-plot_isosurface:
+.. _docs-meteoinfolab-plotlib-_axes3dgl-Axes3DGL-isosurface:
 
 
 *******************
-plot_isosurface
+isosurface
 *******************
 
-.. method:: Axes3DGL.plot_isosurface(*args, **kwargs):
+.. method:: Axes3DGL.isosurface(*args, **kwargs):
 
     creates a three-dimensional isosurface plot
 
@@ -48,15 +48,15 @@ plot_isosurface
         lon1, lat1 = meshgrid(lon1, lat1)
 
         #Plot
-        ax = axes3dgl(bbox=True)
+        ax = axes3d()
         ax.set_rotation(348)
         ax.set_elevation(-29)
         ax.set_lighting(True)
         levs = arange(0, 6000, 200)
         cols = makecolors(len(levs) + 1, cmap='MPL_terrain')
         cols[0] = 'w'
-        ls = ax.plot_surface(lon1, lat1, elev, levs, colors=cols, edge=False)
-        ax.plot_isosurface(lon, lat, height, dust, 100, color=[255,180,0,10], \
+        ls = ax.surf(lon1, lat1, elev, levs, colors=cols, edge=False)
+        ax.isosurface(lon, lat, height, dust, 100, color=[255,180,0,10], \
             edge=False, nthread=4)
         colorbar(ls)
         xlim(65, 155)

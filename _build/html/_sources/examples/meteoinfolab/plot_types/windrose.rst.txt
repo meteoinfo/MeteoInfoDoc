@@ -98,16 +98,19 @@ in a polar axes. The two axes must have same position.
 ::
 
     def windrose2polar(a):
+        """
+        Convert wind direction towindrose polar coordinate
+        """
         r = 360 - a + 90
         r[r>360] = r - 360
         return r
 
     #Read data (wind speed, weed direction, pm10)
-    fn = r'D:\Temp\ascii\pm10.txt'
-    table = readtable(fn, format='%3f')
-    ws = table['WS']
-    wd = table['WD']
-    pm10 = table['PM10']
+    fn = os.path.join(migl.get_sample_folder(), 'ASCII', 'pm10.txt')
+    df = DataFrame.read_table(fn, format='%3f')
+    ws = df['WS'].values
+    wd = df['WD'].values
+    pm10 = df['PM10'].values
     N = len(ws)
 
     #Convert from windrose coordinate to polar coordinate
@@ -123,10 +126,12 @@ in a polar axes. The two axes must have same position.
     rwdbins = radians(dwdbins)
     wdN = len(wdbins) - 1
     theta = ones(wdN + 1)
-    for i in range(wdN):
-        theta[i] = rwdbins[i] - pi/wdN
+    for j in range(wdN):
+        theta[j] = rwdbins[j]
     theta[wdN] = theta[0]
-    wdhist = histogram(radians(wd), wdbins)[0].astype('float')    
+    wd = wd + 360./wdN/2
+    wd[wd>360] = wd - 360
+    wdhist = histogram(radians(wd), wdbins)[0].astype('float')
     wdhist = wdhist / N
     nwdhist = wdhist.aslist()
     nwdhist.append(nwdhist[0])
@@ -142,7 +147,7 @@ in a polar axes. The two axes must have same position.
     dd = 0.5
     x = linspace(rwdc.min() - dd, rwdc.max() + dd, 50)
     y = linspace(wsc.min() - dd, wsc.max() + dd, 50)
-    data = griddata((rwdc, wsc), pm10, xi=(x, y), method='idw', convexhull=False)[0]
+    data = griddata((rwdc, wsc), pm10, xi=(x, y), method='idw', pointnum=5, convexhull=False)[0]
 
     #---------------------------------------
     #Plot figure
@@ -155,15 +160,15 @@ in a polar axes. The two axes must have same position.
     yaxis(location='left', shift = 50)
     ylabel('Wind speed (m/s)')
     levs = arange(100, 2000, 100)
-    cg = contourf(x, y, data, levs, cmap='BlAqGrYeOrRe', visible=False)
+    cg = contourf(x, y, data, levs, edgecolor=None, cmap='BlAqGrYeOrRe', visible=False)
     cg = cg.clip([poly])
     ax.add_graphic(cg)
-    #ss = scatter(rwdc, wsc, s=4, fill=False, edgecolor='b')
-    #patch(poly)
     colorbar(cg, shrink=0.6, xshift=30, label=r'$\mu g/m^3$', labelloc='bottom')
     maxv = 10
     xlim(-maxv, maxv)
     ylim(-maxv, maxv)
+    ticks = ax.get_yticks()
+    ax.set_yticklabels([abs(yy) for yy in ticks])
 
     #Polar axes
     axp = axes(position=pos, polar=True)
@@ -171,7 +176,7 @@ in a polar axes. The two axes must have same position.
     axp.set_rmax(1)
     axp.set_rlabel_position(25.)
     axp.set_rtick_locations([0.2,0.4,0.6,0.8,1])
-    axp.set_rticks(['2','4','6','8','10 m/s'])
+    axp.set_rticks(['20%','40%','60%','80%','100%'])
     axp.set_xtick_font(size=14)
     axp.set_xticks(['E','NE','N','NW','W','SW','S','SE'])
     title(r'$Windrose \ with \ PM_{10} \ concentrations$', fontsize=18)

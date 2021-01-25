@@ -37,7 +37,7 @@ This example code illustrates how to access and visualize a GEOS-16 data.
     #Plot
     axesm(projinfo=proj, gridline=True)
     geoshow('country', edgecolor='k')
-    ls = imshowm(x, y, rad, 40, proj=proj)
+    ls = imshow(x, y, rad, 40, proj=proj)
     colorbar(ls)
     title('ABI L1b Radiances')
     

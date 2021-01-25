@@ -36,9 +36,8 @@ Calculate temperature advection from u and v wind components. The mainly used fu
     #Plot
     print 'Plot...'
     axesm()
-    mlayer = shaperead('D:/Temp/map/country1.shp')
-    geoshow(mlayer, edgecolor='black')
-    layer = contourfm(tadv, cmap='grads_rainbow')
+    geoshow('country', edgecolor='black')
+    layer = contourf(tadv, cmap='grads_rainbow')
     title('Temperature advection (' + t.strftime('%Y-%m-%d') + ')')
     colorbar(layer)
     xlim(0, 360)

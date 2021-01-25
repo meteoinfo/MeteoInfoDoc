@@ -1,10 +1,10 @@
 .. _examples-meteoinfolab-plot_types-plot_3d:
 
-*******************
-3-D plots
-*******************
+*************************
+3-D plots without OpenGL
+*************************
 
-Create a 3D axes using ``ax = axes3d()``, then use the plot functions of the 3D axes object (ax)
+Create a 3D axes without OpenGL using ``ax = axes3d(opengl=False)``, then use the plot functions of the 3D axes object (ax)
 to plot 3D plots. The functions includes: including ``plot()``, ``scatter()``,
 ``contour()``, ``contourf()``, ``imshow()``, ``plot_surface()``, ``plot_wireframe()`` and
 ``plot_layer``.
@@ -16,7 +16,7 @@ to plot 3D plots. The functions includes: including ``plot()``, ``scatter()``,
     y = z * np.cos(20 * z)
 
     #Plot
-    ax = axes3d()
+    ax = axes3d(opengl=False)
     ax.plot(x, y, z, '-b')
     title('3D plot example')
 
@@ -30,7 +30,7 @@ to plot 3D plots. The functions includes: including ``plot()``, ``scatter()``,
     c = x + y
 
     #Plot
-    ax = axes3d()
+    ax = axes3d(opengl=False)
     points = ax.scatter(x, y, z, c=c)
     colorbar(points,shrink=0.8)
     title('Point 3D plot example')
@@ -49,7 +49,7 @@ to plot 3D plots. The functions includes: including ``plot()``, ``scatter()``,
     z = z.T
 
     #Plot
-    ax = axes3d()
+    ax = axes3d(opengl=False)
     lines = ax.contour(x1, y1, z, 10, offset=-2)
     ax.plot_wireframe(x, y, z, color='b')
     colorbar(lines)
@@ -69,7 +69,7 @@ to plot 3D plots. The functions includes: including ``plot()``, ``scatter()``,
     z = z.T
 
     #Plot
-    ax = axes3d()
+    ax = axes3d(opengl=False)
     lines = ax.contourf(x1, y1, z, 10, offset=-2)
     ax.plot_wireframe(x, y, z, color='b')
     colorbar(lines)
@@ -88,7 +88,7 @@ to plot 3D plots. The functions includes: including ``plot()``, ``scatter()``,
     z = z.T
 
     #Plot
-    ax = axes3d()
+    ax = axes3d(opengl=False)
     ls = ax.plot_surface(x, y, z, 20, edge=False)
     colorbar(ls,shrink=0.8)
     title('Surface 3D plot example')
@@ -107,7 +107,7 @@ to plot 3D plots. The functions includes: including ``plot()``, ``scatter()``,
     layer = shaperead('D:/Temp/map/110m-land.shp')
 
     #Plot
-    ax = axes3d(bbox=True)
+    ax = axes3d(opengl=False)
     ax.plot_layer(layer, color='c', edgecolor='b')
     ls = ax.imshow(ps, 10, offset=120, zdir='x', alpha=0.8)
     colorbar(ls)
@@ -136,7 +136,7 @@ to plot 3D plots. The functions includes: including ``plot()``, ``scatter()``,
     elev[elev<0] = 0
 
     #Plot
-    ax = axes3d()
+    ax = axes3d(opengl=False)
     ls = ax.plot_surface(elev, 20, cmap='MPL_terrain', edge=False)
     ax.plot_layer(layer, edgecolor='g')
     ax.plot_layer(tlayer)

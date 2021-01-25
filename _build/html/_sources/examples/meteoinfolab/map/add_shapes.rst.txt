@@ -9,8 +9,7 @@ Costum point, line and polygon can be added in the map using ``geoshow()`` funct
 ::
 
     axesm(tickfontsize=12)
-    lworld = shaperead('D:/Temp/map/country1.shp')
-    geoshow(lworld, edgecolor='k', facecolor='g')
+    geoshow('country', edgecolor='k', facecolor='g')
     #Add point
     geoshow(15, -100, size=14, color='r', marker='S')
     #Add line

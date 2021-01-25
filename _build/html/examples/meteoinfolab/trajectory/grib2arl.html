@@ -282,25 +282,25 @@ to the lossy compression algorithm of ARL data format.</p>
 <span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">axestype</span><span class="o">=</span><span class="s1">&#39;map&#39;</span><span class="p">)</span>
 <span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">)</span>
 <span class="n">levs</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">)</span>
-<span class="n">layer1</span> <span class="o">=</span> <span class="n">imshowm</span><span class="p">(</span><span class="n">w1</span><span class="p">,</span> <span class="n">levs</span><span class="p">)</span>
+<span class="n">layer1</span> <span class="o">=</span> <span class="n">imshow</span><span class="p">(</span><span class="n">w1</span><span class="p">,</span> <span class="n">levs</span><span class="p">)</span>
 <span class="n">colorbar</span><span class="p">(</span><span class="n">layer1</span><span class="p">)</span>
 <span class="n">title</span><span class="p">(</span><span class="s1">&#39;ERA5 (</span><span class="si">{}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">vname</span><span class="p">))</span>
 
 <span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">axestype</span><span class="o">=</span><span class="s1">&#39;map&#39;</span><span class="p">)</span>
 <span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">)</span>
-<span class="n">layer</span> <span class="o">=</span> <span class="n">imshowm</span><span class="p">(</span><span class="n">w2</span><span class="p">,</span> <span class="n">levs</span><span class="p">)</span>
+<span class="n">layer</span> <span class="o">=</span> <span class="n">imshow</span><span class="p">(</span><span class="n">w2</span><span class="p">,</span> <span class="n">levs</span><span class="p">)</span>
 <span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span>
 <span class="n">title</span><span class="p">(</span><span class="s1">&#39;ARL + DIFF (</span><span class="si">{}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">vname</span><span class="p">))</span>
 
 <span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">axestype</span><span class="o">=</span><span class="s1">&#39;map&#39;</span><span class="p">)</span>
 <span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">)</span>
-<span class="n">layer2</span> <span class="o">=</span> <span class="n">imshowm</span><span class="p">(</span><span class="n">w1</span> <span class="o">-</span> <span class="n">w</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">layer2</span> <span class="o">=</span> <span class="n">imshow</span><span class="p">(</span><span class="n">w1</span> <span class="o">-</span> <span class="n">w</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
 <span class="n">colorbar</span><span class="p">(</span><span class="n">layer2</span><span class="p">)</span>
 <span class="n">title</span><span class="p">(</span><span class="s1">&#39;ERA5 - ARL (</span><span class="si">{}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">vname</span><span class="p">))</span>
 
 <span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="n">axestype</span><span class="o">=</span><span class="s1">&#39;map&#39;</span><span class="p">)</span>
 <span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">)</span>
-<span class="n">layer2</span> <span class="o">=</span> <span class="n">imshowm</span><span class="p">(</span><span class="n">w1</span> <span class="o">-</span> <span class="n">w2</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">layer2</span> <span class="o">=</span> <span class="n">imshow</span><span class="p">(</span><span class="n">w1</span> <span class="o">-</span> <span class="n">w2</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
 <span class="n">colorbar</span><span class="p">(</span><span class="n">layer2</span><span class="p">)</span>
 <span class="n">title</span><span class="p">(</span><span class="s1">&#39;ERA5 - ARL + DIFF (</span><span class="si">{}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">vname</span><span class="p">))</span>
 

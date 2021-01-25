@@ -9,12 +9,8 @@ read by ``smodeldata()`` function of ``DimDataFile`` object.
 
 ::
 
-    #Set data folders
-    basedir = 'D:/MyProgram/Distribution/java/MeteoInfo/MeteoInfo'
-    datadir = os.path.join(basedir, 'sample/MICAPS')
-
-    #Read station data
-    f = addfile_micaps(os.path.join(datadir, '10101414.000'))
+    fn = os.path.join(migl.get_sample_folder(), 'MICAPS', '10101414.000')
+    f = addfile_micaps(fn)
     data = f.smodeldata()
     #Plot
     axesm(bgcolor=(204,255,255))

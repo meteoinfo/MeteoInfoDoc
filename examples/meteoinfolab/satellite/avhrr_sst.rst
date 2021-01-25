@@ -17,7 +17,7 @@ This example code illustrates how to access and visualize a AVHRR grid data.
     #Plot
     axesm()
     geoshow('country')
-    layer = imshowm(data, 20)
+    layer = imshow(data, 20)
     colorbar(layer)
     title('AVHRR - ' + vname)
     axism()

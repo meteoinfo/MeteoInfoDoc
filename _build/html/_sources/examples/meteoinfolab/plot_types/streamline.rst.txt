@@ -4,11 +4,12 @@
 Streamline plot
 *******************
 
-Streamline plot was created by ``streamplot()`` or ``streamplotm()`` (for map axes) function.
+Streamline plot was created by ``streamplot()`` function.
 
 ::
 
-    f = addfile('D:/Temp/GrADS/model.ctl')
+    fn = os.path.join(migl.get_sample_folder(), 'GrADS', 'model.ctl')
+    f = addfile(fn)
     u = f['U'][0,'500','10:60','60:140']
     v = f['V'][0,'500','10:60','60:140']
     

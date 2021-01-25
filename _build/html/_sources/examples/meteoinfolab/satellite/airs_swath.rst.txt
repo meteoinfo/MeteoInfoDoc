@@ -5,8 +5,8 @@ AIRS Swath data
 *******************
 
 This example code illustrates how to access and visualize a GESDISC AIRS swath data.
-**surfacem()** command is used to plot 2 dimension longitude and latitude swath data.
-Also **scatterm()** command can be used to plot swath data as scatter points.
+**pcolor()** command is used to plot 2 dimension longitude and latitude swath data.
+Also **scatter()** command can be used to plot swath data as scatter points.
 
 ::
 
@@ -27,8 +27,8 @@ Also **scatterm()** command can be used to plot swath data as scatter points.
     mlayer = shaperead('D:/Temp/map/country1.shp')
     geoshow(mlayer)
     levs = arange(40, 90, 1)
-    #layer = scatterm(lon, lat, rad, levs, edge=False)
-    layer = pcolorm(lon, lat, rad, levs)
+    #layer = scatter(lon, lat, rad, levs, edge=False)
+    layer = pcolor(lon, lat, rad, levs)
     colorbar(layer, orientation='horizontal')
     title('{0}\n {1}'.format(fns, vname))
     axism()
