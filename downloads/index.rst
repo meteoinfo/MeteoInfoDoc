@@ -27,7 +27,7 @@ MIML
 wContour
 =====================================
   Java edition
-    - `wContour 1.6.1 class library - Java <files/wContour.jar>`_
+    - `wContour 1.7.0 class library - Java <files/wContour-1.7.0.jar>`_
     - `wContour class library demo program - Java <files/wContourDemo_java_2012-11-1.zip>`_  
   C# edition
     - `wContour 1.6.2 class library - C# <files/wContour.dll>`_
