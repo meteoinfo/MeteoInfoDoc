@@ -126,7 +126,7 @@ Vertical feature types.
     levs = arange(8)
     cols = [(255,255,255),(0,0,255),(51,255,255),(255,153,0),(255,255,0),(0,255,0),(127,127,127),(0,0,0)]
     ls = makesymbolspec('image', levels=levs, colors=cols)
-    layer = imshow(rot90(data, 1), symbolspec=ls, extent=[lat[0],lat[-1],alt[0],alt[-1])
+    layer = imshow(rot90(data, 1), symbolspec=ls, extent=[lat[0],lat[-1],alt[0],alt[-1]])
     colorbar(layer, ticklabels=['Invalid', 'Clear Air', 'Cloud', 'Aerosol', 'Strato Feature', 'Surface', 'Subsurface', 'No Signal'])
     basename = os.path.basename(fn)
     title([basename, 'Feature Type (Bits 1-3) in Feature Classification Flag'])
