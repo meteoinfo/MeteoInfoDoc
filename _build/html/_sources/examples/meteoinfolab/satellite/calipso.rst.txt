@@ -82,7 +82,7 @@ LaRC CALIPSO data file.
     levs = arange(2)
     cols = ['w','b']
     ls = makesymbolspec('image', levels=levs, colors=cols)
-    layer = imshow(rot90(data, 3), symbolspec=ls, extent=[lat[0],lat[-1],alt[0],alt[-1])
+    layer = imshow(rot90(data, 3), symbolspec=ls, extent=[lat[0],lat[-1],alt[0],alt[-1]])
     colorbar(layer, ticklabels=['Others','Cloud'])
     basename = os.path.basename(fn)
     title([basename, 'Feature Type (Bits 1-3) in Feature Classification Flag'])
