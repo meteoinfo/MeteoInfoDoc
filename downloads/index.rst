@@ -40,7 +40,7 @@ wContour
 TrajStat
 =====================================
   TrajStat - MeteoInfoMap plugin for air mass trajectory statistic
-    - `TrajStat 1.4.9 plugin for MeteoInfo Java version <files/TrajStat_Plugin_1.4.9.zip>`_
+    - `TrajStat 1.5.3 plugin for MeteoInfo Java version <files/TrajStat_1.5.3.zip>`_
     
 --------------------------------------------------------------------------------------------
 
