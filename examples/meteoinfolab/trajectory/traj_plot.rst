@@ -13,7 +13,7 @@ get 2-D data arrays from the file object. The ``lat``, ``lon`` data can be used 
 
 ::
 
-    fn = 'D:/MyProgram/Distribution/java/MeteoInfo/MeteoInfo/sample/HYSPLIT/tdump'
+    fn = os.path.join(migl.get_sample_folder(), 'HYSPLIT', 'tdump')
     f = addfile_hytraj(fn)
     lon = f['lon'][:,:]
     lat = f['lat'][:,:]
@@ -44,9 +44,9 @@ Change the legend of the trajectory layer.
 
 ::
 
-    from org.meteoinfo.legend import PointStyle
+    from org.meteoinfo.geometry.legend import PointStyle
 
-    fn = 'D:/MyProgram/Distribution/java/MeteoInfo/MeteoInfo/sample/HYSPLIT/tdump'
+    fn = os.path.join(migl.get_sample_folder(), 'HYSPLIT', 'tdump')
     f = addfile_hytraj(fn)
     lon = f['lon'][:,:]
     lat = f['lat'][:,:]
@@ -88,20 +88,18 @@ Plot trajectories in a 3-D map colored by pressure values.
 
 ::
 
-    fn = 'D:/MyProgram/Distribution/java/MeteoInfo/MeteoInfo/sample/HYSPLIT/tdump'
+    fn = os.path.join(migl.get_sample_folder(), 'HYSPLIT', 'tdump')
     f = addfile_hytraj(fn)
     lon = f['lon'][:,:]
     lat = f['lat'][:,:]
     alt = f['height'][:,:]
     pres = f['PRESSURE'][:,:]
 
-    layer = shaperead('D:/Temp/map/states.shp')
-
     #Plot
     ax = axes3d()
-    ax.plot_layer(layer, facecolor=(255,248,226), edgecolor='b')
-    traj = ax.plot(lon, lat, alt, mvalues=pres, linewidth=2)
-    ax.scatter(lon[:,0], lat[:,0], alt[:,0], marker='o', fill=False, \
+    geoshow('us_states', facecolor=(255,248,226), edgecolor='b')
+    traj = plot3(lon, lat, alt, mvalues=pres, linewidth=2)
+    scatter3(lon[:,0], lat[:,0], alt[:,0], marker='o', fill=False, \
         size=14, edgecolor='gray')
     colorbar(traj)
     xlim(-125, -55)
@@ -110,38 +108,3 @@ Plot trajectories in a 3-D map colored by pressure values.
     title('3D trajectory example')
 
 .. image:: ../../../_static/traj_3d_color.png
-    
-Trajectory polyline and start point layers can also be got directly from the file object using 
-the functions of ``trajlayer`` and ``trajsplayer``. The layers can be plotted 
-in a map axes. The height or pressure variationdata along trajectories can be obtained 
-by **trajvardata** function of the file object. The parameter is the column index of the
-HYSPLIT trajectory endpoint data file. **trajvardata(12)** means to get trajectory pressure
-data, while **trajvardata(11)** is used to get trajectory height data.
-
-::
-
-    fn = 'D:/MyProgram/Distribution/java/MeteoInfo/MeteoInfo/sample/HYSPLIT/tdump'
-    f = addfile_hytraj(fn)
-    tlayer = f.trajlayer()
-    stlayer = f.trajsplayer()
-
-    #Plot
-    figure(figsize=[526, 489], newfig=False)
-    axesm(position=[0.12, 0.3, 0.9, 0.7])
-    mlayer = shaperead('D:/Temp/map/country1.shp')
-    geoshow(mlayer, edgecolor=(0,0,255), facecolor=(230,230,230))
-    geoshow(tlayer)
-    ss = makesymbolspec('point', {'marker':'S'})
-    geoshow(stlayer, symbolspec=ss)
-    xlim(-92, -55)
-    ylim(34, 54)
-    yticks(arange(35, 54, 5))
-    title('MeteoInfoLab script demo - Trajectory')
-
-    axes(outerposition=[0, 0, 1, 0.3], yreverse=True, xaxistype='time')
-    data = f.trajvardata(12)
-    plot(data, legend=tlayer.legend())
-    xlabel('Time')
-    ylabel('hPa')
-    
-.. image:: image/traj_plot.png
