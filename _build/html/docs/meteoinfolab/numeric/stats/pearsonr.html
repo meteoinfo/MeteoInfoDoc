@@ -1,19 +1,20 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>pearsonr &#8212; MeteoInfo 2.0 documentation</title>
     <link rel="stylesheet" href="../../../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../../../_static/language_data.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="percentile" href="percentile.html" />
@@ -48,7 +49,8 @@
           <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoLab</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="../../api.html" >The MeteoInfoLab API</a> &#187;</li>
           <li class="nav-item nav-item-4"><a href="../../numeric.html" >Numeric package</a> &#187;</li>
-          <li class="nav-item nav-item-5"><a href="../stats.html" accesskey="U">mipylib.numeric.stats</a> &#187;</li> 
+          <li class="nav-item nav-item-5"><a href="../stats.html" accesskey="U">mipylib.numeric.stats</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pearsonr</a></li> 
       </ul>
     </div>
 
@@ -76,7 +78,7 @@
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
 
@@ -88,9 +90,9 @@
             
   <div class="section" id="pearsonr">
 <span id="docs-meteoinfolab-numeric-stats-pearsonr"></span><h1>pearsonr<a class="headerlink" href="#pearsonr" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
+<dl class="py function">
 <dt id="numeric.stats.pearsonr">
-<code class="sig-prename descclassname">numeric.stats.</code><code class="sig-name descname">pearsonr</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#numeric.stats.pearsonr" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">numeric.stats.</code><code class="sig-name descname">pearsonr</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em><span class="sig-paren">)</span><a class="headerlink" href="#numeric.stats.pearsonr" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculates a Pearson correlation coefficient and the p-value for testing non-correlation.</p>
 <p>The Pearson correlation coefficient measures the linear relationship between two datasets.
 Strictly speaking, Pearson’s correlation requires that each dataset be normally distributed,
@@ -114,7 +116,7 @@ The p-values are not entirely reliable but are probably reasonable for datasets 
 </dd>
 </dl>
 <p>Examples:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mipylib.numeric</span> <span class="k">import</span> <span class="n">stats</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mipylib.numeric</span> <span class="kn">import</span> <span class="n">stats</span>
 
 <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mf">29.81</span><span class="p">,</span><span class="mf">30.04</span><span class="p">,</span><span class="mf">41.7</span><span class="p">,</span><span class="mf">43.71</span><span class="p">,</span><span class="mf">28.75</span><span class="p">,</span><span class="mf">37.73</span><span class="p">,</span><span class="mf">52.25</span><span class="p">,</span><span class="mf">32.41</span><span class="p">,</span><span class="mf">25.67</span><span class="p">,</span><span class="mf">28.17</span><span class="p">,</span><span class="mf">25.71</span><span class="p">,</span><span class="mf">36.05</span><span class="p">,</span><span class="mf">37.62</span><span class="p">,</span><span class="mf">34.28</span><span class="p">,</span><span class="mf">38.82</span><span class="p">,</span><span class="mf">40.15</span><span class="p">,</span><span class="mf">35.69</span><span class="p">,</span><span class="mf">28.36</span><span class="p">,</span><span class="mf">39.56</span><span class="p">,</span><span class="mf">52.56</span><span class="p">,</span><span class="mf">54.14</span><span class="p">,</span><span class="mf">50.76</span><span class="p">,</span><span class="mf">39.35</span><span class="p">,</span><span class="mf">43.16</span><span class="p">]</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mf">51.6</span><span class="p">,</span><span class="mi">46</span><span class="p">,</span><span class="mf">64.3</span><span class="p">,</span><span class="mf">83.4</span><span class="p">,</span><span class="mf">65.9</span><span class="p">,</span><span class="mf">49.5</span><span class="p">,</span><span class="mf">88.6</span><span class="p">,</span><span class="mf">101.4</span><span class="p">,</span><span class="mf">55.9</span><span class="p">,</span><span class="mf">41.8</span><span class="p">,</span><span class="mf">33.4</span><span class="p">,</span><span class="mf">57.3</span><span class="p">,</span><span class="mf">66.5</span><span class="p">,</span><span class="mf">40.5</span><span class="p">,</span><span class="mf">72.3</span><span class="p">,</span><span class="mi">70</span><span class="p">,</span><span class="mf">83.3</span><span class="p">,</span><span class="mf">65.8</span><span class="p">,</span><span class="mf">63.1</span><span class="p">,</span><span class="mf">83.4</span><span class="p">,</span><span class="mi">102</span><span class="p">,</span><span class="mi">94</span><span class="p">,</span><span class="mi">77</span><span class="p">,</span><span class="mi">77</span><span class="p">]</span>
@@ -132,6 +134,7 @@ The p-values are not entirely reliable but are probably reasonable for datasets 
 </div>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -174,12 +177,13 @@ The p-values are not entirely reliable but are probably reasonable for datasets 
           <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoLab</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="../../api.html" >The MeteoInfoLab API</a> &#187;</li>
           <li class="nav-item nav-item-4"><a href="../../numeric.html" >Numeric package</a> &#187;</li>
-          <li class="nav-item nav-item-5"><a href="../stats.html" >mipylib.numeric.stats</a> &#187;</li> 
+          <li class="nav-item nav-item-5"><a href="../stats.html" >mipylib.numeric.stats</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pearsonr</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2021, MeteoInfo developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
     </div>
   </body>
 </html>

@@ -1,0 +1,263 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MeteoInfo 3.0.0 was released (2021-5-11) &#8212; MeteoInfo 2.0 documentation</title>
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="TrajStat 1.5.3 was released (2021-4-10)" href="trajstat_1.5.3.html" />
+    <link rel="prev" title="News" href="index.html" /> 
+  </head><body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../index.html"><img src="../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="trajstat_1.5.3.html" title="TrajStat 1.5.3 was released (2021-4-10)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="News"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">home</a>|&nbsp;</li>
+        <li><a href="index.html">news</a>|&nbsp;</li>
+        <li><a href="../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../docs/index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">News</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">MeteoInfo 3.0.0 was released (2021-5-11)</a></li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">News</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="trajstat_1.5.3.html"
+                        title="next chapter">TrajStat 1.5.3 was released (2021-4-10)</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/news/meteoinfo_3.0.0.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="meteoinfo-3-0-0-was-released-2021-5-11">
+<span id="news-meteoinfo-3-0-0"></span><h1>MeteoInfo 3.0.0 was released (2021-5-11)<a class="headerlink" href="#meteoinfo-3-0-0-was-released-2021-5-11" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><ul class="simple">
+<li><p>Code refactoring - split MeteoInfoLib to several modules: <cite>common</cite>, <cite>ndarray</cite>, <cite>geometry</cite>, <cite>table</cite>, <cite>ui</cite>, <cite>projection</cite>, <cite>math</cite>, <cite>image</cite>, <cite>dataframe</cite>, <cite>data</cite>, <cite>console</cite>, <cite>geo</cite>, <cite>chart</cite>, <cite>map</cite>, <cite>lab</cite>.</p></li>
+<li><p>Using OpenBLAS to speed up scientific computation functions.</p></li>
+<li><p>Add 3D streamline tracing functions.</p></li>
+<li><p>Add Kriging interpolation algorithm.</p></li>
+<li><p>Add 3D trajectory clustering function.</p></li>
+<li><p>Add <cite>signal</cite> package and <cite>detrend</cite> function.</p></li>
+<li><p>Add <cite>spatial</cite> package and <cite>pdist</cite> function.</p></li>
+<li><p>Add <cite>tofile</cite> and <cite>fromfile</cite> functions.</p></li>
+<li><p>Support MICAPS MDFS data file format.</p></li>
+<li><p>Update <cite>contour</cite> and <cite>contourf</cite> functions to support 2d x/y coordinates.</p></li>
+<li><p>Update FlatLaf to version 1.1.2.</p></li>
+<li><p>Update Proj4j to version 1.1.2.</p></li>
+<li><p>Update NetCDF to version 5.4.1.</p></li>
+<li><p>update itextpdf to version 5.5.13.2</p></li>
+<li><p>Update guava to version 30.1.1</p></li>
+<li><p>Some bug fixed.</p></li>
+</ul>
+</div></blockquote>
+<p><strong>Kriging interpolation</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">migl</span><span class="o">.</span><span class="n">get_sample_folder</span><span class="p">(),</span> <span class="s1">&#39;MICAPS&#39;</span><span class="p">,</span> <span class="s1">&#39;10101414.000&#39;</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">addfile_micaps</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+<span class="n">pr</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;Precipitation6h&#39;</span><span class="p">][:]</span>
+<span class="n">lon</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;Longitude&#39;</span><span class="p">][:]</span>
+<span class="n">lat</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;Latitude&#39;</span><span class="p">][:]</span>
+
+<span class="n">ask_rect</span> <span class="o">=</span> <span class="n">geolib</span><span class="o">.</span><span class="n">polygon</span><span class="p">([</span><span class="mi">72</span><span class="p">,</span><span class="mi">72</span><span class="p">,</span><span class="mi">136</span><span class="p">,</span><span class="mi">136</span><span class="p">],</span> <span class="p">[</span><span class="mi">16</span><span class="p">,</span><span class="mi">55</span><span class="p">,</span><span class="mi">55</span><span class="p">,</span><span class="mi">16</span><span class="p">])</span>
+<span class="n">pr</span><span class="p">,</span><span class="n">lon</span><span class="p">,</span><span class="n">lat</span> <span class="o">=</span> <span class="n">geolib</span><span class="o">.</span><span class="n">rmaskout</span><span class="p">(</span><span class="n">pr</span><span class="p">,</span> <span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">mask_rect</span><span class="p">)</span>
+<span class="n">idx</span> <span class="o">=</span> <span class="n">where</span><span class="p">(</span><span class="n">pr</span> <span class="o">!=</span> <span class="n">nan</span><span class="p">)</span>
+<span class="n">pr</span> <span class="o">=</span> <span class="n">pr</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+<span class="n">lon</span> <span class="o">=</span> <span class="n">lon</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+<span class="n">lat</span> <span class="o">=</span> <span class="n">lat</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+
+<span class="c1">#griddata function - interpolate</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mi">75</span><span class="p">,</span> <span class="mi">135</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+<span class="n">prg</span> <span class="o">=</span> <span class="n">griddata</span><span class="p">((</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">),</span> <span class="n">pr</span><span class="p">,</span> <span class="n">xi</span><span class="o">=</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;kriging&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1">#Plot</span>
+<span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">700</span><span class="p">,</span><span class="mi">550</span><span class="p">],</span> <span class="n">newfig</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">proj</span> <span class="o">=</span> <span class="n">projinfo</span><span class="p">(</span><span class="n">proj</span><span class="o">=</span><span class="s1">&#39;lcc&#39;</span><span class="p">,</span> <span class="n">lon_0</span><span class="o">=</span><span class="mi">105</span><span class="p">,</span> <span class="n">lat_1</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">lat_2</span><span class="o">=</span><span class="mi">47</span><span class="p">)</span>
+<span class="n">axesm</span><span class="p">(</span><span class="n">projinfo</span><span class="o">=</span><span class="n">proj</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="p">[</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.99</span><span class="p">,</span> <span class="mf">0.99</span><span class="p">],</span> <span class="n">axison</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">gridlabel</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;cn_province&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;lightgray&#39;</span><span class="p">)</span>
+<span class="n">bou1_layer</span> <span class="o">=</span> <span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;cn_border&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">))</span>
+<span class="n">city_layer</span> <span class="o">=</span> <span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;cn_cities&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">city_layer</span><span class="o">.</span><span class="n">addlabels</span><span class="p">(</span><span class="s1">&#39;NAME&#39;</span><span class="p">,</span> <span class="n">fontname</span><span class="o">=</span><span class="sa">u</span><span class="s1">&#39;楷体&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">yoffset</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">avoidcoll</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">china_layer</span> <span class="o">=</span> <span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;china&#39;</span><span class="p">,</span> <span class="n">visible</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">city_layer</span><span class="o">.</span><span class="n">movelabel</span><span class="p">(</span><span class="sa">u</span><span class="s1">&#39;西宁&#39;</span><span class="p">,</span> <span class="o">-</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">city_layer</span><span class="o">.</span><span class="n">movelabel</span><span class="p">(</span><span class="sa">u</span><span class="s1">&#39;海口&#39;</span><span class="p">,</span> <span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">city_layer</span><span class="o">.</span><span class="n">movelabel</span><span class="p">(</span><span class="sa">u</span><span class="s1">&#39;澳门&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">25</span><span class="p">)</span>
+<span class="n">city_layer</span><span class="o">.</span><span class="n">movelabel</span><span class="p">(</span><span class="sa">u</span><span class="s1">&#39;香港&#39;</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">city_layer</span><span class="o">.</span><span class="n">movelabel</span><span class="p">(</span><span class="sa">u</span><span class="s1">&#39;福州&#39;</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">city_layer</span><span class="o">.</span><span class="n">movelabel</span><span class="p">(</span><span class="sa">u</span><span class="s1">&#39;合肥&#39;</span><span class="p">,</span> <span class="o">-</span><span class="mi">18</span><span class="p">)</span>
+<span class="n">city_layer</span><span class="o">.</span><span class="n">movelabel</span><span class="p">(</span><span class="sa">u</span><span class="s1">&#39;杭州&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">city_layer</span><span class="o">.</span><span class="n">movelabel</span><span class="p">(</span><span class="sa">u</span><span class="s1">&#39;上海&#39;</span><span class="p">,</span> <span class="mi">18</span><span class="p">)</span>
+<span class="n">city_layer</span><span class="o">.</span><span class="n">movelabel</span><span class="p">(</span><span class="sa">u</span><span class="s1">&#39;太原&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">city_layer</span><span class="o">.</span><span class="n">movelabel</span><span class="p">(</span><span class="sa">u</span><span class="s1">&#39;天津&#39;</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">city_layer</span><span class="o">.</span><span class="n">movelabel</span><span class="p">(</span><span class="sa">u</span><span class="s1">&#39;石家庄&#39;</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">levs</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span>
+<span class="n">cols</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">),(</span><span class="mi">170</span><span class="p">,</span><span class="mi">240</span><span class="p">,</span><span class="mi">255</span><span class="p">),(</span><span class="mi">120</span><span class="p">,</span><span class="mi">230</span><span class="p">,</span><span class="mi">240</span><span class="p">),(</span><span class="mi">200</span><span class="p">,</span><span class="mi">220</span><span class="p">,</span><span class="mi">50</span><span class="p">),(</span><span class="mi">240</span><span class="p">,</span><span class="mi">220</span><span class="p">,</span><span class="mi">20</span><span class="p">),(</span><span class="mi">255</span><span class="p">,</span><span class="mi">120</span><span class="p">,</span><span class="mi">10</span><span class="p">),(</span><span class="mi">255</span><span class="p">,</span><span class="mi">90</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span> \
+    <span class="p">(</span><span class="mi">240</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">0</span><span class="p">),(</span><span class="mi">180</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">0</span><span class="p">),(</span><span class="mi">120</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">0</span><span class="p">)]</span>
+<span class="n">layer</span> <span class="o">=</span> <span class="n">contourf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">prg</span><span class="p">,</span> <span class="n">levs</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="n">cols</span><span class="p">)</span>
+<span class="n">masklayer</span><span class="p">(</span><span class="n">china_layer</span><span class="p">,</span> <span class="p">[</span><span class="n">layer</span><span class="p">])</span>
+<span class="n">legend</span><span class="p">(</span><span class="n">layer</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;lower left&#39;</span><span class="p">,</span> <span class="n">frameon</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="sa">u</span><span class="s1">&#39;降雨量(mm)&#39;</span><span class="p">,</span> <span class="n">titlefontname</span><span class="o">=</span><span class="sa">u</span><span class="s1">&#39;黑体&#39;</span><span class="p">)</span>
+<span class="n">axism</span><span class="p">([</span><span class="mi">79</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">53</span><span class="p">])</span>
+<span class="n">text</span><span class="p">(</span><span class="mi">95</span><span class="p">,</span> <span class="mi">53</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;全国降水量实况图&#39;</span><span class="p">,</span> <span class="n">fontname</span><span class="o">=</span><span class="sa">u</span><span class="s1">&#39;黑体&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+<span class="n">text</span><span class="p">(</span><span class="mi">95</span><span class="p">,</span> <span class="mi">51</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;(2010-10-14 08:00 至 2010-10-14 14:00)&#39;</span><span class="p">,</span> <span class="n">fontname</span><span class="o">=</span><span class="sa">u</span><span class="s1">&#39;黑体&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+
+<span class="c1">#Add south China Sea</span>
+<span class="n">sc_layer</span> <span class="o">=</span> <span class="n">bou1_layer</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span>
+<span class="n">axesm</span><span class="p">(</span><span class="n">position</span><span class="o">=</span><span class="p">[</span><span class="mf">0.15</span><span class="p">,</span><span class="mf">0.05</span><span class="p">,</span><span class="mf">0.15</span><span class="p">,</span><span class="mf">0.2</span><span class="p">],</span> <span class="n">axison</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">frameon</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="n">sc_layer</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">))</span>
+<span class="n">xlim</span><span class="p">(</span><span class="mi">106</span><span class="p">,</span> <span class="mi">123</span><span class="p">)</span>
+<span class="n">ylim</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">23</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../_images/kriging_griddata.PNG" src="../_images/kriging_griddata.PNG" />
+<p><strong>3D stream plot</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ddir</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;D:/Temp/nc/风场&#39;</span>
+<span class="n">hfn</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">ddir</span><span class="p">,</span> <span class="s1">&#39;hhgt.nc&#39;</span><span class="p">)</span>
+<span class="n">hf</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="n">hfn</span><span class="p">)</span>
+<span class="n">ll</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">zz</span> <span class="o">=</span> <span class="n">hf</span><span class="p">[</span><span class="s1">&#39;HGT&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="n">ll</span><span class="p">]</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">zz</span><span class="o">.</span><span class="n">dimvalue</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">zz</span><span class="o">.</span><span class="n">dimvalue</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">s</span> <span class="o">=</span> <span class="mi">15</span>
+<span class="n">zz</span> <span class="o">=</span> <span class="n">zz</span><span class="p">[:,::</span><span class="n">s</span><span class="p">,::</span><span class="n">s</span><span class="p">]</span>
+<span class="n">zz</span><span class="p">[</span><span class="n">zz</span><span class="o">==</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">nan</span>
+<span class="n">x1</span> <span class="o">=</span> <span class="n">x</span><span class="p">[::</span><span class="n">s</span><span class="p">]</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="n">y</span><span class="p">[::</span><span class="n">s</span><span class="p">]</span>
+<span class="n">z1</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="n">ll</span><span class="p">)</span> <span class="o">*</span> <span class="mi">10</span>
+
+<span class="n">fn</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">ddir</span><span class="p">,</span> <span class="s1">&#39;1.nc&#39;</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+<span class="n">ss</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">hgt</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;HGT&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">hgt</span> <span class="o">=</span> <span class="n">hgt</span><span class="p">[::</span><span class="n">ss</span><span class="p">,::</span><span class="n">ss</span><span class="p">]</span>
+<span class="n">hgt</span><span class="p">[</span><span class="n">hgt</span><span class="o">==</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">nan</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="n">x</span><span class="p">[::</span><span class="n">ss</span><span class="p">]</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="n">y</span><span class="p">[::</span><span class="n">ss</span><span class="p">]</span>
+
+<span class="n">u</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;U&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="n">ll</span><span class="p">]</span>
+<span class="n">u</span> <span class="o">=</span> <span class="n">u</span><span class="p">[:,::</span><span class="n">s</span><span class="p">,::</span><span class="n">s</span><span class="p">]</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;V&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="n">ll</span><span class="p">]</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">v</span><span class="p">[:,::</span><span class="n">s</span><span class="p">,::</span><span class="n">s</span><span class="p">]</span>
+<span class="n">w</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;W&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="n">ll</span><span class="p">]</span>
+<span class="n">w</span> <span class="o">=</span> <span class="n">w</span><span class="p">[:,::</span><span class="n">s</span><span class="p">,::</span><span class="n">s</span><span class="p">]</span>
+<span class="n">xx</span><span class="p">,</span> <span class="n">yy</span> <span class="o">=</span> <span class="n">meshgrid</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">)</span>
+<span class="n">xx1</span><span class="p">,</span> <span class="n">yy1</span><span class="p">,</span> <span class="n">zz1</span> <span class="o">=</span> <span class="n">meshgrid</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">z1</span><span class="p">)</span>
+<span class="n">speed</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">u</span><span class="o">*</span><span class="n">u</span> <span class="o">+</span> <span class="n">v</span><span class="o">*</span><span class="n">v</span> <span class="o">+</span> <span class="n">w</span><span class="o">*</span><span class="n">w</span><span class="p">)</span>
+<span class="c1">#u[speed &lt; 0.3] = nan</span>
+
+<span class="n">axes3d</span><span class="p">()</span>
+<span class="n">lighting</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">qq</span> <span class="o">=</span> <span class="n">streamplot3</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">z1</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">speed</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">density</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">lighting</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">bar3</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">hgt</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">ss</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">colorbar</span><span class="p">(</span><span class="n">qq</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;m / s&#39;</span><span class="p">)</span>
+<span class="n">antialias</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../_images/streamplot3_building.PNG" src="../_images/streamplot3_building.PNG" />
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
+        <img style="position: fixed; top: 0; right: 0; border: 0;" 
+        src="../_static/forkme_right_orange_ff7600.png" 
+        alt="Fork me on GitHub">
+    </a>
+    <a target="_blank" href="https://gitter.im/meteoinfo/community">
+        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
+        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
+        alt="Join the chat at Gitter">
+    </a>
+
+
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="trajstat_1.5.3.html" title="TrajStat 1.5.3 was released (2021-4-10)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="News"
+             >previous</a> |</li>
+        <li><a href="../index.html">home</a>|&nbsp;</li>
+        <li><a href="index.html">news</a>|&nbsp;</li>
+        <li><a href="../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../docs/index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="index.html" >News</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">MeteoInfo 3.0.0 was released (2021-5-11)</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2021, MeteoInfo developers.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+  </body>
+</html>

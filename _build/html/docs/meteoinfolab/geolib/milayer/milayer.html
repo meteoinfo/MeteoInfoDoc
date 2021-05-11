@@ -1,19 +1,20 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MILayer &#8212; MeteoInfo 2.0 documentation</title>
     <link rel="stylesheet" href="../../../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../../../_static/language_data.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="meteolib package" href="../../meteolib.html" />
@@ -48,7 +49,8 @@
           <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoLab</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="../../api.html" >The MeteoInfoLab API</a> &#187;</li>
           <li class="nav-item nav-item-4"><a href="../../geolib.html" >Geolib package</a> &#187;</li>
-          <li class="nav-item nav-item-5"><a href="../milayer.html" accesskey="U">mipylib.geolib.milayer</a> &#187;</li> 
+          <li class="nav-item nav-item-5"><a href="../milayer.html" accesskey="U">mipylib.geolib.milayer</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">MILayer</a></li> 
       </ul>
     </div>
 
@@ -76,7 +78,7 @@
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
 
@@ -88,7 +90,7 @@
             
   <div class="section" id="milayer">
 <span id="docs-meteoinfolab-geolib-milayer-milayer"></span><h1>MILayer<a class="headerlink" href="#milayer" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
+<dl class="py class">
 <dt id="mipylib.geolib.milayer.MILayer">
 <em class="property">class </em><code class="sig-prename descclassname">mipylib.geolib.milayer.</code><code class="sig-name descname">MILayer</code><a class="headerlink" href="#mipylib.geolib.milayer.MILayer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Map layer</p>
@@ -100,9 +102,9 @@
 </ul>
 </dd>
 </dl>
-<dl class="method">
+<dl class="py method">
 <dt id="mipylib.geolib.milayer.MILayer.cellvalue">
-<code class="sig-name descname">cellvalue</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">fieldname</em>, <em class="sig-param">shapeindex</em><span class="sig-paren">)</span><a class="headerlink" href="#mipylib.geolib.milayer.MILayer.cellvalue" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">cellvalue</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">fieldname</span></em>, <em class="sig-param"><span class="n">shapeindex</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mipylib.geolib.milayer.MILayer.cellvalue" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get attribute table cell value.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -117,9 +119,9 @@
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="mipylib.geolib.milayer.MILayer.setcellvalue">
-<code class="sig-name descname">setcellvalue</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">fieldname</em>, <em class="sig-param">shapeindex</em>, <em class="sig-param">value</em><span class="sig-paren">)</span><a class="headerlink" href="#mipylib.geolib.milayer.MILayer.setcellvalue" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">setcellvalue</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">fieldname</span></em>, <em class="sig-param"><span class="n">shapeindex</span></em>, <em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mipylib.geolib.milayer.MILayer.setcellvalue" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set cell value in attribute table.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -137,6 +139,7 @@
 </div>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -179,12 +182,13 @@
           <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoLab</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="../../api.html" >The MeteoInfoLab API</a> &#187;</li>
           <li class="nav-item nav-item-4"><a href="../../geolib.html" >Geolib package</a> &#187;</li>
-          <li class="nav-item nav-item-5"><a href="../milayer.html" >mipylib.geolib.milayer</a> &#187;</li> 
+          <li class="nav-item nav-item-5"><a href="../milayer.html" >mipylib.geolib.milayer</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">MILayer</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2021, MeteoInfo developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
     </div>
   </body>
 </html>

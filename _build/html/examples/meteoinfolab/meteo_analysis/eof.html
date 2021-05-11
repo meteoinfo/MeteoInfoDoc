@@ -1,19 +1,20 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EOF analysis &#8212; MeteoInfo 2.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../../_static/language_data.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Satellite data" href="../satellite.html" />
@@ -46,7 +47,8 @@
 
           <li class="nav-item nav-item-1"><a href="../../index.html" >Examples</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../index.html" >MeteoInfoLab</a> &#187;</li>
-          <li class="nav-item nav-item-3"><a href="../meteo_analysis.html" accesskey="U">Meteorological analysis</a> &#187;</li> 
+          <li class="nav-item nav-item-3"><a href="../meteo_analysis.html" accesskey="U">Meteorological analysis</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">EOF analysis</a></li> 
       </ul>
     </div>
 
@@ -74,7 +76,7 @@
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
 
@@ -136,7 +138,7 @@ central and northern Pacific during winter time.</p>
 <p>The spatial pattern of this EOF is the canonical El Nino pattern, and
 the associated time series shows large peaks and troughs for well-known
 El Nino and La Nina events.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mipylib.numeric</span> <span class="k">import</span> <span class="n">stats</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mipylib.numeric</span> <span class="kn">import</span> <span class="n">stats</span>
 
 <span class="c1">#Read data</span>
 <span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="s1">&#39;D:/Temp/nc/sst_ndjfm_anom.nc&#39;</span><span class="p">)</span>
@@ -201,6 +203,7 @@ El Nino and La Nina events.</p>
 </div>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -241,12 +244,13 @@ El Nino and La Nina events.</p>
 
           <li class="nav-item nav-item-1"><a href="../../index.html" >Examples</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../index.html" >MeteoInfoLab</a> &#187;</li>
-          <li class="nav-item nav-item-3"><a href="../meteo_analysis.html" >Meteorological analysis</a> &#187;</li> 
+          <li class="nav-item nav-item-3"><a href="../meteo_analysis.html" >Meteorological analysis</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">EOF analysis</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2021, MeteoInfo developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
     </div>
   </body>
 </html>

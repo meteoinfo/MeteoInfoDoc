@@ -1,19 +1,20 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Classification linear &#8212; MeteoInfo 2.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../../_static/language_data.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Classification iris" href="classifer_iris.html" />
@@ -46,7 +47,8 @@
 
           <li class="nav-item nav-item-1"><a href="../../index.html" >Examples</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../index.html" >MIML - MeteoInfo Machine Learning Toolbox</a> &#187;</li>
-          <li class="nav-item nav-item-3"><a href="../deep_learning.html" accesskey="U">Deep learning</a> &#187;</li> 
+          <li class="nav-item nav-item-3"><a href="../deep_learning.html" accesskey="U">Deep learning</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Classification linear</a></li> 
       </ul>
     </div>
 
@@ -74,7 +76,7 @@
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
 
@@ -87,10 +89,10 @@
   <div class="section" id="classification-linear">
 <span id="examples-miml-deep-learning-classifer-linear"></span><h1>Classification linear<a class="headerlink" href="#classification-linear" title="Permalink to this headline">¶</a></h1>
 <p>MultiLayerNetwork linear classification example.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">miml</span> <span class="k">import</span> <span class="n">datasets</span>
-<span class="kn">from</span> <span class="nn">miml.deep_learning</span> <span class="k">import</span> <span class="n">Network</span><span class="p">,</span> <span class="n">Activation</span><span class="p">,</span> <span class="n">WeightInit</span><span class="p">,</span> <span class="n">LossFunction</span>
-<span class="kn">from</span> <span class="nn">miml.deep_learning</span> <span class="k">import</span> <span class="n">Nesterovs</span>
-<span class="kn">from</span> <span class="nn">miml.deep_learning</span> <span class="k">import</span> <span class="n">DenseLayer</span><span class="p">,</span> <span class="n">OutputLayer</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">miml</span> <span class="kn">import</span> <span class="n">datasets</span>
+<span class="kn">from</span> <span class="nn">miml.deep_learning</span> <span class="kn">import</span> <span class="n">Network</span><span class="p">,</span> <span class="n">Activation</span><span class="p">,</span> <span class="n">WeightInit</span><span class="p">,</span> <span class="n">LossFunction</span>
+<span class="kn">from</span> <span class="nn">miml.deep_learning</span> <span class="kn">import</span> <span class="n">Nesterovs</span>
+<span class="kn">from</span> <span class="nn">miml.deep_learning</span> <span class="kn">import</span> <span class="n">DenseLayer</span><span class="p">,</span> <span class="n">OutputLayer</span>
 
 <span class="n">fn</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">datasets</span><span class="o">.</span><span class="n">get_data_home</span><span class="p">(),</span> <span class="s1">&#39;classification&#39;</span><span class="p">,</span>
     <span class="s1">&#39;linear_data_train.csv&#39;</span><span class="p">)</span>
@@ -147,6 +149,7 @@
 </div>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -187,12 +190,13 @@
 
           <li class="nav-item nav-item-1"><a href="../../index.html" >Examples</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../index.html" >MIML - MeteoInfo Machine Learning Toolbox</a> &#187;</li>
-          <li class="nav-item nav-item-3"><a href="../deep_learning.html" >Deep learning</a> &#187;</li> 
+          <li class="nav-item nav-item-3"><a href="../deep_learning.html" >Deep learning</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Classification linear</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2021, MeteoInfo developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
     </div>
   </body>
 </html>

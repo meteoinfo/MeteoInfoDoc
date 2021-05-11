@@ -1,19 +1,20 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Random Forest &#8212; MeteoInfo 2.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../../_static/language_data.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Gradient Boosting" href="gbt.html" />
@@ -46,7 +47,8 @@
 
           <li class="nav-item nav-item-1"><a href="../../index.html" >Examples</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../index.html" >MIML - MeteoInfo Machine Learning Toolbox</a> &#187;</li>
-          <li class="nav-item nav-item-3"><a href="../regression.html" accesskey="U">Regression</a> &#187;</li> 
+          <li class="nav-item nav-item-3"><a href="../regression.html" accesskey="U">Regression</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Random Forest</a></li> 
       </ul>
     </div>
 
@@ -74,7 +76,7 @@
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
 
@@ -94,8 +96,8 @@ vote of individual trees. The method combines bagging idea and the random select
 <li><p>If there are M input variables, a number m &lt;&lt; M is specified such that at each node, m variables are selected at random out of the M and the best split on these m is used to split the node. The value of m is held constant during the forest growing.</p></li>
 <li><p>Each tree is grown to the largest extent possible. There is no pruning.</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">miml</span> <span class="k">import</span> <span class="n">datasets</span>
-<span class="kn">from</span> <span class="nn">miml.regression</span> <span class="k">import</span> <span class="n">RandomForest</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">miml</span> <span class="kn">import</span> <span class="n">datasets</span>
+<span class="kn">from</span> <span class="nn">miml.regression</span> <span class="kn">import</span> <span class="n">RandomForest</span>
 
 <span class="n">fn</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">datasets</span><span class="o">.</span><span class="n">get_data_home</span><span class="p">(),</span> <span class="s1">&#39;regression&#39;</span><span class="p">,</span>
     <span class="s1">&#39;diabetes.csv&#39;</span><span class="p">)</span>
@@ -118,6 +120,7 @@ vote of individual trees. The method combines bagging idea and the random select
 </div>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -158,12 +161,13 @@ vote of individual trees. The method combines bagging idea and the random select
 
           <li class="nav-item nav-item-1"><a href="../../index.html" >Examples</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../index.html" >MIML - MeteoInfo Machine Learning Toolbox</a> &#187;</li>
-          <li class="nav-item nav-item-3"><a href="../regression.html" >Regression</a> &#187;</li> 
+          <li class="nav-item nav-item-3"><a href="../regression.html" >Regression</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Random Forest</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2021, MeteoInfo developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
     </div>
   </body>
 </html>

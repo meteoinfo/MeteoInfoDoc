@@ -1,19 +1,20 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>powerfit &#8212; MeteoInfo 2.0 documentation</title>
     <link rel="stylesheet" href="../../../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../../../_static/language_data.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="Meteorological analysis" href="../../../../examples/meteoinfolab/meteo_analysis.html" />
@@ -46,7 +47,8 @@
 
           <li class="nav-item nav-item-1"><a href="../../../../examples/index.html" >Examples</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../../../../examples/meteoinfolab/index.html" >MeteoInfoLab</a> &#187;</li>
-          <li class="nav-item nav-item-3"><a href="../../../../examples/meteoinfolab/math.html" accesskey="U">Math</a> &#187;</li> 
+          <li class="nav-item nav-item-3"><a href="../../../../examples/meteoinfolab/math.html" accesskey="U">Math</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">powerfit</a></li> 
       </ul>
     </div>
 
@@ -74,7 +76,7 @@
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
 
@@ -86,9 +88,9 @@
             
   <div class="section" id="powerfit">
 <span id="docs-meteoinfolab-numeric-fitting-powerfit"></span><h1>powerfit<a class="headerlink" href="#powerfit" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
+<dl class="py function">
 <dt id="numeric.fitting.powerfit">
-<code class="sig-prename descclassname">numeric.fitting.</code><code class="sig-name descname">powerfit</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em>, <em class="sig-param">func=False</em><span class="sig-paren">)</span><a class="headerlink" href="#numeric.fitting.powerfit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">numeric.fitting.</code><code class="sig-name descname">powerfit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em>, <em class="sig-param"><span class="n">func</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#numeric.fitting.powerfit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Power law fitting.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -103,7 +105,7 @@
 </dd>
 </dl>
 <p>Examples:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mipylib.numeric</span> <span class="k">import</span> <span class="n">fitting</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mipylib.numeric</span> <span class="kn">import</span> <span class="n">fitting</span>
 
 <span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;D:/Temp/ascii/PM&amp;vis-1.txt&#39;</span>
 <span class="n">ncol</span> <span class="o">=</span> <span class="n">numasciicol</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
@@ -138,6 +140,7 @@
 </div>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -178,12 +181,13 @@
 
           <li class="nav-item nav-item-1"><a href="../../../../examples/index.html" >Examples</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../../../../examples/meteoinfolab/index.html" >MeteoInfoLab</a> &#187;</li>
-          <li class="nav-item nav-item-3"><a href="../../../../examples/meteoinfolab/math.html" >Math</a> &#187;</li> 
+          <li class="nav-item nav-item-3"><a href="../../../../examples/meteoinfolab/math.html" >Math</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">powerfit</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2021, MeteoInfo developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
     </div>
   </body>
 </html>

@@ -1,19 +1,20 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Map axes &#8212; MeteoInfo 2.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../../_static/language_data.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="MIML - MeteoInfo Machine Learning Toolbox" href="../../miml/index.html" />
@@ -46,7 +47,8 @@
 
           <li class="nav-item nav-item-1"><a href="../../index.html" >Examples</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../index.html" >MeteoInfoLab</a> &#187;</li>
-          <li class="nav-item nav-item-3"><a href="../gui.html" accesskey="U">GUI</a> &#187;</li> 
+          <li class="nav-item nav-item-3"><a href="../gui.html" accesskey="U">GUI</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Map axes</a></li> 
       </ul>
     </div>
 
@@ -74,7 +76,7 @@
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
 
@@ -92,20 +94,20 @@ loaded, and some buttons for map zooming and feature identifing was added.</p>
 
 <span class="kn">import</span> <span class="nn">java.awt</span> <span class="k">as</span> <span class="nn">awt</span>
 <span class="kn">import</span> <span class="nn">javax.swing</span> <span class="k">as</span> <span class="nn">swing</span>
-<span class="kn">from</span> <span class="nn">java.awt.event</span> <span class="k">import</span> <span class="n">KeyEvent</span>
-<span class="kn">from</span> <span class="nn">java.io</span> <span class="k">import</span> <span class="n">File</span>
-<span class="kn">from</span> <span class="nn">javax.swing.filechooser</span> <span class="k">import</span> <span class="n">FileNameExtensionFilter</span>
-<span class="kn">from</span> <span class="nn">javax.imageio</span> <span class="k">import</span> <span class="n">ImageIO</span>
+<span class="kn">from</span> <span class="nn">java.awt.event</span> <span class="kn">import</span> <span class="n">KeyEvent</span>
+<span class="kn">from</span> <span class="nn">java.io</span> <span class="kn">import</span> <span class="n">File</span>
+<span class="kn">from</span> <span class="nn">javax.swing.filechooser</span> <span class="kn">import</span> <span class="n">FileNameExtensionFilter</span>
+<span class="kn">from</span> <span class="nn">javax.imageio</span> <span class="kn">import</span> <span class="n">ImageIO</span>
 <span class="kn">import</span> <span class="nn">inspect</span>
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">sys</span>
 <span class="kn">import</span> <span class="nn">mipylib.miutil</span> <span class="k">as</span> <span class="nn">miutil</span>
 <span class="kn">import</span> <span class="nn">mipylib.geolib</span> <span class="k">as</span> <span class="nn">geolib</span>
-<span class="kn">from</span> <span class="nn">mipylib.plotlib.figure</span> <span class="k">import</span> <span class="n">Figure</span>
+<span class="kn">from</span> <span class="nn">mipylib.plotlib.figure</span> <span class="kn">import</span> <span class="n">Figure</span>
 
 <span class="k">class</span> <span class="nc">MainGUI</span><span class="p">(</span><span class="n">swing</span><span class="o">.</span><span class="n">JFrame</span><span class="p">):</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">MainGUI</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
 
         <span class="n">this_file</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getfile</span><span class="p">(</span><span class="n">inspect</span><span class="o">.</span><span class="n">currentframe</span><span class="p">())</span>
@@ -226,6 +228,7 @@ loaded, and some buttons for map zooming and feature identifing was added.</p>
 </div>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -266,12 +269,13 @@ loaded, and some buttons for map zooming and feature identifing was added.</p>
 
           <li class="nav-item nav-item-1"><a href="../../index.html" >Examples</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../index.html" >MeteoInfoLab</a> &#187;</li>
-          <li class="nav-item nav-item-3"><a href="../gui.html" >GUI</a> &#187;</li> 
+          <li class="nav-item nav-item-3"><a href="../gui.html" >GUI</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Map axes</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2021, MeteoInfo developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
     </div>
   </body>
 </html>
