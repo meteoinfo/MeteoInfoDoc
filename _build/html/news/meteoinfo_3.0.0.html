@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MeteoInfo 3.0.0 was released (2021-5-11) &#8212; MeteoInfo 2.0 documentation</title>
+    <title>MeteoInfo 3.0.0 was released (2021-5-11) &#8212; MeteoInfo 3.0 documentation</title>
     <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
@@ -113,7 +113,7 @@
 <span class="n">lon</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;Longitude&#39;</span><span class="p">][:]</span>
 <span class="n">lat</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;Latitude&#39;</span><span class="p">][:]</span>
 
-<span class="n">ask_rect</span> <span class="o">=</span> <span class="n">geolib</span><span class="o">.</span><span class="n">polygon</span><span class="p">([</span><span class="mi">72</span><span class="p">,</span><span class="mi">72</span><span class="p">,</span><span class="mi">136</span><span class="p">,</span><span class="mi">136</span><span class="p">],</span> <span class="p">[</span><span class="mi">16</span><span class="p">,</span><span class="mi">55</span><span class="p">,</span><span class="mi">55</span><span class="p">,</span><span class="mi">16</span><span class="p">])</span>
+<span class="n">mask_rect</span> <span class="o">=</span> <span class="n">geolib</span><span class="o">.</span><span class="n">polygon</span><span class="p">([</span><span class="mi">72</span><span class="p">,</span><span class="mi">72</span><span class="p">,</span><span class="mi">136</span><span class="p">,</span><span class="mi">136</span><span class="p">],</span> <span class="p">[</span><span class="mi">16</span><span class="p">,</span><span class="mi">55</span><span class="p">,</span><span class="mi">55</span><span class="p">,</span><span class="mi">16</span><span class="p">])</span>
 <span class="n">pr</span><span class="p">,</span><span class="n">lon</span><span class="p">,</span><span class="n">lat</span> <span class="o">=</span> <span class="n">geolib</span><span class="o">.</span><span class="n">rmaskout</span><span class="p">(</span><span class="n">pr</span><span class="p">,</span> <span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">mask_rect</span><span class="p">)</span>
 <span class="n">idx</span> <span class="o">=</span> <span class="n">where</span><span class="p">(</span><span class="n">pr</span> <span class="o">!=</span> <span class="n">nan</span><span class="p">)</span>
 <span class="n">pr</span> <span class="o">=</span> <span class="n">pr</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>

@@ -30,7 +30,7 @@ MeteoInfo 3.0.0 was released (2021-5-11)
     lon = f['Longitude'][:]
     lat = f['Latitude'][:]
 
-    ask_rect = geolib.polygon([72,72,136,136], [16,55,55,16])
+    mask_rect = geolib.polygon([72,72,136,136], [16,55,55,16])
     pr,lon,lat = geolib.rmaskout(pr, lon, lat, mask_rect)
     idx = where(pr != nan)
     pr = pr[idx]
