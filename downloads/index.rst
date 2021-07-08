@@ -8,7 +8,7 @@ Downloads
 MeteoInfo
 =====================================
   Java edition (Major development)
-    - `MeteoInfo 3.0.2 - Java (for all systems) <files/MeteoInfo_3.0.2.zip>`_
+    - `MeteoInfo 3.0.4 - Java (for all systems) <files/MeteoInfo_3.0.4.zip>`_
   C# edition   
     - `MeteoInfo 1.1.3.5R1 - C# <files/MeteoInfo_csharp_1.1.3.5R1.zip>`_
   Example data files
