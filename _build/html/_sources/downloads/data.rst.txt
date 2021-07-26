@@ -28,4 +28,5 @@ Example data files
 - `HIMA_2017_09_26_17_30_L_PJ1.GPF <data/HIMA_2017_09_26_17_30_L_PJ1.GPF>`_
 - `CAL_LID_L1-ValStage1-V3-01.2007-06-12T03-42-18ZN.hdf <data/CAL_LID_L1-ValStage1-V3-01.2007-06-12T03-42-18ZN.hdf>`_
 - `CAL_LID_L2_VFM-Standard-V4-10.2013-12-08T04-46-10ZD.hdf <data/CAL_LID_L2_VFM-Standard-V4-10.2013-12-08T04-46-10ZD.hdf>`_
+- `sagittal.png <data/sagittal.png>`_
 

@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MeteoInfo 3.1.0 was released (2021-7-25) &#8212; MeteoInfo 3.0 documentation</title>
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="MeteoInfo 3.0.0 was released (2021-5-11)" href="meteoinfo_3.0.0.html" />
+    <link rel="prev" title="News" href="index.html" /> 
+  </head><body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../index.html"><img src="../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="meteoinfo_3.0.0.html" title="MeteoInfo 3.0.0 was released (2021-5-11)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="News"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">home</a>|&nbsp;</li>
+        <li><a href="index.html">news</a>|&nbsp;</li>
+        <li><a href="../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../docs/index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">News</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">MeteoInfo 3.1.0 was released (2021-7-25)</a></li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">News</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="meteoinfo_3.0.0.html"
+                        title="next chapter">MeteoInfo 3.0.0 was released (2021-5-11)</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/news/meteoinfo_3.1.0.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="meteoinfo-3-1-0-was-released-2021-7-25">
+<span id="news-meteoinfo-3-1-0"></span><h1>MeteoInfo 3.1.0 was released (2021-7-25)<a class="headerlink" href="#meteoinfo-3-1-0-was-released-2021-7-25" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><ul class="simple">
+<li><p>Add 3d volume plt function - <cite>volumeplot</cite></p></li>
+<li><p>Update FlatLaf to version 1.4</p></li>
+<li><p>Add fixed_point function in optimize sub-package</p></li>
+<li><p>Add <cite>extract</cite>, <cite>mod</cite>, <cite>fmod</cite>, <cite>floor_divide</cite>, <cite>divmod</cite>, <cite>searchsorted</cite> functions</p></li>
+<li><p>Update geotiff reading function to support bigtiff format</p></li>
+<li><p>Support netcdf4 data writing of <cite>ncwrite</cite> function - c version netcdf4 lib should be installed</p></li>
+<li><p>Using juniversalchardet library to detect file encoding</p></li>
+<li><p>Add Rectangle linear and nearest interpolation functions</p></li>
+<li><p>Some bug fixed</p></li>
+</ul>
+</div></blockquote>
+<p><strong>3D volume plot</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;D:/Temp/image/sagittal.png&#39;</span>
+<span class="n">data1</span> <span class="o">=</span> <span class="n">imagelib</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+<span class="n">data1</span> <span class="o">=</span> <span class="n">data1</span><span class="p">[:,:,</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">data1</span> <span class="o">=</span> <span class="n">data1</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">88</span><span class="p">,</span><span class="mi">300</span><span class="p">,</span><span class="mi">600</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">([</span><span class="mi">176</span><span class="p">,</span><span class="mi">300</span><span class="p">,</span><span class="mi">300</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;int&#39;</span><span class="p">)</span>
+<span class="n">data</span><span class="p">[:</span><span class="mi">88</span><span class="p">]</span> <span class="o">=</span> <span class="n">data1</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">,:,:</span><span class="mi">300</span><span class="p">]</span>
+<span class="n">data</span><span class="p">[</span><span class="mi">88</span><span class="p">:]</span> <span class="o">=</span> <span class="n">data1</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">,:,</span><span class="mi">300</span><span class="p">:]</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">swapaxes</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">axes3d</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_draw_box</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">grid</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">volumeplot</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;NCV_bright&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../_images/volumeplot_1.png" src="../_images/volumeplot_1.png" />
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
+        <img style="position: fixed; top: 0; right: 0; border: 0;" 
+        src="../_static/forkme_right_orange_ff7600.png" 
+        alt="Fork me on GitHub">
+    </a>
+    <a target="_blank" href="https://gitter.im/meteoinfo/community">
+        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
+        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
+        alt="Join the chat at Gitter">
+    </a>
+
+
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="meteoinfo_3.0.0.html" title="MeteoInfo 3.0.0 was released (2021-5-11)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="News"
+             >previous</a> |</li>
+        <li><a href="../index.html">home</a>|&nbsp;</li>
+        <li><a href="index.html">news</a>|&nbsp;</li>
+        <li><a href="../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../docs/index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="index.html" >News</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">MeteoInfo 3.1.0 was released (2021-7-25)</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2021, MeteoInfo developers.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+  </body>
+</html>
