@@ -4,17 +4,16 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>OMI swath data &#8212; MeteoInfo 3.0 documentation</title>
-    <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinxdoc.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
-    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="OMI Absorbing Aerosol Index" href="omi_aai.html" />
@@ -52,6 +51,55 @@
       </ul>
     </div>
 
+
+    <div class="document">
+
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="omi-swath-data">
+<span id="examples-meteoinfolab-satellite-omi-swath"></span><h1>OMI swath data<a class="headerlink" href="#omi-swath-data" title="Permalink to this headline">¶</a></h1>
+<p>This example code illustrates how to access and visualize a OMI swath data.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Add data file</span>
+<span class="n">folder</span> <span class="o">=</span> <span class="s1">&#39;D:/Temp/hdf/&#39;</span>
+<span class="n">fns</span> <span class="o">=</span> <span class="s1">&#39;OMI-Aura_L2-OMNO2_2008m0720t2016-o21357_v003-2008m0721t101450.he5&#39;</span>
+<span class="n">fn</span> <span class="o">=</span> <span class="n">folder</span> <span class="o">+</span> <span class="n">fns</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+<span class="n">lon</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;Longitude&#39;</span><span class="p">][:]</span>
+<span class="n">lat</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;Latitude&#39;</span><span class="p">][:]</span>
+<span class="n">vname</span> <span class="o">=</span> <span class="s1">&#39;CloudFraction&#39;</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="n">vname</span><span class="p">][:]</span><span class="o">*</span><span class="mf">0.001</span>
+
+<span class="c1">#Plot</span>
+<span class="n">axesm</span><span class="p">()</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">)</span>
+<span class="c1">#slayer = scatter(lon, lat, data, edge=False)</span>
+<span class="n">layer</span> <span class="o">=</span> <span class="n">pcolor</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+<span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;OMI - &#39;</span> <span class="o">+</span> <span class="n">vname</span><span class="p">)</span>
+<span class="n">axism</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="../../../_images/omi_swath.png" src="../../../_images/omi_swath.png" />
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
+        <img style="position: fixed; top: 0; right: 0; border: 0;" 
+        src="../../../_static/forkme_right_orange_ff7600.png" 
+        alt="Fork me on GitHub">
+    </a>
+    <a target="_blank" href="https://gitter.im/meteoinfo/community">
+        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
+        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
+        alt="Join the chat at Gitter">
+    </a>
+
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
@@ -79,56 +127,6 @@
 <script>$('#searchbox').show(0);</script>
         </div>
       </div>
-
-    <div class="document">
-
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
-            
-  <div class="section" id="omi-swath-data">
-<span id="examples-meteoinfolab-satellite-omi-swath"></span><h1>OMI swath data<a class="headerlink" href="#omi-swath-data" title="Permalink to this headline">¶</a></h1>
-<p>This example code illustrates how to access and visualize a OMI swath data.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Add data file</span>
-<span class="n">folder</span> <span class="o">=</span> <span class="s1">&#39;D:/Temp/hdf/&#39;</span>
-<span class="n">fns</span> <span class="o">=</span> <span class="s1">&#39;OMI-Aura_L2-OMNO2_2008m0720t2016-o21357_v003-2008m0721t101450.he5&#39;</span>
-<span class="n">fn</span> <span class="o">=</span> <span class="n">folder</span> <span class="o">+</span> <span class="n">fns</span>
-<span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
-<span class="n">lon</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;Longitude&#39;</span><span class="p">][:]</span>
-<span class="n">lat</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;Latitude&#39;</span><span class="p">][:]</span>
-<span class="n">vname</span> <span class="o">=</span> <span class="s1">&#39;CloudFraction&#39;</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="n">vname</span><span class="p">][:]</span><span class="o">*</span><span class="mf">0.001</span>
-
-<span class="c1">#Plot</span>
-<span class="n">axesm</span><span class="p">()</span>
-<span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">)</span>
-<span class="c1">#slayer = scatter(lon, lat, data, edge=False)</span>
-<span class="n">layer</span> <span class="o">=</span> <span class="n">pcolor</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
-<span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span>
-<span class="n">title</span><span class="p">(</span><span class="s1">&#39;OMI - &#39;</span> <span class="o">+</span> <span class="n">vname</span><span class="p">)</span>
-<span class="n">axism</span><span class="p">()</span>
-</pre></div>
-</div>
-<img alt="../../../_images/omi_swath.png" src="../../../_images/omi_swath.png" />
-</div>
-
-
-            <div class="clearer"></div>
-          </div>
-        </div>
-      </div>
-    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
-        <img style="position: fixed; top: 0; right: 0; border: 0;" 
-        src="../../../_static/forkme_right_orange_ff7600.png" 
-        alt="Fork me on GitHub">
-    </a>
-    <a target="_blank" href="https://gitter.im/meteoinfo/community">
-        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
-        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
-        alt="Join the chat at Gitter">
-    </a>
-
-
       <div class="clearer"></div>
     </div>
     <div class="related" role="navigation" aria-label="related navigation">
@@ -160,7 +158,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2021, MeteoInfo developers.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
     </div>
   </body>
 </html>

@@ -5,7 +5,7 @@
 MeteoInfo 3.1.0 was released (2021-7-25)
 ******************************************
 
-  - Add 3d volume plt function - `volumeplot`
+  - Add 3d volume plot function - `volumeplot`
   - Update FlatLaf to version 1.4
   - Add fixed_point function in optimize sub-package
   - Add `extract`, `mod`, `fmod`, `floor_divide`, `divmod`, `searchsorted` functions

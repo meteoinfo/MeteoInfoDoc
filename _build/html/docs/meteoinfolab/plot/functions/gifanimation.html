@@ -4,17 +4,16 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>gifanimation &#8212; MeteoInfo 3.0 documentation</title>
-    <link rel="stylesheet" href="../../../../_static/sphinxdoc.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxdoc.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
-    <script id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
     <script src="../../../../_static/doctools.js"></script>
-    <script src="../../../../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="gifaddframe" href="gifaddframe.html" />
@@ -54,6 +53,51 @@
       </ul>
     </div>
 
+
+    <div class="document">
+
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="gifanimation">
+<span id="docs-meteoinfolab-funcitons-plot-gifanimation"></span><h1>gifanimation<a class="headerlink" href="#gifanimation" title="Permalink to this headline">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="mipylib.plotlib.miplot.gifanimation">
+<span class="sig-prename descclassname"><span class="pre">mipylib.plotlib.miplot.</span></span><span class="sig-name descname"><span class="pre">gifanimation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">repeat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delay</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mipylib.plotlib.miplot.gifanimation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a gif animation file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Param</dt>
+<dd class="field-odd"><p>repeat: (<em>int, Default 0</em>) Animation repeat time number. 0 means repeat forever.</p>
+</dd>
+<dt class="field-even">Param</dt>
+<dd class="field-even"><p>delay: (<em>int, Default 1000</em>) Animation frame delay time with units of millsecond.</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Gif animation object.</p>
+</dd>
+</dl>
+<p>Examples: <a class="reference internal" href="../../../../examples/meteoinfolab/plot_types/gif_animation.html#examples-meteoinfolab-plot-types-gif-animation"><span class="std std-ref">Create gif animation file</span></a></p>
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
+        <img style="position: fixed; top: 0; right: 0; border: 0;" 
+        src="../../../../_static/forkme_right_orange_ff7600.png" 
+        alt="Fork me on GitHub">
+    </a>
+    <a target="_blank" href="https://gitter.im/meteoinfo/community">
+        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
+        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
+        alt="Join the chat at Gitter">
+    </a>
+
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
@@ -81,52 +125,6 @@
 <script>$('#searchbox').show(0);</script>
         </div>
       </div>
-
-    <div class="document">
-
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
-            
-  <div class="section" id="gifanimation">
-<span id="docs-meteoinfolab-funcitons-plot-gifanimation"></span><h1>gifanimation<a class="headerlink" href="#gifanimation" title="Permalink to this headline">¶</a></h1>
-<dl class="py function">
-<dt id="mipylib.plotlib.miplot.gifanimation">
-<code class="sig-prename descclassname">mipylib.plotlib.miplot.</code><code class="sig-name descname">gifanimation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em>, <em class="sig-param"><span class="n">repeat</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">delay</span><span class="o">=</span><span class="default_value">1000</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mipylib.plotlib.miplot.gifanimation" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create a gif animation file</p>
-<dl class="field-list simple">
-<dt class="field-odd">Param</dt>
-<dd class="field-odd"><p>repeat: (<em>int, Default 0</em>) Animation repeat time number. 0 means repeat forever.</p>
-</dd>
-<dt class="field-even">Param</dt>
-<dd class="field-even"><p>delay: (<em>int, Default 1000</em>) Animation frame delay time with units of millsecond.</p>
-</dd>
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>Gif animation object.</p>
-</dd>
-</dl>
-<p>Examples: <a class="reference internal" href="../../../../examples/meteoinfolab/plot_types/gif_animation.html#examples-meteoinfolab-plot-types-gif-animation"><span class="std std-ref">Create gif animation file</span></a></p>
-</dd></dl>
-
-</div>
-
-
-            <div class="clearer"></div>
-          </div>
-        </div>
-      </div>
-    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
-        <img style="position: fixed; top: 0; right: 0; border: 0;" 
-        src="../../../../_static/forkme_right_orange_ff7600.png" 
-        alt="Fork me on GitHub">
-    </a>
-    <a target="_blank" href="https://gitter.im/meteoinfo/community">
-        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
-        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
-        alt="Join the chat at Gitter">
-    </a>
-
-
       <div class="clearer"></div>
     </div>
     <div class="related" role="navigation" aria-label="related navigation">
@@ -160,7 +158,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2021, MeteoInfo developers.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
     </div>
   </body>
 </html>

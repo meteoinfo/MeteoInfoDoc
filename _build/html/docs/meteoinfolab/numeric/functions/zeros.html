@@ -4,17 +4,16 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>zeros &#8212; MeteoInfo 3.0 documentation</title>
-    <link rel="stylesheet" href="../../../../_static/sphinxdoc.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxdoc.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
-    <script id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
     <script src="../../../../_static/doctools.js"></script>
-    <script src="../../../../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="mipylib.numeric.random" href="../random.html" />
@@ -54,6 +53,61 @@
       </ul>
     </div>
 
+
+    <div class="document">
+
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="zeros">
+<span id="docs-meteoinfolab-numeric-funcitons-zeros"></span><h1>zeros<a class="headerlink" href="#zeros" title="Permalink to this headline">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="mipylib.numeric.minum.zeros">
+<span class="sig-prename descclassname"><span class="pre">mipylib.numeric.minum.</span></span><span class="sig-name descname"><span class="pre">zeros</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'float'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mipylib.numeric.minum.zeros" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new aray of given shape and type, filled with zeros.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>shape</strong> – (<em>int or sequence of ints</em>) Shape of the new array, e.g., <code class="docutils literal notranslate"><span class="pre">(2,</span> <span class="pre">3)</span></code> or <code class="docutils literal notranslate"><span class="pre">2</span></code>.</p></li>
+<li><p><strong>dtype</strong> – (<em>data-type, optional</em>) The desired data-type for the array, including ‘int’,
+‘float’ and ‘double’.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(<em>MIArray</em>) Array of zeros with the given shape and dtype.</p>
+</dd>
+</dl>
+<p>Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">zeros</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="go">array([0.0, 0.0, 0.0, 0.0, 0.0])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">zeros</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;int&#39;</span><span class="p">)</span>
+<span class="go">array([0, 0, 0, 0, 0])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">zeros</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="go">array([[0.0]</span>
+<span class="go">      [0.0]])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
+        <img style="position: fixed; top: 0; right: 0; border: 0;" 
+        src="../../../../_static/forkme_right_orange_ff7600.png" 
+        alt="Fork me on GitHub">
+    </a>
+    <a target="_blank" href="https://gitter.im/meteoinfo/community">
+        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
+        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
+        alt="Join the chat at Gitter">
+    </a>
+
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
@@ -81,62 +135,6 @@
 <script>$('#searchbox').show(0);</script>
         </div>
       </div>
-
-    <div class="document">
-
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
-            
-  <div class="section" id="zeros">
-<span id="docs-meteoinfolab-numeric-funcitons-zeros"></span><h1>zeros<a class="headerlink" href="#zeros" title="Permalink to this headline">¶</a></h1>
-<dl class="py function">
-<dt id="mipylib.numeric.minum.zeros">
-<code class="sig-prename descclassname">mipylib.numeric.minum.</code><code class="sig-name descname">zeros</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">shape</span></em>, <em class="sig-param"><span class="n">dtype</span><span class="o">=</span><span class="default_value">'float'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mipylib.numeric.minum.zeros" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create a new aray of given shape and type, filled with zeros.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>shape</strong> – (<em>int or sequence of ints</em>) Shape of the new array, e.g., <code class="docutils literal notranslate"><span class="pre">(2,</span> <span class="pre">3)</span></code> or <code class="docutils literal notranslate"><span class="pre">2</span></code>.</p></li>
-<li><p><strong>dtype</strong> – (<em>data-type, optional</em>) The desired data-type for the array, including ‘int’,
-‘float’ and ‘double’.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>(<em>MIArray</em>) Array of zeros with the given shape and dtype.</p>
-</dd>
-</dl>
-<p>Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">zeros</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-<span class="go">array([0.0, 0.0, 0.0, 0.0, 0.0])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">zeros</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;int&#39;</span><span class="p">)</span>
-<span class="go">array([0, 0, 0, 0, 0])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">zeros</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
-<span class="go">array([[0.0]</span>
-<span class="go">      [0.0]])</span>
-</pre></div>
-</div>
-</dd></dl>
-
-</div>
-
-
-            <div class="clearer"></div>
-          </div>
-        </div>
-      </div>
-    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
-        <img style="position: fixed; top: 0; right: 0; border: 0;" 
-        src="../../../../_static/forkme_right_orange_ff7600.png" 
-        alt="Fork me on GitHub">
-    </a>
-    <a target="_blank" href="https://gitter.im/meteoinfo/community">
-        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
-        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
-        alt="Join the chat at Gitter">
-    </a>
-
-
       <div class="clearer"></div>
     </div>
     <div class="related" role="navigation" aria-label="related navigation">
@@ -170,7 +168,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2021, MeteoInfo developers.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
     </div>
   </body>
 </html>

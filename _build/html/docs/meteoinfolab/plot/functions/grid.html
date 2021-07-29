@@ -4,17 +4,16 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>grid &#8212; MeteoInfo 3.0 documentation</title>
-    <link rel="stylesheet" href="../../../../_static/sphinxdoc.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxdoc.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
-    <script id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
     <script src="../../../../_static/doctools.js"></script>
-    <script src="../../../../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="hist" href="hist.html" />
@@ -54,6 +53,61 @@
       </ul>
     </div>
 
+
+    <div class="document">
+
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="grid">
+<span id="docs-meteoinfolab-funcitons-plot-grid"></span><h1>grid<a class="headerlink" href="#grid" title="Permalink to this headline">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="mipylib.plotlib.miplot.grid">
+<span class="sig-prename descclassname"><span class="pre">mipylib.plotlib.miplot.</span></span><span class="sig-name descname"><span class="pre">grid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">b</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">which</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'major'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'both'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mipylib.plotlib.miplot.grid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Turn the aexs grids on or off.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>b</strong> – If b is <em>None</em> and <em>len(kwargs)==0</em> , toggle the grid state. If <em>kwargs</em>
+are supplied, it is assumed that you want a grid and <em>b</em> is thus set to <em>True</em> .</p></li>
+<li><p><strong>which</strong> – <em>which</em> can be ‘major’ (default), ‘minor’, or ‘both’ to control
+whether major tick grids, minor tick grids, or both are affected.</p></li>
+<li><p><strong>axis</strong> – <em>axis</em> can be ‘both’ (default), ‘x’, or ‘y’ to control which set of
+gridlines are drawn.</p></li>
+<li><p><strong>kwargs</strong> – <em>kwargs</em> are used to set the grid line properties.</p></li>
+</ul>
+</dd>
+</dl>
+<p><strong>Example:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Series_1&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">2.0</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;bo&#39;</span><span class="p">)</span>
+<span class="n">grid</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/grid_1.png" src="../../../../_images/grid_1.png" />
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
+        <img style="position: fixed; top: 0; right: 0; border: 0;" 
+        src="../../../../_static/forkme_right_orange_ff7600.png" 
+        alt="Fork me on GitHub">
+    </a>
+    <a target="_blank" href="https://gitter.im/meteoinfo/community">
+        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
+        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
+        alt="Join the chat at Gitter">
+    </a>
+
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
@@ -81,62 +135,6 @@
 <script>$('#searchbox').show(0);</script>
         </div>
       </div>
-
-    <div class="document">
-
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
-            
-  <div class="section" id="grid">
-<span id="docs-meteoinfolab-funcitons-plot-grid"></span><h1>grid<a class="headerlink" href="#grid" title="Permalink to this headline">¶</a></h1>
-<dl class="py function">
-<dt id="mipylib.plotlib.miplot.grid">
-<code class="sig-prename descclassname">mipylib.plotlib.miplot.</code><code class="sig-name descname">grid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">b</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">which</span><span class="o">=</span><span class="default_value">'major'</span></em>, <em class="sig-param"><span class="n">axis</span><span class="o">=</span><span class="default_value">'both'</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mipylib.plotlib.miplot.grid" title="Permalink to this definition">¶</a></dt>
-<dd><p>Turn the aexs grids on or off.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>b</strong> – If b is <em>None</em> and <em>len(kwargs)==0</em> , toggle the grid state. If <em>kwargs</em>
-are supplied, it is assumed that you want a grid and <em>b</em> is thus set to <em>True</em> .</p></li>
-<li><p><strong>which</strong> – <em>which</em> can be ‘major’ (default), ‘minor’, or ‘both’ to control
-whether major tick grids, minor tick grids, or both are affected.</p></li>
-<li><p><strong>axis</strong> – <em>axis</em> can be ‘both’ (default), ‘x’, or ‘y’ to control which set of
-gridlines are drawn.</p></li>
-<li><p><strong>kwargs</strong> – <em>kwargs</em> are used to set the grid line properties.</p></li>
-</ul>
-</dd>
-</dl>
-<p><strong>Example:</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Series_1&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">2.0</span><span class="p">)</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;bo&#39;</span><span class="p">)</span>
-<span class="n">grid</span><span class="p">()</span>
-</pre></div>
-</div>
-<img alt="../../../../_images/grid_1.png" src="../../../../_images/grid_1.png" />
-</dd></dl>
-
-</div>
-
-
-            <div class="clearer"></div>
-          </div>
-        </div>
-      </div>
-    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
-        <img style="position: fixed; top: 0; right: 0; border: 0;" 
-        src="../../../../_static/forkme_right_orange_ff7600.png" 
-        alt="Fork me on GitHub">
-    </a>
-    <a target="_blank" href="https://gitter.im/meteoinfo/community">
-        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
-        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
-        alt="Join the chat at Gitter">
-    </a>
-
-
       <div class="clearer"></div>
     </div>
     <div class="related" role="navigation" aria-label="related navigation">
@@ -170,7 +168,7 @@ gridlines are drawn.</p></li>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2021, MeteoInfo developers.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
     </div>
   </body>
 </html>

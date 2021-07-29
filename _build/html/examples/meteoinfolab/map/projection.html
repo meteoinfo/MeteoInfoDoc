@@ -4,17 +4,16 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Map projection &#8212; MeteoInfo 3.0 documentation</title>
-    <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinxdoc.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
-    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Add China South Sea" href="china_south_sea.html" />
@@ -52,6 +51,52 @@
       </ul>
     </div>
 
+
+    <div class="document">
+
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="map-projection">
+<span id="examples-meteoinfolab-map-projection"></span><h1>Map projection<a class="headerlink" href="#map-projection" title="Permalink to this headline">¶</a></h1>
+<p>Map projection can be set when creating a map axes using <strong>axesm</strong> function by <strong>projinfo</strong>
+parameter. Projection object can be created using <strong>projinfo</strong> function with Proj4 style
+parameters (ref: <a class="reference external" href="http://remotesensing.org/geotiff/proj_list">http://remotesensing.org/geotiff/proj_list</a> ). <strong>axism</strong> function is used
+to set projected map extent with a list parameter including start and end longtitudes
+and start and end latitudes.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Plot</span>
+<span class="n">proj</span> <span class="o">=</span> <span class="n">projinfo</span><span class="p">(</span><span class="n">proj</span><span class="o">=</span><span class="s1">&#39;lcc&#39;</span><span class="p">,</span> <span class="n">lon_0</span><span class="o">=</span><span class="mi">105</span><span class="p">,</span> <span class="n">lat_1</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">lat_2</span><span class="o">=</span><span class="mi">47</span><span class="p">)</span>
+<span class="n">axesm</span><span class="p">(</span><span class="n">projinfo</span><span class="o">=</span><span class="n">proj</span><span class="p">,</span> <span class="n">axison</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;cn_province&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;lightgray&#39;</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;cn_border&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">))</span>
+<span class="n">ss</span> <span class="o">=</span> <span class="n">makesymbolspec</span><span class="p">(</span><span class="s1">&#39;line&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span><span class="s1">&#39;Yangtze&#39;</span><span class="p">,</span> <span class="s1">&#39;color&#39;</span><span class="p">:(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">),</span> <span class="s1">&#39;size&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span> \
+    <span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span><span class="s1">&#39;Huang He&#39;</span><span class="p">,</span> <span class="s1">&#39;color&#39;</span><span class="p">:(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">),</span> <span class="s1">&#39;size&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span> <span class="n">field</span><span class="o">=</span><span class="s1">&#39;NAME&#39;</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;rivers&#39;</span><span class="p">,</span> <span class="n">symbolspec</span><span class="o">=</span><span class="n">ss</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;cn_cities&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">labelfield</span><span class="o">=</span><span class="s1">&#39;NAME&#39;</span><span class="p">,</span> <span class="n">fontname</span><span class="o">=</span><span class="sa">u</span><span class="s1">&#39;楷体&#39;</span><span class="p">,</span> \
+    <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">yoffset</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">axism</span><span class="p">([</span><span class="mi">78</span><span class="p">,</span> <span class="mi">130</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">53</span><span class="p">])</span>
+</pre></div>
+</div>
+<img alt="../../../_images/map_projection.png" src="../../../_images/map_projection.png" />
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
+        <img style="position: fixed; top: 0; right: 0; border: 0;" 
+        src="../../../_static/forkme_right_orange_ff7600.png" 
+        alt="Fork me on GitHub">
+    </a>
+    <a target="_blank" href="https://gitter.im/meteoinfo/community">
+        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
+        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
+        alt="Join the chat at Gitter">
+    </a>
+
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
@@ -79,53 +124,6 @@
 <script>$('#searchbox').show(0);</script>
         </div>
       </div>
-
-    <div class="document">
-
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
-            
-  <div class="section" id="map-projection">
-<span id="examples-meteoinfolab-map-projection"></span><h1>Map projection<a class="headerlink" href="#map-projection" title="Permalink to this headline">¶</a></h1>
-<p>Map projection can be set when creating a map axes using <strong>axesm</strong> function by <strong>projinfo</strong>
-parameter. Projection object can be created using <strong>projinfo</strong> function with Proj4 style
-parameters (ref: <a class="reference external" href="http://remotesensing.org/geotiff/proj_list">http://remotesensing.org/geotiff/proj_list</a> ). <strong>axism</strong> function is used
-to set projected map extent with a list parameter including start and end longtitudes
-and start and end latitudes.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Plot</span>
-<span class="n">proj</span> <span class="o">=</span> <span class="n">projinfo</span><span class="p">(</span><span class="n">proj</span><span class="o">=</span><span class="s1">&#39;lcc&#39;</span><span class="p">,</span> <span class="n">lon_0</span><span class="o">=</span><span class="mi">105</span><span class="p">,</span> <span class="n">lat_1</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">lat_2</span><span class="o">=</span><span class="mi">47</span><span class="p">)</span>
-<span class="n">axesm</span><span class="p">(</span><span class="n">projinfo</span><span class="o">=</span><span class="n">proj</span><span class="p">,</span> <span class="n">axison</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;cn_province&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;lightgray&#39;</span><span class="p">)</span>
-<span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;cn_border&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">))</span>
-<span class="n">ss</span> <span class="o">=</span> <span class="n">makesymbolspec</span><span class="p">(</span><span class="s1">&#39;line&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span><span class="s1">&#39;Yangtze&#39;</span><span class="p">,</span> <span class="s1">&#39;color&#39;</span><span class="p">:(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">),</span> <span class="s1">&#39;size&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span> \
-    <span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span><span class="s1">&#39;Huang He&#39;</span><span class="p">,</span> <span class="s1">&#39;color&#39;</span><span class="p">:(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">),</span> <span class="s1">&#39;size&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span> <span class="n">field</span><span class="o">=</span><span class="s1">&#39;NAME&#39;</span><span class="p">)</span>
-<span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;rivers&#39;</span><span class="p">,</span> <span class="n">symbolspec</span><span class="o">=</span><span class="n">ss</span><span class="p">)</span>
-<span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;cn_cities&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">labelfield</span><span class="o">=</span><span class="s1">&#39;NAME&#39;</span><span class="p">,</span> <span class="n">fontname</span><span class="o">=</span><span class="sa">u</span><span class="s1">&#39;楷体&#39;</span><span class="p">,</span> \
-    <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">yoffset</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-<span class="n">axism</span><span class="p">([</span><span class="mi">78</span><span class="p">,</span> <span class="mi">130</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">53</span><span class="p">])</span>
-</pre></div>
-</div>
-<img alt="../../../_images/map_projection.png" src="../../../_images/map_projection.png" />
-</div>
-
-
-            <div class="clearer"></div>
-          </div>
-        </div>
-      </div>
-    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
-        <img style="position: fixed; top: 0; right: 0; border: 0;" 
-        src="../../../_static/forkme_right_orange_ff7600.png" 
-        alt="Fork me on GitHub">
-    </a>
-    <a target="_blank" href="https://gitter.im/meteoinfo/community">
-        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
-        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
-        alt="Join the chat at Gitter">
-    </a>
-
-
       <div class="clearer"></div>
     </div>
     <div class="related" role="navigation" aria-label="related navigation">
@@ -157,7 +155,7 @@ and start and end latitudes.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2021, MeteoInfo developers.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
     </div>
   </body>
 </html>

@@ -4,17 +4,16 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Layout Property &#8212; MeteoInfo 3.0 documentation</title>
-    <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinxdoc.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
-    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Mask Out" href="mask_out.html" />
@@ -53,6 +52,53 @@
       </ul>
     </div>
 
+
+    <div class="document">
+
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="layout-property">
+<h1>Layout Property<a class="headerlink" href="#layout-property" title="Permalink to this headline">¶</a></h1>
+<p>Click ‘Layout Property’ sub-menu item under ‘Map’ menu item to open the properties dialog.
+The property of back color, fore color and smoothing mode could be changed.</p>
+<img alt="../../../_images/layout_property.png" src="../../../_images/layout_property.png" />
+<p>The tool strip of layout is enabled when the layout view is active. The layout page can be
+zoomed by the zoom buttons. The page size of the layout could be set by ‘Page Set’ button.</p>
+<img alt="../../../_images/layout_pageset.png" src="../../../_images/layout_pageset.png" />
+<p>After select the ‘Select Elements’ tool button, the elements in the layout view could be
+selected and be moved or resized. Double click the map element to open map property dialog and
+edit the properties.</p>
+<img alt="../../../_images/layout_layoutmap.png" src="../../../_images/layout_layoutmap.png" />
+<p>Double click the title text to open text property dialog and edit the properties.</p>
+<img alt="../../../_images/layout_title.png" src="../../../_images/layout_title.png" />
+<p>Double click the legend to open legend property dialog and edit the properties. The legend
+scheme of the first meteorological layer will be plotted when the ‘FirstMeteoLayer’ is ‘True’.
+On the other hand, the legend scheme of the first expanded layer in layer management section
+will be plotted. ‘SingleSymbol’ legend scheme will not be plotted. There are three kinds of
+legend types: ‘Bar_Vertical’, ‘Bar_Horizontal’ and ‘Normal’. The point, polyline or polygon
+symbol of each legend break is plotted with ‘Normal’ legend type. Following is an example of
+changing legend type form ‘Bar_Vertical’ to ‘Normal’.</p>
+<img alt="../../../_images/layout_legend.png" src="../../../_images/layout_legend.png" />
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
+        <img style="position: fixed; top: 0; right: 0; border: 0;" 
+        src="../../../_static/forkme_right_orange_ff7600.png" 
+        alt="Fork me on GitHub">
+    </a>
+    <a target="_blank" href="https://gitter.im/meteoinfo/community">
+        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
+        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
+        alt="Join the chat at Gitter">
+    </a>
+
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
@@ -80,54 +126,6 @@
 <script>$('#searchbox').show(0);</script>
         </div>
       </div>
-
-    <div class="document">
-
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
-            
-  <div class="section" id="layout-property">
-<h1>Layout Property<a class="headerlink" href="#layout-property" title="Permalink to this headline">¶</a></h1>
-<p>Click ‘Layout Property’ sub-menu item under ‘Map’ menu item to open the properties dialog.
-The property of back color, fore color and smoothing mode could be changed.</p>
-<img alt="../../../_images/layout_property.png" src="../../../_images/layout_property.png" />
-<p>The tool strip of layout is enabled when the layout view is active. The layout page can be
-zoomed by the zoom buttons. The page size of the layout could be set by ‘Page Set’ button.</p>
-<img alt="../../../_images/layout_pageset.png" src="../../../_images/layout_pageset.png" />
-<p>After select the ‘Select Elements’ tool button, the elements in the layout view could be
-selected and be moved or resized. Double click the map element to open map property dialog and
-edit the properties.</p>
-<img alt="../../../_images/layout_layoutmap.png" src="../../../_images/layout_layoutmap.png" />
-<p>Double click the title text to open text property dialog and edit the properties.</p>
-<img alt="../../../_images/layout_title.png" src="../../../_images/layout_title.png" />
-<p>Double click the legend to open legend property dialog and edit the properties. The legend
-scheme of the first meteorological layer will be plotted when the ‘FirstMeteoLayer’ is ‘True’.
-On the other hand, the legend scheme of the first expanded layer in layer management section
-will be plotted. ‘SingleSymbol’ legend scheme will not be plotted. There are three kinds of
-legend types: ‘Bar_Vertical’, ‘Bar_Horizontal’ and ‘Normal’. The point, polyline or polygon
-symbol of each legend break is plotted with ‘Normal’ legend type. Following is an example of
-changing legend type form ‘Bar_Vertical’ to ‘Normal’.</p>
-<img alt="../../../_images/layout_legend.png" src="../../../_images/layout_legend.png" />
-</div>
-
-
-            <div class="clearer"></div>
-          </div>
-        </div>
-      </div>
-    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
-        <img style="position: fixed; top: 0; right: 0; border: 0;" 
-        src="../../../_static/forkme_right_orange_ff7600.png" 
-        alt="Fork me on GitHub">
-    </a>
-    <a target="_blank" href="https://gitter.im/meteoinfo/community">
-        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
-        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
-        alt="Join the chat at Gitter">
-    </a>
-
-
       <div class="clearer"></div>
     </div>
     <div class="related" role="navigation" aria-label="related navigation">
@@ -160,7 +158,7 @@ changing legend type form ‘Bar_Vertical’ to ‘Normal’.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2021, MeteoInfo developers.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
     </div>
   </body>
 </html>

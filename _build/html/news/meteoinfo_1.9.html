@@ -4,17 +4,16 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>MeteoInfo 1.9 was released (2019-8-27) &#8212; MeteoInfo 3.0 documentation</title>
-    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxdoc.css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Sigma to Pressure Interpolation" href="../examples/meteoinfolab/meteo_analysis/sigma2pressure.html" />
@@ -50,6 +49,55 @@
       </ul>
     </div>
 
+
+    <div class="document">
+
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="meteoinfo-1-9-was-released-2019-8-27">
+<span id="news-meteoinfo-1-9"></span><h1>MeteoInfo 1.9 was released (2019-8-27)<a class="headerlink" href="#meteoinfo-1-9-was-released-2019-8-27" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><ul class="simple">
+<li><p>Add org.meteoinfo.ndarray package for multiple dimensional array implementation replace ucar.ma2 package.</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">interplate_1d</span></code> function to support vertical coordinate conversion such as sigma to isobaric.</p></li>
+<li><p>Support violin and nested pie plots.</p></li>
+<li><p>Add position capibility to Axis.</p></li>
+<li><p>Add qucksort algorithm and improve 3D plot.</p></li>
+<li><p>Update gif animation with dpi setting.</p></li>
+<li><p>Speed up interpolation functions using KDTree.</p></li>
+<li><p>Replace Apache Sanselan 0.97-incubator with Apache Commons Imaging 1.0-alpha.</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">reproject</span></code> function in <code class="docutils literal notranslate"><span class="pre">migeo</span></code> module of geolib package.</p></li>
+<li><p>Add percentile and quantile functions to groupby DataFrame.</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">loc</span></code> and <code class="docutils literal notranslate"><span class="pre">iloc</span></code> in Series class.</p></li>
+<li><p>Distinguish between corner and center when reading ESRI ASCII grid data.</p></li>
+</ul>
+</div></blockquote>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../examples/meteoinfolab/meteo_analysis/sigma2pressure.html">Sigma to Pressure Interpolation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/meteoinfolab/plot_types/violinplot.html">Violin chart</a></li>
+</ul>
+</div>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
+        <img style="position: fixed; top: 0; right: 0; border: 0;" 
+        src="../_static/forkme_right_orange_ff7600.png" 
+        alt="Fork me on GitHub">
+    </a>
+    <a target="_blank" href="https://gitter.im/meteoinfo/community">
+        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
+        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
+        alt="Join the chat at Gitter">
+    </a>
+
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
@@ -77,56 +125,6 @@
 <script>$('#searchbox').show(0);</script>
         </div>
       </div>
-
-    <div class="document">
-
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
-            
-  <div class="section" id="meteoinfo-1-9-was-released-2019-8-27">
-<span id="news-meteoinfo-1-9"></span><h1>MeteoInfo 1.9 was released (2019-8-27)<a class="headerlink" href="#meteoinfo-1-9-was-released-2019-8-27" title="Permalink to this headline">¶</a></h1>
-<blockquote>
-<div><ul class="simple">
-<li><p>Add org.meteoinfo.ndarray package for multiple dimensional array implementation replace ucar.ma2 package.</p></li>
-<li><p>Add <code class="docutils literal notranslate"><span class="pre">interplate_1d</span></code> function to support vertical coordinate conversion such as sigma to isobaric.</p></li>
-<li><p>Support violin and nested pie plots.</p></li>
-<li><p>Add position capibility to Axis.</p></li>
-<li><p>Add qucksort algorithm and improve 3D plot.</p></li>
-<li><p>Update gif animation with dpi setting.</p></li>
-<li><p>Speed up interpolation functions using KDTree.</p></li>
-<li><p>Replace Apache Sanselan 0.97-incubator with Apache Commons Imaging 1.0-alpha.</p></li>
-<li><p>Add <code class="docutils literal notranslate"><span class="pre">reproject</span></code> function in <code class="docutils literal notranslate"><span class="pre">migeo</span></code> module of geolib package.</p></li>
-<li><p>Add percentile and quantile functions to groupby DataFrame.</p></li>
-<li><p>Add <code class="docutils literal notranslate"><span class="pre">loc</span></code> and <code class="docutils literal notranslate"><span class="pre">iloc</span></code> in Series class.</p></li>
-<li><p>Distinguish between corner and center when reading ESRI ASCII grid data.</p></li>
-</ul>
-</div></blockquote>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../examples/meteoinfolab/meteo_analysis/sigma2pressure.html">Sigma to Pressure Interpolation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../examples/meteoinfolab/plot_types/violinplot.html">Violin chart</a></li>
-</ul>
-</div>
-</div>
-
-
-            <div class="clearer"></div>
-          </div>
-        </div>
-      </div>
-    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
-        <img style="position: fixed; top: 0; right: 0; border: 0;" 
-        src="../_static/forkme_right_orange_ff7600.png" 
-        alt="Fork me on GitHub">
-    </a>
-    <a target="_blank" href="https://gitter.im/meteoinfo/community">
-        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
-        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
-        alt="Join the chat at Gitter">
-    </a>
-
-
       <div class="clearer"></div>
     </div>
     <div class="related" role="navigation" aria-label="related navigation">
@@ -156,7 +154,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2021, MeteoInfo developers.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
     </div>
   </body>
 </html>

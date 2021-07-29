@@ -4,17 +4,16 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Lon/Lat Station Data &#8212; MeteoInfo 3.0 documentation</title>
-    <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinxdoc.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
-    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Section Plot" href="section_plot.html" />
@@ -53,6 +52,41 @@
       </ul>
     </div>
 
+
+    <div class="document">
+
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="lon-lat-station-data">
+<h1>Lon/Lat Station Data<a class="headerlink" href="#lon-lat-station-data" title="Permalink to this headline">¶</a></h1>
+<p>The station ASCII data with longitude and latitude columns could be plotted in MeteoInfo.
+The data should be comma-delimited. The file must contain column titles as the first row.
+The first column must be station identifier (name or code), and the second column must be
+longitude, and the third column must be latitude. The file could contain many columns.</p>
+<img alt="../../../_images/lonlat_dataview.jpg" src="../../../_images/lonlat_dataview.jpg" />
+<p>Open the data file with ‘Lon/Lat Stations’ menu, and select ‘Draw Type’ to ‘Station_Info’. Then
+click ‘Draw Data’ button to create a station layer with all columns as attribute data.</p>
+<img alt="../../../_images/lonlat_stationinfo.png" src="../../../_images/lonlat_stationinfo.png" />
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
+        <img style="position: fixed; top: 0; right: 0; border: 0;" 
+        src="../../../_static/forkme_right_orange_ff7600.png" 
+        alt="Fork me on GitHub">
+    </a>
+    <a target="_blank" href="https://gitter.im/meteoinfo/community">
+        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
+        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
+        alt="Join the chat at Gitter">
+    </a>
+
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
@@ -80,42 +114,6 @@
 <script>$('#searchbox').show(0);</script>
         </div>
       </div>
-
-    <div class="document">
-
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
-            
-  <div class="section" id="lon-lat-station-data">
-<h1>Lon/Lat Station Data<a class="headerlink" href="#lon-lat-station-data" title="Permalink to this headline">¶</a></h1>
-<p>The station ASCII data with longitude and latitude columns could be plotted in MeteoInfo.
-The data should be comma-delimited. The file must contain column titles as the first row.
-The first column must be station identifier (name or code), and the second column must be
-longitude, and the third column must be latitude. The file could contain many columns.</p>
-<img alt="../../../_images/lonlat_dataview.jpg" src="../../../_images/lonlat_dataview.jpg" />
-<p>Open the data file with ‘Lon/Lat Stations’ menu, and select ‘Draw Type’ to ‘Station_Info’. Then
-click ‘Draw Data’ button to create a station layer with all columns as attribute data.</p>
-<img alt="../../../_images/lonlat_stationinfo.png" src="../../../_images/lonlat_stationinfo.png" />
-</div>
-
-
-            <div class="clearer"></div>
-          </div>
-        </div>
-      </div>
-    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
-        <img style="position: fixed; top: 0; right: 0; border: 0;" 
-        src="../../../_static/forkme_right_orange_ff7600.png" 
-        alt="Fork me on GitHub">
-    </a>
-    <a target="_blank" href="https://gitter.im/meteoinfo/community">
-        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
-        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
-        alt="Join the chat at Gitter">
-    </a>
-
-
       <div class="clearer"></div>
     </div>
     <div class="related" role="navigation" aria-label="related navigation">
@@ -148,7 +146,7 @@ click ‘Draw Data’ button to create a station layer with all columns as attri
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2021, MeteoInfo developers.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
     </div>
   </body>
 </html>

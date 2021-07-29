@@ -4,17 +4,16 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>unravel_index &#8212; MeteoInfo 3.0 documentation</title>
-    <link rel="stylesheet" href="../../../../_static/sphinxdoc.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxdoc.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
-    <script id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
     <script src="../../../../_static/doctools.js"></script>
-    <script src="../../../../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="zeros" href="zeros.html" />
@@ -54,6 +53,57 @@
       </ul>
     </div>
 
+
+    <div class="document">
+
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="unravel-index">
+<span id="docs-meteoinfolab-numeric-funcitons-unravel-index"></span><h1>unravel_index<a class="headerlink" href="#unravel-index" title="Permalink to this headline">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="mipylib.numeric.minum.unravel_index">
+<span class="sig-prename descclassname"><span class="pre">mipylib.numeric.minum.</span></span><span class="sig-name descname"><span class="pre">unravel_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dims</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mipylib.numeric.minum.unravel_index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts a flat index or array of flat indices into a tuple of coordinate arrays.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>indices</strong> – (<em>array_like</em>) An integer array whose elements are indices into the
+flattened version of an array of dimensions <code class="docutils literal notranslate"><span class="pre">dims</span></code>.</p></li>
+<li><p><strong>dims</strong> – (<em>tuple of ints</em>) The shape of the array to use for unraveling indices.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>tuple of ndarray. Each array in the tuple has the same shape as the indices
+array.</p>
+</dd>
+</dl>
+<p>Examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">unravel_index</span><span class="p">(</span><span class="mi">22</span><span class="p">,</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="go">(3, 4)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
+        <img style="position: fixed; top: 0; right: 0; border: 0;" 
+        src="../../../../_static/forkme_right_orange_ff7600.png" 
+        alt="Fork me on GitHub">
+    </a>
+    <a target="_blank" href="https://gitter.im/meteoinfo/community">
+        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
+        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
+        alt="Join the chat at Gitter">
+    </a>
+
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
@@ -81,58 +131,6 @@
 <script>$('#searchbox').show(0);</script>
         </div>
       </div>
-
-    <div class="document">
-
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
-            
-  <div class="section" id="unravel-index">
-<span id="docs-meteoinfolab-numeric-funcitons-unravel-index"></span><h1>unravel_index<a class="headerlink" href="#unravel-index" title="Permalink to this headline">¶</a></h1>
-<dl class="py function">
-<dt id="mipylib.numeric.minum.unravel_index">
-<code class="sig-prename descclassname">mipylib.numeric.minum.</code><code class="sig-name descname">unravel_index</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">a</span></em>, <em class="sig-param"><span class="n">dims</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mipylib.numeric.minum.unravel_index" title="Permalink to this definition">¶</a></dt>
-<dd><p>Converts a flat index or array of flat indices into a tuple of coordinate arrays.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>indices</strong> – (<em>array_like</em>) An integer array whose elements are indices into the
-flattened version of an array of dimensions <code class="docutils literal notranslate"><span class="pre">dims</span></code>.</p></li>
-<li><p><strong>dims</strong> – (<em>tuple of ints</em>) The shape of the array to use for unraveling indices.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>tuple of ndarray. Each array in the tuple has the same shape as the indices
-array.</p>
-</dd>
-</dl>
-<p>Examples:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">unravel_index</span><span class="p">(</span><span class="mi">22</span><span class="p">,</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
-<span class="go">(3, 4)</span>
-</pre></div>
-</div>
-</dd></dl>
-
-</div>
-
-
-            <div class="clearer"></div>
-          </div>
-        </div>
-      </div>
-    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
-        <img style="position: fixed; top: 0; right: 0; border: 0;" 
-        src="../../../../_static/forkme_right_orange_ff7600.png" 
-        alt="Fork me on GitHub">
-    </a>
-    <a target="_blank" href="https://gitter.im/meteoinfo/community">
-        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
-        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
-        alt="Join the chat at Gitter">
-    </a>
-
-
       <div class="clearer"></div>
     </div>
     <div class="related" role="navigation" aria-label="related navigation">
@@ -166,7 +164,7 @@ array.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2021, MeteoInfo developers.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
     </div>
   </body>
 </html>

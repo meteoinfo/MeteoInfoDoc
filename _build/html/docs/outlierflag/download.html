@@ -4,17 +4,16 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Download and Run OutlierFlag &#8212; MeteoInfo 3.0 documentation</title>
-    <link rel="stylesheet" href="../../_static/sphinxdoc.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinxdoc.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Using functions in MeteoInfoLab script" href="script.html" />
@@ -51,6 +50,70 @@
       </ul>
     </div>
 
+
+    <div class="document">
+
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="download-and-run-outlierflag">
+<h1>Download and Run OutlierFlag<a class="headerlink" href="#download-and-run-outlierflag" title="Permalink to this headline">¶</a></h1>
+<p>Outlier Flag could be downloaded freely from the website <a class="reference external" href="http://www.meteothinker.com">http://www.meteothinker.com</a> .
+It can be run as a standalone desktop program or as a toolbox application in MeteoInfoLab.
+The complete Outlier Flag desktop package should, after uncompression, include the following items:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Outlier Flag executable file called “OutlierFlag.exe” for Windows system.</p></li>
+<li><p>Outlier Flag plugin library file called “Outlier Flag.jar”.</p></li>
+<li><p>Configure file called “config.xml”.</p></li>
+<li><p>Library files in a folder called “lib”.</p></li>
+<li><p>Splash file called “splash_OF.png’.</p></li>
+</ul>
+</div></blockquote>
+<p>On Windows paltform, you can launch OutlierFlag desktop by double-clicking “OutlierFlag.exe” file
+directly.</p>
+<dl class="simple">
+<dt>The complete Outlier Flag toolbox package should, after uncompression, include the following items:</dt><dd><ul class="simple">
+<li><p>Outlier Flag plugin library file called “Outlier Flag.jar”.</p></li>
+<li><p>Configure file called “config.xml”.</p></li>
+<li><p>Jython files called “__init__.py” and “qaqc.py”.</p></li>
+<li><p>Sample data files in a folder called “sample”.</p></li>
+</ul>
+</dd>
+</dl>
+<p>The unzipped <code class="docutils literal notranslate"><span class="pre">OutlierFlag</span></code> folder should be moved into <code class="docutils literal notranslate"><span class="pre">toolbox</span></code> folder in MeteoInfo directory.
+And add following code in <code class="docutils literal notranslate"><span class="pre">toolbox.py</span></code> file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">OutlierFlag.qaqc</span> <span class="k">as</span> <span class="nn">qaqc</span>
+</pre></div>
+</div>
+<section id="load-outlierflag-application-in-meteoinfolab">
+<h2>Load OutlierFlag application in MeteoInfoLab<a class="headerlink" href="#load-outlierflag-application-in-meteoinfolab" title="Permalink to this headline">¶</a></h2>
+<p>Open MeteoInfoLab program. Click <code class="docutils literal notranslate"><span class="pre">Apps</span> <span class="pre">-&gt;</span> <span class="pre">Application</span> <span class="pre">Manager</span></code> menu to open <code class="docutils literal notranslate"><span class="pre">Application</span>
+<span class="pre">Manager</span></code> dialog. Click <code class="docutils literal notranslate"><span class="pre">Update</span> <span class="pre">List</span></code> botton and <code class="docutils literal notranslate"><span class="pre">OutlierFlag</span></code> will be viewed in <code class="docutils literal notranslate"><span class="pre">Application</span></code>
+list. Check the <code class="docutils literal notranslate"><span class="pre">OutlierFlag</span></code> item to load the application.</p>
+<blockquote>
+<div><img alt="../../_images/application_manager.png" src="../../_images/application_manager.png" />
+</div></blockquote>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
+        <img style="position: fixed; top: 0; right: 0; border: 0;" 
+        src="../../_static/forkme_right_orange_ff7600.png" 
+        alt="Fork me on GitHub">
+    </a>
+    <a target="_blank" href="https://gitter.im/meteoinfo/community">
+        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
+        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
+        alt="Join the chat at Gitter">
+    </a>
+
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h3><a href="../../index.html">Table of Contents</a></h3>
@@ -86,71 +149,6 @@
 <script>$('#searchbox').show(0);</script>
         </div>
       </div>
-
-    <div class="document">
-
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
-            
-  <div class="section" id="download-and-run-outlierflag">
-<h1>Download and Run OutlierFlag<a class="headerlink" href="#download-and-run-outlierflag" title="Permalink to this headline">¶</a></h1>
-<p>Outlier Flag could be downloaded freely from the website <a class="reference external" href="http://www.meteothinker.com">http://www.meteothinker.com</a> .
-It can be run as a standalone desktop program or as a toolbox application in MeteoInfoLab.
-The complete Outlier Flag desktop package should, after uncompression, include the following items:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>Outlier Flag executable file called “OutlierFlag.exe” for Windows system.</p></li>
-<li><p>Outlier Flag plugin library file called “Outlier Flag.jar”.</p></li>
-<li><p>Configure file called “config.xml”.</p></li>
-<li><p>Library files in a folder called “lib”.</p></li>
-<li><p>Splash file called “splash_OF.png’.</p></li>
-</ul>
-</div></blockquote>
-<p>On Windows paltform, you can launch OutlierFlag desktop by double-clicking “OutlierFlag.exe” file
-directly.</p>
-<dl class="simple">
-<dt>The complete Outlier Flag toolbox package should, after uncompression, include the following items:</dt><dd><ul class="simple">
-<li><p>Outlier Flag plugin library file called “Outlier Flag.jar”.</p></li>
-<li><p>Configure file called “config.xml”.</p></li>
-<li><p>Jython files called “__init__.py” and “qaqc.py”.</p></li>
-<li><p>Sample data files in a folder called “sample”.</p></li>
-</ul>
-</dd>
-</dl>
-<p>The unzipped <code class="docutils literal notranslate"><span class="pre">OutlierFlag</span></code> folder should be moved into <code class="docutils literal notranslate"><span class="pre">toolbox</span></code> folder in MeteoInfo directory.
-And add following code in <code class="docutils literal notranslate"><span class="pre">toolbox.py</span></code> file:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">OutlierFlag.qaqc</span> <span class="k">as</span> <span class="nn">qaqc</span>
-</pre></div>
-</div>
-<div class="section" id="load-outlierflag-application-in-meteoinfolab">
-<h2>Load OutlierFlag application in MeteoInfoLab<a class="headerlink" href="#load-outlierflag-application-in-meteoinfolab" title="Permalink to this headline">¶</a></h2>
-<p>Open MeteoInfoLab program. Click <code class="docutils literal notranslate"><span class="pre">Apps</span> <span class="pre">-&gt;</span> <span class="pre">Application</span> <span class="pre">Manager</span></code> menu to open <code class="docutils literal notranslate"><span class="pre">Application</span>
-<span class="pre">Manager</span></code> dialog. Click <code class="docutils literal notranslate"><span class="pre">Update</span> <span class="pre">List</span></code> botton and <code class="docutils literal notranslate"><span class="pre">OutlierFlag</span></code> will be viewed in <code class="docutils literal notranslate"><span class="pre">Application</span></code>
-list. Check the <code class="docutils literal notranslate"><span class="pre">OutlierFlag</span></code> item to load the application.</p>
-<blockquote>
-<div><img alt="../../_images/application_manager.png" src="../../_images/application_manager.png" />
-</div></blockquote>
-</div>
-</div>
-
-
-            <div class="clearer"></div>
-          </div>
-        </div>
-      </div>
-    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
-        <img style="position: fixed; top: 0; right: 0; border: 0;" 
-        src="../../_static/forkme_right_orange_ff7600.png" 
-        alt="Fork me on GitHub">
-    </a>
-    <a target="_blank" href="https://gitter.im/meteoinfo/community">
-        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
-        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
-        alt="Join the chat at Gitter">
-    </a>
-
-
       <div class="clearer"></div>
     </div>
     <div class="related" role="navigation" aria-label="related navigation">
@@ -181,7 +179,7 @@ list. Check the <code class="docutils literal notranslate"><span class="pre">Out
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2021, MeteoInfo developers.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
     </div>
   </body>
 </html>

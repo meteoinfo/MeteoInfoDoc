@@ -4,17 +4,16 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>CWT Analysis &#8212; MeteoInfo 3.0 documentation</title>
-    <link rel="stylesheet" href="../../_static/sphinxdoc.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinxdoc.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Output grid data" href="output_griddata.html" />
@@ -52,6 +51,52 @@
       </ul>
     </div>
 
+
+    <div class="document">
+
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="cwt-analysis">
+<h1>CWT Analysis<a class="headerlink" href="#cwt-analysis" title="Permalink to this headline">¶</a></h1>
+<p>A limitation of the PSCF method is that grid cells can have the same PSCF value when sample concentrations are
+either only slightly higher or much higher than the criterion. As a result, it can be difficult to distinguish
+moderate sources from strong ones. In the CWT method (Hsu et al., 2003; Seibert et al., 1994), each grid cell is
+assigned a weighted concentration by averaging the sample concentrations that have associated trajectories that
+crossed that grid cell as follows:</p>
+<img alt="../../_images/formula_8.png" src="../../_images/formula_8.png" />
+<p>where Cij is the average weighted concentration in the ijth cell, l is the index of the trajectory, M is the total
+number of trajectories, Cl is the concentration observed on arrival of trajectory l, and τijl is the time spent
+in the ijth cell by trajectory l. A high value for Cij implies that air parcels traveling over the ijth cell would
+be, on average, associated with high concentrations at the receptor. The arbitrary weighting function described
+above was also used in the CWT analyses to reduce the effect of the small values of nij.</p>
+<p>Click ‘CWT Analysis’ menu item, and set CWT layer, data field, null data and weighting parameters. Then press
+‘Get Nij’, ‘Cal CWT’ and ‘Weight CWT’ button one by one.</p>
+<img alt="../../_images/cwt_analysis.png" src="../../_images/cwt_analysis.png" />
+<p>Set the color scheme of the cwt layer as below.</p>
+<img alt="../../_images/cwt_legend.png" src="../../_images/cwt_legend.png" />
+<p>And set line width to 0 in ‘Legend Editor’ dialog. CWT layer looks as blow.</p>
+<img alt="../../_images/cwt_result.png" src="../../_images/cwt_result.png" />
+<p>In this case, CWT analysis result is similar with PSCF analysis.</p>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
+        <img style="position: fixed; top: 0; right: 0; border: 0;" 
+        src="../../_static/forkme_right_orange_ff7600.png" 
+        alt="Fork me on GitHub">
+    </a>
+    <a target="_blank" href="https://gitter.im/meteoinfo/community">
+        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
+        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
+        alt="Join the chat at Gitter">
+    </a>
+
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
@@ -79,53 +124,6 @@
 <script>$('#searchbox').show(0);</script>
         </div>
       </div>
-
-    <div class="document">
-
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
-            
-  <div class="section" id="cwt-analysis">
-<h1>CWT Analysis<a class="headerlink" href="#cwt-analysis" title="Permalink to this headline">¶</a></h1>
-<p>A limitation of the PSCF method is that grid cells can have the same PSCF value when sample concentrations are
-either only slightly higher or much higher than the criterion. As a result, it can be difficult to distinguish
-moderate sources from strong ones. In the CWT method (Hsu et al., 2003; Seibert et al., 1994), each grid cell is
-assigned a weighted concentration by averaging the sample concentrations that have associated trajectories that
-crossed that grid cell as follows:</p>
-<img alt="../../_images/formula_8.png" src="../../_images/formula_8.png" />
-<p>where Cij is the average weighted concentration in the ijth cell, l is the index of the trajectory, M is the total
-number of trajectories, Cl is the concentration observed on arrival of trajectory l, and τijl is the time spent
-in the ijth cell by trajectory l. A high value for Cij implies that air parcels traveling over the ijth cell would
-be, on average, associated with high concentrations at the receptor. The arbitrary weighting function described
-above was also used in the CWT analyses to reduce the effect of the small values of nij.</p>
-<p>Click ‘CWT Analysis’ menu item, and set CWT layer, data field, null data and weighting parameters. Then press
-‘Get Nij’, ‘Cal CWT’ and ‘Weight CWT’ button one by one.</p>
-<img alt="../../_images/cwt_analysis.png" src="../../_images/cwt_analysis.png" />
-<p>Set the color scheme of the cwt layer as below.</p>
-<img alt="../../_images/cwt_legend.png" src="../../_images/cwt_legend.png" />
-<p>And set line width to 0 in ‘Legend Editor’ dialog. CWT layer looks as blow.</p>
-<img alt="../../_images/cwt_result.png" src="../../_images/cwt_result.png" />
-<p>In this case, CWT analysis result is similar with PSCF analysis.</p>
-</div>
-
-
-            <div class="clearer"></div>
-          </div>
-        </div>
-      </div>
-    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
-        <img style="position: fixed; top: 0; right: 0; border: 0;" 
-        src="../../_static/forkme_right_orange_ff7600.png" 
-        alt="Fork me on GitHub">
-    </a>
-    <a target="_blank" href="https://gitter.im/meteoinfo/community">
-        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
-        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
-        alt="Join the chat at Gitter">
-    </a>
-
-
       <div class="clearer"></div>
     </div>
     <div class="related" role="navigation" aria-label="related navigation">
@@ -157,7 +155,7 @@ above was also used in the CWT analyses to reduce the effect of the small values
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2021, MeteoInfo developers.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
     </div>
   </body>
 </html>

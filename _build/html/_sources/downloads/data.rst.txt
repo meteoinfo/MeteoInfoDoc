@@ -7,6 +7,7 @@ Example data files
 - `500_previous <data/500_previous>`_
 - `928slp.ctl <data/928slp.ctl>`_    `928slp.dat <data/928slp.dat>`_
 - `air.2011.nc <data/air.2011.nc>`_
+- `air_clm.nc <data/air_clm.nc>`_
 - `uwnd.2011.nc <data/uwnd.2011.nc>`_
 - `vwnd.2011.nc <data/vwnd.2011.nc>`_
 - `rhum.2011.nc <data/rhum.2011.nc>`_

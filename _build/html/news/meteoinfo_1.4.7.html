@@ -4,17 +4,16 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>MeteoInfo 1.4.7 was released (2017-11-2) &#8212; MeteoInfo 3.0 documentation</title>
-    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxdoc.css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="wContour 1.6.1 was released (2017-11-2)" href="wcontour_1.6.1.html" />
@@ -50,6 +49,52 @@
       </ul>
     </div>
 
+
+    <div class="document">
+
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="meteoinfo-1-4-7-was-released-2017-11-2">
+<span id="news-meteoinfo-1-4-7"></span><h1>MeteoInfo 1.4.7 was released (2017-11-2)<a class="headerlink" href="#meteoinfo-1-4-7-was-released-2017-11-2" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Difference</span></code> and <code class="docutils literal notranslate"><span class="pre">Symmetrical</span> <span class="pre">Difference</span></code> functions were added in GeoProcessing menu of MeteoInfoMap.</p></li>
+<li><p>Update wContour library to version 1.6.1.</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">eof</span></code> and <code class="docutils literal notranslate"><span class="pre">varimax</span></code> functions in <code class="docutils literal notranslate"><span class="pre">meteo</span></code> module for EOF and REOF analysis.</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">inv</span></code> method in <code class="docutils literal notranslate"><span class="pre">MIArray</span></code> and <code class="docutils literal notranslate"><span class="pre">DimArray</span></code> class to calculate inverse matrix array.</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">lonflip</span></code> and <code class="docutils literal notranslate"><span class="pre">lonpivot</span></code> methods in <code class="docutils literal notranslate"><span class="pre">DimArray</span></code> class to reorder the array with global longitude dimension.</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">month_to_season</span></code> method in <code class="docutils literal notranslate"><span class="pre">DimArray</span></code> class to compute a user-specified three-month seasonal mean from monthly mean array.</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">select</span></code> method in <code class="docutils literal notranslate"><span class="pre">MILayer</span></code> class to select shapes using a specified expression.</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">argmin</span></code> and <code class="docutils literal notranslate"><span class="pre">argmax</span></code> methods in <code class="docutils literal notranslate"><span class="pre">minum</span></code> module to get the indices of the minimum/maximum values along an axis.</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">text</span></code> and <code class="docutils literal notranslate"><span class="pre">fill_between</span></code> plot method in <code class="docutils literal notranslate"><span class="pre">Axes3D</span></code> class.</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">step</span></code> plot function in <code class="docutils literal notranslate"><span class="pre">miplot</span></code> module to make a step plot.</p></li>
+<li><p>Some bug fix and existing functions update.</p></li>
+</ul>
+</div></blockquote>
+<p><strong>Symmetrical difference analysis</strong></p>
+<img alt="../_images/mi_1.4.7_symdif_1.png" src="../_images/mi_1.4.7_symdif_1.png" />
+<img alt="../_images/mi_1.4.7_symdif_2.png" src="../_images/mi_1.4.7_symdif_2.png" />
+<img alt="../_images/mi_1.4.7_symdif_3.png" src="../_images/mi_1.4.7_symdif_3.png" />
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
+        <img style="position: fixed; top: 0; right: 0; border: 0;" 
+        src="../_static/forkme_right_orange_ff7600.png" 
+        alt="Fork me on GitHub">
+    </a>
+    <a target="_blank" href="https://gitter.im/meteoinfo/community">
+        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
+        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
+        alt="Join the chat at Gitter">
+    </a>
+
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
@@ -77,53 +122,6 @@
 <script>$('#searchbox').show(0);</script>
         </div>
       </div>
-
-    <div class="document">
-
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
-            
-  <div class="section" id="meteoinfo-1-4-7-was-released-2017-11-2">
-<span id="news-meteoinfo-1-4-7"></span><h1>MeteoInfo 1.4.7 was released (2017-11-2)<a class="headerlink" href="#meteoinfo-1-4-7-was-released-2017-11-2" title="Permalink to this headline">¶</a></h1>
-<blockquote>
-<div><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Difference</span></code> and <code class="docutils literal notranslate"><span class="pre">Symmetrical</span> <span class="pre">Difference</span></code> functions were added in GeoProcessing menu of MeteoInfoMap.</p></li>
-<li><p>Update wContour library to version 1.6.1.</p></li>
-<li><p>Add <code class="docutils literal notranslate"><span class="pre">eof</span></code> and <code class="docutils literal notranslate"><span class="pre">varimax</span></code> functions in <code class="docutils literal notranslate"><span class="pre">meteo</span></code> module for EOF and REOF analysis.</p></li>
-<li><p>Add <code class="docutils literal notranslate"><span class="pre">inv</span></code> method in <code class="docutils literal notranslate"><span class="pre">MIArray</span></code> and <code class="docutils literal notranslate"><span class="pre">DimArray</span></code> class to calculate inverse matrix array.</p></li>
-<li><p>Add <code class="docutils literal notranslate"><span class="pre">lonflip</span></code> and <code class="docutils literal notranslate"><span class="pre">lonpivot</span></code> methods in <code class="docutils literal notranslate"><span class="pre">DimArray</span></code> class to reorder the array with global longitude dimension.</p></li>
-<li><p>Add <code class="docutils literal notranslate"><span class="pre">month_to_season</span></code> method in <code class="docutils literal notranslate"><span class="pre">DimArray</span></code> class to compute a user-specified three-month seasonal mean from monthly mean array.</p></li>
-<li><p>Add <code class="docutils literal notranslate"><span class="pre">select</span></code> method in <code class="docutils literal notranslate"><span class="pre">MILayer</span></code> class to select shapes using a specified expression.</p></li>
-<li><p>Add <code class="docutils literal notranslate"><span class="pre">argmin</span></code> and <code class="docutils literal notranslate"><span class="pre">argmax</span></code> methods in <code class="docutils literal notranslate"><span class="pre">minum</span></code> module to get the indices of the minimum/maximum values along an axis.</p></li>
-<li><p>Add <code class="docutils literal notranslate"><span class="pre">text</span></code> and <code class="docutils literal notranslate"><span class="pre">fill_between</span></code> plot method in <code class="docutils literal notranslate"><span class="pre">Axes3D</span></code> class.</p></li>
-<li><p>Add <code class="docutils literal notranslate"><span class="pre">step</span></code> plot function in <code class="docutils literal notranslate"><span class="pre">miplot</span></code> module to make a step plot.</p></li>
-<li><p>Some bug fix and existing functions update.</p></li>
-</ul>
-</div></blockquote>
-<p><strong>Symmetrical difference analysis</strong></p>
-<img alt="../_images/mi_1.4.7_symdif_1.png" src="../_images/mi_1.4.7_symdif_1.png" />
-<img alt="../_images/mi_1.4.7_symdif_2.png" src="../_images/mi_1.4.7_symdif_2.png" />
-<img alt="../_images/mi_1.4.7_symdif_3.png" src="../_images/mi_1.4.7_symdif_3.png" />
-</div>
-
-
-            <div class="clearer"></div>
-          </div>
-        </div>
-      </div>
-    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
-        <img style="position: fixed; top: 0; right: 0; border: 0;" 
-        src="../_static/forkme_right_orange_ff7600.png" 
-        alt="Fork me on GitHub">
-    </a>
-    <a target="_blank" href="https://gitter.im/meteoinfo/community">
-        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
-        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
-        alt="Join the chat at Gitter">
-    </a>
-
-
       <div class="clearer"></div>
     </div>
     <div class="related" role="navigation" aria-label="related navigation">
@@ -153,7 +151,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2021, MeteoInfo developers.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
     </div>
   </body>
 </html>

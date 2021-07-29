@@ -4,17 +4,16 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>MeteoInfo 1.4.4 was released (2017-5-26) &#8212; MeteoInfo 3.0 documentation</title>
-    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxdoc.css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="MeteoInfo 1.4.3 was released (2017-5-4)" href="meteoinfo_1.4.3.html" />
@@ -50,6 +49,89 @@
       </ul>
     </div>
 
+
+    <div class="document">
+
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="meteoinfo-1-4-4-was-released-2017-5-26">
+<span id="news-meteoinfo-1-4-4"></span><h1>MeteoInfo 1.4.4 was released (2017-5-26)<a class="headerlink" href="#meteoinfo-1-4-4-was-released-2017-5-26" title="Permalink to this headline">¶</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">imagelib</span></code> package was added in mipylib and some image processing functions were provided.</p>
+<p>Image flip:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;D:/Temp/image/Lenna.png&#39;</span>
+<span class="n">lena</span> <span class="o">=</span> <span class="n">imagelib</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+<span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span><span class="n">aspect</span><span class="o">=</span><span class="s1">&#39;equal&#39;</span><span class="p">,</span> <span class="n">tickline</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">imshow</span><span class="p">(</span><span class="n">lena</span><span class="p">)</span>
+<span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="s1">&#39;equal&#39;</span><span class="p">,</span> <span class="n">tickline</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">lena_1</span> <span class="o">=</span> <span class="n">imagelib</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">lena</span><span class="p">)</span>
+<span class="n">imshow</span><span class="p">(</span><span class="n">lena_1</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../_images/image_flip.png" src="../_images/image_flip.png" />
+<p>Image gray scale:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;D:/Temp/image/Lenna.png&#39;</span>
+<span class="n">lena</span> <span class="o">=</span> <span class="n">imagelib</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+<span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span><span class="n">aspect</span><span class="o">=</span><span class="s1">&#39;equal&#39;</span><span class="p">,</span> <span class="n">tickline</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">imshow</span><span class="p">(</span><span class="n">lena</span><span class="p">)</span>
+<span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="s1">&#39;equal&#39;</span><span class="p">,</span> <span class="n">tickline</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">lena_1</span> <span class="o">=</span> <span class="n">imagelib</span><span class="o">.</span><span class="n">gray_scale</span><span class="p">(</span><span class="n">lena</span><span class="p">)</span>
+<span class="n">imshow</span><span class="p">(</span><span class="n">lena_1</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../_images/image_gray_scale.png" src="../_images/image_gray_scale.png" />
+<p>Image emboss:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;D:/Temp/image/Lenna.png&#39;</span>
+<span class="n">lena</span> <span class="o">=</span> <span class="n">imagelib</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+<span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span><span class="n">aspect</span><span class="o">=</span><span class="s1">&#39;equal&#39;</span><span class="p">,</span> <span class="n">tickline</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">imshow</span><span class="p">(</span><span class="n">lena</span><span class="p">)</span>
+<span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="s1">&#39;equal&#39;</span><span class="p">,</span> <span class="n">tickline</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">lena_1</span> <span class="o">=</span> <span class="n">imagelib</span><span class="o">.</span><span class="n">emboss</span><span class="p">(</span><span class="n">lena</span><span class="p">)</span>
+<span class="n">imshow</span><span class="p">(</span><span class="n">lena_1</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../_images/image_emboss.png" src="../_images/image_emboss.png" />
+<p>Create Himawari 8 satellite true color image:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Add data file</span>
+<span class="n">fn</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;C:\Temp\himawari8\NC_H08_20170508_0040_r14_FLDK.02701_02601.nc&#39;</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+<span class="c1">#Read data</span>
+<span class="n">bdata</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;albedo_01&#39;</span><span class="p">][:,:]</span>
+<span class="n">gdata</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;albedo_02&#39;</span><span class="p">][:,:]</span>
+<span class="n">rdata</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;albedo_03&#39;</span><span class="p">][:,:]</span>
+<span class="n">bdata</span><span class="p">[</span><span class="n">bdata</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">gdata</span><span class="p">[</span><span class="n">gdata</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">rdata</span><span class="p">[</span><span class="n">rdata</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="c1">#Plot</span>
+<span class="n">axesm</span><span class="p">()</span>
+<span class="n">mlayer</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="s1">&#39;D:/Temp/map/country1.shp&#39;</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="n">mlayer</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">)</span>
+<span class="n">layer</span> <span class="o">=</span> <span class="n">imshowm</span><span class="p">([</span><span class="n">rdata</span><span class="p">,</span><span class="n">gdata</span><span class="p">,</span><span class="n">bdata</span><span class="p">])</span>
+<span class="c1">#Adjust image</span>
+<span class="n">imagelib</span><span class="o">.</span><span class="n">hsb_adjust</span><span class="p">(</span><span class="n">layer</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Himarari 8 true color image example&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../_images/himawari8_true_color.png" src="../_images/himawari8_true_color.png" />
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
+        <img style="position: fixed; top: 0; right: 0; border: 0;" 
+        src="../_static/forkme_right_orange_ff7600.png" 
+        alt="Fork me on GitHub">
+    </a>
+    <a target="_blank" href="https://gitter.im/meteoinfo/community">
+        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
+        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
+        alt="Join the chat at Gitter">
+    </a>
+
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
@@ -77,90 +159,6 @@
 <script>$('#searchbox').show(0);</script>
         </div>
       </div>
-
-    <div class="document">
-
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
-            
-  <div class="section" id="meteoinfo-1-4-4-was-released-2017-5-26">
-<span id="news-meteoinfo-1-4-4"></span><h1>MeteoInfo 1.4.4 was released (2017-5-26)<a class="headerlink" href="#meteoinfo-1-4-4-was-released-2017-5-26" title="Permalink to this headline">¶</a></h1>
-<p><code class="docutils literal notranslate"><span class="pre">imagelib</span></code> package was added in mipylib and some image processing functions were provided.</p>
-<p>Image flip:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;D:/Temp/image/Lenna.png&#39;</span>
-<span class="n">lena</span> <span class="o">=</span> <span class="n">imagelib</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
-<span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span><span class="n">aspect</span><span class="o">=</span><span class="s1">&#39;equal&#39;</span><span class="p">,</span> <span class="n">tickline</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">imshow</span><span class="p">(</span><span class="n">lena</span><span class="p">)</span>
-<span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="s1">&#39;equal&#39;</span><span class="p">,</span> <span class="n">tickline</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">lena_1</span> <span class="o">=</span> <span class="n">imagelib</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">lena</span><span class="p">)</span>
-<span class="n">imshow</span><span class="p">(</span><span class="n">lena_1</span><span class="p">)</span>
-</pre></div>
-</div>
-<img alt="../_images/image_flip2.png" src="../_images/image_flip2.png" />
-<p>Image gray scale:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;D:/Temp/image/Lenna.png&#39;</span>
-<span class="n">lena</span> <span class="o">=</span> <span class="n">imagelib</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
-<span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span><span class="n">aspect</span><span class="o">=</span><span class="s1">&#39;equal&#39;</span><span class="p">,</span> <span class="n">tickline</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">imshow</span><span class="p">(</span><span class="n">lena</span><span class="p">)</span>
-<span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="s1">&#39;equal&#39;</span><span class="p">,</span> <span class="n">tickline</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">lena_1</span> <span class="o">=</span> <span class="n">imagelib</span><span class="o">.</span><span class="n">gray_scale</span><span class="p">(</span><span class="n">lena</span><span class="p">)</span>
-<span class="n">imshow</span><span class="p">(</span><span class="n">lena_1</span><span class="p">)</span>
-</pre></div>
-</div>
-<img alt="../_images/image_gray_scale2.png" src="../_images/image_gray_scale2.png" />
-<p>Image emboss:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;D:/Temp/image/Lenna.png&#39;</span>
-<span class="n">lena</span> <span class="o">=</span> <span class="n">imagelib</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
-<span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span><span class="n">aspect</span><span class="o">=</span><span class="s1">&#39;equal&#39;</span><span class="p">,</span> <span class="n">tickline</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">imshow</span><span class="p">(</span><span class="n">lena</span><span class="p">)</span>
-<span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="s1">&#39;equal&#39;</span><span class="p">,</span> <span class="n">tickline</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">lena_1</span> <span class="o">=</span> <span class="n">imagelib</span><span class="o">.</span><span class="n">emboss</span><span class="p">(</span><span class="n">lena</span><span class="p">)</span>
-<span class="n">imshow</span><span class="p">(</span><span class="n">lena_1</span><span class="p">)</span>
-</pre></div>
-</div>
-<img alt="../_images/image_emboss2.png" src="../_images/image_emboss2.png" />
-<p>Create Himawari 8 satellite true color image:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Add data file</span>
-<span class="n">fn</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;C:\Temp\himawari8\NC_H08_20170508_0040_r14_FLDK.02701_02601.nc&#39;</span>
-<span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
-<span class="c1">#Read data</span>
-<span class="n">bdata</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;albedo_01&#39;</span><span class="p">][:,:]</span>
-<span class="n">gdata</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;albedo_02&#39;</span><span class="p">][:,:]</span>
-<span class="n">rdata</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;albedo_03&#39;</span><span class="p">][:,:]</span>
-<span class="n">bdata</span><span class="p">[</span><span class="n">bdata</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">gdata</span><span class="p">[</span><span class="n">gdata</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">rdata</span><span class="p">[</span><span class="n">rdata</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="c1">#Plot</span>
-<span class="n">axesm</span><span class="p">()</span>
-<span class="n">mlayer</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="s1">&#39;D:/Temp/map/country1.shp&#39;</span><span class="p">)</span>
-<span class="n">geoshow</span><span class="p">(</span><span class="n">mlayer</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">)</span>
-<span class="n">layer</span> <span class="o">=</span> <span class="n">imshowm</span><span class="p">([</span><span class="n">rdata</span><span class="p">,</span><span class="n">gdata</span><span class="p">,</span><span class="n">bdata</span><span class="p">])</span>
-<span class="c1">#Adjust image</span>
-<span class="n">imagelib</span><span class="o">.</span><span class="n">hsb_adjust</span><span class="p">(</span><span class="n">layer</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
-<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Himarari 8 true color image example&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-<img alt="../_images/himawari8_true_color2.png" src="../_images/himawari8_true_color2.png" />
-</div>
-
-
-            <div class="clearer"></div>
-          </div>
-        </div>
-      </div>
-    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
-        <img style="position: fixed; top: 0; right: 0; border: 0;" 
-        src="../_static/forkme_right_orange_ff7600.png" 
-        alt="Fork me on GitHub">
-    </a>
-    <a target="_blank" href="https://gitter.im/meteoinfo/community">
-        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
-        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
-        alt="Join the chat at Gitter">
-    </a>
-
-
       <div class="clearer"></div>
     </div>
     <div class="related" role="navigation" aria-label="related navigation">
@@ -190,7 +188,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2021, MeteoInfo developers.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
     </div>
   </body>
 </html>

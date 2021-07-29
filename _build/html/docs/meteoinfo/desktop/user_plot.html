@@ -4,17 +4,16 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>User Plot Tools &#8212; MeteoInfo 3.0 documentation</title>
-    <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinxdoc.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
-    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Map Projection" href="map_projection.html" />
@@ -53,6 +52,54 @@
       </ul>
     </div>
 
+
+    <div class="document">
+
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="user-plot-tools">
+<h1>User Plot Tools<a class="headerlink" href="#user-plot-tools" title="Permalink to this headline">¶</a></h1>
+<p>You can draw label, point, polyline, polygon and rectangle both in ‘Map’ and ‘Layout’ plotting
+regions. The user plotting objects have same coordinates with the map, and the objects will be
+moved or re-projected synchronously with the map. The objects plotted on the layout have fixed
+coordinates which not changed with map view extent.</p>
+<p>Press one of the tool buttons on the user plotting tool strip, then you can plot label or
+geometry objects on map or layout. Label or point object can be plotted by clicking left mouse
+button in the map or layout plotting regions with the label or point tool selected. For drawing
+polyline or polygon object, the end points can be added by clicking left mouse button, and the
+object will be finished by double clicking left mouse button. The objects can be selected by
+clicking left mouse button using ‘Select Elements’ tool  , then the objects can be moved and
+resized, or be removed by pressing ‘Delete’ button on the keyboard. The properties of the object
+can be edited through the property dialog by double clicking the object.</p>
+<img alt="../../../_images/userplot_point.png" src="../../../_images/userplot_point.png" />
+<img alt="../../../_images/userplot_point_character.png" src="../../../_images/userplot_point_character.png" />
+<p>The end points of the polyline or polygon can be moved using ‘Edit Vertices’ tool when the
+object is selected.</p>
+<img alt="../../../_images/userplot_edit_vertices.png" src="../../../_images/userplot_edit_vertices.png" />
+<p>Polyline or polygon object can be smoothed using the ‘Smooth Graphic’ context menu viewed by
+clicking right mouse button.</p>
+<img alt="../../../_images/userplot_smooth_before.png" src="../../../_images/userplot_smooth_before.png" />
+<img alt="../../../_images/userplot_smooth_after.png" src="../../../_images/userplot_smooth_after.png" />
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
+        <img style="position: fixed; top: 0; right: 0; border: 0;" 
+        src="../../../_static/forkme_right_orange_ff7600.png" 
+        alt="Fork me on GitHub">
+    </a>
+    <a target="_blank" href="https://gitter.im/meteoinfo/community">
+        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
+        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
+        alt="Join the chat at Gitter">
+    </a>
+
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
@@ -80,55 +127,6 @@
 <script>$('#searchbox').show(0);</script>
         </div>
       </div>
-
-    <div class="document">
-
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
-            
-  <div class="section" id="user-plot-tools">
-<h1>User Plot Tools<a class="headerlink" href="#user-plot-tools" title="Permalink to this headline">¶</a></h1>
-<p>You can draw label, point, polyline, polygon and rectangle both in ‘Map’ and ‘Layout’ plotting
-regions. The user plotting objects have same coordinates with the map, and the objects will be
-moved or re-projected synchronously with the map. The objects plotted on the layout have fixed
-coordinates which not changed with map view extent.</p>
-<p>Press one of the tool buttons on the user plotting tool strip, then you can plot label or
-geometry objects on map or layout. Label or point object can be plotted by clicking left mouse
-button in the map or layout plotting regions with the label or point tool selected. For drawing
-polyline or polygon object, the end points can be added by clicking left mouse button, and the
-object will be finished by double clicking left mouse button. The objects can be selected by
-clicking left mouse button using ‘Select Elements’ tool  , then the objects can be moved and
-resized, or be removed by pressing ‘Delete’ button on the keyboard. The properties of the object
-can be edited through the property dialog by double clicking the object.</p>
-<img alt="../../../_images/userplot_point.png" src="../../../_images/userplot_point.png" />
-<img alt="../../../_images/userplot_point_character.png" src="../../../_images/userplot_point_character.png" />
-<p>The end points of the polyline or polygon can be moved using ‘Edit Vertices’ tool when the
-object is selected.</p>
-<img alt="../../../_images/userplot_edit_vertices.png" src="../../../_images/userplot_edit_vertices.png" />
-<p>Polyline or polygon object can be smoothed using the ‘Smooth Graphic’ context menu viewed by
-clicking right mouse button.</p>
-<img alt="../../../_images/userplot_smooth_before.png" src="../../../_images/userplot_smooth_before.png" />
-<img alt="../../../_images/userplot_smooth_after.png" src="../../../_images/userplot_smooth_after.png" />
-</div>
-
-
-            <div class="clearer"></div>
-          </div>
-        </div>
-      </div>
-    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
-        <img style="position: fixed; top: 0; right: 0; border: 0;" 
-        src="../../../_static/forkme_right_orange_ff7600.png" 
-        alt="Fork me on GitHub">
-    </a>
-    <a target="_blank" href="https://gitter.im/meteoinfo/community">
-        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
-        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
-        alt="Join the chat at Gitter">
-    </a>
-
-
       <div class="clearer"></div>
     </div>
     <div class="related" role="navigation" aria-label="related navigation">
@@ -161,7 +159,7 @@ clicking right mouse button.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2021, MeteoInfo developers.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
     </div>
   </body>
 </html>

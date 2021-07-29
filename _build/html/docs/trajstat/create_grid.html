@@ -4,17 +4,16 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Create Grid Layer &#8212; MeteoInfo 3.0 documentation</title>
-    <link rel="stylesheet" href="../../_static/sphinxdoc.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinxdoc.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="PSCF Analysis" href="pscf.html" />
@@ -52,6 +51,45 @@
       </ul>
     </div>
 
+
+    <div class="document">
+
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="create-grid-layer">
+<h1>Create Grid Layer<a class="headerlink" href="#create-grid-layer" title="Permalink to this headline">¶</a></h1>
+<p>Before performing PSCF or CWT analysis, a PSCF or CWT layer has to be created. Click ‘Create Grid Layer’ menu item,
+then set the extension, cell size and type of the layer in opened dialog.</p>
+<img alt="../../_images/grid_pscf.png" src="../../_images/grid_pscf.png" />
+<p>Press ‘Create Layer’ button, and then set the filename of the layer in ‘Save As’ dialog. A grid layer will be created
+in ‘PSCF’ group.</p>
+<img alt="../../_images/pscf_layer.png" src="../../_images/pscf_layer.png" />
+<p>ID, N_Traj, Nij, Mij, PSCF and WPSCF fields were added during PSCF layer creation.</p>
+<img alt="../../_images/pscf_table.png" src="../../_images/pscf_table.png" />
+<p>To create CWT layer, type should be selected to ‘CWT’, Then CWT field width and precision should be set.</p>
+<img alt="../../_images/grid_cwt.png" src="../../_images/grid_cwt.png" />
+<p>ID, N_Traj, Nij, CWT, WCWT fields were added to cwt shape file.</p>
+<img alt="../../_images/cwt_table.png" src="../../_images/cwt_table.png" />
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
+        <img style="position: fixed; top: 0; right: 0; border: 0;" 
+        src="../../_static/forkme_right_orange_ff7600.png" 
+        alt="Fork me on GitHub">
+    </a>
+    <a target="_blank" href="https://gitter.im/meteoinfo/community">
+        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
+        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
+        alt="Join the chat at Gitter">
+    </a>
+
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
@@ -79,46 +117,6 @@
 <script>$('#searchbox').show(0);</script>
         </div>
       </div>
-
-    <div class="document">
-
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
-            
-  <div class="section" id="create-grid-layer">
-<h1>Create Grid Layer<a class="headerlink" href="#create-grid-layer" title="Permalink to this headline">¶</a></h1>
-<p>Before performing PSCF or CWT analysis, a PSCF or CWT layer has to be created. Click ‘Create Grid Layer’ menu item,
-then set the extension, cell size and type of the layer in opened dialog.</p>
-<img alt="../../_images/grid_pscf.png" src="../../_images/grid_pscf.png" />
-<p>Press ‘Create Layer’ button, and then set the filename of the layer in ‘Save As’ dialog. A grid layer will be created
-in ‘PSCF’ group.</p>
-<img alt="../../_images/pscf_layer.png" src="../../_images/pscf_layer.png" />
-<p>ID, N_Traj, Nij, Mij, PSCF and WPSCF fields were added during PSCF layer creation.</p>
-<img alt="../../_images/pscf_table.png" src="../../_images/pscf_table.png" />
-<p>To create CWT layer, type should be selected to ‘CWT’, Then CWT field width and precision should be set.</p>
-<img alt="../../_images/grid_cwt.png" src="../../_images/grid_cwt.png" />
-<p>ID, N_Traj, Nij, CWT, WCWT fields were added to cwt shape file.</p>
-<img alt="../../_images/cwt_table.png" src="../../_images/cwt_table.png" />
-</div>
-
-
-            <div class="clearer"></div>
-          </div>
-        </div>
-      </div>
-    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
-        <img style="position: fixed; top: 0; right: 0; border: 0;" 
-        src="../../_static/forkme_right_orange_ff7600.png" 
-        alt="Fork me on GitHub">
-    </a>
-    <a target="_blank" href="https://gitter.im/meteoinfo/community">
-        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
-        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
-        alt="Join the chat at Gitter">
-    </a>
-
-
       <div class="clearer"></div>
     </div>
     <div class="related" role="navigation" aria-label="related navigation">
@@ -150,7 +148,7 @@ in ‘PSCF’ group.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2021, MeteoInfo developers.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
     </div>
   </body>
 </html>
