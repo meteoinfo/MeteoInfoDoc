@@ -1,9 +1,9 @@
 .. _examples-meteoinfolab-meteo_analysis:
 
 
-*******************
+***********************
 Meteorological analysis
-*******************
+***********************
 
 .. toctree::
    :maxdepth: 2
