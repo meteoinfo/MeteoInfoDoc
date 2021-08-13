@@ -1,19 +1,19 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
-    <title>polyval &#8212; MeteoInfo 2.0 documentation</title>
-    <link rel="stylesheet" href="../../../../_static/sphinxdoc.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>polyval &#8212; MeteoInfo 3.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxdoc.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../../../_static/language_data.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="expfit" href="expfit.html" />
@@ -48,9 +48,81 @@
           <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoLab</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="../../api.html" >The MeteoInfoLab API</a> &#187;</li>
           <li class="nav-item nav-item-4"><a href="../../numeric.html" >Numeric package</a> &#187;</li>
-          <li class="nav-item nav-item-5"><a href="../fitting.html" accesskey="U">mipylib.numeric.fitting</a> &#187;</li> 
+          <li class="nav-item nav-item-5"><a href="../fitting.html" accesskey="U">mipylib.numeric.fitting</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">polyval</a></li> 
       </ul>
     </div>
+
+
+    <div class="document">
+
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="polyval">
+<span id="docs-meteoinfolab-numeric-fitting-polyval"></span><h1>polyval<a class="headerlink" href="#polyval" title="Permalink to this headline">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="numeric.fitting.polyval">
+<span class="sig-prename descclassname"><span class="pre">numeric.fitting.</span></span><span class="sig-name descname"><span class="pre">polyval</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#numeric.fitting.polyval" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate a polynomial at specific values.</p>
+<p>If p is of length N, this function returns the value:</p>
+<p>p[0]*x**(N-1) + p[1]*x**(N-2) + … + p[N-2]*x + p[N-1]</p>
+<p>If x is a sequence, then p(x) is returned for each element of x. If x is another polynomial then the
+composite polynomial p(x(t)) is returned.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p</strong> – (<em>array_like</em>) 1D array of polynomial coefficients (including coefficients equal to zero)
+from highest degree to the constant term.</p></li>
+<li><p><strong>x</strong> – (<em>array_like</em>) A number, an array of numbers, or an instance of poly1d, at which to evaluate
+p.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Polynomial value</p>
+</dd>
+</dl>
+<p>Examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mipylib.numeric</span> <span class="kn">import</span> <span class="n">fitting</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="o">*</span><span class="n">pi</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="c1">#Plot data points</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;ro&#39;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1">#Use polyfit to fit a 7th-degree polynomial to the points</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">fitting</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+
+<span class="c1">#Plot fitting line</span>
+<span class="n">xx</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="o">*</span><span class="n">pi</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">yy</span> <span class="o">=</span> <span class="n">fitting</span><span class="o">.</span><span class="n">polyval</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">xx</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="s1">&#39;-b&#39;</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Polynomial fitting example&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<img alt="../../../../_images/mi_1.4.1_lab_polyfit.png" src="../../../../_images/mi_1.4.1_lab_polyfit.png" />
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
+        <img style="position: fixed; top: 0; right: 0; border: 0;" 
+        src="../../../../_static/forkme_right_orange_ff7600.png" 
+        alt="Fork me on GitHub">
+    </a>
+    <a target="_blank" href="https://gitter.im/meteoinfo/community">
+        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
+        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
+        alt="Join the chat at Gitter">
+    </a>
 
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
@@ -76,80 +148,9 @@
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
-
-    <div class="document">
-
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
-            
-  <div class="section" id="polyval">
-<span id="docs-meteoinfolab-numeric-fitting-polyval"></span><h1>polyval<a class="headerlink" href="#polyval" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
-<dt id="numeric.fitting.polyval">
-<code class="sig-prename descclassname">numeric.fitting.</code><code class="sig-name descname">polyval</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">x</em><span class="sig-paren">)</span><a class="headerlink" href="#numeric.fitting.polyval" title="Permalink to this definition">¶</a></dt>
-<dd><p>Evaluate a polynomial at specific values.</p>
-<p>If p is of length N, this function returns the value:</p>
-<p>p[0]*x**(N-1) + p[1]*x**(N-2) + … + p[N-2]*x + p[N-1]</p>
-<p>If x is a sequence, then p(x) is returned for each element of x. If x is another polynomial then the
-composite polynomial p(x(t)) is returned.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>p</strong> – (<em>array_like</em>) 1D array of polynomial coefficients (including coefficients equal to zero)
-from highest degree to the constant term.</p></li>
-<li><p><strong>x</strong> – (<em>array_like</em>) A number, an array of numbers, or an instance of poly1d, at which to evaluate
-p.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Polynomial value</p>
-</dd>
-</dl>
-<p>Examples:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mipylib.numeric</span> <span class="k">import</span> <span class="n">fitting</span>
-
-<span class="n">x</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="o">*</span><span class="n">pi</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-
-<span class="c1">#Plot data points</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;ro&#39;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-
-<span class="c1">#Use polyfit to fit a 7th-degree polynomial to the points</span>
-<span class="n">r</span> <span class="o">=</span> <span class="n">fitting</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
-
-<span class="c1">#Plot fitting line</span>
-<span class="n">xx</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="o">*</span><span class="n">pi</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
-<span class="n">p</span> <span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">yy</span> <span class="o">=</span> <span class="n">fitting</span><span class="o">.</span><span class="n">polyval</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">xx</span><span class="p">)</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="s1">&#39;-b&#39;</span><span class="p">)</span>
-<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Polynomial fitting example&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<img alt="../../../../_images/mi_1.4.1_lab_polyfit.png" src="../../../../_images/mi_1.4.1_lab_polyfit.png" />
-</div>
-
-
-          </div>
-        </div>
-      </div>
-    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
-        <img style="position: fixed; top: 0; right: 0; border: 0;" 
-        src="../../../../_static/forkme_right_orange_ff7600.png" 
-        alt="Fork me on GitHub">
-    </a>
-    <a target="_blank" href="https://gitter.im/meteoinfo/community">
-        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
-        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
-        alt="Join the chat at Gitter">
-    </a>
-
-
       <div class="clearer"></div>
     </div>
     <div class="related" role="navigation" aria-label="related navigation">
@@ -177,12 +178,13 @@ p.</p></li>
           <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoLab</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="../../api.html" >The MeteoInfoLab API</a> &#187;</li>
           <li class="nav-item nav-item-4"><a href="../../numeric.html" >Numeric package</a> &#187;</li>
-          <li class="nav-item nav-item-5"><a href="../fitting.html" >mipylib.numeric.fitting</a> &#187;</li> 
+          <li class="nav-item nav-item-5"><a href="../fitting.html" >mipylib.numeric.fitting</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">polyval</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2010-2020, MeteoInfo developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+        &#169; Copyright 2010-2021, MeteoInfo developers.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
     </div>
   </body>
 </html>

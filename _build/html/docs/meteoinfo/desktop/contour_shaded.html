@@ -1,19 +1,19 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
-    <title>Contour and Shaded &#8212; MeteoInfo 2.0 documentation</title>
-    <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Contour and Shaded &#8212; MeteoInfo 3.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinxdoc.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../../_static/language_data.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Grid Fill and Grid Point" href="fill_point.html" />
@@ -48,9 +48,58 @@
           <li class="nav-item nav-item-2"><a href="../index.html" >MeteoInfoMap</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="index.html" >Desktop</a> &#187;</li>
           <li class="nav-item nav-item-4"><a href="using_meteo_data.html" >Using Meteorological Data</a> &#187;</li>
-          <li class="nav-item nav-item-5"><a href="grid_data.html" accesskey="U">Plot Grid Data</a> &#187;</li> 
+          <li class="nav-item nav-item-5"><a href="grid_data.html" accesskey="U">Plot Grid Data</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Contour and Shaded</a></li> 
       </ul>
     </div>
+
+
+    <div class="document">
+
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="contour-and-shaded">
+<h1>Contour and Shaded<a class="headerlink" href="#contour-and-shaded" title="Permalink to this headline">¶</a></h1>
+<p>Set ‘Time’, ‘Level’, ‘Var’ items and select ‘Draw Type’ to ‘Contour’, and then click ‘Draw Data’
+button. The software will trace the contour lines from the gridded data according to the setting.
+A layer was created including all the drawing shapes, and was added in ‘Layers’ window. The layer
+name was set automatically with draw type, various, level and time.</p>
+<img alt="../../../_images/grid_contour.png" src="../../../_images/grid_contour.png" />
+<p>Shaded graphic is similar with contour graphic but with color filled.</p>
+<img alt="../../../_images/grid_shaded.png" src="../../../_images/grid_shaded.png" />
+<p>The contour values will be calculated automatically by the software and the colors will be set
+as ‘Rainbow’ by default. The legend setting could be edited in ‘Legend Set’ dialog which could
+be opened by clicking ‘Legend Setting’ button.</p>
+<img alt="../../../_images/plot_legend.png" src="../../../_images/plot_legend.png" />
+<p>This ‘Legend Set’ dialog is similar with the one described in map data section. But here when
+the legend setting changed and applied, the contour or shaded shapes will be calculated over
+again. And the legend type can not be changed here. The legend setting could be edited manually.
+And a ‘Legend Breaks’ automatically setting tool was applied also. Open it with ‘New Legend or
+Color’ button.</p>
+<img alt="../../../_images/legend_breaks.png" src="../../../_images/legend_breaks.png" />
+<p>Change the interval to 4 and the color set to ‘Shade Color’ (the colors will be created from
+start color to end color). Then click ‘New Legend’ button. And then press ‘Apply’ button in
+‘Legend Set’ dialog. The changed only could be saved after you click ‘OK’ button.</p>
+<img alt="../../../_images/grid_shaded_legend.png" src="../../../_images/grid_shaded_legend.png" />
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
+        <img style="position: fixed; top: 0; right: 0; border: 0;" 
+        src="../../../_static/forkme_right_orange_ff7600.png" 
+        alt="Fork me on GitHub">
+    </a>
+    <a target="_blank" href="https://gitter.im/meteoinfo/community">
+        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
+        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
+        alt="Join the chat at Gitter">
+    </a>
 
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
@@ -76,57 +125,9 @@
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
-
-    <div class="document">
-
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
-            
-  <div class="section" id="contour-and-shaded">
-<h1>Contour and Shaded<a class="headerlink" href="#contour-and-shaded" title="Permalink to this headline">¶</a></h1>
-<p>Set ‘Time’, ‘Level’, ‘Var’ items and select ‘Draw Type’ to ‘Contour’, and then click ‘Draw Data’
-button. The software will trace the contour lines from the gridded data according to the setting.
-A layer was created including all the drawing shapes, and was added in ‘Layers’ window. The layer
-name was set automatically with draw type, various, level and time.</p>
-<img alt="../../../_images/grid_contour.png" src="../../../_images/grid_contour.png" />
-<p>Shaded graphic is similar with contour graphic but with color filled.</p>
-<img alt="../../../_images/grid_shaded.png" src="../../../_images/grid_shaded.png" />
-<p>The contour values will be calculated automatically by the software and the colors will be set
-as ‘Rainbow’ by default. The legend setting could be edited in ‘Legend Set’ dialog which could
-be opened by clicking ‘Legend Setting’ button.</p>
-<img alt="../../../_images/plot_legend.png" src="../../../_images/plot_legend.png" />
-<p>This ‘Legend Set’ dialog is similar with the one described in map data section. But here when
-the legend setting changed and applied, the contour or shaded shapes will be calculated over
-again. And the legend type can not be changed here. The legend setting could be edited manually.
-And a ‘Legend Breaks’ automatically setting tool was applied also. Open it with ‘New Legend or
-Color’ button.</p>
-<img alt="../../../_images/legend_breaks.png" src="../../../_images/legend_breaks.png" />
-<p>Change the interval to 4 and the color set to ‘Shade Color’ (the colors will be created from
-start color to end color). Then click ‘New Legend’ button. And then press ‘Apply’ button in
-‘Legend Set’ dialog. The changed only could be saved after you click ‘OK’ button.</p>
-<img alt="../../../_images/grid_shaded_legend.png" src="../../../_images/grid_shaded_legend.png" />
-</div>
-
-
-          </div>
-        </div>
-      </div>
-    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
-        <img style="position: fixed; top: 0; right: 0; border: 0;" 
-        src="../../../_static/forkme_right_orange_ff7600.png" 
-        alt="Fork me on GitHub">
-    </a>
-    <a target="_blank" href="https://gitter.im/meteoinfo/community">
-        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
-        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
-        alt="Join the chat at Gitter">
-    </a>
-
-
       <div class="clearer"></div>
     </div>
     <div class="related" role="navigation" aria-label="related navigation">
@@ -154,12 +155,13 @@ start color to end color). Then click ‘New Legend’ button. And then press �
           <li class="nav-item nav-item-2"><a href="../index.html" >MeteoInfoMap</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="index.html" >Desktop</a> &#187;</li>
           <li class="nav-item nav-item-4"><a href="using_meteo_data.html" >Using Meteorological Data</a> &#187;</li>
-          <li class="nav-item nav-item-5"><a href="grid_data.html" >Plot Grid Data</a> &#187;</li> 
+          <li class="nav-item nav-item-5"><a href="grid_data.html" >Plot Grid Data</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Contour and Shaded</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2010-2020, MeteoInfo developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+        &#169; Copyright 2010-2021, MeteoInfo developers.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
     </div>
   </body>
 </html>

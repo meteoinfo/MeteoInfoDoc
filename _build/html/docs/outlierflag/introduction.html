@@ -1,19 +1,19 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
-    <title>Introduction &#8212; MeteoInfo 2.0 documentation</title>
-    <link rel="stylesheet" href="../../_static/sphinxdoc.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Introduction &#8212; MeteoInfo 3.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinxdoc.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../_static/language_data.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Download and Run OutlierFlag" href="download.html" />
@@ -45,9 +45,111 @@
         <li><a href="../index.html">docs</a>|&nbsp;</li>
 
           <li class="nav-item nav-item-1"><a href="../index.html" >Documentation</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="index.html" accesskey="U">OutlierFlag</a> &#187;</li> 
+          <li class="nav-item nav-item-2"><a href="index.html" accesskey="U">OutlierFlag</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Introduction</a></li> 
       </ul>
     </div>
+
+
+    <div class="document">
+
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<p>Scientific dataset observed by instruments usually includes some outlier values which have to be
+flagged in data quality control process. OutlierFlag was developed to make it accurate and easy
+by providing a suitable outlier data flagging algorithm and a friendly GUI. There are three steps
+of limitation, error and standard deviation checking one by one in the algorithm and several
+parameters are configurable so the algorithm can be used for various datasets.</p>
+<p>OutlierFlag is open source software written in Java and the MeteoInfo library was used for data
+plotting function. OutlierFlag can be run as a standalone desktop program or as a toolbox
+application in MeteoInfoLab.</p>
+<p>The developed outlier data flagging algorithm includes the following three steps:</p>
+<p><strong>(1)   Limitation Check</strong>: The data points will be determined as outliers if their values are out of the
+range between minimum and maximum limitation values. The limitation values are assigned according the features
+of the observational data series and the environment of observation station. Reasonable limitation
+values are the key to ensure the accuracy of detection results.</p>
+<p><strong>(2)   Error Check</strong>: It is generally agreed that surrounding points are related to each other and the
+distribution of them have a certain variation and characteristics during a continuous time segment,
+so the sudden change of
+the data value or the difference between two data points are likely to represent the appearance of
+an error point. In this step, firstly calculate an error list of all data points with an assigned
+surrounding point number (default value is 11), the error of each data point is the subtract of
+its value and the mean value of the all surrounding points. Then get a sub error list for each
+data point using another surrounding point number (default value is 21), and calculate the quantile
+value of the list with an assigned quantile (default value is 0.9). The data point is determined
+as an outlier if its error is bigger than the product of the quantile value and the given zoom
+factor (default value is 2.3).</p>
+<p><strong>(3) Standard Deviation Check</strong>: This step is according to the standard deviation threshold to do a
+further detection after Error check. Firstly, construct a data list by
+the values of a certain data point and its surrounding data points with the default data point
+number of 29. Then calculate the error of the data point by subtracting its value to the mean value
+of the data list. Also the standard deviation of the data list is calculated. The data point is
+determined as an outlier if its error is bigger than 3 or other user defined times of the standard
+deviation.</p>
+<section id="authors">
+<h2>Authors:<a class="headerlink" href="#authors" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Yaqiang Wang, <a class="reference external" href="mailto:yaqiang&#46;wang&#37;&#52;&#48;gmail&#46;com">yaqiang<span>&#46;</span>wang<span>&#64;</span>gmail<span>&#46;</span>com</a></p></li>
+<li><p>Shuai Huang</p></li>
+<li><p>Peng Zhao,</p></li>
+<li><p>Johannes Lüers</p></li>
+</ul>
+</section>
+<section id="publication">
+<h2>Publication:<a class="headerlink" href="#publication" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Huang, S., Wang, Y., Xie, Y., Zhao, P. and Lüers, J., 2016. OutlierFlag: A Tool for Scientific Data Quality Control by Outlier Data Flagging. Journal of Open Research Software, 4: e20, DOI: <a class="reference external" href="http://dx.doi.org/10.5334/jors.90">http://dx.doi.org/10.5334/jors.90</a>.</p></li>
+</ul>
+</section>
+<section id="source-code">
+<h2>Source code:<a class="headerlink" href="#source-code" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://bitbucket.org/yaqiang/outlierflag">https://bitbucket.org/yaqiang/outlierflag</a></p>
+</section>
+<section id="license">
+<h2>License:<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
+<p>Copyright (C) 2015 Yaqiang Wang, Shuai Huang, Peng Zhao, Johannes Lüers</p>
+<p>All rights reserved. Use is subject to license terms.</p>
+<p>This library is free software; you can redistribute it and/or modify it under the terms of the GNU
+Lesser General Public License as published by the Free Software Foundation; either version 3 of the
+License, or (at your option) any later version.</p>
+<p>This library is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
+even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser
+General Public License for more details.</p>
+<p>You should have received a copy of the GNU Lesser General Public License along with this library;
+if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA
+02111-1307, USA.</p>
+<p>Distributed under the <a class="reference external" href="https://www.gnu.org/licenses/lgpl.html">GNU Lesser General Public License</a>.</p>
+<p>Chinese Academy of Meteorological Sciences, CMA</p>
+</section>
+<section id="screen-shots">
+<h2>Screen shots:<a class="headerlink" href="#screen-shots" title="Permalink to this headline">¶</a></h2>
+<img alt="../../_images/outlierflag_1.png" src="../../_images/outlierflag_1.png" />
+<img alt="../../_images/outlierflag_2.png" src="../../_images/outlierflag_2.png" />
+<img alt="../../_images/outlierflag_3.png" src="../../_images/outlierflag_3.png" />
+<img alt="../../_images/outlierflag_4.png" src="../../_images/outlierflag_4.png" />
+<img alt="../../_images/outlierflag_5.png" src="../../_images/outlierflag_5.png" />
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
+        <img style="position: fixed; top: 0; right: 0; border: 0;" 
+        src="../../_static/forkme_right_orange_ff7600.png" 
+        alt="Fork me on GitHub">
+    </a>
+    <a target="_blank" href="https://gitter.im/meteoinfo/community">
+        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
+        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
+        alt="Join the chat at Gitter">
+    </a>
 
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
@@ -85,110 +187,9 @@
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
-
-    <div class="document">
-
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
-            
-  <div class="section" id="introduction">
-<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
-<p>Scientific dataset observed by instruments usually includes some outlier values which have to be
-flagged in data quality control process. OutlierFlag was developed to make it accurate and easy
-by providing a suitable outlier data flagging algorithm and a friendly GUI. There are three steps
-of limitation, error and standard deviation checking one by one in the algorithm and several
-parameters are configurable so the algorithm can be used for various datasets.</p>
-<p>OutlierFlag is open source software written in Java and the MeteoInfo library was used for data
-plotting function. OutlierFlag can be run as a standalone desktop program or as a toolbox
-application in MeteoInfoLab.</p>
-<p>The developed outlier data flagging algorithm includes the following three steps:</p>
-<p><strong>(1)   Limitation Check</strong>: The data points will be determined as outliers if their values are out of the
-range between minimum and maximum limitation values. The limitation values are assigned according the features
-of the observational data series and the environment of observation station. Reasonable limitation
-values are the key to ensure the accuracy of detection results.</p>
-<p><strong>(2)   Error Check</strong>: It is generally agreed that surrounding points are related to each other and the
-distribution of them have a certain variation and characteristics during a continuous time segment,
-so the sudden change of
-the data value or the difference between two data points are likely to represent the appearance of
-an error point. In this step, firstly calculate an error list of all data points with an assigned
-surrounding point number (default value is 11), the error of each data point is the subtract of
-its value and the mean value of the all surrounding points. Then get a sub error list for each
-data point using another surrounding point number (default value is 21), and calculate the quantile
-value of the list with an assigned quantile (default value is 0.9). The data point is determined
-as an outlier if its error is bigger than the product of the quantile value and the given zoom
-factor (default value is 2.3).</p>
-<p><strong>(3) Standard Deviation Check</strong>: This step is according to the standard deviation threshold to do a
-further detection after Error check. Firstly, construct a data list by
-the values of a certain data point and its surrounding data points with the default data point
-number of 29. Then calculate the error of the data point by subtracting its value to the mean value
-of the data list. Also the standard deviation of the data list is calculated. The data point is
-determined as an outlier if its error is bigger than 3 or other user defined times of the standard
-deviation.</p>
-<div class="section" id="authors">
-<h2>Authors:<a class="headerlink" href="#authors" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>Yaqiang Wang, <a class="reference external" href="mailto:yaqiang&#46;wang&#37;&#52;&#48;gmail&#46;com">yaqiang<span>&#46;</span>wang<span>&#64;</span>gmail<span>&#46;</span>com</a></p></li>
-<li><p>Shuai Huang</p></li>
-<li><p>Peng Zhao,</p></li>
-<li><p>Johannes Lüers</p></li>
-</ul>
-</div>
-<div class="section" id="publication">
-<h2>Publication:<a class="headerlink" href="#publication" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>Huang, S., Wang, Y., Xie, Y., Zhao, P. and Lüers, J., 2016. OutlierFlag: A Tool for Scientific Data Quality Control by Outlier Data Flagging. Journal of Open Research Software, 4: e20, DOI: <a class="reference external" href="http://dx.doi.org/10.5334/jors.90">http://dx.doi.org/10.5334/jors.90</a>.</p></li>
-</ul>
-</div>
-<div class="section" id="source-code">
-<h2>Source code:<a class="headerlink" href="#source-code" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="https://bitbucket.org/yaqiang/outlierflag">https://bitbucket.org/yaqiang/outlierflag</a></p>
-</div>
-<div class="section" id="license">
-<h2>License:<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
-<p>Copyright (C) 2015 Yaqiang Wang, Shuai Huang, Peng Zhao, Johannes Lüers</p>
-<p>All rights reserved. Use is subject to license terms.</p>
-<p>This library is free software; you can redistribute it and/or modify it under the terms of the GNU
-Lesser General Public License as published by the Free Software Foundation; either version 3 of the
-License, or (at your option) any later version.</p>
-<p>This library is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
-even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser
-General Public License for more details.</p>
-<p>You should have received a copy of the GNU Lesser General Public License along with this library;
-if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA
-02111-1307, USA.</p>
-<p>Distributed under the <a class="reference external" href="https://www.gnu.org/licenses/lgpl.html">GNU Lesser General Public License</a>.</p>
-<p>Chinese Academy of Meteorological Sciences, CMA</p>
-</div>
-<div class="section" id="screen-shots">
-<h2>Screen shots:<a class="headerlink" href="#screen-shots" title="Permalink to this headline">¶</a></h2>
-<img alt="../../_images/outlierflag_1.png" src="../../_images/outlierflag_1.png" />
-<img alt="../../_images/outlierflag_2.png" src="../../_images/outlierflag_2.png" />
-<img alt="../../_images/outlierflag_3.png" src="../../_images/outlierflag_3.png" />
-<img alt="../../_images/outlierflag_4.png" src="../../_images/outlierflag_4.png" />
-<img alt="../../_images/outlierflag_5.png" src="../../_images/outlierflag_5.png" />
-</div>
-</div>
-
-
-          </div>
-        </div>
-      </div>
-    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
-        <img style="position: fixed; top: 0; right: 0; border: 0;" 
-        src="../../_static/forkme_right_orange_ff7600.png" 
-        alt="Fork me on GitHub">
-    </a>
-    <a target="_blank" href="https://gitter.im/meteoinfo/community">
-        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
-        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
-        alt="Join the chat at Gitter">
-    </a>
-
-
       <div class="clearer"></div>
     </div>
     <div class="related" role="navigation" aria-label="related navigation">
@@ -213,12 +214,13 @@ if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330,
         <li><a href="../index.html">docs</a>|&nbsp;</li>
 
           <li class="nav-item nav-item-1"><a href="../index.html" >Documentation</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="index.html" >OutlierFlag</a> &#187;</li> 
+          <li class="nav-item nav-item-2"><a href="index.html" >OutlierFlag</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Introduction</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2010-2020, MeteoInfo developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+        &#169; Copyright 2010-2021, MeteoInfo developers.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
     </div>
   </body>
 </html>

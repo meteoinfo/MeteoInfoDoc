@@ -1,9 +1,9 @@
 .. _examples-meteoinfolab-file_io:
 
 
-*******************
+*********************
 File input and output
-*******************
+*********************
 
 .. toctree::
    :maxdepth: 2

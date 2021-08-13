@@ -28,7 +28,7 @@ Windrose can be plotted using ``windrose`` function with wind direction and wind
 
 In fact, windrose is plotted in a polar axes. But there are some diffenrence between windrose
 and polar coordinates. The polar angle theta is the counterclockwise angle from the x-axis in
-polar coordinates, meanwhile the polar angle theta is the colockwise angle from the y-axis in
+polar coordinates, meanwhile the polar angle theta is the clockwise angle from the y-axis in
 windrose coordinates. So the wind direction data have to be converted from windrose coordinates
 to polar coordinates for visualization purpose. The conversion processe was done in ``windorose`` 
 function. Also you can do it in the code to plot windrose without ``windrose`` function.
@@ -182,3 +182,178 @@ in a polar axes. The two axes must have same position.
     title(r'$Windrose \ with \ PM_{10} \ concentrations$', fontsize=18)
     
 .. image:: ../../../_static/windrose_contourf.png
+
+PM10 windrose plot with 16 direction labels::
+
+    def windrose2polar(a):
+        r = 360 - a + 90
+        r[r>360] = r - 360
+        return r
+
+    #Read data (wind speed, weed direction, pm10)
+    fn = r'D:\Temp\ascii\pm10.txt'
+    table = readtable(fn, format='%3f')
+    ws = table['WS']
+    wd = table['WD']
+    pm10 = table['PM10']
+    N = len(ws)
+
+    #Convert from windrose coordinate to polar coordinate
+    rwd = windrose2polar(wd)
+
+    #Degree to radians
+    rwd = radians(rwd)
+
+    #Calculate frequency of each wind direction bin
+    wdbins = linspace(0.0, pi * 2, 9)
+    dwdbins = degrees(wdbins)
+    dwdbins = windrose2polar(dwdbins)
+    rwdbins = radians(dwdbins)
+    wdN = len(wdbins) - 1
+    theta = ones(wdN + 1)
+    for j in range(wdN):
+        theta[j] = rwdbins[j]
+    theta[wdN] = theta[0]
+    wd = wd + 360./wdN/2
+    wd[wd>360] = wd - 360
+    wdhist = histogram(radians(wd), wdbins)[0].astype('float')
+    wdhist = wdhist / N
+    nwdhist = wdhist.aslist()
+    nwdhist.append(nwdhist[0])
+    nwdhist = array(nwdhist)
+
+    #Polar coordinate to Cartesian coordinate
+    rwdc, wsc = pol2cart(rwd, ws)
+
+    #Get convexhull (minimum outer polygon of the wind points)
+    poly = topo.convexhull(rwdc, wsc)
+
+    #Get grid data
+    dd = 0.5
+    x = linspace(rwdc.min() - dd, rwdc.max() + dd, 50)
+    y = linspace(wsc.min() - dd, wsc.max() + dd, 50)
+    data = griddata((rwdc, wsc), pm10, xi=(x, y), method='idw', pointnum=5, convexhull=False)[0]
+
+    #---------------------------------------
+    #Plot figure
+    pos = [0.13, 0.1, 0.775, 0.775]
+
+    #Cartesian axes
+    ax = axes(position=pos, aspect='equal')
+    xaxis(visible=False)
+    yaxis(location='right', visible=False)
+    yaxis(location='left', shift = 50)
+    ylabel('Wind speed (m/s)')
+    levs = arange(100, 2000, 100)
+    cg = contourf(x, y, data, levs, cmap='BlAqGrYeOrRe', visible=False)
+    cg = cg.clip([poly])
+    ax.add_graphic(cg)
+    #ss = scatter(rwdc, wsc, s=6, fill=False, edgecolor='b', edgesize=1)
+    #patch(poly)
+    colorbar(cg, shrink=0.6, xshift=30, label=r'$\mu g/m^3$', labelloc='bottom')
+    maxv = 10
+    xlim(-maxv, maxv)
+    ylim(-maxv, maxv)
+    ticks = ax.get_yticks()
+    ax.set_yticklabels([abs(yy) for yy in ticks])
+
+    #Polar axes
+    axp = axes(position=pos, polar=True)
+    plot(theta, nwdhist, color='k', linewidth=2)
+    axp.set_rmax(1)
+    axp.set_rlabel_position(25.)
+    axp.set_rtick_locations([0.2,0.4,0.6,0.8])
+    #axp.set_rticks(['2','4','6','8','10 m/s'])
+    axp.set_rticks(['20%','40%','60%','80%'])
+    axp.set_xtick_font(size=14)
+    axp.set_xtick_locations(arange(0,360,22.5))
+    axp.set_xticks(['E','NEE','NE','NNE','N','NNW','NW','NWW','W','SWW',
+        'SW','SSW','S','SSE','SE','SEE'])
+    title(r'$Windrose \ with \ PM_{10} \ concentrations$', fontsize=18)
+
+.. image:: ../../../_static/windrose_pm10_16dir.png
+
+Plot PM10 data with ``imshow`` function::
+
+    def windrose2polar(a):
+        r = 360 - a + 90
+        r[r>360] = r - 360
+        return r
+
+    #Read data (wind speed, weed direction, pm10)
+    fn = r'D:\Temp\ascii\pm10.txt'
+    table = readtable(fn, format='%3f')
+    ws = table['WS']
+    wd = table['WD']
+    pm10 = table['PM10']
+    N = len(ws)
+
+    #Convert from windrose coordinate to polar coordinate
+    rwd = windrose2polar(wd)
+
+    #Degree to radians
+    rwd = radians(rwd)
+
+    #Calculate frequency of each wind direction bin
+    wdbins = linspace(0.0, pi * 2, 9)
+    dwdbins = degrees(wdbins)
+    dwdbins = windrose2polar(dwdbins)
+    rwdbins = radians(dwdbins)
+    wdN = len(wdbins) - 1
+    theta = ones(wdN + 1)
+    for i in range(wdN):
+        #theta[i] = rwdbins[i] - pi/wdN
+        theta[i] = rwdbins[i]
+    theta[wdN] = theta[0]
+    wd = wd + 360./wdN/2
+    wd[wd>360] = wd - 360
+    wdhist = histogram(radians(wd), wdbins)[0].astype('float')
+    wdhist = wdhist / N
+    nwdhist = wdhist.aslist()
+    nwdhist.append(nwdhist[0])
+    nwdhist = array(nwdhist)
+
+    #Polar coordinate to Cartesian coordinate
+    rwdc, wsc = pol2cart(rwd, ws)
+
+    #Get convexhull (minimum outer polygon of the wind points)
+    poly = topo.convexhull(rwdc, wsc)
+
+    #Get grid data
+    dd = 1.5
+    x = linspace(rwdc.min() - dd, rwdc.max() + dd, 100)
+    y = linspace(wsc.min() - dd, wsc.max() + dd, 100)
+    data = griddata((rwdc, wsc), pm10, xi=(x, y), method='idw', radius=2)[0]
+
+    #---------------------------------------
+    #Plot figure
+    pos = [0.13, 0.1, 0.775, 0.775]
+
+    #Cartesian axes
+    ax = axes(position=pos, aspect='equal')
+    xaxis(visible=False)
+    yaxis(location='right', visible=False)
+    yaxis(location='left', shift = 50)
+    ylabel('Wind speed (m/s)')
+    levs = arange(100, 2000, 10)
+    cg = imshow(data, levs, cmap='BlAqGrYeOrRe', extent=[x[0],x[-1],y[0],y[-1]], \
+        interpolation='bicubic')
+    colorbar(cg, ticks=arange(0, 2001, 300), shrink=0.6, xshift=30, label=r'$\mu g/m^3$', labelloc='bottom')
+    maxv = 10
+    xlim(-maxv, maxv)
+    ylim(-maxv, maxv)
+    ticks = ax.get_yticks()
+    ax.set_yticklabels([abs(yy) for yy in ticks])
+
+    #Polar axes
+    axp = axes(position=pos, polar=True)
+    plot(theta, nwdhist, color='k', linewidth=2)
+    axp.set_rmax(1)
+    axp.set_rlabel_position(25.)
+    axp.set_rtick_locations([0.2,0.4,0.6,0.8,1])
+    axp.set_rticks(['20%','40%','60%','80%','100%'])
+    axp.set_xtick_font(size=14)
+    axp.set_xticks(['E','NE','N','NW','W','SW','S','SE'])
+    title(r'$Windrose \ with \ PM_{10} \ concentrations$', fontsize=18)
+
+.. image:: ../../../_static/windrose_pm10_imshow.png

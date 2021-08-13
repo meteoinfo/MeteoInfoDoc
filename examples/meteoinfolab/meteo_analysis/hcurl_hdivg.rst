@@ -1,8 +1,8 @@
 .. _examples-meteoinfolab-meteo_analysis-hcurl_hdivg:
 
-*******************
+************************
 Vorticity and divergence
-*******************
+************************
 
 Calculate vorticity and divergence from u and v wind components using ``hcurl()`` and 
 ``hdivg()`` functions.

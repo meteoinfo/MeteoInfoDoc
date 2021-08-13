@@ -105,15 +105,20 @@ Hatch fill example using *hatch* argument:
 
     menMeans = [20, 35, 30, 35, 27]
     std_men = (2, 3, 4, 1, 2)
-    bar(menMeans, yerr=std_men, color='r', label='Men', hatch='-')
+    n = len(menMeans)
+    ind = arange(n)
+    width = 0.2
+    gap = 0.06
+    bar(ind, menMeans, width, yerr=std_men, color='r', label='Men', hatch='-')
 
     womenMeans = [25, 32, 34, 20, 25]
     std_women = (3, 5, 2, 3, 3)
-    bar(womenMeans, yerr=std_women, color='b', label='Women', hatch='\\')
+    bar(ind + width + gap, womenMeans, width, yerr=std_women, color='b', label='Women', hatch='\\')
 
+    xlim(-0.2, 5)
     ylim(0, 40)
     ylabel('Mean age')
-    xticks(arange(1, len(menMeans) + 1), ['G1','G2','G3','G4','G5'])
+    xticks(ind + (width + gap) * 0.5, ['G1','G2','G3','G4','G5'])
     legend()
     title('Bar chart example - Hatch')
     

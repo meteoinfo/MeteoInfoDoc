@@ -74,11 +74,11 @@ particles
         rlevs = arange(0, 6000, 200)
         cols = makecolors(len(rlevs) + 1, cmap='MPL_gist_yarg', alpha=1)
         cols[0] = [51,153,255]
-        surf(lon1, lat1, elev, rlevs, colors=cols, edge=False)
-        plot(clon, clat, calt, color=[255,153,255])
-        plot(wlon, wlat, walt, color='b')
+        surf(lon1, lat1, elev, rlevs, facecolor='interp', colors=cols, edge=False)
+        plot3(clon, clat, calt, color=[255,153,255])
+        plot3(wlon, wlat, walt, color='b')
         #Beijing location
-        plot([116.39,116.39], [39.91,39.91], [0,12000])
+        plot3([116.39,116.39], [39.91,39.91], [0,12000])
         #lighting(position=[1,1,1,1], mat_specular=[0.5,0.5,0.5,1])
         levs = [50,100,200,300,400,500]
         #levs = [100,200,300,400,500]
@@ -152,11 +152,11 @@ particles
         rlevs = arange(0, 6000, 200)
         cols = makecolors(len(rlevs) + 1, cmap='MPL_gist_yarg', alpha=1)
         cols[0] = [51,153,255]
-        surf(lon1, lat1, elev, rlevs, colors=cols, edge=False)
-        plot(clon, clat, calt, color=[255,153,255])
-        plot(wlon, wlat, walt, color='b')
+        surf(lon1, lat1, elev, rlevs, facecolor='interp', colors=cols, edge=False)
+        plot3(clon, clat, calt, color=[255,153,255])
+        plot3(wlon, wlat, walt, color='b')
         #Beijing location
-        plot([116.39,116.39], [39.91,39.91], [0,12000])
+        plot3([116.39,116.39], [39.91,39.91], [0,12000])
         #lighting(position=[1,1,1,1], mat_specular=[0.5,0.5,0.5,1])
         levs = [50,100,150,200,300,400,500,1000]
         cmap='WhiteBlueGreenYellowRed'

@@ -1,23 +1,23 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
-    <title>particles &#8212; MeteoInfo 2.0 documentation</title>
-    <link rel="stylesheet" href="../../../../_static/sphinxdoc.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>particles &#8212; MeteoInfo 3.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxdoc.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../../../_static/language_data.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="Dataset package" href="../../dataset.html" />
-    <link rel="prev" title="isosurface" href="isosurface.html" /> 
+    <link rel="next" title="Map" href="../../../../examples/meteoinfolab/map.html" />
+    <link rel="prev" title="3-D plots with OpenGL" href="../../../../examples/meteoinfolab/plot_types/plot_3dgl.html" /> 
   </head><body>
 
 <div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
@@ -33,10 +33,10 @@
           <a href="../../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="../../dataset.html" title="Dataset package"
+          <a href="../../../../examples/meteoinfolab/map.html" title="Map"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="isosurface.html" title="isosurface"
+          <a href="../../../../examples/meteoinfolab/plot_types/plot_3dgl.html" title="3-D plots with OpenGL"
              accesskey="P">previous</a> |</li>
         <li><a href="../../../../index.html">home</a>|&nbsp;</li>
         <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
@@ -44,42 +44,13 @@
         <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
         <li><a href="../../../index.html">docs</a>|&nbsp;</li>
 
-          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoLab</a> &#187;</li>
-          <li class="nav-item nav-item-3"><a href="../../api.html" >The MeteoInfoLab API</a> &#187;</li>
-          <li class="nav-item nav-item-4"><a href="../../plotlib.html" >Plotlib package</a> &#187;</li>
-          <li class="nav-item nav-item-5"><a href="../axes3dgl.html" >mipylib.plotlib._axes3dgl</a> &#187;</li>
-          <li class="nav-item nav-item-6"><a href="axes3dgl.html" accesskey="U">Axes3DGL</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../../../../examples/index.html" >Examples</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../../../examples/meteoinfolab/index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../../../../examples/meteoinfolab/plot_types.html" accesskey="U">Plot types</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">particles</a></li> 
       </ul>
     </div>
 
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="isosurface.html"
-                        title="previous chapter">isosurface</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="../../dataset.html"
-                        title="next chapter">Dataset package</a></p>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="../../../../_sources/docs/meteoinfolab/plot/axes3dgl/particles.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="../../../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
-      <input type="submit" value="Go" />
-    </form>
-    </div>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
-        </div>
-      </div>
 
     <div class="document">
 
@@ -87,11 +58,11 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="particles">
+  <section id="particles">
 <span id="docs-meteoinfolab-plotlib-axes3dgl-axes3dgl-particles"></span><h1>particles<a class="headerlink" href="#particles" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
-<dt>
-<code class="sig-name descname">Axes3DGL.particles(*args, **kwargs):</code></dt>
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">Axes3DGL.particles(*args,</span> <span class="pre">**kwargs):</span></span></dt>
 <dd><p>creates a three-dimensional particles plot</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -163,11 +134,11 @@
 <span class="n">rlevs</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6000</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
 <span class="n">cols</span> <span class="o">=</span> <span class="n">makecolors</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">rlevs</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;MPL_gist_yarg&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">cols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">51</span><span class="p">,</span><span class="mi">153</span><span class="p">,</span><span class="mi">255</span><span class="p">]</span>
-<span class="n">surf</span><span class="p">(</span><span class="n">lon1</span><span class="p">,</span> <span class="n">lat1</span><span class="p">,</span> <span class="n">elev</span><span class="p">,</span> <span class="n">rlevs</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="n">cols</span><span class="p">,</span> <span class="n">edge</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">clon</span><span class="p">,</span> <span class="n">clat</span><span class="p">,</span> <span class="n">calt</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mi">255</span><span class="p">,</span><span class="mi">153</span><span class="p">,</span><span class="mi">255</span><span class="p">])</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">wlon</span><span class="p">,</span> <span class="n">wlat</span><span class="p">,</span> <span class="n">walt</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">surf</span><span class="p">(</span><span class="n">lon1</span><span class="p">,</span> <span class="n">lat1</span><span class="p">,</span> <span class="n">elev</span><span class="p">,</span> <span class="n">rlevs</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;interp&#39;</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="n">cols</span><span class="p">,</span> <span class="n">edge</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plot3</span><span class="p">(</span><span class="n">clon</span><span class="p">,</span> <span class="n">clat</span><span class="p">,</span> <span class="n">calt</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mi">255</span><span class="p">,</span><span class="mi">153</span><span class="p">,</span><span class="mi">255</span><span class="p">])</span>
+<span class="n">plot3</span><span class="p">(</span><span class="n">wlon</span><span class="p">,</span> <span class="n">wlat</span><span class="p">,</span> <span class="n">walt</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
 <span class="c1">#Beijing location</span>
-<span class="n">plot</span><span class="p">([</span><span class="mf">116.39</span><span class="p">,</span><span class="mf">116.39</span><span class="p">],</span> <span class="p">[</span><span class="mf">39.91</span><span class="p">,</span><span class="mf">39.91</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">12000</span><span class="p">])</span>
+<span class="n">plot3</span><span class="p">([</span><span class="mf">116.39</span><span class="p">,</span><span class="mf">116.39</span><span class="p">],</span> <span class="p">[</span><span class="mf">39.91</span><span class="p">,</span><span class="mf">39.91</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">12000</span><span class="p">])</span>
 <span class="c1">#lighting(position=[1,1,1,1], mat_specular=[0.5,0.5,0.5,1])</span>
 <span class="n">levs</span> <span class="o">=</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">300</span><span class="p">,</span><span class="mi">400</span><span class="p">,</span><span class="mi">500</span><span class="p">]</span>
 <span class="c1">#levs = [100,200,300,400,500]</span>
@@ -240,11 +211,11 @@
 <span class="n">rlevs</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6000</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
 <span class="n">cols</span> <span class="o">=</span> <span class="n">makecolors</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">rlevs</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;MPL_gist_yarg&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">cols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">51</span><span class="p">,</span><span class="mi">153</span><span class="p">,</span><span class="mi">255</span><span class="p">]</span>
-<span class="n">surf</span><span class="p">(</span><span class="n">lon1</span><span class="p">,</span> <span class="n">lat1</span><span class="p">,</span> <span class="n">elev</span><span class="p">,</span> <span class="n">rlevs</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="n">cols</span><span class="p">,</span> <span class="n">edge</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">clon</span><span class="p">,</span> <span class="n">clat</span><span class="p">,</span> <span class="n">calt</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mi">255</span><span class="p">,</span><span class="mi">153</span><span class="p">,</span><span class="mi">255</span><span class="p">])</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">wlon</span><span class="p">,</span> <span class="n">wlat</span><span class="p">,</span> <span class="n">walt</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">surf</span><span class="p">(</span><span class="n">lon1</span><span class="p">,</span> <span class="n">lat1</span><span class="p">,</span> <span class="n">elev</span><span class="p">,</span> <span class="n">rlevs</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;interp&#39;</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="n">cols</span><span class="p">,</span> <span class="n">edge</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plot3</span><span class="p">(</span><span class="n">clon</span><span class="p">,</span> <span class="n">clat</span><span class="p">,</span> <span class="n">calt</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mi">255</span><span class="p">,</span><span class="mi">153</span><span class="p">,</span><span class="mi">255</span><span class="p">])</span>
+<span class="n">plot3</span><span class="p">(</span><span class="n">wlon</span><span class="p">,</span> <span class="n">wlat</span><span class="p">,</span> <span class="n">walt</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
 <span class="c1">#Beijing location</span>
-<span class="n">plot</span><span class="p">([</span><span class="mf">116.39</span><span class="p">,</span><span class="mf">116.39</span><span class="p">],</span> <span class="p">[</span><span class="mf">39.91</span><span class="p">,</span><span class="mf">39.91</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">12000</span><span class="p">])</span>
+<span class="n">plot3</span><span class="p">([</span><span class="mf">116.39</span><span class="p">,</span><span class="mf">116.39</span><span class="p">],</span> <span class="p">[</span><span class="mf">39.91</span><span class="p">,</span><span class="mf">39.91</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">12000</span><span class="p">])</span>
 <span class="c1">#lighting(position=[1,1,1,1], mat_specular=[0.5,0.5,0.5,1])</span>
 <span class="n">levs</span> <span class="o">=</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">150</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">300</span><span class="p">,</span><span class="mi">400</span><span class="p">,</span><span class="mi">500</span><span class="p">,</span><span class="mi">1000</span><span class="p">]</span>
 <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;WhiteBlueGreenYellowRed&#39;</span>
@@ -284,9 +255,10 @@
 <img alt="../../../../_images/plot_particles_dust_loop.gif" src="../../../../_images/plot_particles_dust_loop.gif" />
 </dd></dl>
 
-</div>
+</section>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -301,7 +273,33 @@
         alt="Join the chat at Gitter">
     </a>
 
-
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../../../../examples/meteoinfolab/plot_types/plot_3dgl.html"
+                        title="previous chapter">3-D plots with OpenGL</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../../../../examples/meteoinfolab/map.html"
+                        title="next chapter">Map</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../_sources/docs/meteoinfolab/plot/axes3dgl/particles.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
       <div class="clearer"></div>
     </div>
     <div class="related" role="navigation" aria-label="related navigation">
@@ -314,10 +312,10 @@
           <a href="../../../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="../../dataset.html" title="Dataset package"
+          <a href="../../../../examples/meteoinfolab/map.html" title="Map"
              >next</a> |</li>
         <li class="right" >
-          <a href="isosurface.html" title="isosurface"
+          <a href="../../../../examples/meteoinfolab/plot_types/plot_3dgl.html" title="3-D plots with OpenGL"
              >previous</a> |</li>
         <li><a href="../../../../index.html">home</a>|&nbsp;</li>
         <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
@@ -325,17 +323,15 @@
         <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
         <li><a href="../../../index.html">docs</a>|&nbsp;</li>
 
-          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoLab</a> &#187;</li>
-          <li class="nav-item nav-item-3"><a href="../../api.html" >The MeteoInfoLab API</a> &#187;</li>
-          <li class="nav-item nav-item-4"><a href="../../plotlib.html" >Plotlib package</a> &#187;</li>
-          <li class="nav-item nav-item-5"><a href="../axes3dgl.html" >mipylib.plotlib._axes3dgl</a> &#187;</li>
-          <li class="nav-item nav-item-6"><a href="axes3dgl.html" >Axes3DGL</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../../../../examples/index.html" >Examples</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../../../examples/meteoinfolab/index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../../../../examples/meteoinfolab/plot_types.html" >Plot types</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">particles</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2010-2020, MeteoInfo developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+        &#169; Copyright 2010-2021, MeteoInfo developers.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
     </div>
   </body>
 </html>

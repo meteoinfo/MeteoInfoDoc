@@ -1,19 +1,19 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
-    <title>Introduction &#8212; MeteoInfo 2.0 documentation</title>
-    <link rel="stylesheet" href="../../_static/sphinxdoc.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Introduction &#8212; MeteoInfo 3.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinxdoc.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../_static/language_data.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Download and Run TrajStat" href="download.html" />
@@ -45,9 +45,76 @@
         <li><a href="../index.html">docs</a>|&nbsp;</li>
 
           <li class="nav-item nav-item-1"><a href="../index.html" >Documentation</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="index.html" accesskey="U">TrajStat</a> &#187;</li> 
+          <li class="nav-item nav-item-2"><a href="index.html" accesskey="U">TrajStat</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Introduction</a></li> 
       </ul>
     </div>
+
+
+    <div class="document">
+
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="introduction">
+<span id="docs-trajstat-introduction"></span><h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<p>Statistical analysis of air mass back trajectories combined with long-term ambient air pollution
+measurements are useful tools for source identification. Using these methods, the geographic
+information system (GIS) based software, TrajStat, was developed to view, query, and cluster
+the trajectories and compute the potential source contribution function (PSCF) and concentration
+weighted trajectory (CWT) analyses when measurement data are included.</p>
+<p>The HYSPLIT model is used to calculate trajectories, which are loaded into the system as an external
+process. The trajectory files with three-dimensional endpoint data could be converted to the ESRI
+“PolylineZ” shape file format. In this type of shape file the x, y and z properties of each point
+are defined by its longitude, latitude and air pressure along the trajectory. The trajectories can
+be shown in various spatial patterns. For instance, using only the level (x, y) or height (z)
+coordinates, each trajectory can be shown as a two-dimensional figure. When combined height with
+longitude and latitude values, the three-dimensional trajectories can be plotted. The long-term
+measurement data could be assigned to their corresponding trajectories. A query function was
+developed to identify the trajectories to which a user can distinguish the polluted trajectories
+with high measurement concentration from a large number of trajectories and then the pollutant
+pathway could be roughly estimated. Euclidean distance or angle distance (Sirois and Bottenheim,
+1995) can be selected as the cluster model. A reasonable maximum cluster number can be decided
+through visual inspection and comparison of the mean-trajectory maps. The mean pollutant
+concentration for each cluster can be computed using the cluster statistics function. Pollutant
+pathways could then be associated with the high concentration clusters. After calculating the PSCF
+and CWT value, an arbitrary weight function (Polissar et al., 1999) is applied to reduce the
+uncertainty of cells with few endpoints. Then the potential source regions with high PSCF or CWT
+value could be identified.</p>
+<section id="publication">
+<h2>Publication:<a class="headerlink" href="#publication" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Wang, Y.Q., Zhang, X.Y. and Draxler, R., 2009. TrajStat: GIS-based software that uses various trajectory statistical analysis methods to identify potential sources from long-term air pollution measurement data. Environmental Modelling &amp; Software, 24: 938-939</p></li>
+</ul>
+</section>
+<section id="author">
+<h2>Author:<a class="headerlink" href="#author" title="Permalink to this headline">¶</a></h2>
+<p>Yaqiang Wang</p>
+<p>email: <a class="reference external" href="mailto:yaqiang&#46;wang&#37;&#52;&#48;gmail&#46;com">yaqiang<span>&#46;</span>wang<span>&#64;</span>gmail<span>&#46;</span>com</a></p>
+<p>Chinese Academy of Meteorological Sciences, CMA</p>
+</section>
+<section id="source-code">
+<h2>Source code<a class="headerlink" href="#source-code" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://github.com/meteoinfo/TrajStat">https://github.com/meteoinfo/TrajStat</a></p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
+        <img style="position: fixed; top: 0; right: 0; border: 0;" 
+        src="../../_static/forkme_right_orange_ff7600.png" 
+        alt="Fork me on GitHub">
+    </a>
+    <a target="_blank" href="https://gitter.im/meteoinfo/community">
+        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
+        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
+        alt="Join the chat at Gitter">
+    </a>
 
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
@@ -83,75 +150,9 @@
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
-
-    <div class="document">
-
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
-            
-  <div class="section" id="introduction">
-<span id="docs-trajstat-introduction"></span><h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
-<p>Statistical analysis of air mass back trajectories combined with long-term ambient air pollution
-measurements are useful tools for source identification. Using these methods, the geographic
-information system (GIS) based software, TrajStat, was developed to view, query, and cluster
-the trajectories and compute the potential source contribution function (PSCF) and concentration
-weighted trajectory (CWT) analyses when measurement data are included.</p>
-<p>The HYSPLIT model is used to calculate trajectories, which are loaded into the system as an external
-process. The trajectory files with three-dimensional endpoint data could be converted to the ESRI
-“PolylineZ” shape file format. In this type of shape file the x, y and z properties of each point
-are defined by its longitude, latitude and air pressure along the trajectory. The trajectories can
-be shown in various spatial patterns. For instance, using only the level (x, y) or height (z)
-coordinates, each trajectory can be shown as a two-dimensional figure. When combined height with
-longitude and latitude values, the three-dimensional trajectories can be plotted. The long-term
-measurement data could be assigned to their corresponding trajectories. A query function was
-developed to identify the trajectories to which a user can distinguish the polluted trajectories
-with high measurement concentration from a large number of trajectories and then the pollutant
-pathway could be roughly estimated. Euclidean distance or angle distance (Sirois and Bottenheim,
-1995) can be selected as the cluster model. A reasonable maximum cluster number can be decided
-through visual inspection and comparison of the mean-trajectory maps. The mean pollutant
-concentration for each cluster can be computed using the cluster statistics function. Pollutant
-pathways could then be associated with the high concentration clusters. After calculating the PSCF
-and CWT value, an arbitrary weight function (Polissar et al., 1999) is applied to reduce the
-uncertainty of cells with few endpoints. Then the potential source regions with high PSCF or CWT
-value could be identified.</p>
-<div class="section" id="publication">
-<h2>Publication:<a class="headerlink" href="#publication" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>Wang, Y.Q., Zhang, X.Y. and Draxler, R., 2009. TrajStat: GIS-based software that uses various trajectory statistical analysis methods to identify potential sources from long-term air pollution measurement data. Environmental Modelling &amp; Software, 24: 938-939</p></li>
-</ul>
-</div>
-<div class="section" id="author">
-<h2>Author:<a class="headerlink" href="#author" title="Permalink to this headline">¶</a></h2>
-<p>Yaqiang Wang</p>
-<p>email: <a class="reference external" href="mailto:yaqiang&#46;wang&#37;&#52;&#48;gmail&#46;com">yaqiang<span>&#46;</span>wang<span>&#64;</span>gmail<span>&#46;</span>com</a></p>
-<p>Chinese Academy of Meteorological Sciences, CMA</p>
-</div>
-<div class="section" id="source-code">
-<h2>Source code<a class="headerlink" href="#source-code" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="https://github.com/meteoinfo/TrajStat">https://github.com/meteoinfo/TrajStat</a></p>
-</div>
-</div>
-
-
-          </div>
-        </div>
-      </div>
-    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
-        <img style="position: fixed; top: 0; right: 0; border: 0;" 
-        src="../../_static/forkme_right_orange_ff7600.png" 
-        alt="Fork me on GitHub">
-    </a>
-    <a target="_blank" href="https://gitter.im/meteoinfo/community">
-        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
-        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
-        alt="Join the chat at Gitter">
-    </a>
-
-
       <div class="clearer"></div>
     </div>
     <div class="related" role="navigation" aria-label="related navigation">
@@ -176,12 +177,13 @@ value could be identified.</p>
         <li><a href="../index.html">docs</a>|&nbsp;</li>
 
           <li class="nav-item nav-item-1"><a href="../index.html" >Documentation</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="index.html" >TrajStat</a> &#187;</li> 
+          <li class="nav-item nav-item-2"><a href="index.html" >TrajStat</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Introduction</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2010-2020, MeteoInfo developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+        &#169; Copyright 2010-2021, MeteoInfo developers.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
     </div>
   </body>
 </html>

@@ -1,19 +1,19 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
-    <title>Trajectory plot &#8212; MeteoInfo 2.0 documentation</title>
-    <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Trajectory plot &#8212; MeteoInfo 3.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinxdoc.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../../_static/language_data.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Trajectory length calculation" href="traj_length.html" />
@@ -46,37 +46,11 @@
 
           <li class="nav-item nav-item-1"><a href="../../index.html" >Examples</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../index.html" >MeteoInfoLab</a> &#187;</li>
-          <li class="nav-item nav-item-3"><a href="../trajectory.html" accesskey="U">Trajectory</a> &#187;</li> 
+          <li class="nav-item nav-item-3"><a href="../trajectory.html" accesskey="U">Trajectory</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Trajectory plot</a></li> 
       </ul>
     </div>
 
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="traj_cal.html"
-                        title="previous chapter">Trajectory calculation</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="traj_length.html"
-                        title="next chapter">Trajectory length calculation</a></p>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="../../../_sources/examples/meteoinfolab/trajectory/traj_plot.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="../../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
-      <input type="submit" value="Go" />
-    </form>
-    </div>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
-        </div>
-      </div>
 
     <div class="document">
 
@@ -84,7 +58,7 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="trajectory-plot">
+  <section id="trajectory-plot">
 <span id="examples-meteoinfolab-trajectory-traj-plot"></span><h1>Trajectory plot<a class="headerlink" href="#trajectory-plot" title="Permalink to this headline">¶</a></h1>
 <p>Get a trajectory data file object using <strong>addfile_hytraj</strong> function from HYSPLIT trajectory
 endpoint data file. It has two dimensions of <code class="docutils literal notranslate"><span class="pre">trajectory</span></code> (trajectory number) and <code class="docutils literal notranslate"><span class="pre">obs</span></code>
@@ -92,7 +66,7 @@ endpoint data file. It has two dimensions of <code class="docutils literal notra
 identical). The variables are <code class="docutils literal notranslate"><span class="pre">time</span></code>, <code class="docutils literal notranslate"><span class="pre">run_hour</span></code>, <code class="docutils literal notranslate"><span class="pre">lat</span></code>, <code class="docutils literal notranslate"><span class="pre">lon</span></code>, <code class="docutils literal notranslate"><span class="pre">height</span></code>, <code class="docutils literal notranslate"><span class="pre">PRESSURE</span></code>
 and other output meteorological parameters. All variables have the two dimensions, so we can
 get 2-D data arrays from the file object. The <code class="docutils literal notranslate"><span class="pre">lat</span></code>, <code class="docutils literal notranslate"><span class="pre">lon</span></code> data can be used to plot trajectories.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;D:/MyProgram/Distribution/java/MeteoInfo/MeteoInfo/sample/HYSPLIT/tdump&#39;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">migl</span><span class="o">.</span><span class="n">get_sample_folder</span><span class="p">(),</span> <span class="s1">&#39;HYSPLIT&#39;</span><span class="p">,</span> <span class="s1">&#39;tdump&#39;</span><span class="p">)</span>
 <span class="n">f</span> <span class="o">=</span> <span class="n">addfile_hytraj</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
 <span class="n">lon</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;lon&#39;</span><span class="p">][:,:]</span>
 <span class="n">lat</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">][:,:]</span>
@@ -120,9 +94,9 @@ get 2-D data arrays from the file object. The <code class="docutils literal notr
 </div>
 <img alt="../../../_images/traj_plot_1.png" src="../../../_images/traj_plot_1.png" />
 <p>Change the legend of the trajectory layer.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">org.meteoinfo.legend</span> <span class="k">import</span> <span class="n">PointStyle</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">org.meteoinfo.geometry.legend</span> <span class="kn">import</span> <span class="n">PointStyle</span>
 
-<span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;D:/MyProgram/Distribution/java/MeteoInfo/MeteoInfo/sample/HYSPLIT/tdump&#39;</span>
+<span class="n">fn</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">migl</span><span class="o">.</span><span class="n">get_sample_folder</span><span class="p">(),</span> <span class="s1">&#39;HYSPLIT&#39;</span><span class="p">,</span> <span class="s1">&#39;tdump&#39;</span><span class="p">)</span>
 <span class="n">f</span> <span class="o">=</span> <span class="n">addfile_hytraj</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
 <span class="n">lon</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;lon&#39;</span><span class="p">][:,:]</span>
 <span class="n">lat</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">][:,:]</span>
@@ -161,20 +135,18 @@ get 2-D data arrays from the file object. The <code class="docutils literal notr
 </div>
 <img alt="../../../_images/traj_plot_2.png" src="../../../_images/traj_plot_2.png" />
 <p>Plot trajectories in a 3-D map colored by pressure values.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;D:/MyProgram/Distribution/java/MeteoInfo/MeteoInfo/sample/HYSPLIT/tdump&#39;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">migl</span><span class="o">.</span><span class="n">get_sample_folder</span><span class="p">(),</span> <span class="s1">&#39;HYSPLIT&#39;</span><span class="p">,</span> <span class="s1">&#39;tdump&#39;</span><span class="p">)</span>
 <span class="n">f</span> <span class="o">=</span> <span class="n">addfile_hytraj</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
 <span class="n">lon</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;lon&#39;</span><span class="p">][:,:]</span>
 <span class="n">lat</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">][:,:]</span>
 <span class="n">alt</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;height&#39;</span><span class="p">][:,:]</span>
 <span class="n">pres</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;PRESSURE&#39;</span><span class="p">][:,:]</span>
 
-<span class="n">layer</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="s1">&#39;D:/Temp/map/states.shp&#39;</span><span class="p">)</span>
-
 <span class="c1">#Plot</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">axes3d</span><span class="p">()</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot_layer</span><span class="p">(</span><span class="n">layer</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="mi">248</span><span class="p">,</span><span class="mi">226</span><span class="p">),</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
-<span class="n">traj</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">alt</span><span class="p">,</span> <span class="n">mvalues</span><span class="o">=</span><span class="n">pres</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">lon</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">lat</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">alt</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> \
+<span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;us_states&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="mi">248</span><span class="p">,</span><span class="mi">226</span><span class="p">),</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">traj</span> <span class="o">=</span> <span class="n">plot3</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">alt</span><span class="p">,</span> <span class="n">mvalues</span><span class="o">=</span><span class="n">pres</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">scatter3</span><span class="p">(</span><span class="n">lon</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">lat</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">alt</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> \
     <span class="n">size</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
 <span class="n">colorbar</span><span class="p">(</span><span class="n">traj</span><span class="p">)</span>
 <span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">125</span><span class="p">,</span> <span class="o">-</span><span class="mi">55</span><span class="p">)</span>
@@ -184,41 +156,10 @@ get 2-D data arrays from the file object. The <code class="docutils literal notr
 </pre></div>
 </div>
 <img alt="../../../_images/traj_3d_color.png" src="../../../_images/traj_3d_color.png" />
-<p>Trajectory polyline and start point layers can also be got directly from the file object using
-the functions of <code class="docutils literal notranslate"><span class="pre">trajlayer</span></code> and <code class="docutils literal notranslate"><span class="pre">trajsplayer</span></code>. The layers can be plotted
-in a map axes. The height or pressure variationdata along trajectories can be obtained
-by <strong>trajvardata</strong> function of the file object. The parameter is the column index of the
-HYSPLIT trajectory endpoint data file. <strong>trajvardata(12)</strong> means to get trajectory pressure
-data, while <strong>trajvardata(11)</strong> is used to get trajectory height data.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;D:/MyProgram/Distribution/java/MeteoInfo/MeteoInfo/sample/HYSPLIT/tdump&#39;</span>
-<span class="n">f</span> <span class="o">=</span> <span class="n">addfile_hytraj</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
-<span class="n">tlayer</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">trajlayer</span><span class="p">()</span>
-<span class="n">stlayer</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">trajsplayer</span><span class="p">()</span>
-
-<span class="c1">#Plot</span>
-<span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">526</span><span class="p">,</span> <span class="mi">489</span><span class="p">],</span> <span class="n">newfig</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">axesm</span><span class="p">(</span><span class="n">position</span><span class="o">=</span><span class="p">[</span><span class="mf">0.12</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">])</span>
-<span class="n">mlayer</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="s1">&#39;D:/Temp/map/country1.shp&#39;</span><span class="p">)</span>
-<span class="n">geoshow</span><span class="p">(</span><span class="n">mlayer</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">),</span> <span class="n">facecolor</span><span class="o">=</span><span class="p">(</span><span class="mi">230</span><span class="p">,</span><span class="mi">230</span><span class="p">,</span><span class="mi">230</span><span class="p">))</span>
-<span class="n">geoshow</span><span class="p">(</span><span class="n">tlayer</span><span class="p">)</span>
-<span class="n">ss</span> <span class="o">=</span> <span class="n">makesymbolspec</span><span class="p">(</span><span class="s1">&#39;point&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;marker&#39;</span><span class="p">:</span><span class="s1">&#39;S&#39;</span><span class="p">})</span>
-<span class="n">geoshow</span><span class="p">(</span><span class="n">stlayer</span><span class="p">,</span> <span class="n">symbolspec</span><span class="o">=</span><span class="n">ss</span><span class="p">)</span>
-<span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">92</span><span class="p">,</span> <span class="o">-</span><span class="mi">55</span><span class="p">)</span>
-<span class="n">ylim</span><span class="p">(</span><span class="mi">34</span><span class="p">,</span> <span class="mi">54</span><span class="p">)</span>
-<span class="n">yticks</span><span class="p">(</span><span class="n">arange</span><span class="p">(</span><span class="mi">35</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
-<span class="n">title</span><span class="p">(</span><span class="s1">&#39;MeteoInfoLab script demo - Trajectory&#39;</span><span class="p">)</span>
-
-<span class="n">axes</span><span class="p">(</span><span class="n">outerposition</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">],</span> <span class="n">yreverse</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">xaxistype</span><span class="o">=</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">trajvardata</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="n">tlayer</span><span class="o">.</span><span class="n">legend</span><span class="p">())</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time&#39;</span><span class="p">)</span>
-<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;hPa&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-<img alt="../../../_images/traj_plot.png" src="../../../_images/traj_plot.png" />
-</div>
+</section>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -233,7 +174,33 @@ data, while <strong>trajvardata(11)</strong> is used to get trajectory height da
         alt="Join the chat at Gitter">
     </a>
 
-
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="traj_cal.html"
+                        title="previous chapter">Trajectory calculation</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="traj_length.html"
+                        title="next chapter">Trajectory length calculation</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/examples/meteoinfolab/trajectory/traj_plot.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
       <div class="clearer"></div>
     </div>
     <div class="related" role="navigation" aria-label="related navigation">
@@ -259,12 +226,13 @@ data, while <strong>trajvardata(11)</strong> is used to get trajectory height da
 
           <li class="nav-item nav-item-1"><a href="../../index.html" >Examples</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../index.html" >MeteoInfoLab</a> &#187;</li>
-          <li class="nav-item nav-item-3"><a href="../trajectory.html" >Trajectory</a> &#187;</li> 
+          <li class="nav-item nav-item-3"><a href="../trajectory.html" >Trajectory</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Trajectory plot</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2010-2020, MeteoInfo developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+        &#169; Copyright 2010-2021, MeteoInfo developers.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
     </div>
   </body>
 </html>

@@ -1,8 +1,8 @@
 .. _examples-meteoinfolab-file_io-write_nc:
 
-*******************
+***********************
 Write netCDF data file
-*******************
+***********************
 
 Several steps are needed to create a netCDF data file and write data in it:
 

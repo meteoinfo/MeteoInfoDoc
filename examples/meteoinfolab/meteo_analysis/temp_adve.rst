@@ -1,8 +1,8 @@
 .. _examples-meteoinfolab-meteo_analysis-temp_adve:
 
-*******************
+*********************
 Temperature advection
-*******************
+*********************
 
 Calculate temperature advection from u and v wind components. The mainly used function is
 ``cdiff()`` .

@@ -1,19 +1,19 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
-    <title>Fisher’s linear discriminant &#8212; MeteoInfo 2.0 documentation</title>
-    <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Fisher’s linear discriminant &#8212; MeteoInfo 3.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinxdoc.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../../_static/language_data.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Quadratic discriminant analysis" href="qda.html" />
@@ -46,37 +46,11 @@
 
           <li class="nav-item nav-item-1"><a href="../../index.html" >Examples</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../index.html" >MIML - MeteoInfo Machine Learning Toolbox</a> &#187;</li>
-          <li class="nav-item nav-item-3"><a href="../classification.html" accesskey="U">Classification</a> &#187;</li> 
+          <li class="nav-item nav-item-3"><a href="../classification.html" accesskey="U">Classification</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Fisher’s linear discriminant</a></li> 
       </ul>
     </div>
 
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="lda.html"
-                        title="previous chapter">Linear discriminant analysis</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="qda.html"
-                        title="next chapter">Quadratic discriminant analysis</a></p>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="../../../_sources/examples/miml/classification/fisher.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="../../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
-      <input type="submit" value="Go" />
-    </form>
-    </div>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
-        </div>
-      </div>
 
     <div class="document">
 
@@ -84,15 +58,15 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="fisher-s-linear-discriminant">
+  <section id="fisher-s-linear-discriminant">
 <span id="examples-miml-classification-fisher"></span><h1>Fisher’s linear discriminant<a class="headerlink" href="#fisher-s-linear-discriminant" title="Permalink to this headline">¶</a></h1>
 <p>Fisher’s linear discriminant (FLD) is another popular linear classifier. Fisher defined the separation
 between two distributions to be the ratio of the variance between the classes to the variance within
 the classes, which is, in some sense, a measure of the signal-to-noise ratio for the class labeling.
 FLD finds a linear combination of features which maximizes the separation after the projection. The
 resulting combination may be used for dimensionality reduction before later classification.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">miml</span> <span class="k">import</span> <span class="n">datasets</span>
-<span class="kn">from</span> <span class="nn">miml.classification</span> <span class="k">import</span> <span class="n">FisherLinearDiscriminant</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">miml</span> <span class="kn">import</span> <span class="n">datasets</span>
+<span class="kn">from</span> <span class="nn">miml.classification</span> <span class="kn">import</span> <span class="n">FisherLinearDiscriminant</span>
 
 <span class="n">fn</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">datasets</span><span class="o">.</span><span class="n">get_data_home</span><span class="p">(),</span> <span class="s1">&#39;classification&#39;</span><span class="p">,</span> <span class="s1">&#39;toy&#39;</span><span class="p">,</span>
     <span class="s1">&#39;toy-test.txt&#39;</span><span class="p">)</span>
@@ -133,9 +107,10 @@ resulting combination may be used for dimensionality reduction before later clas
 </pre></div>
 </div>
 <img alt="../../../_images/fisher_1.png" src="../../../_images/fisher_1.png" />
-</div>
+</section>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -150,7 +125,33 @@ resulting combination may be used for dimensionality reduction before later clas
         alt="Join the chat at Gitter">
     </a>
 
-
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="lda.html"
+                        title="previous chapter">Linear discriminant analysis</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="qda.html"
+                        title="next chapter">Quadratic discriminant analysis</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/examples/miml/classification/fisher.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
       <div class="clearer"></div>
     </div>
     <div class="related" role="navigation" aria-label="related navigation">
@@ -176,12 +177,13 @@ resulting combination may be used for dimensionality reduction before later clas
 
           <li class="nav-item nav-item-1"><a href="../../index.html" >Examples</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../index.html" >MIML - MeteoInfo Machine Learning Toolbox</a> &#187;</li>
-          <li class="nav-item nav-item-3"><a href="../classification.html" >Classification</a> &#187;</li> 
+          <li class="nav-item nav-item-3"><a href="../classification.html" >Classification</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Fisher’s linear discriminant</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2010-2020, MeteoInfo developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+        &#169; Copyright 2010-2021, MeteoInfo developers.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
     </div>
   </body>
 </html>

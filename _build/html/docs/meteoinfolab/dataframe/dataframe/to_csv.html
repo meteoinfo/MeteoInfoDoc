@@ -1,19 +1,19 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
-    <title>to_csv &#8212; MeteoInfo 2.0 documentation</title>
-    <link rel="stylesheet" href="../../../../_static/sphinxdoc.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>to_csv &#8212; MeteoInfo 3.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxdoc.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../../../_static/language_data.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="transpose" href="transpose.html" />
@@ -49,9 +49,62 @@
           <li class="nav-item nav-item-3"><a href="../../api.html" >The MeteoInfoLab API</a> &#187;</li>
           <li class="nav-item nav-item-4"><a href="../../dataframe.html" >dataframe package</a> &#187;</li>
           <li class="nav-item nav-item-5"><a href="../dataframe.html" >mipylib.dataframe.dataframe</a> &#187;</li>
-          <li class="nav-item nav-item-6"><a href="dataframe.html" accesskey="U">DataFrame</a> &#187;</li> 
+          <li class="nav-item nav-item-6"><a href="dataframe.html" accesskey="U">DataFrame</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">to_csv</a></li> 
       </ul>
     </div>
+
+
+    <div class="document">
+
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="to-csv">
+<span id="docs-meteoinfolab-dataframe-dataframe-dataframe-to-csv"></span><h1>to_csv<a class="headerlink" href="#to-csv" title="Permalink to this headline">¶</a></h1>
+<dl class="py method">
+<dt class="sig sig-object py" id="DataFrame.to_csv">
+<span class="sig-prename descclassname"><span class="pre">DataFrame.</span></span><span class="sig-name descname"><span class="pre">to_csv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delimiter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">','</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date_format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">float_format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DataFrame.to_csv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save the data to an csv file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filename</strong> – (<em>string</em>) The file name.</p></li>
+<li><p><strong>delimiter</strong> – (<em>string</em>) Field delimiter character. Default is <code class="docutils literal notranslate"><span class="pre">,</span></code>.</p></li>
+<li><p><strong>format</strong> – (<em>string</em>) Format string.</p></li>
+<li><p><strong>date_format</strong> – (<em>string</em>) Date format string. i.e. ‘yyyyMMddHH’.</p></li>
+<li><p><strong>float_format</strong> – (<em>string</em>) Float format string. i.e. ‘%.2f’.</p></li>
+<li><p><strong>index</strong> – (<em>boolean</em>) Write index or not.</p></li>
+</ul>
+</dd>
+</dl>
+<p>Examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Raphael&#39;</span><span class="p">,</span> <span class="s1">&#39;Donatello&#39;</span><span class="p">],</span>
+           <span class="s1">&#39;mask&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;purple&#39;</span><span class="p">],</span>
+           <span class="s1">&#39;weapon&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;sai&#39;</span><span class="p">,</span> <span class="s1">&#39;bo staff&#39;</span><span class="p">]})</span>
+<span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;D:/Test/out.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
+        <img style="position: fixed; top: 0; right: 0; border: 0;" 
+        src="../../../../_static/forkme_right_orange_ff7600.png" 
+        alt="Fork me on GitHub">
+    </a>
+    <a target="_blank" href="https://gitter.im/meteoinfo/community">
+        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
+        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
+        alt="Join the chat at Gitter">
+    </a>
 
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
@@ -77,61 +130,9 @@
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
-
-    <div class="document">
-
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
-            
-  <div class="section" id="to-csv">
-<span id="docs-meteoinfolab-dataframe-dataframe-dataframe-to-csv"></span><h1>to_csv<a class="headerlink" href="#to-csv" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
-<dt id="DataFrame.to_csv">
-<code class="sig-prename descclassname">DataFrame.</code><code class="sig-name descname">to_csv</code><span class="sig-paren">(</span><em class="sig-param">filepath</em>, <em class="sig-param">delimiter='</em>, <em class="sig-param">'</em>, <em class="sig-param">format=None</em>, <em class="sig-param">date_format=None</em>, <em class="sig-param">float_format=None</em>, <em class="sig-param">index=True</em><span class="sig-paren">)</span><a class="headerlink" href="#DataFrame.to_csv" title="Permalink to this definition">¶</a></dt>
-<dd><p>Save the data to an csv file.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>filename</strong> – (<em>string</em>) The file name.</p></li>
-<li><p><strong>delimiter</strong> – (<em>string</em>) Field delimiter character. Default is <code class="docutils literal notranslate"><span class="pre">,</span></code>.</p></li>
-<li><p><strong>format</strong> – (<em>string</em>) Format string.</p></li>
-<li><p><strong>date_format</strong> – (<em>string</em>) Date format string. i.e. ‘yyyyMMddHH’.</p></li>
-<li><p><strong>float_format</strong> – (<em>string</em>) Float format string. i.e. ‘%.2f’.</p></li>
-<li><p><strong>index</strong> – (<em>boolean</em>) Write index or not.</p></li>
-</ul>
-</dd>
-</dl>
-<p>Examples:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Raphael&#39;</span><span class="p">,</span> <span class="s1">&#39;Donatello&#39;</span><span class="p">],</span>
-           <span class="s1">&#39;mask&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;purple&#39;</span><span class="p">],</span>
-           <span class="s1">&#39;weapon&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;sai&#39;</span><span class="p">,</span> <span class="s1">&#39;bo staff&#39;</span><span class="p">]})</span>
-<span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;D:/Test/out.csv&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</dd></dl>
-
-</div>
-
-
-          </div>
-        </div>
-      </div>
-    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
-        <img style="position: fixed; top: 0; right: 0; border: 0;" 
-        src="../../../../_static/forkme_right_orange_ff7600.png" 
-        alt="Fork me on GitHub">
-    </a>
-    <a target="_blank" href="https://gitter.im/meteoinfo/community">
-        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
-        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
-        alt="Join the chat at Gitter">
-    </a>
-
-
       <div class="clearer"></div>
     </div>
     <div class="related" role="navigation" aria-label="related navigation">
@@ -160,12 +161,13 @@
           <li class="nav-item nav-item-3"><a href="../../api.html" >The MeteoInfoLab API</a> &#187;</li>
           <li class="nav-item nav-item-4"><a href="../../dataframe.html" >dataframe package</a> &#187;</li>
           <li class="nav-item nav-item-5"><a href="../dataframe.html" >mipylib.dataframe.dataframe</a> &#187;</li>
-          <li class="nav-item nav-item-6"><a href="dataframe.html" >DataFrame</a> &#187;</li> 
+          <li class="nav-item nav-item-6"><a href="dataframe.html" >DataFrame</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">to_csv</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2010-2020, MeteoInfo developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+        &#169; Copyright 2010-2021, MeteoInfo developers.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
     </div>
   </body>
 </html>

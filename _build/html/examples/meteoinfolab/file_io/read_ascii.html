@@ -1,19 +1,19 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
-    <title>Read ASCII file &#8212; MeteoInfo 2.0 documentation</title>
-    <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Read ASCII file &#8212; MeteoInfo 3.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinxdoc.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../../_static/language_data.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Read lighting data" href="read_lighting.html" />
@@ -46,9 +46,76 @@
 
           <li class="nav-item nav-item-1"><a href="../../index.html" >Examples</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../index.html" >MeteoInfoLab</a> &#187;</li>
-          <li class="nav-item nav-item-3"><a href="../file_io.html" accesskey="U">File input and output</a> &#187;</li> 
+          <li class="nav-item nav-item-3"><a href="../file_io.html" accesskey="U">File input and output</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Read ASCII file</a></li> 
       </ul>
     </div>
+
+
+    <div class="document">
+
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="read-ascii-file">
+<span id="examples-meteoinfolab-file-io-read-ascii"></span><h1>Read ASCII file<a class="headerlink" href="#read-ascii-file" title="Permalink to this headline">¶</a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">asciiread()</span></code> function was used to read array data from an ASCII file. Some header lines could
+be skiped by setting <code class="docutils literal notranslate"><span class="pre">headerlines</span></code> argument. The shape of the array could be set using <code class="docutils literal notranslate"><span class="pre">shape</span></code>
+argument.</p>
+<p>Read grid data from ASCII file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rain</span> <span class="o">=</span> <span class="n">asciiread</span><span class="p">(</span><span class="s1">&#39;D:/Temp/ascii/SURF_CLI_CHN_PRE_DAY_GRID_0.5-20120702.txt&#39;</span><span class="p">,</span><span class="n">headerlines</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">72</span><span class="p">,</span><span class="mi">128</span><span class="p">))</span>
+<span class="n">rain1</span> <span class="o">=</span> <span class="n">rain</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">,:]</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">arange1</span><span class="p">(</span><span class="mi">72</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">arange1</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+<span class="n">axesm</span><span class="p">()</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">)</span>
+<span class="n">layer</span> <span class="o">=</span> <span class="n">contourf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">rain1</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Precipitation&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Latitude&#39;</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Longitude&#39;</span><span class="p">)</span>
+<span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../_images/ascii_grid.png" src="../../../_images/ascii_grid.png" />
+<p>Read station data from ASCII file. <code class="docutils literal notranslate"><span class="pre">numasciicol()</span></code> and <code class="docutils literal notranslate"><span class="pre">numasciirow()</span></code> functions were used
+to get column and row number of the file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;D:/Temp/ascii/flood.dat&#39;</span>
+<span class="n">ncol</span> <span class="o">=</span> <span class="n">numasciicol</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+<span class="n">nrow</span> <span class="o">=</span> <span class="n">numasciirow</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">asciiread</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">nrow</span><span class="p">,</span><span class="n">ncol</span><span class="p">))</span>
+<span class="n">lon</span> <span class="o">=</span> <span class="n">a</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">lat</span> <span class="o">=</span> <span class="n">a</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">a</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">axesm</span><span class="p">()</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;cn_province&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="p">(</span><span class="mi">220</span><span class="p">,</span><span class="mi">220</span><span class="p">,</span><span class="mi">220</span><span class="p">),</span> <span class="n">edgecolor</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">layer</span> <span class="o">=</span> <span class="n">scatter</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">edge</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">xlim</span><span class="p">(</span><span class="mf">109.2</span><span class="p">,</span> <span class="mi">111</span><span class="p">)</span>
+<span class="n">ylim</span><span class="p">(</span><span class="mf">19.8</span><span class="p">,</span> <span class="mf">21.8</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Flood plain area&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Latitude&#39;</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Longitude&#39;</span><span class="p">)</span>
+<span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../_images/ascii_station.png" src="../../../_images/ascii_station.png" />
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
+        <img style="position: fixed; top: 0; right: 0; border: 0;" 
+        src="../../../_static/forkme_right_orange_ff7600.png" 
+        alt="Fork me on GitHub">
+    </a>
+    <a target="_blank" href="https://gitter.im/meteoinfo/community">
+        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
+        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
+        alt="Join the chat at Gitter">
+    </a>
 
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
@@ -74,75 +141,9 @@
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
-
-    <div class="document">
-
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
-            
-  <div class="section" id="read-ascii-file">
-<span id="examples-meteoinfolab-file-io-read-ascii"></span><h1>Read ASCII file<a class="headerlink" href="#read-ascii-file" title="Permalink to this headline">¶</a></h1>
-<p>The <code class="docutils literal notranslate"><span class="pre">asciiread()</span></code> function was used to read array data from an ASCII file. Some header lines could
-be skiped by setting <code class="docutils literal notranslate"><span class="pre">headerlines</span></code> argument. The shape of the array could be set using <code class="docutils literal notranslate"><span class="pre">shape</span></code>
-argument.</p>
-<p>Read grid data from ASCII file:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rain</span> <span class="o">=</span> <span class="n">asciiread</span><span class="p">(</span><span class="s1">&#39;D:/Temp/ascii/SURF_CLI_CHN_PRE_DAY_GRID_0.5-20120702.txt&#39;</span><span class="p">,</span><span class="n">headerlines</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">72</span><span class="p">,</span><span class="mi">128</span><span class="p">))</span>
-<span class="n">rain1</span> <span class="o">=</span> <span class="n">rain</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">,:]</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">arange1</span><span class="p">(</span><span class="mi">72</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">arange1</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
-<span class="n">axesm</span><span class="p">()</span>
-<span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">)</span>
-<span class="n">layer</span> <span class="o">=</span> <span class="n">contourf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">rain1</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
-<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Precipitation&#39;</span><span class="p">)</span>
-<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Latitude&#39;</span><span class="p">)</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Longitude&#39;</span><span class="p">)</span>
-<span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span>
-</pre></div>
-</div>
-<img alt="../../../_images/ascii_grid1.png" src="../../../_images/ascii_grid1.png" />
-<p>Read station data from ASCII file. <code class="docutils literal notranslate"><span class="pre">numasciicol()</span></code> and <code class="docutils literal notranslate"><span class="pre">numasciirow()</span></code> functions were used
-to get column and row number of the file:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;D:/Temp/ascii/flood.dat&#39;</span>
-<span class="n">ncol</span> <span class="o">=</span> <span class="n">numasciicol</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
-<span class="n">nrow</span> <span class="o">=</span> <span class="n">numasciirow</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">asciiread</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">nrow</span><span class="p">,</span><span class="n">ncol</span><span class="p">))</span>
-<span class="n">lon</span> <span class="o">=</span> <span class="n">a</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">lat</span> <span class="o">=</span> <span class="n">a</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span>
-<span class="n">v</span> <span class="o">=</span> <span class="n">a</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span>
-<span class="n">axesm</span><span class="p">()</span>
-<span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;cn_province&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="p">(</span><span class="mi">220</span><span class="p">,</span><span class="mi">220</span><span class="p">,</span><span class="mi">220</span><span class="p">),</span> <span class="n">edgecolor</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-<span class="n">layer</span> <span class="o">=</span> <span class="n">scatter</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">edge</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">xlim</span><span class="p">(</span><span class="mf">109.2</span><span class="p">,</span> <span class="mi">111</span><span class="p">)</span>
-<span class="n">ylim</span><span class="p">(</span><span class="mf">19.8</span><span class="p">,</span> <span class="mf">21.8</span><span class="p">)</span>
-<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Flood plain area&#39;</span><span class="p">)</span>
-<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Latitude&#39;</span><span class="p">)</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Longitude&#39;</span><span class="p">)</span>
-<span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span>
-</pre></div>
-</div>
-<img alt="../../../_images/ascii_station1.png" src="../../../_images/ascii_station1.png" />
-</div>
-
-
-          </div>
-        </div>
-      </div>
-    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
-        <img style="position: fixed; top: 0; right: 0; border: 0;" 
-        src="../../../_static/forkme_right_orange_ff7600.png" 
-        alt="Fork me on GitHub">
-    </a>
-    <a target="_blank" href="https://gitter.im/meteoinfo/community">
-        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
-        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
-        alt="Join the chat at Gitter">
-    </a>
-
-
       <div class="clearer"></div>
     </div>
     <div class="related" role="navigation" aria-label="related navigation">
@@ -168,12 +169,13 @@ to get column and row number of the file:</p>
 
           <li class="nav-item nav-item-1"><a href="../../index.html" >Examples</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../index.html" >MeteoInfoLab</a> &#187;</li>
-          <li class="nav-item nav-item-3"><a href="../file_io.html" >File input and output</a> &#187;</li> 
+          <li class="nav-item nav-item-3"><a href="../file_io.html" >File input and output</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Read ASCII file</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2010-2020, MeteoInfo developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+        &#169; Copyright 2010-2021, MeteoInfo developers.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
     </div>
   </body>
 </html>

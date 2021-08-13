@@ -1,19 +1,19 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
-    <title>Ridge Regression &#8212; MeteoInfo 2.0 documentation</title>
-    <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Ridge Regression &#8212; MeteoInfo 3.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinxdoc.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../../_static/language_data.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Lasso Regression" href="lasso.html" />
@@ -46,37 +46,11 @@
 
           <li class="nav-item nav-item-1"><a href="../../index.html" >Examples</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../index.html" >MIML - MeteoInfo Machine Learning Toolbox</a> &#187;</li>
-          <li class="nav-item nav-item-3"><a href="../regression.html" accesskey="U">Regression</a> &#187;</li> 
+          <li class="nav-item nav-item-3"><a href="../regression.html" accesskey="U">Regression</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Ridge Regression</a></li> 
       </ul>
     </div>
 
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="ols.html"
-                        title="previous chapter">Ordinary Least Squares</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="lasso.html"
-                        title="next chapter">Lasso Regression</a></p>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="../../../_sources/examples/miml/regression/ridge.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="../../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
-      <input type="submit" value="Go" />
-    </form>
-    </div>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
-        </div>
-      </div>
 
     <div class="document">
 
@@ -84,7 +58,7 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="ridge-regression">
+  <section id="ridge-regression">
 <span id="examples-miml-regression-ridge"></span><h1>Ridge Regression<a class="headerlink" href="#ridge-regression" title="Permalink to this headline">¶</a></h1>
 <p>Coefficient estimates for multiple linear regression models rely on the independence of the model
 terms. When terms are correlated and the columns of the design matrix X have an approximate linear
@@ -99,8 +73,8 @@ reasonable coefficients may often be obtained. Often, small amounts of bias lead
 reductions in the variance of the estimated model coefficients.</p>
 <p>Another interpretation of ridge regression is available through Bayesian estimation. In this setting
 the belief that weight should be small is coded into a prior distribution.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">miml</span> <span class="k">import</span> <span class="n">datasets</span>
-<span class="kn">from</span> <span class="nn">miml.regression</span> <span class="k">import</span> <span class="n">RidgeRegression</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">miml</span> <span class="kn">import</span> <span class="n">datasets</span>
+<span class="kn">from</span> <span class="nn">miml.regression</span> <span class="kn">import</span> <span class="n">RidgeRegression</span>
 
 <span class="n">x</span> <span class="o">=</span> <span class="n">array</span><span class="p">([[</span><span class="mf">234.289</span><span class="p">,</span>      <span class="mf">235.6</span><span class="p">,</span>        <span class="mf">159.0</span><span class="p">,</span>    <span class="mf">107.608</span><span class="p">,</span> <span class="mi">1947</span><span class="p">,</span>   <span class="mf">60.323</span><span class="p">],</span>
         <span class="p">[</span><span class="mf">259.426</span><span class="p">,</span>      <span class="mf">232.5</span><span class="p">,</span>        <span class="mf">145.6</span><span class="p">,</span>    <span class="mf">108.632</span><span class="p">,</span> <span class="mi">1948</span><span class="p">,</span>   <span class="mf">61.122</span><span class="p">],</span>
@@ -162,9 +136,10 @@ the belief that weight should be small is coded into a prior distribution.</p>
 <span class="go">F-statistic: 189.0534 on 6 and 9 DF,  p-value: 6.011e-09</span>
 </pre></div>
 </div>
-</div>
+</section>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -179,7 +154,33 @@ the belief that weight should be small is coded into a prior distribution.</p>
         alt="Join the chat at Gitter">
     </a>
 
-
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="ols.html"
+                        title="previous chapter">Ordinary Least Squares</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="lasso.html"
+                        title="next chapter">Lasso Regression</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/examples/miml/regression/ridge.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
       <div class="clearer"></div>
     </div>
     <div class="related" role="navigation" aria-label="related navigation">
@@ -205,12 +206,13 @@ the belief that weight should be small is coded into a prior distribution.</p>
 
           <li class="nav-item nav-item-1"><a href="../../index.html" >Examples</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../index.html" >MIML - MeteoInfo Machine Learning Toolbox</a> &#187;</li>
-          <li class="nav-item nav-item-3"><a href="../regression.html" >Regression</a> &#187;</li> 
+          <li class="nav-item nav-item-3"><a href="../regression.html" >Regression</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Ridge Regression</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2010-2020, MeteoInfo developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+        &#169; Copyright 2010-2021, MeteoInfo developers.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
     </div>
   </body>
 </html>

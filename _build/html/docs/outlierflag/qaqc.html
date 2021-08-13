@@ -1,19 +1,19 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
-    <title>qaqc Jython module &#8212; MeteoInfo 2.0 documentation</title>
-    <link rel="stylesheet" href="../../_static/sphinxdoc.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>qaqc Jython module &#8212; MeteoInfo 3.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinxdoc.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../_static/language_data.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Automatic outlier flag" href="autoflag.html" />
@@ -46,9 +46,219 @@
 
           <li class="nav-item nav-item-1"><a href="../index.html" >Documentation</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="index.html" >OutlierFlag</a> &#187;</li>
-          <li class="nav-item nav-item-3"><a href="script.html" accesskey="U">Using functions in MeteoInfoLab script</a> &#187;</li> 
+          <li class="nav-item nav-item-3"><a href="script.html" accesskey="U">Using functions in MeteoInfoLab script</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">qaqc Jython module</a></li> 
       </ul>
     </div>
+
+
+    <div class="document">
+
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="qaqc-jython-module">
+<span id="docs-outlierflag-qaqc"></span><h1>qaqc Jython module<a class="headerlink" href="#qaqc-jython-module" title="Permalink to this headline">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="timeorder">
+<span class="sig-name descname"><span class="pre">timeorder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stime</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">etime</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tdelta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tunit</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#timeorder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Time order of the table data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – (<em>TimeTableData</em>) Original data.</p></li>
+<li><p><strong>stime</strong> – (<em>datetime</em>) Start datetime.</p></li>
+<li><p><strong>etime</strong> – (<em>datetime</em>) End datetime.</p></li>
+<li><p><strong>tdelta</strong> – (<em>int</em>) Time delta value.</p></li>
+<li><p><strong>tunit</strong> – (<em>string</em>) Time delta unit. [year|month|day|hour|minute].</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Result table data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="flagset">
+<span class="sig-name descname"><span class="pre">flagset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">minlim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">10000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxlim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">errornum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">11</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quantilenum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">21</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quantil</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.9</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2.3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stdnum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">29</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stdfactor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#flagset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create flag setting object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>minlim</strong> – (<em>float</em>) Minimum limitation.</p></li>
+<li><p><strong>maxlim</strong> – (<em>float</em>) Maximum limitation.</p></li>
+<li><p><strong>errornum</strong> – (<em>int</em>) Error point number.</p></li>
+<li><p><strong>quantilenum</strong> – (<em>int</em>) Quantile point number.</p></li>
+<li><p><strong>quantil</strong> – (<em>float</em>) Quantile value.</p></li>
+<li><p><strong>factor</strong> – (<em>float</em>) Factor value.</p></li>
+<li><p><strong>stdnum</strong> – (<em>int</em>) Standard deviation point number.</p></li>
+<li><p><strong>stdfactor</strong> – (<em>float</em>) Standard deviation factor value.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Flag setting object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="check_lim">
+<span class="sig-name descname"><span class="pre">check_lim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fset</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#check_lim" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check limitation - Get flag code list according to min/max limitation setting.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – (<em>array</em>) Input data array.</p></li>
+<li><p><strong>fset</strong> – (<em>FlagSetting</em>) FlagSetting.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(<em>list of string</em>) Flag code list.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="check_error">
+<span class="sig-name descname"><span class="pre">check_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fcodes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#check_error" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check error - Set flag code list according to error setting.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – (<em>array</em>) Input data array.</p></li>
+<li><p><strong>fset</strong> – (<em>FlagSetting</em>) FlagSetting.</p></li>
+<li><p><strong>fcodes</strong> – (<em>list of sting</em>) Flag code list.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="check_std">
+<span class="sig-name descname"><span class="pre">check_std</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fcodes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#check_std" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check 3 times of standard deviation - Set flag code list according to standard deviation setting.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – (<em>array</em>) Input data array.</p></li>
+<li><p><strong>fset</strong> – (<em>FlagSetting</em>) FlagSetting.</p></li>
+<li><p><strong>fcodes</strong> – (<em>list of sting</em>) Flag code list.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="check_all">
+<span class="sig-name descname"><span class="pre">check_all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fset</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#check_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check all 3 steps.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – (<em>array</em>) Input data array.</p></li>
+<li><p><strong>fset</strong> – (<em>FlagSetting</em>) FlagSetting.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(<em>list of string</em>) Flag code list.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="makecolors">
+<span class="sig-name descname"><span class="pre">makecolors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fcodes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#makecolors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make colors according to flag codes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fcodes</strong> – (<em>list of string</em>) Flag code list.</p></li>
+<li><p><strong>c</strong> – (<em>list of color</em>) Option colors for flag types.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(<em>list of color</em>) Colors with the length as same as fcodes.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="makearray">
+<span class="sig-name descname"><span class="pre">makearray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fcodes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#makearray" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make array according to flag codes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fcodes</strong> – (<em>list of string</em>) Flag code list.</p></li>
+<li><p><strong>v</strong> – (<em>list of float</em>) Option values for flag types.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(<em>array_like</em>) Array with the length as same as fcodes.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="flagchart">
+<span class="sig-name descname"><span class="pre">flagchart</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fcodes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dates</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Flag</span> <span class="pre">chart'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#flagchart" title="Permalink to this definition">¶</a></dt>
+<dd><p>Open a flag chart form for mannual flagging.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – (<em>array_like</em>) Data array.</p></li>
+<li><p><strong>fcodes</strong> – (<em>list of string</em>) Flag code list.</p></li>
+<li><p><strong>dates</strong> – (<em>list of datetime</em>) X datetime data.</p></li>
+<li><p><strong>title</strong> – (<em>string</em>) Chart title.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(<em>list of string</em>) Result flag code list.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="bc_loading_effect">
+<span class="sig-name descname"><span class="pre">bc_loading_effect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">avenum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">refine</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smooth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smoothnum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bc_loading_effect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Black carbon loading effect compensation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>bc</strong> – (<em>array</em>) Black carbon data array.</p></li>
+<li><p><strong>atn</strong> – (<em>array</em>) Attenuation data array.</p></li>
+<li><p><strong>avenum</strong> – (<em>int</em>) Point number used for average in compensation parameter calculation.
+Default is <cite>4</cite>.</p></li>
+<li><p><strong>refine</strong> – (<em>boolean</em>) Is refine compensation paramter or not. Default is <cite>True</cite>.</p></li>
+<li><p><strong>smooth</strong> – (<em>boolean</em>) Is smooth compensation paramter or not. Default is <cite>True</cite>.</p></li>
+<li><p><strong>smoothnum</strong> – (<em>int</em>) Point number used for smooth. Default is <cite>10</cite>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Compensated BC data array and compensation parameters</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
+        <img style="position: fixed; top: 0; right: 0; border: 0;" 
+        src="../../_static/forkme_right_orange_ff7600.png" 
+        alt="Fork me on GitHub">
+    </a>
+    <a target="_blank" href="https://gitter.im/meteoinfo/community">
+        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
+        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
+        alt="Join the chat at Gitter">
+    </a>
 
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
@@ -74,218 +284,9 @@
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
-
-    <div class="document">
-
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
-            
-  <div class="section" id="qaqc-jython-module">
-<span id="docs-outlierflag-qaqc"></span><h1>qaqc Jython module<a class="headerlink" href="#qaqc-jython-module" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
-<dt id="timeorder">
-<code class="sig-name descname">timeorder</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">stime</em>, <em class="sig-param">etime</em>, <em class="sig-param">tdelta</em>, <em class="sig-param">tunit</em><span class="sig-paren">)</span><a class="headerlink" href="#timeorder" title="Permalink to this definition">¶</a></dt>
-<dd><p>Time order of the table data.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>data</strong> – (<em>TimeTableData</em>) Original data.</p></li>
-<li><p><strong>stime</strong> – (<em>datetime</em>) Start datetime.</p></li>
-<li><p><strong>etime</strong> – (<em>datetime</em>) End datetime.</p></li>
-<li><p><strong>tdelta</strong> – (<em>int</em>) Time delta value.</p></li>
-<li><p><strong>tunit</strong> – (<em>string</em>) Time delta unit. [year|month|day|hour|minute].</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Result table data.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="function">
-<dt id="flagset">
-<code class="sig-name descname">flagset</code><span class="sig-paren">(</span><em class="sig-param">minlim=-10000</em>, <em class="sig-param">maxlim=50000</em>, <em class="sig-param">errornum=11</em>, <em class="sig-param">quantilenum=21</em>, <em class="sig-param">quantil=0.9</em>, <em class="sig-param">factor=2.3</em>, <em class="sig-param">stdnum=29</em>, <em class="sig-param">stdfactor=3</em><span class="sig-paren">)</span><a class="headerlink" href="#flagset" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create flag setting object.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>minlim</strong> – (<em>float</em>) Minimum limitation.</p></li>
-<li><p><strong>maxlim</strong> – (<em>float</em>) Maximum limitation.</p></li>
-<li><p><strong>errornum</strong> – (<em>int</em>) Error point number.</p></li>
-<li><p><strong>quantilenum</strong> – (<em>int</em>) Quantile point number.</p></li>
-<li><p><strong>quantil</strong> – (<em>float</em>) Quantile value.</p></li>
-<li><p><strong>factor</strong> – (<em>float</em>) Factor value.</p></li>
-<li><p><strong>stdnum</strong> – (<em>int</em>) Standard deviation point number.</p></li>
-<li><p><strong>stdfactor</strong> – (<em>float</em>) Standard deviation factor value.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Flag setting object.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="function">
-<dt id="check_lim">
-<code class="sig-name descname">check_lim</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">fset</em><span class="sig-paren">)</span><a class="headerlink" href="#check_lim" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check limitation - Get flag code list according to min/max limitation setting.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>data</strong> – (<em>array</em>) Input data array.</p></li>
-<li><p><strong>fset</strong> – (<em>FlagSetting</em>) FlagSetting.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>(<em>list of string</em>) Flag code list.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="function">
-<dt id="check_error">
-<code class="sig-name descname">check_error</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">fset</em>, <em class="sig-param">fcodes</em><span class="sig-paren">)</span><a class="headerlink" href="#check_error" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check error - Set flag code list according to error setting.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>data</strong> – (<em>array</em>) Input data array.</p></li>
-<li><p><strong>fset</strong> – (<em>FlagSetting</em>) FlagSetting.</p></li>
-<li><p><strong>fcodes</strong> – (<em>list of sting</em>) Flag code list.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="function">
-<dt id="check_std">
-<code class="sig-name descname">check_std</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">fset</em>, <em class="sig-param">fcodes</em><span class="sig-paren">)</span><a class="headerlink" href="#check_std" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check 3 times of standard deviation - Set flag code list according to standard deviation setting.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>data</strong> – (<em>array</em>) Input data array.</p></li>
-<li><p><strong>fset</strong> – (<em>FlagSetting</em>) FlagSetting.</p></li>
-<li><p><strong>fcodes</strong> – (<em>list of sting</em>) Flag code list.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="function">
-<dt id="check_all">
-<code class="sig-name descname">check_all</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">fset</em><span class="sig-paren">)</span><a class="headerlink" href="#check_all" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check all 3 steps.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>data</strong> – (<em>array</em>) Input data array.</p></li>
-<li><p><strong>fset</strong> – (<em>FlagSetting</em>) FlagSetting.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>(<em>list of string</em>) Flag code list.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="function">
-<dt id="makecolors">
-<code class="sig-name descname">makecolors</code><span class="sig-paren">(</span><em class="sig-param">fcodes</em>, <em class="sig-param">c=None</em><span class="sig-paren">)</span><a class="headerlink" href="#makecolors" title="Permalink to this definition">¶</a></dt>
-<dd><p>Make colors according to flag codes.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>fcodes</strong> – (<em>list of string</em>) Flag code list.</p></li>
-<li><p><strong>c</strong> – (<em>list of color</em>) Option colors for flag types.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>(<em>list of color</em>) Colors with the length as same as fcodes.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="function">
-<dt id="makearray">
-<code class="sig-name descname">makearray</code><span class="sig-paren">(</span><em class="sig-param">fcodes</em>, <em class="sig-param">v=None</em><span class="sig-paren">)</span><a class="headerlink" href="#makearray" title="Permalink to this definition">¶</a></dt>
-<dd><p>Make array according to flag codes.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>fcodes</strong> – (<em>list of string</em>) Flag code list.</p></li>
-<li><p><strong>v</strong> – (<em>list of float</em>) Option values for flag types.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>(<em>array_like</em>) Array with the length as same as fcodes.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="function">
-<dt id="flagchart">
-<code class="sig-name descname">flagchart</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">fcodes</em>, <em class="sig-param">dates=None</em>, <em class="sig-param">title='Flag chart'</em><span class="sig-paren">)</span><a class="headerlink" href="#flagchart" title="Permalink to this definition">¶</a></dt>
-<dd><p>Open a flag chart form for mannual flagging.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>data</strong> – (<em>array_like</em>) Data array.</p></li>
-<li><p><strong>fcodes</strong> – (<em>list of string</em>) Flag code list.</p></li>
-<li><p><strong>dates</strong> – (<em>list of datetime</em>) X datetime data.</p></li>
-<li><p><strong>title</strong> – (<em>string</em>) Chart title.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>(<em>list of string</em>) Result flag code list.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="function">
-<dt id="bc_loading_effect">
-<code class="sig-name descname">bc_loading_effect</code><span class="sig-paren">(</span><em class="sig-param">bc</em>, <em class="sig-param">atn</em>, <em class="sig-param">avenum=4</em>, <em class="sig-param">refine=True</em>, <em class="sig-param">smooth=True</em>, <em class="sig-param">smoothnum=10</em><span class="sig-paren">)</span><a class="headerlink" href="#bc_loading_effect" title="Permalink to this definition">¶</a></dt>
-<dd><p>Black carbon loading effect compensation.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>bc</strong> – (<em>array</em>) Black carbon data array.</p></li>
-<li><p><strong>atn</strong> – (<em>array</em>) Attenuation data array.</p></li>
-<li><p><strong>avenum</strong> – (<em>int</em>) Point number used for average in compensation parameter calculation.
-Default is <cite>4</cite>.</p></li>
-<li><p><strong>refine</strong> – (<em>boolean</em>) Is refine compensation paramter or not. Default is <cite>True</cite>.</p></li>
-<li><p><strong>smooth</strong> – (<em>boolean</em>) Is smooth compensation paramter or not. Default is <cite>True</cite>.</p></li>
-<li><p><strong>smoothnum</strong> – (<em>int</em>) Point number used for smooth. Default is <cite>10</cite>.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Compensated BC data array and compensation parameters</p>
-</dd>
-</dl>
-</dd></dl>
-
-</div>
-
-
-          </div>
-        </div>
-      </div>
-    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
-        <img style="position: fixed; top: 0; right: 0; border: 0;" 
-        src="../../_static/forkme_right_orange_ff7600.png" 
-        alt="Fork me on GitHub">
-    </a>
-    <a target="_blank" href="https://gitter.im/meteoinfo/community">
-        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
-        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
-        alt="Join the chat at Gitter">
-    </a>
-
-
       <div class="clearer"></div>
     </div>
     <div class="related" role="navigation" aria-label="related navigation">
@@ -311,12 +312,13 @@ Default is <cite>4</cite>.</p></li>
 
           <li class="nav-item nav-item-1"><a href="../index.html" >Documentation</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="index.html" >OutlierFlag</a> &#187;</li>
-          <li class="nav-item nav-item-3"><a href="script.html" >Using functions in MeteoInfoLab script</a> &#187;</li> 
+          <li class="nav-item nav-item-3"><a href="script.html" >Using functions in MeteoInfoLab script</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">qaqc Jython module</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2010-2020, MeteoInfo developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+        &#169; Copyright 2010-2021, MeteoInfo developers.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
     </div>
   </body>
 </html>
