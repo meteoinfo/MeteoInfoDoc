@@ -1,8 +1,8 @@
 .. _examples-meteoinfolab-satellite-toms_ozone:
 
-*******************
+********************
 TOMS ozone Grid data
-*******************
+********************
 
 This example code illustrates how to access and visualize a TOMS ozone grid data.
 

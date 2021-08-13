@@ -1,8 +1,8 @@
 .. _examples-meteoinfolab-trajectory-tropical_cyclone:
 
-*******************
+*********************
 Tropical cyclone plot
-*******************
+*********************
 
 One tropical cyclone
 ====================

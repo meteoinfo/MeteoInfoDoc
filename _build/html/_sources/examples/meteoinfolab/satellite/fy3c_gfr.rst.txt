@@ -1,8 +1,8 @@
 .. _examples-meteoinfolab-satellite-fy3c_gfr:
 
-*******************
+**********************
 FY-3C global fire data
-*******************
+**********************
 
 This example code illustrates how to access and visualize a FY-3C satellite global fire
 data.

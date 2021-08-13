@@ -4,17 +4,16 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>MeteoInfo 1.4.6 was released (2017-7-31) &#8212; MeteoInfo 3.0 documentation</title>
-    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxdoc.css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="MeteoInfo 1.4.5 was released (2017-7-14)" href="meteoinfo_1.4.5.html" />
@@ -57,7 +56,7 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="meteoinfo-1-4-6-was-released-2017-7-31">
+  <section id="meteoinfo-1-4-6-was-released-2017-7-31">
 <span id="news-meteoinfo-1-4-6"></span><h1>MeteoInfo 1.4.6 was released (2017-7-31)<a class="headerlink" href="#meteoinfo-1-4-6-was-released-2017-7-31" title="Permalink to this headline">¶</a></h1>
 <p>Several 3D plot function were added in Axes3D class, including <code class="docutils literal notranslate"><span class="pre">plot()</span></code>, <code class="docutils literal notranslate"><span class="pre">scatter()</span></code>,
 <code class="docutils literal notranslate"><span class="pre">contour()</span></code>, <code class="docutils literal notranslate"><span class="pre">contourf()</span></code>, <code class="docutils literal notranslate"><span class="pre">imshow()</span></code>, <code class="docutils literal notranslate"><span class="pre">plot_surface()</span></code>, <code class="docutils literal notranslate"><span class="pre">plot_wireframe()</span></code> and
@@ -73,7 +72,7 @@
 <span class="n">title</span><span class="p">(</span><span class="s1">&#39;3D plot example&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<img alt="../_images/plot_3d1.png" src="../_images/plot_3d1.png" />
+<img alt="../_images/plot_3d.png" src="../_images/plot_3d.png" />
 <p><strong>Scatter plots</strong>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">z</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">20</span> <span class="o">*</span> <span class="n">z</span><span class="p">)</span>
@@ -87,7 +86,7 @@
 <span class="n">title</span><span class="p">(</span><span class="s1">&#39;Point 3D plot example&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<img alt="../_images/scatter_3d1.png" src="../_images/scatter_3d1.png" />
+<img alt="../_images/scatter_3d.png" src="../_images/scatter_3d.png" />
 <p><strong>Wireframe and contour plots</strong>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.7</span>
 <span class="n">phi_ext</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">*</span> <span class="mf">0.5</span>
@@ -106,7 +105,7 @@
 <span class="n">title</span><span class="p">(</span><span class="s1">&#39;Wireframe and contour 3D plot example&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<img alt="../_images/wireframe_contour1.png" src="../_images/wireframe_contour1.png" />
+<img alt="../_images/wireframe_contour.png" src="../_images/wireframe_contour.png" />
 <p><strong>Wireframe and contourf plots</strong>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.7</span>
 <span class="n">phi_ext</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">*</span> <span class="mf">0.5</span>
@@ -125,7 +124,7 @@
 <span class="n">title</span><span class="p">(</span><span class="s1">&#39;Wireframe and contourf 3D plot example&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<img alt="../_images/wireframe_contourf1.png" src="../_images/wireframe_contourf1.png" />
+<img alt="../_images/wireframe_contourf.png" src="../_images/wireframe_contourf.png" />
 <p><strong>Surface plots</strong>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.7</span>
 <span class="n">phi_ext</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">*</span> <span class="mf">0.5</span>
@@ -142,7 +141,7 @@
 <span class="n">title</span><span class="p">(</span><span class="s1">&#39;Surface 3D plot example&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<img alt="../_images/surface_11.png" src="../_images/surface_11.png" />
+<img alt="../_images/surface_1.png" src="../_images/surface_1.png" />
 <p><strong>Image plots</strong>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;D:/Temp/nc/air_clm.nc&#39;</span>
 <span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
@@ -163,7 +162,7 @@
 <span class="n">title</span><span class="p">(</span><span class="s1">&#39;3D imshow x direction example&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<img alt="../_images/imshow_xdir_3d1.png" src="../_images/imshow_xdir_3d1.png" />
+<img alt="../_images/imshow_xdir_3d.png" src="../_images/imshow_xdir_3d.png" />
 <p><strong>Trajectory plots</strong>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Open trajectory data and get trajectory layer</span>
 <span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;D:/Temp/HYSPLIT/traj_20131211_00&#39;</span>
@@ -193,8 +192,8 @@
 <span class="n">title</span><span class="p">(</span><span class="s1">&#39;3D trajectory example&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<img alt="../_images/trajectory_3d_11.png" src="../_images/trajectory_3d_11.png" />
-</div>
+<img alt="../_images/trajectory_3d_1.png" src="../_images/trajectory_3d_1.png" />
+</section>
 
 
             <div class="clearer"></div>
@@ -268,7 +267,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2021, MeteoInfo developers.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
     </div>
   </body>
 </html>

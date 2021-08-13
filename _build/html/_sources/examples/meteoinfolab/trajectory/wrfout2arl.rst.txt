@@ -1,8 +1,8 @@
 .. _examples-meteoinfolab-trajectory-wrfout2arl:
 
-*******************
+********************************
 Convert WRF out data to ARL data
-*******************
+********************************
 
 ARL meteorological data format is specified using in HYSPLIT model. This is an example script
 for converting WRF out netCDF data to ARL data.

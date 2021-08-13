@@ -1,8 +1,8 @@
 .. _examples-meteoinfolab-satellite-mod10a1_snow:
 
-*******************
+*************************
 MODIS snow data - MOD10A1
-*******************
+*************************
 
 This example code illustrates how to access and visualize a MODIS snow albedo (MOD10A1)
 data. The MODIS land products are produced and distributed in adjacent non-overlapping

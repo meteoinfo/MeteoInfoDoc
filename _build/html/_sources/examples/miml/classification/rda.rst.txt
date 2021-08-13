@@ -1,8 +1,8 @@
 .. _examples-miml-classification-rda:
 
-********************************
+*********************************
 Regularized discriminant analysis
-********************************
+*********************************
 
 RDA is a compromise between LDA and QDA, which allows one to shrink the separate covariances 
 of QDA toward a common variance as in LDA. This method is very similar in flavor to ridge 
