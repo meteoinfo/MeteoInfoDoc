@@ -18,7 +18,33 @@ isosurface
 
     :returns: Legend
 
-    Example of plotting 3d isosurface of dust concentrations from dust model ::
+    Example of ``isosurface`` function ::
+
+        x = y = z = arange(-3, 3.1, 0.1)
+        xx,yy,zz = meshgrid(x, y, z)
+        v = xx*exp(-xx**2 - yy**2 - zz**2)
+
+        #Plot
+        lighting(position=[0,0,2,1], mat_specular=[1,1,1,1])
+        isosurface(x, y, z, v, 1e-5, color='c', edgecolor=None, nthread=4)
+        xlim(-3, 3)
+        xlabel('x')
+        ylabel('y')
+        zlabel('z')
+
+    .. image:: ../../../../_static/axes3dgl_isosurface.png
+
+    Example of 3D heart plot ::
+
+        a = linspace(-3, 3, 100)
+        x,y,z = meshgrid(a, a, a)
+        p = (x**2+(9/4.)*y**2+z**2-1)**3-x**2*z**3-(9/80.)*y**2*z**3
+        lighting()
+        isosurface(a, a, a, p, 0, facecolor='r', edgecolor=None, nthread=4)
+
+    .. image:: ../../../../_static/isosurface_heart.png
+
+    Example of plotting 3D ``isosurface`` of dust concentrations from dust model ::
 
         #Set date
         sdate = datetime.datetime(2019, 4, 17, 0)
@@ -51,12 +77,12 @@ isosurface
         ax = axes3d()
         ax.set_rotation(348)
         ax.set_elevation(-29)
-        ax.set_lighting(True)
+        lighting(True)
         levs = arange(0, 6000, 200)
         cols = makecolors(len(levs) + 1, cmap='MPL_terrain')
         cols[0] = 'w'
-        ls = ax.surf(lon1, lat1, elev, levs, colors=cols, edge=False)
-        ax.isosurface(lon, lat, height, dust, 100, color=[255,180,0,10], \
+        ls = surf(lon1, lat1, elev, levs, colors=cols, edge=False)
+        isosurface(lon, lat, height, dust, 100, color=[255,180,0,10], \
             edge=False, nthread=4)
         colorbar(ls)
         xlim(65, 155)

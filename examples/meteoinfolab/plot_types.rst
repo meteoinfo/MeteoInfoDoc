@@ -34,4 +34,21 @@ Plot types
    plot_types/plot_3d.rst
    plot_types/oblique_section_plot.rst
    plot_types/plot_3dgl.rst
+   ../../docs/meteoinfolab/plot/axes3dgl/plot3.rst
+   ../../docs/meteoinfolab/plot/axes3dgl/scatter3.rst
+   ../../docs/meteoinfolab/plot/axes3dgl/bar3.rst
+   ../../docs/meteoinfolab/plot/axes3dgl/stem3.rst
+   ../../docs/meteoinfolab/plot/axes3dgl/quiver3.rst
+   ../../docs/meteoinfolab/plot/axes3dgl/text3.rst
+   ../../docs/meteoinfolab/plot/axes3dgl/streamplot3.rst
+   ../../docs/meteoinfolab/plot/axes3dgl/slice3.rst
+   ../../docs/meteoinfolab/plot/axes3dgl/streamslice.rst
+   ../../docs/meteoinfolab/plot/axes3dgl/contourslice.rst
+   ../../docs/meteoinfolab/plot/axes3dgl/contourfslice.rst
+   ../../docs/meteoinfolab/plot/axes3dgl/imshow.rst
+   ../../docs/meteoinfolab/plot/axes3dgl/geoshow.rst
+   ../../docs/meteoinfolab/plot/axes3dgl/mesh.rst
+   ../../docs/meteoinfolab/plot/axes3dgl/surf.rst
+   ../../docs/meteoinfolab/plot/axes3dgl/isosurface.rst
    ../../docs/meteoinfolab/plot/axes3dgl/particles.rst
+   ../../docs/meteoinfolab/plot/axes3dgl/volumeplot.rst

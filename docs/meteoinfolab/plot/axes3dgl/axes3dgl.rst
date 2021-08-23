@@ -30,5 +30,21 @@ Methods:
 .. toctree::
    :maxdepth: 1
 
+   plot3.rst
+   scatter3.rst
+   bar3.rst
+   stem3.rst
+   quiver3.rst
+   text3.rst
+   streamplot3.rst
+   slice3.rst
+   streamslice.rst
+   contourslice.rst
+   contourfslice.rst
+   imshow.rst
+   geoshow.rst
+   mesh.rst
+   surf.rst
    isosurface.rst
    particles.rst
+   volumeplot.rst

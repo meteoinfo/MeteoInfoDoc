@@ -1,8 +1,8 @@
 .. _examples-meteoinfolab-trajectory-traj_meteo_data:
 
-*******************
+*****************************************
 Get meteorological data along trajectory
-*******************
+*****************************************
 
 Read trajectory data array from the endpoint data file. Read meteorological data arrays from 
 corresponding meteorological data file. Then interpolate the meteorological data to the endpoint 
