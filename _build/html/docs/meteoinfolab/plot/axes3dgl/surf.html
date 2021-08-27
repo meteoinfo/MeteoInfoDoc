@@ -1,0 +1,209 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>surf &#8212; MeteoInfo 3.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxdoc.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="isosurface" href="isosurface.html" />
+    <link rel="prev" title="mesh" href="mesh.html" /> 
+  </head><body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../../../index.html"><img src="../../../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="isosurface.html" title="isosurface"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="mesh.html" title="mesh"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../../../examples/index.html" >Examples</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../../../examples/meteoinfolab/index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../../../../examples/meteoinfolab/plot_types.html" accesskey="U">Plot types</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">surf</a></li> 
+      </ul>
+    </div>
+
+
+    <div class="document">
+
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="surf">
+<span id="docs-meteoinfolab-plotlib-axes3dgl-axes3dgl-surf"></span><h1>surf<a class="headerlink" href="#surf" title="Permalink to this headline">¶</a></h1>
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">Axes3DGL.surf(*args,</span> <span class="pre">**kwargs):</span></span></dt>
+<dd><p>creates a three-dimensional surface plot</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – (<em>array_like</em>) Optional. X coordinate array.</p></li>
+<li><p><strong>y</strong> – (<em>array_like</em>) Optional. Y coordinate array.</p></li>
+<li><p><strong>z</strong> – (<em>array_like</em>) 2-D z value array.</p></li>
+<li><p><strong>cmap</strong> – (<em>string</em>) Color map string.</p></li>
+<li><p><strong>lighting</strong> – (<em>bool</em>) Using light or not.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>3D surface graphic</p>
+</dd>
+</dl>
+<p>Example of 3D surface plot</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">y</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">meshgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">y</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">x</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
+<span class="n">surf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;MPL_gist_rainbow&#39;</span><span class="p">,</span>
+    <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;flat&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">colorbar</span><span class="p">(</span><span class="n">shrink</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">ticklen</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">zlim</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/surf_alpha.png" src="../../../../_images/surf_alpha.png" />
+<p>3D surface plot with lighting</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tx</span> <span class="o">=</span> <span class="n">ty</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">81</span><span class="p">)</span>
+<span class="n">xx</span><span class="p">,</span> <span class="n">yy</span> <span class="o">=</span> <span class="n">meshgrid</span><span class="p">(</span><span class="n">tx</span><span class="p">,</span> <span class="n">ty</span><span class="p">)</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">xx</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">yy</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mf">2.2204e-16</span>
+<span class="n">tz</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="o">/</span> <span class="n">r</span>
+
+<span class="c1">#Plot</span>
+<span class="n">lighting</span><span class="p">(</span><span class="n">position</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">mat_specular</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">surf</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">tz</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;interp&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">zlim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.4</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/surf_lighting.png" src="../../../../_images/surf_lighting.png" />
+<p>3D surface relief plot</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Relief data</span>
+<span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;D:/Temp/nc/elev.0.25-deg.nc&#39;</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+<span class="n">elev</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,::</span><span class="mi">4</span><span class="p">,::</span><span class="mi">4</span><span class="p">]</span>
+<span class="n">lon</span> <span class="o">=</span> <span class="n">elev</span><span class="o">.</span><span class="n">dimvalue</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">lat</span> <span class="o">=</span> <span class="n">elev</span><span class="o">.</span><span class="n">dimvalue</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">lon</span><span class="p">,</span> <span class="n">lat</span> <span class="o">=</span> <span class="n">meshgrid</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">)</span>
+
+<span class="c1">#Plot</span>
+<span class="n">axes3d</span><span class="p">()</span>
+<span class="n">grid</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">surf</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">elev</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;MPL_terrain&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;interp&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">zlim</span><span class="p">(</span><span class="o">-</span><span class="mi">8000</span><span class="p">,</span> <span class="mi">20000</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Longitude&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Latitude&#39;</span><span class="p">)</span>
+<span class="n">zlabel</span><span class="p">(</span><span class="s1">&#39;Altitude&#39;</span><span class="p">)</span>
+<span class="n">colorbar</span><span class="p">(</span><span class="n">shrink</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Surface 3D plot example&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/surf_relief.png" src="../../../../_images/surf_relief.png" />
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
+        <img style="position: fixed; top: 0; right: 0; border: 0;" 
+        src="../../../../_static/forkme_right_orange_ff7600.png" 
+        alt="Fork me on GitHub">
+    </a>
+    <a target="_blank" href="https://gitter.im/meteoinfo/community">
+        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
+        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
+        alt="Join the chat at Gitter">
+    </a>
+
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="mesh.html"
+                        title="previous chapter">mesh</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="isosurface.html"
+                        title="next chapter">isosurface</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../_sources/docs/meteoinfolab/plot/axes3dgl/surf.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="isosurface.html" title="isosurface"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="mesh.html" title="mesh"
+             >previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../../../examples/index.html" >Examples</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../../../examples/meteoinfolab/index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../../../../examples/meteoinfolab/plot_types.html" >Plot types</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">surf</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2021, MeteoInfo developers.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
+    </div>
+  </body>
+</html>

@@ -79,6 +79,58 @@
 <dd class="field-even"><p>(<em>array_like</em>) Maskouted data array.</p>
 </dd>
 </dl>
+<p>Maskout with polygon shapes</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">migl</span><span class="o">.</span><span class="n">get_sample_folder</span><span class="p">(),</span> <span class="s1">&#39;GrADS&#39;</span><span class="p">,</span> <span class="s1">&#39;model.ctl&#39;</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+<span class="n">ps</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;PS&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;10:60&#39;</span><span class="p">,</span><span class="s1">&#39;60:140&#39;</span><span class="p">]</span>
+<span class="n">lat</span> <span class="o">=</span> <span class="n">ps</span><span class="o">.</span><span class="n">dimvalue</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">lon</span> <span class="o">=</span> <span class="n">ps</span><span class="o">.</span><span class="n">dimvalue</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1">#maskout</span>
+<span class="n">m_china</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="s1">&#39;china&#39;</span><span class="p">)</span>
+<span class="n">ps</span> <span class="o">=</span> <span class="n">geolib</span><span class="o">.</span><span class="n">maskout</span><span class="p">(</span><span class="n">ps</span><span class="p">,</span> <span class="n">m_china</span><span class="o">.</span><span class="n">shapes</span><span class="p">(),</span> <span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">)</span>
+
+<span class="c1">#plot test</span>
+<span class="n">axesm</span><span class="p">()</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">))</span>
+<span class="n">layer</span> <span class="o">=</span> <span class="n">imshow</span><span class="p">(</span><span class="n">ps</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">scatter</span><span class="p">(</span><span class="n">ps</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Pressure - maskout&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Latitude&#39;</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Longitude&#39;</span><span class="p">)</span>
+<span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span>
+<span class="n">xlim</span><span class="p">(</span><span class="mi">70</span><span class="p">,</span> <span class="mi">140</span><span class="p">)</span>
+<span class="n">ylim</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">55</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/maskout_china.png" src="../../../../_images/maskout_china.png" />
+<p>Maskout with patches</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">migl</span><span class="o">.</span><span class="n">get_sample_folder</span><span class="p">(),</span> <span class="s1">&#39;GrADS&#39;</span><span class="p">,</span> <span class="s1">&#39;model.ctl&#39;</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+<span class="n">ps</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;PS&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;10:60&#39;</span><span class="p">,</span><span class="s1">&#39;60:140&#39;</span><span class="p">]</span>
+<span class="n">lat</span> <span class="o">=</span> <span class="n">ps</span><span class="o">.</span><span class="n">dimvalue</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">lon</span> <span class="o">=</span> <span class="n">ps</span><span class="o">.</span><span class="n">dimvalue</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1">#maskout</span>
+<span class="n">rect</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">([</span><span class="mi">71</span><span class="p">,</span><span class="mi">21</span><span class="p">],</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">circle</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">([</span><span class="mi">120</span><span class="p">,</span><span class="mi">30</span><span class="p">],</span> <span class="mi">10</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">ps</span> <span class="o">=</span> <span class="n">geolib</span><span class="o">.</span><span class="n">maskout</span><span class="p">(</span><span class="n">ps</span><span class="p">,</span> <span class="p">[</span><span class="n">circle</span><span class="p">,</span> <span class="n">rect</span><span class="p">],</span> <span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">)</span>
+<span class="n">ps</span><span class="p">[</span><span class="n">ps</span><span class="o">==</span><span class="n">nan</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1">#plot test</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">axesm</span><span class="p">()</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">))</span>
+<span class="n">layer</span> <span class="o">=</span> <span class="n">scatter</span><span class="p">(</span><span class="n">ps</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;WhBlGrYeRe&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">circle</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">rect</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Pressure&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Latitude&#39;</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Longitude&#39;</span><span class="p">)</span>
+<span class="n">yticks</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">50</span><span class="p">])</span>
+<span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/maskout_patches.png" src="../../../../_images/maskout_patches.png" />
 </dd></dl>
 
 </section>
