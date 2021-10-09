@@ -30,4 +30,6 @@ Example data files
 - `CAL_LID_L1-ValStage1-V3-01.2007-06-12T03-42-18ZN.hdf <data/CAL_LID_L1-ValStage1-V3-01.2007-06-12T03-42-18ZN.hdf>`_
 - `CAL_LID_L2_VFM-Standard-V4-10.2013-12-08T04-46-10ZD.hdf <data/CAL_LID_L2_VFM-Standard-V4-10.2013-12-08T04-46-10ZD.hdf>`_
 - `sagittal.png <data/sagittal.png>`_
+- `ERA5_2017.Aug22.2dpl.all.grib <data/ERA5_2017.Aug22.2dpl.all.grib>`_
+- `ERA5_2017.Aug22.3dpl.grib <data/ERA5_2017.Aug22.3dpl.grib>`_
 
