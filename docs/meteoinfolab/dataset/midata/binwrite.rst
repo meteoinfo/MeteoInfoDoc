@@ -8,7 +8,8 @@ binwrite
 .. currentmodule:: mipylib.dataset.midata
 
 .. function:: binwrite(fn, data, byteorder='little_endian', append=False)
-Write array data into a binary data file.
+
+    Write array data into a binary data file.
     
     :param fn: (*string*) Path needed to locate binary file.
     :param data: (*array_like*) A numeric array variable of any dimensionality.
