@@ -22,4 +22,4 @@ Write array data into a binary data file.
         fn = 'D:/Temp/grads/model.ctl'
         f = addfile(fn)
         ps = f['PS'][:,:,:]
-        binwrite('D:/Temp/grads/ncwrite_test.nc', ps)
+        binwrite('D:/Temp/grads/binwrite_test.bin', ps)
