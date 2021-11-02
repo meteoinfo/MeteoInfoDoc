@@ -4,17 +4,16 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Tropical cyclone plot &#8212; MeteoInfo 3.0 documentation</title>
-    <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinxdoc.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
-    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Trajectory multi-color plot" href="traj_multicolor.html" />
@@ -59,9 +58,9 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="tropical-cyclone-plot">
+  <section id="tropical-cyclone-plot">
 <span id="examples-meteoinfolab-trajectory-tropical-cyclone"></span><h1>Tropical cyclone plot<a class="headerlink" href="#tropical-cyclone-plot" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="one-tropical-cyclone">
+<section id="one-tropical-cyclone">
 <h2>One tropical cyclone<a class="headerlink" href="#one-tropical-cyclone" title="Permalink to this headline">¶</a></h2>
 <p>Read an ASCII data file with tropical cyclone data, and extract longitude and latitude data.
 Then plot the cyclone line and points.</p>
@@ -98,8 +97,8 @@ Then plot the cyclone line and points.</p>
 </pre></div>
 </div>
 <img alt="../../../_images/typhoon_pathway.png" src="../../../_images/typhoon_pathway.png" />
-</div>
-<div class="section" id="multiple-tropical-cyclones">
+</section>
+<section id="multiple-tropical-cyclones">
 <h2>Multiple tropical cyclones<a class="headerlink" href="#multiple-tropical-cyclones" title="Permalink to this headline">¶</a></h2>
 <p>Read mutiple tropical cyclones longitude/latitude data from a netCDF data file
 (<a class="reference external" href="https://climatedataguide.ucar.edu/climate-data/ibtracs-tropical-cyclone-best-track-data">https://climatedataguide.ucar.edu/climate-data/ibtracs-tropical-cyclone-best-track-data</a>)
@@ -128,16 +127,13 @@ and plot them.</p>
 </pre></div>
 </div>
 <img alt="../../../_images/tropical_cyclone.png" src="../../../_images/tropical_cyclone.png" />
-</div>
-<div class="section" id="multiple-tropical-cyclones-with-wind-speed">
+</section>
+<section id="multiple-tropical-cyclones-with-wind-speed">
 <h2>Multiple tropical cyclones with wind speed<a class="headerlink" href="#multiple-tropical-cyclones-with-wind-speed" title="Permalink to this headline">¶</a></h2>
 <p>Read mutiple tropical cyclones data from a txt data file
 (<a class="reference external" href="http://tcdata.typhoon.gov.cn/zjljsjj_zlhq.html">http://tcdata.typhoon.gov.cn/zjljsjj_zlhq.html</a>)
 and plot them. The colors of the line indicate wind speed.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Create typhoon layer</span>
-<span class="n">layer</span> <span class="o">=</span> <span class="n">maplayer</span><span class="p">(</span><span class="n">shapetype</span><span class="o">=</span><span class="s1">&#39;line&#39;</span><span class="p">)</span>
-
-<span class="c1"># Read typhoon data file</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read typhoon data file</span>
 <span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;D:/Temp/ascii/CH2015BST.txt&#39;</span>
 <span class="n">tf</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
 <span class="n">lons</span> <span class="o">=</span> <span class="p">[]</span>
@@ -160,21 +156,17 @@ and plot them. The colors of the line indicate wind speed.</p>
         <span class="n">prss</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">prs</span><span class="p">)</span>
         <span class="n">ws</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span>
         <span class="n">wss</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ws</span><span class="p">)</span>
-    <span class="n">layer</span><span class="o">.</span><span class="n">addshape</span><span class="p">(</span><span class="n">lons</span><span class="p">,</span> <span class="n">lats</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="n">prss</span><span class="p">,</span> <span class="n">m</span><span class="o">=</span><span class="n">wss</span><span class="p">)</span>
-    <span class="n">lons</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">lats</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">prss</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">wss</span> <span class="o">=</span> <span class="p">[]</span>
-
-<span class="c1">#Set typhoon layer legend</span>
-<span class="n">levs</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">61</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-<span class="n">cols</span> <span class="o">=</span> <span class="n">makecolors</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">levs</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">ls</span> <span class="o">=</span> <span class="n">makesymbolspec</span><span class="p">(</span><span class="s1">&#39;line&#39;</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="n">levs</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="n">cols</span><span class="p">,</span> <span class="n">field</span><span class="o">=</span><span class="s1">&#39;Geometry_M&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">lons</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nan</span><span class="p">)</span>
+    <span class="n">lats</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nan</span><span class="p">)</span>
+    <span class="n">prss</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nan</span><span class="p">)</span>
+    <span class="n">wss</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nan</span><span class="p">)</span>
 
 <span class="c1"># Plot</span>
 <span class="n">axesm</span><span class="p">()</span>
 <span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="p">[</span><span class="mi">200</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">200</span><span class="p">])</span>
-<span class="n">geoshow</span><span class="p">(</span><span class="n">layer</span><span class="p">,</span> <span class="n">symbolspec</span><span class="o">=</span><span class="n">ls</span><span class="p">)</span>
+<span class="n">levs</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">61</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">cols</span> <span class="o">=</span> <span class="n">makecolors</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">levs</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">layer</span> <span class="o">=</span> <span class="n">plot</span><span class="p">(</span><span class="n">lons</span><span class="p">,</span> <span class="n">lats</span><span class="p">,</span> <span class="n">zvalues</span><span class="o">=</span><span class="n">wss</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="n">levs</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="n">cols</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Wind speed (m/s)&#39;</span><span class="p">)</span>
 <span class="n">xlim</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">210</span><span class="p">)</span>
 <span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
@@ -182,8 +174,8 @@ and plot them. The colors of the line indicate wind speed.</p>
 </pre></div>
 </div>
 <img alt="../../../_images/typhoon_multicolor.png" src="../../../_images/typhoon_multicolor.png" />
-</div>
-</div>
+</section>
+</section>
 
 
             <div class="clearer"></div>
@@ -269,7 +261,7 @@ and plot them. The colors of the line indicate wind speed.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2021, MeteoInfo developers.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
     </div>
   </body>
 </html>
