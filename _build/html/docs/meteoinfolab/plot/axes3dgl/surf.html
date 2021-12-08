@@ -126,6 +126,22 @@
 </pre></div>
 </div>
 <img alt="../../../../_images/surf_relief.png" src="../../../../_images/surf_relief.png" />
+<p>Surface plot with texture map</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">meshgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">y</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="n">fn</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">migl</span><span class="o">.</span><span class="n">get_sample_folder</span><span class="p">(),</span> <span class="s1">&#39;image&#39;</span><span class="p">,</span> <span class="s1">&#39;Lenna.png&#39;</span><span class="p">)</span>
+<span class="n">lena</span> <span class="o">=</span> <span class="n">imagelib</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+
+<span class="c1">#Plot</span>
+<span class="n">lighting</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">surf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;texturemap&#39;</span><span class="p">,</span> <span class="n">cdata</span><span class="o">=</span><span class="n">lena</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Surface 3D plot texturemap example&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/surf_texturemap.png" src="../../../../_images/surf_texturemap.png" />
 </dd></dl>
 
 </div>

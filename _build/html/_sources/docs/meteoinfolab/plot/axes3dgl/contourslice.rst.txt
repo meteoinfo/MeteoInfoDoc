@@ -38,3 +38,19 @@ contourslice
         ylim(-2, 2)
 
     .. image:: ../../../../_static/contourslice_1.png
+
+    Vertical cross section contour slice with start and end x/y points ::
+
+        X=Y=Z = arange(-2, 2.1, 0.2)
+        X,Y,Z = meshgrid(X, Y, Z)
+        V = X*exp(-X**2-Y**2-Z**2)
+
+        xslice = [0.8]
+
+        levs = arange(-0.2, 0.4, 0.01)
+        contourslice(X, Y, Z, V, levs, xslice=xslice, xyslice=[-2,-1,2,1])
+        colorbar()
+        xlim(-2, 2)
+        ylim(-2, 2)
+
+    .. image:: ../../../../_static/contourslice_xyslice.png

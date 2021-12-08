@@ -264,3 +264,48 @@ Plot total attenuated backscatter.
     title('{0}\n{1}'.format(basename, vname))
 
 .. image:: ../../../_static/calipso_l1.png
+
+Plot 3D cross section of extinction coefficient.
+
+::
+
+    f = addfile('D:/Temp/satellite/calipso/CAL_LID_L2_05kmAPro-Standard-V4-20.2006-09-01T08-55-57ZD_Subset.hdf')
+    EC = f['Extinction_Coefficient_532'][:]
+    EC = EC.T
+    EC[EC==nan] = -1
+    Lat = f['Latitude'][:,0]
+    Lon = f['Longitude'][:,0]
+
+    alt1 = arange(-0.5,20.08,0.06).tolist()
+    alt2 = arange1(20.2,56,0.18).tolist()
+    alt = array(alt1 + alt2)
+
+    Lon = Lon[np.newaxis,:]
+    Lon = Lon.repeat(len(alt),0)
+    Lat = Lat[np.newaxis,:]
+    Lat = Lat.repeat(len(alt),0)
+    alt = alt[:,np.newaxis]
+    alt = alt.repeat(Lon.shape[1],1)
+
+    fn = os.path.join(migl.get_map_folder(), 'world.topo.bathy.jpg')
+    land = georead(fn)
+
+    #plot
+    levs = arange(0,0.41,0.01)
+    cols = makecolors(len(levs)+1, cmap='rainbow')
+    cols[0] = miutil.getcolor(cols[0], alpha=0.5)
+    ax = axes3d()
+    grid(False)
+    #lighting()
+    geoshow(land)
+    surf(Lon[::10,::10], Lat[::10,::10], alt[::10,::10], levs, colors=cols,
+        facecolor='texturemap', cdata=EC, edgecolor=None)
+    colorbar(aspect=30, ticks=[0,0.1,0.2,0.3,0.4,0.5])
+    zlim(0,8)
+    xlim(-100,140)
+    ylim(-90,90)
+    xlabel('Longitue')
+    ylabel('Latitude')
+    zlabel('Height (km)')
+
+.. image:: ../../../_static/calipso_3d.png

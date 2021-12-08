@@ -35,6 +35,21 @@ slice3
 
     .. image:: ../../../../_static/slice_3d.png
 
+    Vertical cross section slice with start and end x/y points ::
+
+        X=Y=Z = arange(-2, 2.1, 0.2)
+        X,Y,Z = meshgrid(X, Y, Z)
+        V = X*exp(-X**2-Y**2-Z**2)
+
+        slice3(X, Y, Z, V, xslice=0, yslice=0, zslice=0)
+        slice3(X, Y, Z, V, xyslice=[-2,-2,2,2])
+        slice3(X, Y, Z, V, xyslice=[-2,2,2,-2])
+        colorbar()
+        xlim(-2, 2)
+        ylim(-2, 2)
+
+    .. image:: ../../../../_static/slice3_xyslice.png
+
     3D slice plot of dust concentration ::
 
         #Set date

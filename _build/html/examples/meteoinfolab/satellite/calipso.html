@@ -308,6 +308,48 @@ LaRC CALIPSO data file.</p>
 </pre></div>
 </div>
 <img alt="../../../_images/calipso_l1.png" src="../../../_images/calipso_l1.png" />
+<p>Plot 3D cross section of extinction coefficient.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="s1">&#39;D:/Temp/satellite/calipso/CAL_LID_L2_05kmAPro-Standard-V4-20.2006-09-01T08-55-57ZD_Subset.hdf&#39;</span><span class="p">)</span>
+<span class="n">EC</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;Extinction_Coefficient_532&#39;</span><span class="p">][:]</span>
+<span class="n">EC</span> <span class="o">=</span> <span class="n">EC</span><span class="o">.</span><span class="n">T</span>
+<span class="n">EC</span><span class="p">[</span><span class="n">EC</span><span class="o">==</span><span class="n">nan</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<span class="n">Lat</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;Latitude&#39;</span><span class="p">][:,</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">Lon</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;Longitude&#39;</span><span class="p">][:,</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">alt1</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">20.08</span><span class="p">,</span><span class="mf">0.06</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">alt2</span> <span class="o">=</span> <span class="n">arange1</span><span class="p">(</span><span class="mf">20.2</span><span class="p">,</span><span class="mi">56</span><span class="p">,</span><span class="mf">0.18</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">alt</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="n">alt1</span> <span class="o">+</span> <span class="n">alt2</span><span class="p">)</span>
+
+<span class="n">Lon</span> <span class="o">=</span> <span class="n">Lon</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">,:]</span>
+<span class="n">Lon</span> <span class="o">=</span> <span class="n">Lon</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">alt</span><span class="p">),</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">Lat</span> <span class="o">=</span> <span class="n">Lat</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">,:]</span>
+<span class="n">Lat</span> <span class="o">=</span> <span class="n">Lat</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">alt</span><span class="p">),</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">alt</span> <span class="o">=</span> <span class="n">alt</span><span class="p">[:,</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>
+<span class="n">alt</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">Lon</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">fn</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">migl</span><span class="o">.</span><span class="n">get_map_folder</span><span class="p">(),</span> <span class="s1">&#39;world.topo.bathy.jpg&#39;</span><span class="p">)</span>
+<span class="n">land</span> <span class="o">=</span> <span class="n">georead</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+
+<span class="c1">#plot</span>
+<span class="n">levs</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.41</span><span class="p">,</span><span class="mf">0.01</span><span class="p">)</span>
+<span class="n">cols</span> <span class="o">=</span> <span class="n">makecolors</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">levs</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;rainbow&#39;</span><span class="p">)</span>
+<span class="n">cols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">miutil</span><span class="o">.</span><span class="n">getcolor</span><span class="p">(</span><span class="n">cols</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">axes3d</span><span class="p">()</span>
+<span class="n">grid</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="c1">#lighting()</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="n">land</span><span class="p">)</span>
+<span class="n">surf</span><span class="p">(</span><span class="n">Lon</span><span class="p">[::</span><span class="mi">10</span><span class="p">,::</span><span class="mi">10</span><span class="p">],</span> <span class="n">Lat</span><span class="p">[::</span><span class="mi">10</span><span class="p">,::</span><span class="mi">10</span><span class="p">],</span> <span class="n">alt</span><span class="p">[::</span><span class="mi">10</span><span class="p">,::</span><span class="mi">10</span><span class="p">],</span> <span class="n">levs</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="n">cols</span><span class="p">,</span>
+    <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;texturemap&#39;</span><span class="p">,</span> <span class="n">cdata</span><span class="o">=</span><span class="n">EC</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">colorbar</span><span class="p">(</span><span class="n">aspect</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">ticks</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.3</span><span class="p">,</span><span class="mf">0.4</span><span class="p">,</span><span class="mf">0.5</span><span class="p">])</span>
+<span class="n">zlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span><span class="mi">140</span><span class="p">)</span>
+<span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">90</span><span class="p">,</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Longitue&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Latitude&#39;</span><span class="p">)</span>
+<span class="n">zlabel</span><span class="p">(</span><span class="s1">&#39;Height (km)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../_images/calipso_3d.png" src="../../../_images/calipso_3d.png" />
 </div>
 
 

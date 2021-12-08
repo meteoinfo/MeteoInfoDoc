@@ -67,3 +67,26 @@ streamslice
         antialias()
 
     .. image:: ../../../../_static/streamslice_color.png
+
+    Vertical cross section stream slice with start and end x/y points ::
+
+        # Make the grid
+        x, y, z = meshgrid(arange(-1.5, 1.6, 0.1),
+                           arange(-1.5, 1.6, 0.1),
+                           arange(-1.5, 1.6, 0.1))
+
+        # Make the direction data for the arrows
+        u = x + cos(4*x) + 3         # x-component of vector field
+        v = sin(4*x) - sin(2*y)      # y-component of vector field
+        w = -z                       # z-component of vector field
+        speed = sqrt(u*u + v*v + w*w)
+
+        streamslice(x[0,0,:], y[0,:,0], z[:,0,0], u, v, w, speed, interval=10,
+            xyslice=[-1.5,1,1.5,-1])
+        colorbar()
+        xlim(-1.5, 1.5)
+        ylim(-1.5, 1.5)
+        zlim(-1.5, 1.5)
+        antialias()
+
+    .. image:: ../../../../_static/streamslice_xyslice.png

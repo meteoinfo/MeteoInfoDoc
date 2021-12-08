@@ -66,3 +66,20 @@ surf
         title('Surface 3D plot example')
 
     .. image:: ../../../../_static/surf_relief.png
+
+    Surface plot with texture map ::
+
+        x = linspace(-2, 2, 25)
+        y = linspace(-2, 2, 25)
+        x, y = meshgrid(x, y)
+        z = x * exp(-x ** 2 - y ** 2)
+
+        fn = os.path.join(migl.get_sample_folder(), 'image', 'Lenna.png')
+        lena = imagelib.imread(fn)
+
+        #Plot
+        lighting(True)
+        surf(x, y, z, facecolor='texturemap', cdata=lena, edgecolor=None)
+        title('Surface 3D plot texturemap example')
+
+    .. image:: ../../../../_static/surf_texturemap.png
