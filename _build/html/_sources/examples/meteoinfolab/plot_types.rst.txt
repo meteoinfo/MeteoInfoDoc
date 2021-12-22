@@ -52,3 +52,4 @@ Plot types
    ../../docs/meteoinfolab/plot/axes3dgl/isosurface.rst
    ../../docs/meteoinfolab/plot/axes3dgl/particles.rst
    ../../docs/meteoinfolab/plot/axes3dgl/volumeplot.rst
+   plot_types/plot_3d_earth.rst
