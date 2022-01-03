@@ -287,7 +287,7 @@ Plot 3D cross section of extinction coefficient.
     alt = alt[:,np.newaxis]
     alt = alt.repeat(Lon.shape[1],1)
 
-    fn = os.path.join(migl.get_map_folder(), 'world.topo.bathy.jpg')
+    fn = os.path.join(migl.get_map_folder(), 'world_topo.jpg')
     land = georead(fn)
 
     #plot
