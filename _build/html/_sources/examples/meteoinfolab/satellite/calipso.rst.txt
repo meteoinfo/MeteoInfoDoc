@@ -287,7 +287,7 @@ Plot 3D cross section of extinction coefficient.
     alt = alt[:,np.newaxis]
     alt = alt.repeat(Lon.shape[1],1)
 
-    fn = os.path.join(migl.get_map_folder(), 'world.topo.bathy.jpg')
+    fn = os.path.join(migl.get_map_folder(), 'world_topo.jpg')
     land = georead(fn)
 
     #plot
@@ -309,3 +309,62 @@ Plot 3D cross section of extinction coefficient.
     zlabel('Height (km)')
 
 .. image:: ../../../_static/calipso_3d.png
+
+Plot total attenuated backscatter in earth 3D axes.
+
+::
+
+    # Add file
+    fn = 'D:/Temp/hdf/CAL_LID_L1-ValStage1-V3-01.2007-06-12T03-42-18ZN.hdf'
+    f = addfile(fn)
+
+    # Read data
+    x1 = 15000
+    x2 = 30001
+    nx = x2 - x1
+    h1 = 0  # km
+    h2 = 20  # km
+    nz = 500  # Number of pixels in the vertical
+    vname = 'Total_Attenuated_Backscatter_532'
+    var = f[vname]
+    data = var[x1:x2,:]
+    data = rot90(data)
+    Lat = f['Latitude'][x1:x2,0]
+    Lon = f['Longitude'][x1:x2,0]
+    alt = f['metadata']['Lidar_Data_Altitudes']
+    alt = alt[::-1]
+
+    # Interpolate data on a regular grid
+    x = arange(x1, x2)
+    h = linspace(h1, h2, nz)
+    data = interpolate.linint2(x, alt, data, x, h)
+
+    Lon = Lon[np.newaxis,:]
+    Lon = Lon.repeat(nz,0)
+    Lat = Lat[np.newaxis,:]
+    Lat = Lat.repeat(nz,0)
+    alt = h[:,np.newaxis]
+    alt = alt.repeat(Lon.shape[1],1)
+
+    # Plot
+    ax = axes3d(earth=True)
+    ax.lonlat(color='c')
+    levs = [0.0001,0.0002,0.0003,0.0004,0.0005,0.0006,0.0007,0.0008,0.0009,
+        0.001,0.0015,0.002,0.0025,0.003,0.0035,0.004,0.0045,0.005,0.0055,0.006,
+        0.0065,0.007,0.0075,0.008,0.01,0.02,0.03,0.04,0.05,0.06,0.07,0.08,0.09,0.1]
+    ss = 20
+    surf(Lon[::ss,::ss], Lat[::ss,::ss], alt[::ss,::ss]*30, levs,
+        facecolor='texturemap', cdata=data[::-1], edgecolor=None,
+        cmap='calipo_standard', interpolation='bilinear')
+
+    ax.set_rotation(333)
+    ax.set_elevation(-47)
+    ax.set_head(270)
+    ax.set_pitch(-90)
+
+    v = 820
+    axis([-v,v,-v,v,-v,v])
+
+    colorbar(tickcolor='w', xshift=80)
+
+.. image:: ../../../_static/calipso_l1_3d_earth.png
