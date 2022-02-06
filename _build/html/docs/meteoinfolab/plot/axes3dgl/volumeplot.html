@@ -75,8 +75,13 @@
 <li><p><strong>cmap</strong> – (<em>string</em>) Color map string.</p></li>
 <li><p><strong>vmin</strong> – (<em>float</em>) Minimum value for particle plotting.</p></li>
 <li><p><strong>vmax</strong> – (<em>float</em>) Maximum value for particle plotting.</p></li>
-<li><p><strong>alpha_min</strong> – (<em>float</em>) Minimum alpha value.</p></li>
-<li><p><strong>alpha_max</strong> – (<em>float</em>) Maximum alpha value.</p></li>
+<li><p><strong>ray_casting</strong> – (<em>str</em>) Ray casting algorithm [‘basic’ | ‘max_value’ | ‘specular’].
+Default is ‘max_value’.</p></li>
+<li><p><strong>brightness</strong> – (<em>float</em>) Volume brightness. Default is 1.</p></li>
+<li><p><strong>alpha_min</strong> – (<em>float</em>) Minimum alpha value. Default is 0.</p></li>
+<li><p><strong>alpha_max</strong> – (<em>float</em>) Maximum alpha value. Default is 1.</p></li>
+<li><p><strong>opacity_nodes</strong> – (<em>list of float</em>) Opacity nodes. Default is None.</p></li>
+<li><p><strong>opacity_levels</strong> – (<em>list of float</em>) Opacity levels. Default is [0., 1.].</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -100,6 +105,45 @@
 </pre></div>
 </div>
 <img alt="../../../../_images/volumeplot_1.png" src="../../../../_images/volumeplot_1.png" />
+<p><cite>specular</cite> ray casting algorithm</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;D:/Temp/image/sagittal.png&#39;</span>
+<span class="n">data1</span> <span class="o">=</span> <span class="n">imagelib</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+<span class="n">data1</span> <span class="o">=</span> <span class="n">data1</span><span class="p">[:,:,</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">data1</span> <span class="o">=</span> <span class="n">data1</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">88</span><span class="p">,</span><span class="mi">300</span><span class="p">,</span><span class="mi">600</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">([</span><span class="mi">176</span><span class="p">,</span><span class="mi">300</span><span class="p">,</span><span class="mi">300</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;int&#39;</span><span class="p">)</span>
+<span class="n">data</span><span class="p">[:</span><span class="mi">88</span><span class="p">]</span> <span class="o">=</span> <span class="n">data1</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">,:,:</span><span class="mi">300</span><span class="p">]</span>
+<span class="n">data</span><span class="p">[</span><span class="mi">88</span><span class="p">:]</span> <span class="o">=</span> <span class="n">data1</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">,:,</span><span class="mi">300</span><span class="p">:]</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">swapaxes</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Plot...&#39;</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">axes3d</span><span class="p">(</span><span class="n">orthographic</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="s1">&#39;equal&#39;</span><span class="p">,</span> <span class="n">clip_plane</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">bgcolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_draw_box</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">grid</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">volumeplot</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;MPL_sstanom&#39;</span><span class="p">,</span> <span class="n">ray_casting</span><span class="o">=</span><span class="s1">&#39;specular&#39;</span><span class="p">,</span> <span class="n">brightness</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/volume_sagittal_specular.png" src="../../../../_images/volume_sagittal_specular.png" />
+<p>Set transfer function with <cite>opacity_nodes</cite> and <cite>opacity_levels</cite> arguments</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;D:/Temp/image/sagittal.png&#39;</span>
+<span class="n">data1</span> <span class="o">=</span> <span class="n">imagelib</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+<span class="n">data1</span> <span class="o">=</span> <span class="n">data1</span><span class="p">[:,:,</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">data1</span> <span class="o">=</span> <span class="n">data1</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">88</span><span class="p">,</span><span class="mi">300</span><span class="p">,</span><span class="mi">600</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">([</span><span class="mi">176</span><span class="p">,</span><span class="mi">300</span><span class="p">,</span><span class="mi">300</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;int&#39;</span><span class="p">)</span>
+<span class="n">data</span><span class="p">[:</span><span class="mi">88</span><span class="p">]</span> <span class="o">=</span> <span class="n">data1</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">,:,:</span><span class="mi">300</span><span class="p">]</span>
+<span class="n">data</span><span class="p">[</span><span class="mi">88</span><span class="p">:]</span> <span class="o">=</span> <span class="n">data1</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">,:,</span><span class="mi">300</span><span class="p">:]</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">swapaxes</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Plot...&#39;</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">axes3d</span><span class="p">(</span><span class="n">orthographic</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="s1">&#39;equal&#39;</span><span class="p">,</span> <span class="n">clip_plane</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">bgcolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_draw_box</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">grid</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">volumeplot</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;MPL_sstanom&#39;</span><span class="p">,</span> <span class="n">ray_casting</span><span class="o">=</span><span class="s1">&#39;specular&#39;</span><span class="p">,</span> <span class="n">brightness</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span>
+    <span class="n">opacity_nodes</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">150</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">255</span><span class="p">],</span> <span class="n">opacity_levels</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/volume_sagittal_specular_opacity.png" src="../../../../_images/volume_sagittal_specular_opacity.png" />
 <p>3D volume plot of temperature from numerical forecasting model of GRAPES</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Read data...&#39;</span><span class="p">)</span>
 <span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;D:/Temp/grib/grapes/rmf.tcgra.2021072500042.grb2&#39;</span>
@@ -137,6 +181,75 @@
 </pre></div>
 </div>
 <img alt="../../../../_images/volumeplot_temperature.png" src="../../../../_images/volumeplot_temperature.png" />
+<p>Using transfer function to simulate <cite>isosurface</cite> plot</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Set date</span>
+<span class="n">sdate</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="c1">#Set directory</span>
+<span class="n">datadir</span> <span class="o">=</span> <span class="s1">&#39;D:/Temp/mm5&#39;</span>
+
+<span class="c1">#Read data</span>
+<span class="n">fn</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">datadir</span><span class="p">,</span> <span class="s1">&#39;WMO_SDS-WAS_Asian_Center_Model_Forecasting_CUACE-DUST_CMA_&#39;</span><span class="o">+</span> <span class="n">sdate</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y%m</span><span class="si">%d</span><span class="s1">%H&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;.nc&#39;</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+<span class="n">st</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">gettime</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">t</span> <span class="o">=</span> <span class="mi">12</span>
+<span class="n">dust</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;CONC_DUST&#39;</span><span class="p">][</span><span class="n">t</span><span class="p">,:,</span><span class="s1">&#39;15:65&#39;</span><span class="p">,</span><span class="s1">&#39;65:155&#39;</span><span class="p">]</span>
+<span class="n">levels</span> <span class="o">=</span> <span class="n">dust</span><span class="o">.</span><span class="n">dimvalue</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">dust</span><span class="p">[</span><span class="n">dust</span><span class="o">==</span><span class="n">nan</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">height</span> <span class="o">=</span> <span class="n">meteolib</span><span class="o">.</span><span class="n">pressure_to_height_std</span><span class="p">(</span><span class="n">levels</span><span class="p">)</span>
+<span class="n">lat</span> <span class="o">=</span> <span class="n">dust</span><span class="o">.</span><span class="n">dimvalue</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">lon</span> <span class="o">=</span> <span class="n">dust</span><span class="o">.</span><span class="n">dimvalue</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1">#Relief data</span>
+<span class="n">rfn</span> <span class="o">=</span> <span class="s1">&#39;D:/Temp/nc/elev.0.25-deg.nc&#39;</span>
+<span class="n">rf</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="n">rfn</span><span class="p">)</span>
+<span class="n">elev</span> <span class="o">=</span> <span class="n">rf</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;15:65&#39;</span><span class="p">,</span><span class="s1">&#39;65:155&#39;</span><span class="p">]</span>
+<span class="n">elev</span><span class="p">[</span><span class="n">elev</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<span class="n">lon1</span> <span class="o">=</span> <span class="n">elev</span><span class="o">.</span><span class="n">dimvalue</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">lat1</span> <span class="o">=</span> <span class="n">elev</span><span class="o">.</span><span class="n">dimvalue</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">lon1</span><span class="p">,</span> <span class="n">lat1</span> <span class="o">=</span> <span class="n">meshgrid</span><span class="p">(</span><span class="n">lon1</span><span class="p">,</span> <span class="n">lat1</span><span class="p">)</span>
+
+<span class="c1">#Map</span>
+<span class="n">lchina</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="s1">&#39;cn_province&#39;</span><span class="p">)</span>
+<span class="n">clon</span> <span class="o">=</span> <span class="n">lchina</span><span class="o">.</span><span class="n">x_coord</span>
+<span class="n">clat</span> <span class="o">=</span> <span class="n">lchina</span><span class="o">.</span><span class="n">y_coord</span>
+<span class="n">calt</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">clon</span><span class="p">))</span>
+<span class="n">h</span> <span class="o">=</span> <span class="n">interp2d</span><span class="p">(</span><span class="n">elev</span><span class="p">,</span> <span class="n">clon</span><span class="p">,</span> <span class="n">clat</span><span class="p">)</span>
+<span class="n">calt</span> <span class="o">=</span> <span class="n">calt</span> <span class="o">+</span> <span class="n">h</span>
+<span class="n">lworld</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">)</span>
+<span class="n">wlon</span> <span class="o">=</span> <span class="n">lworld</span><span class="o">.</span><span class="n">x_coord</span>
+<span class="n">wlat</span> <span class="o">=</span> <span class="n">lworld</span><span class="o">.</span><span class="n">y_coord</span>
+<span class="n">walt</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">wlon</span><span class="p">))</span>
+<span class="n">h</span> <span class="o">=</span> <span class="n">interp2d</span><span class="p">(</span><span class="n">elev</span><span class="p">,</span> <span class="n">wlon</span><span class="p">,</span> <span class="n">wlat</span><span class="p">)</span>
+<span class="n">walt</span> <span class="o">=</span> <span class="n">walt</span> <span class="o">+</span> <span class="n">h</span>
+
+<span class="c1">#Plot</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">axes3d</span><span class="p">(</span><span class="n">clip_plane</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_elevation</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_rotation</span><span class="p">(</span><span class="mi">335</span><span class="p">)</span>
+<span class="n">rlevs</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6000</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">cols</span> <span class="o">=</span> <span class="n">makecolors</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">rlevs</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;MPL_gist_yarg&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">cols</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">51</span><span class="p">,</span><span class="mi">153</span><span class="p">,</span><span class="mi">255</span><span class="p">]</span>
+<span class="n">surf</span><span class="p">(</span><span class="n">lon1</span><span class="p">,</span> <span class="n">lat1</span><span class="p">,</span> <span class="n">elev</span><span class="p">,</span> <span class="n">rlevs</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;interp&#39;</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="n">cols</span><span class="p">,</span> <span class="n">edge</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plot3</span><span class="p">(</span><span class="n">clon</span><span class="p">,</span> <span class="n">clat</span><span class="p">,</span> <span class="n">calt</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mi">255</span><span class="p">,</span><span class="mi">153</span><span class="p">,</span><span class="mi">255</span><span class="p">])</span>
+<span class="n">plot3</span><span class="p">(</span><span class="n">wlon</span><span class="p">,</span> <span class="n">wlat</span><span class="p">,</span> <span class="n">walt</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="c1">#Beijing location</span>
+<span class="n">plot3</span><span class="p">([</span><span class="mf">116.39</span><span class="p">,</span><span class="mf">116.39</span><span class="p">],</span> <span class="p">[</span><span class="mf">39.91</span><span class="p">,</span><span class="mf">39.91</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">12000</span><span class="p">])</span>
+<span class="n">pp</span> <span class="o">=</span> <span class="n">volumeplot</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">dust</span><span class="p">,</span> <span class="n">ray_casting</span><span class="o">=</span><span class="s1">&#39;specular&#39;</span><span class="p">,</span>
+    <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;cmocean_solar_r&#39;</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">180</span><span class="p">,</span> <span class="n">brightness</span><span class="o">=</span><span class="mf">2.5</span><span class="p">,</span>
+    <span class="n">opacity_nodes</span><span class="o">=</span><span class="p">[</span><span class="mi">90</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">120</span><span class="p">,</span><span class="mi">121</span><span class="p">],</span> <span class="n">opacity_levels</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">colorbar</span><span class="p">(</span><span class="n">pp</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">xlim</span><span class="p">(</span><span class="mi">65</span><span class="p">,</span> <span class="mi">155</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Longitude&#39;</span><span class="p">)</span>
+<span class="n">ylim</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">65</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Latitude&#39;</span><span class="p">)</span>
+<span class="n">zlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">15000</span><span class="p">)</span>
+<span class="n">zlabel</span><span class="p">(</span><span class="s1">&#39;Height (m)&#39;</span><span class="p">)</span>
+<span class="n">tt</span> <span class="o">=</span> <span class="n">st</span> <span class="o">+</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="n">t</span><span class="o">*</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Dust concentration ug/m3 (</span><span class="si">{}</span><span class="s1">UTC)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">tt</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1"> %H:00&#39;</span><span class="p">)))</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/volume_dust_specular.png" src="../../../../_images/volume_dust_specular.png" />
 </dd></dl>
 
 </div>
