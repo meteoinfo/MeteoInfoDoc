@@ -4,7 +4,7 @@
 Earth global 3-D plots
 **********************
 
-Create an earth global 3D axes (EarthAxes3D object) using ``axes3d(earth=True)`` function.
+Create an earth global 3D axes (EarthAxes3D object) using ``axes3d(projection='earth')`` function.
 
 **Contour on 3D earth**::
 
@@ -14,7 +14,7 @@ Create an earth global 3D axes (EarthAxes3D object) using ``axes3d(earth=True)``
     lat = data.dimvalue(0)
     lon = data.dimvalue(1)
 
-    ax = axes3d(earth=True)
+    ax = axes3d(projection='earth')
     geoshow('country', edgecolor='gray')
     contour(lon, lat, data, 10, offset=0)
     colorbar(tickcolor='w', xshift=50)
@@ -30,7 +30,7 @@ Create an earth global 3D axes (EarthAxes3D object) using ``axes3d(earth=True)``
     lon = data.dimvalue(1)
     lon, lat = meshgrid(lon, lat)
 
-    ax = axes3d(earth=True, image='etopo1.jpg')
+    ax = axes3d(projection='earth', image='etopo1.jpg')
     lighting()
     bar3(lon, lat, data, color='m', edgecolor=None, width=1)
     
@@ -46,7 +46,7 @@ Create an earth global 3D axes (EarthAxes3D object) using ``axes3d(earth=True)``
     lat = data.dimvalue(1)
     lon = data.dimvalue(2)
 
-    ax = axes3d(earth=True)
+    ax = axes3d(projection='earth')
     geoshow('country', edgecolor='gray')
     slice3(lon, lat, height, data, 10, xslice=[120], zslice=[300], facecolor='interp',
         edgecolor=None, alpha=0.5)
@@ -66,7 +66,7 @@ Create an earth global 3D axes (EarthAxes3D object) using ``axes3d(earth=True)``
     w = zeros(u.shape)
     speed = sqrt(u*u + v*v)
 
-    ax = axes3d(earth=True)
+    ax = axes3d(projection='earth')
     geoshow('country', edgecolor='gray')
     levs = arange(2, 20, 2)
     streamslice(lon, lat, height, u, v, w, speed, levs=levs, zslice=[300],

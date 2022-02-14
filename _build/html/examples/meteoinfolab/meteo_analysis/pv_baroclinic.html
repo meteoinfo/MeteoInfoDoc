@@ -1,0 +1,185 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+    <title>Baroclinic Potential Vorticity Analysis &#8212; MeteoInfo 3.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinxdoc.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+  </head><body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../../index.html"><img src="../../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../docs/index.html">docs</a>|&nbsp;</li>
+
+        <li class="nav-item nav-item-this"><a href="">Baroclinic Potential Vorticity Analysis</a></li> 
+      </ul>
+    </div>
+
+
+    <div class="document">
+
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="baroclinic-potential-vorticity-analysis">
+<span id="examples-meteoinfolab-meteo-analysis-pv-baroclinic"></span><h1>Baroclinic Potential Vorticity Analysis<a class="headerlink" href="#baroclinic-potential-vorticity-analysis" title="Permalink to this headline">¶</a></h1>
+<p>Classic baroclinic potential vorticity plot at 250 hPa using GFS analysis file.</p>
+<p>This example uses example data from the GFS analysis for 12 UTC 31 October 2016 and calculate the baroclinic
+potential vorticity, divergence and wind speed with geographic plotting for a CONUS view of the 250-hPa surface
+with divergence and wind barbs.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;D:/Temp/nc/GFS_20101026_1200.nc&#39;</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+
+<span class="n">lon_slice</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">650</span><span class="p">)</span>
+<span class="n">lat_slice</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">140</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">lats</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">][</span><span class="n">lat_slice</span><span class="p">]</span>
+<span class="n">lons</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;lon&#39;</span><span class="p">][</span><span class="n">lon_slice</span><span class="p">]</span>
+
+<span class="n">pres</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;isobaric3&#39;</span><span class="p">][:]</span>
+
+<span class="n">tmpk_var</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;Temperature_isobaric&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,:,</span><span class="n">lat_slice</span><span class="p">,</span><span class="n">lon_slice</span><span class="p">]</span>
+<span class="n">tmpk</span> <span class="o">=</span> <span class="n">meteolib</span><span class="o">.</span><span class="n">smooth_n_point</span><span class="p">(</span><span class="n">tmpk_var</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">thta</span> <span class="o">=</span> <span class="n">meteolib</span><span class="o">.</span><span class="n">potential_temperature</span><span class="p">(</span><span class="n">pres</span><span class="p">[:,</span><span class="kc">None</span><span class="p">,</span><span class="kc">None</span><span class="p">],</span> <span class="n">tmpk</span><span class="p">)</span>
+
+<span class="n">uwnd_var</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;u-component_of_wind_isobaric&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,:,</span><span class="n">lat_slice</span><span class="p">,</span><span class="n">lon_slice</span><span class="p">]</span>
+<span class="n">vwnd_var</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;v-component_of_wind_isobaric&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,:,</span><span class="n">lat_slice</span><span class="p">,</span><span class="n">lon_slice</span><span class="p">]</span>
+<span class="n">uwnd</span> <span class="o">=</span> <span class="n">meteolib</span><span class="o">.</span><span class="n">smooth_n_point</span><span class="p">(</span><span class="n">uwnd_var</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">vwnd</span> <span class="o">=</span> <span class="n">meteolib</span><span class="o">.</span><span class="n">smooth_n_point</span><span class="p">(</span><span class="n">vwnd_var</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Compute dx and dy spacing for use in vorticity calculation</span>
+<span class="n">dx</span><span class="p">,</span> <span class="n">dy</span> <span class="o">=</span> <span class="n">meteolib</span><span class="o">.</span><span class="n">lat_lon_grid_deltas</span><span class="p">(</span><span class="n">lons</span><span class="p">,</span> <span class="n">lats</span><span class="p">)</span>
+
+<span class="c1"># Compute the PV on all isobaric surfaces</span>
+<span class="n">pv</span> <span class="o">=</span> <span class="n">meteolib</span><span class="o">.</span><span class="n">potential_vorticity_baroclinic</span><span class="p">(</span><span class="n">thta</span><span class="p">,</span> <span class="n">pres</span><span class="p">[:,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">],</span> <span class="n">uwnd</span><span class="p">,</span>
+    <span class="n">vwnd</span><span class="p">,</span> <span class="n">dx</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:],</span> <span class="n">dy</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:],</span> <span class="n">lats</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="p">:,</span> <span class="kc">None</span><span class="p">])</span>
+
+<span class="c1"># compute the divergence on the pressure surfaces</span>
+<span class="n">div</span> <span class="o">=</span> <span class="n">meteolib</span><span class="o">.</span><span class="n">divergence</span><span class="p">(</span><span class="n">uwnd</span><span class="p">,</span> <span class="n">vwnd</span><span class="p">,</span> <span class="n">dx</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:],</span> <span class="n">dy</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:])</span>
+
+<span class="c1"># Find the index value for the 250-hPa surface</span>
+<span class="n">i250</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">pres</span><span class="p">)</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="mi">250</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="c1">#plot</span>
+<span class="n">proj</span> <span class="o">=</span> <span class="n">projinfo</span><span class="p">(</span><span class="n">proj</span><span class="o">=</span><span class="s1">&#39;lcc&#39;</span><span class="p">,</span> <span class="n">lon_0</span><span class="o">=-</span><span class="mi">100</span><span class="p">,</span> <span class="n">lat_0</span><span class="o">=</span><span class="mi">35</span><span class="p">,</span> <span class="n">lat_1</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">lat_2</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
+<span class="n">axesm</span><span class="p">(</span><span class="n">projinfo</span><span class="o">=</span><span class="n">proj</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;us_states&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">102</span><span class="p">,</span><span class="mi">204</span><span class="p">))</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">102</span><span class="p">,</span><span class="mi">204</span><span class="p">))</span>
+
+<span class="c1"># Plot the colorfill of divergence, scaled 10^5 every 1 s^1</span>
+<span class="n">clevs_div</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">15</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">cs1</span> <span class="o">=</span> <span class="n">contourf</span><span class="p">(</span><span class="n">lons</span><span class="p">,</span> <span class="n">lats</span><span class="p">,</span> <span class="n">div</span><span class="p">[</span><span class="n">i250</span><span class="p">]</span><span class="o">*</span><span class="mf">1e5</span><span class="p">,</span> <span class="n">clevs_div</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;MPL_PuOr&#39;</span><span class="p">,</span>
+                  <span class="n">smooth</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">colorbar</span><span class="p">(</span><span class="n">cs1</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;horizontal&#39;</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+
+<span class="c1"># Plot the contours of PV at 250 hPa, scaling 10^7 every 1 PVU</span>
+<span class="n">clevs_pv</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">cs1</span> <span class="o">=</span> <span class="n">contour</span><span class="p">(</span><span class="n">lons</span><span class="p">,</span> <span class="n">lats</span><span class="p">,</span> <span class="n">pv</span><span class="p">[</span><span class="n">i250</span><span class="p">]</span><span class="o">*</span><span class="mf">1e7</span><span class="p">,</span> <span class="n">clevs_pv</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="c1">#plt.clabel(cs1, fmt=&#39;%d&#39;, fontsize=14)</span>
+
+<span class="c1"># Plot the wind barbs at 250 hPa</span>
+<span class="n">wind_slice</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="n">barbs</span><span class="p">(</span><span class="n">lons</span><span class="p">[</span><span class="n">wind_slice</span><span class="p">],</span> <span class="n">lats</span><span class="p">[</span><span class="n">wind_slice</span><span class="p">],</span>
+         <span class="n">uwnd</span><span class="p">[</span><span class="n">i250</span><span class="p">][</span><span class="n">wind_slice</span><span class="p">,</span> <span class="n">wind_slice</span><span class="p">],</span>
+         <span class="n">vwnd</span><span class="p">[</span><span class="n">i250</span><span class="p">][</span><span class="n">wind_slice</span><span class="p">,</span> <span class="n">wind_slice</span><span class="p">],</span>
+         <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mf">6.5</span><span class="p">)</span>
+
+<span class="n">axis</span><span class="p">([</span><span class="o">-</span><span class="mi">128</span><span class="p">,</span> <span class="o">-</span><span class="mi">72</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">55</span><span class="p">])</span>
+
+<span class="c1"># Plot some titles to tell people what is on the map</span>
+<span class="n">left_title</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;250-hPa GFS PV (PVU), Divergence ( $10^5 \ s^{-1}$),&#39;</span>
+          <span class="s1">&#39; and Wind Barbs (kt)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">bold</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">right_title</span><span class="p">(</span><span class="s1">&#39;Valid Time: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">gettime</span><span class="p">(</span><span class="mi">0</span><span class="p">)),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">bold</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../_images/baroclinic_potential_vorticity.png" src="../../../_images/baroclinic_potential_vorticity.png" />
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
+        <img style="position: fixed; top: 0; right: 0; border: 0;" 
+        src="../../../_static/forkme_right_orange_ff7600.png" 
+        alt="Fork me on GitHub">
+    </a>
+    <a target="_blank" href="https://gitter.im/meteoinfo/community">
+        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
+        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
+        alt="Join the chat at Gitter">
+    </a>
+
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/examples/meteoinfolab/meteo_analysis/pv_baroclinic.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../docs/index.html">docs</a>|&nbsp;</li>
+
+        <li class="nav-item nav-item-this"><a href="">Baroclinic Potential Vorticity Analysis</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2021, MeteoInfo developers.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
+    </div>
+  </body>
+</html>

@@ -19,4 +19,6 @@ Meteorological analysis
    meteo_analysis/moisture_potential_vorticity.rst
    meteo_analysis/sigma2pressure.rst
    meteo_analysis/low_high_pres_centers.rst
+   meteo_analysis/pv_baroclinic.rst
+   meteo_analysis/isentropic_analysis.rst
    meteo_analysis/eof.rst
