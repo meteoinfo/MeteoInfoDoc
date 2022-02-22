@@ -210,6 +210,108 @@ Aerosol types.
     
 .. image:: ../../../_static/calipso_aerosol_type.png
 
+Aerosol types of tropospheric and stratospheric aerosols.
+
+::
+
+    # Add file
+    fn = 'D:/Temp/hdf/CAL_LID_L2_VFM-Standard-V4-21.2021-10-03T03-30-55ZN.hdf'
+    f = addfile(fn)
+
+    # Read data
+    vname = 'Feature_Classification_Flags'
+    var = f[vname]
+    data = var[:,:]
+    lat = f['Latitude'][:,0]
+    lon = f['Longitude'][:,0]
+
+    # Subset latitude values for the region of interest.
+    lidx1 = 1088
+    lidx2 = 2175
+    lat = lat[lidx1:lidx2]
+    lon = lon[lidx1:lidx2]
+    size = lat.shape[0]
+
+    N = 290    # 290 is sample number of low height data: -0.5km to 8.2km @ 30m
+    sidx = data.shape[1] - N * 15
+    data2d = data[lidx1:lidx2, sidx:]
+    data3d = reshape(data2d, (size, 15, N))
+    data_l = data3d[:,0,:]
+
+    N1 = 200   # height data: 8.2 to 20.2 km @ 60m
+    sidx1 = sidx - N1 * 5
+    data2d = data[lidx1:lidx2, sidx1:sidx]
+    data3d = reshape(data2d, (size, 5, N1))
+    data_m = data3d[:,0,:]
+    data_m1 = zeros([data_m.shape[0], data_m.shape[1]*2], dtype='int')
+    data_m1[:,::2] = data_m
+    data_m1[:,1::2] = data_m
+
+    N2 = 55   # height data: 20.2 to 30.1km @ 180m
+    sidx2 = sidx1 - N2 * 3
+    data2d = data[lidx1:lidx2, sidx2:sidx1]
+    data3d = reshape(data2d, (size, 3, N2))
+    data_m = data3d[:,0,:]
+    data_m2 = zeros([data_m.shape[0], data_m.shape[1]*6], dtype='int')
+    for i in range(6):
+        data_m2[:,i::6] = data_m
+
+    data = concatenate([data_m2, data_m1, data_l], axis=1)
+    data = rot90(data, 1)
+
+    # Feature type
+    ft = data & 7
+
+    # Aerosol type
+    a = data >> 9
+    # tropospheric aerosol
+    atype = a & 7
+    atype[ft!=3] = 0
+    # stratospheric aerosol
+    btype = a & 7
+    btype[ft!=4] = 0
+    # combin
+    btype = btype + 8
+    btype[btype==8] = 0
+    btype[btype>3+8] = 0
+    #atype[btype>0] = 0
+    atype = atype + btype
+
+    # Generate altitude data according to file specification [1].
+    alt = zeros(N + N1 * 2 + N2 * 6)
+    # -0.5km to 30.1km
+    for i in range (0, N + N1 * 2 + N2 * 6):
+        alt[i] = -0.5 + i * 0.03
+
+    # X axis ticks
+    xvals = []
+    xstrs = []
+    nx = atype.shape[1]
+    for i in range(0, nx, 100):
+        xvals.append(i)
+        if i == 0:
+            xstrs.append('Lat: %.2f\nLon: %.2f' % (lat[i],lon[i]))
+        else:
+            xstrs.append('%.2f\n%.2f' % (lat[i],lon[i]))
+
+    # Plot
+    axes(tickfontsize=12)
+    levs = arange(11)
+    cols = [(204,204,204),(0,0,255),(255,240,0),(255,153,0),(51,153,0),
+        (120,51,0),'k',(0,153,204),'w',(150,150,150),(100,100,100)]
+    imshow(atype, levs, colors=cols, extent=[0,nx-1,alt[0],alt[-1]])
+    colorbar(shrink=0.8, fontsize=12, ticklabels=['Not Determined','Clean Marine',
+        'Dust','Polluted Cont.','Clean Cont.','Polluted Dust','Smoke',
+        'Dusty marine','PSC aerosol','Volcanic ash','Sulfate/other'])
+    xticks(xvals, xstrs)
+    yaxis(minortick=True)
+    basename = os.path.basename(fn)
+    title([basename, 'Aerosol types'])
+    ylabel('Altitude (km)')
+    ylim(-0.5, 30.1)
+
+.. image:: ../../../_static/calipso_aerosol_type_10.png
+
 Plot total attenuated backscatter.
 
 ::

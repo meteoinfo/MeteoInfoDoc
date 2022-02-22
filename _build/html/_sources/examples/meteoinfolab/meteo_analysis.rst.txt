@@ -21,4 +21,5 @@ Meteorological analysis
    meteo_analysis/low_high_pres_centers.rst
    meteo_analysis/pv_baroclinic.rst
    meteo_analysis/isentropic_analysis.rst
+   meteo_analysis/vorticity_advection.rst
    meteo_analysis/eof.rst
