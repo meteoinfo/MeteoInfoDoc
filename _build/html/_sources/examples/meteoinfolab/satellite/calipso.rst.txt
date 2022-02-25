@@ -373,7 +373,7 @@ Plot 3D cross section of extinction coefficient.
 
     f = addfile('D:/Temp/satellite/calipso/CAL_LID_L2_05kmAPro-Standard-V4-20.2006-09-01T08-55-57ZD_Subset.hdf')
     EC = f['Extinction_Coefficient_532'][:]
-    EC = EC.T
+    EC = rot90(EC, 1)
     EC[EC==nan] = -1
     Lat = f['Latitude'][:,0]
     Lon = f['Longitude'][:,0]
@@ -456,7 +456,7 @@ Plot total attenuated backscatter in earth 3D axes.
         0.0065,0.007,0.0075,0.008,0.01,0.02,0.03,0.04,0.05,0.06,0.07,0.08,0.09,0.1]
     ss = 20
     surf(Lon[::ss,::ss], Lat[::ss,::ss], alt[::ss,::ss]*30, levs,
-        facecolor='texturemap', cdata=data[::-1], edgecolor=None,
+        facecolor='texturemap', cdata=data, edgecolor=None,
         cmap='calipo_standard', interpolation='bilinear')
 
     ax.set_rotation(333)
