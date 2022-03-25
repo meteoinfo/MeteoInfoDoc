@@ -14,6 +14,7 @@ Satellite data
    satellite/avhrr_sst.rst
    satellite/amsr.rst
    satellite/fy2c_clc.rst
+   satellite/fy2g_ctt.rst
    satellite/fy3a_aod.rst
    satellite/fy3c_gfr.rst
    satellite/mod08_aod.rst

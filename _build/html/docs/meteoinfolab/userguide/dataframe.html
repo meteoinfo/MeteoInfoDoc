@@ -4,17 +4,16 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>Series and DataFrame &#8212; MeteoInfo 3.0 documentation</title>
-    <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinxdoc.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
-    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="MeteoInfo 1.5 was released (2018-7-9)" href="../../../news/meteoinfo_1.5.html" />
@@ -58,9 +57,9 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="series-and-dataframe">
+  <section id="series-and-dataframe">
 <span id="docs-meteoinfolab-user-guid-dataframe"></span><h1>Series and DataFrame<a class="headerlink" href="#series-and-dataframe" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="series">
+<section id="series">
 <h2>Series<a class="headerlink" href="#series" title="Permalink to this headline">¶</a></h2>
 <p>Series is a one-dimensional labeled array. The axis labels are collectively referred to as the <em>index</em>.
 Creating a Series by passing a list of values, letting pandas create a default integer index:</p>
@@ -74,8 +73,8 @@ Creating a Series by passing a list of values, letting pandas create a default i
 <span class="go">5   8.0</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="dataframe">
+</section>
+<section id="dataframe">
 <h2>DataFrame<a class="headerlink" href="#dataframe" title="Permalink to this headline">¶</a></h2>
 <p>DataFrame is a 2-dimensional labeled data structure with columns of potentially different types. Creating a
 DataFrame by passing an array, with a datetime index and labeled columns:</p>
@@ -108,8 +107,8 @@ DataFrame by passing an array, with a datetime index and labeled columns:</p>
 <span class="go">3  1.0 4 3 train foo</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="viewing-data">
+</section>
+<section id="viewing-data">
 <h2>Viewing Data<a class="headerlink" href="#viewing-data" title="Permalink to this headline">¶</a></h2>
 <p>Here is how to view the top and bottom rows of the frame:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -183,8 +182,8 @@ DataFrame by passing an array, with a datetime index and labeled columns:</p>
 <span class="go">2013-01-03  0.219245  0.920414  0.886056  0.222002</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="selection">
+</section>
+<section id="selection">
 <h2>Selection<a class="headerlink" href="#selection" title="Permalink to this headline">¶</a></h2>
 <p><strong>Getting</strong></p>
 <p>Selecting a single column, which yields a Series, equivalent to df.A:</p>
@@ -284,8 +283,8 @@ DataFrame by passing an array, with a datetime index and labeled columns:</p>
 <span class="go">0.6977123432245299</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="grouping">
+</section>
+<section id="grouping">
 <h2>Grouping<a class="headerlink" href="#grouping" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;A&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">,</span>
 <span class="gp">... </span>                       <span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;foo&#39;</span><span class="p">],</span>
@@ -323,8 +322,8 @@ DataFrame by passing an array, with a datetime index and labeled columns:</p>
 <span class="go">[foo, three]  0.936860  0.936860</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="time-resample">
+</section>
+<section id="time-resample">
 <h2>Time resample<a class="headerlink" href="#time-resample" title="Permalink to this headline">¶</a></h2>
 <p>To performing resampling operations during frequency conversion (e.g., converting secondly data into
 5-minutely data):</p>
@@ -334,8 +333,8 @@ DataFrame by passing an array, with a datetime index and labeled columns:</p>
 <span class="go">2012-01-01 00:00  22561.0</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
             <div class="clearer"></div>
@@ -423,7 +422,7 @@ DataFrame by passing an array, with a datetime index and labeled columns:</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2021, MeteoInfo developers.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
     </div>
   </body>
 </html>

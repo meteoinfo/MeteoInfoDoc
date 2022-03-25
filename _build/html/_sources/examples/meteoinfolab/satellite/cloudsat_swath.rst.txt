@@ -5,7 +5,7 @@ CloudSAT Swath data
 *******************
 
 Open CloudSAT swath HDF data file and add two plots in a figure. Top one is radar
-refrectivity factor image on time and height dimensions. Bottom one is satellite
+reflectivity factor image on time and height dimensions. Bottom one is satellite
 trajectory map plot.
 
 ::
@@ -37,15 +37,15 @@ trajectory map plot.
     data = data / scale_factor
     data[data>valid_max] = nan
     data[data<valid_min] = nan
-    data = transpose(data)
-    data = data[::-1,:]
+    data = data.T
+    data = data[::-1]
 
     # Make a split window plot
     subplot(2, 1, 1)
 
     # Contour the data
     levs = arange(-38, 50, 2)
-    layer = imshow(data, levs, extent=[time[0],time[-1],height[-1],height[0]])
+    layer = imshow(time, height[::-1], data, levs)
     colorbar(layer)
     title('Radar Reflectivity Factor')
     xlabel('Seconds since the start of the granule. (seconds)')
