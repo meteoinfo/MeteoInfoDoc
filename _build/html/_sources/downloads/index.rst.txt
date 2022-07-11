@@ -18,6 +18,11 @@ MeteoInfo
 
 ----------------------------------------------------------------------------------------
 
+WeatherThink
+=====================================
+  WeatherThink - Severe weather analysis and visualization system
+    - `WeatherThink 0.1 <files/WeatherThink_0.1.zip>`_
+
 MIML
 =====================================
   MIML - MeteoInfoLab machine learning toolbox
