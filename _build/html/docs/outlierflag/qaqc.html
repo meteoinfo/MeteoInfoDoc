@@ -4,17 +4,16 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>qaqc Jython module &#8212; MeteoInfo 3.3 documentation</title>
-    <link rel="stylesheet" href="../../_static/sphinxdoc.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinxdoc.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Automatic outlier flag" href="autoflag.html" />
@@ -59,11 +58,11 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="qaqc-jython-module">
+  <section id="qaqc-jython-module">
 <span id="docs-outlierflag-qaqc"></span><h1>qaqc Jython module<a class="headerlink" href="#qaqc-jython-module" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
-<dt id="timeorder">
-<code class="sig-name descname">timeorder</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">stime</span></em>, <em class="sig-param"><span class="n">etime</span></em>, <em class="sig-param"><span class="n">tdelta</span></em>, <em class="sig-param"><span class="n">tunit</span></em><span class="sig-paren">)</span><a class="headerlink" href="#timeorder" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="timeorder">
+<span class="sig-name descname"><span class="pre">timeorder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stime</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">etime</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tdelta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tunit</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#timeorder" title="Permalink to this definition">¶</a></dt>
 <dd><p>Time order of the table data.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -82,8 +81,8 @@
 </dd></dl>
 
 <dl class="py function">
-<dt id="flagset">
-<code class="sig-name descname">flagset</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">minlim</span><span class="o">=</span><span class="default_value">- 10000</span></em>, <em class="sig-param"><span class="n">maxlim</span><span class="o">=</span><span class="default_value">50000</span></em>, <em class="sig-param"><span class="n">errornum</span><span class="o">=</span><span class="default_value">11</span></em>, <em class="sig-param"><span class="n">quantilenum</span><span class="o">=</span><span class="default_value">21</span></em>, <em class="sig-param"><span class="n">quantil</span><span class="o">=</span><span class="default_value">0.9</span></em>, <em class="sig-param"><span class="n">factor</span><span class="o">=</span><span class="default_value">2.3</span></em>, <em class="sig-param"><span class="n">stdnum</span><span class="o">=</span><span class="default_value">29</span></em>, <em class="sig-param"><span class="n">stdfactor</span><span class="o">=</span><span class="default_value">3</span></em><span class="sig-paren">)</span><a class="headerlink" href="#flagset" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="flagset">
+<span class="sig-name descname"><span class="pre">flagset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">minlim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">10000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxlim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">errornum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">11</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quantilenum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">21</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quantil</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.9</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2.3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stdnum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">29</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stdfactor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#flagset" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create flag setting object.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -105,8 +104,8 @@
 </dd></dl>
 
 <dl class="py function">
-<dt id="check_lim">
-<code class="sig-name descname">check_lim</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">fset</span></em><span class="sig-paren">)</span><a class="headerlink" href="#check_lim" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="check_lim">
+<span class="sig-name descname"><span class="pre">check_lim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fset</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#check_lim" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check limitation - Get flag code list according to min/max limitation setting.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -122,8 +121,8 @@
 </dd></dl>
 
 <dl class="py function">
-<dt id="check_error">
-<code class="sig-name descname">check_error</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">fset</span></em>, <em class="sig-param"><span class="n">fcodes</span></em><span class="sig-paren">)</span><a class="headerlink" href="#check_error" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="check_error">
+<span class="sig-name descname"><span class="pre">check_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fcodes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#check_error" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check error - Set flag code list according to error setting.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -137,8 +136,8 @@
 </dd></dl>
 
 <dl class="py function">
-<dt id="check_std">
-<code class="sig-name descname">check_std</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">fset</span></em>, <em class="sig-param"><span class="n">fcodes</span></em><span class="sig-paren">)</span><a class="headerlink" href="#check_std" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="check_std">
+<span class="sig-name descname"><span class="pre">check_std</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fcodes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#check_std" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check 3 times of standard deviation - Set flag code list according to standard deviation setting.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -152,8 +151,8 @@
 </dd></dl>
 
 <dl class="py function">
-<dt id="check_all">
-<code class="sig-name descname">check_all</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">fset</span></em><span class="sig-paren">)</span><a class="headerlink" href="#check_all" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="check_all">
+<span class="sig-name descname"><span class="pre">check_all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fset</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#check_all" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check all 3 steps.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -169,8 +168,8 @@
 </dd></dl>
 
 <dl class="py function">
-<dt id="makecolors">
-<code class="sig-name descname">makecolors</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fcodes</span></em>, <em class="sig-param"><span class="n">c</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#makecolors" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="makecolors">
+<span class="sig-name descname"><span class="pre">makecolors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fcodes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#makecolors" title="Permalink to this definition">¶</a></dt>
 <dd><p>Make colors according to flag codes.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -186,8 +185,8 @@
 </dd></dl>
 
 <dl class="py function">
-<dt id="makearray">
-<code class="sig-name descname">makearray</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fcodes</span></em>, <em class="sig-param"><span class="n">v</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#makearray" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="makearray">
+<span class="sig-name descname"><span class="pre">makearray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fcodes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#makearray" title="Permalink to this definition">¶</a></dt>
 <dd><p>Make array according to flag codes.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -203,8 +202,8 @@
 </dd></dl>
 
 <dl class="py function">
-<dt id="flagchart">
-<code class="sig-name descname">flagchart</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">fcodes</span></em>, <em class="sig-param"><span class="n">dates</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">title</span><span class="o">=</span><span class="default_value">'Flag chart'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#flagchart" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="flagchart">
+<span class="sig-name descname"><span class="pre">flagchart</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fcodes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dates</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Flag</span> <span class="pre">chart'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#flagchart" title="Permalink to this definition">¶</a></dt>
 <dd><p>Open a flag chart form for mannual flagging.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -222,8 +221,8 @@
 </dd></dl>
 
 <dl class="py function">
-<dt id="bc_loading_effect">
-<code class="sig-name descname">bc_loading_effect</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">bc</span></em>, <em class="sig-param"><span class="n">atn</span></em>, <em class="sig-param"><span class="n">avenum</span><span class="o">=</span><span class="default_value">4</span></em>, <em class="sig-param"><span class="n">refine</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">smooth</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">smoothnum</span><span class="o">=</span><span class="default_value">10</span></em><span class="sig-paren">)</span><a class="headerlink" href="#bc_loading_effect" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="bc_loading_effect">
+<span class="sig-name descname"><span class="pre">bc_loading_effect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">avenum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">refine</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smooth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smoothnum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bc_loading_effect" title="Permalink to this definition">¶</a></dt>
 <dd><p>Black carbon loading effect compensation.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -243,7 +242,7 @@ Default is <cite>4</cite>.</p></li>
 </dl>
 </dd></dl>
 
-</div>
+</section>
 
 
             <div class="clearer"></div>
@@ -319,7 +318,7 @@ Default is <cite>4</cite>.</p></li>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2022, MeteoInfo developers.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
     </div>
   </body>
 </html>
