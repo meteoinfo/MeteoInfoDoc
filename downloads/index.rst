@@ -60,4 +60,4 @@ OutlierFlag
 EMIPS
 =====================================
   EMIssion Inventory Processing System
-    - `EMIPS 0.2 <files/EMIPS_0.2.zip>`_
+    - `EMIPS 1.0 <files/emips_1.0.zip>`_
