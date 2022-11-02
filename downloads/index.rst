@@ -8,7 +8,7 @@ Downloads
 MeteoInfo
 =====================================
   Java edition (Major development)
-    - `MeteoInfo 3.4 - Java (for all systems) <files/MeteoInfo_3.4.zip>`_
+    - `MeteoInfo 3.4.8 - Java (for all systems) <files/MeteoInfo_3.4.8.zip>`_
   C# edition   
     - `MeteoInfo 1.1.3.5R1 - C# <files/MeteoInfo_csharp_1.1.3.5R1.zip>`_
   Example data files
@@ -20,7 +20,7 @@ MeteoInfo
 WeatherThink
 =====================================
   WeatherThink - Severe weather analysis and visualization system
-    - `WeatherThink 0.2.1 <files/WeatherThink_0.2.1.zip>`_
+    - `WeatherThink 0.3 <files/WeatherThink_0.3.zip>`_
 
 MIML
 =====================================
