@@ -12,7 +12,7 @@ savefig
     Save the current figure.
     
     :param fname: (*string*) A string containing a path to a filename. The output format
-        is deduced from the extention of the filename. Supported format: 'png', 'bmp',
+        is deduced from the extension of the filename. Supported format: 'png', 'bmp',
         'jpg', 'eps' and 'pdf'.
     :param width: (*int*) Optional, width of the output figure with pixel units. Default
         is None, the output figure size is same as *figures* window.
@@ -24,3 +24,4 @@ savefig
     Examples::
 
         savefig('D:/Temp/test.png', width=800, height=600)
+        savefig('D:/Temp/test.png', width=800, height=600, dpi=300)
