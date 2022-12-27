@@ -1,0 +1,195 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>矢量图层 &#8212; MeteoInfo 3.3 documentation</title>
+    <link rel="stylesheet" href="../../../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
+    <script id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="MeteoInfo class library" href="../../meteoinfolib.html" />
+    <link rel="prev" title="移除、加载图层" href="add_remove_layer.html" /> 
+  </head><body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../../../index.html"><img src="../../../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../../meteoinfolib.html" title="MeteoInfo class library"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="add_remove_layer.html" title="移除、加载图层"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoMap</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../index.html" >MeteoInfoMap 软件</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../map_layer.html" accesskey="U">图层操作</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">矢量图层</a></li> 
+      </ul>
+    </div>
+
+
+    <div class="document">
+
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="id1">
+<h1>矢量图层<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>矢量图层包含了矢量空间要素及其属性值，根据空间要素的类型又分为点图层（Point）、线图层（Polyline）和多边形图层
+（Polygon）。用鼠标选中一个矢量图层，点击“显示 -&gt; 图层属性数据”菜单可以打开图层的属性数据表。通过该表可以查看
+图层的属性数据，还可以对属性数据进行编辑。</p>
+<img alt="../../../../_images/attribute_table1.png" src="../../../../_images/attribute_table1.png" />
+<p>通过双击图层名可以打开图层属性对话框（这里以世界各国行政区域图层为例），包括了General、Legend和Chart三个选项卡。
+在General选项卡中包含了图层对应的文件名、图层类型（VectorLayer）、图层空间要素类型等信息，还包含图层名、
+Is maskout（屏蔽外部图形）和Avoid collision（免压盖）等可编辑属性。</p>
+<img alt="../../../../_images/vector_layer_property.png" src="../../../../_images/vector_layer_property.png" />
+<p>矢量图层在地图视图中的显示是由图例（Legend）决定的。图例类型有三种：单一符号（Single Symbol）、唯一值（Unique Value）
+和颜色分级（Graduated Color）。单一符号是指图层中所有的空间要素都用一种颜色/符号显示。</p>
+<img alt="../../../../_images/legend_single_symbol.png" src="../../../../_images/legend_single_symbol.png" />
+<p>唯一值和颜色分级两种图例类型需要图层的属性数据参与，需要选择属性字段（Field）。唯一值图例字段的类型可以是数值型和字符
+型，而颜色分级图例字段的类型只能是数值型。例如选择唯一值图例类型，然后再选择CNTRY_NAME字段（国家名称），那么每个不同
+的国家名就会用一个不同的符号来区分；选择颜色分级图例类型，然后再选择POP_CNTRY字段（国家人口），就会根据人口的数量分几
+个级别来显示不同的空间要素。</p>
+<img alt="../../../../_images/legend_unique_value.png" src="../../../../_images/legend_unique_value.png" />
+<img alt="../../../../_images/legend_graduated_color.png" src="../../../../_images/legend_graduated_color.png" />
+<p>一个图例中可能包含一个或多个图例项从而形成图例列表，每个图例项中包含了符号（Symbol）、值（Value）和标注（Label），
+它们都可以通过双击鼠标被编辑。值是指空间要素对应的属性字段的值，如果是颜色分级图例值就是一个左闭右开的范围，比如
+100 – 200表示： ≥100并&lt;200。标注是最终显示在图例项旁边的字符。符号控制了空间要素的显示方式，点、线和多边形有不同的
+符号体系。</p>
+<p>双击符号项的图形部分可以打开符号设置对话框。多边形符号由填充和轮廓线条组成，对于多边形空间要素的符号设置对话框，上面是
+集中常用的多边形填充方式，其中第一个是实心填色，后面几个是不同的填充花纹。绘制空间要素（Draw Shape）选项选中时空间要
+素才会被绘制在地图视图中。填充多边形（Draw Fill）选项可以控制是否填充多边形，绘制轮廓线（Draw Outline）选项可以控
+制是否绘制多边形的轮廓线。填充颜色（Fill Color）和透明度（Transparency）选项设定了多边形填充的颜色和透明度，用鼠标
+点击Fill Color右边的填色矩形可以打开颜色选择对话框来选择多线性填充颜色。透明度的有效值是0 – 100，0代表不透明，100
+代表完全透明，中间的值越高表明透明度越高。背景色（Back Color）在多线性花纹填充时有效，此时Fill Color是花纹的颜色，
+Back Color是多边形的背景填充色。多边形的轮廓线可以设置线条的宽度（Size）和颜色（Color）。</p>
+<img alt="../../../../_images/polygon_symbol_set.png" src="../../../../_images/polygon_symbol_set.png" />
+<img alt="../../../../_images/color_choose.png" src="../../../../_images/color_choose.png" />
+<p>线符号设置对话框中上面是线型的选择，绘制空间要素（Draw Shape）选项设置是否绘制此类空间要素，宽度（Size）和颜色
+（Color）选项设置线条的宽度和颜色。线条是由多个点连接组成的，组成线条的点是否显示是由绘制点符号（Draw Point Symbol）
+选项控制的。点符号（Point Symbol）组中的选项用来设置点的大小、式样、填充色、轮廓线颜色等，间隔（Interval）选项可以
+控制间隔几个才显示一个点。</p>
+<img alt="../../../../_images/polyline_symbol_set.png" src="../../../../_images/polyline_symbol_set.png" />
+<p>点符号设置对话框上面可以选择点标记类型和具体的符号。点标记类型（Marker Type）包括：Simple（简单点符号）、
+Character（字体符号）和Image（图像符号）。简单点符号包含了一些常用的表示点的图形，比如圆、正方形、三角形等，
+可以设置点图形的大小、角度、填充颜色以及轮廓线的宽度、颜色等。</p>
+<img alt="../../../../_images/point_symbol_set.png" src="../../../../_images/point_symbol_set.png" />
+<p>点标记类型为字体符号时，计算机系统中安装的所有字体名称会出现在字体名称（Font Family）下拉选项框中。MeteoInfo软件自
+带了Weather字体，包含了所有的天气现象符号。字体符号的大小、角度、颜色也可以用对话框下面的选项来设置。</p>
+<img alt="../../../../_images/point_symbol_set_character.png" src="../../../../_images/point_symbol_set_character.png" />
+<p>点标记类型为图像符号时，MeteoInfo软件路径中image目录中的图片会显示出来供选择，用户可以将需要的图片文件放入此目录中
+来丰富图片的选项。图像符合的大小和角度也可以进行设置。</p>
+<img alt="../../../../_images/point_symbol_set_image.png" src="../../../../_images/point_symbol_set_image.png" />
+<p>下面的图中MeteoInfoMap加载了三个图层：country.shp、river.shp和cities.shp，这三个图层的类型分别是多边形图层、
+线图层和点图层，它们的Shapefile文件可以在MeteoInfo安装路径中的map目录中找到。刚加载的图层会设置缺省的简单图例。</p>
+<img alt="../../../../_images/new_added_layers.png" src="../../../../_images/new_added_layers.png" />
+<p>通过对三个图层的图例进行设置，得到下面的显示效果。</p>
+<img alt="../../../../_images/legend_edit_layers.png" src="../../../../_images/legend_edit_layers.png" />
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
+        <img style="position: fixed; top: 0; right: 0; border: 0;" 
+        src="../../../../_static/forkme_right_orange_ff7600.png" 
+        alt="Fork me on GitHub">
+    </a>
+    <a target="_blank" href="https://gitter.im/meteoinfo/community">
+        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
+        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
+        alt="Join the chat at Gitter">
+    </a>
+
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="add_remove_layer.html"
+                        title="previous chapter">移除、加载图层</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../../meteoinfolib.html"
+                        title="next chapter">MeteoInfo class library</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../_sources/docs/meteoinfo/desktop_cn/map_layer/vector_layer.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../../meteoinfolib.html" title="MeteoInfo class library"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="add_remove_layer.html" title="移除、加载图层"
+             >previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoMap</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../index.html" >MeteoInfoMap 软件</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../map_layer.html" >图层操作</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">矢量图层</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2022, MeteoInfo developers.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+  </body>
+</html>

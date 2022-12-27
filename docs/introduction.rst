@@ -5,7 +5,7 @@
 Introduction
 *******************
 
-**MeteoInfo** is an intergrated framework both for GIS application and scientific computation environment, 
+**MeteoInfo** is an integrated framework both for GIS application and scientific computation environment,
 especially for meteorological community.
 
 **MeteoInfoMap** is a GIS application which enables the user to visualize and analyze

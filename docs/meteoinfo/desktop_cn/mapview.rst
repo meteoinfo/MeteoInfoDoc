@@ -1,0 +1,12 @@
+.. docs-meteoinfo-desktop_cn-mapview:
+
+
+************************
+地图操作
+************************
+
+.. toctree::
+   :maxdepth: 2
+
+   mapview/map_zoom.rst
+   mapview/attribute_label.rst

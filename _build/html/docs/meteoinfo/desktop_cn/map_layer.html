@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>图层操作 &#8212; MeteoInfo 3.3 documentation</title>
+    <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="移除、加载图层" href="map_layer/add_remove_layer.html" />
+    <link rel="prev" title="MeteoInfoMap 软件简介" href="introduction.html" /> 
+  </head><body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../../index.html"><img src="../../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="map_layer/add_remove_layer.html" title="移除、加载图层"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="introduction.html" title="MeteoInfoMap 软件简介"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" >MeteoInfoMap</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="index.html" accesskey="U">MeteoInfoMap 软件</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">图层操作</a></li> 
+      </ul>
+    </div>
+
+
+    <div class="document">
+
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="id1">
+<h1>图层操作<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>MeteoInfoMap中的一个基本显示和操作单元是图层，目前支持四种类型的图层：矢量图层（Vector Layer）、图像图层
+（Image Layer）、栅格图层（Raster Layer）和网络地图图层（Web Map Layer）。矢量图层由相同类型的空间要素
+组成，包含了空间要素的坐标和属性信息，可以和Shapefile文件相对应。图像图层是将一个图像作为地理图层，图像的显示
+是固定的。栅格图层是图像图层的扩展，图层包含一个二维格点数组，可以进行相应的数组计算。网络地图图层也是图像图层的
+扩展，其图像来自网络地图切片图的实施加载。</p>
+<p>所有项目包含的图层都显示在图层管理区，图层名最左边显示为方框内加号（图层的图例隐藏）或者减号（图层的图例显示）。
+右边紧跟一个方框内如果有对勾表明该图层显示在地图视图中，否则不显示。可以用鼠标点击的方式切换上述图层状态。</p>
+<p>图层在地图视图中显示是按照图层管理区的顺序从下往上一层一层显示，这就意味着上面的图层内容可能压盖下面的图层内容。
+因此通常图像图层（包括栅格图层和网络地图图层）放在最下面，往上是多边形填色图层、线图层和点图层。图层的顺序可以
+通过鼠标拖动来调整。</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="map_layer/add_remove_layer.html">移除、加载图层</a></li>
+<li class="toctree-l1"><a class="reference internal" href="map_layer/vector_layer.html">矢量图层</a></li>
+<li class="toctree-l1"><a class="reference internal" href="map_layer/image_layer.html">图像图层</a></li>
+<li class="toctree-l1"><a class="reference internal" href="map_layer/raster_layer.html">栅格图层</a></li>
+<li class="toctree-l1"><a class="reference internal" href="map_layer/web_layer.html">网络地图图层</a></li>
+<li class="toctree-l1"><a class="reference internal" href="map_layer/map_frame_layer_group.html">地图框架和图层组</a></li>
+</ul>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
+        <img style="position: fixed; top: 0; right: 0; border: 0;" 
+        src="../../../_static/forkme_right_orange_ff7600.png" 
+        alt="Fork me on GitHub">
+    </a>
+    <a target="_blank" href="https://gitter.im/meteoinfo/community">
+        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
+        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
+        alt="Join the chat at Gitter">
+    </a>
+
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="introduction.html"
+                        title="previous chapter">MeteoInfoMap 软件简介</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="map_layer/add_remove_layer.html"
+                        title="next chapter">移除、加载图层</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/docs/meteoinfo/desktop_cn/map_layer.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="map_layer/add_remove_layer.html" title="移除、加载图层"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="introduction.html" title="MeteoInfoMap 软件简介"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" >MeteoInfoMap</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="index.html" >MeteoInfoMap 软件</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">图层操作</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2022, MeteoInfo developers.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+  </body>
+</html>
