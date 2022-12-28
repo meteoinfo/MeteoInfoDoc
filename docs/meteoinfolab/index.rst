@@ -10,3 +10,4 @@ MeteoInfoLab
    
    user_guide.rst
    api.rst
+   milab_cn/index.rst
