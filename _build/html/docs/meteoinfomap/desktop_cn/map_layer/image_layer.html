@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+    <title>图像图层 &#8212; MeteoInfo 3.5 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxdoc.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="栅格图层" href="raster_layer.html" />
+    <link rel="prev" title="矢量图层" href="vector_layer.html" /> 
+  </head><body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../../../index.html"><img src="../../../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="raster_layer.html" title="栅格图层"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="vector_layer.html" title="矢量图层"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoMap</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../index.html" >MeteoInfoMap 软件</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../map_layer.html" accesskey="U">图层操作</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">图像图层</a></li> 
+      </ul>
+    </div>
+
+
+    <div class="document">
+
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="id1">
+<h1>图像图层<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>MeteoInfo支持将一个图像文件打开通过地理定位作为一个图像图层加载，一般的图像文件是没有地理位置信息的，要进行地理定位
+必须增加一个world文件。World文件是一个ASCII码文件，可以用任何文本编辑器来创建和编辑。图像文件的后缀通常是三个字符，
+比如.jpg，world文件的命名是取对应图像文件名的前缀以及后缀的第一和第三个字符，最后增加一个w字符。比如图像文件名为
+image.jpg，则对应的world文件名为image.jgw。</p>
+<p>World文件包含的内容如下：</p>
+<blockquote>
+<div><p>20.17541308822119          -A</p>
+<p>0.00000000000000           -D</p>
+<p>0.00000000000000           -B</p>
+<p>-20.17541308822119         -E</p>
+<p>424178.11472601280548      -C</p>
+<p>4313415.90726399607956     -F</p>
+</div></blockquote>
+<p>其中：</p>
+<p>A是x方向的缩放比例，表明x方向图像的一个像素代表真实地理坐标x方向的长度；</p>
+<p>D是x轴的旋转角度；</p>
+<p>B是y轴的旋转角度；</p>
+<p>E是y方向的缩放比例，表明y方向图像的一个像素代表真实地理坐标y方向的长度。E值通常是负值，因为图像坐标的起始点是左上角而
+地理坐标的起始点是左下角；</p>
+<p>C是左上角像素中心点的地理x坐标；</p>
+<p>F是左上角像素中心点的地理y坐标。</p>
+<p>在MeteoInfoMap中可以像加载Shapefile一样加载图像文件为一个图像图层，如果该图像已经有world文件，软件会按照world文件
+里的参数将图像坐标转换为地理坐标。如果没有world文件，软件会自动创建一个，里面的参数可以通过图像图层的属性对话框进行调整。</p>
+<p>双击图像图层名可以打开图像图层的属性对话框。可以看到world文件中的相关参数都可以在属性对话框中进行设置。还可以设置图像整
+体的透明度，或者选择某一个颜色设置为透明。图像的显示可以设置插值方式（Interpolation）。图像图层对话框中没有图例
+（Legend）选项，不能对图例进行更细致的设置。</p>
+<img alt="../../../../_images/image_layer_property.png" src="../../../../_images/image_layer_property.png" />
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
+        <img style="position: fixed; top: 0; right: 0; border: 0;" 
+        src="../../../../_static/forkme_right_orange_ff7600.png" 
+        alt="Fork me on GitHub">
+    </a>
+    <a target="_blank" href="https://gitter.im/meteoinfo/community">
+        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
+        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
+        alt="Join the chat at Gitter">
+    </a>
+
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="vector_layer.html"
+                        title="previous chapter">矢量图层</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="raster_layer.html"
+                        title="next chapter">栅格图层</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../_sources/docs/meteoinfomap/desktop_cn/map_layer/image_layer.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="raster_layer.html" title="栅格图层"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="vector_layer.html" title="矢量图层"
+             >previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoMap</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../index.html" >MeteoInfoMap 软件</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../map_layer.html" >图层操作</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">图像图层</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2023, MeteoInfo developers.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
+    </div>
+  </body>
+</html>

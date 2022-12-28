@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+    <title>图层空间要素选择 &#8212; MeteoInfo 3.5 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxdoc.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="距离和面积测量" href="measurement.html" />
+    <link rel="prev" title="图层属性数据查询和标注" href="attribute_label.html" /> 
+  </head><body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../../../index.html"><img src="../../../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="measurement.html" title="距离和面积测量"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="attribute_label.html" title="图层属性数据查询和标注"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoMap</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../index.html" >MeteoInfoMap 软件</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../mapview.html" accesskey="U">地图操作</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">图层空间要素选择</a></li> 
+      </ul>
+    </div>
+
+
+    <div class="document">
+
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="id1">
+<h1>图层空间要素选择<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>软件工具栏中有一些选择工具可以交互式的选择某个矢量图层中的部分空间要素，包括“按矩形选择”、“按多边形选择”、“按套索选择”
+和“按圆选择”。选中其中一个（例如按圆选择），用鼠标在地图区域绘制相应的图形选中图形内的空间要素。</p>
+<img alt="../../../../_images/feature_select_tools.png" src="../../../../_images/feature_select_tools.png" />
+<img alt="../../../../_images/feature_select_circle.png" src="../../../../_images/feature_select_circle.png" />
+<p>软件还有“选择”菜单，可以根据矢量图层的属性数据来选择空间要素，或者根据空间位置来选择空间要素。点击“选择 -&gt; 通过属性数据选择
+”菜单打开通过属性数据选择空间要素的对话框，设置图层（Layer）为欲进行空间要素选择的图层，设置合适的选择方式（Method），利用
+图形的属性字段和数据值编写一个选择表达式。例如选择能见度小于10公里的站点，编写表达式为：Visibility &lt; 10，点击选择按钮
+（Select）即可，被选中的空间要素会高亮显示。</p>
+<img alt="../../../../_images/select_by_attribute.png" src="../../../../_images/select_by_attribute.png" />
+<p>下面示例要选择位于内蒙古的站点，用鼠标选中cn_province.shp图层名，点击工具栏中“通过矩形选择要素”按钮，通过鼠标点击选中内蒙
+古区域，被选中区域高亮显示。点击“选择 -&gt; 通过位置选择”菜单，打开通过位置选择对话框，设置被选中空间要素的图层
+（Select features from the layer）、选择方式（That）、用于确定空间位置的图层（The features in this layer）。
+注意要勾选只用被选中要素（Selected features only），这样就可以用刚才cn_province.shp图层中被选中的内蒙古区域来选择能见度
+站点图层的站点了。选中后的点会高亮显示。</p>
+<img alt="../../../../_images/select_by_attribute_innermongolia_1.png" src="../../../../_images/select_by_attribute_innermongolia_1.png" />
+<img alt="../../../../_images/select_by_attribute_innermongolia_2.png" src="../../../../_images/select_by_attribute_innermongolia_2.png" />
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
+        <img style="position: fixed; top: 0; right: 0; border: 0;" 
+        src="../../../../_static/forkme_right_orange_ff7600.png" 
+        alt="Fork me on GitHub">
+    </a>
+    <a target="_blank" href="https://gitter.im/meteoinfo/community">
+        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
+        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
+        alt="Join the chat at Gitter">
+    </a>
+
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="attribute_label.html"
+                        title="previous chapter">图层属性数据查询和标注</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="measurement.html"
+                        title="next chapter">距离和面积测量</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../_sources/docs/meteoinfomap/desktop_cn/mapview/feature_select.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="measurement.html" title="距离和面积测量"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="attribute_label.html" title="图层属性数据查询和标注"
+             >previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoMap</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../index.html" >MeteoInfoMap 软件</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../mapview.html" >地图操作</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">图层空间要素选择</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2023, MeteoInfo developers.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
+    </div>
+  </body>
+</html>

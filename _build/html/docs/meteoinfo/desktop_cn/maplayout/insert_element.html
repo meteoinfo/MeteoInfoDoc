@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+    <title>在版面中插入地图要素 &#8212; MeteoInfo 3.5 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxdoc.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="图层创建和编辑" href="../layer_edit.html" />
+    <link rel="prev" title="版面属性" href="layout_property.html" /> 
+  </head><body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../../../index.html"><img src="../../../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../layer_edit.html" title="图层创建和编辑"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="layout_property.html" title="版面属性"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoMap</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../index.html" >MeteoInfoMap 软件</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../maplayout.html" accesskey="U">版面布局</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">在版面中插入地图要素</a></li> 
+      </ul>
+    </div>
+
+
+    <div class="document">
+
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="id1">
+<h1>在版面中插入地图要素<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>在“插入”菜单中有“标题”、“文字”、“图例”、“比例尺”、“指北针”和“风箭头”几个可供插入版面的地图要素，而最重要的地图要素是
+地图框架要素。</p>
+<img alt="../../../../_images/layout_elements.png" src="../../../../_images/layout_elements.png" />
+<p>和在地图中添加文字标记类似，在版面中插入的标题和文字都可以被选中、移动和编辑。指北针标明了地图正北方向，比例尺指示了地图
+长度和实际地理长度的比例。图例标明了图形要素中不同符号的含义。比例尺有多种表现形式，选中后双击打开属性设置对话框，选择比
+例尺类型（Scale Bar Type）可以改变其绘制方式。</p>
+<img alt="../../../../_images/layout_edit_scalebar.png" src="../../../../_images/layout_edit_scalebar.png" />
+<p>图中包含了两个地图框架要素，其中一个作为南海脚图。地图框架也支持工具栏中的地图显示范围缩放工具，方便对显示范围进行调整。
+可以用鼠标选中版面中的地图框架要素，进行交互式移动和尺寸缩放，方便进行布局调整。选中地图框架要素后双击出现属性对话框，
+可以对其进行各种设置。其中经纬线和经纬度标注的一些设置最为常用，包括是否显示经纬线、是否标注经纬度、经纬线起始和间隔、
+经纬度标注字体、位置、经纬线符号设置等。</p>
+<img alt="../../../../_images/layout_map_property.png" src="../../../../_images/layout_map_property.png" />
+<p>图例是地图的重要组成部分，指示了地图中要素符号的含义。图例选中后双击出现图例设置对话框，可以设置该图例是哪个图层的图例、
+图例类型、标题、字体、列数等。其中图例类型分为竖条（Bar_Vertical）、横条（Bar_Horizontal）和标准（Normal）。</p>
+<img alt="../../../../_images/layout_edit_legend.png" src="../../../../_images/layout_edit_legend.png" />
+<p>图例类型设置为Normal后，图例的显示会根据空间要素类型（点、线或多边形）而不同，比如等值线的图例会显示为折线。在版面中可以
+插入多个图例，下图中包含了Normal类型的多边形图例和点图例。如果有风矢量图层，也可以插入风箭头要素。</p>
+<img alt="../../../../_images/layout_edit_legend_normal.png" src="../../../../_images/layout_edit_legend_normal.png" />
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
+        <img style="position: fixed; top: 0; right: 0; border: 0;" 
+        src="../../../../_static/forkme_right_orange_ff7600.png" 
+        alt="Fork me on GitHub">
+    </a>
+    <a target="_blank" href="https://gitter.im/meteoinfo/community">
+        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
+        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
+        alt="Join the chat at Gitter">
+    </a>
+
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="layout_property.html"
+                        title="previous chapter">版面属性</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../layer_edit.html"
+                        title="next chapter">图层创建和编辑</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../_sources/docs/meteoinfo/desktop_cn/maplayout/insert_element.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../layer_edit.html" title="图层创建和编辑"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="layout_property.html" title="版面属性"
+             >previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoMap</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../index.html" >MeteoInfoMap 软件</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../maplayout.html" >版面布局</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">在版面中插入地图要素</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2023, MeteoInfo developers.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
+    </div>
+  </body>
+</html>

@@ -4,17 +4,16 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Plot tutorial &#8212; MeteoInfo 3.3 documentation</title>
-    <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+    <title>Plot tutorial &#8212; MeteoInfo 3.5 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinxdoc.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
-    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Arrays" href="arrays.html" />
@@ -60,7 +59,7 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="plot-tutorial">
+  <section id="plot-tutorial">
 <span id="docs-meteoinfolab-user-guid-plot-tutorial"></span><h1>Plot tutorial<a class="headerlink" href="#plot-tutorial" title="Permalink to this headline">¶</a></h1>
 <p>MeteoInfoLab has a collection of command style functions that make MeteoInfoLab work like MATLAB.
 Each plot function makes some change to a figure: e.g., create a figure, create a plotting area
@@ -84,7 +83,7 @@ x versus y, you can issue the command:</p>
 <p>For every x, y pair of arguments, there is an optional third argument which is the format string that
 indicates the color and line type of the plot. The letters and symbols of the format string are
 from MATLAB, and you concatenate a color string with a line style string. The default format
-string is ‘r-‘, which is a solid red line. For example, to plot the above with red circles, you
+string is ‘r-’, which is a solid red line. For example, to plot the above with red circles, you
 would issue</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">16</span><span class="p">],</span> <span class="s1">&#39;ro&#39;</span><span class="p">)</span>
 <span class="n">axis</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">])</span>
@@ -104,7 +103,7 @@ with different format styles in one command using arrays.</p>
 </pre></div>
 </div>
 <img alt="../../../_images/plot_tutorial-3.png" src="../../../_images/plot_tutorial-3.png" />
-<div class="section" id="controlling-line-properties">
+<section id="controlling-line-properties">
 <h2>Controlling line properties<a class="headerlink" href="#controlling-line-properties" title="Permalink to this headline">¶</a></h2>
 <p>Lines have many attributes that you can set: linewidth, style, etc; The way to set line
 properties</p>
@@ -115,8 +114,8 @@ properties</p>
 </div>
 </li>
 </ul>
-</div>
-<div class="section" id="working-with-multiple-axes">
+</section>
+<section id="working-with-multiple-axes">
 <h2>Working with multiple axes<a class="headerlink" href="#working-with-multiple-axes" title="Permalink to this headline">¶</a></h2>
 <p>MATLAB, and MeteoInfoLab, have the concept of the current figure and the current axes. All plotting
 commands apply to the current axes. Normally, you don’t have to worry about this, because it is all
@@ -148,8 +147,8 @@ coordinates.</p>
 </pre></div>
 </div>
 <img alt="../../../_images/plot_tutorial-5.png" src="../../../_images/plot_tutorial-5.png" />
-</div>
-</div>
+</section>
+</section>
 
 
             <div class="clearer"></div>
@@ -234,8 +233,8 @@ coordinates.</p>
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2010-2022, MeteoInfo developers.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+        &#169; Copyright 2010-2023, MeteoInfo developers.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
     </div>
   </body>
 </html>

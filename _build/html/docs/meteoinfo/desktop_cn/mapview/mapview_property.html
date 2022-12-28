@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+    <title>地图属性 &#8212; MeteoInfo 3.5 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxdoc.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="屏蔽多边形区域外部图形" href="maskout.html" />
+    <link rel="prev" title="地图投影" href="projection.html" /> 
+  </head><body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../../../index.html"><img src="../../../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="maskout.html" title="屏蔽多边形区域外部图形"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="projection.html" title="地图投影"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoMap</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../index.html" >MeteoInfoMap 软件</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../mapview.html" accesskey="U">地图操作</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">地图属性</a></li> 
+      </ul>
+    </div>
+
+
+    <div class="document">
+
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="id1">
+<h1>地图属性<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>地图显示的一些属性特征可以通过“显示 -&gt; 地图属性”菜单弹出的地图属性对话框进行设置。AntiAlias属性可以设置地图中的图
+形显示是否开启反锯齿，开启反锯齿后可以提高图形的显示效果，但会让图形的显示速度变慢。Background和Foreground属性是
+来设置地图的背景色和前景色。XYScaleFactor属性设置地图显示纵横比例，比如在等经纬度投影中比例值为1时中国地图看起来比
+较扁，设置为1.2会让图形的纵向更长一些。MultiGlobalDraw属性仅在等经纬度投影中使用，选中该属性地图区域会并排绘制三个
+全球范围地图，很多气象数据的经度范围是0 - 360度，而传统GIS地图的经纬度是-180 – 180度，提供此选项能够使气象数据和
+地图数据的显示匹配起来。PointAntiAlias属性设置是否在绘制点的时候开启反锯齿效果，这个是对点图形绘制质量的单独设置。
+HighSpeedWheelZoom属性勾选后鼠标滚轮缩放地图的速度会比较快，但缩放过程中图形的显示质量下降，在缩小过程中地图显示区
+域会有白边。不勾选该属性能改善图形缩放过程中图形的显示质量，缩小过程也没有白边，但缩放时的图形显示速度降低。</p>
+<img alt="../../../../_images/mapview_property_dialog.png" src="../../../../_images/mapview_property_dialog.png" />
+<p>下图是将反锯齿属性选中并将地图背景色设置为淡蓝色的效果示例。</p>
+<img alt="../../../../_images/mapview_property_effect.png" src="../../../../_images/mapview_property_effect.png" />
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
+        <img style="position: fixed; top: 0; right: 0; border: 0;" 
+        src="../../../../_static/forkme_right_orange_ff7600.png" 
+        alt="Fork me on GitHub">
+    </a>
+    <a target="_blank" href="https://gitter.im/meteoinfo/community">
+        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
+        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
+        alt="Join the chat at Gitter">
+    </a>
+
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="projection.html"
+                        title="previous chapter">地图投影</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="maskout.html"
+                        title="next chapter">屏蔽多边形区域外部图形</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../_sources/docs/meteoinfo/desktop_cn/mapview/mapview_property.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="maskout.html" title="屏蔽多边形区域外部图形"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="projection.html" title="地图投影"
+             >previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoMap</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../index.html" >MeteoInfoMap 软件</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../mapview.html" >地图操作</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">地图属性</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2023, MeteoInfo developers.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
+    </div>
+  </body>
+</html>

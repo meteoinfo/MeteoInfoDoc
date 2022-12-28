@@ -4,17 +4,16 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>3-D plots with OpenGL &#8212; MeteoInfo 3.3 documentation</title>
-    <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+    <title>3-D plots with OpenGL &#8212; MeteoInfo 3.5 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinxdoc.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
-    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="plot3" href="../../../docs/meteoinfolab/plot/axes3dgl/plot3.html" />
@@ -59,7 +58,7 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="d-plots-with-opengl">
+  <section id="d-plots-with-opengl">
 <span id="examples-meteoinfolab-plot-types-plot-3dgl"></span><h1>3-D plots with OpenGL<a class="headerlink" href="#d-plots-with-opengl" title="Permalink to this headline">¶</a></h1>
 <p>Create an OpenGL support 3D axes (Axes3DGL object) using <code class="docutils literal notranslate"><span class="pre">axes3d</span></code> function. The 3d plot functions can
 create 3D axes automatically.</p>
@@ -97,7 +96,7 @@ create 3D axes automatically.</p>
 <span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
-<img alt="../../../_images/axes3dgl_isosurface1.png" src="../../../_images/axes3dgl_isosurface1.png" />
+<img alt="../../../_images/axes3dgl_isosurface.png" src="../../../_images/axes3dgl_isosurface.png" />
 <p><strong>3D sand and dust storm plot</strong>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Set date</span>
 <span class="n">sdate</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
@@ -149,8 +148,8 @@ create 3D axes automatically.</p>
 <span class="n">title</span><span class="p">(</span><span class="s1">&#39;Dust bigger than 100 ug/m3 (</span><span class="si">%s</span><span class="s1">)&#39;</span> <span class="o">%</span> <span class="n">tt</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1"> %H:00&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
-<img alt="../../../_images/axes3dgl_dust1.png" src="../../../_images/axes3dgl_dust1.png" />
-</div>
+<img alt="../../../_images/axes3dgl_dust.png" src="../../../_images/axes3dgl_dust.png" />
+</section>
 
 
             <div class="clearer"></div>
@@ -225,8 +224,8 @@ create 3D axes automatically.</p>
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2010-2022, MeteoInfo developers.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+        &#169; Copyright 2010-2023, MeteoInfo developers.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
     </div>
   </body>
 </html>

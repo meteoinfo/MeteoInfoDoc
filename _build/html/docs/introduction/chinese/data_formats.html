@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+    <title>MeteoInfo支持的主要数据类型 &#8212; MeteoInfo 3.5 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinxdoc.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+  </head><body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../../index.html"><img src="../../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../index.html">docs</a>|&nbsp;</li>
+
+        <li class="nav-item nav-item-this"><a href="">MeteoInfo支持的主要数据类型</a></li> 
+      </ul>
+    </div>
+
+
+    <div class="document">
+
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="meteoinfo">
+<h1>MeteoInfo支持的主要数据类型<a class="headerlink" href="#meteoinfo" title="Permalink to this headline">¶</a></h1>
+<section id="id1">
+<h2>地图数据<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>MeteoInfo主要支持Shapefile格式的地图数据，它是美国环境系统研究所公司（ESRI）开发的一种空间数据开放格式，已经成为地理
+信息领域的开放标准。Shapefile文件可以存储基本空间几何体对象的位置信息，包括点、折线和多边形等，此外还可以存储这些空间对
+象的属性信息。Shapefile文件指的是一种文件存储的方法，实际上这种文件格式是由多个文件组成的。其中有三个文件是必不可少的，
+它们分别是“.shp”、“.dbf”与“.shx”文件，它们有相同的文件名前缀。“.shp”文件中存储的是空间对象的坐标信息，一个“.shp”文件
+只能存储单一类型的空间对象；“.dbf”文件中存储的是空间对象的属性信息；“.shx”文件存储的是空间对象索引信息。其它常用的文件还
+有“.prj”，用于保存地理坐标系和投影信息。</p>
+<p>软件还支持带地理定位信息的图像文件，比如geotiff格式，或者普通图像文件带上地理定位文件（world file）。</p>
+<p>MeteoInfo自定义了一种简单的文本格式的地理坐标文件wmf。文件的第一行是空间对象的类型：Point、Line或Polygon，第二行空间
+对象的数目，从第三行开始是每个空间对象的信息，包括该空间对象坐标点数，每个坐标点的二维空间坐标值。例如：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Polygon
+20
+12
+118.29337310791,24.4198417663574
+118.299713134766,24.4336051940918
+118.330276489258,24.4633293151855
+118.393051147461,24.5158309936523
+118.403739929199,24.5206909179688
+118.437759399414,24.49582862854
+118.450332641602,24.4633274078369
+118.444694519043,24.4277038574219
+118.420951843262,24.3976345062256
+118.287132263184,24.3903427124023
+118.278594970703,24.405481338501
+118.29337310791,24.4198417663574
+16
+121.40941619873,39.3613815307617
+121.381927490234,39.3691558837891
+121.298027038574,39.3899917602539
+121.282493591309,39.3805465698242
+121.259017944336,39.3804092407227
+121.255828857422,39.4094314575195
+121.263328552246,39.435962677002
+121.337196350098,39.4785995483398
+121.393051147461,39.4791564941406
+121.414016723633,39.4766540527344
+121.430541992188,39.4708251953125
+121.442893981934,39.4624938964844
+121.451515197754,39.4446411132813
+121.434982299805,39.388744354248
+121.421371459961,39.3655471801758
+121.40941619873,39.3613815307617
+…
+</pre></div>
+</div>
+</section>
+<section id="id2">
+<h2>科学数据<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>MeteoInfo支持大气科学领域常用的数据格式，包括NetCDF、GRIB、HDF、GrADS、ARL、MICAPS等。</p>
+<p>NetCDF（Network Common Data Format）是美国UCAR的Unidata组织开发的一种表示多维信息的数据格式，是一种自描述的二进
+制数据格式。经典的NetCDF格式是由维（dimensions）、全局属性（global attributes）和变量（variations）组成的。
+NetCDF4.0以后开始向HDF格式靠拢，文件中可能包含多个组（groups）。netCDF格式非常灵活，用程序自动判断维和变量等信息的前提
+条件是数据必须遵循某种约定（convensions）。气象上最常用的约定是CF（COARDS可以看作CF约定的子集），对于维、变量、属性有
+详细的规定，这样以来软件才能通过约定对数据进行正确的判读。</p>
+<p>GRIB格式是世界气象组织（WMO）开发的一种用于交换和存储规则分布数据的二进制文件格式，目前有两个版本：GRIB1和GRIB2。GRIB数
+据是由一个或多个Message组成的，每个Message又由多个段（Section）组成，也是一种自描述的二进制数据格式。这种数据格式又是表格
+码驱动的，比如数据本身解读出来的变量只是代码，这个代码具体对应的是什么变量（温度、气压等）需要查找相应的表格来查表确定。WMO
+有标准的表格，各大气象中心也有自定义的表格，因此数据解码的时候要注意其对应的表格。和NetCDF格式不同，GRIB格式并没有统一的文
+件头信息，每个Message都包含独立的信息和数据，因此在读取包含多个Message的GRIB文件信息时需要遍历全部数据。这样做也有好处，
+就是在数据传输时中断后补传比较方便。</p>
+<p>HDF（Hierarchical Data Format）格式是美国国家高级计算应用中心（National Center for Supercomputing Application,
+NCSA）为了满足各种领域研究需求而研制的一种能高效存储和分发科学数据的新型数据格式，HDF格式尤其在卫星遥感领域被广泛使用。HDF具
+有分层式的数据管理结构，目前使用比较广泛的是HDF4和HDF5格式。</p>
+<p>GrADS格式包含控制文件（control file）和二进制数据文件，是大气科学经典绘图软件GrADS定义的。数据文件里只包含数据本身，相关信
+息都在控制文件中。控制文件是ASCII格式，可以通过查看控制文件来了解数据。</p>
+<p>ARL格式是美国NOAA的ARL实验室为HYSPLIT模式定义的一种专用数据格式，包含了一系列固定长度的变量数据记录，每个记录包括一个记录
+头和压缩数据。MeteoInfo软件也支持HYSPLIT输出的气团轨迹和浓度数据格式。</p>
+<p>MICAPS格式是中国气象局MICAPS软件自定义的一系列数据格式，MeteoInfo支持其中一些常用的，比如第一类地面全要素观测数据、第四
+类格点数据等。</p>
+<p>MeteoInfo还支持一些文本格式的站点和格点数据格式，比如SYNOP和METAR站点观测数据，以及ESRI文本格点数据和Surfer文本格点数
+据等。</p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
+        <img style="position: fixed; top: 0; right: 0; border: 0;" 
+        src="../../../_static/forkme_right_orange_ff7600.png" 
+        alt="Fork me on GitHub">
+    </a>
+    <a target="_blank" href="https://gitter.im/meteoinfo/community">
+        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
+        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
+        alt="Join the chat at Gitter">
+    </a>
+
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">MeteoInfo支持的主要数据类型</a><ul>
+<li><a class="reference internal" href="#id1">地图数据</a></li>
+<li><a class="reference internal" href="#id2">科学数据</a></li>
+</ul>
+</li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/docs/introduction/chinese/data_formats.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../index.html">docs</a>|&nbsp;</li>
+
+        <li class="nav-item nav-item-this"><a href="">MeteoInfo支持的主要数据类型</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2023, MeteoInfo developers.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
+    </div>
+  </body>
+</html>

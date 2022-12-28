@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+    <title>MeteoInfo开发历程 &#8212; MeteoInfo 3.5 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinxdoc.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="MeteoInfoMap" href="../../meteoinfomap/index.html" />
+    <link rel="prev" title="MeteoInfo下载与运行" href="download_run.html" /> 
+  </head><body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../../index.html"><img src="../../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../../meteoinfomap/index.html" title="MeteoInfoMap"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="download_run.html" title="MeteoInfo下载与运行"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index_chinese.html" accesskey="U">MeteoInfo总体介绍</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">MeteoInfo开发历程</a></li> 
+      </ul>
+    </div>
+
+
+    <div class="document">
+
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="meteoinfo">
+<h1>MeteoInfo开发历程<a class="headerlink" href="#meteoinfo" title="Permalink to this headline">¶</a></h1>
+<p>作者在做研究工作的时候需要自行开发一些算法完成特定的功能，针对气团轨迹统计分析功能（TrajStat）最早是用ArcView 3.x版本扩展
+开发，后来改用开源的GIS控件MapWindows进行二次开发，能够结合长期大量后向轨迹和站点污染物浓度监测数据开展污染物传输路径和潜在
+源区的分析，相关成果2009年发表在Environmental Modelling &amp; Software上。同时由于绘图需要自行研发了等值线相关算法库
+wContour。2009-2010年在西班牙Huelva大学做访问学者时萌生了开发气象GIS软件的想法并很快付诸实施，当时采用的计算机语言是
+C#。wContour库2012年在Geoscience &amp; Computers上发表，基于C#的气象GIS软件MeteoInfo 2014年在Meteorological
+Applications上发表。</p>
+<p>气象领域对Linux/Unix系统的应用很广泛，尤其是数值模式的运行，而C#语言开发的软件跨平台能力比较弱，因此考虑用跨平台能力很强的
+Java语言重新开发MeteoInfo，而且Java拥有大量的开源科学计算库，特别是Unidata的NetCDF Java库能够支持大多数大气科学领域常
+用的数据格式，对提升MeteoInfo的功能有很大帮助。同时由于气象GIS桌面软件的用途限制比较大，考虑开发基于Java和Jython的科学计
+算软件，将MeteoInfo划分为同一框架下的MeteoInfoMap和MeteoInfoLab两大应用程序来满足更多的需求。MeteoInfo科学计算软件研
+发的工作2019年在Journal of Open Research Software上发表。在新的MeteoInfo软件研发过程中，也在开发一些功能扩展模块，
+TrajStat重新开发为MeteoInfoMap的一个插件，也开发了MeteoInfoLab的一些工具箱：IMEP（用于模式检验）、EMIPS（用于排放源
+清单处理）、MIML（用于机器学习）。考虑到国外用户的使用，MeteoInfo的开发以英文为主，MeteoInfoMap的界面增加了中文支持。
+MeteoInfo还需要不断的发展改进，相关的文档写作更是比较滞后，希望通过持续的努力工作让MeteoInfo能够更好地为项目科研和业务人
+员服务。</p>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
+        <img style="position: fixed; top: 0; right: 0; border: 0;" 
+        src="../../../_static/forkme_right_orange_ff7600.png" 
+        alt="Fork me on GitHub">
+    </a>
+    <a target="_blank" href="https://gitter.im/meteoinfo/community">
+        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
+        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
+        alt="Join the chat at Gitter">
+    </a>
+
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="download_run.html"
+                        title="previous chapter">MeteoInfo下载与运行</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../../meteoinfomap/index.html"
+                        title="next chapter">MeteoInfoMap</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/docs/introduction/chinese/roadmap.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../../meteoinfomap/index.html" title="MeteoInfoMap"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="download_run.html" title="MeteoInfo下载与运行"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index_chinese.html" >MeteoInfo总体介绍</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">MeteoInfo开发历程</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2023, MeteoInfo developers.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
+    </div>
+  </body>
+</html>
