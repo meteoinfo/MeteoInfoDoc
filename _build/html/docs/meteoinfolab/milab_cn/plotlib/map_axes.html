@@ -1,0 +1,291 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+    <title>地图坐标系 &#8212; MeteoInfo 3.5 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxdoc.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="图形标注和多Y轴" href="text_multi_axis.html" />
+    <link rel="prev" title="极坐标图" href="polar_plot.html" /> 
+  </head><body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../../../index.html"><img src="../../../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="text_multi_axis.html" title="图形标注和多Y轴"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="polar_plot.html" title="极坐标图"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../index.html" >MeteoInfoLab 中文文档</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../plotlib.html" accesskey="U">plotlib包</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">地图坐标系</a></li> 
+      </ul>
+    </div>
+
+
+    <div class="document">
+
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="dos-meteoinfolab-milab-cn-plotlib-map-axes">
+<span id="id1"></span><h1>地图坐标系<a class="headerlink" href="#dos-meteoinfolab-milab-cn-plotlib-map-axes" title="Permalink to this headline">¶</a></h1>
+<p>地图坐标系（MapAxes）是描述地理位置的二维坐标系，缺省二维坐标系分别为经度和纬度，经过地图投影后坐标系的单位通常为米（或者公里），
+可以和经纬度进行相互换算。在地图坐标系中绘图需要先用axesm函数创建地图坐标系，然后用二维绘图函数在地图上绘制图形。地图坐标系中
+通常要绘制地理底图作为专业图形信息的地理位置参考，geoshow函数可以用来绘制以Shapefile文件为代表的地理底图，如果之前没有axesm
+创建地图坐标系，geoshow函数会自动创建一个地图坐标系。“MeteoInfo -&gt; Map”目录中包含了一些Shapefile文件，geoshow
+函数中第一个参数可以是其中某个Shapefile文件的文件名（无需.shp后缀），软件会自动在该目录中找到相应Shapefile文件并加载绘制其中
+的地图数据图形。下面的例子用geoshow函数分别绘制了世界行政区域、主要河流和主要城市，geoshow函数返回地图图层对象，其addlabels
+方法可以给图层中的地理要素添加标注。axis函数用来设置地图坐标系的经纬度范围，参数是一个列表，其中的要素分别是最小经度、最大经度、
+最小纬度和最大纬度。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;continent&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="p">[</span><span class="mi">204</span><span class="p">,</span><span class="mi">204</span><span class="p">,</span><span class="mi">255</span><span class="p">],</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;rivers&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">cities</span> <span class="o">=</span> <span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;cities&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">cities</span><span class="o">.</span><span class="n">addlabels</span><span class="p">(</span><span class="s1">&#39;NAME&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">yoffset</span><span class="o">=-</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">axis</span><span class="p">([</span><span class="o">-</span><span class="mi">180</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="o">-</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">])</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;geoshow&#39;</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;continent&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="p">[</span><span class="mi">204</span><span class="p">,</span><span class="mi">204</span><span class="p">,</span><span class="mi">255</span><span class="p">],</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;rivers&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">cities</span> <span class="o">=</span> <span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;cities&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">cities</span><span class="o">.</span><span class="n">addlabels</span><span class="p">(</span><span class="s1">&#39;NAME&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">yoffset</span><span class="o">=-</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">axis</span><span class="p">([</span><span class="o">-</span><span class="mi">180</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="o">-</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">])</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;geoshow&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/plotlib_geoshow.png" src="../../../../_images/plotlib_geoshow.png" />
+<p>创建了地图坐标系后可以用相关绘图语句绘制图形。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">migl</span><span class="o">.</span><span class="n">get_sample_folder</span><span class="p">(),</span> <span class="s1">&#39;GrADS&#39;</span><span class="p">,</span> <span class="s1">&#39;model.ctl&#39;</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+<span class="n">ps</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;PS&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;coastline&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">))</span>
+<span class="n">contourf</span><span class="p">(</span><span class="n">ps</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">smooth</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">gettime</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Pressure (</span><span class="si">{}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)))</span>
+<span class="n">yticks</span><span class="p">(</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">90</span><span class="p">,</span> <span class="mi">91</span><span class="p">,</span> <span class="mi">30</span><span class="p">))</span>
+<span class="n">colorbar</span><span class="p">(</span><span class="n">extendrect</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/plotlib_mapaxes_contourf.png" src="../../../../_images/plotlib_mapaxes_contourf.png" />
+<p>站点观测中如果有天气现象数据（比如MICAPS第一类地面全要素观测数据），可以用weatherspec函数创建一个天气现象图例，然后在scatter
+函数中将该图例赋给symbolspec参数，可以用天气现象数据绘制天气现象符号图。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Add file and read data array</span>
+<span class="n">fn</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">migl</span><span class="o">.</span><span class="n">get_sample_folder</span><span class="p">(),</span> <span class="s1">&#39;MICAPS&#39;</span><span class="p">,</span> <span class="s1">&#39;10101414.000&#39;</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">addfile_micaps</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;WeatherNow&#39;</span><span class="p">][:]</span>
+<span class="n">lon</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;Longitude&#39;</span><span class="p">][:]</span>
+<span class="n">lat</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;Latitude&#39;</span><span class="p">][:]</span>
+<span class="c1">#Plot</span>
+<span class="n">axesm</span><span class="p">(</span><span class="n">bgcolor</span><span class="o">=</span><span class="p">(</span><span class="mi">204</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">))</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;continent&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="mi">251</span><span class="p">,</span><span class="mi">195</span><span class="p">))</span>
+<span class="n">ls</span> <span class="o">=</span> <span class="n">weatherspec</span><span class="p">()</span>
+<span class="n">layer</span> <span class="o">=</span> <span class="n">scatter</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">symbolspec</span><span class="o">=</span><span class="n">ls</span><span class="p">)</span>
+<span class="n">yticks</span><span class="p">([</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">50</span><span class="p">])</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Weather symbol plot example&#39;</span><span class="p">)</span>
+<span class="n">xlim</span><span class="p">(</span><span class="mi">72</span><span class="p">,</span> <span class="mi">136</span><span class="p">)</span>
+<span class="n">ylim</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">55</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/mapaxes_scatter_weather.png" src="../../../../_images/mapaxes_scatter_weather.png" />
+<p>对于全要素地面气象观测数据还可以用stationmodel函数绘制站点填图。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">migl</span><span class="o">.</span><span class="n">get_sample_folder</span><span class="p">(),</span> <span class="s1">&#39;MICAPS&#39;</span><span class="p">,</span> <span class="s1">&#39;10101414.000&#39;</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">addfile_micaps</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">smodeldata</span><span class="p">()</span>
+
+<span class="c1">#Plot</span>
+<span class="n">axesm</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="p">(</span><span class="mi">204</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">))</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="mi">251</span><span class="p">,</span><span class="mi">195</span><span class="p">))</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;cn_province&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">layer</span> <span class="o">=</span> <span class="n">stationmodel</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">yticks</span><span class="p">([</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">50</span><span class="p">])</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Station model plot example&#39;</span><span class="p">)</span>
+<span class="n">xlim</span><span class="p">(</span><span class="mi">72</span><span class="p">,</span> <span class="mi">136</span><span class="p">)</span>
+<span class="n">ylim</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">55</span><span class="p">)</span>
+
+<span class="c1">#Add south China Sea</span>
+<span class="n">axesm</span><span class="p">(</span><span class="n">position</span><span class="o">=</span><span class="p">[</span><span class="mf">0.11</span><span class="p">,</span><span class="mf">0.12</span><span class="p">,</span><span class="mf">0.18</span><span class="p">,</span><span class="mf">0.24</span><span class="p">],</span> <span class="n">bgcolor</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">axison</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;cn_border&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">))</span>
+<span class="n">xlim</span><span class="p">(</span><span class="mi">106</span><span class="p">,</span> <span class="mi">123</span><span class="p">)</span>
+<span class="n">ylim</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">23</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/mapaxes_stationmodel.png" src="../../../../_images/mapaxes_stationmodel.png" />
+<p>气象数据可视化时经常会进行区域屏蔽（maskout），例如只绘制每个区域内部的数据图形。可以用geoshow函数将包含屏蔽区域的地图
+数据文件加载到地图坐标系中（visible=False参数表示添加图层到地图坐标系，但不显示图层），在绘制专业图层后利用makslayer
+函数来对专业图层内容进行屏蔽。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">migl</span><span class="o">.</span><span class="n">get_sample_folder</span><span class="p">(),</span> <span class="s1">&#39;GrADS&#39;</span><span class="p">,</span> <span class="s1">&#39;model.ctl&#39;</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+<span class="n">ps</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;PS&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;20:55&#39;</span><span class="p">,</span><span class="s1">&#39;230:300&#39;</span><span class="p">]</span>
+
+<span class="n">axesm</span><span class="p">()</span>
+<span class="n">m_us</span> <span class="o">=</span> <span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;us&#39;</span><span class="p">,</span> <span class="n">visible</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;us_states&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">)</span>
+<span class="n">layer</span> <span class="o">=</span> <span class="n">contourf</span><span class="p">(</span><span class="n">ps</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
+<span class="n">masklayer</span><span class="p">(</span><span class="n">m_us</span><span class="p">,</span> <span class="p">[</span><span class="n">layer</span><span class="p">])</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Pressure&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Latitude&#39;</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Longitude&#39;</span><span class="p">)</span>
+<span class="n">yticks</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">50</span><span class="p">])</span>
+<span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span>
+<span class="n">xlim</span><span class="p">(</span><span class="mi">230</span><span class="p">,</span> <span class="mi">298</span><span class="p">)</span>
+<span class="n">ylim</span><span class="p">(</span><span class="mi">22</span><span class="p">,</span> <span class="mi">55</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/mapaxes_masklayer.png" src="../../../../_images/mapaxes_masklayer.png" />
+<p>地图坐标系会用到geolib包中的很多功能，比如读取地图数据文件的shaperead函数。geolib包中的地图投影功能可以对地图坐标系中的图形
+进行投影变换。projinfo函数可以生成一个投影设置对象，参数包括投影名称、中央经度、中央纬度等，MeteoInfo的投影功能使用了Proj4j
+库来实现，投影可以用投影字符串来定义，具体可以查阅PROJ项目的文档（<a class="reference external" href="https://proj.org">https://proj.org</a>）。下面的例子生成一个北极为中心点的
+极射赤平投影，并定义在地图坐标系中，在geoshow函数添加地图数据时会自动进行投影变换，形成北极极射赤平投影地图图形。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">proj</span> <span class="o">=</span> <span class="n">projinfo</span><span class="p">(</span><span class="n">proj</span><span class="o">=</span><span class="s1">&#39;stere&#39;</span><span class="p">,</span> <span class="n">lat_0</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span> <span class="n">lon_0</span><span class="o">=</span><span class="mi">105</span><span class="p">)</span>
+<span class="n">axesm</span><span class="p">(</span><span class="n">projinfo</span><span class="o">=</span><span class="n">proj</span><span class="p">,</span> <span class="n">gridline</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">gridlabelloc</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">griddx</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span>
+    <span class="n">griddy</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+    <span class="n">boundaryprop</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;facecolor&#39;</span><span class="p">:(</span><span class="mi">102</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">),</span><span class="s1">&#39;edgesize&#39;</span><span class="p">:</span><span class="mf">1.5</span><span class="p">})</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;lightgray&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">axism</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/mapaxes_proj_stere.png" src="../../../../_images/mapaxes_proj_stere.png" />
+<p>利用geolib包中的拓扑模块可以进行一些地理空间分析，利用buffer函数分析空间要素的缓冲区，利用intersection函数分析两个多边形空间
+要素的交集。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">mipylib.geolib.topology</span> <span class="k">as</span> <span class="nn">tp</span>
+
+<span class="n">axesm</span><span class="p">()</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">)</span>
+<span class="c1">#Add line</span>
+<span class="n">lat</span> <span class="o">=</span> <span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">45</span><span class="p">,</span> <span class="o">-</span><span class="mi">25</span><span class="p">]</span>
+<span class="n">lon</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">110</span><span class="p">]</span>
+<span class="n">line1</span> <span class="o">=</span> <span class="n">geoshow</span><span class="p">(</span><span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">buf1</span> <span class="o">=</span> <span class="n">tp</span><span class="o">.</span><span class="n">buffer</span><span class="p">(</span><span class="n">line1</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="n">buf1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="c1">#Add polygon</span>
+<span class="n">lat</span> <span class="o">=</span> <span class="n">array</span><span class="p">([</span><span class="mi">30</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">30</span><span class="p">])</span>
+<span class="n">lon</span> <span class="o">=</span> <span class="n">array</span><span class="p">([</span><span class="mi">60</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">130</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="mi">60</span><span class="p">])</span>
+<span class="n">g1</span> <span class="o">=</span> <span class="n">geoshow</span><span class="p">(</span><span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">,</span> <span class="n">displaytype</span><span class="o">=</span><span class="s1">&#39;polygon&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mi">150</span><span class="p">,</span><span class="mi">230</span><span class="p">,</span><span class="mi">230</span><span class="p">,</span><span class="mi">230</span><span class="p">],</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">lat</span> <span class="o">=</span> <span class="n">lat</span> <span class="o">+</span> <span class="mi">10</span>
+<span class="n">lon</span> <span class="o">=</span> <span class="n">lon</span> <span class="o">+</span> <span class="mi">10</span>
+<span class="n">g2</span> <span class="o">=</span> <span class="n">geoshow</span><span class="p">(</span><span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">,</span> <span class="n">displaytype</span><span class="o">=</span><span class="s1">&#39;polygon&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mi">150</span><span class="p">,</span><span class="mi">230</span><span class="p">,</span><span class="mi">230</span><span class="p">,</span><span class="mi">230</span><span class="p">],</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">g3</span> <span class="o">=</span> <span class="n">tp</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">g1</span><span class="p">,</span> <span class="n">g2</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="n">g3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="c1">#Set extent</span>
+<span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">180</span><span class="p">,</span> <span class="mi">180</span><span class="p">)</span>
+<span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">)</span>
+<span class="n">xticks</span><span class="p">(</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">180</span><span class="p">,</span> <span class="mi">181</span><span class="p">,</span> <span class="mi">30</span><span class="p">))</span>
+<span class="n">yticks</span><span class="p">(</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">90</span><span class="p">,</span> <span class="mi">91</span><span class="p">,</span> <span class="mi">30</span><span class="p">))</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Buffer and intersection&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/mapaxes_buffer_intersection.png" src="../../../../_images/mapaxes_buffer_intersection.png" />
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
+        <img style="position: fixed; top: 0; right: 0; border: 0;" 
+        src="../../../../_static/forkme_right_orange_ff7600.png" 
+        alt="Fork me on GitHub">
+    </a>
+    <a target="_blank" href="https://gitter.im/meteoinfo/community">
+        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
+        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
+        alt="Join the chat at Gitter">
+    </a>
+
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="polar_plot.html"
+                        title="previous chapter">极坐标图</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="text_multi_axis.html"
+                        title="next chapter">图形标注和多Y轴</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../_sources/docs/meteoinfolab/milab_cn/plotlib/map_axes.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="text_multi_axis.html" title="图形标注和多Y轴"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="polar_plot.html" title="极坐标图"
+             >previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../index.html" >MeteoInfoLab 中文文档</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../plotlib.html" >plotlib包</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">地图坐标系</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2023, MeteoInfo developers.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
+    </div>
+  </body>
+</html>

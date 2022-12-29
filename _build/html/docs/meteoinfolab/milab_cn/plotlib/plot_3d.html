@@ -1,0 +1,347 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+    <title>三维图形 &#8212; MeteoInfo 3.5 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxdoc.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="wContour" href="../../../wcontour/index.html" />
+    <link rel="prev" title="多坐标系" href="multi_axes.html" /> 
+  </head><body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../../../index.html"><img src="../../../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../../../wcontour/index.html" title="wContour"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="multi_axes.html" title="多坐标系"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../index.html" >MeteoInfoLab 中文文档</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../plotlib.html" accesskey="U">plotlib包</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">三维图形</a></li> 
+      </ul>
+    </div>
+
+
+    <div class="document">
+
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="dos-meteoinfolab-milab-cn-plotlib-plot-3d">
+<span id="id1"></span><h1>三维图形<a class="headerlink" href="#dos-meteoinfolab-milab-cn-plotlib-plot-3d" title="Permalink to this headline">¶</a></h1>
+<p>MeteoInfoLab三维图绘制在三维坐标系中，axes3d函数可以生成一个三维坐标系（OpenGL绘图引擎），通过三维绘图函数绘制相应的三维图形。
+绘制三维线图的函数是plot3，前三个参数是数据的x、y、z坐标数组，如果有cdata参数可以绘制随该参数数据变化的多颜色线。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">z</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">20</span> <span class="o">*</span> <span class="n">z</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">z</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">20</span> <span class="o">*</span> <span class="n">z</span><span class="p">)</span>
+
+<span class="n">plot3</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">cdata</span><span class="o">=</span><span class="n">z</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">colorbar</span><span class="p">()</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;3D plot example&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/axes3d_plot3.png" src="../../../../_images/axes3d_plot3.png" />
+<p>绘制三维点图的函数是scatter3，前三个参数是数据的x、y、z坐标数组，c参数可以设置用于绘制颜色的数组。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">z</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">20</span> <span class="o">*</span> <span class="n">z</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">z</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">20</span> <span class="o">*</span> <span class="n">z</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+
+<span class="c1">#Plot</span>
+<span class="n">points</span> <span class="o">=</span> <span class="n">scatter3</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">c</span><span class="p">)</span>
+<span class="n">scatter3</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">colorbar</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Point 3D plot example&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/axes3d_scatter3.png" src="../../../../_images/axes3d_scatter3.png" />
+<p>三维针状图用stem3函数绘制，edgecolor函数设置针状图上点轮廓线颜色，samestemcolor参数设置针状图线段是否和点颜色一致。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">z</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">20</span> <span class="o">*</span> <span class="n">z</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">z</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">20</span> <span class="o">*</span> <span class="n">z</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+
+<span class="n">stem3</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">c</span><span class="p">,</span> <span class="n">edge</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">samestemcolor</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">colorbar</span><span class="p">(</span><span class="n">shrink</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Stem 3D plot example&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/axes3d_stem3.png" src="../../../../_images/axes3d_stem3.png" />
+<p>三维条形图用bar3函数绘制，width参数指定条形图的宽度，color参数指定条形图颜色，linewidth参数指定条形图边框线宽。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">z</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">20</span> <span class="o">*</span> <span class="n">z</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">z</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">20</span> <span class="o">*</span> <span class="n">z</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+
+<span class="n">cols</span> <span class="o">=</span> <span class="n">makecolors</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">bar3</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">cols</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Bar 3D plot example&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/axes3d_bar3.png" src="../../../../_images/axes3d_bar3.png" />
+<p>在三维坐标系中可以用contour或contourf函数绘制二维等值线，需要zdir参数确定等值线平面的垂直方向（zdir缺省为”z”），offset
+参数设置等值线平面在zdir轴的位置（offset缺省为0）。mesh函数用来绘制网格曲面图。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.7</span>
+<span class="n">phi_ext</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">*</span> <span class="mf">0.5</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="n">x1</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+<span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="n">meshgrid</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">)</span>
+<span class="n">z</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">alpha</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="n">alpha</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span><span class="n">phi_ext</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">z</span><span class="o">.</span><span class="n">T</span>
+
+<span class="n">mesh</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">contourf</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">offset</span><span class="o">=-</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">colorbar</span><span class="p">()</span>
+<span class="n">grid</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/axes3d_mesh_contourf.png" src="../../../../_images/axes3d_mesh_contourf.png" />
+<p>mesh函数缺省的facecolor参数是白色，edgecolor参数设置为“interp”则会用彩色绘制网格曲面线条。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tx</span> <span class="o">=</span> <span class="n">ty</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">33</span><span class="p">)</span>
+<span class="n">xx</span><span class="p">,</span> <span class="n">yy</span> <span class="o">=</span> <span class="n">meshgrid</span><span class="p">(</span><span class="n">tx</span><span class="p">,</span> <span class="n">ty</span><span class="p">)</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">xx</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">yy</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mf">2.2204e-16</span>
+<span class="n">tz</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="o">/</span> <span class="n">r</span>
+
+<span class="n">mesh</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">tz</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;interp&#39;</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Mesh 3D plot example&#39;</span><span class="p">)</span>
+<span class="n">colorbar</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/axes3d_mesh_interp.png" src="../../../../_images/axes3d_mesh_interp.png" />
+<p>三维坐标系中也可以用geoshow函数绘制地理底图。imshow函数可以绘制二维图像，和二维等值线类似，可以设置offset和zdir参数。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">migl</span><span class="o">.</span><span class="n">get_sample_folder</span><span class="p">(),</span> <span class="s1">&#39;GrADS&#39;</span><span class="p">,</span> <span class="s1">&#39;model.ctl&#39;</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+<span class="n">ps</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;T&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,:,</span><span class="s1">&#39;20&#39;</span><span class="p">,</span><span class="s1">&#39;0:180&#39;</span><span class="p">]</span>
+<span class="n">yy</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="n">ps</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">ps</span><span class="o">.</span><span class="n">setdimvalue</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">yy</span><span class="p">)</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">axes3d</span><span class="p">()</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;continent&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">imshow</span><span class="p">(</span><span class="n">ps</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">zdir</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+<span class="n">colorbar</span><span class="p">()</span>
+<span class="n">zlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">180</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/axes3d_geoshow_imshow.png" src="../../../../_images/axes3d_geoshow_imshow.png" />
+<p>绘制三维曲面图的函数是surf，曲面颜色缺省会根据Z数据填充，facecolor参数设为“interp”则颜色填充有渐变效果。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tx</span> <span class="o">=</span> <span class="n">ty</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">41</span><span class="p">)</span>
+<span class="n">xx</span><span class="p">,</span> <span class="n">yy</span> <span class="o">=</span> <span class="n">meshgrid</span><span class="p">(</span><span class="n">tx</span><span class="p">,</span> <span class="n">ty</span><span class="p">)</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">xx</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">yy</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mf">2.2204e-16</span>
+<span class="n">tz</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="o">/</span> <span class="n">r</span>
+
+<span class="n">surf</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">tz</span><span class="p">,</span> <span class="n">edgesize</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;3-D Sombrero plot&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/axes3d_surf_sombrero.png" src="../../../../_images/axes3d_surf_sombrero.png" />
+<p>对于三维曲面图可以通过设置光照增强立体效果，lighting函数用来设置光照，第一个参数设置是否打开光照，还可以设置光源的位置、环境光、
+散射光、镜面光等光照属性。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tx</span> <span class="o">=</span> <span class="n">ty</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">81</span><span class="p">)</span>
+<span class="n">xx</span><span class="p">,</span> <span class="n">yy</span> <span class="o">=</span> <span class="n">meshgrid</span><span class="p">(</span><span class="n">tx</span><span class="p">,</span> <span class="n">ty</span><span class="p">)</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">xx</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">yy</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mf">2.2204e-16</span>
+<span class="n">tz</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="o">/</span> <span class="n">r</span>
+
+<span class="n">lighting</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">mat_specular</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">surf</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">tz</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;3-D Sombrero plot&#39;</span><span class="p">)</span>
+<span class="n">zlim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.4</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/axes3d_surf_lighting.png" src="../../../../_images/axes3d_surf_lighting.png" />
+<p>三维切片图绘制的函数是slice3，下面的例子绘制在值-1.2、0.8和2处与x轴正交的切片平面，在值0处与y轴正交的切片平面，以及在值0处
+与z轴正交的切片平面。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">X</span><span class="o">=</span><span class="n">Y</span><span class="o">=</span><span class="n">Z</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mf">2.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
+<span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="n">Z</span> <span class="o">=</span> <span class="n">meshgrid</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Z</span><span class="p">)</span>
+<span class="n">V</span> <span class="o">=</span> <span class="n">X</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">X</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="n">Y</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="n">Z</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">xslice</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">1.2</span><span class="p">,</span><span class="mf">0.8</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">yslice</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">zslice</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="n">slice3</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">xslice</span><span class="o">=</span><span class="n">xslice</span><span class="p">,</span> <span class="n">yslice</span><span class="o">=</span><span class="n">yslice</span><span class="p">,</span> <span class="n">zslice</span><span class="o">=</span><span class="n">zslice</span><span class="p">)</span>
+<span class="n">colorbar</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/axes3d_slice3.png" src="../../../../_images/axes3d_slice3.png" />
+<p>isosurface函数用来绘制三维等值面图，需要设置三维坐标系和三维数组的值以及等值面的值，nthread参数设置用几个线程并行计算等值面。
+三维等值面也可以设置光照效果。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span> <span class="o">=</span> <span class="n">meshgrid</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+<span class="n">p</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="p">(</span><span class="mi">9</span><span class="o">/</span><span class="mf">4.</span><span class="p">)</span><span class="o">*</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">z</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span><span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">z</span><span class="o">**</span><span class="mi">3</span><span class="o">-</span><span class="p">(</span><span class="mi">9</span><span class="o">/</span><span class="mf">80.</span><span class="p">)</span><span class="o">*</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">z</span><span class="o">**</span><span class="mi">3</span>
+
+<span class="n">axes3d</span><span class="p">(</span><span class="n">aspect</span><span class="o">=</span><span class="s1">&#39;equal&#39;</span><span class="p">,</span> <span class="n">axes_zoom</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">grid</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">lighting</span><span class="p">(</span><span class="n">mat_specular</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">isosurface</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/axes3d_isosurface_heart.png" src="../../../../_images/axes3d_isosurface_heart.png" />
+<p>三位风场箭头图绘制的函数是quiver3，需要x、y、z坐标和风场的三维分量u、v、w数据。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">meshgrid</span><span class="p">(</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mf">0.8</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">),</span>
+               <span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mf">0.8</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">),</span>
+               <span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mf">0.8</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">))</span>
+
+<span class="n">u</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="n">pi</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span><span class="n">pi</span> <span class="o">*</span> <span class="n">y</span><span class="p">)</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span><span class="n">pi</span> <span class="o">*</span> <span class="n">z</span><span class="p">)</span>
+<span class="n">v</span> <span class="o">=</span> <span class="o">-</span><span class="n">cos</span><span class="p">(</span><span class="n">pi</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">pi</span> <span class="o">*</span> <span class="n">y</span><span class="p">)</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span><span class="n">pi</span> <span class="o">*</span> <span class="n">z</span><span class="p">)</span>
+<span class="n">w</span> <span class="o">=</span> <span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">2.0</span> <span class="o">/</span> <span class="mf">3.0</span><span class="p">)</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span><span class="n">pi</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span><span class="n">pi</span> <span class="o">*</span> <span class="n">y</span><span class="p">)</span> <span class="o">*</span>
+     <span class="n">sin</span><span class="p">(</span><span class="n">pi</span> <span class="o">*</span> <span class="n">z</span><span class="p">))</span>
+<span class="n">w</span> <span class="o">=</span> <span class="n">w</span> <span class="o">*</span> <span class="mi">3</span>
+
+<span class="n">quiver3</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.8</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.8</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">zlim</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/axes3d_quiver3.png" src="../../../../_images/axes3d_quiver3.png" />
+<p>对于三维格点数据也可以用点的密度和透明度结合显示出数值的变化，particles函数需要输出x、y、z坐标和相应的三维格点数据，s
+参数设置点的大小，vmin和vmax参数设置要绘制的数据最小值和最大值区间，alpha_min和alpha_max设置最小和最大透明度，density
+设置点的密度。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">y</span> <span class="o">=</span> <span class="n">z</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mf">3.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+<span class="n">xx</span><span class="p">,</span><span class="n">yy</span><span class="p">,</span><span class="n">zz</span> <span class="o">=</span> <span class="n">meshgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">xx</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">xx</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">yy</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">zz</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">axes3d</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_elevation</span><span class="p">(</span><span class="o">-</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_rotation</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">particles</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;matlab_jet&#39;</span><span class="p">)</span>
+<span class="n">colorbar</span><span class="p">()</span>
+<span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/axes3d_particles.png" src="../../../../_images/axes3d_particles.png" />
+<p>三维体绘制能够体现所有三维格点值的贡献，具有丰富的表现力。三维体绘制用到了射线追踪算法（Ray casting），在计算某条射线颜色时可以
+选择三种不同的算法：max_value，basic和specular，其中max_value是用射线中格点最大值颜色，basic和specular用到射线穿过的所有
+格点颜色叠加（不同距离有不同的透明度设置），specular是带光照效果的。此外还有 opacity_nodes 和 opacity_levels 参数来控制
+重点显示哪些数值。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;D:/Temp/image/sagittal.png&#39;</span>
+<span class="n">data1</span> <span class="o">=</span> <span class="n">imagelib</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+<span class="n">data1</span> <span class="o">=</span> <span class="n">data1</span><span class="p">[:,:,</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">data1</span> <span class="o">=</span> <span class="n">data1</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">88</span><span class="p">,</span><span class="mi">300</span><span class="p">,</span><span class="mi">600</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">([</span><span class="mi">176</span><span class="p">,</span><span class="mi">300</span><span class="p">,</span><span class="mi">300</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;int&#39;</span><span class="p">)</span>
+<span class="n">data</span><span class="p">[:</span><span class="mi">88</span><span class="p">]</span> <span class="o">=</span> <span class="n">data1</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">,:,:</span><span class="mi">300</span><span class="p">]</span>
+<span class="n">data</span><span class="p">[</span><span class="mi">88</span><span class="p">:]</span> <span class="o">=</span> <span class="n">data1</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">,:,</span><span class="mi">300</span><span class="p">:]</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">swapaxes</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Plot...&#39;</span><span class="p">)</span>
+<span class="n">figure</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;c&#39;</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">axes3d</span><span class="p">(</span><span class="n">aspect</span><span class="o">=</span><span class="s1">&#39;equal&#39;</span><span class="p">,</span> <span class="n">clip_plane</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">volumeplot</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;NCV_bright&#39;</span><span class="p">,</span> <span class="n">ray_casting</span><span class="o">=</span><span class="s1">&#39;specular&#39;</span><span class="p">,</span> <span class="n">brightness</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/axes3d_volumeplot.png" src="../../../../_images/axes3d_volumeplot.png" />
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
+        <img style="position: fixed; top: 0; right: 0; border: 0;" 
+        src="../../../../_static/forkme_right_orange_ff7600.png" 
+        alt="Fork me on GitHub">
+    </a>
+    <a target="_blank" href="https://gitter.im/meteoinfo/community">
+        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
+        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
+        alt="Join the chat at Gitter">
+    </a>
+
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="multi_axes.html"
+                        title="previous chapter">多坐标系</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../../../wcontour/index.html"
+                        title="next chapter">wContour</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../_sources/docs/meteoinfolab/milab_cn/plotlib/plot_3d.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../../../wcontour/index.html" title="wContour"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="multi_axes.html" title="多坐标系"
+             >previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../index.html" >MeteoInfoLab 中文文档</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../plotlib.html" >plotlib包</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">三维图形</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2023, MeteoInfo developers.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
+    </div>
+  </body>
+</html>

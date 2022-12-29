@@ -1,0 +1,231 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+    <title>极坐标图 &#8212; MeteoInfo 3.5 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxdoc.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="地图坐标系" href="map_axes.html" />
+    <link rel="prev" title="向量场图" href="vector_plot.html" /> 
+  </head><body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../../../index.html"><img src="../../../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="map_axes.html" title="地图坐标系"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="vector_plot.html" title="向量场图"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../index.html" >MeteoInfoLab 中文文档</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../plotlib.html" accesskey="U">plotlib包</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">极坐标图</a></li> 
+      </ul>
+    </div>
+
+
+    <div class="document">
+
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="dos-meteoinfolab-milab-cn-plotlib-polar-plot">
+<span id="id1"></span><h1>极坐标图<a class="headerlink" href="#dos-meteoinfolab-milab-cn-plotlib-polar-plot" title="Permalink to this headline">¶</a></h1>
+<p>极坐标系是一种二维坐标系，该坐标系统中任意位置可由夹角相对原点（极点）的距离来表示。向东的方向是极坐标系角度的起始位置，
+逆时针增加角度。绘制极坐标图需要先创建极坐标系，axes函数中设置参数polar=True，然后就可以用绘图函数来绘制极坐标图。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
+<span class="n">theta</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">*</span> <span class="n">r</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">(</span><span class="n">polar</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Line 1&#39;</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">r</span><span class="o">*</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Line 2&#39;</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Polor chart example&#39;</span><span class="p">)</span>
+<span class="n">legend</span><span class="p">(</span><span class="n">xshift</span><span class="o">=</span><span class="mi">80</span><span class="p">)</span>
+<span class="n">antialias</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/plotlib_polar_plot.png" src="../../../../_images/plotlib_polar_plot.png" />
+<p>上述例子中antialias函数可以设置图形是否反锯齿绘制，反锯齿会使图形显示得更平滑。</p>
+<p>气象领域风玫瑰图是典型的极坐标图，可以用windrose函数绘制，参数主要有风向、风速数据、方位数、风速分级等，能够表示不同风向区间
+和风速区间的占比情况。和极坐标不同，风玫瑰图中0度在正北方向，并且顺时针增加。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">migl</span><span class="o">.</span><span class="n">get_sample_folder</span><span class="p">(),</span> <span class="s1">&#39;ASCII&#39;</span><span class="p">,</span> <span class="s1">&#39;windrose.txt&#39;</span><span class="p">)</span>
+<span class="n">ncol</span> <span class="o">=</span> <span class="n">numasciicol</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+<span class="n">nrow</span> <span class="o">=</span> <span class="n">numasciirow</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">asciiread</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">nrow</span><span class="p">,</span><span class="n">ncol</span><span class="p">))</span>
+<span class="n">ws</span><span class="o">=</span><span class="n">a</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">wd</span><span class="o">=</span><span class="n">a</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">16</span>
+<span class="n">wsbins</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">21.1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">cols</span> <span class="o">=</span> <span class="n">makecolors</span><span class="p">([</span><span class="s1">&#39;k&#39;</span><span class="p">,</span><span class="s1">&#39;y&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;g&#39;</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">rtickloc</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.05</span><span class="p">,</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.15</span><span class="p">,</span><span class="mf">0.18</span><span class="p">]</span>
+<span class="n">ax</span><span class="p">,</span> <span class="n">bars</span> <span class="o">=</span> <span class="n">windrose</span><span class="p">(</span><span class="n">wd</span><span class="p">,</span> <span class="n">ws</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">wsbins</span><span class="p">,</span> <span class="n">rmax</span><span class="o">=</span><span class="mf">0.18</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="n">cols</span><span class="p">,</span>
+    <span class="n">rtickloc</span><span class="o">=</span><span class="n">rtickloc</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">colorbar</span><span class="p">(</span><span class="n">bars</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">vmintick</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">vmaxtick</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">xshift</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+    <span class="n">label</span><span class="o">=</span><span class="s1">&#39;m/s&#39;</span><span class="p">,</span> <span class="n">labelloc</span><span class="o">=</span><span class="s1">&#39;bottom&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xtick_font</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Times New Roman&#39;</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Windrose example&#39;</span><span class="p">)</span>
+<span class="n">antialias</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/plotlib_windrose.png" src="../../../../_images/plotlib_windrose.png" />
+<p>气象领域多模式评估还有一种常用的泰勒（Taylor）图，只包含了极坐标的第一象限，可以同时体现相关系数，标准差以及均方根误差。
+taylor_diagram函数用来绘制泰勒图，参数主要有模式和观测的标准差、相关系数等。图中辐射线代表相关系数，横纵轴代表标准差，
+下方的弧线代表均方根误差。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">case</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Case A&#39;</span><span class="p">,</span> <span class="s1">&#39;Case B&#39;</span><span class="p">]</span>
+<span class="n">ncase</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">case</span><span class="p">)</span>
+
+<span class="n">var</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;SLP&quot;</span><span class="p">,</span><span class="s2">&quot;Tsfc&quot;</span> <span class="p">,</span><span class="s2">&quot;Prc&quot;</span><span class="p">,</span><span class="s2">&quot;Prc 30S-30N&quot;</span><span class="p">,</span><span class="s2">&quot;LW&quot;</span><span class="p">,</span><span class="s2">&quot;SW&quot;</span><span class="p">,</span> <span class="s2">&quot;U300&quot;</span><span class="p">,</span> <span class="s2">&quot;Guess&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;RH&quot;</span> <span class="p">,</span><span class="s2">&quot;LHFLX&quot;</span><span class="p">,</span><span class="s2">&quot;TWP&quot;</span><span class="p">,</span><span class="s2">&quot;CLDTOT&quot;</span><span class="p">,</span><span class="s2">&quot;O3&quot;</span><span class="p">,</span><span class="s2">&quot;Q&quot;</span> <span class="p">,</span> <span class="s2">&quot;PBLH&quot;</span><span class="p">,</span> <span class="s2">&quot;Omega&quot;</span><span class="p">]</span>
+<span class="n">nvar</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">var</span><span class="p">)</span>
+
+<span class="n">source</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;ERA40&quot;</span><span class="p">,</span> <span class="s2">&quot;ERA40&quot;</span><span class="p">,</span><span class="s2">&quot;GPCP&quot;</span> <span class="p">,</span> <span class="s2">&quot;GPCP&quot;</span><span class="p">,</span> <span class="s2">&quot;ERS&quot;</span><span class="p">,</span> <span class="s2">&quot;ERS&quot;</span><span class="p">,</span> <span class="s2">&quot;ERA40&quot;</span><span class="p">,</span> <span class="s2">&quot;BOGUS&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;NCEP&quot;</span><span class="p">,</span>  <span class="s2">&quot;ERA40&quot;</span><span class="p">,</span><span class="s2">&quot;ERA40&quot;</span><span class="p">,</span> <span class="s2">&quot;NCEP&quot;</span><span class="p">,</span> <span class="s2">&quot;NASA&quot;</span><span class="p">,</span> <span class="s2">&quot;JMA&quot;</span><span class="p">,</span> <span class="s2">&quot;JMA&quot;</span> <span class="p">,</span> <span class="s2">&quot;CAS&quot;</span><span class="p">]</span>
+
+<span class="c1">#Case A</span>
+<span class="n">CA_ratio</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.230</span><span class="p">,</span> <span class="mf">0.988</span><span class="p">,</span> <span class="mf">1.092</span><span class="p">,</span> <span class="mf">1.172</span><span class="p">,</span> <span class="mf">1.064</span><span class="p">,</span> <span class="mf">0.966</span><span class="p">,</span> <span class="mf">1.079</span><span class="p">,</span> <span class="mf">0.781</span><span class="p">,</span>
+            <span class="mf">1.122</span><span class="p">,</span> <span class="mf">1.000</span><span class="p">,</span> <span class="mf">0.998</span><span class="p">,</span> <span class="mf">1.321</span><span class="p">,</span> <span class="mf">0.842</span><span class="p">,</span> <span class="mf">0.978</span><span class="p">,</span> <span class="mf">0.998</span><span class="p">,</span> <span class="mf">0.811</span><span class="p">])</span>
+<span class="n">CA_cc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.958</span><span class="p">,</span> <span class="mf">0.973</span><span class="p">,</span> <span class="mf">0.740</span><span class="p">,</span> <span class="mf">0.743</span><span class="p">,</span> <span class="mf">0.922</span><span class="p">,</span> <span class="mf">0.982</span><span class="p">,</span> <span class="mf">0.952</span><span class="p">,</span> <span class="mf">0.433</span><span class="p">,</span>
+                <span class="mf">0.971</span><span class="p">,</span> <span class="mf">0.831</span><span class="p">,</span> <span class="mf">0.892</span><span class="p">,</span> <span class="mf">0.659</span><span class="p">,</span> <span class="mf">0.900</span><span class="p">,</span> <span class="mf">0.933</span><span class="p">,</span> <span class="mf">0.912</span><span class="p">,</span> <span class="mf">0.633</span><span class="p">])</span>
+
+<span class="c1">#Case B</span>
+<span class="n">CB_ratio</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.129</span><span class="p">,</span> <span class="mf">0.996</span><span class="p">,</span> <span class="mf">1.016</span><span class="p">,</span> <span class="mf">1.134</span><span class="p">,</span> <span class="mf">1.023</span><span class="p">,</span> <span class="mf">0.962</span><span class="p">,</span> <span class="mf">1.048</span><span class="p">,</span> <span class="mf">0.852</span><span class="p">,</span>
+                <span class="mf">0.911</span><span class="p">,</span> <span class="mf">0.835</span><span class="p">,</span> <span class="mf">0.712</span><span class="p">,</span> <span class="mf">1.122</span><span class="p">,</span> <span class="mf">0.956</span><span class="p">,</span> <span class="mf">0.832</span><span class="p">,</span> <span class="mf">0.900</span><span class="p">,</span> <span class="mf">1.311</span><span class="p">])</span>
+<span class="n">CB_cc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.963</span><span class="p">,</span> <span class="mf">0.975</span><span class="p">,</span> <span class="mf">0.801</span><span class="p">,</span> <span class="mf">0.814</span><span class="p">,</span> <span class="mf">0.946</span><span class="p">,</span> <span class="mf">0.984</span><span class="p">,</span> <span class="mf">0.968</span><span class="p">,</span> <span class="mf">0.647</span><span class="p">,</span>
+                <span class="mf">0.832</span><span class="p">,</span> <span class="mf">0.905</span><span class="p">,</span> <span class="mf">0.751</span><span class="p">,</span> <span class="mf">0.822</span><span class="p">,</span> <span class="mf">0.932</span><span class="p">,</span> <span class="mf">0.901</span><span class="p">,</span> <span class="mf">0.868</span><span class="p">,</span> <span class="mf">0.697</span><span class="p">])</span>
+
+<span class="c1">#arrays to be passed to taylor_diagram</span>
+<span class="n">ratio</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">((</span><span class="n">ncase</span><span class="p">,</span> <span class="n">nvar</span><span class="p">))</span>
+<span class="n">cc</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">((</span><span class="n">ncase</span><span class="p">,</span> <span class="n">nvar</span><span class="p">))</span>
+<span class="n">ratio</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span> <span class="o">=</span> <span class="n">CA_ratio</span>
+<span class="n">ratio</span><span class="p">[</span><span class="mi">1</span><span class="p">,:]</span> <span class="o">=</span> <span class="n">CB_ratio</span>
+<span class="n">cc</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span> <span class="o">=</span> <span class="n">CA_cc</span>
+<span class="n">cc</span><span class="p">[</span><span class="mi">1</span><span class="p">,:]</span> <span class="o">=</span> <span class="n">CB_cc</span>
+
+<span class="c1">#Plot</span>
+<span class="n">ax</span><span class="p">,</span> <span class="n">gg</span> <span class="o">=</span> <span class="n">taylor_diagram</span><span class="p">(</span><span class="n">ratio</span><span class="p">,</span> <span class="n">cc</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">],</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Taylor diagram&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">gg</span><span class="p">,</span> <span class="n">case</span><span class="p">,</span> <span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">xshift</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">models</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">for</span> <span class="n">v</span><span class="p">,</span><span class="n">s</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">var</span><span class="p">,</span> <span class="n">source</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%i</span><span class="s1"> - </span><span class="si">%s</span><span class="s1">_</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">models</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">models</span> <span class="o">=</span> <span class="n">model</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">models</span> <span class="o">=</span> <span class="n">models</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="n">model</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">models</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/plotlib_taylor_diagram.png" src="../../../../_images/plotlib_taylor_diagram.png" />
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
+        <img style="position: fixed; top: 0; right: 0; border: 0;" 
+        src="../../../../_static/forkme_right_orange_ff7600.png" 
+        alt="Fork me on GitHub">
+    </a>
+    <a target="_blank" href="https://gitter.im/meteoinfo/community">
+        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
+        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
+        alt="Join the chat at Gitter">
+    </a>
+
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="vector_plot.html"
+                        title="previous chapter">向量场图</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="map_axes.html"
+                        title="next chapter">地图坐标系</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../_sources/docs/meteoinfolab/milab_cn/plotlib/polar_plot.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="map_axes.html" title="地图坐标系"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="vector_plot.html" title="向量场图"
+             >previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../index.html" >MeteoInfoLab 中文文档</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../plotlib.html" >plotlib包</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">极坐标图</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2023, MeteoInfo developers.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
+    </div>
+  </body>
+</html>

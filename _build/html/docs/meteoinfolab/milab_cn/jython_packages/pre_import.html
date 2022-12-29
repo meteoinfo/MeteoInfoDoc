@@ -1,0 +1,197 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+    <title>MeteoInfoLab启动预加载 &#8212; MeteoInfo 3.5 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxdoc.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="MeteoInfoLab命令行交互式环境" href="interactive_env.html" />
+    <link rel="prev" title="获取函数帮助信息" href="help.html" /> 
+  </head><body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../../../index.html"><img src="../../../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="interactive_env.html" title="MeteoInfoLab命令行交互式环境"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="help.html" title="获取函数帮助信息"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../index.html" >MeteoInfoLab 中文文档</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../jython_packages.html" accesskey="U">MeteoInfoLab Jython包概览</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">MeteoInfoLab启动预加载</a></li> 
+      </ul>
+    </div>
+
+
+    <div class="document">
+
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="meteoinfolab">
+<span id="dos-meteoinfolab-milab-cn-jython-packages-pre-import"></span><h1>MeteoInfoLab启动预加载<a class="headerlink" href="#meteoinfolab" title="Permalink to this headline">¶</a></h1>
+<p>在“MeteoInfo -&gt; pylib”目录中的文件milab.py会在MeteoInfoLab启动时自动运行，里面的代码是导入mipylib包，并运行
+mipylib包中__init__.py文件中的所有语句，起到预加载常用包和函数的目的，以方便后期使用。例如绘图函数plot会在软件启
+动时预加载，Console里&gt;&gt;&gt; help(plot)才能正常运行。Mipylib包的__init__.py文件中包含了所有预加载信息：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">.numeric</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">numeric</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numeric.random</span> <span class="k">as</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">numeric.linalg</span> <span class="k">as</span> <span class="nn">linalg</span>
+<span class="kn">from</span> <span class="nn">.geolib.migeo</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">geolib.topology</span> <span class="k">as</span> <span class="nn">topo</span>
+<span class="kn">from</span> <span class="nn">.dataset</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">.plotlib</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">plotlib</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">meteolib</span> <span class="k">as</span> <span class="nn">meteo</span>
+<span class="kn">import</span> <span class="nn">imagelib</span>
+<span class="kn">from</span> <span class="nn">dataframe</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="n">mi_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="vm">__file__</span><span class="p">))))</span>
+<span class="n">migl</span><span class="o">.</span><span class="n">mifolder</span> <span class="o">=</span> <span class="n">mi_dir</span>
+
+<span class="n">lookup_cma</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mi_dir</span><span class="p">,</span> <span class="s1">&#39;tables&#39;</span><span class="p">,</span> <span class="s1">&#39;bufr&#39;</span><span class="p">,</span> <span class="s1">&#39;tablelookup_cma.csv&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">lookup_cma</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">is_ok</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">add_bufr_lookup</span><span class="p">(</span><span class="n">lookup_cma</span><span class="p">)</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="n">is_ok</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">if</span> <span class="n">is_ok</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;CMA Bufr lookup file added.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>MeteoInfoLab Jython包的开发在函数命名和参数设置上尽量和Python的Numpy、Matplotlib、Pandas等包一致，方便学习
+和应用。可以看到numeric包也给出了别名np，plotlib的别名是plt。在主界面的Editor和Console里有代码提示功能，因此可
+以输入 <cite>np.</cite> 和 <cite>plt.</cite> 来查看两个包包含的常用函数，能够帮助用户更准确的输入代码。</p>
+<img alt="../../../../_images/view_numeric_functions.png" src="../../../../_images/view_numeric_functions.png" />
+<p>“MeteoInfo -&gt; pylib -&gt; mipylib”目录中的migl.py文件中包含了几个全局变量：</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><cite>milapp</cite> 是MeteoInfoLab主界面对象；</p></li>
+<li><p><cite>currentfolder</cite> 是MeteoInfoLab的当前目录；</p></li>
+<li><p><cite>mifolder</cite> 是MeteoInfo软件所在的目录。</p></li>
+</ul>
+</div></blockquote>
+<p>还有三个函数来获取地图数据、示例文件、颜色图文件的目录，方便在脚本中使用：</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>get_map_folder()函数：获取地图数据所在目录；</p></li>
+<li><p>get_sample_folder()函数：获取示例文件所在目录；</p></li>
+<li><p>get_cmap_folder()函数：获取颜色图文件所在目录。</p></li>
+</ul>
+</div></blockquote>
+<p>中国气象局的Bufr文件的解码需要用到自定义的表格文件，也在程序启动时进行了加载。</p>
+<p>Jython包预加载会影响MeteoInfoLab的启动时间，如果对启动时间有要求，尤其是在命令行直接运行MeteoInfoLab Jython文件，
+可以把milab.py文件中的加载语句注释掉，但是Jython程序代码中必须增加针对性的加载语句。</p>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
+        <img style="position: fixed; top: 0; right: 0; border: 0;" 
+        src="../../../../_static/forkme_right_orange_ff7600.png" 
+        alt="Fork me on GitHub">
+    </a>
+    <a target="_blank" href="https://gitter.im/meteoinfo/community">
+        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
+        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
+        alt="Join the chat at Gitter">
+    </a>
+
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="help.html"
+                        title="previous chapter">获取函数帮助信息</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="interactive_env.html"
+                        title="next chapter">MeteoInfoLab命令行交互式环境</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../_sources/docs/meteoinfolab/milab_cn/jython_packages/pre_import.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="interactive_env.html" title="MeteoInfoLab命令行交互式环境"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="help.html" title="获取函数帮助信息"
+             >previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../index.html" >MeteoInfoLab 中文文档</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../jython_packages.html" >MeteoInfoLab Jython包概览</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">MeteoInfoLab启动预加载</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2023, MeteoInfo developers.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
+    </div>
+  </body>
+</html>
