@@ -1,0 +1,360 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+    <title>dataframe包简介 &#8212; MeteoInfo 3.5 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxdoc.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="imagelib包" href="../imagelib.html" />
+    <link rel="prev" title="dataframe包" href="../dataframe.html" /> 
+  </head><body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../../../index.html"><img src="../../../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../imagelib.html" title="imagelib包"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../dataframe.html" title="dataframe包"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../index.html" >MeteoInfoLab 中文文档</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../dataframe.html" accesskey="U">dataframe包</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">dataframe包简介</a></li> 
+      </ul>
+    </div>
+
+
+    <div class="document">
+
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="dataframe">
+<span id="dos-meteoinfolab-milab-cn-dataframe-introduction"></span><h1>dataframe包简介<a class="headerlink" href="#dataframe" title="Permalink to this headline">¶</a></h1>
+<p>dataframe包适合处理表格型数据，主要包括两种数据类型：Series和DataFrame。Series是一维带标签（index）的数组，index默认是从
+0开始的整型数组，可以从list创建Series对象。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="n">nan</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span>
+<span class="go">0  1.0</span>
+<span class="go">1  3.0</span>
+<span class="go">2  5.0</span>
+<span class="go">3  NaN</span>
+<span class="go">4  6.0</span>
+<span class="go">5  8.0</span>
+</pre></div>
+</div>
+<p>DataFrame是二维带标签的数据结构，不同列可以是不同的数据类型。可以从dict数据创建DataFrame对象。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;A&#39;</span> <span class="p">:</span> <span class="mf">1.</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="s1">&#39;C&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="s1">&#39;D&#39;</span> <span class="p">:</span> <span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">]</span> <span class="o">*</span> <span class="mi">4</span><span class="p">),</span>
+<span class="gp">... </span>    <span class="s1">&#39;E&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s1">&#39;test&#39;</span><span class="p">,</span><span class="s1">&#39;train&#39;</span><span class="p">,</span><span class="s1">&#39;test&#39;</span><span class="p">,</span><span class="s1">&#39;train&#39;</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="s1">&#39;F&#39;</span> <span class="p">:</span> <span class="s1">&#39;foo&#39;</span><span class="p">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span>
+<span class="go">     A C D     E   F</span>
+<span class="go">0  1.0 1 3  test foo</span>
+<span class="go">1  1.0 2 3 train foo</span>
+<span class="go">2  1.0 3 3  test foo</span>
+<span class="go">3  1.0 4 3 train foo</span>
+</pre></div>
+</div>
+<p>也可以从一个NDArray数组创建DataFrame对象，并定义index和columns（各列的名称）。date_range函数生成一个时间类型的index。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">dates</span> <span class="o">=</span> <span class="n">date_range</span><span class="p">(</span><span class="s1">&#39;20130101&#39;</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dates</span>
+<span class="go">DateTimeIndex([&#39;2013-01-01&#39;, &#39;2013-01-02&#39;, &#39;2013-01-03&#39;, &#39;2013-01-04&#39;, &#39;2013-01-05&#39;, &#39;2013-01-06&#39;])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">DataFrame</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">index</span><span class="o">=</span><span class="n">dates</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="s1">&#39;ABCD&#39;</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span>
+<span class="go">                   A         B         C         D</span>
+<span class="go">2013-01-01  0.235064 -0.419857 -0.888507 -3.056019</span>
+<span class="go">2013-01-02 -0.476107  1.831309 -0.800894  0.936860</span>
+<span class="go">2013-01-03  0.362006 -0.260680  0.991738 -0.156389</span>
+<span class="go">2013-01-04  0.628134 -0.357041 -1.476449  0.547806</span>
+<span class="go">2013-01-05  0.022919 -0.817809 -0.187390  0.074602</span>
+<span class="go">2013-01-06 -0.697131 -2.058141 -0.380428 -0.719107</span>
+</pre></div>
+</div>
+<p>DataFrame对象的head和tail方法可以显示数据的前5行和后5行，也可以增加一个参数指定显示多少行数据。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="go">                   A         B         C         D</span>
+<span class="go">2013-01-01  0.730520  0.088258  0.488905  0.461837</span>
+<span class="go">2013-01-02  0.448598  0.697712  0.277767  0.759961</span>
+<span class="go">2013-01-03  0.219245  0.920414  0.886056  0.222002</span>
+<span class="go">2013-01-04  0.883879  0.439466  0.392876  0.994732</span>
+<span class="go">2013-01-05  0.881501  0.283149  0.247825  0.593564</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="go">                   A         B         C         D</span>
+<span class="go">2013-01-04  0.883879  0.439466  0.392876  0.994732</span>
+<span class="go">2013-01-05  0.881501  0.283149  0.247825  0.593564</span>
+<span class="go">2013-01-06  0.511849  0.077208  0.040160  0.683068</span>
+</pre></div>
+</div>
+<p>DataFrame对象包含index、columns和values属性，分别是行标签、列标签和数据数组。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">index</span>
+<span class="go">DateTimeIndex([&#39;2013-01-01&#39;, &#39;2013-01-02&#39;, &#39;2013-01-03&#39;, &#39;2013-01-04&#39;, &#39;2013-01-05&#39;, &#39;2013-01-06&#39;])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">columns</span>
+<span class="go">Index([&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">values</span>
+<span class="go">array([[0.730519863614471, 0.08825840967622589, 0.4889045498516358, 0.461837214623537]</span>
+<span class="go">      [0.4485983912283127, 0.6977123432245299, 0.2777673057578094, 0.7599608278137966]</span>
+<span class="go">      [0.21924450192488787, 0.9204140116502296, 0.886055787176944, 0.22200160212508913]</span>
+<span class="go">      [0.8838785592364334, 0.43946558709097283, 0.3928764411717487, 0.9947320023919717]</span>
+<span class="go">      [0.8815007984632135, 0.2831489393823492, 0.24782537013522343, 0.5935642792213479]</span>
+<span class="go">      [0.5118487849556497, 0.07720751395148084, 0.04016027357410157, 0.6830675875686567]])</span>
+</pre></div>
+</div>
+<p>describe方法可以显示数据的汇总情况，包括每列数据的个数、平均值、标准差、方差、最大值和最小值。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+<span class="go">              A         B         C         D</span>
+<span class="go">count  6.000000  6.000000  6.000000  6.000000</span>
+<span class="go"> mean  0.612598  0.417701  0.388932  0.619194</span>
+<span class="go">  std  0.265172  0.338873  0.286724  0.263857</span>
+<span class="go">  var  0.070316  0.114835  0.082211  0.069621</span>
+<span class="go">  max  0.883879  0.920414  0.886056  0.994732</span>
+<span class="go">  min  0.219245  0.077208  0.040160  0.222002</span>
+</pre></div>
+</div>
+<p>对DataFrame对象进行转置：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">T</span>
+<span class="go">  2013-01-01 2013-01-02 2013-01-03 2013-01-04 2013-01-05 2013-01-06</span>
+<span class="go">A   0.730520   0.448598   0.219245   0.883879   0.881501   0.511849</span>
+<span class="go">B   0.088258   0.697712   0.920414   0.439466   0.283149   0.077208</span>
+<span class="go">C   0.488905   0.277767   0.886056   0.392876   0.247825   0.040160</span>
+<span class="go">D   0.461837   0.759961   0.222002   0.994732   0.593564   0.683068</span>
+</pre></div>
+</div>
+<p>利用index进行排序：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">sort_index</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="go">                   A         B         C         D</span>
+<span class="go">2013-01-06  0.511849  0.077208  0.040160  0.683068</span>
+<span class="go">2013-01-05  0.881501  0.283149  0.247825  0.593564</span>
+<span class="go">2013-01-04  0.883879  0.439466  0.392876  0.994732</span>
+<span class="go">2013-01-03  0.219245  0.920414  0.886056  0.222002</span>
+<span class="go">2013-01-02  0.448598  0.697712  0.277767  0.759961</span>
+<span class="go">2013-01-01  0.730520  0.088258  0.488905  0.461837</span>
+</pre></div>
+</div>
+<p>利用某一列的数值进行排序：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;B&#39;</span><span class="p">)</span>
+<span class="go">                   A         B         C         D</span>
+<span class="go">2013-01-06  0.511849  0.077208  0.040160  0.683068</span>
+<span class="go">2013-01-01  0.730520  0.088258  0.488905  0.461837</span>
+<span class="go">2013-01-05  0.881501  0.283149  0.247825  0.593564</span>
+<span class="go">2013-01-04  0.883879  0.439466  0.392876  0.994732</span>
+<span class="go">2013-01-02  0.448598  0.697712  0.277767  0.759961</span>
+<span class="go">2013-01-03  0.219245  0.920414  0.886056  0.222002</span>
+</pre></div>
+</div>
+<p>从DataFrame对象中取出某一列的数据返回一个Series对象，包含DataFrame对象的index和该列的数据。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">]</span>
+<span class="go">2013-01-01  0.730519863614471</span>
+<span class="go">2013-01-02  0.4485983912283127</span>
+<span class="go">2013-01-03  0.21924450192488787</span>
+<span class="go">2013-01-04  0.8838785592364334</span>
+<span class="go">2013-01-05  0.8815007984632135</span>
+<span class="go">2013-01-06  0.5118487849556497</span>
+</pre></div>
+</div>
+<p>DataFrame对象后方括号内可以是行的序号范围或index值的范围，可以从DataFrame对象中切片取出某些行返回一个新的DataFrame对象。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+<span class="go">                   A         B         C         D</span>
+<span class="go">2013-01-01  0.730520  0.088258  0.488905  0.461837</span>
+<span class="go">2013-01-02  0.448598  0.697712  0.277767  0.759961</span>
+<span class="go">2013-01-03  0.219245  0.920414  0.886056  0.222002</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;20130102&#39;</span><span class="p">:</span><span class="s1">&#39;20130104&#39;</span><span class="p">]</span>
+<span class="go">                   A         B         C         D</span>
+<span class="go">2013-01-02  0.448598  0.697712  0.277767  0.759961</span>
+<span class="go">2013-01-03  0.219245  0.920414  0.886056  0.222002</span>
+<span class="go">2013-01-04  0.883879  0.439466  0.392876  0.994732</span>
+</pre></div>
+</div>
+<p>也可以用loc接方括号从DataFrame对象中提取数据。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">dates</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+<span class="go">                   A         B         C         D</span>
+<span class="go">2013-01-01  0.235064 -0.419857 -0.888507 -3.056019</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">]]</span>
+<span class="go">                   A         B</span>
+<span class="go">2013-01-01  0.730520  0.088258</span>
+<span class="go">2013-01-02  0.448598  0.697712</span>
+<span class="go">2013-01-03  0.219245  0.920414</span>
+<span class="go">2013-01-04  0.883879  0.439466</span>
+<span class="go">2013-01-05  0.881501  0.283149</span>
+<span class="go">2013-01-06  0.511849  0.077208</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;20130102&#39;</span><span class="p">:</span><span class="s1">&#39;20130104&#39;</span><span class="p">,[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">]]</span>
+<span class="go">                   A         B</span>
+<span class="go">2013-01-02  0.448598  0.697712</span>
+<span class="go">2013-01-03  0.219245  0.920414</span>
+<span class="go">2013-01-04  0.883879  0.439466</span>
+</pre></div>
+</div>
+<p>用iloc或iat接方括号可以通过位置序号提取数据。在提取标量值时iat速度会更快。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+<span class="go">A  0.8838785592364334</span>
+<span class="go">B  0.43946558709097283</span>
+<span class="go">C  0.3928764411717487</span>
+<span class="go">D  0.9947320023919717</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+<span class="go">                   A         B</span>
+<span class="go">2013-01-04  0.883879  0.439466</span>
+<span class="go">2013-01-05  0.881501  0.283149</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]]</span>
+<span class="go">                   A         C</span>
+<span class="go">2013-01-02  0.448598  0.277767</span>
+<span class="go">2013-01-03  0.219245  0.886056</span>
+<span class="go">2013-01-05  0.881501  0.247825</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+<span class="go">0.6977123432245299</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">iat</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+<span class="go">0.6977123432245299</span>
+</pre></div>
+</div>
+<p>DataFrame对象的groupby方法可以用来对数据进行分组并返回GroupBy对象，GroupBy对象的count、sum、min、max、mean、median、
+quantile、std等方法可以进行分类后的统计分析。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;A&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                       <span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;foo&#39;</span><span class="p">],</span>
+<span class="gp">... </span>                <span class="s1">&#39;B&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s1">&#39;one&#39;</span><span class="p">,</span> <span class="s1">&#39;one&#39;</span><span class="p">,</span> <span class="s1">&#39;two&#39;</span><span class="p">,</span> <span class="s1">&#39;three&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                       <span class="s1">&#39;two&#39;</span><span class="p">,</span> <span class="s1">&#39;two&#39;</span><span class="p">,</span> <span class="s1">&#39;one&#39;</span><span class="p">,</span> <span class="s1">&#39;three&#39;</span><span class="p">],</span>
+<span class="gp">... </span>                <span class="s1">&#39;C&#39;</span> <span class="p">:</span> <span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">8</span><span class="p">),</span>
+<span class="gp">... </span>                <span class="s1">&#39;D&#39;</span> <span class="p">:</span> <span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">8</span><span class="p">)})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span>
+<span class="go">    A     B         C         D</span>
+<span class="go">0 foo   one  0.235064  0.235064</span>
+<span class="go">1 bar   one -0.419857 -0.419857</span>
+<span class="go">2 foo   two -0.888507 -0.888507</span>
+<span class="go">3 bar three -3.056019 -3.056019</span>
+<span class="go">4 foo   two -0.476107 -0.476107</span>
+<span class="go">5 bar   two  1.831309  1.831309</span>
+<span class="go">6 foo   one -0.800894 -0.800894</span>
+<span class="go">7 foo three  0.936860  0.936860</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="go">             C          D</span>
+<span class="go">foo  -0.993584  -0.993584</span>
+<span class="go">bar  -1.644567  -1.644567</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;A&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="go">             C         D</span>
+<span class="go">[foo, one] -0.565830 -0.565830</span>
+<span class="go">[bar, one] -0.419857 -0.419857</span>
+<span class="go">[foo, two] -1.364614 -1.364614</span>
+<span class="go">[bar, three] -3.056019 -3.056019</span>
+<span class="go">[bar, two]  1.831309  1.831309</span>
+<span class="go">[foo, three]  0.936860  0.936860</span>
+</pre></div>
+</div>
+<p>如果Series或DataFrame对象的index是时间数据类型，可以用resample方法对时间进行重采样，并对重采样后的GroupBy对象进行统计分析。
+时间重采样可以看作特定的分组方式。下面的例子将秒分辨率数据重采样为5分钟分辨率数据。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">rng</span> <span class="o">=</span> <span class="n">date_range</span><span class="p">(</span><span class="s1">&#39;1/1/2012&#39;</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s1">&#39;S&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ts</span> <span class="o">=</span> <span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">rng</span><span class="p">)),</span> <span class="n">index</span><span class="o">=</span><span class="n">rng</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ts</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;5Min&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="go">2012-01-01 00:00  22561.0</span>
+</pre></div>
+</div>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
+        <img style="position: fixed; top: 0; right: 0; border: 0;" 
+        src="../../../../_static/forkme_right_orange_ff7600.png" 
+        alt="Fork me on GitHub">
+    </a>
+    <a target="_blank" href="https://gitter.im/meteoinfo/community">
+        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
+        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
+        alt="Join the chat at Gitter">
+    </a>
+
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../dataframe.html"
+                        title="previous chapter">dataframe包</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../imagelib.html"
+                        title="next chapter">imagelib包</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../_sources/docs/meteoinfolab/milab_cn/dataframe/introduction.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../imagelib.html" title="imagelib包"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../dataframe.html" title="dataframe包"
+             >previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../index.html" >MeteoInfoLab 中文文档</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../dataframe.html" >dataframe包</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">dataframe包简介</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2023, MeteoInfo developers.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
+    </div>
+  </body>
+</html>
