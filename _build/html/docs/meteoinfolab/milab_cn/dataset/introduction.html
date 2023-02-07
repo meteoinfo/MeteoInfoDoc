@@ -1,0 +1,285 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+    <title>dataset包简介 &#8212; MeteoInfo 3.5 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxdoc.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="dataframe包" href="../dataframe.html" />
+    <link rel="prev" title="dataset包" href="../dataset.html" /> 
+  </head><body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../../../index.html"><img src="../../../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../dataframe.html" title="dataframe包"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../dataset.html" title="dataset包"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../index.html" >MeteoInfoLab 中文文档</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../dataset.html" accesskey="U">dataset包</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">dataset包简介</a></li> 
+      </ul>
+    </div>
+
+
+    <div class="document">
+
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="dataset">
+<span id="dos-meteoinfolab-milab-cn-dataset-introduction"></span><h1>dataset包简介<a class="headerlink" href="#dataset" title="Permalink to this headline">¶</a></h1>
+<p>dataset包主要包含了气象数据文件读写的功能。addfile是最主要的读取数据文件的函数，支持NetCDF、GRIB、HDF、GrADS等常用气象数据
+格式，该函数返回值是多维数据文件（DimDataFile）的对象，文件对象里包含了数据维、全局属性、变量（包括变量类型、变量维、变量属性）
+的信息。下面的例子中用addfile函数打开MeteoInfo里的GrADS格式的示例数据文件model.ctl，获得文件对象变量f，在Console中输入变量名
+f回车显示该变量的信息：数据文件中共有5个维（X、Y、Z、T、Z_5），8个变量。例如变量T的数据类型是浮点型（float），变量有4个维
+（依次是T、Z、Y、X，分别代表时间、高度、维度、经度），变量有一个属性“T: description = Temperature”说明该变量表示的是温度。
+而PS变量是地面气压，只有三个维（T、Y、X）。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fn</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">migl</span><span class="o">.</span><span class="n">get_sample_folder</span><span class="p">(),</span> <span class="s1">&#39;GrADS&#39;</span><span class="p">,</span> <span class="s1">&#39;model.ctl&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span>
+<span class="go">File Name: D:/MyProgram/Distribution/Java/MeteoInfo/MeteoInfo\sample\GrADS\model.ctl</span>
+<span class="go">Dimensions: 5</span>
+<span class="go">X = 72;</span>
+<span class="go">Y = 46;</span>
+<span class="go">Z = 7;</span>
+<span class="go">T = 5;</span>
+<span class="go">Z_5 = 5;</span>
+<span class="go">X Dimension: Xmin = 0.0; Xmax = 355.0; Xsize = 72; Xdelta = 5.0</span>
+<span class="go">Y Dimension: Ymin = -90.0; Ymax = 90.0; Ysize = 46; Ydelta = 4.0</span>
+<span class="go">Global Attributes:</span>
+<span class="go">: data_format = &quot;GrADS binary&quot;</span>
+<span class="go">: fill_value = -2.56E33</span>
+<span class="go">: title = &quot;5 Days of Sample Model Output&quot;</span>
+<span class="go">Variations: 8</span>
+<span class="go">float PS(T,Y,X);</span>
+<span class="go">PS: description = &quot;Surface&quot;</span>
+<span class="go">float U(T,Z,Y,X);</span>
+<span class="go">U: description = &quot;U&quot;</span>
+<span class="go">float V(T,Z,Y,X);</span>
+<span class="go">V: description = &quot;V&quot;</span>
+<span class="go">float Z(T,Z,Y,X);</span>
+<span class="go">Z: description = &quot;Geopotential&quot;</span>
+<span class="go">float T(T,Z,Y,X);</span>
+<span class="go">T: description = &quot;Temperature&quot;</span>
+<span class="go">float Q(T,Z_5,Y,X);</span>
+<span class="go">Q: description = &quot;Specific&quot;</span>
+<span class="go">float TS(T,Y,X);</span>
+<span class="go">TS: description = &quot;Surface&quot;</span>
+<span class="go">float P(T,Y,X);</span>
+<span class="go">P: description = &quot;Precipitation&quot;</span>
+</pre></div>
+</div>
+<p>还有一些读取特定格式数据文件的函数如：</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>addfile_grads – 读取GrADS格式数据文件</p></li>
+<li><p>addfile_nc – 读取NetCDF格式数据文件</p></li>
+<li><p>addfile_grib – 读取GRIB格式数据文件</p></li>
+<li><p>addfile_arl – 读取ARL格式数据文件</p></li>
+<li><p>addfile_micaps – 读取MICAPS格式数据文件</p></li>
+<li><p>addfile_surfer – 读取Surfer文本格点数据文件</p></li>
+<li><p>addfile_mm5 – 读取MM5模式输出数据文件</p></li>
+<li><p>addfile_lonlat – 读取有经纬度列的表格文本数据文件</p></li>
+<li><p>addfile_hytraj –读取HYSPLIT模式输出气团轨迹数据文件</p></li>
+<li><p>addfile_hyconc – 读取HYSPLIT模式输出浓度数据文件</p></li>
+<li><p>addfile_geotiff – 读取Geotiff格式数据文件</p></li>
+<li><p>addfile_bil – 读取BIL格式数据文件</p></li>
+<li><p>addfile_awx – 读取AWX格式数据文件</p></li>
+<li><p>addfile_ascii_grid – 读取ESRI格点文本数据文件</p></li>
+</ul>
+</div></blockquote>
+<p>利用读取数据文件的函数获得文件对象后，可以从文件对象中利用变量名获取多维变量对象（DimVariable），例如f[‘PS’]能够从文件对象f
+中获取“PS”变量对象（地面气压）。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">var</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;PS&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">var</span>
+<span class="go">float PS(T,Y,X):</span>
+<span class="go">        PS: description = &quot;Surface&quot;</span>
+</pre></div>
+</div>
+<p>从变量对象中根据维可以切片获取多维数组。例如从var变量对象中获取第一个时次的地面气压二维（Y、X）数组，可以将第一维（T）固定为0，
+第二维（Y）和第三维（X）设为“：”表示全部取值。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ps</span> <span class="o">=</span> <span class="n">var</span><span class="p">[</span><span class="mi">0</span><span class="p">,:,:]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ps</span>
+<span class="go">array([[670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857, 670.15857]</span>
+<span class="go">      [689.02344, 681.99927, 675.3096, 668.8875, 663.1344, 657.78265, 652.89923, 648.5509, 645.2061, 642.93164, 641.7275, 641.5937, 642.4633, 644.13574, 646.4102, 648.95233, 651.82886, 654.50476, 656.9799, 659.0537, 660.8599, 662.1979, 663.0675, 663.66956, 664.1379, 664.7399, 665.8772, 667.81714, 671.0282, 675.77783, 682.6682, 691.0303, 700.931, 712.1028, 724.88, 737.5904, 749.89935, 761.53937, 772.24286, 781.6084, 788.3649, 792.91394, 795.12146, 794.6532, 791.6429, 786.6925, 780.27045, 772.8449, 764.9511, 758.1277, 752.5752, 748.829, 747.4242, 748.6283, 752.10693, 757.4587, 764.2153, 771.57385, 777.9291, 782.6787, 785.2208, 785.02014, 781.8091, 776.0559, 768.1621, 758.46216, 747.2904, 736.3862, 725.6159, 715.3807, 705.4131, 696.78345]</span>
+<span class="go">      [679.1896, 672.9682, 666.8137, 659.3882, 650.82544, 641.1254, 630.89026, 620.58813, 611.9585, 605.6033, 601.5226, 599.78326, 599.91705, 601.0543, 602.52606, 604.1985, 606.60675, 610.2192, 615.3033, 622.1268, 630.6895, 640.6571, 650.62476, 660.2579, 668.9544, 676.8482, 683.6717, 691.0303, 701.0648, 716.31726, 739.798, 769.7008, 805.69116, 844.7588, 884.5623, 917.2079, 941.49133, 958.1487, 968.25, 972.8659, 972.1969, 966.0425, 953.73346, 933.7983, 909.0465, 882.22095, 855.3285, 829.70703, 806.4939, 788.03046, 773.44696, 763.94763, 761.6063, 769.1656, 786.8263, 813.65186, ...]])</span>
+</pre></div>
+</div>
+<p>后面全部取值的维也可以省略，ps = var[0]和上面的结果是一样的。也可以从文件对象中直接获取每个变量的多维数组。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ps</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;PS&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ps</span><span class="o">.</span><span class="n">shape</span>
+<span class="go">(46, 72)</span>
+</pre></div>
+</div>
+<p>从数据文件中以上述方式读取的多维数组均为DimArray对象，也就是包含维的标注信息，方便后续相关数据分析。在读取数组维的设置还可以根据
+维的值来切片，比如要从温度变量中读取第一个时次、高度从1000到100百帕、维度从-90到90、经度为270的数组，可以用下面的语句，注意维
+的值范围是字符串（有双引号或者单引号）。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;T&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;1000:100&#39;</span><span class="p">,</span><span class="s1">&#39;-90:90&#39;</span><span class="p">,</span><span class="s1">&#39;270&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">shape</span>
+<span class="go">(7, 46)</span>
+</pre></div>
+</div>
+<p>addfile函数也可以读取BUFR文件，但从BUFR文件中读取数组比较特殊。BUFR文件中只包含一个变量obs，是Sequence类型，包含了一些成员
+（member），成员的名称可以用obs变量对象的get_members方法获取，可以用obs的member_array方法读取成员数组。需要注意的是在
+addfile函数中将keepopen参数设为True，所有数据读取完毕后用数据文件对象的close方法关闭文件。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;D:/Temp/bufr/aaaa.bufr&#39;</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">keepopen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">obs</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;obs&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">obs</span><span class="o">.</span><span class="n">get_members</span><span class="p">())</span>
+<span class="n">lon</span> <span class="o">=</span> <span class="n">obs</span><span class="o">.</span><span class="n">member_array</span><span class="p">(</span><span class="s1">&#39;Longitude_high_accuracy&#39;</span><span class="p">)</span>
+<span class="n">lat</span> <span class="o">=</span> <span class="n">obs</span><span class="o">.</span><span class="n">member_array</span><span class="p">(</span><span class="s1">&#39;Latitude_high_accuracy&#39;</span><span class="p">)</span>
+<span class="n">lon</span> <span class="o">=</span> <span class="p">(</span><span class="n">lon</span> <span class="o">-</span> <span class="mf">1.8E7</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1.E-5</span>
+<span class="n">lat</span> <span class="o">=</span> <span class="p">(</span><span class="n">lat</span> <span class="o">-</span> <span class="mf">9.E6</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1.E-5</span>
+<span class="n">pres</span> <span class="o">=</span> <span class="n">obs</span><span class="o">.</span><span class="n">member_array</span><span class="p">(</span><span class="s1">&#39;Pressure&#39;</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1e1</span>
+<span class="n">ws</span> <span class="o">=</span> <span class="n">obs</span><span class="o">.</span><span class="n">member_array</span><span class="p">(</span><span class="s1">&#39;Wind_speed&#39;</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1e-1</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">)</span>
+<span class="n">scatter</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">ws</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">xlim</span><span class="p">(</span><span class="mi">70</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">colorbar</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/dataset_bufr.png" src="../../../../_images/dataset_bufr.png" />
+<p>对于多个包含相同维和变量信息，且时间相邻接的数据文件，可以用addfiles函数一次性读取，相当与将多个文件当作一个时间序列更长的文件来
+处理。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">datadir</span> <span class="o">=</span> <span class="s1">&#39;D:/Temp/grib&#39;</span>
+<span class="n">st</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">et</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">18</span><span class="p">)</span>
+<span class="n">fns</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">while</span> <span class="n">st</span> <span class="o">&lt;=</span> <span class="n">et</span><span class="p">:</span>
+    <span class="n">fn</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">datadir</span><span class="p">,</span> <span class="s1">&#39;fnl_&#39;</span> <span class="o">+</span> <span class="n">st</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y%m</span><span class="si">%d</span><span class="s1">_%H&#39;</span><span class="p">)</span> <span class="o">+</span> \
+        <span class="s1">&#39;_00.grib2&#39;</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="n">fn</span>
+    <span class="n">fns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+    <span class="n">st</span> <span class="o">=</span> <span class="n">st</span> <span class="o">+</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+
+<span class="n">fs</span> <span class="o">=</span> <span class="n">addfiles</span><span class="p">(</span><span class="n">fns</span><span class="p">)</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">fs</span><span class="p">[</span><span class="s1">&#39;v-component_of_wind_tropopause&#39;</span><span class="p">]</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">v</span><span class="p">[:,::</span><span class="o">-</span><span class="mi">1</span><span class="p">,:]</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">mean</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;continent&#39;</span><span class="p">)</span>
+<span class="n">layer</span> <span class="o">=</span> <span class="n">imshowm</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;bilinear&#39;</span><span class="p">)</span>
+<span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span>
+<span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">360</span><span class="p">)</span>
+<span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Mutiple grid data files example</span><span class="se">\n</span><span class="s1">Mean V (&#39;</span> <span class="o">+</span> <span class="n">st</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1"> %H&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; - &#39;</span> <span class="o">+</span> \
+    <span class="n">et</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1"> %H&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/dataset_addfiles.png" src="../../../../_images/dataset_addfiles.png" />
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
+        <img style="position: fixed; top: 0; right: 0; border: 0;" 
+        src="../../../../_static/forkme_right_orange_ff7600.png" 
+        alt="Fork me on GitHub">
+    </a>
+    <a target="_blank" href="https://gitter.im/meteoinfo/community">
+        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
+        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
+        alt="Join the chat at Gitter">
+    </a>
+
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../dataset.html"
+                        title="previous chapter">dataset包</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../dataframe.html"
+                        title="next chapter">dataframe包</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../_sources/docs/meteoinfolab/milab_cn/dataset/introduction.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../dataframe.html" title="dataframe包"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../dataset.html" title="dataset包"
+             >previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../index.html" >MeteoInfoLab 中文文档</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../dataset.html" >dataset包</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">dataset包简介</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2023, MeteoInfo developers.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
+    </div>
+  </body>
+</html>

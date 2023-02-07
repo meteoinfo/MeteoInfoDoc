@@ -8,7 +8,7 @@ Downloads
 MeteoInfo
 =====================================
   Java edition (Major development)
-    - `MeteoInfo 3.1.2 - Java (for all systems) <files/MeteoInfo_3.1.2.zip>`_
+    - `MeteoInfo 3.5.2 - Java (for all systems) <files/MeteoInfo_3.5.2.zip>`_
   C# edition   
     - `MeteoInfo 1.1.3.5R1 - C# <files/MeteoInfo_csharp_1.1.3.5R1.zip>`_
   Example data files
@@ -16,6 +16,11 @@ MeteoInfo
        data.rst
 
 ----------------------------------------------------------------------------------------
+
+WeatherThink
+=====================================
+  WeatherThink - Severe weather analysis and visualization system
+    - `WeatherThink 0.3 <files/WeatherThink_0.3.zip>`_
 
 MIML
 =====================================
@@ -55,4 +60,4 @@ OutlierFlag
 EMIPS
 =====================================
   EMIssion Inventory Processing System
-    - `EMIPS 0.2 <files/EMIPS_0.2.zip>`_
+    - `EMIPS 1.0 <files/emips_1.0.zip>`_

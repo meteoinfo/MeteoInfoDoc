@@ -15,3 +15,4 @@ Map
    map/add_shapes.rst
    map/ave_polygons.rst
    map/webmap.rst
+   ../../docs/meteoinfolab/geolib/migeo/maskout.rst

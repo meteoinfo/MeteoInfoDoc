@@ -4,9 +4,9 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
 
-    <title>Introduction &#8212; MeteoInfo 3.0 documentation</title>
+    <title>Introduction &#8212; MeteoInfo 3.5 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinxdoc.css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
@@ -16,7 +16,7 @@
     <script src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="MeteoInfoMap" href="meteoinfo/index.html" />
+    <link rel="next" title="MeteoInfo总体介绍" href="introduction/index_chinese.html" />
     <link rel="prev" title="Documentation" href="index.html" /> 
   </head><body>
 
@@ -33,7 +33,7 @@
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="meteoinfo/index.html" title="MeteoInfoMap"
+          <a href="introduction/index_chinese.html" title="MeteoInfo总体介绍"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="index.html" title="Documentation"
@@ -58,15 +58,13 @@
             
   <section id="introduction">
 <span id="docs-instroduction"></span><h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
-<p><strong>MeteoInfo</strong> is an intergrated framework both for GIS application and scientific computation environment,
+<p><strong>MeteoInfo</strong> is an integrated framework both for GIS application and scientific computation environment,
 especially for meteorological community.</p>
 <p><strong>MeteoInfoMap</strong> is a GIS application which enables the user to visualize and analyze
 the spatial and meteorological data with multiple data formats.</p>
 <p><strong>MeteoInfoLab</strong> is a scientific computation and visualization environment using Jython scripting with the
 ability of multiple dimensional array calculation and 2D/3D plotting.</p>
-<p>It requires that Java 8 or greater be installed on your computer. See the
-<a class="reference external" href="http://www.java.com">http://www.java.com</a> website for a free download of Java if you do not have it
-already installed.</p>
+<p>It requires that Java 8 or greater with 64-bit be installed on your computer. Java 11 64-bit version is suggested.</p>
 <section id="publication">
 <h2>Publication<a class="headerlink" href="#publication" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
@@ -147,8 +145,10 @@ For example, starting a JVM like below will start it with 128 MB of memory and w
 up to 1 GB of memory:</p>
 <p><code class="docutils literal notranslate"><span class="pre">java</span> <span class="pre">-Xmx1G</span> <span class="pre">-Xms128m</span></code></p>
 <p>Try to increase <code class="docutils literal notranslate"><span class="pre">Xmx</span></code> value in the <code class="docutils literal notranslate"><span class="pre">MeteoInfoMap</span></code> and <code class="docutils literal notranslate"><span class="pre">MeteoInfoLab</span></code> starting files when you encounter
-a <code class="docutils literal notranslate"><span class="pre">java.lang.OutOfMemoryError</span></code>. The starting files are <code class="docutils literal notranslate"><span class="pre">mimap.bat</span></code> and <code class="docutils literal notranslate"><span class="pre">milab.bat</span></code> in Windows,
-<code class="docutils literal notranslate"><span class="pre">mimap.sh</span></code> and <code class="docutils literal notranslate"><span class="pre">milab.sh</span></code> in Linux and Unix, <code class="docutils literal notranslate"><span class="pre">mimap_mac.sh</span></code> and <code class="docutils literal notranslate"><span class="pre">milab_mac.sh</span></code> in Mac OS.</p>
+a <code class="docutils literal notranslate"><span class="pre">java.lang.OutOfMemoryError</span></code>. In windows, you can change <code class="docutils literal notranslate"><span class="pre">MeteoInfoMap.l4j.ini</span></code> and <code class="docutils literal notranslate"><span class="pre">MeteoInfoLab.l4j.ini</span></code>
+files, when you staring the applications using <code class="docutils literal notranslate"><span class="pre">MeteoInfoMap.exe</span></code> and <code class="docutils literal notranslate"><span class="pre">MeteoInfoLab.exe</span></code> files.</p>
+<p>Also the starting files of <code class="docutils literal notranslate"><span class="pre">mimap.bat</span></code> and <code class="docutils literal notranslate"><span class="pre">milab.bat</span></code> can be edited in Windows.
+The corresponding files are <code class="docutils literal notranslate"><span class="pre">mimap.sh</span></code> and <code class="docutils literal notranslate"><span class="pre">milab.sh</span></code> in Linux and Unix, <code class="docutils literal notranslate"><span class="pre">mimap_mac.sh</span></code> and <code class="docutils literal notranslate"><span class="pre">milab_mac.sh</span></code> in Mac OS.</p>
 </section>
 </section>
 </section>
@@ -244,8 +244,8 @@ Please send bug reports, etc., to:</p>
   <p class="topless"><a href="index.html"
                         title="previous chapter">Documentation</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="meteoinfo/index.html"
-                        title="next chapter">MeteoInfoMap</a></p>
+  <p class="topless"><a href="introduction/index_chinese.html"
+                        title="next chapter">MeteoInfo总体介绍</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -277,7 +277,7 @@ Please send bug reports, etc., to:</p>
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="meteoinfo/index.html" title="MeteoInfoMap"
+          <a href="introduction/index_chinese.html" title="MeteoInfo总体介绍"
              >next</a> |</li>
         <li class="right" >
           <a href="index.html" title="Documentation"
@@ -293,8 +293,8 @@ Please send bug reports, etc., to:</p>
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2010-2021, MeteoInfo developers.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
+        &#169; Copyright 2010-2023, MeteoInfo developers.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
     </div>
   </body>
 </html>

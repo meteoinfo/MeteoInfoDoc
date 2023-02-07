@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+    <title>meteolib包简介 &#8212; MeteoInfo 3.5 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxdoc.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="wContour" href="../../../wcontour/index.html" />
+    <link rel="prev" title="meteolib包" href="../meteolib.html" /> 
+  </head><body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../../../index.html"><img src="../../../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../../../wcontour/index.html" title="wContour"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../meteolib.html" title="meteolib包"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../index.html" >MeteoInfoLab 中文文档</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../meteolib.html" accesskey="U">meteolib包</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">meteolib包简介</a></li> 
+      </ul>
+    </div>
+
+
+    <div class="document">
+
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="meteolib">
+<span id="dos-meteoinfolab-milab-cn-meteolib-introduction"></span><h1>meteolib包简介<a class="headerlink" href="#meteolib" title="Permalink to this headline">¶</a></h1>
+<p>meteolib包中包含一些气象常用的数据分析函数，例如计算矢量场的涡度和散度、高度和气压的转换、eof分析等。meteolib的
+vorticity和divergence函数分别用来计算矢量场的涡度和散度。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">migl</span><span class="o">.</span><span class="n">get_sample_folder</span><span class="p">(),</span> <span class="s1">&#39;GrADS&#39;</span><span class="p">,</span> <span class="s1">&#39;model.ctl&#39;</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+<span class="n">u</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;U&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,:,:]</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;V&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,:,:]</span>
+<span class="n">vort</span> <span class="o">=</span> <span class="n">meteolib</span><span class="o">.</span><span class="n">vorticity</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+<span class="n">divg</span> <span class="o">=</span> <span class="n">meteolib</span><span class="o">.</span><span class="n">divergence</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+
+<span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">axestype</span><span class="o">=</span><span class="s1">&#39;map&#39;</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;continent&#39;</span><span class="p">)</span>
+<span class="n">contourf</span><span class="p">(</span><span class="n">vort</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Vorticity&#39;</span><span class="p">)</span>
+<span class="n">colorbar</span><span class="p">(</span><span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;horizontal&#39;</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">axestype</span><span class="o">=</span><span class="s1">&#39;map&#39;</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;continent&#39;</span><span class="p">)</span>
+<span class="n">contourf</span><span class="p">(</span><span class="n">divg</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Divergence&#39;</span><span class="p">)</span>
+<span class="n">colorbar</span><span class="p">(</span><span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;horizontal&#39;</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/meteolib_vort_divg.png" src="../../../../_images/meteolib_vort_divg.png" />
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
+        <img style="position: fixed; top: 0; right: 0; border: 0;" 
+        src="../../../../_static/forkme_right_orange_ff7600.png" 
+        alt="Fork me on GitHub">
+    </a>
+    <a target="_blank" href="https://gitter.im/meteoinfo/community">
+        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
+        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
+        alt="Join the chat at Gitter">
+    </a>
+
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../meteolib.html"
+                        title="previous chapter">meteolib包</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../../../wcontour/index.html"
+                        title="next chapter">wContour</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../_sources/docs/meteoinfolab/milab_cn/meteolib/introduction.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../../../wcontour/index.html" title="wContour"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../meteolib.html" title="meteolib包"
+             >previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../index.html" >MeteoInfoLab 中文文档</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../meteolib.html" >meteolib包</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">meteolib包简介</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2023, MeteoInfo developers.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
+    </div>
+  </body>
+</html>

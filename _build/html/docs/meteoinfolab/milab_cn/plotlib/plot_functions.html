@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+    <title>常用绘图函数 &#8212; MeteoInfo 3.5 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxdoc.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="线图" href="line_plot.html" />
+    <link rel="prev" title="Figure和Axes" href="figure_axes.html" /> 
+  </head><body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../../../index.html"><img src="../../../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="line_plot.html" title="线图"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="figure_axes.html" title="Figure和Axes"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../index.html" >MeteoInfoLab 中文文档</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../plotlib.html" accesskey="U">plotlib包</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">常用绘图函数</a></li> 
+      </ul>
+    </div>
+
+
+    <div class="document">
+
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="dos-meteoinfolab-milab-cn-plotlib-plot-functions">
+<span id="id1"></span><h1>常用绘图函数<a class="headerlink" href="#dos-meteoinfolab-milab-cn-plotlib-plot-functions" title="Permalink to this headline">¶</a></h1>
+<p>使用plotlib包绘图有两种模式：一种是面向对象的模式，先创建Figure和Axes对象，然后用Axes对象中的绘图方法来绘图；另一种是利用
+plotlib.miplot模块中的绘图函数，如果没有Figure和Axes对象会自动生成，绘图函数会自动调用生成的Figure和Axes对象。极坐标系
+（PolarAxes）和地图坐标系（MapAxes）需要用相关函数创建坐标系对象，然后再使用plotlib.miplot模块中的绘图函数。</p>
+<p>对于二维坐标系，常用的绘图函数包括：</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>plot(x, y, …) – 绘制线条图</p></li>
+<li><p>scatter(x, y, …) – 绘制散点图</p></li>
+<li><p>step(x, y, …) – 绘制阶梯线图</p></li>
+<li><p>bar(x, y, …) – 绘制条形图</p></li>
+<li><p>hist(x, …) – 绘制直方图</p></li>
+<li><p>stem(x, y, …) – 绘制针状图</p></li>
+<li><p>fill_between(x, y1, y2, …) – 绘制曲线填充图</p></li>
+<li><p>semilogx(x, y, …), semilogy(), loglog() – 绘制对数坐标线条图</p></li>
+<li><p>boxplot(x, …) – 绘制箱形图</p></li>
+<li><p>violinplot(x, …) – 绘制小提琴图</p></li>
+<li><p>imshow(x, y, …) – 绘制二维图像</p></li>
+<li><p>contour(x, y, z, …) – 绘制等值线图</p></li>
+<li><p>contourf(x, y, z, …) – 绘制等值线填色图</p></li>
+<li><p>quiver(x, y, u, v, z, …) – 绘制风场箭头图</p></li>
+<li><p>babs(x, y, u, v, z, …) – 绘制风向杆图</p></li>
+<li><p>streamplot(x, y, u, v, z, …) – 绘制流场图</p></li>
+<li><p>text(x, y, s, …) - 绘制文字</p></li>
+<li><p>geoshow(map, …) - 绘制地图图形</p></li>
+</ul>
+</div></blockquote>
+<p>对于三维坐标系，常用的绘图函数包括：</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>plot3(x, y, z, …) – 绘制三维线条图</p></li>
+<li><p>scatter3(x, y, z, …) – 绘制三维散点图</p></li>
+<li><p>bar3(x, y, z, …) – 绘制三维条形图</p></li>
+<li><p>stem3(x, y, z, …) - 绘制三维针状图</p></li>
+<li><p>text3(x, y, z, s, …) - 绘制三维文字</p></li>
+<li><p>quiver3(x, y, z, u, v, w, …) – 绘制三维风场箭头图</p></li>
+<li><p>streamplot3(x, y, z, u, v, w, …) - 绘制三维流场图</p></li>
+<li><p>streamslice(x, y, z, u, v, w, …) - 绘制三维流场切片图</p></li>
+<li><p>contourslice(x, y, z, data, …) - 绘制三维等值线切片图</p></li>
+<li><p>contourfslice(x, y, z, data, …) - 绘制三维等值线天色切片图</p></li>
+<li><p>imshow(x, y, z, …) - 在三维坐标系中绘制图像</p></li>
+<li><p>geoshow(map, …) - 在三维坐标系中绘制地图图形</p></li>
+<li><p>mesh(x, y, z, …) – 绘制三维曲面网格图</p></li>
+<li><p>surf(x, y, z, …) – 绘制三维曲面图</p></li>
+<li><p>slice3(x, y, z, …) – 绘制三维体切片平面图</p></li>
+<li><p>isosurface(x, y, z, …) – 绘制三维等值面图</p></li>
+<li><p>particles(x, y, z, …) – 绘制三维颗粒图</p></li>
+<li><p>volumeplot(x, y, z, data, …) - 三维体绘制</p></li>
+</ul>
+</div></blockquote>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
+        <img style="position: fixed; top: 0; right: 0; border: 0;" 
+        src="../../../../_static/forkme_right_orange_ff7600.png" 
+        alt="Fork me on GitHub">
+    </a>
+    <a target="_blank" href="https://gitter.im/meteoinfo/community">
+        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
+        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
+        alt="Join the chat at Gitter">
+    </a>
+
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="figure_axes.html"
+                        title="previous chapter">Figure和Axes</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="line_plot.html"
+                        title="next chapter">线图</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../_sources/docs/meteoinfolab/milab_cn/plotlib/plot_functions.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="line_plot.html" title="线图"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="figure_axes.html" title="Figure和Axes"
+             >previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../index.html" >MeteoInfoLab 中文文档</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../plotlib.html" >plotlib包</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">常用绘图函数</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2023, MeteoInfo developers.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
+    </div>
+  </body>
+</html>

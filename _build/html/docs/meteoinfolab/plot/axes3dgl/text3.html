@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+    <title>text3 &#8212; MeteoInfo 3.5 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxdoc.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="streamplot3" href="streamplot3.html" />
+    <link rel="prev" title="quiver3" href="quiver3.html" /> 
+  </head><body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../../../index.html"><img src="../../../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="streamplot3.html" title="streamplot3"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="quiver3.html" title="quiver3"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../../../examples/index.html" >Examples</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../../../examples/meteoinfolab/index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../../../../examples/meteoinfolab/plot_types.html" accesskey="U">Plot types</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">text3</a></li> 
+      </ul>
+    </div>
+
+
+    <div class="document">
+
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="text3">
+<span id="docs-meteoinfolab-plotlib-axes3dgl-axes3dgl-text3"></span><h1>text3<a class="headerlink" href="#text3" title="Permalink to this headline">¶</a></h1>
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">Axes3DGL.text(x,</span> <span class="pre">y,</span> <span class="pre">z,</span> <span class="pre">s,</span> <span class="pre">zdir=None,</span> <span class="pre">**kwargs):</span></span></dt>
+<dd><p>Add text to the plot. kwargs will be passed on to text, except for the zdir
+keyword, which sets the direction to be used as the z direction.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – (<em>float</em>) X coordinate.</p></li>
+<li><p><strong>y</strong> – (<em>float</em>) Y coordinate.</p></li>
+<li><p><strong>z</strong> – (<em>float</em>) Z coordinate.</p></li>
+<li><p><strong>s</strong> – (<em>string</em>) Text string.</p></li>
+<li><p><strong>zdir</strong> – Z direction.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>3D text graphics</p>
+</dd>
+</dl>
+<p>Example of <code class="docutils literal notranslate"><span class="pre">text3</span></code> function</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">axes3d</span><span class="p">()</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;continent&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">text3</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;Text in 3D&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">zdir</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+<span class="n">text3</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="s1">&#39;Text in 3D&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">zlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/text3_1.png" src="../../../../_images/text3_1.png" />
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
+        <img style="position: fixed; top: 0; right: 0; border: 0;" 
+        src="../../../../_static/forkme_right_orange_ff7600.png" 
+        alt="Fork me on GitHub">
+    </a>
+    <a target="_blank" href="https://gitter.im/meteoinfo/community">
+        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
+        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
+        alt="Join the chat at Gitter">
+    </a>
+
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="quiver3.html"
+                        title="previous chapter">quiver3</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="streamplot3.html"
+                        title="next chapter">streamplot3</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../_sources/docs/meteoinfolab/plot/axes3dgl/text3.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="streamplot3.html" title="streamplot3"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="quiver3.html" title="quiver3"
+             >previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../../../examples/index.html" >Examples</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../../../examples/meteoinfolab/index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../../../../examples/meteoinfolab/plot_types.html" >Plot types</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">text3</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2023, MeteoInfo developers.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
+    </div>
+  </body>
+</html>

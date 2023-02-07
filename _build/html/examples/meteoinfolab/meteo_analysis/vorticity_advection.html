@@ -1,0 +1,203 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+    <title>Vorticity Advection &#8212; MeteoInfo 3.5 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinxdoc.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="EOF analysis" href="eof.html" />
+    <link rel="prev" title="Isentropic Analysis" href="isentropic_analysis.html" /> 
+  </head><body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../../index.html"><img src="../../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="eof.html" title="EOF analysis"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="isentropic_analysis.html" title="Isentropic Analysis"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../docs/index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Examples</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../meteo_analysis.html" accesskey="U">Meteorological analysis</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Vorticity Advection</a></li> 
+      </ul>
+    </div>
+
+
+    <div class="document">
+
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="vorticity-advection">
+<span id="examples-meteoinfolab-meteo-analysis-vorticity-advection"></span><h1>Vorticity Advection<a class="headerlink" href="#vorticity-advection" title="Permalink to this headline">¶</a></h1>
+<p>Plot an 500-hPa map with calculating vorticity advection using <code class="docutils literal notranslate"><span class="pre">meteolib</span></code> calculations.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Read data...&#39;</span><span class="p">)</span>
+<span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;D:/Temp/grib/namanl_218_20160416_1800_000.grb&#39;</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+
+<span class="n">vtime</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">gettime</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">lev_500</span> <span class="o">=</span> <span class="n">where</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="s1">&#39;isobaric&#39;</span><span class="p">][:]</span><span class="o">==</span><span class="mi">500</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">xy_slice</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">hght_500</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;Geopotential_height_isobaric&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span><span class="n">lev_500</span><span class="p">,</span><span class="n">xy_slice</span><span class="p">,</span><span class="n">xy_slice</span><span class="p">]</span>
+<span class="n">hght_500</span> <span class="o">=</span> <span class="n">imagelib</span><span class="o">.</span><span class="n">gaussian_filter</span><span class="p">(</span><span class="n">hght_500</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="n">uwnd_500</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;u-component_of_wind_isobaric&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span><span class="n">lev_500</span><span class="p">,</span><span class="n">xy_slice</span><span class="p">,</span><span class="n">xy_slice</span><span class="p">]</span>
+<span class="n">vwnd_500</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;v-component_of_wind_isobaric&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span><span class="n">lev_500</span><span class="p">,</span><span class="n">xy_slice</span><span class="p">,</span><span class="n">xy_slice</span><span class="p">]</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">][</span><span class="n">xy_slice</span><span class="p">]</span> <span class="o">*</span> <span class="mi">1000</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">][</span><span class="n">xy_slice</span><span class="p">]</span> <span class="o">*</span> <span class="mi">1000</span>
+<span class="n">xx</span><span class="p">,</span> <span class="n">yy</span> <span class="o">=</span> <span class="n">meshgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Calculate...&#39;</span><span class="p">)</span>
+<span class="n">dx</span> <span class="o">=</span> <span class="n">diff</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">dy</span> <span class="o">=</span> <span class="n">diff</span><span class="p">(</span><span class="n">yy</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">avor</span> <span class="o">=</span> <span class="n">meteolib</span><span class="o">.</span><span class="n">vorticity</span><span class="p">(</span><span class="n">uwnd_500</span><span class="p">,</span> <span class="n">vwnd_500</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">)</span>
+<span class="n">avor</span> <span class="o">=</span> <span class="n">imagelib</span><span class="o">.</span><span class="n">gaussian_filter</span><span class="p">(</span><span class="n">avor</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">vort_adv</span> <span class="o">=</span> <span class="n">meteolib</span><span class="o">.</span><span class="n">advection</span><span class="p">(</span><span class="n">avor</span><span class="p">,</span> <span class="n">u</span><span class="o">=</span><span class="n">uwnd_500</span><span class="p">,</span> <span class="n">v</span><span class="o">=</span><span class="n">vwnd_500</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="o">=</span><span class="n">dy</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1e9</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Plot...&#39;</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">axesm</span><span class="p">(</span><span class="n">projinfo</span><span class="o">=</span><span class="n">f</span><span class="o">.</span><span class="n">proj</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;us_states&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">102</span><span class="p">,</span><span class="mi">204</span><span class="p">))</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">102</span><span class="p">,</span><span class="mi">204</span><span class="p">))</span>
+
+<span class="c1"># Plot Titles</span>
+<span class="n">left_title</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;500-hPa Heights (m), AVOR$*10^5$ ($s^{-1}$), AVOR Adv$*10^8$ ($s^{-2}$)&#39;</span><span class="p">)</span>
+<span class="n">right_title</span><span class="p">(</span><span class="s1">&#39;VALID: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">vtime</span><span class="p">))</span>
+
+<span class="c1"># Plot Colorfill of Vorticity Advection</span>
+<span class="n">clev_avoradv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">cf</span> <span class="o">=</span> <span class="n">contourf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">vort_adv</span><span class="p">,</span> <span class="n">clev_avoradv</span><span class="p">[</span><span class="n">clev_avoradv</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">],</span>
+                 <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;BlWhRe&#39;</span><span class="p">,</span> <span class="n">smooth</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">proj</span><span class="o">=</span><span class="n">f</span><span class="o">.</span><span class="n">proj</span><span class="p">)</span>
+<span class="n">colorbar</span><span class="p">(</span><span class="n">cf</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;horizontal&#39;</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$1/s^2$&#39;</span><span class="p">)</span>
+
+<span class="c1"># Plot Height Contours</span>
+<span class="n">cs</span> <span class="o">=</span> <span class="n">contour</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">hght_500</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">proj</span><span class="o">=</span><span class="n">f</span><span class="o">.</span><span class="n">proj</span><span class="p">)</span>
+<span class="n">clabel</span><span class="p">(</span><span class="n">cs</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%i</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># Plot Absolute Vorticity Contours</span>
+<span class="n">clevvort500</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">9</span><span class="p">,</span> <span class="mi">51</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">cs2</span> <span class="o">=</span> <span class="n">contour</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">avor</span><span class="o">*</span><span class="mf">1e5</span><span class="p">,</span> <span class="n">clevvort500</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span>
+                 <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.25</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">proj</span><span class="o">=</span><span class="n">f</span><span class="o">.</span><span class="n">proj</span><span class="p">)</span>
+<span class="n">clabel</span><span class="p">(</span><span class="n">cs2</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%i</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># Plot Wind Barbs</span>
+<span class="c1"># Transform Vectors and plot wind barbs.</span>
+<span class="n">wind_slice</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">barbs</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">wind_slice</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">wind_slice</span><span class="p">],</span> <span class="n">uwnd_500</span><span class="p">[</span><span class="n">wind_slice</span><span class="p">,</span><span class="n">wind_slice</span><span class="p">],</span>
+    <span class="n">vwnd_500</span><span class="p">[</span><span class="n">wind_slice</span><span class="p">,</span><span class="n">wind_slice</span><span class="p">],</span> <span class="n">size</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">proj</span><span class="o">=</span><span class="n">f</span><span class="o">.</span><span class="n">proj</span><span class="p">)</span>
+
+<span class="n">axis</span><span class="p">([</span><span class="o">-</span><span class="mi">125</span><span class="p">,</span> <span class="o">-</span><span class="mi">65</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">58</span><span class="p">])</span>
+</pre></div>
+</div>
+<img alt="../../../_images/vorticity_advection.png" src="../../../_images/vorticity_advection.png" />
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
+        <img style="position: fixed; top: 0; right: 0; border: 0;" 
+        src="../../../_static/forkme_right_orange_ff7600.png" 
+        alt="Fork me on GitHub">
+    </a>
+    <a target="_blank" href="https://gitter.im/meteoinfo/community">
+        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
+        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
+        alt="Join the chat at Gitter">
+    </a>
+
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="isentropic_analysis.html"
+                        title="previous chapter">Isentropic Analysis</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="eof.html"
+                        title="next chapter">EOF analysis</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/examples/meteoinfolab/meteo_analysis/vorticity_advection.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="eof.html" title="EOF analysis"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="isentropic_analysis.html" title="Isentropic Analysis"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../docs/index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Examples</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../meteo_analysis.html" >Meteorological analysis</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Vorticity Advection</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2023, MeteoInfo developers.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
+    </div>
+  </body>
+</html>

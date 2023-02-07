@@ -1,0 +1,257 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+    <title>线性代数（numeric.linalg） &#8212; MeteoInfo 3.5 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxdoc.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="随机数生成（numeric.random）" href="random.html" />
+    <link rel="prev" title="带标签和维度值的多维数组（DimArray）" href="dimarray.html" /> 
+  </head><body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../../../index.html"><img src="../../../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="random.html" title="随机数生成（numeric.random）"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="dimarray.html" title="带标签和维度值的多维数组（DimArray）"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../index.html" >MeteoInfoLab 中文文档</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../numeric.html" accesskey="U">numeric包</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">线性代数（numeric.linalg）</a></li> 
+      </ul>
+    </div>
+
+
+    <div class="document">
+
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="numeric-linalg">
+<span id="dos-meteoinfolab-milab-cn-numeric-linalg"></span><h1>线性代数（numeric.linalg）<a class="headerlink" href="#numeric-linalg" title="Permalink to this headline">¶</a></h1>
+<p>numeric.linalg包中包含了一些基本的线性代数运算功能，底层用到了OpenBLAS库和一些纯Java数值运算库
+（例如Apache Commons Math）。dot和vdot函数分别用来计算两个矩阵（即二维数组）和两个向量的乘积。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dot</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="go">array([[4, 1]</span>
+<span class="go">      [2, 2]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vdot</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="go">30.0</span>
+</pre></div>
+</div>
+<p>inv函数计算矩阵的乘法逆矩阵。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">array</span><span class="p">([[</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">],</span> <span class="p">[</span><span class="mf">3.</span><span class="p">,</span> <span class="mf">4.</span><span class="p">]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ainv</span> <span class="o">=</span> <span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ainv</span>
+<span class="go">array([[-2.0000000000000004, 1.0000000000000004]</span>
+<span class="go">      [1.5, -0.5000000000000003]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dot</span><span class="p">(</span><span class="n">ainv</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+<span class="go">array([[1.0000000000000009, 8.881784197001252E-16]</span>
+<span class="go">      [-8.881784197001252E-16, 0.9999999999999987]])</span>
+</pre></div>
+</div>
+<p>det函数计算输入矩阵的行列式。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="go">30.0</span>
+</pre></div>
+</div>
+<p>矩阵分解的函数包括choleskey、qr、lu和svd，分别计算矩阵的Coleskey、QR、LU和奇异值分解。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">array</span><span class="p">([[</span><span class="mi">25</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">],[</span><span class="mi">15</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">11</span><span class="p">]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">L</span> <span class="o">=</span> <span class="n">linalg</span><span class="o">.</span><span class="n">cholesky</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">L</span>
+<span class="go">array([[5.0, 0.0, 0.0]</span>
+<span class="go">      [3.0, 3.0, 0.0]</span>
+<span class="go">      [-1.0, 1.0, 3.0]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dot</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">L</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+<span class="go">array([[25.0, 15.0, -5.0]</span>
+<span class="go">      [15.0, 18.0, 0.0]</span>
+<span class="go">      [-5.0, 0.0, 11.0]])</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">array</span><span class="p">([[</span><span class="mi">12</span><span class="p">,</span> <span class="o">-</span><span class="mi">51</span><span class="p">,</span>   <span class="mi">4</span><span class="p">],[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">167</span><span class="p">,</span> <span class="o">-</span><span class="mi">68</span><span class="p">],[</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span>  <span class="mi">24</span><span class="p">,</span> <span class="o">-</span><span class="mi">41</span><span class="p">]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">linalg</span><span class="o">.</span><span class="n">qr</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="go">(array([[-0.857142857142857, 0.3942857142857143, -0.3314285714285714]</span>
+<span class="go">      [-0.42857142857142855, -0.9028571428571428, 0.03428571428571431]</span>
+<span class="go">      [0.2857142857142857, -0.17142857142857143, -0.9428571428571428]]),</span>
+<span class="go">array([[-14.0, -21.000000000000004, 14.0]</span>
+<span class="go">      [0.0, -175.0, 69.99999999999999]</span>
+<span class="go">      [0.0, 0.0, 35.0]]))</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">linalg</span><span class="o">.</span><span class="n">lu</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="go">(array([[0.0, 1.0, 0.0]</span>
+<span class="go">      [0.0, 0.0, 1.0]</span>
+<span class="go">      [1.0, 0.0, 0.0]]),</span>
+<span class="go">array([[1.0, 0.0, 0.0]</span>
+<span class="go">      [0.75, 1.0, 0.0]</span>
+<span class="go">      [0.25, -0.1111111111111111, 1.0]]),</span>
+<span class="go">array([[4.0, 5.0, 6.0]</span>
+<span class="go">      [0.0, -6.75, 0.5]</span>
+<span class="go">      [0.0, 0.0, 1.5555555555555556]]))</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">linalg</span><span class="o">.</span><span class="n">svd</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="go">(array([[0.15248323331020078, -0.8226474722256594, -0.3945010222838296, -0.3799591338775966]</span>
+<span class="go">      [0.3499183718079639, -0.4213752876845814, 0.24279654570435638, 0.800655879510063]</span>
+<span class="go">      [0.5473535103057269, -0.020103103143502922, 0.6979099754427761, -0.46143435738733596]</span>
+<span class="go">      [0.74478864880349, 0.38116908139757527, -0.5462054988633029, 0.040737611754869674]]),</span>
+<span class="go">array([14.269095499261484, 0.6268282324175406]),</span>
+<span class="go">array([[0.6414230279950724, 0.767187395072177]</span>
+<span class="go">      [0.767187395072177, -0.6414230279950724]]))</span>
+</pre></div>
+</div>
+<p>eig函数计算矩阵的特征值和特征向量。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">diag</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span>
+<span class="go">array([[1, 0, 0]</span>
+<span class="go">      [0, 2, 0]</span>
+<span class="go">      [0, 0, 3]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="go">(array([1.0, 2.0, 3.0]), array([[1.0, 0.0, 0.0]</span>
+<span class="go">      [0.0, 1.0, 0.0]</span>
+<span class="go">      [0.0, 0.0, 1.0]]))</span>
+</pre></div>
+</div>
+<p>solve函数给出了矩阵形式的线性方程的解。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">array</span><span class="p">([</span><span class="mi">9</span><span class="p">,</span><span class="mi">8</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="go">array([2.0, 3.0])</span>
+</pre></div>
+</div>
+<p>lstsq函数用来计算线性方程组的最小二乘解。下面的脚本程序计算出线性方程组的最小二乘解并绘图。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mf">8.5</span><span class="p">])</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">array</span><span class="p">([</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.2</span><span class="p">,</span> <span class="mf">6.6</span><span class="p">,</span> <span class="mf">8.6</span><span class="p">])</span>
+<span class="n">M</span> <span class="o">=</span> <span class="n">ones</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">M</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">p</span><span class="p">,</span> <span class="n">res</span> <span class="o">=</span> <span class="n">linalg</span><span class="o">.</span><span class="n">lstsq</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+
+<span class="c1">#Plot</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;bo&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;data&#39;</span><span class="p">)</span>
+<span class="n">xx</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">101</span><span class="p">)</span>
+<span class="n">yy</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">xx</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;least squares fit, $y = a + bx^2$&#39;</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+<span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper left&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">)</span>
+<span class="n">grid</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.25</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/numeric_lstsq.png" src="../../../../_images/numeric_lstsq.png" />
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
+        <img style="position: fixed; top: 0; right: 0; border: 0;" 
+        src="../../../../_static/forkme_right_orange_ff7600.png" 
+        alt="Fork me on GitHub">
+    </a>
+    <a target="_blank" href="https://gitter.im/meteoinfo/community">
+        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
+        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
+        alt="Join the chat at Gitter">
+    </a>
+
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="dimarray.html"
+                        title="previous chapter">带标签和维度值的多维数组（DimArray）</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="random.html"
+                        title="next chapter">随机数生成（numeric.random）</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../_sources/docs/meteoinfolab/milab_cn/numeric/linalg.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="random.html" title="随机数生成（numeric.random）"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="dimarray.html" title="带标签和维度值的多维数组（DimArray）"
+             >previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../index.html" >MeteoInfoLab 中文文档</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../numeric.html" >numeric包</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">线性代数（numeric.linalg）</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2023, MeteoInfo developers.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
+    </div>
+  </body>
+</html>

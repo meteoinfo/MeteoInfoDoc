@@ -15,5 +15,7 @@ Functions:
 
    interpolate/interp1d.rst
    interpolate/interp2d.rst
+   interpolate/griddata.rst
+   interpolate/linint2.rst
    interpolate/RectBivariateSpline.rst
    interpolate/NearestNDInterpolator.rst

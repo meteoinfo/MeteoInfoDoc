@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+    <title>Jython 简介 &#8212; MeteoInfo 3.5 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinxdoc.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="MeteoInfoLab用户界面" href="gui.html" />
+    <link rel="prev" title="MeteoInfoLab 中文文档" href="index.html" /> 
+  </head><body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../../index.html"><img src="../../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="gui.html" title="MeteoInfoLab用户界面"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="MeteoInfoLab 中文文档"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="index.html" accesskey="U">MeteoInfoLab 中文文档</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Jython 简介</a></li> 
+      </ul>
+    </div>
+
+
+    <div class="document">
+
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="jython">
+<span id="dos-meteoinfolab-milab-cn-jython"></span><h1>Jython 简介<a class="headerlink" href="#jython" title="Permalink to this headline">¶</a></h1>
+<p>要了解Jython首先要了解Python。Python是用C编写的高级的、面向对象的、开放源代码的编程语言。荷兰人Guido van Rossum
+是Python的原创者，继而在Python的快速发展中产生了一大群高水平的设计者和程序员在不断开发和维护Python。作为一种动态类型
+的胶水语言，Python可以很方便的使用C/C++和Fortran编写的库，因此尽管Python语言本身的运行效率比较低，通过底层低级语言的
+扩展能够实现高效的数值运算，从而使Python成为数据科学和人工智能领域最流行的编程语言之一。Java编程语言具有面向对象、分布式、
+健壮性、安全性、平台独立与可移植性、多线程、动态性等特点，作为长期非常流行的编程语言，积累了大量开源库和代码，Python的
+Java实现也变得很有必要。Jython就是Python语言的Java实现。</p>
+<p>Jython的历史要追溯到JimHugunin，他是Guidovan Rossum在国家研究动力中心（CNRI）的同事。JimHugunin认识到Python编程
+语言用Java实现的重要性，并在1997年开始开发最初名为JPython的语言。1999年2月由当时也在CNRI的Barry Warsaw继续领导
+JPython的开发并发布了JPython 1.1版本。2000年10月JPython项目转移到Sourceforge上成为一种更开放的语言模型，并改名为
+Jython。在此期间，一个对Jython做了主要贡献的人FinnBock领导了Jython项目小组。正是由于FinnBock所做的杰出贡献使Jython
+现在成为一个如此有价值的工具。后续的主要开发者包括Frank Wierzbicki、Finn、Samuele、Jeff Allen、Jim Baker等。
+目前Jython的最新版本是2.7.3，可以在Jython网站上下载：<a class="reference external" href="https://www.jython.org">https://www.jython.org</a>。</p>
+<p>Jython和同版本的Python语法完全相同，也包含了几乎所有Python标准库，但不支持Python中用C语言编写的扩展库，如Numpy、
+Matplotlib等。在Jython里可以方便的导入和使用Java包，示例如下：</p>
+<img alt="../../../_images/jython_import_java.png" src="../../../_images/jython_import_java.png" />
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
+        <img style="position: fixed; top: 0; right: 0; border: 0;" 
+        src="../../../_static/forkme_right_orange_ff7600.png" 
+        alt="Fork me on GitHub">
+    </a>
+    <a target="_blank" href="https://gitter.im/meteoinfo/community">
+        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
+        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
+        alt="Join the chat at Gitter">
+    </a>
+
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">MeteoInfoLab 中文文档</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="gui.html"
+                        title="next chapter">MeteoInfoLab用户界面</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/docs/meteoinfolab/milab_cn/jython.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="gui.html" title="MeteoInfoLab用户界面"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="MeteoInfoLab 中文文档"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="index.html" >MeteoInfoLab 中文文档</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Jython 简介</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2023, MeteoInfo developers.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
+    </div>
+  </body>
+</html>

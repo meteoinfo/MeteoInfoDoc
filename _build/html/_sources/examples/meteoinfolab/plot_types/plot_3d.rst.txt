@@ -122,11 +122,10 @@ to plot 3D plots. The functions includes: including ``plot()``, ``scatter()``,
     #Open trajectory data and get trajectory layer
     fn = 'D:/Temp/HYSPLIT/traj_20131211_00'
     f = addfile_hytraj(fn)
-    tlayer = f.trajlayer()
-    stlayer = f.trajsplayer()
-
-    #Map layer
-    layer = shaperead('D:/Temp/map/110m-land.shp')
+    lon = f['lon'][:]
+    lat = f['lat'][:]
+    alt = f['height'][:]
+    pres = f['PRESSURE'][:]
 
     #Relief data
     fn = 'D:/Temp/nc/elev.0.25-deg.nc'
@@ -137,13 +136,14 @@ to plot 3D plots. The functions includes: including ``plot()``, ``scatter()``,
 
     #Plot
     ax = axes3d(opengl=False)
-    ls = ax.plot_surface(elev, 20, cmap='MPL_terrain', edge=False)
-    ax.plot_layer(layer, edgecolor='g')
-    ax.plot_layer(tlayer)
-    ax.plot_layer(stlayer, fill=False)
+    surf(elev, 20, cmap='MPL_terrain', edge=False)
+    geoshow('coastline', facecolor='g')
+    traj = plot3(lon, lat, alt, mvalues=pres, linewidth=2)
+    scatter3(lon[:,0], lat[:,0], alt[:,0], marker='o', fill=False,
+        size=14, edgecolor='gray')
     zlim(0, 10000)
     xlim(0, 180)
-    colorbar(ls)
+    colorbar(traj, shrink=0.8, aspect=30)
     title('3D trajectory example')
     
 .. image:: ../../../_static/trajectory_3d_1.png

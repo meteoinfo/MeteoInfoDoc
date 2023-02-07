@@ -1,0 +1,186 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+    <title>等值线图 &#8212; MeteoInfo 3.5 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxdoc.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="格点数据显示为图像和伪彩色图" href="image_plot.html" />
+    <link rel="prev" title="数据分布图" href="distribution_plot.html" /> 
+  </head><body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../../../index.html"><img src="../../../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="image_plot.html" title="格点数据显示为图像和伪彩色图"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="distribution_plot.html" title="数据分布图"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../index.html" >MeteoInfoLab 中文文档</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../plotlib.html" accesskey="U">plotlib包</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">等值线图</a></li> 
+      </ul>
+    </div>
+
+
+    <div class="document">
+
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="dos-meteoinfolab-milab-cn-plotlib-contour-plot">
+<span id="id1"></span><h1>等值线图<a class="headerlink" href="#dos-meteoinfolab-milab-cn-plotlib-contour-plot" title="Permalink to this headline">¶</a></h1>
+<p>等值线图是以相等数值点的连线表示连续分布且逐渐变化的数量特征的一种图型，在气象领域应用十分普遍，比如等温图、等压图、
+降水等值线分布图等。contour函数用来绘制等值线，contourf函数用来绘制有颜色填充的等值线图。在等值线上标注其值的函数是clabel，
+第一个参数是contour函数返回的等值线图形对象。缺省情况下软件会根据数据值的范围自动确定等值线层级的值，颜色会用缺省的颜色图
+（cmap）matlab_jet和等值线层级数自动确定。colorbar函数用来绘制色阶的颜色栏。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">migl</span><span class="o">.</span><span class="n">get_sample_folder</span><span class="p">(),</span> <span class="s1">&#39;NetCDF&#39;</span><span class="p">,</span> <span class="s1">&#39;cone.nc&#39;</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+<span class="n">u</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;u&#39;</span><span class="p">][</span><span class="mi">4</span><span class="p">]</span>
+<span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">cobj</span> <span class="o">=</span> <span class="n">contour</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
+<span class="n">clabel</span><span class="p">(</span><span class="n">cobj</span><span class="p">,</span> <span class="n">decimals</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Cone amplitude - contour&#39;</span><span class="p">)</span>
+<span class="n">colorbar</span><span class="p">()</span>
+
+<span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">u</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;u&#39;</span><span class="p">][</span><span class="mi">5</span><span class="p">]</span>
+<span class="n">contourf</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">cmapreverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Cone amplitude - contourf&#39;</span><span class="p">)</span>
+<span class="n">colorbar</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/plotlib_contour_contourf.png" src="../../../../_images/plotlib_contour_contourf.png" />
+<p>等值线的层级和颜色也可以自定义，数据变量后面紧跟的参数如果是整数则被当作等值线层级数，每个层级的值软件会根据数据情况自动设置，
+cmap参数可以指定使用的颜色图。数据变量后面紧跟的参数如果是列表或者数组则被认为是等值线各层级的值，colors参数可以指定每个
+等值线层级的颜色，如果是contourf绘制等值线填色图，则colors列表的长度要比等值线层级数多1。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">migl</span><span class="o">.</span><span class="n">get_sample_folder</span><span class="p">(),</span> <span class="s1">&#39;NetCDF&#39;</span><span class="p">,</span> <span class="s1">&#39;cone.nc&#39;</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+<span class="n">u</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;u&#39;</span><span class="p">][</span><span class="mi">5</span><span class="p">]</span>
+
+<span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">contourf</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;NCV_bright&#39;</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Level number and cmap&#39;</span><span class="p">)</span>
+<span class="n">colorbar</span><span class="p">()</span>
+
+<span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">levs</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">1.5</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">9</span><span class="p">]</span>
+<span class="n">cols</span> <span class="o">=</span> <span class="n">makecolors</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">levs</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;BlAqGrYeOrRe&#39;</span><span class="p">)</span>
+<span class="n">contourf</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">levs</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="n">cols</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Levels and colors&#39;</span><span class="p">)</span>
+<span class="n">colorbar</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/plotlib_contourf_levels_colors.png" src="../../../../_images/plotlib_contourf_levels_colors.png" />
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
+        <img style="position: fixed; top: 0; right: 0; border: 0;" 
+        src="../../../../_static/forkme_right_orange_ff7600.png" 
+        alt="Fork me on GitHub">
+    </a>
+    <a target="_blank" href="https://gitter.im/meteoinfo/community">
+        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
+        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
+        alt="Join the chat at Gitter">
+    </a>
+
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="distribution_plot.html"
+                        title="previous chapter">数据分布图</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="image_plot.html"
+                        title="next chapter">格点数据显示为图像和伪彩色图</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../_sources/docs/meteoinfolab/milab_cn/plotlib/contour_plot.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="image_plot.html" title="格点数据显示为图像和伪彩色图"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="distribution_plot.html" title="数据分布图"
+             >previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../index.html" >MeteoInfoLab 中文文档</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../plotlib.html" >plotlib包</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">等值线图</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2023, MeteoInfo developers.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
+    </div>
+  </body>
+</html>

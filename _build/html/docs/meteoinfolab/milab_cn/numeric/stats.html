@@ -1,0 +1,285 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+    <title>统计分析（numeric.stats） &#8212; MeteoInfo 3.5 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxdoc.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="曲线拟合（numeric.fitting）" href="fitting.html" />
+    <link rel="prev" title="随机数生成（numeric.random）" href="random.html" /> 
+  </head><body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../../../index.html"><img src="../../../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="fitting.html" title="曲线拟合（numeric.fitting）"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="random.html" title="随机数生成（numeric.random）"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../index.html" >MeteoInfoLab 中文文档</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../numeric.html" accesskey="U">numeric包</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">统计分析（numeric.stats）</a></li> 
+      </ul>
+    </div>
+
+
+    <div class="document">
+
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="numeric-stats">
+<span id="dos-meteoinfolab-milab-cn-numeric-stats"></span><h1>统计分析（numeric.stats）<a class="headerlink" href="#numeric-stats" title="Permalink to this headline">¶</a></h1>
+<p>numeric.stats包中包含了一些统计分析函数：percentile函数用来计算多维数组沿某一特定轴的任意百分比分位数；
+covariance函数用来计算两个数组的协方差；cov函数用来计算数组的协方差矩阵；</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">array</span><span class="p">([[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stats</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
+<span class="go">1.75</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stats</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="go">array([6.5, 4.5, 2.5])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stats</span><span class="o">.</span><span class="n">covariance</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">)</span>
+<span class="go">-7.28</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stats</span><span class="o">.</span><span class="n">cov</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">)</span>
+<span class="go">array([[32.2, -9.1]</span>
+<span class="go">      [-9.1, 8.3]])</span>
+</pre></div>
+</div>
+<p>pearsonr函数用来计算两个数组的皮尔逊相关系数；spearmanr函数用来计算斯皮尔曼相关系数；kendalltau函数用来计算肯德尔
+相关系数。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mf">29.81</span><span class="p">,</span><span class="mf">30.04</span><span class="p">,</span><span class="mf">41.7</span><span class="p">,</span><span class="mf">43.71</span><span class="p">,</span><span class="mf">28.75</span><span class="p">,</span><span class="mf">37.73</span><span class="p">,</span><span class="mf">52.25</span><span class="p">,</span><span class="mf">32.41</span><span class="p">,</span><span class="mf">25.67</span><span class="p">,</span><span class="mf">28.17</span><span class="p">,</span><span class="mf">25.71</span><span class="p">,</span><span class="mf">36.05</span><span class="p">,</span><span class="mf">37.62</span><span class="p">,</span><span class="mf">34.28</span><span class="p">,</span><span class="mf">38.82</span><span class="p">,</span><span class="mf">40.15</span><span class="p">,</span><span class="mf">35.69</span><span class="p">,</span><span class="mf">28.36</span><span class="p">,</span><span class="mf">39.56</span><span class="p">,</span><span class="mf">52.56</span><span class="p">,</span><span class="mf">54.14</span><span class="p">,</span><span class="mf">50.76</span><span class="p">,</span><span class="mf">39.35</span><span class="p">,</span><span class="mf">43.16</span><span class="p">,</span><span class="n">nan</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mf">51.6</span><span class="p">,</span><span class="mi">46</span><span class="p">,</span><span class="mf">64.3</span><span class="p">,</span><span class="mf">83.4</span><span class="p">,</span><span class="mf">65.9</span><span class="p">,</span><span class="mf">49.5</span><span class="p">,</span><span class="mf">88.6</span><span class="p">,</span><span class="mf">101.4</span><span class="p">,</span><span class="mf">55.9</span><span class="p">,</span><span class="mf">41.8</span><span class="p">,</span><span class="mf">33.4</span><span class="p">,</span><span class="mf">57.3</span><span class="p">,</span><span class="mf">66.5</span><span class="p">,</span><span class="mf">40.5</span><span class="p">,</span><span class="mf">72.3</span><span class="p">,</span><span class="mi">70</span><span class="p">,</span><span class="mf">83.3</span><span class="p">,</span><span class="mf">65.8</span><span class="p">,</span><span class="mf">63.1</span><span class="p">,</span><span class="mf">83.4</span><span class="p">,</span><span class="mi">102</span><span class="p">,</span><span class="mi">94</span><span class="p">,</span><span class="mi">77</span><span class="p">,</span><span class="mi">77</span><span class="p">,</span><span class="n">nan</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stats</span><span class="o">.</span><span class="n">pearsonr</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="go">(0.700798023949337, 0.00013671344970870593)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">7</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stats</span><span class="o">.</span><span class="n">spearmanr</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="go">array([[1.0, 0.8207826816681233]</span>
+<span class="go">      [0.8207826816681233, 1.0]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stats</span><span class="o">.</span><span class="n">kendalltau</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">)</span>
+<span class="go">-0.47140452079103173</span>
+</pre></div>
+</div>
+<p>linregress函数用来进行线性回归分析，可以计算出两个数组线性回归的斜率、截距、相关系数、p值、标准差。“MeteoInfo -&gt;
+sample -&gt; ASCII”目录中的skincancer.txt文件中包含了纬度和皮肤癌死亡率的数据，下面的例子对该数据进行线性回归分析。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">migl</span><span class="o">.</span><span class="n">get_sample_folder</span><span class="p">(),</span> <span class="s1">&#39;ASCII&#39;</span><span class="p">,</span> <span class="s1">&#39;skincancer.txt&#39;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">DataFrame</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%s%f%2i%f</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">lat</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Lat&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">mort</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Mort&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+
+<span class="n">slope</span><span class="p">,</span> <span class="n">intercept</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">std_err</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">linregress</span><span class="p">(</span><span class="n">lat</span><span class="p">,</span> <span class="n">mort</span><span class="p">)</span>
+<span class="n">scatter</span><span class="p">(</span><span class="n">lat</span><span class="p">,</span> <span class="n">mort</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;original data&#39;</span><span class="p">,</span> <span class="n">edge</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">lat</span><span class="p">,</span> <span class="n">intercept</span><span class="o">+</span><span class="n">slope</span><span class="o">*</span><span class="n">lat</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;fitted line&#39;</span><span class="p">)</span>
+<span class="n">text</span><span class="p">(</span><span class="mi">29</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$\hat</span><span class="si">{y}</span><span class="s1"> = &#39;</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="si">%.2f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">slope</span> <span class="o">+</span> <span class="s1">&#39;x + &#39;</span> <span class="o">+</span> \
+    <span class="s1">&#39;</span><span class="si">%.1f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">intercept</span> <span class="o">+</span> <span class="s1">&#39;$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">text</span><span class="p">(</span><span class="mi">29</span><span class="p">,</span> <span class="mi">88</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$R^2 = &#39;</span><span class="o">+</span> <span class="s1">&#39;</span><span class="si">%.4f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">legend</span><span class="p">()</span>
+<span class="n">xlim</span><span class="p">(</span><span class="mi">27</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">ylim</span><span class="p">(</span><span class="mi">75</span><span class="p">,</span> <span class="mi">250</span><span class="p">)</span>
+<span class="n">xticks</span><span class="p">(</span><span class="n">arange</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">51</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">yticks</span><span class="p">(</span><span class="n">arange</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">226</span><span class="p">,</span> <span class="mi">25</span><span class="p">))</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Skin Cancer Mortality versus State Latitude&#39;</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Latitude (at center of state)&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Mortality (Deaths per 10 million)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/linregress_skin_cancer.png" src="../../../../_images/linregress_skin_cancer.png" />
+<p>多元线性回归的函数是mlinregress。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">array</span><span class="p">([</span><span class="mf">251.3</span><span class="p">,</span> <span class="mf">251.3</span><span class="p">,</span> <span class="mf">248.3</span><span class="p">,</span> <span class="mf">267.5</span><span class="p">,</span> <span class="mf">273.0</span><span class="p">,</span> <span class="mf">276.5</span><span class="p">,</span> <span class="mf">270.3</span><span class="p">,</span> <span class="mf">274.9</span><span class="p">,</span> <span class="mf">285.0</span> \
+      <span class="p">,</span> <span class="mf">290.0</span><span class="p">,</span> <span class="mf">297.0</span><span class="p">,</span> <span class="mf">302.5</span><span class="p">,</span> <span class="mf">304.5</span><span class="p">,</span> <span class="mf">309.3</span><span class="p">,</span> <span class="mf">321.7</span><span class="p">,</span> <span class="mf">330.7</span><span class="p">,</span> <span class="mf">349.0</span><span class="p">])</span>
+<span class="n">x1</span> <span class="o">=</span> <span class="n">array</span><span class="p">([</span><span class="mf">41.9</span><span class="p">,</span>  <span class="mf">43.4</span><span class="p">,</span>  <span class="mf">43.9</span><span class="p">,</span>  <span class="mf">44.5</span><span class="p">,</span>  <span class="mf">47.3</span><span class="p">,</span>  <span class="mf">47.5</span><span class="p">,</span>  <span class="mf">47.9</span><span class="p">,</span>  <span class="mf">50.2</span><span class="p">,</span>  <span class="mf">52.8</span> \
+      <span class="p">,</span> <span class="mf">53.2</span><span class="p">,</span>  <span class="mf">56.7</span><span class="p">,</span>  <span class="mf">57.0</span><span class="p">,</span>  <span class="mf">63.5</span><span class="p">,</span>  <span class="mf">65.3</span><span class="p">,</span>  <span class="mf">71.1</span><span class="p">,</span>  <span class="mf">77.0</span><span class="p">,</span>  <span class="mf">77.8</span><span class="p">])</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="n">array</span><span class="p">([</span><span class="mf">29.1</span><span class="p">,</span>  <span class="mf">29.3</span><span class="p">,</span>  <span class="mf">29.5</span><span class="p">,</span>  <span class="mf">29.7</span><span class="p">,</span>  <span class="mf">29.9</span><span class="p">,</span>  <span class="mf">30.3</span><span class="p">,</span>  <span class="mf">30.5</span><span class="p">,</span>  <span class="mf">30.7</span><span class="p">,</span>  <span class="mf">30.8</span> \
+      <span class="p">,</span> <span class="mf">30.9</span><span class="p">,</span>  <span class="mf">31.5</span><span class="p">,</span>  <span class="mf">31.7</span><span class="p">,</span>  <span class="mf">31.9</span><span class="p">,</span>  <span class="mf">32.0</span><span class="p">,</span>  <span class="mf">32.1</span><span class="p">,</span>  <span class="mf">32.5</span><span class="p">,</span>  <span class="mf">32.9</span><span class="p">])</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">),</span> <span class="mi">2</span><span class="p">))</span>
+<span class="n">x</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">x1</span>
+<span class="n">x</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">x2</span>
+<span class="n">byta</span><span class="p">,</span> <span class="n">residuals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">mlinregress</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">byta</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">residuals</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;y = </span><span class="si">%.2f</span><span class="s1"> + </span><span class="si">%.2f</span><span class="s1">x1 + </span><span class="si">%.2f</span><span class="s1">x2&#39;</span> <span class="o">%</span> \
+    <span class="p">(</span><span class="n">byta</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">byta</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">byta</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
+
+<span class="c1">#plot</span>
+<span class="n">scatter3</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">y</span><span class="p">)</span>
+<span class="n">xx</span><span class="p">,</span> <span class="n">yy</span> <span class="o">=</span> <span class="n">meshgrid</span><span class="p">(</span><span class="n">arange</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mf">80.1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">arange</span><span class="p">(</span><span class="mi">28</span><span class="p">,</span> <span class="mf">33.1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">))</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">byta</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">byta</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">xx</span> <span class="o">+</span> <span class="n">byta</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">*</span> <span class="n">yy</span>
+<span class="n">mesh</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">colorbar</span><span class="p">(</span><span class="n">shrink</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;X1&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;X2&#39;</span><span class="p">)</span>
+<span class="n">zlabel</span><span class="p">(</span><span class="s1">&#39;Y&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/stats_mlinregress.png" src="../../../../_images/stats_mlinregress.png" />
+<p>卡方检验的适合度和独立性分析函数分别是chisquare和chi2_contingency。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">stats</span><span class="o">.</span><span class="n">chisquare</span><span class="p">([</span><span class="mi">16</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">12</span><span class="p">],</span> <span class="p">[</span><span class="mi">16</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">8</span><span class="p">])</span>
+<span class="go">(3.5, 0.623387627749582)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">obs</span> <span class="o">=</span> <span class="n">array</span><span class="p">([[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stats</span><span class="o">.</span><span class="n">chi2_contingency</span><span class="p">(</span><span class="n">obs</span><span class="p">)</span>
+<span class="go">(2.7777777777777777, 0.24935220877729614)</span>
+</pre></div>
+</div>
+<p>T检验包括三个函数：ttest_1samp用来进行单样本T检验；ttest_ind用来进行两个独立样本T检验；ttest_rel用来进行配对
+样本T检验。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">4</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mu</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stats</span><span class="o">.</span><span class="n">ttest_1samp</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">mu</span><span class="p">)</span>
+<span class="go">(0.17622684421256019, 0.8670310908282268)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">=</span><span class="n">array</span><span class="p">([</span> <span class="mf">0.01082045</span><span class="p">,</span><span class="mf">0.00225922</span><span class="p">,</span><span class="mf">0.00022592</span><span class="p">,</span><span class="mf">0.00011891</span><span class="p">,</span><span class="mf">0.00525565</span><span class="p">,</span><span class="mf">0.00156956</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span><span class="o">=</span><span class="n">array</span><span class="p">([</span> <span class="mf">0.0096333</span><span class="p">,</span><span class="mf">0.0019453</span><span class="p">,</span><span class="mf">0.0038384</span><span class="p">,</span><span class="mf">0.0058286</span><span class="p">,</span><span class="mf">0.00078786</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stats</span><span class="o">.</span><span class="n">ttest_ind</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="go">(-0.45068935600352156, 0.6628942089591048)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">12</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stats</span><span class="o">.</span><span class="n">ttest_rel</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="go">(-2.449489742783178, 0.021982997044102233)</span>
+</pre></div>
+</div>
+<p>numeric.stats包中还有多种概率分布函数，包括：norm、beta、cauchy、chi2、expon、f、gamma、gumbel、laplace、
+levy、logistic、lognorm、nakagami、pareto、t、triang、uniform、weibull。下面给出一个Beta分布的示例，其他
+的都类似。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
+<span class="n">aa</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">bb</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span> <span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<span class="n">ss</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;-b&#39;</span><span class="p">,</span> <span class="s1">&#39;-r&#39;</span><span class="p">,</span> <span class="s1">&#39;-c&#39;</span><span class="p">,</span> <span class="s1">&#39;-g&#39;</span><span class="p">,</span> <span class="s1">&#39;-m&#39;</span><span class="p">]</span>
+
+<span class="c1">#PDF</span>
+<span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">s</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">aa</span><span class="p">,</span><span class="n">bb</span><span class="p">,</span><span class="n">ss</span><span class="p">):</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">beta</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+    <span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$\alpha = </span><span class="si">%.1f</span><span class="s1">, \beta = </span><span class="si">%.1f</span><span class="s1">$&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>
+<span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper left&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">)</span>
+<span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;PDF&#39;</span><span class="p">)</span>
+
+<span class="c1">#CDF</span>
+<span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">s</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">aa</span><span class="p">,</span><span class="n">bb</span><span class="p">,</span><span class="n">ss</span><span class="p">):</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">beta</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+    <span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$\alpha = </span><span class="si">%.1f</span><span class="s1">, \beta = </span><span class="si">%.1f</span><span class="s1">$&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>
+<span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;lower right&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">)</span>
+<span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;CDF&#39;</span><span class="p">)</span>
+
+<span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Beta distribution&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/stats_beta_distribution.png" src="../../../../_images/stats_beta_distribution.png" />
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
+        <img style="position: fixed; top: 0; right: 0; border: 0;" 
+        src="../../../../_static/forkme_right_orange_ff7600.png" 
+        alt="Fork me on GitHub">
+    </a>
+    <a target="_blank" href="https://gitter.im/meteoinfo/community">
+        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
+        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
+        alt="Join the chat at Gitter">
+    </a>
+
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="random.html"
+                        title="previous chapter">随机数生成（numeric.random）</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="fitting.html"
+                        title="next chapter">曲线拟合（numeric.fitting）</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../_sources/docs/meteoinfolab/milab_cn/numeric/stats.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="fitting.html" title="曲线拟合（numeric.fitting）"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="random.html" title="随机数生成（numeric.random）"
+             >previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../index.html" >MeteoInfoLab 中文文档</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../numeric.html" >numeric包</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">统计分析（numeric.stats）</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2023, MeteoInfo developers.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
+    </div>
+  </body>
+</html>

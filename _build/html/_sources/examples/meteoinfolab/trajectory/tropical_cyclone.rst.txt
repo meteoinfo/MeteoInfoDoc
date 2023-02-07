@@ -87,9 +87,6 @@ and plot them. The colors of the line indicate wind speed.
 
 ::
 
-    #Create typhoon layer
-    layer = maplayer(shapetype='line')
-
     # Read typhoon data file
     fn = 'D:/Temp/ascii/CH2015BST.txt'
     tf = open(fn)
@@ -104,7 +101,7 @@ and plot them. The colors of the line indicate wind speed.
         for i in range(pn):
             line = tf.readline()
             data = line.split()
-            lat = float(data[2])        
+            lat = float(data[2])
             lats.append(lat * 0.1)
             lon = float(data[3])
             lons.append(lon * 0.1)
@@ -113,21 +110,17 @@ and plot them. The colors of the line indicate wind speed.
             prss.append(prs)
             ws = float(data[5])
             wss.append(ws)
-        layer.addshape(lons, lats, z=prss, m=wss)
-        lons = []
-        lats = []
-        prss = []
-        wss = []
-
-    #Set typhoon layer legend
-    levs = arange(5, 61, 5)
-    cols = makecolors(len(levs) + 1)
-    ls = makesymbolspec('line', levels=levs, colors=cols, field='Geometry_M', size=2)
+        lons.append(nan)
+        lats.append(nan)
+        prss.append(nan)
+        wss.append(nan)
 
     # Plot
     axesm()
     geoshow('country', facecolor=[200,200,200])
-    geoshow(layer, symbolspec=ls)
+    levs = arange(5, 61, 5)
+    cols = makecolors(len(levs) + 1)
+    layer = plot(lons, lats, zvalues=wss, levels=levs, colors=cols, size=2)
     colorbar(layer, shrink=0.8, label='Wind speed (m/s)')
     xlim(100, 210)
     ylim(0, 60)

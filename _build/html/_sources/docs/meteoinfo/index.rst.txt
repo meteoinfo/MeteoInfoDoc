@@ -9,4 +9,5 @@ MeteoInfoMap
    :maxdepth: 2
    
    desktop/index.rst
+   desktop_cn/index.rst
    meteoinfolib.rst

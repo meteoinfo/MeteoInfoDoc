@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+    <title>图层属性数据查询和标注 &#8212; MeteoInfo 3.5 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxdoc.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="图层空间要素选择" href="feature_select.html" />
+    <link rel="prev" title="地图漫游" href="map_zoom.html" /> 
+  </head><body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../../../index.html"><img src="../../../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="feature_select.html" title="图层空间要素选择"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="map_zoom.html" title="地图漫游"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoMap</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../index.html" >MeteoInfoMap 中文文档</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../mapview.html" accesskey="U">地图操作</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">图层属性数据查询和标注</a></li> 
+      </ul>
+    </div>
+
+
+    <div class="document">
+
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="id1">
+<h1>图层属性数据查询和标注<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>矢量图层是有属性数据的，选中某个矢量图层，点击工具栏中的“要素属性”按钮，可以在地图上点击图层中的某个空间要素来查看起
+属性数据，被选中的空间要素会高亮显示。</p>
+<img alt="../../../../_images/attribute_identifier.png" src="../../../../_images/attribute_identifier.png" />
+<p>选中一个矢量图层后可以利用图层的属性数据对图层的空间要素进行自动标注。例如选中加载的cities.shp图层，点击工具栏中的
+“标注”按钮，弹出标注设置对话框，选择要标注的属性字段（Field），点击Update就能够将字段中每个空间要素的属性值标注在
+空间要素位置上，对话框中还可以对标注字体、颜色、位置等进行设置。我们利用NAME字段将城市名标注在每个城市位置上，并修改
+字体、颜色和Y方向的偏移量（Y Offset）。对于标注可以设置是否免压盖（Avoid Collision），该属性选中的状态下有些标注
+会不再显示以避免标注互相压盖的现象。</p>
+<img alt="../../../../_images/layer_label.png" src="../../../../_images/layer_label.png" />
+<p>选中工具栏中的“选择”按钮，可以用鼠标在地图上选中某个标注，并可移动其位置。</p>
+<img alt="../../../../_images/move_label.png" src="../../../../_images/move_label.png" />
+<p>双击标注可以在弹出的标注设置对话框中设置标注的文字内容、字体、颜色和角度。</p>
+<img alt="../../../../_images/edit_label.png" src="../../../../_images/edit_label.png" />
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
+        <img style="position: fixed; top: 0; right: 0; border: 0;" 
+        src="../../../../_static/forkme_right_orange_ff7600.png" 
+        alt="Fork me on GitHub">
+    </a>
+    <a target="_blank" href="https://gitter.im/meteoinfo/community">
+        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
+        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
+        alt="Join the chat at Gitter">
+    </a>
+
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="map_zoom.html"
+                        title="previous chapter">地图漫游</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="feature_select.html"
+                        title="next chapter">图层空间要素选择</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../_sources/docs/meteoinfomap/desktop_cn/mapview/attribute_label.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="feature_select.html" title="图层空间要素选择"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="map_zoom.html" title="地图漫游"
+             >previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoMap</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../index.html" >MeteoInfoMap 中文文档</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../mapview.html" >地图操作</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">图层属性数据查询和标注</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2023, MeteoInfo developers.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
+    </div>
+  </body>
+</html>

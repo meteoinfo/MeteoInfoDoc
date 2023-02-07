@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+    <title>代码编辑 &#8212; MeteoInfo 3.5 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxdoc.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="图形" href="figure.html" />
+    <link rel="prev" title="命令行" href="console.html" /> 
+  </head><body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../../../index.html"><img src="../../../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="figure.html" title="图形"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="console.html" title="命令行"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../index.html" >MeteoInfoLab 中文文档</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../gui.html" accesskey="U">MeteoInfoLab用户界面</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">代码编辑</a></li> 
+      </ul>
+    </div>
+
+
+    <div class="document">
+
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="dos-meteoinfolab-milab-cn-gui-editor">
+<span id="id1"></span><h1>代码编辑<a class="headerlink" href="#dos-meteoinfolab-milab-cn-gui-editor" title="Permalink to this headline">¶</a></h1>
+<p>Editor是编辑Jython脚本程序的区域，可以通过点击“File -&gt; New”菜单或者工具栏中的“New File”按钮在Editor中创建一个
+新文件，然后在代码编辑区域编写代码，File菜单和工具栏中有保存文件（Save File）和另存文件（Save As）的菜单和按钮将编
+写的代码保存到文件中，和Python一样，Jython程序文件的后缀也是.py。工具栏中有打开文件（Open File）按钮来打开已有的
+Jython程序文件，或者在File explorer中双击Jython文件名在Editor中打开代码文件。</p>
+<p>Editor中有代码高亮和代码提示功能，可以用剪切（Cut）、复制（Copy）、粘贴（Paste）来编辑代码。</p>
+<img alt="../../../../_images/milab_editor_code_hint.png" src="../../../../_images/milab_editor_code_hint.png" />
+<p>点击“Edit -&gt; Find &amp; Replace”菜单打开查找和替换对话框，可以对代码中进行查找和替换操作。</p>
+<img alt="../../../../_images/code_find_replace.png" src="../../../../_images/code_find_replace.png" />
+<p>Edit菜单中的切换注释（Toggle Comment）菜单可以对选中代码行进行代码注释和取消注释的操作；Insert Tab (4 spaces)
+菜单和Delete Tab (4 spaces)菜单可以对选中代码行前统一插入4个空格和删除4个空格。Jython语法中很重要的是代码缩进，
+建议用4个空格来进行缩进。在Editor中选中部分代码点击鼠标右键，在弹出的右键菜单中也有上述相应的功能。</p>
+<p>点击工具栏中“Run Script”按钮可以运行Editor中当前Jython文件的代码，在Console中会输出&gt;&gt;&gt; run script…，代码中
+打印（print）语句也会在Console中输出。在Editor中选中部分代码，点击鼠标右键，在弹出菜单中第一个是Evaluate Selection
+菜单，点击该菜单可以运行被选中的代码行，此功能在调试代码的过程中很有用。</p>
+<img alt="../../../../_images/editor_right_click_menu.png" src="../../../../_images/editor_right_click_menu.png" />
+<p>点击Evaluate Selection菜单后在Console中会输入&gt;&gt;&gt; evaluate selection…字样和被选中的代码（蓝色显示）。</p>
+<img alt="../../../../_images/run_selected_code.png" src="../../../../_images/run_selected_code.png" />
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
+        <img style="position: fixed; top: 0; right: 0; border: 0;" 
+        src="../../../../_static/forkme_right_orange_ff7600.png" 
+        alt="Fork me on GitHub">
+    </a>
+    <a target="_blank" href="https://gitter.im/meteoinfo/community">
+        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
+        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
+        alt="Join the chat at Gitter">
+    </a>
+
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="console.html"
+                        title="previous chapter">命令行</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="figure.html"
+                        title="next chapter">图形</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../_sources/docs/meteoinfolab/milab_cn/gui/editor.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="figure.html" title="图形"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="console.html" title="命令行"
+             >previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../index.html" >MeteoInfoLab 中文文档</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../gui.html" >MeteoInfoLab用户界面</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">代码编辑</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2023, MeteoInfo developers.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
+    </div>
+  </body>
+</html>

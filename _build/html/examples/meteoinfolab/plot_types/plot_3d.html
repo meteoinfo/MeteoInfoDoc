@@ -4,9 +4,9 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
 
-    <title>3-D plots without OpenGL &#8212; MeteoInfo 3.0 documentation</title>
+    <title>3-D plots without OpenGL &#8212; MeteoInfo 3.5 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinxdoc.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
@@ -170,11 +170,10 @@ to plot 3D plots. The functions includes: including <code class="docutils litera
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Open trajectory data and get trajectory layer</span>
 <span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;D:/Temp/HYSPLIT/traj_20131211_00&#39;</span>
 <span class="n">f</span> <span class="o">=</span> <span class="n">addfile_hytraj</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
-<span class="n">tlayer</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">trajlayer</span><span class="p">()</span>
-<span class="n">stlayer</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">trajsplayer</span><span class="p">()</span>
-
-<span class="c1">#Map layer</span>
-<span class="n">layer</span> <span class="o">=</span> <span class="n">shaperead</span><span class="p">(</span><span class="s1">&#39;D:/Temp/map/110m-land.shp&#39;</span><span class="p">)</span>
+<span class="n">lon</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;lon&#39;</span><span class="p">][:]</span>
+<span class="n">lat</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">][:]</span>
+<span class="n">alt</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;height&#39;</span><span class="p">][:]</span>
+<span class="n">pres</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;PRESSURE&#39;</span><span class="p">][:]</span>
 
 <span class="c1">#Relief data</span>
 <span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;D:/Temp/nc/elev.0.25-deg.nc&#39;</span>
@@ -185,13 +184,14 @@ to plot 3D plots. The functions includes: including <code class="docutils litera
 
 <span class="c1">#Plot</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">axes3d</span><span class="p">(</span><span class="n">opengl</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">ls</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot_surface</span><span class="p">(</span><span class="n">elev</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;MPL_terrain&#39;</span><span class="p">,</span> <span class="n">edge</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot_layer</span><span class="p">(</span><span class="n">layer</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot_layer</span><span class="p">(</span><span class="n">tlayer</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot_layer</span><span class="p">(</span><span class="n">stlayer</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">surf</span><span class="p">(</span><span class="n">elev</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;MPL_terrain&#39;</span><span class="p">,</span> <span class="n">edge</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;coastline&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">)</span>
+<span class="n">traj</span> <span class="o">=</span> <span class="n">plot3</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">alt</span><span class="p">,</span> <span class="n">mvalues</span><span class="o">=</span><span class="n">pres</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">scatter3</span><span class="p">(</span><span class="n">lon</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">lat</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">alt</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">size</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
 <span class="n">zlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span>
 <span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">180</span><span class="p">)</span>
-<span class="n">colorbar</span><span class="p">(</span><span class="n">ls</span><span class="p">)</span>
+<span class="n">colorbar</span><span class="p">(</span><span class="n">traj</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
 <span class="n">title</span><span class="p">(</span><span class="s1">&#39;3D trajectory example&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -271,8 +271,8 @@ to plot 3D plots. The functions includes: including <code class="docutils litera
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2010-2021, MeteoInfo developers.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
+        &#169; Copyright 2010-2023, MeteoInfo developers.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
     </div>
   </body>
 </html>

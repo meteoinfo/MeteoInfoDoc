@@ -5,7 +5,7 @@
 Introduction
 *******************
 
-**MeteoInfo** is an intergrated framework both for GIS application and scientific computation environment, 
+**MeteoInfo** is an integrated framework both for GIS application and scientific computation environment,
 especially for meteorological community.
 
 **MeteoInfoMap** is a GIS application which enables the user to visualize and analyze
@@ -14,9 +14,7 @@ the spatial and meteorological data with multiple data formats.
 **MeteoInfoLab** is a scientific computation and visualization environment using Jython scripting with the 
 ability of multiple dimensional array calculation and 2D/3D plotting.
 
-It requires that Java 8 or greater be installed on your computer. See the
-http://www.java.com website for a free download of Java if you do not have it
-already installed.
+It requires that Java 8 or greater with 64-bit be installed on your computer. Java 11 64-bit version is suggested.
   
 Publication
 ======================
@@ -117,8 +115,11 @@ up to 1 GB of memory:
 ``java -Xmx1G -Xms128m``
 
 Try to increase ``Xmx`` value in the ``MeteoInfoMap`` and ``MeteoInfoLab`` starting files when you encounter
-a ``java.lang.OutOfMemoryError``. The starting files are ``mimap.bat`` and ``milab.bat`` in Windows,
-``mimap.sh`` and ``milab.sh`` in Linux and Unix, ``mimap_mac.sh`` and ``milab_mac.sh`` in Mac OS.
+a ``java.lang.OutOfMemoryError``. In windows, you can change ``MeteoInfoMap.l4j.ini`` and ``MeteoInfoLab.l4j.ini``
+files, when you staring the applications using ``MeteoInfoMap.exe`` and ``MeteoInfoLab.exe`` files.
+
+Also the starting files of ``mimap.bat`` and ``milab.bat`` can be edited in Windows.
+The corresponding files are ``mimap.sh`` and ``milab.sh`` in Linux and Unix, ``mimap_mac.sh`` and ``milab_mac.sh`` in Mac OS.
 
 Lib files
 ======================

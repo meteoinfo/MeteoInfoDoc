@@ -4,9 +4,9 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
 
-    <title>CloudSAT Swath data &#8212; MeteoInfo 3.0 documentation</title>
+    <title>CloudSAT Swath data &#8212; MeteoInfo 3.5 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinxdoc.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
@@ -61,7 +61,7 @@
   <section id="cloudsat-swath-data">
 <span id="examples-meteoinfolab-satellite-cloudsat-swath"></span><h1>CloudSAT Swath data<a class="headerlink" href="#cloudsat-swath-data" title="Permalink to this headline">¶</a></h1>
 <p>Open CloudSAT swath HDF data file and add two plots in a figure. Top one is radar
-refrectivity factor image on time and height dimensions. Bottom one is satellite
+reflectivity factor image on time and height dimensions. Bottom one is satellite
 trajectory map plot.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add file</span>
 <span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="s1">&#39;D:/Temp/hdf/2010128055614_21420_CS_2B-GEOPROF_GRANULE_P_R04_E03.hdf&#39;</span><span class="p">)</span>
@@ -90,15 +90,15 @@ trajectory map plot.</p>
 <span class="n">data</span> <span class="o">=</span> <span class="n">data</span> <span class="o">/</span> <span class="n">scale_factor</span>
 <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="o">&gt;</span><span class="n">valid_max</span><span class="p">]</span> <span class="o">=</span> <span class="n">nan</span>
 <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="o">&lt;</span><span class="n">valid_min</span><span class="p">]</span> <span class="o">=</span> <span class="n">nan</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">transpose</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">,:]</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">T</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 
 <span class="c1"># Make a split window plot</span>
 <span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 
 <span class="c1"># Contour the data</span>
 <span class="n">levs</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">38</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">layer</span> <span class="o">=</span> <span class="n">imshow</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">levs</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="p">[</span><span class="n">time</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">time</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="n">height</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="n">height</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
+<span class="n">layer</span> <span class="o">=</span> <span class="n">imshow</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">height</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">data</span><span class="p">,</span> <span class="n">levs</span><span class="p">)</span>
 <span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span>
 <span class="n">title</span><span class="p">(</span><span class="s1">&#39;Radar Reflectivity Factor&#39;</span><span class="p">)</span>
 <span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Seconds since the start of the granule. (seconds)&#39;</span><span class="p">)</span>
@@ -192,8 +192,8 @@ trajectory map plot.</p>
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2010-2021, MeteoInfo developers.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
+        &#169; Copyright 2010-2023, MeteoInfo developers.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
     </div>
   </body>
 </html>

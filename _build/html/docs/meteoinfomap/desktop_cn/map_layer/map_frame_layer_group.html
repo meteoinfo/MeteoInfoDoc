@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+    <title>地图框架和图层组 &#8212; MeteoInfo 3.5 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxdoc.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="地图操作" href="../mapview.html" />
+    <link rel="prev" title="网络地图图层" href="web_layer.html" /> 
+  </head><body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../../../index.html"><img src="../../../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../mapview.html" title="地图操作"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="web_layer.html" title="网络地图图层"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoMap</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../index.html" >MeteoInfoMap 中文文档</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../map_layer.html" accesskey="U">图层操作</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">地图框架和图层组</a></li> 
+      </ul>
+    </div>
+
+
+    <div class="document">
+
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="id1">
+<h1>地图框架和图层组<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>图层是由地图框架（Map Frame）和图层组（Layer Group）来管理的，一个图层组可以包含多个图层，一个地图框架可以包含
+多个图层和图层组。双击地图框架名弹出地图框架属性对话框，可以修改地图框架的名称。</p>
+<img alt="../../../../_images/map_frame.png" src="../../../../_images/map_frame.png" />
+<p>用鼠标选中地图框架名，点击右键出现的菜单中包括添加图层组（New Group）、添加图层（Add Layer）、添加网络图层
+（Add Web Layer）和设置是否为活动地图框架（Active）。</p>
+<img alt="../../../../_images/map_frame_right_menu.png" src="../../../../_images/map_frame_right_menu.png" />
+<p>图层组可以将相似的图层组织起来，在图层很多的时候可以使得图层管理更为方便。</p>
+<p>在MeteoInfoMap的图形显示区域，“地图”区域中只能显示一个地图框架的图形内容，如果有多个图形框架则显示活动（Active）
+地图框架的内容。“版面”区域里可以显示所有地图框架的图形内容。下面我们增加一个地图框架作为南海脚图。</p>
+<p>点击“插入 -&gt; 图层框架”菜单插入一个图层框架，缺省名为New Map Frame 1，双击该图层框架名，在属性对话框修改图层框架
+名为“南海脚图”。鼠标右键打开该图层框架的右键菜单，并添加cn_border.shp图层，修改图例为蓝色。可以看到“地图”区域显示
+的是“New Map Frame”地图框架的内容，因为该地图框架是活动的，地图框架是否为活动框架可以从名称是否为加黑看出来。而在
+“版面”区域两个地图框架的内容都显示了出来。</p>
+<img alt="../../../../_images/add_map_frame.png" src="../../../../_images/add_map_frame.png" />
+<img alt="../../../../_images/add_map_frame_layout.png" src="../../../../_images/add_map_frame_layout.png" />
+<p>选中“南海脚图”地图框架名，点击右键并在弹出菜单中选择“Active”可以将“南海脚图”地图框架设为活动框架，这是“地图”区域显
+示的就是该地图框架的内容。</p>
+<img alt="../../../../_images/map_frame_active.png" src="../../../../_images/map_frame_active.png" />
+<p>可以通过在“版面”中移动、缩放和改变“南海脚图”地图框架的属性生成带南海脚图的中国地图。“版面”的具体操作会在后面的章节中
+详细介绍。</p>
+<img alt="../../../../_images/map_frame_south_sea.png" src="../../../../_images/map_frame_south_sea.png" />
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
+        <img style="position: fixed; top: 0; right: 0; border: 0;" 
+        src="../../../../_static/forkme_right_orange_ff7600.png" 
+        alt="Fork me on GitHub">
+    </a>
+    <a target="_blank" href="https://gitter.im/meteoinfo/community">
+        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
+        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
+        alt="Join the chat at Gitter">
+    </a>
+
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="web_layer.html"
+                        title="previous chapter">网络地图图层</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../mapview.html"
+                        title="next chapter">地图操作</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../_sources/docs/meteoinfomap/desktop_cn/map_layer/map_frame_layer_group.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../mapview.html" title="地图操作"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="web_layer.html" title="网络地图图层"
+             >previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoMap</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../index.html" >MeteoInfoMap 中文文档</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../map_layer.html" >图层操作</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">地图框架和图层组</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2023, MeteoInfo developers.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
+    </div>
+  </body>
+</html>

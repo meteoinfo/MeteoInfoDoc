@@ -1,0 +1,229 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+    <title>数据分布图 &#8212; MeteoInfo 3.5 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxdoc.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="等值线图" href="contour_plot.html" />
+    <link rel="prev" title="离散数据图" href="scatter_plot.html" /> 
+  </head><body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../../../index.html"><img src="../../../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="contour_plot.html" title="等值线图"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="scatter_plot.html" title="离散数据图"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../index.html" >MeteoInfoLab 中文文档</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../plotlib.html" accesskey="U">plotlib包</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">数据分布图</a></li> 
+      </ul>
+    </div>
+
+
+    <div class="document">
+
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="dos-meteoinfolab-milab-cn-plotlib-distribution-plot">
+<span id="id1"></span><h1>数据分布图<a class="headerlink" href="#dos-meteoinfolab-milab-cn-plotlib-distribution-plot" title="Permalink to this headline">¶</a></h1>
+<p>表示数据分布情况的直方图可以用hist函数绘制，bins参数指定数据的分组数。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>
+<span class="n">hist</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;c&#39;</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Histogram&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/plotlib_histogram.png" src="../../../../_images/plotlib_histogram.png" />
+<p>箱线图是一种用作显示一组数据分散情况的统计图，能显示出一组数据的最大值、最小值、中位数、及上下四分位数。可以用boxplot函数绘制箱线图，
+widths参数指定箱线图的宽度，showmeans参数指定是否绘制平均值点符号。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">ave</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">ss</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>
+    <span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">ss</span> <span class="o">*</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+    <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="n">ave</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">ave</span><span class="p">,</span> <span class="s1">&#39;-g&#39;</span><span class="p">)</span>
+<span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">widths</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">showmeans</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Box plot demo&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/plotlib_boxplot.png" src="../../../../_images/plotlib_boxplot.png" />
+<p>boxplot函数还有一系列参数来指定箱线图各组成部分的细节特征，如参数boxprops、medianprops、meanprops、whiskerprops、
+capprops、flierprops。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data1</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>
+    <span class="n">data1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">500</span><span class="p">))</span>
+<span class="n">data2</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>
+    <span class="n">data2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">500</span><span class="p">))</span>
+<span class="n">pos1</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">5.8</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">data1</span><span class="p">))</span>
+<span class="n">boxplot</span><span class="p">(</span><span class="n">data1</span><span class="p">,</span> <span class="n">positions</span><span class="o">=</span><span class="n">pos1</span><span class="p">,</span> <span class="n">widths</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">boxprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">),</span>
+    <span class="n">medianprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">),</span> <span class="n">meanprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;s&#39;</span><span class="p">),</span>
+    <span class="n">whiskerprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">),</span> <span class="n">capprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">),</span>
+    <span class="n">flierprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">))</span>
+<span class="n">pos2</span> <span class="o">=</span> <span class="n">pos1</span> <span class="o">+</span> <span class="mf">0.4</span>
+<span class="n">boxplot</span><span class="p">(</span><span class="n">data1</span><span class="p">,</span> <span class="n">positions</span><span class="o">=</span><span class="n">pos2</span><span class="p">,</span> <span class="n">widths</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">boxprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">),</span>
+    <span class="n">medianprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">),</span> <span class="n">meanprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;s&#39;</span><span class="p">),</span>
+    <span class="n">whiskerprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">),</span> <span class="n">capprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">),</span>
+    <span class="n">flierprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">))</span>
+
+<span class="c1"># draw temporary red and blue lines and use them to create a legend</span>
+<span class="n">line1</span> <span class="o">=</span> <span class="n">plot</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;b-&#39;</span><span class="p">)</span>
+<span class="n">line2</span> <span class="o">=</span> <span class="n">plot</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;r-&#39;</span><span class="p">)</span>
+<span class="n">legend</span><span class="p">([</span><span class="n">line1</span><span class="p">,</span> <span class="n">line2</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">])</span>
+
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Box plot demo&#39;</span><span class="p">)</span>
+<span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/plotlib_boxplot_more.png" src="../../../../_images/plotlib_boxplot_more.png" />
+<p>小提琴图 (Violin Plot) 用于显示数据分布及其概率密度，这种图表结合了箱形图和密度图的特征。violinplot函数用来绘制小提琴图，
+widths参数指定小提琴图形的宽度，boxwidth指定小提琴区域最窄处的宽度。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">all_data</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">std</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="k">for</span> <span class="n">std</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">)]</span>
+<span class="n">all_data</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">nan</span>
+
+<span class="n">fig</span><span class="p">,(</span><span class="n">ax1</span><span class="p">,</span><span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">violinplot</span><span class="p">(</span><span class="n">all_data</span><span class="p">,</span> <span class="n">widths</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">boxwidth</span><span class="o">=</span><span class="mf">0.02</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Violin plot&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">all_data</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/plotlib_violinplot.png" src="../../../../_images/plotlib_violinplot.png" />
+<p>饼图主要用于展现不同类别数值相对于总数的占比情况，可以用pie函数绘制，explode参数可以指定某些扇区向外偏移，startangle参数指定饼图
+起始扇区的角度，autopct参数指定每个扇区百分比标注的格式。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">patchs</span><span class="p">,</span> <span class="n">texts</span> <span class="o">=</span> <span class="n">pie</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">explode</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">startangle</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span> <span class="n">autopct</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%.1f%%</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Pie chart&#39;</span><span class="p">)</span>
+<span class="n">legend</span><span class="p">(</span><span class="n">patchs</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="s1">&#39;d&#39;</span><span class="p">,</span><span class="s1">&#39;e&#39;</span><span class="p">],</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;custom&#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/plotlib_pie.png" src="../../../../_images/plotlib_pie.png" />
+<p>可以用wedgeprops参数来绘制环状饼图，通过radius参数的控制能够绘制多个环状饼图的嵌套。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">size</span> <span class="o">=</span> <span class="mf">0.3</span>
+<span class="n">patchs</span><span class="p">,</span> <span class="n">texts</span> <span class="o">=</span> <span class="n">pie</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">startangle</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span> <span class="n">autopct</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%.1f%%</span><span class="s1">&#39;</span><span class="p">,</span>
+    <span class="n">wedgeprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">size</span><span class="p">))</span>
+<span class="n">pie</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">startangle</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mi">1</span><span class="o">-</span><span class="n">size</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;GMT_seis&#39;</span><span class="p">,</span>
+    <span class="n">wedgeprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">size</span><span class="p">))</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Pie chart&#39;</span><span class="p">)</span>
+<span class="n">legend</span><span class="p">(</span><span class="n">patchs</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="s1">&#39;d&#39;</span><span class="p">,</span><span class="s1">&#39;e&#39;</span><span class="p">],</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;custom&#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/plotlib_pie_ring.png" src="../../../../_images/plotlib_pie_ring.png" />
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
+        <img style="position: fixed; top: 0; right: 0; border: 0;" 
+        src="../../../../_static/forkme_right_orange_ff7600.png" 
+        alt="Fork me on GitHub">
+    </a>
+    <a target="_blank" href="https://gitter.im/meteoinfo/community">
+        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
+        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
+        alt="Join the chat at Gitter">
+    </a>
+
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="scatter_plot.html"
+                        title="previous chapter">离散数据图</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="contour_plot.html"
+                        title="next chapter">等值线图</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../_sources/docs/meteoinfolab/milab_cn/plotlib/distribution_plot.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="contour_plot.html" title="等值线图"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="scatter_plot.html" title="离散数据图"
+             >previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../index.html" >MeteoInfoLab 中文文档</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../plotlib.html" >plotlib包</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">数据分布图</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2023, MeteoInfo developers.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,226 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+    <title>插值分析（numeric.interpolate） &#8212; MeteoInfo 3.5 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxdoc.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="plotlib包" href="../plotlib.html" />
+    <link rel="prev" title="曲线拟合（numeric.fitting）" href="fitting.html" /> 
+  </head><body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../../../index.html"><img src="../../../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../plotlib.html" title="plotlib包"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="fitting.html" title="曲线拟合（numeric.fitting）"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../index.html" >MeteoInfoLab 中文文档</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../numeric.html" accesskey="U">numeric包</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">插值分析（numeric.interpolate）</a></li> 
+      </ul>
+    </div>
+
+
+    <div class="document">
+
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="numeric-interpolate">
+<span id="dos-meteoinfolab-milab-cn-numeric-interpolate"></span><h1>插值分析（numeric.interpolate）<a class="headerlink" href="#numeric-interpolate" title="Permalink to this headline">¶</a></h1>
+<p>numeric.interpolate包中包含了一维插值、二维插值和三维插值函数。一维插值可以通过Interp1d类来实现，初始化需要一维
+数组x和y，还可以用kind参数指定插值方法。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">cos</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mf">9.0</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">interpolate</span><span class="o">.</span><span class="n">interp1d</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">f2</span> <span class="o">=</span> <span class="n">interpolate</span><span class="o">.</span><span class="n">interp1d</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;cubic&#39;</span><span class="p">)</span>
+
+<span class="n">xnew</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;bo&#39;</span><span class="p">,</span> <span class="n">xnew</span><span class="p">,</span> <span class="n">f</span><span class="p">(</span><span class="n">xnew</span><span class="p">),</span> <span class="s1">&#39;g-&#39;</span><span class="p">,</span> <span class="n">xnew</span><span class="p">,</span> <span class="n">f2</span><span class="p">(</span><span class="n">xnew</span><span class="p">),</span> <span class="s1">&#39;r--&#39;</span><span class="p">)</span>
+<span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">)</span>
+<span class="n">legend</span><span class="p">([</span><span class="s1">&#39;data&#39;</span><span class="p">,</span><span class="s1">&#39;linear&#39;</span><span class="p">,</span><span class="s1">&#39;cubic&#39;</span><span class="p">],</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;lower left&#39;</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Interpolation example&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/interpolate_interp1d.png" src="../../../../_images/interpolate_interp1d.png" />
+<p>二维插值可以用interp2d类，该类初始化时需要规则网格的x和y一维数组和对应的z值二维数组，kind参数可以设为`linear`或
+<cite>spline</cite>。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mf">5.01</span><span class="p">,</span> <span class="mf">5.25</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mf">5.01</span><span class="p">,</span> <span class="mf">5.25</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">)</span>
+<span class="n">xx</span><span class="p">,</span> <span class="n">yy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">xx</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">yy</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">interpolate</span><span class="o">.</span><span class="n">interp2d</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;spline&#39;</span><span class="p">)</span>
+
+<span class="n">xnew</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mf">5.01</span><span class="p">,</span> <span class="mf">5.01</span><span class="p">,</span> <span class="mf">1e-2</span><span class="p">)</span>
+<span class="n">ynew</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mf">5.01</span><span class="p">,</span> <span class="mf">5.01</span><span class="p">,</span> <span class="mf">1e-2</span><span class="p">)</span>
+<span class="n">znew</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">xnew</span><span class="p">,</span> <span class="n">ynew</span><span class="p">)</span>
+
+<span class="n">scatter3</span><span class="p">(</span><span class="n">xnew</span><span class="p">,</span> <span class="n">ynew</span><span class="p">,</span> <span class="n">znew</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">surf</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">edge</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;MPL_PiYG&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/interpolate_interp2d.png" src="../../../../_images/interpolate_interp2d.png" />
+<p>二维双线性插值可以用`linint2`函数，常用于改变气象格点数据的分辨率。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">migl</span><span class="o">.</span><span class="n">get_sample_folder</span><span class="p">(),</span> <span class="s1">&#39;GrADS&#39;</span><span class="p">,</span> <span class="s1">&#39;model.ctl&#39;</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+<span class="n">ps</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;PS&#39;</span><span class="p">][:]</span>
+<span class="n">ps</span> <span class="o">=</span> <span class="n">ps</span><span class="p">[:,</span><span class="s1">&#39;10:60&#39;</span><span class="p">,</span><span class="s1">&#39;60:140&#39;</span><span class="p">]</span>
+<span class="n">lon</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">142</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">)</span>
+<span class="n">lat</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">66</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">)</span>
+
+<span class="c1">#Interpolate</span>
+<span class="n">nps</span> <span class="o">=</span> <span class="n">interpolate</span><span class="o">.</span><span class="n">linint2</span><span class="p">(</span><span class="n">ps</span><span class="o">.</span><span class="n">dimvalue</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">ps</span><span class="o">.</span><span class="n">dimvalue</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">ps</span><span class="p">,</span> <span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">)</span>
+
+<span class="c1">#Plot</span>
+<span class="n">levs</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">1021</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">axestype</span><span class="o">=</span><span class="s1">&#39;map&#39;</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">))</span>
+<span class="n">imshow</span><span class="p">(</span><span class="n">ps</span><span class="p">[</span><span class="mi">1</span><span class="p">,:,:],</span> <span class="n">levs</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Pressure - origin&#39;</span><span class="p">)</span>
+<span class="n">colorbar</span><span class="p">()</span>
+
+<span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">axestype</span><span class="o">=</span><span class="s1">&#39;map&#39;</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">))</span>
+<span class="n">imshow</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">nps</span><span class="p">[</span><span class="mi">1</span><span class="p">,:,:],</span> <span class="n">levs</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Pressure - linint2&#39;</span><span class="p">)</span>
+<span class="n">colorbar</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/interpolate_linint2.png" src="../../../../_images/interpolate_linint2.png" />
+<p>三维插值可以用NearestNDInterpolator和IDWNDInterpolator类，分别使用最邻近值和反距离权方法进行插值。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mf">1.</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="p">(</span><span class="n">z</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mf">1.</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">)</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="n">interpolate</span><span class="o">.</span><span class="n">NearestNDInterpolator</span><span class="p">([</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">],</span> <span class="n">v</span><span class="p">)</span>
+
+<span class="n">gx</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">x</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">gy</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">y</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">gz</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="n">z</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">z</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">xx</span><span class="p">,</span><span class="n">yy</span><span class="p">,</span><span class="n">zz</span> <span class="o">=</span> <span class="n">meshgrid</span><span class="p">(</span><span class="n">gx</span><span class="p">,</span> <span class="n">gy</span><span class="p">,</span> <span class="n">gz</span><span class="p">)</span>
+<span class="n">gv</span> <span class="o">=</span> <span class="n">f</span><span class="p">([</span><span class="n">xx</span><span class="p">,</span><span class="n">yy</span><span class="p">,</span><span class="n">zz</span><span class="p">])</span>
+
+<span class="n">levs</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+<span class="n">scatter3</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">v</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="n">levs</span><span class="p">)</span>
+<span class="n">scatter3</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">zz</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">gv</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="n">levs</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">colorbar</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/interpolate_NearestNDInterpolator.png" src="../../../../_images/interpolate_NearestNDInterpolator.png" />
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
+        <img style="position: fixed; top: 0; right: 0; border: 0;" 
+        src="../../../../_static/forkme_right_orange_ff7600.png" 
+        alt="Fork me on GitHub">
+    </a>
+    <a target="_blank" href="https://gitter.im/meteoinfo/community">
+        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
+        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
+        alt="Join the chat at Gitter">
+    </a>
+
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="fitting.html"
+                        title="previous chapter">曲线拟合（numeric.fitting）</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../plotlib.html"
+                        title="next chapter">plotlib包</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../_sources/docs/meteoinfolab/milab_cn/numeric/interpolate.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../plotlib.html" title="plotlib包"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="fitting.html" title="曲线拟合（numeric.fitting）"
+             >previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoLab</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../index.html" >MeteoInfoLab 中文文档</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../numeric.html" >numeric包</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">插值分析（numeric.interpolate）</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2023, MeteoInfo developers.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+    <title>地图投影 &#8212; MeteoInfo 3.5 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxdoc.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="地图属性" href="mapview_property.html" />
+    <link rel="prev" title="交互式图形绘制" href="interactive_drawing.html" /> 
+  </head><body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../../../../index.html"><img src="../../../../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="mapview_property.html" title="地图属性"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="interactive_drawing.html" title="交互式图形绘制"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoMap</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../index.html" >MeteoInfoMap 中文文档</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../mapview.html" accesskey="U">地图操作</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">地图投影</a></li> 
+      </ul>
+    </div>
+
+
+    <div class="document">
+
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="id1">
+<h1>地图投影<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>通过“显示 -&gt; 投影”菜单可以调出地图投影设置对话框，通过设置投影类型和相关的参数可以实时改变地图的投影方式。MeteoInfo通过
+Proj4J库（<a class="reference external" href="https://github.com/locationtech/proj4j">https://github.com/locationtech/proj4j</a>）支持大多数地图投影类型，但在这个投影设置对话框中只包含了气象领
+域常用的一些投影类型，包括：</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>等经纬度投影（LongLat）</p></li>
+<li><p>兰伯特投影（Lambert_Conformal_Conic）</p></li>
+<li><p>阿尔伯斯等积投影（Albers_Equal_Area）</p></li>
+<li><p>北极极射赤平投影（North_Polar_Stereographic_Azimuthal）</p></li>
+<li><p>南极极射赤平投影（South_Polar_Stereographic_Azimuthal）</p></li>
+<li><p>墨卡托投影（Metcator）</p></li>
+<li><p>罗宾逊投影（Robinson）</p></li>
+<li><p>莫尔维德投影（Mollweide）</p></li>
+<li><p>正射投影（Orthographic_Azimuthal）</p></li>
+<li><p>对地静止卫星投影（Geostationary_Satellite）</p></li>
+<li><p>斜立体投影（Oblique_Stereographic_Alternative）</p></li>
+<li><p>横轴墨卡托投影（Transverse_Mercator）</p></li>
+<li><p>正弦投影（Sinusoidal）</p></li>
+<li><p>圆柱等积投影（Cylindrical_Equal_Area）</p></li>
+<li><p>哈默埃克特投影（Hammer_Eckert）</p></li>
+</ul>
+</div></blockquote>
+<img alt="../../../../_images/map_projection_robinson.png" src="../../../../_images/map_projection_robinson.png" />
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
+        <img style="position: fixed; top: 0; right: 0; border: 0;" 
+        src="../../../../_static/forkme_right_orange_ff7600.png" 
+        alt="Fork me on GitHub">
+    </a>
+    <a target="_blank" href="https://gitter.im/meteoinfo/community">
+        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
+        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
+        alt="Join the chat at Gitter">
+    </a>
+
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="interactive_drawing.html"
+                        title="previous chapter">交互式图形绘制</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="mapview_property.html"
+                        title="next chapter">地图属性</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../_sources/docs/meteoinfomap/desktop_cn/mapview/projection.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="mapview_property.html" title="地图属性"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="interactive_drawing.html" title="交互式图形绘制"
+             >previous</a> |</li>
+        <li><a href="../../../../index.html">home</a>|&nbsp;</li>
+        <li><a href="../../../../news/index.html">news</a>|&nbsp;</li>
+        <li><a href="../../../../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../../../../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../../../index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >MeteoInfoMap</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../index.html" >MeteoInfoMap 中文文档</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="../mapview.html" >地图操作</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">地图投影</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2023, MeteoInfo developers.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
+    </div>
+  </body>
+</html>
