@@ -15,3 +15,4 @@ Numeric package
    numeric/fitting.rst
    numeric/stats.rst
    numeric/interpolate.rst
+   numeric/integrate.rst
