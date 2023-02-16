@@ -1,16 +1,16 @@
-.. _examples-meteoinfolab-file_io-read_lighting:
+.. _examples-meteoinfolab-file_io-read_lightning:
 
-*******************
-Read lighting data
-*******************
+*********************
+Read lightning data
+*********************
 
-Python ASCII file read functions could be used if the data can not be read by ``asciiread()`` 
-and ``readtable()`` functions. Read data into several Python lists and create arrays from them
+Python ASCII file read functions could be used if the data can not be read by ``asciiread``
+or ``DataFrame.read_table`` functions. Read data into several Python lists and create arrays from them
 for plotting.
 
 ::
 
-    fn = 'D:/Temp/ascii/lighting/2009_06_06.txt'
+    fn = 'D:/Temp/ascii/lightning/2009_06_06.txt'
     tf = open(fn)
     lats = []
     lons = []
@@ -34,6 +34,6 @@ for plotting.
     legend(legend=layer.legend(), loc='lower left')
     xlim(90, 130)
     ylim(20, 50) 
-    title('Lighting locations')
+    title('Lightning locations')
     
-.. image:: image/ascii_lighting.png
+.. image:: image/ascii_lightning.png

@@ -9,7 +9,7 @@ File input and output
    :maxdepth: 2
    
    file_io/read_ascii.rst
-   file_io/read_lighting.rst
+   file_io/read_lightning.rst
    file_io/write_nc.rst
    file_io/read_grib2.rst
    file_io/read_remote.rst
