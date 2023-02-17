@@ -17,6 +17,7 @@ Satellite data
    satellite/fy2g_ctt.rst
    satellite/fy3a_aod.rst
    satellite/fy3c_gfr.rst
+   satellite/fy4a_agri.rst
    satellite/mod08_aod.rst
    satellite/mod10a1_snow.rst
    satellite/trmm_2a12.rst
