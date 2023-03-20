@@ -22,4 +22,5 @@ Meteorological analysis
    meteo_analysis/pv_baroclinic.rst
    meteo_analysis/isentropic_analysis.rst
    meteo_analysis/vorticity_advection.rst
+   meteo_analysis/frontogenesis.rst
    meteo_analysis/eof.rst
