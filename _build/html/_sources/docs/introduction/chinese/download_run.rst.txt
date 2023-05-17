@@ -23,7 +23,10 @@ MeteoInfo的运行需要Java 8或者更高版本的支持，Java可以在网上�
 
   -	Windows： MeteoInfoMap.exe和MeteoInfoLab.exe。也可以在命令行中运行mimap.bat和milab.bat。
   -	Linux/Unix： mimap.sh和milab.sh（需要注意这两个文件要将权限设置为可执行）。
-  -	Mac OS：mimap_mac.sh和milab_mac.sh（需要注意这两个文件要将权限设置为可执行）。运行Jython脚本程序也可以不启动MeteoInfoLab用户界面，直接在命令行环境中运行：
+  -	Mac OS：mimap_mac.sh和milab_mac.sh（需要注意这两个文件要将权限设置为可执行）。
+
+运行Jython脚本程序也可以不启动MeteoInfoLab用户界面，直接在命令行环境中运行：
+
   -	Windows：milab.bat test.py（可以在任务计划中定时自动运行）。
   -	Linux/Unix：milab.sh test.py（可以在crontab中定时自动运行 ）。
   -	Mac OS: milab_mac.sh test.py（可以在crontab中定时自动运行 ）。
