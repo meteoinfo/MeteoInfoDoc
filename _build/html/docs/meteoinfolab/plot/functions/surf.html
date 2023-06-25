@@ -72,43 +72,59 @@
 <li><p><strong>x</strong> – (<em>array_like</em>) Optional. X coordinate array.</p></li>
 <li><p><strong>y</strong> – (<em>array_like</em>) Optional. Y coordinate array.</p></li>
 <li><p><strong>z</strong> – (<em>array_like</em>) 2-D z value array.</p></li>
+<li><p><strong>c</strong> – (<em>array_like</em>) Optional. Additionally specifies the surface color.</p></li>
 <li><p><strong>cmap</strong> – (<em>string</em>) Color map string.</p></li>
-<li><p><strong>xyaxis</strong> – (<em>boolean</em>) Draw x and y axis or not.</p></li>
-<li><p><strong>zaxis</strong> – (<em>boolean</em>) Draw z axis or not.</p></li>
-<li><p><strong>grid</strong> – (<em>boolean</em>) Draw grid or not.</p></li>
-<li><p><strong>boxed</strong> – (<em>boolean</em>) Draw boxed or not.</p></li>
-<li><p><strong>mesh</strong> – (<em>boolean</em>) Draw mesh line or not.</p></li>
+<li><p><strong>lighting</strong> – (<em>bool</em>) Using light or not.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Legend</p>
+<dd class="field-even"><p>3D surface graphic</p>
 </dd>
 </dl>
-<p><strong>Example:</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">)</span>
-<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">meshgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="n">z</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">cos</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-
-<span class="c1">#Plot</span>
-<span class="n">ls</span> <span class="o">=</span> <span class="n">surf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
-<span class="n">colorbar</span><span class="p">(</span><span class="n">ls</span><span class="p">,</span><span class="n">shrink</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
-<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Surface 3D plot example&#39;</span><span class="p">)</span>
+<p><strong>Examples:</strong></p>
+<p>Create three matrices of the same size. Then plot them as a surface. The surface plot uses Z for both
+height and color.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">]</span> <span class="o">=</span> <span class="n">meshgrid</span><span class="p">(</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mf">10.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">),</span> <span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mf">20.1</span><span class="p">))</span>
+<span class="n">Z</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> <span class="o">+</span> <span class="n">cos</span><span class="p">(</span><span class="n">Y</span><span class="p">)</span>
+<span class="n">surf</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Z</span><span class="p">)</span>
 </pre></div>
 </div>
-<img alt="../../../../_images/surf_1.png" src="../../../../_images/surf_1.png" />
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
-<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">meshgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">y</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
-
-<span class="c1">#Plot</span>
-<span class="n">ls</span> <span class="o">=</span> <span class="n">surf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
-<span class="n">colorbar</span><span class="p">(</span><span class="n">ls</span><span class="p">,</span><span class="n">shrink</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
-<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Surface 3D plot example&#39;</span><span class="p">)</span>
+<img alt="../../../../_images/surf_11.png" src="../../../../_images/surf_11.png" />
+<p>Specify the colors for a surface plot by including a fourth matrix input, C. The surface plot uses Z for
+height and C for color. Specify the colors using a colormap, which uses single numbers to stand for
+colors on a spectrum. When you use a colormap, C is the same size as Z. Add a color bar to the graph to
+show how the data values in C correspond to the colors in the colormap.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">]</span> <span class="o">=</span> <span class="n">meshgrid</span><span class="p">(</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mf">10.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">),</span> <span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mf">20.1</span><span class="p">))</span>
+<span class="n">Z</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> <span class="o">+</span> <span class="n">cos</span><span class="p">(</span><span class="n">Y</span><span class="p">)</span>
+<span class="n">C</span> <span class="o">=</span> <span class="n">X</span> <span class="o">*</span> <span class="n">Y</span>
+<span class="n">surf</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> <span class="n">C</span><span class="p">)</span>
+<span class="n">colorbar</span><span class="p">()</span>
 </pre></div>
 </div>
-<img alt="../../../../_images/surf_2.png" src="../../../../_images/surf_2.png" />
+<img alt="../../../../_images/surf_color_1.png" src="../../../../_images/surf_color_1.png" />
+<p>Specify the colors for a surface plot by including a fourth matrix input, CO. The surface plot uses Z for
+height and CO for color. Specify the colors using truecolor, which uses triplets of numbers to stand for
+all possible colors. When you use truecolor, if Z is m-by-n, then CO is m-by-n-by-3. The first page of
+the array indicates the red component for each color, the second page indicates the green component, and
+the third page indicates the blue component.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="n">Z</span><span class="p">]</span> <span class="o">=</span> <span class="n">peaks</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span>
+<span class="n">ny</span><span class="p">,</span> <span class="n">nx</span> <span class="o">=</span> <span class="n">Z</span><span class="o">.</span><span class="n">shape</span>
+<span class="n">CO</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">([</span><span class="n">ny</span><span class="p">,</span> <span class="n">nx</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="n">CO</span><span class="p">[:,:,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span> <span class="c1"># red</span>
+<span class="n">CO</span><span class="p">[:,:,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">ones</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span><span class="o">*</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.6</span><span class="p">,</span><span class="mi">25</span><span class="p">)</span> <span class="c1"># green</span>
+<span class="n">CO</span><span class="p">[:,:,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">ones</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span><span class="o">*</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">25</span><span class="p">)</span> <span class="c1"># blue</span>
+<span class="n">surf</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="n">Z</span><span class="p">,</span><span class="n">CO</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/surf_color_2.png" src="../../../../_images/surf_color_2.png" />
+<p>Create a semitransparent surface by specifying the FaceAlpha name-value pair with 0.5 as the value. To
+allow further modifications, assign the surface object to the variable s.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">meshgrid</span><span class="p">(</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mf">5.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">))</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">y</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">x</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">surf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">facealpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../../_images/surf_alpha_1.png" src="../../../../_images/surf_alpha_1.png" />
 </dd></dl>
 
 </section>

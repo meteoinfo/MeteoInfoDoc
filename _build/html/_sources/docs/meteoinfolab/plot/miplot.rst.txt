@@ -31,6 +31,7 @@ Functions:
    functions/cll.rst  
    functions/colorbar.rst
    functions/contour.rst
+   functions/contour3.rst
    functions/contourf.rst
    functions/contourm.rst
    functions/contourfm.rst
