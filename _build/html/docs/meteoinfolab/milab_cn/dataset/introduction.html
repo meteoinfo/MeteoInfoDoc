@@ -4,16 +4,17 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
-    <title>dataset包简介 &#8212; MeteoInfo 3.5 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxdoc.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dataset包简介 &#8212; MeteoInfo 3.6 documentation</title>
+    <link rel="stylesheet" href="../../../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
-    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
     <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="dataframe包" href="../dataframe.html" />
@@ -59,7 +60,7 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <section id="dataset">
+  <div class="section" id="dataset">
 <span id="dos-meteoinfolab-milab-cn-dataset-introduction"></span><h1>dataset包简介<a class="headerlink" href="#dataset" title="Permalink to this headline">¶</a></h1>
 <p>dataset包主要包含了气象数据文件读写的功能。addfile是最主要的读取数据文件的函数，支持NetCDF、GRIB、HDF、GrADS等常用气象数据
 格式，该函数返回值是多维数据文件（DimDataFile）的对象，文件对象里包含了数据维、全局属性、变量（包括变量类型、变量维、变量属性）
@@ -202,7 +203,7 @@ addfile函数中将keepopen参数设为True，所有数据读取完毕后用数�
 </pre></div>
 </div>
 <img alt="../../../../_images/dataset_addfiles.png" src="../../../../_images/dataset_addfiles.png" />
-</section>
+</div>
 
 
             <div class="clearer"></div>
@@ -216,7 +217,7 @@ addfile函数中将keepopen参数设为True，所有数据读取完毕后用数�
     </a>
     <a target="_blank" href="https://gitter.im/meteoinfo/community">
         <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
-        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
+        src="https://badges.gitter.im/meteoinfo/community.svg"
         alt="Join the chat at Gitter">
     </a>
 
@@ -279,7 +280,7 @@ addfile函数中将keepopen参数设为True，所有数据读取完毕后用数�
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2023, MeteoInfo developers.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
     </div>
   </body>
 </html>

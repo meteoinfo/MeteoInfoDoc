@@ -4,16 +4,17 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
-    <title>MeteoInfo框架体系 &#8212; MeteoInfo 3.5 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/sphinxdoc.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MeteoInfo框架体系 &#8212; MeteoInfo 3.6 documentation</title>
+    <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
-    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="MeteoInfo网站和源代码" href="website_code.html" />
@@ -57,9 +58,9 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <section id="meteoinfo">
+  <div class="section" id="meteoinfo">
 <h1>MeteoInfo框架体系<a class="headerlink" href="#meteoinfo" title="Permalink to this headline">¶</a></h1>
-<section id="id1">
+<div class="section" id="id1">
 <h2>MeteoInfo开发语言的选择<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>MeteoInfo的开发语言是Java和Jython。Java是面向对象的计算机语言，具有简单性、分布式、健壮性、安全性、平台独立与可移植性、
 多线程、动态性等特点，长期占据计算机语言流行排行榜前列，拥有众多各类功能的开源库，包括支持众多大气科学数据格式的由Unidata
@@ -69,8 +70,8 @@
 <p>Java语言是静态的编译语言，和动态解释性语言（如Python）相比开发难度较大，不适合作为面向最终用户的数据分析语言。Jython语言
 是Python语言的Java实现，二者的语法相同，标准库也一样。Jython可以和Java语言无缝衔接，很适合做Java程序的脚本语言。由于
 Python的流行，Jython的学习成本也很低。</p>
-</section>
-<section id="id2">
+</div>
+<div class="section" id="id2">
 <h2>MeteoInfo框架<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>MeteoInfo包括了两个面向最终用户的应用程序：MeteoInfoMap和MeteoInfoLab。MeteoInfoMap是一个GIS桌面软件，包括图层
 控制、地图显示、地图布局、图层编辑、空间分析等功能，能够方便的显示地图数据，并将地学数据生成图层和地图数据叠加显示，以地图
@@ -80,8 +81,8 @@ Python的流行，Jython的学习成本也很低。</p>
 <img alt="../../../_images/MeteoInfo_framework.png" src="../../../_images/MeteoInfo_framework.png" />
 <img alt="../../../_images/MeteoInfoMap_Main_GUI.png" src="../../../_images/MeteoInfoMap_Main_GUI.png" />
 <img alt="../../../_images/MeteoInfoLab_Main_GUI.png" src="../../../_images/MeteoInfoLab_Main_GUI.png" />
-</section>
-</section>
+</div>
+</div>
 
 
             <div class="clearer"></div>
@@ -95,7 +96,7 @@ Python的流行，Jython的学习成本也很低。</p>
     </a>
     <a target="_blank" href="https://gitter.im/meteoinfo/community">
         <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
-        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
+        src="https://badges.gitter.im/meteoinfo/community.svg"
         alt="Join the chat at Gitter">
     </a>
 
@@ -165,7 +166,7 @@ Python的流行，Jython的学习成本也很低。</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2023, MeteoInfo developers.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
     </div>
   </body>
 </html>

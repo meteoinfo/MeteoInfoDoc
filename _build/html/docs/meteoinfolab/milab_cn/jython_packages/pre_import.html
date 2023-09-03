@@ -4,16 +4,17 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
-    <title>MeteoInfoLab启动预加载 &#8212; MeteoInfo 3.5 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxdoc.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MeteoInfoLab启动预加载 &#8212; MeteoInfo 3.6 documentation</title>
+    <link rel="stylesheet" href="../../../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
-    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
     <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="MeteoInfoLab命令行交互式环境" href="interactive_env.html" />
@@ -59,7 +60,7 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <section id="meteoinfolab">
+  <div class="section" id="meteoinfolab">
 <span id="dos-meteoinfolab-milab-cn-jython-packages-pre-import"></span><h1>MeteoInfoLab启动预加载<a class="headerlink" href="#meteoinfolab" title="Permalink to this headline">¶</a></h1>
 <p>在“MeteoInfo -&gt; pylib”目录中的文件milab.py会在MeteoInfoLab启动时自动运行，里面的代码是导入mipylib包，并运行
 mipylib包中__init__.py文件中的所有语句，起到预加载常用包和函数的目的，以方便后期使用。例如绘图函数plot会在软件启
@@ -114,7 +115,7 @@ mipylib包中__init__.py文件中的所有语句，起到预加载常用包和�
 <p>中国气象局的Bufr文件的解码需要用到自定义的表格文件，也在程序启动时进行了加载。</p>
 <p>Jython包预加载会影响MeteoInfoLab的启动时间，如果对启动时间有要求，尤其是在命令行直接运行MeteoInfoLab Jython文件，
 可以把milab.py文件中的加载语句注释掉，但是Jython程序代码中必须增加针对性的加载语句。</p>
-</section>
+</div>
 
 
             <div class="clearer"></div>
@@ -128,7 +129,7 @@ mipylib包中__init__.py文件中的所有语句，起到预加载常用包和�
     </a>
     <a target="_blank" href="https://gitter.im/meteoinfo/community">
         <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
-        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
+        src="https://badges.gitter.im/meteoinfo/community.svg"
         alt="Join the chat at Gitter">
     </a>
 
@@ -191,7 +192,7 @@ mipylib包中__init__.py文件中的所有语句，起到预加载常用包和�
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2023, MeteoInfo developers.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
     </div>
   </body>
 </html>

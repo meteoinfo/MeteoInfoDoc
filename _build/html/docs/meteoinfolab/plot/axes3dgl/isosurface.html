@@ -4,16 +4,17 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
-    <title>isosurface &#8212; MeteoInfo 3.5 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxdoc.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>isosurface &#8212; MeteoInfo 3.6 documentation</title>
+    <link rel="stylesheet" href="../../../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
-    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
     <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="particles" href="particles.html" />
@@ -58,25 +59,28 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <section id="isosurface">
+  <div class="section" id="isosurface">
 <span id="docs-meteoinfolab-plotlib-axes3dgl-axes3dgl-isosurface"></span><h1>isosurface<a class="headerlink" href="#isosurface" title="Permalink to this headline">¶</a></h1>
 <dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">Axes3DGL.isosurface(*args,</span> <span class="pre">**kwargs):</span></span></dt>
-<dd><p>creates a three-dimensional isosurface plot</p>
+<dt>
+<code class="sig-name descname">Axes3DGL.isosurface(*args, **kwargs):</code></dt>
+<dd><p>creates a three-dimensional isosurface plot.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>x</strong> – (<em>array_like</em>) Optional. X coordinate array.</p></li>
 <li><p><strong>y</strong> – (<em>array_like</em>) Optional. Y coordinate array.</p></li>
 <li><p><strong>z</strong> – (<em>array_like</em>) Optional. Z coordinate array.</p></li>
-<li><p><strong>data</strong> – (<em>array_like</em>) 3D data array.</p></li>
-<li><p><strong>cmap</strong> – (<em>string</em>) Color map string.</p></li>
-<li><p><strong>nthread</strong> – (<em>int</em>) Thread number.</p></li>
+<li><p><strong>data</strong> – (<em>array_like</em>) Volume data array.</p></li>
+<li><p><strong>isovalue</strong> – (<em>float</em>) Specified isosurface value.</p></li>
+<li><p><strong>cdata</strong> – (<em>array_like</em>) Optional. Volume color data array.</p></li>
+<li><p><strong>facecolor</strong> – (<em>color</em>) Optional. Color map string.</p></li>
+<li><p><strong>cmap</strong> – (<em>string</em>) Optional. Color map string.</p></li>
+<li><p><strong>nthread</strong> – (<em>int</em>) Optional. Thread number. Default is 4.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Legend</p>
+<dd class="field-even"><p>3D Mesh graphic.</p>
 </dd>
 </dl>
 <p>Example of <code class="docutils literal notranslate"><span class="pre">isosurface</span></code> function</p>
@@ -157,7 +161,7 @@
 <img alt="../../../../_images/axes3dgl_dust.png" src="../../../../_images/axes3dgl_dust.png" />
 </dd></dl>
 
-</section>
+</div>
 
 
             <div class="clearer"></div>
@@ -171,7 +175,7 @@
     </a>
     <a target="_blank" href="https://gitter.im/meteoinfo/community">
         <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
-        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
+        src="https://badges.gitter.im/meteoinfo/community.svg"
         alt="Join the chat at Gitter">
     </a>
 
@@ -233,7 +237,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2023, MeteoInfo developers.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
     </div>
   </body>
 </html>

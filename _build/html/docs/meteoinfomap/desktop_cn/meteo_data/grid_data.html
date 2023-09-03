@@ -4,16 +4,17 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
-    <title>生成格点数据GIS图层 &#8212; MeteoInfo 3.5 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxdoc.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>生成格点数据GIS图层 &#8212; MeteoInfo 3.6 documentation</title>
+    <link rel="stylesheet" href="../../../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
-    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
     <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="生成站点数据GIS图层" href="station_data.html" />
@@ -59,7 +60,7 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <section id="gis">
+  <div class="section" id="gis">
 <h1>生成格点数据GIS图层<a class="headerlink" href="#gis" title="Permalink to this headline">¶</a></h1>
 <p>气象格点数据通常是多维的，常见的维是时间维、高度维、纬度维（Y维）和经度维（X维），要生成地理空间的GIS图层需要将时间维和高
 度维固定，从某个变量中获取地理空间二维格点数据，然后再从二维格点数据生成各种GIS图层。对于格点数据可以绘制成以下几种类型的图层：</p>
@@ -75,7 +76,7 @@
 <li><p>风场流线（Streamline），生成风场流线图层（Polyline VectorLayer），根据风场U/V分量进行风场流线追踪，生成流线图层，以线条和流线方向箭头形式显示。</p></li>
 </ul>
 </div></blockquote>
-<section id="id1">
+<div class="section" id="id1">
 <h2>等值线与等值线填色<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>等值线与等值线填色是气象数据非常重要的图形化表现形式，能够很好地体现二维格点数据的分级分布特征，例如不同降水量等级的空间分布
 等。这里以model.grb数据为例，打开该数据文件后，选择数据中的地面气压变量（Pressure_surface），设置数据时次和高度（此变量
@@ -93,22 +94,22 @@
 <p>和图层图例编辑操作类似，编辑完成后点击“OK”按钮会对重新生成等值线或等值线填色图层。需要注意的是已经生成的等值线或等值线填色图层，
 不能通过图层图例设置重新追踪等值线。</p>
 <img alt="../../../../_images/contour_legend_edit.png" src="../../../../_images/contour_legend_edit.png" />
-</section>
-<section id="id2">
+</div>
+<div class="section" id="id2">
 <h2>格点填色与格点点图<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>格点填色是简单的把格点按照空间坐标生成相邻的系列矩形多边形，从而形成多边形图层，变量的属性值加入到图层的属性表中。</p>
 <img alt="../../../../_images/grid_fill_layer.png" src="../../../../_images/grid_fill_layer.png" />
 <p>格点点图是将格点数据按照空间坐标生成系列点空间要素，从而形成点图层，变量的属性值加入到图层的属性表中。</p>
 <img alt="../../../../_images/grid_point_layer.png" src="../../../../_images/grid_point_layer.png" />
-</section>
-<section id="id3">
+</div>
+<div class="section" id="id3">
 <h2>栅格图层<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p>和格点填色类似，格点数据根据空间位置和格点的变量值生成栅格图层（RasterLayer），图层是以图像的形式显示，适合高分辨率和分布
 离散度高的格点数据，比等值线填色和格点填色的处理和显示速度快很多，尤其适合卫星图像格点数据的显示。栅格图层每个格点的数据值也
 可以通过“要素属性”工具提取。</p>
 <img alt="../../../../_images/grid_raster_layer.png" src="../../../../_images/grid_raster_layer.png" />
-</section>
-<section id="id4">
+</div>
+<div class="section" id="id4">
 <h2>风场矢量和风向杆<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <p>格点数据文件中如果包含风场U/V分量或者风向、风速变量，可以通过设置风场变量来生成风场矢量或者风向杆图层。在气象数据对话框中
 将“图形”设置为Vector，点击“绘制数据图形”按钮，软件会自动在数据包含的变量中查找U/V变量，一些简单的U/V变量名软件可以自动
@@ -122,16 +123,16 @@
 <img alt="../../../../_images/grid_quiver_layer.png" src="../../../../_images/grid_quiver_layer.png" />
 <p>生成风场风向杆图层和风场矢量图层类似，区别在于要将气象数据对话框中“图形”选为Barb。</p>
 <img alt="../../../../_images/grid_barb_layer.png" src="../../../../_images/grid_barb_layer.png" />
-</section>
-<section id="id5">
+</div>
+<div class="section" id="id5">
 <h2>风场流线<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <p>风场流线的追踪同样需要指定U/V分量变量，气象数据对话框中“图形”设置为Streamline，点击“绘制数据图形”按钮既可生成风场流线图层。</p>
 <img alt="../../../../_images/grid_streamline_layer.png" src="../../../../_images/grid_streamline_layer.png" />
 <p>点击工具栏中“设置”按钮打开流线密度设置对话框，可以设置流线的疏密程度（Streamline density）。流线密度取值在1-10范围内的整
 数，数值越高密度越大，缺省是4，例如将其改为2生成的流线就会较为稀疏。</p>
 <img alt="../../../../_images/grid_streamline_density1.png" src="../../../../_images/grid_streamline_density1.png" />
-</section>
-<section id="id6">
+</div>
+<div class="section" id="id6">
 <h2>利用已有变量生成新变量<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
 <p>在气象数据对话框“变量”栏中可以通过编写简单的公式，从数据已有变量生成新的变量。例如打开“MeteoInfo -&gt; sample -&gt; GrADS”目
 录中model.ctl文件，该数据文件中包含风场的U/V分量变量U和V，但没有风速变量。可以在“变量”栏输入公式“sqrt(U*U+V*V)”计算出风
@@ -139,8 +140,8 @@
 <p>支持的运算符号包括：“+”、“-”、“*”、“/”、“%”，“^”；函数包括：“abs”、“acos”、“asin”、“atan”、“cos”、“exp”、“log”、
 “log10”、“sin”、“sqrt”、“tan”。</p>
 <img alt="../../../../_images/new_variable_layer.png" src="../../../../_images/new_variable_layer.png" />
-</section>
-</section>
+</div>
+</div>
 
 
             <div class="clearer"></div>
@@ -154,7 +155,7 @@
     </a>
     <a target="_blank" href="https://gitter.im/meteoinfo/community">
         <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
-        src="https://badges.gitter.im/meteoinfo/community/meteoinfo.svg" 
+        src="https://badges.gitter.im/meteoinfo/community.svg"
         alt="Join the chat at Gitter">
     </a>
 
@@ -230,7 +231,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2023, MeteoInfo developers.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
     </div>
   </body>
 </html>
