@@ -4,17 +4,16 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>带标签和维度值的多维数组（DimArray） &#8212; MeteoInfo 3.6 documentation</title>
-    <link rel="stylesheet" href="../../../../_static/sphinxdoc.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxdoc.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
-    <script id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
     <script src="../../../../_static/doctools.js"></script>
-    <script src="../../../../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="线性代数（numeric.linalg）" href="linalg.html" />
@@ -60,12 +59,12 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="dimarray">
+  <section id="dimarray">
 <span id="dos-meteoinfolab-milab-cn-numeric-dimarray"></span><h1>带标签和维度值的多维数组（DimArray）<a class="headerlink" href="#dimarray" title="Permalink to this headline">¶</a></h1>
 <p>NDArray多维数组只有维的数量和每个维大小的信息，大气科学领域的多维数组多是空间三维加时间维的数组，给数组每个维加上标识和
 该维的具体数值才能充分表达数组的真实信息。DimArray类继承了NDArray类，并增加了一个维列表（dims），包含了每个维的标识
 和值。从气象数据文件中读取的数组多为DimArray数组，通过其dimvalue函数可以将某个维具体的数值读出来。</p>
-</div>
+</section>
 
 
             <div class="clearer"></div>
@@ -142,7 +141,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2023, MeteoInfo developers.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
     </div>
   </body>
 </html>

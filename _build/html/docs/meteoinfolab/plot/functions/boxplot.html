@@ -4,17 +4,16 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>boxplot &#8212; MeteoInfo 3.6 documentation</title>
-    <link rel="stylesheet" href="../../../../_static/sphinxdoc.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxdoc.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
-    <script id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
     <script src="../../../../_static/doctools.js"></script>
-    <script src="../../../../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="violinplot" href="violinplot.html" />
@@ -61,11 +60,11 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="boxplot">
+  <section id="boxplot">
 <span id="docs-meteoinfolab-funcitons-plot-boxplot"></span><h1>boxplot<a class="headerlink" href="#boxplot" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
-<dt id="mipylib.plotlib.miplot.boxplot">
-<code class="sig-prename descclassname">mipylib.plotlib.miplot.</code><code class="sig-name descname">boxplot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">sym</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">positions</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">widths</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">color</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">showcaps</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">showfliers</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">showmeans</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">meanline</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">boxprops</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">medianprops</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">meanprops</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">whiskerprops</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">capprops</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">flierprops</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mipylib.plotlib.miplot.boxplot" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mipylib.plotlib.miplot.boxplot">
+<span class="sig-prename descclassname"><span class="pre">mipylib.plotlib.miplot.</span></span><span class="sig-name descname"><span class="pre">boxplot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sym</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">positions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">widths</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">showcaps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">showfliers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">showmeans</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">meanline</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boxprops</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">medianprops</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">meanprops</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">whiskerprops</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">capprops</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flierprops</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mipylib.plotlib.miplot.boxplot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Make a box and whisker plot.</p>
 <p>Make a box and whisker plot for each column of x or each vector in sequence x. The box extends from lower
 to upper quartile values of the data, with a line at the median. The whiskers extend from the box to show
@@ -107,7 +106,7 @@ the mean as a line spanning. Otherwise, means will be shown as points.</p></li>
 <img alt="../../../../_images/boxplot_1.png" src="../../../../_images/boxplot_1.png" />
 </dd></dl>
 
-</div>
+</section>
 
 
             <div class="clearer"></div>
@@ -185,7 +184,7 @@ the mean as a line spanning. Otherwise, means will be shown as points.</p></li>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2023, MeteoInfo developers.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
     </div>
   </body>
 </html>

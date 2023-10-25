@@ -38,7 +38,7 @@ surf
         tz = sin(r) / r
 
         #Plot
-        lighting(position=[0,0,1,0], mat_specular=[1,1,1,1])
+        lighting(mat_specular=1)
         surf(xx, yy, tz, facecolor='interp', edgecolor=None)
         zlim(-0.4, 1)
 

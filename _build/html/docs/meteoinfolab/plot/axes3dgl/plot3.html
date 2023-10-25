@@ -4,17 +4,16 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>plot3 &#8212; MeteoInfo 3.6 documentation</title>
-    <link rel="stylesheet" href="../../../../_static/sphinxdoc.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxdoc.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
-    <script id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
     <script src="../../../../_static/doctools.js"></script>
-    <script src="../../../../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="scatter3" href="scatter3.html" />
@@ -59,11 +58,11 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="plot3">
+  <section id="plot3">
 <span id="docs-meteoinfolab-plotlib-axes3dgl-axes3dgl-plot3"></span><h1>plot3<a class="headerlink" href="#plot3" title="Permalink to this headline">¶</a></h1>
 <dl class="py method">
-<dt>
-<code class="sig-name descname">Axes3DGL.plot(x, y, z, *args, **kwargs):</code></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">Axes3DGL.plot(x,</span> <span class="pre">y,</span> <span class="pre">z,</span> <span class="pre">*args,</span> <span class="pre">**kwargs):</span></span></dt>
 <dd><p>Plot 3D lines and/or markers to the axes. <em>args</em> is a variable length argument, allowing
 for multiple <em>x, y</em> pairs with an optional format string.</p>
 <dl class="field-list simple">
@@ -72,6 +71,7 @@ for multiple <em>x, y</em> pairs with an optional format string.</p>
 <li><p><strong>x</strong> – (<em>array_like</em>) Input x data.</p></li>
 <li><p><strong>y</strong> – (<em>array_like</em>) Input y data.</p></li>
 <li><p><strong>z</strong> – (<em>array_like</em>) Input z data.</p></li>
+<li><p><strong>cdata</strong> – (<em>array_like</em>) Optional, data for colors.</p></li>
 <li><p><strong>style</strong> – (<em>string</em>) Line style for plot.</p></li>
 </ul>
 </dd>
@@ -84,7 +84,7 @@ for multiple <em>x, y</em> pairs with an optional format string.</p>
 <span class="n">x</span> <span class="o">=</span> <span class="n">z</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">20</span> <span class="o">*</span> <span class="n">z</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">z</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">20</span> <span class="o">*</span> <span class="n">z</span><span class="p">)</span>
 
-<span class="n">plot3</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">mvalues</span><span class="o">=</span><span class="n">z</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">plot3</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">cdata</span><span class="o">=</span><span class="n">z</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 <span class="n">colorbar</span><span class="p">()</span>
 <span class="n">title</span><span class="p">(</span><span class="s1">&#39;3D plot example&#39;</span><span class="p">)</span>
 </pre></div>
@@ -96,7 +96,7 @@ for multiple <em>x, y</em> pairs with an optional format string.</p>
 <span class="n">y</span> <span class="o">=</span> <span class="n">z</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">20</span> <span class="o">*</span> <span class="n">z</span><span class="p">)</span>
 
 <span class="n">lighting</span><span class="p">()</span>
-<span class="n">plot3</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">mvalues</span><span class="o">=</span><span class="n">z</span><span class="p">,</span> <span class="n">pipe</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+<span class="n">plot3</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">cdata</span><span class="o">=</span><span class="n">z</span><span class="p">,</span> <span class="n">pipe</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
 <span class="n">colorbar</span><span class="p">()</span>
 <span class="n">title</span><span class="p">(</span><span class="s1">&#39;3D plot example&#39;</span><span class="p">)</span>
 </pre></div>
@@ -161,7 +161,7 @@ for multiple <em>x, y</em> pairs with an optional format string.</p>
 <img alt="../../../../_images/plot3_traj.png" src="../../../../_images/plot3_traj.png" />
 </dd></dl>
 
-</div>
+</section>
 
 
             <div class="clearer"></div>
@@ -237,7 +237,7 @@ for multiple <em>x, y</em> pairs with an optional format string.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2023, MeteoInfo developers.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
     </div>
   </body>
 </html>
