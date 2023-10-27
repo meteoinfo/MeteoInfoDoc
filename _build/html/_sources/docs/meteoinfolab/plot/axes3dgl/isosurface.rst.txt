@@ -42,8 +42,11 @@ isosurface
         a = linspace(-3, 3, 100)
         x,y,z = meshgrid(a, a, a)
         p = (x**2+(9/4.)*y**2+z**2-1)**3-x**2*z**3-(9/80.)*y**2*z**3
-        lighting()
-        isosurface(a, a, a, p, 0, facecolor='r', edgecolor=None, nthread=4)
+
+        axes3d(aspect='equal', axes_zoom=True)
+        grid(False)
+        lighting(mat_specular=1)
+        isosurface(x, y, z, p, 0, facecolor='r', edgecolor=None)
 
     .. image:: ../../../../_static/isosurface_heart.png
 

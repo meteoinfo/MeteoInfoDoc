@@ -13,6 +13,7 @@ plot3
     :param x: (*array_like*) Input x data.
     :param y: (*array_like*) Input y data.
     :param z: (*array_like*) Input z data.
+    :param cdata: (*array_like*) Optional, data for colors.
     :param style: (*string*) Line style for plot.
 
     :returns: Legend breaks of the lines.
@@ -23,7 +24,7 @@ plot3
         x = z * np.sin(20 * z)
         y = z * np.cos(20 * z)
 
-        plot3(x, y, z, mvalues=z, linewidth=4)
+        plot3(x, y, z, cdata=z, linewidth=4)
         colorbar()
         title('3D plot example')
 
@@ -36,7 +37,7 @@ plot3
         y = z * np.cos(20 * z)
 
         lighting()
-        plot3(x, y, z, mvalues=z, pipe=True, radius=0.05)
+        plot3(x, y, z, cdata=z, pipe=True, radius=0.05)
         colorbar()
         title('3D plot example')
 
