@@ -14,5 +14,6 @@ Map
    map/image_layer.rst
    map/add_shapes.rst
    map/ave_polygons.rst
+   map/northarrow_scalebar.rst
    map/webmap.rst
    ../../docs/meteoinfolab/geolib/migeo/maskout.rst

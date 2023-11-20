@@ -16,8 +16,8 @@ MeteoInfoLab功能的插件和工具箱。MeteoInfo软件解压后可以直接�
 MeteoInfo运行
 ====================
 
-MeteoInfo的运行需要Java 8或者更高版本的支持，Java可以在网上免费下载安装。对于高分辨率屏幕的电脑建议使用Java 9或者更高
-版本避免字体过小的问题。MeteoInfo是跨平台软件，所有平台都使用一个软件包，但启动文件不同。
+MeteoInfo的运行需要Java 8或者更高版本的支持（必须是64位），建议使用Java 11 64位版本，Java可以在网上免费下载安装。
+MeteoInfo是跨平台软件，所有平台都使用一个软件包，但启动文件不同。
 
 启动MeteoInfoMap和MeteoInfoLab用户界面程序：
 

@@ -4,7 +4,7 @@
 Add point, line and polygon shapes
 ***********************************
 
-Costum point, line and polygon can be added in the map using ``geoshow()`` function.
+Custom point, line and polygon can be added in the map using ``geoshow()`` function.
 
 ::
 
