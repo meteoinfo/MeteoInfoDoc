@@ -17,7 +17,7 @@ So it can be used to get the length of each trajectory in a trajectory layer.
     # Chek length of each trajectory
     print 'Chek length of each trajectory...'
     idx = 0
-    for tline in trajLayer.shapes():
+    for tline in trajLayer.shapes:
         d = distance(tline, islonlat=True)
         t = trajLayer.cellvalue('Date', idx)
         h = trajLayer.cellvalue('Hour', idx)    
