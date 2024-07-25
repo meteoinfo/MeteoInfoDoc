@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Series and DataFrame &#8212; MeteoInfo 3.6 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
@@ -13,6 +13,7 @@
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -58,9 +59,9 @@
           <div class="body" role="main">
             
   <section id="series-and-dataframe">
-<span id="docs-meteoinfolab-user-guid-dataframe"></span><h1>Series and DataFrame<a class="headerlink" href="#series-and-dataframe" title="Permalink to this headline">¶</a></h1>
+<span id="docs-meteoinfolab-user-guid-dataframe"></span><h1>Series and DataFrame<a class="headerlink" href="#series-and-dataframe" title="Permalink to this heading">¶</a></h1>
 <section id="series">
-<h2>Series<a class="headerlink" href="#series" title="Permalink to this headline">¶</a></h2>
+<h2>Series<a class="headerlink" href="#series" title="Permalink to this heading">¶</a></h2>
 <p>Series is a one-dimensional labeled array. The axis labels are collectively referred to as the <em>index</em>.
 Creating a Series by passing a list of values, letting pandas create a default integer index:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">])</span>
@@ -75,7 +76,7 @@ Creating a Series by passing a list of values, letting pandas create a default i
 </div>
 </section>
 <section id="dataframe">
-<h2>DataFrame<a class="headerlink" href="#dataframe" title="Permalink to this headline">¶</a></h2>
+<h2>DataFrame<a class="headerlink" href="#dataframe" title="Permalink to this heading">¶</a></h2>
 <p>DataFrame is a 2-dimensional labeled data structure with columns of potentially different types. Creating a
 DataFrame by passing an array, with a datetime index and labeled columns:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">dates</span> <span class="o">=</span> <span class="n">date_range</span><span class="p">(</span><span class="s1">&#39;20130101&#39;</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
@@ -109,7 +110,7 @@ DataFrame by passing an array, with a datetime index and labeled columns:</p>
 </div>
 </section>
 <section id="viewing-data">
-<h2>Viewing Data<a class="headerlink" href="#viewing-data" title="Permalink to this headline">¶</a></h2>
+<h2>Viewing Data<a class="headerlink" href="#viewing-data" title="Permalink to this heading">¶</a></h2>
 <p>Here is how to view the top and bottom rows of the frame:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 <span class="go">                   A         B         C         D</span>
@@ -118,7 +119,7 @@ DataFrame by passing an array, with a datetime index and labeled columns:</p>
 <span class="go">2013-01-03  0.219245  0.920414  0.886056  0.222002</span>
 <span class="go">2013-01-04  0.883879  0.439466  0.392876  0.994732</span>
 <span class="go">2013-01-05  0.881501  0.283149  0.247825  0.593564</span>
-<span class="gp">...</span>
+<span class="go">...</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 <span class="go">                   A         B         C         D</span>
 <span class="go">2013-01-04  0.883879  0.439466  0.392876  0.994732</span>
@@ -184,7 +185,7 @@ DataFrame by passing an array, with a datetime index and labeled columns:</p>
 </div>
 </section>
 <section id="selection">
-<h2>Selection<a class="headerlink" href="#selection" title="Permalink to this headline">¶</a></h2>
+<h2>Selection<a class="headerlink" href="#selection" title="Permalink to this heading">¶</a></h2>
 <p><strong>Getting</strong></p>
 <p>Selecting a single column, which yields a Series, equivalent to df.A:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">]</span>
@@ -285,7 +286,7 @@ DataFrame by passing an array, with a datetime index and labeled columns:</p>
 </div>
 </section>
 <section id="grouping">
-<h2>Grouping<a class="headerlink" href="#grouping" title="Permalink to this headline">¶</a></h2>
+<h2>Grouping<a class="headerlink" href="#grouping" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;A&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">,</span>
 <span class="gp">... </span>                       <span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;foo&#39;</span><span class="p">],</span>
 <span class="gp">... </span>                <span class="s1">&#39;B&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s1">&#39;one&#39;</span><span class="p">,</span> <span class="s1">&#39;one&#39;</span><span class="p">,</span> <span class="s1">&#39;two&#39;</span><span class="p">,</span> <span class="s1">&#39;three&#39;</span><span class="p">,</span>
@@ -324,7 +325,7 @@ DataFrame by passing an array, with a datetime index and labeled columns:</p>
 </div>
 </section>
 <section id="time-resample">
-<h2>Time resample<a class="headerlink" href="#time-resample" title="Permalink to this headline">¶</a></h2>
+<h2>Time resample<a class="headerlink" href="#time-resample" title="Permalink to this heading">¶</a></h2>
 <p>To performing resampling operations during frequency conversion (e.g., converting secondly data into
 5-minutely data):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">rng</span> <span class="o">=</span> <span class="n">date_range</span><span class="p">(</span><span class="s1">&#39;1/1/2012&#39;</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s1">&#39;S&#39;</span><span class="p">)</span>
@@ -354,8 +355,9 @@ DataFrame by passing an array, with a datetime index and labeled columns:</p>
 
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../../../index.html">Table of Contents</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../../../index.html">Table of Contents</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">Series and DataFrame</a><ul>
 <li><a class="reference internal" href="#series">Series</a></li>
 <li><a class="reference internal" href="#dataframe">DataFrame</a></li>
@@ -367,12 +369,17 @@ DataFrame by passing an array, with a datetime index and labeled columns:</p>
 </li>
 </ul>
 
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="../../../news/meteoinfo_1.6.html"
-                        title="previous chapter">MeteoInfo 1.6 was released (2018-8-30)</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="../../../news/meteoinfo_1.5.html"
-                        title="next chapter">MeteoInfo 1.5 was released (2018-7-9)</a></p>
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="../../../news/meteoinfo_1.6.html"
+                          title="previous chapter">MeteoInfo 1.6 was released (2018-8-30)</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="../../../news/meteoinfo_1.5.html"
+                          title="next chapter">MeteoInfo 1.5 was released (2018-7-9)</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -384,12 +391,12 @@ DataFrame by passing an array, with a datetime index and labeled columns:</p>
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -422,7 +429,7 @@ DataFrame by passing an array, with a datetime index and labeled columns:</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2023, MeteoInfo developers.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
     </div>
   </body>
 </html>

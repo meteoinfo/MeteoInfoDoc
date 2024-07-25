@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>添加X/Y数据 &#8212; MeteoInfo 3.6 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
@@ -13,6 +13,7 @@
     <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -60,7 +61,7 @@
           <div class="body" role="main">
             
   <section id="x-y">
-<h1>添加X/Y数据<a class="headerlink" href="#x-y" title="Permalink to this headline">¶</a></h1>
+<h1>添加X/Y数据<a class="headerlink" href="#x-y" title="Permalink to this heading">¶</a></h1>
 <p>对于包含经纬度信息的站点数据可以作为点图层添加到MeteoInfoMap中，数据文件格式是文本文件，第一行是数据每一列的名称，列之间
 可以是空格、逗号和分号分隔符，必须包含经度和纬度列，每一行代表一个站点的数据。点击“工具 -&gt; 添加X/Y数据”菜单打开对话框，选
 择文本数据文件，设置经度和纬度列，点击Add Data按钮出现保持对话框，输入欲保存的Shapefile文件名，确定即可将站点文本数据文
@@ -86,12 +87,16 @@
 
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="map_output.html"
-                        title="previous chapter">输出地图数据</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="other_tools.html"
-                        title="next chapter">其他工具</a></p>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="map_output.html"
+                          title="previous chapter">输出地图数据</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="other_tools.html"
+                          title="next chapter">其他工具</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -103,12 +108,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -143,7 +148,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2023, MeteoInfo developers.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
     </div>
   </body>
 </html>

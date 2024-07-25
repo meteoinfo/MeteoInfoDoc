@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>生成站点数据GIS图层 &#8212; MeteoInfo 3.6 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
@@ -13,6 +13,7 @@
     <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -60,7 +61,7 @@
           <div class="body" role="main">
             
   <section id="gis">
-<h1>生成站点数据GIS图层<a class="headerlink" href="#gis" title="Permalink to this headline">¶</a></h1>
+<h1>生成站点数据GIS图层<a class="headerlink" href="#gis" title="Permalink to this heading">¶</a></h1>
 <p>站点数据的空间分布是离散的，可以绘制成以下几种类型的GIS图层：</p>
 <blockquote>
 <div><ul class="simple">
@@ -76,7 +77,7 @@
 </ul>
 </div></blockquote>
 <section id="id1">
-<h2>站点图<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h2>站点图<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
 <p>这里以“MeteoInfo -&gt; sample -&gt; MICAPS”目录中的MICAPS第一类数据文件10101414.000为例，在气象数据对话框中打开该数据
 文件软件会自动读取数据信息，并将数据中所有变量放入“变量”下拉框中，该数据为地面全要素气象观测数据，包含气象站地面观测的多个
 变量，该数据文件仅有一个时次。例如选择“变量”为能见度（Visibility），“图形”为Station_Point，点击“绘制数据图形”按钮生
@@ -84,12 +85,12 @@
 <img alt="../../../../_images/station_point_layer.png" src="../../../../_images/station_point_layer.png" />
 </section>
 <section id="id2">
-<h2>站点信息图<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2>站点信息图<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
 <p>气象数据对话框中“图形”设置为Station_Info也同样生成站点分布点图层，和站点图不同的是站点数据中所有变量数值都放入了图层的属性表中。</p>
 <img alt="../../../../_images/grid_fill_layer.png" src="../../../../_images/grid_fill_layer.png" />
 </section>
 <section id="id3">
-<h2>天气符号图<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<h2>天气符号图<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h2>
 <p>站点观测到的天气现象通过天气现象编码以1-99的整数放入数据文件中，在气象数据对话框中“变量”设为现在天气（WeatherNow），“图形”设置
 为Weather_Symbol，点击“绘制数据图形”按钮生成天气符号点图层。</p>
 <img alt="../../../../_images/station_symbol_layer.png" src="../../../../_images/station_symbol_layer.png" />
@@ -97,7 +98,7 @@
 <img alt="../../../../_images/station_symbol_setting.png" src="../../../../_images/station_symbol_setting.png" />
 </section>
 <section id="id4">
-<h2>站点填图<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<h2>站点填图<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h2>
 <p>在气象数据对话框中设置“图形”为Station_Model，点击“绘制数据图形”按钮生成站点填图点图层，图层属性表中包含风速、风向、天气现象、温度、
 露点、气压、云覆盖字段，这些数据以站点填图的形式绘制。</p>
 <img alt="../../../../_images/station_model_layer.png" src="../../../../_images/station_model_layer.png" />
@@ -106,7 +107,7 @@
 <img alt="../../../../_images/station_model_collision.png" src="../../../../_images/station_model_collision.png" />
 </section>
 <section id="id5">
-<h2>风场矢量和风向杆图<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<h2>风场矢量和风向杆图<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h2>
 <p>地面全要素观测数据中有风向（WindDirection）、风速（WindSpeed）变量，在气象数据对话框中设置“图形”为Vector，点击“绘制数据图形”按
 钮生成风场矢量点图层，软件会自动识别风向、风速变量名，也可以手动设置。选中“着色”选项可以根据“变量”中的变量对风箭头着色。</p>
 <img alt="../../../../_images/station_quiver_layer.png" src="../../../../_images/station_quiver_layer.png" />
@@ -114,7 +115,7 @@
 <img alt="../../../../_images/station_barb_layer.png" src="../../../../_images/station_barb_layer.png" />
 </section>
 <section id="id6">
-<h2>等值线和等值线填色<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<h2>等值线和等值线填色<a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h2>
 <p>站点数据进行等值线分析需要先将站点数据通过插值（Interpolation）生成格点数据，然后在利用格点数据追踪等值线和拓扑填色算法生成等值线
 线图层或者等值线填色多边形图层。站点插值到格点的插值算法有很多，MeteoInfo里提供了气象上一些常用的插值算法：反距离权法（IDW）、
 Cressman和Barns客观分析算法以及Kriging方法。例如制作站点中国区域6小时累积降水等值线填色图，在气象数据对话框中设置“变量”为
@@ -134,7 +135,7 @@ Precipitation6h，“图形”为Shaded，点击“绘制数据图形”按钮�
 <img alt="../../../../_images/cressman_shaded_layer.png" src="../../../../_images/cressman_shaded_layer.png" />
 </section>
 <section id="id7">
-<h2>风场流线<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<h2>风场流线<a class="headerlink" href="#id7" title="Permalink to this heading">¶</a></h2>
 <p>站点数据绘制风场流线图需要站点数据中有风场U/V或风向、风速变量。示例数据中有风向（WindDirection）和风速（WindSpeed）变量，在软
 件内部会先计算出风场U/V分量，然后对U/V变量进行插值生成格点的U/V数据，再做流线分析生成风场流线图层。</p>
 <img alt="../../../../_images/station_streamline_layer.png" src="../../../../_images/station_streamline_layer.png" />
@@ -159,8 +160,9 @@ Precipitation6h，“图形”为Shaded，点击“绘制数据图形”按钮�
 
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../../../../index.html">Table of Contents</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../../../../index.html">Table of Contents</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">生成站点数据GIS图层</a><ul>
 <li><a class="reference internal" href="#id1">站点图</a></li>
 <li><a class="reference internal" href="#id2">站点信息图</a></li>
@@ -173,12 +175,17 @@ Precipitation6h，“图形”为Shaded，点击“绘制数据图形”按钮�
 </li>
 </ul>
 
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="grid_data.html"
-                        title="previous chapter">生成格点数据GIS图层</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="traj_data.html"
-                        title="next chapter">生成轨迹数据GIS图层</a></p>
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="grid_data.html"
+                          title="previous chapter">生成格点数据GIS图层</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="traj_data.html"
+                          title="next chapter">生成轨迹数据GIS图层</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -190,12 +197,12 @@ Precipitation6h，“图形”为Shaded，点击“绘制数据图形”按钮�
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -230,7 +237,7 @@ Precipitation6h，“图形”为Shaded，点击“绘制数据图形”按钮�
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2023, MeteoInfo developers.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
     </div>
   </body>
 </html>

@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>线性代数（numeric.linalg） &#8212; MeteoInfo 3.6 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
@@ -13,6 +13,7 @@
     <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -60,7 +61,7 @@
           <div class="body" role="main">
             
   <section id="numeric-linalg">
-<span id="dos-meteoinfolab-milab-cn-numeric-linalg"></span><h1>线性代数（numeric.linalg）<a class="headerlink" href="#numeric-linalg" title="Permalink to this headline">¶</a></h1>
+<span id="dos-meteoinfolab-milab-cn-numeric-linalg"></span><h1>线性代数（numeric.linalg）<a class="headerlink" href="#numeric-linalg" title="Permalink to this heading">¶</a></h1>
 <p>numeric.linalg包中包含了一些基本的线性代数运算功能，底层用到了OpenBLAS库和一些纯Java数值运算库
 （例如Apache Commons Math）。dot和vdot函数分别用来计算两个矩阵（即二维数组）和两个向量的乘积。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span>
@@ -194,12 +195,16 @@
 
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="dimarray.html"
-                        title="previous chapter">带标签和维度值的多维数组（DimArray）</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="random.html"
-                        title="next chapter">随机数生成（numeric.random）</a></p>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="dimarray.html"
+                          title="previous chapter">带标签和维度值的多维数组（DimArray）</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="random.html"
+                          title="next chapter">随机数生成（numeric.random）</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -211,12 +216,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -251,7 +256,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2023, MeteoInfo developers.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
     </div>
   </body>
 </html>

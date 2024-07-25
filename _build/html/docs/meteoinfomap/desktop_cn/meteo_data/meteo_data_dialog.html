@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>气象数据对话框 &#8212; MeteoInfo 3.6 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
@@ -13,6 +13,7 @@
     <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -60,16 +61,16 @@
           <div class="body" role="main">
             
   <section id="id1">
-<h1>气象数据对话框<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1>气象数据对话框<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
 <section id="id2">
-<h2>气象数据对话框界面<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2>气象数据对话框界面<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
 <p>MeteoInfoMap通过气象数据（Meteo Data）对话框进行气象数据的分析绘图，该对话框如果被关闭，可以通过点击MeteoInfoMap主工具
 栏上的“打开数据文件”按钮打开。对话框中包括了打开各类气象数据文件、查看数据信息、生成气象数据GIS图层、动画、图例设置、剖面图、
 一维图等功能。</p>
 <img alt="../../../../_images/meteo_data_dialog.png" src="../../../../_images/meteo_data_dialog.png" />
 </section>
 <section id="id3">
-<h2>打开数据文件<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<h2>打开数据文件<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h2>
 <p>气象数据对话框工具栏第一个按钮用于打开数据文件，该按钮有一个下拉菜单，可以通过点击下拉菜单中的子菜单打开某一类或几类气象数
 据文件。</p>
 <blockquote>
@@ -87,7 +88,7 @@
 <img alt="../../../../_images/meteo_data_open_menu.png" src="../../../../_images/meteo_data_open_menu.png" />
 </section>
 <section id="id4">
-<h2>显示数据文件<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<h2>显示数据文件<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h2>
 <p>MeteoInfo软件“MeteoInfo -&gt; sample”目录中有一些示例气象数据文件，例如打开一个GRIB格式气象数据文件model.grb（位于
 MeteoInfo -&gt; sample -&gt; GRIB目录中），软件会自动读取数据文件中的各类信息，变量、时次、高度信息会显示在Meteo Data
 对话框右侧供用户选择。</p>
@@ -97,7 +98,7 @@ Attribute）、变量（Variables）。每个变量可能有不同的维设置�
 <img alt="../../../../_images/data_information.png" src="../../../../_images/data_information.png" />
 </section>
 <section id="id5">
-<h2>绘制数据图形<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<h2>绘制数据图形<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h2>
 <p>在Meteo Data对话框中选择要绘制的数据变量、时次、高度和图形类型，然后点击工具栏中的“绘制数据图形”按钮，软件会根据设置生成
 一个图层并加入图层控制栏中，达到图形化显示数据的目的，相关数据会加入图层的属性数据表中。</p>
 <img alt="../../../../_images/draw_data_layer.png" src="../../../../_images/draw_data_layer.png" />
@@ -133,8 +134,9 @@ Attribute）、变量（Variables）。每个变量可能有不同的维设置�
 
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../../../../index.html">Table of Contents</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../../../../index.html">Table of Contents</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">气象数据对话框</a><ul>
 <li><a class="reference internal" href="#id2">气象数据对话框界面</a></li>
 <li><a class="reference internal" href="#id3">打开数据文件</a></li>
@@ -144,12 +146,17 @@ Attribute）、变量（Variables）。每个变量可能有不同的维设置�
 </li>
 </ul>
 
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="../meteo_data.html"
-                        title="previous chapter">MeteoInfoMap气象数据分析</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="grid_data.html"
-                        title="next chapter">生成格点数据GIS图层</a></p>
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="../meteo_data.html"
+                          title="previous chapter">MeteoInfoMap气象数据分析</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="grid_data.html"
+                          title="next chapter">生成格点数据GIS图层</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -161,12 +168,12 @@ Attribute）、变量（Variables）。每个变量可能有不同的维设置�
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -201,7 +208,7 @@ Attribute）、变量（Variables）。每个变量可能有不同的维设置�
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2023, MeteoInfo developers.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
     </div>
   </body>
 </html>

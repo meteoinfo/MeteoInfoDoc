@@ -21,7 +21,7 @@ interp2d
     :param y: (*array_like*) 1-D arrays of y coordinate in strictly ascending order.
     :param z: (*array_like*) 2-D array of data with shape (x.size,y.size).
     :param kind: (*boolean*) Specifies the kind of interpolation as a string (‘linear’,
-        ‘nearest’). Default is ‘linear’.
+        ‘spline’, 'kriging'). Default is ‘linear’.
     
     Examples::
     
