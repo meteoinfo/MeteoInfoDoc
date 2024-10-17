@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
 
     <title>Tropical cyclone plot &#8212; MeteoInfo 3.6 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
@@ -13,7 +13,6 @@
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
-    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -60,9 +59,9 @@
           <div class="body" role="main">
             
   <section id="tropical-cyclone-plot">
-<span id="examples-meteoinfolab-trajectory-tropical-cyclone"></span><h1>Tropical cyclone plot<a class="headerlink" href="#tropical-cyclone-plot" title="Permalink to this heading">¶</a></h1>
+<span id="examples-meteoinfolab-trajectory-tropical-cyclone"></span><h1>Tropical cyclone plot<a class="headerlink" href="#tropical-cyclone-plot" title="Permalink to this headline">¶</a></h1>
 <section id="one-tropical-cyclone">
-<h2>One tropical cyclone<a class="headerlink" href="#one-tropical-cyclone" title="Permalink to this heading">¶</a></h2>
+<h2>One tropical cyclone<a class="headerlink" href="#one-tropical-cyclone" title="Permalink to this headline">¶</a></h2>
 <p>Read an ASCII data file with tropical cyclone data, and extract longitude and latitude data.
 Then plot the cyclone line and points.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read tropical cyclone data file</span>
@@ -100,7 +99,7 @@ Then plot the cyclone line and points.</p>
 <img alt="../../../_images/typhoon_pathway.png" src="../../../_images/typhoon_pathway.png" />
 </section>
 <section id="multiple-tropical-cyclones">
-<h2>Multiple tropical cyclones<a class="headerlink" href="#multiple-tropical-cyclones" title="Permalink to this heading">¶</a></h2>
+<h2>Multiple tropical cyclones<a class="headerlink" href="#multiple-tropical-cyclones" title="Permalink to this headline">¶</a></h2>
 <p>Read mutiple tropical cyclones longitude/latitude data from a netCDF data file
 (<a class="reference external" href="https://climatedataguide.ucar.edu/climate-data/ibtracs-tropical-cyclone-best-track-data">https://climatedataguide.ucar.edu/climate-data/ibtracs-tropical-cyclone-best-track-data</a>)
 and plot them.</p>
@@ -130,7 +129,7 @@ and plot them.</p>
 <img alt="../../../_images/tropical_cyclone.png" src="../../../_images/tropical_cyclone.png" />
 </section>
 <section id="multiple-tropical-cyclones-with-wind-speed">
-<h2>Multiple tropical cyclones with wind speed<a class="headerlink" href="#multiple-tropical-cyclones-with-wind-speed" title="Permalink to this heading">¶</a></h2>
+<h2>Multiple tropical cyclones with wind speed<a class="headerlink" href="#multiple-tropical-cyclones-with-wind-speed" title="Permalink to this headline">¶</a></h2>
 <p>Read mutiple tropical cyclones data from a txt data file
 (<a class="reference external" href="http://tcdata.typhoon.gov.cn/zjljsjj_zlhq.html">http://tcdata.typhoon.gov.cn/zjljsjj_zlhq.html</a>)
 and plot them. The colors of the line indicate wind speed.</p>
@@ -196,9 +195,8 @@ and plot them. The colors of the line indicate wind speed.</p>
 
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <div>
-    <h3><a href="../../../index.html">Table of Contents</a></h3>
-    <ul>
+  <h3><a href="../../../index.html">Table of Contents</a></h3>
+  <ul>
 <li><a class="reference internal" href="#">Tropical cyclone plot</a><ul>
 <li><a class="reference internal" href="#one-tropical-cyclone">One tropical cyclone</a></li>
 <li><a class="reference internal" href="#multiple-tropical-cyclones">Multiple tropical cyclones</a></li>
@@ -207,17 +205,12 @@ and plot them. The colors of the line indicate wind speed.</p>
 </li>
 </ul>
 
-  </div>
-  <div>
-    <h4>Previous topic</h4>
-    <p class="topless"><a href="grib2arl.html"
-                          title="previous chapter">Convert GRIB data to ARL data</a></p>
-  </div>
-  <div>
-    <h4>Next topic</h4>
-    <p class="topless"><a href="traj_multicolor.html"
-                          title="next chapter">Trajectory multi-color plot</a></p>
-  </div>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="grib2arl.html"
+                        title="previous chapter">Convert GRIB data to ARL data</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="traj_multicolor.html"
+                        title="next chapter">Trajectory multi-color plot</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -229,12 +222,12 @@ and plot them. The colors of the line indicate wind speed.</p>
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>document.getElementById('searchbox').style.display = "block"</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -268,7 +261,7 @@ and plot them. The colors of the line indicate wind speed.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2023, MeteoInfo developers.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
     </div>
   </body>
 </html>

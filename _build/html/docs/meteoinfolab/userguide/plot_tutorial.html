@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
 
     <title>Plot tutorial &#8212; MeteoInfo 3.6 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
@@ -13,7 +13,6 @@
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
-    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -61,7 +60,7 @@
           <div class="body" role="main">
             
   <section id="plot-tutorial">
-<span id="docs-meteoinfolab-user-guid-plot-tutorial"></span><h1>Plot tutorial<a class="headerlink" href="#plot-tutorial" title="Permalink to this heading">¶</a></h1>
+<span id="docs-meteoinfolab-user-guid-plot-tutorial"></span><h1>Plot tutorial<a class="headerlink" href="#plot-tutorial" title="Permalink to this headline">¶</a></h1>
 <p>MeteoInfoLab has a collection of command style functions that make MeteoInfoLab work like MATLAB.
 Each plot function makes some change to a figure: e.g., create a figure, create a plotting area
 in a figure, plot some lines in a plotting area, decorate the plot with lables, etc….
@@ -105,7 +104,7 @@ with different format styles in one command using arrays.</p>
 </div>
 <img alt="../../../_images/plot_tutorial-3.png" src="../../../_images/plot_tutorial-3.png" />
 <section id="controlling-line-properties">
-<h2>Controlling line properties<a class="headerlink" href="#controlling-line-properties" title="Permalink to this heading">¶</a></h2>
+<h2>Controlling line properties<a class="headerlink" href="#controlling-line-properties" title="Permalink to this headline">¶</a></h2>
 <p>Lines have many attributes that you can set: linewidth, style, etc; The way to set line
 properties</p>
 <ul>
@@ -117,7 +116,7 @@ properties</p>
 </ul>
 </section>
 <section id="working-with-multiple-axes">
-<h2>Working with multiple axes<a class="headerlink" href="#working-with-multiple-axes" title="Permalink to this heading">¶</a></h2>
+<h2>Working with multiple axes<a class="headerlink" href="#working-with-multiple-axes" title="Permalink to this headline">¶</a></h2>
 <p>MATLAB, and MeteoInfoLab, have the concept of the current figure and the current axes. All plotting
 commands apply to the current axes. Normally, you don’t have to worry about this, because it is all
 taken care of the behind the scenes. Below is a script to create two subplots.</p>
@@ -169,9 +168,8 @@ coordinates.</p>
 
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <div>
-    <h3><a href="../../../index.html">Table of Contents</a></h3>
-    <ul>
+  <h3><a href="../../../index.html">Table of Contents</a></h3>
+  <ul>
 <li><a class="reference internal" href="#">Plot tutorial</a><ul>
 <li><a class="reference internal" href="#controlling-line-properties">Controlling line properties</a></li>
 <li><a class="reference internal" href="#working-with-multiple-axes">Working with multiple axes</a></li>
@@ -179,17 +177,12 @@ coordinates.</p>
 </li>
 </ul>
 
-  </div>
-  <div>
-    <h4>Previous topic</h4>
-    <p class="topless"><a href="gui.html"
-                          title="previous chapter">MeteoInfoLab GUI</a></p>
-  </div>
-  <div>
-    <h4>Next topic</h4>
-    <p class="topless"><a href="arrays.html"
-                          title="next chapter">Arrays</a></p>
-  </div>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="gui.html"
+                        title="previous chapter">MeteoInfoLab GUI</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="arrays.html"
+                        title="next chapter">Arrays</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -201,12 +194,12 @@ coordinates.</p>
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>document.getElementById('searchbox').style.display = "block"</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -241,7 +234,7 @@ coordinates.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2023, MeteoInfo developers.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
     </div>
   </body>
 </html>

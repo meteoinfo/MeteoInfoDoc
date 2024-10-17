@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
 
     <title>dataframe包简介 &#8212; MeteoInfo 3.6 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
@@ -13,7 +13,6 @@
     <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
-    <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -61,7 +60,7 @@
           <div class="body" role="main">
             
   <section id="dataframe">
-<span id="dos-meteoinfolab-milab-cn-dataframe-introduction"></span><h1>dataframe包简介<a class="headerlink" href="#dataframe" title="Permalink to this heading">¶</a></h1>
+<span id="dos-meteoinfolab-milab-cn-dataframe-introduction"></span><h1>dataframe包简介<a class="headerlink" href="#dataframe" title="Permalink to this headline">¶</a></h1>
 <p>dataframe包适合处理表格型数据，主要包括两种数据类型：Series和DataFrame。Series是一维带标签（index）的数组，index默认是从
 0开始的整型数组，可以从list创建Series对象。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="n">nan</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">])</span>
@@ -111,7 +110,7 @@
 <span class="go">2013-01-03  0.219245  0.920414  0.886056  0.222002</span>
 <span class="go">2013-01-04  0.883879  0.439466  0.392876  0.994732</span>
 <span class="go">2013-01-05  0.881501  0.283149  0.247825  0.593564</span>
-<span class="go">...</span>
+<span class="gp">...</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 <span class="go">                   A         B         C         D</span>
 <span class="go">2013-01-04  0.883879  0.439466  0.392876  0.994732</span>
@@ -298,16 +297,12 @@ quantile、std等方法可以进行分类后的统计分析。</p>
 
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <div>
-    <h4>Previous topic</h4>
-    <p class="topless"><a href="../dataframe.html"
-                          title="previous chapter">dataframe包</a></p>
-  </div>
-  <div>
-    <h4>Next topic</h4>
-    <p class="topless"><a href="../imagelib.html"
-                          title="next chapter">imagelib包</a></p>
-  </div>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../dataframe.html"
+                        title="previous chapter">dataframe包</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../imagelib.html"
+                        title="next chapter">imagelib包</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -319,12 +314,12 @@ quantile、std等方法可以进行分类后的统计分析。</p>
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>document.getElementById('searchbox').style.display = "block"</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -359,7 +354,7 @@ quantile、std等方法可以进行分类后的统计分析。</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2023, MeteoInfo developers.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
     </div>
   </body>
 </html>

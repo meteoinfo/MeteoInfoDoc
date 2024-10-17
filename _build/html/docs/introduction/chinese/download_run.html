@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
 
     <title>MeteoInfo下载与运行 &#8212; MeteoInfo 3.6 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
@@ -13,7 +13,6 @@
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
-    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -59,16 +58,16 @@
           <div class="body" role="main">
             
   <section id="meteoinfo">
-<h1>MeteoInfo下载与运行<a class="headerlink" href="#meteoinfo" title="Permalink to this heading">¶</a></h1>
+<h1>MeteoInfo下载与运行<a class="headerlink" href="#meteoinfo" title="Permalink to this headline">¶</a></h1>
 <section id="id1">
-<h2>MeteoInfo下载<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
+<h2>MeteoInfo下载<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>MeteoInfo可以在其网站上的Download页面中下载，下载的文件是zip压缩文件，可以解压在计算机某个目录中，解压后的主目录是
 MeteoInfo，里面包含了MeteoInfoMap和MeteoInfoLab的运行文件、依赖的库和一些配置文件，子目录sample里有一些各类格式
 的示例数据文件，子目录map中包含了世界地图和中国地图等常用的地图数据，plugins和toolbox子目录中是扩展MeteoInfoMap和
 MeteoInfoLab功能的插件和工具箱。MeteoInfo软件解压后可以直接使用，没有安装过程。</p>
 </section>
 <section id="id2">
-<h2>MeteoInfo运行<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
+<h2>MeteoInfo运行<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>MeteoInfo的运行需要Java 8或者更高版本的支持（必须是64位），建议使用Java 11 64位版本，Java可以在网上免费下载安装。
 MeteoInfo是跨平台软件，所有平台都使用一个软件包，但启动文件不同。</p>
 <p>启动MeteoInfoMap和MeteoInfoLab用户界面程序：</p>
@@ -90,7 +89,7 @@ MeteoInfo是跨平台软件，所有平台都使用一个软件包，但启动�
 <p>如果在远程登录Linux/Unix系统机器是没有启动Xwindos图形环境，可以在定时加 -b 参数：milab.sh -b test.py（无需图形环境）。</p>
 </section>
 <section id="id3">
-<h2>设置MeteoInfo运行内存<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h2>
+<h2>设置MeteoInfo运行内存<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p>在利用MeteoInfo软件处理超大数据时由于内存限制可能会出现java.lang.OutOfMemoryError: Java heap space，error之类
 的错误信息，这时可以尝试修改MeteoInfo启动文件中最大内存设置。比如在Windows中可以用文本编辑软件修改MeteoInfoLab.l4j.ini
 （或MeteoInfoMap.l4j.ini）文件中-Xmx参数，例如从-Xmx2G改为-Xmx4G来增大MeteoInfoLab运行可用的最大内存。文件中还有-Xms
@@ -117,9 +116,8 @@ MeteoInfo是跨平台软件，所有平台都使用一个软件包，但启动�
 
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <div>
-    <h3><a href="../../../index.html">Table of Contents</a></h3>
-    <ul>
+  <h3><a href="../../../index.html">Table of Contents</a></h3>
+  <ul>
 <li><a class="reference internal" href="#">MeteoInfo下载与运行</a><ul>
 <li><a class="reference internal" href="#id1">MeteoInfo下载</a></li>
 <li><a class="reference internal" href="#id2">MeteoInfo运行</a></li>
@@ -128,17 +126,12 @@ MeteoInfo是跨平台软件，所有平台都使用一个软件包，但启动�
 </li>
 </ul>
 
-  </div>
-  <div>
-    <h4>Previous topic</h4>
-    <p class="topless"><a href="website_code.html"
-                          title="previous chapter">MeteoInfo网站和源代码</a></p>
-  </div>
-  <div>
-    <h4>Next topic</h4>
-    <p class="topless"><a href="data_formats.html"
-                          title="next chapter">MeteoInfo支持的主要数据类型</a></p>
-  </div>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="website_code.html"
+                        title="previous chapter">MeteoInfo网站和源代码</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="data_formats.html"
+                        title="next chapter">MeteoInfo支持的主要数据类型</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -150,12 +143,12 @@ MeteoInfo是跨平台软件，所有平台都使用一个软件包，但启动�
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>document.getElementById('searchbox').style.display = "block"</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -188,7 +181,7 @@ MeteoInfo是跨平台软件，所有平台都使用一个软件包，但启动�
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2023, MeteoInfo developers.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
     </div>
   </body>
 </html>

@@ -1,0 +1,230 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+    <title>MeteoInfo 3.9 was released (2024-7-25) &#8212; MeteoInfo 3.6 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxdoc.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="MeteoInfo 3.8 was released (2024-3-11)" href="meteoinfo_3.8.html" />
+    <link rel="prev" title="News" href="index.html" /> 
+  </head><body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../index.html"><img src="../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="meteoinfo_3.8.html" title="MeteoInfo 3.8 was released (2024-3-11)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="News"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">home</a>|&nbsp;</li>
+        <li><a href="index.html">news</a>|&nbsp;</li>
+        <li><a href="../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../docs/index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">News</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">MeteoInfo 3.9 was released (2024-7-25)</a></li> 
+      </ul>
+    </div>
+
+
+    <div class="document">
+
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="meteoinfo-3-9-was-released-2024-7-25">
+<span id="news-meteoinfo-3-9"></span><h1>MeteoInfo 3.9 was released (2024-7-25)<a class="headerlink" href="#meteoinfo-3-9-was-released-2024-7-25" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><ul class="simple">
+<li><p>Add Point2DCollection, LineCollection classes</p></li>
+<li><p>Add ·makemarkers· function</p></li>
+<li><p>Add Transform for graphics</p></li>
+<li><p>Add <cite>avoidcoll</cite> argument in barbs, quiver and stationmodel functions</p></li>
+<li><p>Add <cite>crs</cite> module and some common used projections in <cite>geolib</cite> package</p></li>
+<li><p>Add <cite>velocity_potential</cite> and <cite>stream_function</cite> functions</p></li>
+<li><p>Add <cite>magic</cite>, <cite>convolve</cite> functions</p></li>
+<li><p>Add <cite>Rotation</cite> class for 3-D rotation of vectors</p></li>
+<li><p>Support long type data math operators</p></li>
+<li><p>Add <cite>_eof</cite> sub-package for EOF analysis</p></li>
+<li><p>Add <cite>isin</cite> function in DataFrame and Series</p></li>
+<li><p>Support CA/CB, SA/SB, SC, PA, CC radar data file</p></li>
+<li><p>Update netcdf-java to version 5.6.0</p></li>
+<li><p>Update flatlaf to version 3.5</p></li>
+<li><p>Update rsyntaxtextarea to version 3.4.0</p></li>
+<li><p>Some other bugs fixed</p></li>
+</ul>
+</div></blockquote>
+<section id="linecollection-example">
+<h2>LineCollection example<a class="headerlink" href="#linecollection-example" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a list of half-circles with varying radii</span>
+<span class="n">num_arcs</span> <span class="o">=</span> <span class="mi">15</span>
+<span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">36</span><span class="p">)</span>
+<span class="n">radii</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="n">num_arcs</span><span class="p">)</span>
+<span class="n">arcs</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">([</span><span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)])</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">radii</span><span class="p">]</span>
+
+<span class="n">lines</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">LineCollection</span><span class="p">(</span><span class="n">arcs</span><span class="p">,</span> <span class="n">array</span><span class="o">=</span><span class="n">radii</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;rainbow&#39;</span><span class="p">,</span> <span class="n">antialias</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">(</span><span class="n">aspect</span><span class="o">=</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_graphic</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+<span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="n">colorbar</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Radius&#39;</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Line Collection with mapped colors&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../_images/linecollection_1.png" src="../_images/linecollection_1.png" />
+</section>
+<section id="create-map-axes-with-given-projection">
+<h2>Create map axes with given projection<a class="headerlink" href="#create-map-axes-with-given-projection" title="Permalink to this headline">¶</a></h2>
+<p><em>Robinson projection</em></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">axesm</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">geolib</span><span class="o">.</span><span class="n">Robinson</span><span class="p">(),</span> <span class="n">axison</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">tickvisible</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">tickposition</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;lightgray&#39;</span><span class="p">)</span>
+<span class="n">xticks</span><span class="p">(</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">180</span><span class="p">,</span> <span class="mi">181</span><span class="p">,</span> <span class="mi">60</span><span class="p">))</span>
+<span class="n">yticks</span><span class="p">(</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">60</span><span class="p">,</span> <span class="mi">61</span><span class="p">,</span> <span class="mi">30</span><span class="p">))</span>
+<span class="n">axis</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="../_images/proj_robinson.png" src="../_images/proj_robinson.png" />
+<p><em>Lambert conformal projection</em></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">proj</span> <span class="o">=</span> <span class="n">geolib</span><span class="o">.</span><span class="n">LambertConformal</span><span class="p">(</span><span class="n">central_longitude</span><span class="o">=</span><span class="mf">104.35</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">axesm</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">proj</span><span class="p">,</span> <span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">axison</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;lightgray&#39;</span><span class="p">)</span>
+<span class="n">grid</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">tickvisible</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">tickposition</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span>
+    <span class="n">tickfont</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">12</span><span class="p">))</span>
+<span class="n">xticks</span><span class="p">(</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">180</span><span class="p">,</span> <span class="mi">181</span><span class="p">,</span> <span class="mi">30</span><span class="p">))</span>
+<span class="n">yticks</span><span class="p">(</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">61</span><span class="p">,</span> <span class="mi">30</span><span class="p">))</span>
+<span class="n">axis</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="../_images/proj_lambert.png" src="../_images/proj_lambert.png" />
+<p><em>North polar stereographic projection</em></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;D:\Temp\nc\Mulyimean_AOD_2007_2019-D_N_mean.nc&#39;</span><span class="p">)</span>
+<span class="n">aod</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;TAOD&#39;</span><span class="p">][:]</span>
+<span class="n">lat</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">][:]</span>
+<span class="n">lon</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;lon&#39;</span><span class="p">][:]</span>
+<span class="n">lon</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="p">[</span><span class="n">lon</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">5</span><span class="p">])</span>
+<span class="n">aod</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">aod</span><span class="p">,</span> <span class="n">aod</span><span class="p">[:,</span><span class="mi">0</span><span class="p">][:,</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">proj</span> <span class="o">=</span> <span class="n">geolib</span><span class="o">.</span><span class="n">NorthPolarStereo</span><span class="p">(</span><span class="n">central_longitude</span><span class="o">=</span><span class="mi">105</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">axesm</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">proj</span><span class="p">,</span> <span class="n">axison</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">)</span>
+<span class="n">levels</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.05</span><span class="p">)</span>
+<span class="n">layer</span> <span class="o">=</span> <span class="n">contourf</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">aod</span><span class="p">,</span> <span class="n">levels</span><span class="p">,</span> <span class="n">extend</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;BlueDarkRed18&#39;</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">geolib</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+<span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">tickvisible</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">tickposition</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+<span class="n">xticks</span><span class="p">(</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">180</span><span class="p">,</span> <span class="mi">181</span><span class="p">,</span> <span class="mi">30</span><span class="p">))</span>
+<span class="n">yticks</span><span class="p">([</span><span class="mi">30</span><span class="p">,</span> <span class="mi">60</span><span class="p">])</span>
+<span class="n">axis</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="../_images/proj_northstereo.png" src="../_images/proj_northstereo.png" />
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
+        <img style="position: fixed; top: 0; right: 0; border: 0;" 
+        src="../_static/forkme_right_orange_ff7600.png" 
+        alt="Fork me on GitHub">
+    </a>
+    <a target="_blank" href="https://gitter.im/meteoinfo/community">
+        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
+        src="https://badges.gitter.im/meteoinfo/community.svg"
+        alt="Join the chat at Gitter">
+    </a>
+
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">MeteoInfo 3.9 was released (2024-7-25)</a><ul>
+<li><a class="reference internal" href="#linecollection-example">LineCollection example</a></li>
+<li><a class="reference internal" href="#create-map-axes-with-given-projection">Create map axes with given projection</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">News</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="meteoinfo_3.8.html"
+                        title="next chapter">MeteoInfo 3.8 was released (2024-3-11)</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/news/meteoinfo_3.9.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="meteoinfo_3.8.html" title="MeteoInfo 3.8 was released (2024-3-11)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="News"
+             >previous</a> |</li>
+        <li><a href="../index.html">home</a>|&nbsp;</li>
+        <li><a href="index.html">news</a>|&nbsp;</li>
+        <li><a href="../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../docs/index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="index.html" >News</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">MeteoInfo 3.9 was released (2024-7-25)</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2010-2023, MeteoInfo developers.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
+    </div>
+  </body>
+</html>

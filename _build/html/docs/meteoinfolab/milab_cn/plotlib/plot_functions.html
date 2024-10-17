@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
 
     <title>常用绘图函数 &#8212; MeteoInfo 3.6 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
@@ -13,7 +13,6 @@
     <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
-    <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -61,7 +60,7 @@
           <div class="body" role="main">
             
   <section id="dos-meteoinfolab-milab-cn-plotlib-plot-functions">
-<span id="id1"></span><h1>常用绘图函数<a class="headerlink" href="#dos-meteoinfolab-milab-cn-plotlib-plot-functions" title="Permalink to this heading">¶</a></h1>
+<span id="id1"></span><h1>常用绘图函数<a class="headerlink" href="#dos-meteoinfolab-milab-cn-plotlib-plot-functions" title="Permalink to this headline">¶</a></h1>
 <p>使用plotlib包绘图有两种模式：一种是面向对象的模式，先创建Figure和Axes对象，然后用Axes对象中的绘图方法来绘图；另一种是利用
 plotlib.miplot模块中的绘图函数，如果没有Figure和Axes对象会自动生成，绘图函数会自动调用生成的Figure和Axes对象。极坐标系
 （PolarAxes）和地图坐标系（MapAxes）需要用相关函数创建坐标系对象，然后再使用plotlib.miplot模块中的绘图函数。</p>
@@ -131,16 +130,12 @@ plotlib.miplot模块中的绘图函数，如果没有Figure和Axes对象会自�
 
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <div>
-    <h4>Previous topic</h4>
-    <p class="topless"><a href="figure_axes.html"
-                          title="previous chapter">Figure和Axes</a></p>
-  </div>
-  <div>
-    <h4>Next topic</h4>
-    <p class="topless"><a href="line_plot.html"
-                          title="next chapter">线图</a></p>
-  </div>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="figure_axes.html"
+                        title="previous chapter">Figure和Axes</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="line_plot.html"
+                        title="next chapter">线图</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -152,12 +147,12 @@ plotlib.miplot模块中的绘图函数，如果没有Figure和Axes对象会自�
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>document.getElementById('searchbox').style.display = "block"</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -192,7 +187,7 @@ plotlib.miplot模块中的绘图函数，如果没有Figure和Axes对象会自�
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2023, MeteoInfo developers.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
     </div>
   </body>
 </html>

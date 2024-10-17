@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
 
     <title>MeteoInfo支持的主要数据类型 &#8212; MeteoInfo 3.6 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
@@ -13,7 +13,6 @@
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
-    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -59,9 +58,9 @@
           <div class="body" role="main">
             
   <section id="meteoinfo">
-<h1>MeteoInfo支持的主要数据类型<a class="headerlink" href="#meteoinfo" title="Permalink to this heading">¶</a></h1>
+<h1>MeteoInfo支持的主要数据类型<a class="headerlink" href="#meteoinfo" title="Permalink to this headline">¶</a></h1>
 <section id="id1">
-<h2>地图数据<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
+<h2>地图数据<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>MeteoInfo主要支持Shapefile格式的地图数据，它是美国环境系统研究所公司（ESRI）开发的一种空间数据开放格式，已经成为地理
 信息领域的开放标准。Shapefile文件可以存储基本空间几何体对象的位置信息，包括点、折线和多边形等，此外还可以存储这些空间对
 象的属性信息。Shapefile文件指的是一种文件存储的方法，实际上这种文件格式是由多个文件组成的。其中有三个文件是必不可少的，
@@ -108,7 +107,7 @@
 </div>
 </section>
 <section id="id2">
-<h2>科学数据<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
+<h2>科学数据<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>MeteoInfo支持大气科学领域常用的数据格式，包括NetCDF、GRIB、HDF、GrADS、ARL、MICAPS等。</p>
 <p>NetCDF（Network Common Data Format）是美国UCAR的Unidata组织开发的一种表示多维信息的数据格式，是一种自描述的二进
 制数据格式。经典的NetCDF格式是由维（dimensions）、全局属性（global attributes）和变量（variations）组成的。
@@ -153,9 +152,8 @@ NCSA）为了满足各种领域研究需求而研制的一种能高效存储和�
 
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <div>
-    <h3><a href="../../../index.html">Table of Contents</a></h3>
-    <ul>
+  <h3><a href="../../../index.html">Table of Contents</a></h3>
+  <ul>
 <li><a class="reference internal" href="#">MeteoInfo支持的主要数据类型</a><ul>
 <li><a class="reference internal" href="#id1">地图数据</a></li>
 <li><a class="reference internal" href="#id2">科学数据</a></li>
@@ -163,17 +161,12 @@ NCSA）为了满足各种领域研究需求而研制的一种能高效存储和�
 </li>
 </ul>
 
-  </div>
-  <div>
-    <h4>Previous topic</h4>
-    <p class="topless"><a href="download_run.html"
-                          title="previous chapter">MeteoInfo下载与运行</a></p>
-  </div>
-  <div>
-    <h4>Next topic</h4>
-    <p class="topless"><a href="roadmap.html"
-                          title="next chapter">MeteoInfo开发历程</a></p>
-  </div>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="download_run.html"
+                        title="previous chapter">MeteoInfo下载与运行</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="roadmap.html"
+                        title="next chapter">MeteoInfo开发历程</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -185,12 +178,12 @@ NCSA）为了满足各种领域研究需求而研制的一种能高效存储和�
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>document.getElementById('searchbox').style.display = "block"</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -223,7 +216,7 @@ NCSA）为了满足各种领域研究需求而研制的一种能高效存储和�
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2023, MeteoInfo developers.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
     </div>
   </body>
 </html>

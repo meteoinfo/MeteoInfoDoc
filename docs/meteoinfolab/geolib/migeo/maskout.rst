@@ -28,7 +28,7 @@ maskout
 
         #maskout
         m_china = shaperead('china')
-        ps = geolib.maskout(ps, m_china.shapes(), lon, lat)
+        ps = geolib.maskout(ps, m_china.shapes, lon, lat)
 
         #plot test
         axesm()

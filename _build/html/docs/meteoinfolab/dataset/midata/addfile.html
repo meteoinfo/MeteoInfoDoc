@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
 
     <title>addfile &#8212; MeteoInfo 3.6 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
@@ -13,7 +13,6 @@
     <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
-    <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -62,20 +61,20 @@
           <div class="body" role="main">
             
   <section id="addfile">
-<span id="docs-meteoinfolab-dataset-midata-addfile"></span><h1>addfile<a class="headerlink" href="#addfile" title="Permalink to this heading">¶</a></h1>
+<span id="docs-meteoinfolab-dataset-midata-addfile"></span><h1>addfile<a class="headerlink" href="#addfile" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="mipylib.dataset.midata.addfile">
 <span class="sig-prename descclassname"><span class="pre">mipylib.dataset.midata.</span></span><span class="sig-name descname"><span class="pre">addfile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">access</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'r'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'netcdf'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mipylib.dataset.midata.addfile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Opens a data file that is written in a supported file format.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>fname</strong> – (<em>string</em>) The full or relative path of the data file to load.</p></li>
 <li><p><strong>access</strong> – (<em>string</em>) The access right setting to the data file. Default is <code class="docutils literal notranslate"><span class="pre">r</span></code>.</p></li>
 <li><p><strong>dtype</strong> – (<em>string</em>) The data type of the data file. Default is <code class="docutils literal notranslate"><span class="pre">netcdf</span></code>.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p>(<em>DimDataFile</em>) Opened file object.</p>
 </dd>
 </dl>
@@ -136,16 +135,12 @@
 
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <div>
-    <h4>Previous topic</h4>
-    <p class="topless"><a href="../midata.html"
-                          title="previous chapter">mipylib.dataset.midata</a></p>
-  </div>
-  <div>
-    <h4>Next topic</h4>
-    <p class="topless"><a href="addfiles.html"
-                          title="next chapter">addfiles</a></p>
-  </div>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../midata.html"
+                        title="previous chapter">mipylib.dataset.midata</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="addfiles.html"
+                        title="next chapter">addfiles</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -157,12 +152,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>document.getElementById('searchbox').style.display = "block"</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -198,7 +193,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2010-2023, MeteoInfo developers.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
     </div>
   </body>
 </html>
