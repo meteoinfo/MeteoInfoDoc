@@ -60,38 +60,64 @@
             
   <section id="read-burf-data">
 <span id="examples-meteoinfolab-file-io-read-bufr"></span><h1>Read BURF data<a class="headerlink" href="#read-burf-data" title="Permalink to this headline">¶</a></h1>
-<p>BURF data file can be opened using <code class="docutils literal notranslate"><span class="pre">addfile()</span></code> function. Only a <code class="docutils literal notranslate"><span class="pre">obs</span></code> variable with <code class="docutils literal notranslate"><span class="pre">sequence</span></code> data type
-exists in the file. The members can be got using <code class="docutils literal notranslate"><span class="pre">get_members</span></code> method the the variable. Then the member array
-can be read using <code class="docutils literal notranslate"><span class="pre">member_array</span></code> method.</p>
+<p>BURF data file can be opened using <code class="docutils literal notranslate"><span class="pre">addfile()</span></code> function. A <code class="docutils literal notranslate"><span class="pre">obs</span></code> variable or several root variables with <code class="docutils literal notranslate"><span class="pre">sequence</span></code> data type
+exists in the file.</p>
 <p><code class="docutils literal notranslate"><span class="pre">keepopen=True</span></code> argument should be added in <code class="docutils literal notranslate"><span class="pre">addfile()</span></code> function so the data could be read from the opened
 file. The file object should be closed after data reading.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">get_members</span><span class="p">()</span>
-<span class="go">[SATELLITE_IDENTIFIER, IDENTIFICATION_OF_ORIGINATING_GENERATING_CENTRE, SATELLITE_CLASSIFICATION, SEGMENT_SIZE_AT_NADIR_IN_X-DIRECTION, SEGMENT_SIZE_AT_NADIR_IN_Y-DIRECTION, YEAR, MONTH, DAY, HOUR, MINUTE, SECOND, ROW_NUMBER, COLUMN_NUMBER, LATITUDE_(HIGH_ACCURACY), LONGITUDE_(HIGH_ACCURACY), CLOUD_AMOUNT_IN_SEGMENT, AMOUNT_OF_LOW_CLOUDS, NUMBER_OF_OBSERVATIONS, struct1, AMOUNT_OF_MIDDLE_CLOUDS, NUMBER_OF_OBSERVATIONS-2, struct2, AMOUNT_OF_HIGH_CLOUDS, NUMBER_OF_OBSERVATIONS-3, struct3, DATA_PRESENT_INDICATOR, IDENTIFICATION_OF_ORIGINATING_GENERATING_CENTRE-2, GENERATING_APPLICATION, OBSERVATION_QUALITY]</span>
+<p>For sequence variable, <code class="docutils literal notranslate"><span class="pre">variables</span></code> and <code class="docutils literal notranslate"><span class="pre">varnames</span></code> properties could be used to identify internal variables.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">obs</span><span class="o">.</span><span class="n">varnames</span>
+<span class="go">[u&#39;BYTCNT-5&#39;, u&#39;SID-5&#39;, u&#39;XOB-5&#39;, u&#39;YOB-5&#39;, u&#39;DHR-5&#39;, u&#39;ELV-5&#39;, u&#39;TYP-5&#39;, u&#39;T29-5&#39;, u&#39;TSB-5&#39;, u&#39;ITP-5&#39;, u&#39;SQN-5&#39;, u&#39;PROCN-5&#39;, u&#39;RPT-5&#39;, u&#39;TCOR-5&#39;, u&#39;RSRD_SEQ_RESTRICTIONS_ON_REDISTRIBUTION_SEQUENCE&#39;, u&#39;CAT-5&#39;, u&#39;P___INFO_PRESSURE_INFORMATION&#39;, u&#39;Q___INFO_SPECIFIC_HUMIDITY_INFORMATION&#39;, u&#39;T___INFO_TEMPERATURE_INFORMATION&#39;, u&#39;Z___INFO_HEIGHT_INFORMATION&#39;, u&#39;W___INFO_WIND_INFORMATION&#39;, u&#39;W2_EVENT_WIND_{DIRECTION-SPEEDm-s}_EVENT_SEQUENCE&#39;, u&#39;PMSL_SEQ_MEAN_SEA_LEVEL_PRESSURE_SEQUENCE&#39;, u&#39;ALTIMSEQ_ALTIMETER_SETTING_SEQUENCE&#39;, u&#39;SST_INFO_SEA_TEMPERATURE_INFORMATION&#39;, u&#39;TOPC_SEQ_TOTAL_PRECIPITATION-TOTAL_WATER_EQUIVALENT_SEQUENCE&#39;, u&#39;PREWXSEQ_PRESENT_WEATHER_SEQUENCE&#39;, u&#39;CLOUDSEQ_OBSERVED_CLOUD_SEQUENCE_#_1&#39;, u&#39;TMXMNSEQ_MAXIMUM-MINIMUM_TEMPERATURE_SEQUENCE&#39;, u&#39;SWELLSEQ_SWELL_WAVE_SEQUENCE&#39;, u&#39;VISB1SEQ_VISIBILITY_SEQUENCE_#_1&#39;, u&#39;PSTWXSEQ_PAST_WEATHER_SEQUENCE&#39;, u&#39;PKWNDSEQ_PEAK_WIND_SEQUENCE&#39;, u&#39;GUST1SEQ_MAXIMUM_WIND_GUST_SEQUENCE_#_1&#39;, u&#39;TPRECSEQ_TOTAL_PRECIPITATION_SEQUENCE&#39;, u&#39;SUNSHSEQ_TOTAL_SUNSHINE_SEQUENCE&#39;, u&#39;CLOU2SEQ_OBSERVED_CLOUD_SEQUENCE_#_2&#39;, u&#39;SNOW_SEQ_SNOW_DEPTH_SEQUENCE&#39;, u&#39;WAVE_SEQ_WAVE_SEQUENCE&#39;, u&#39;PTENDSEQ_PRESSURE_TENDENCY_SEQUENCE&#39;, u&#39;CLOU3SEQ_OBSERVED_CLOUD_SEQUENCE_#_3_CEILING&#39;, u&#39;seq5&#39;]</span>
 </pre></div>
 </div>
-<p>Example script</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;D:/Temp/bufr/MSG3-SEVI-MSGCLAP-0000-0000-20150101004500.000000000Z-20150101005935-1187380.bfr&#39;</span>
+<p>Example script for reading ADPSFC station longitude, latitude and temperature data.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;D:/Temp/bufr/prepbufr.gdas.20230325.t00z.nr&#39;</span>
 <span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">keepopen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">v</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;obs&#39;</span><span class="p">]</span>
-<span class="n">lon</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">member_array</span><span class="p">(</span><span class="s1">&#39;LONGITUDE_(HIGH_ACCURACY)&#39;</span><span class="p">)</span>
-<span class="n">lat</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">member_array</span><span class="p">(</span><span class="s1">&#39;LATITUDE_(HIGH_ACCURACY)&#39;</span><span class="p">)</span>
-<span class="n">lon</span> <span class="o">=</span> <span class="p">(</span><span class="n">lon</span> <span class="o">-</span> <span class="mf">1.8E7</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1.E-5</span>
-<span class="n">lat</span> <span class="o">=</span> <span class="p">(</span><span class="n">lat</span> <span class="o">-</span> <span class="mf">9.E6</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1.E-5</span>
-<span class="n">struct1</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">member_array</span><span class="p">(</span><span class="s1">&#39;struct1&#39;</span><span class="p">)</span>
-<span class="n">temp</span> <span class="o">=</span> <span class="n">struct1</span><span class="o">.</span><span class="n">member_array</span><span class="p">(</span><span class="s1">&#39;TEMPERATURE_AIR_TEMPERATURE&#39;</span><span class="p">)</span>
-<span class="n">temp</span> <span class="o">=</span> <span class="n">temp</span> <span class="o">*</span> <span class="mf">0.1</span>
-<span class="n">temp</span> <span class="o">=</span> <span class="n">temp</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">obs</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;ADPSFC&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">obs</span><span class="o">.</span><span class="n">varnames</span><span class="p">)</span>
+<span class="n">lon</span> <span class="o">=</span> <span class="n">obs</span><span class="p">[</span><span class="s1">&#39;XOB-5&#39;</span><span class="p">][:]</span>
+<span class="n">lat</span> <span class="o">=</span> <span class="n">obs</span><span class="p">[</span><span class="s1">&#39;YOB-5&#39;</span><span class="p">][:]</span>
+<span class="n">sid</span> <span class="o">=</span> <span class="n">obs</span><span class="p">[</span><span class="s1">&#39;SID-5&#39;</span><span class="p">][:]</span>
+<span class="n">typ</span> <span class="o">=</span> <span class="n">obs</span><span class="p">[</span><span class="s1">&#39;TYP-5&#39;</span><span class="p">][:]</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">obs</span><span class="p">[</span><span class="s1">&#39;T___INFO_TEMPERATURE_INFORMATION&#39;</span><span class="p">]</span>
+<span class="n">vv</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="s1">&#39;T__EVENT_TEMPERATURE_EVENT_SEQUENCE&#39;</span><span class="p">]</span>
+<span class="n">vvv</span> <span class="o">=</span> <span class="n">vv</span><span class="p">[</span><span class="s1">&#39;TOB-5&#39;</span><span class="p">]</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">vvv</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 
 <span class="c1">#Plot</span>
 <span class="n">axesm</span><span class="p">()</span>
 <span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">)</span>
-<span class="n">layer</span> <span class="o">=</span> <span class="n">scatter</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">temp</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">edge</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">levs</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">layer</span> <span class="o">=</span> <span class="n">scatter</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">levs</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span>
 <span class="n">title</span><span class="p">(</span><span class="s1">&#39;Bufr data example&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<img alt="../../../_images/bufr_1.png" src="../../../_images/bufr_1.png" />
+<img alt="../../../_images/prepbufr_adpsfc.png" src="../../../_images/prepbufr_adpsfc.png" />
+<p>Example script for reading SATWND station longitude, latitude and pressure data.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;D:/Temp/bufr/prepbufr.gdas.20230325.t00z.nr&#39;</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">keepopen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">obs</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;SATWND&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">obs</span><span class="o">.</span><span class="n">varnames</span><span class="p">)</span>
+<span class="n">lon</span> <span class="o">=</span> <span class="n">obs</span><span class="p">[</span><span class="s1">&#39;XOB-3&#39;</span><span class="p">][:]</span>
+<span class="n">lat</span> <span class="o">=</span> <span class="n">obs</span><span class="p">[</span><span class="s1">&#39;YOB-3&#39;</span><span class="p">][:]</span>
+<span class="n">sid</span> <span class="o">=</span> <span class="n">obs</span><span class="p">[</span><span class="s1">&#39;SID-3&#39;</span><span class="p">][:]</span>
+<span class="n">typ</span> <span class="o">=</span> <span class="n">obs</span><span class="p">[</span><span class="s1">&#39;TYP-3&#39;</span><span class="p">][:]</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">obs</span><span class="p">[</span><span class="s1">&#39;P___INFO_PRESSURE_INFORMATION&#39;</span><span class="p">]</span>
+<span class="n">vv</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="s1">&#39;P__EVENT_PRESSURE_EVENT_SEQUENCE&#39;</span><span class="p">]</span>
+<span class="n">vvv</span> <span class="o">=</span> <span class="n">vv</span><span class="p">[</span><span class="s1">&#39;POB-3&#39;</span><span class="p">]</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">vvv</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="c1">#Plot</span>
+<span class="n">axesm</span><span class="p">()</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">)</span>
+<span class="n">layer</span> <span class="o">=</span> <span class="n">scatter</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Bufr data example&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../../../_images/prepbufr_satwnd.png" src="../../../_images/prepbufr_satwnd.png" />
 </section>
 
 

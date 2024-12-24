@@ -113,17 +113,15 @@ addfile函数中将keepopen参数设为True，所有数据读取完毕后用数�
     fn = 'D:/Temp/bufr/aaaa.bufr'
     f = addfile(fn, keepopen=True)
     obs = f['obs']
-    print(obs.get_members())
-    lon = obs.member_array('Longitude_high_accuracy')
-    lat = obs.member_array('Latitude_high_accuracy')
-    lon = (lon - 1.8E7) * 1.E-5
-    lat = (lat - 9.E6) * 1.E-5
-    pres = obs.member_array('Pressure') * 1e1
-    ws = obs.member_array('Wind_speed') * 1e-1
+    print(obs.varnames)
+    lon = obs['Longitude_high_accuracy'][:]
+    lon[lon<0] = lon + 360
+    lat = obs['Latitude_high_accuracy'][:]
+    ws = obs['Wind_speed'][:]
     f.close()
 
     geoshow('country')
-    scatter(lon, lat, ws, edgecolor=None, size=2, zorder=0)
+    scatter(lon, lat, ws, edgecolor=None, size=2, cmap='BlueRed', zorder=0)
     xlim(70, 200)
     colorbar()
 
@@ -151,7 +149,7 @@ addfile函数中将keepopen参数设为True，所有数据读取完毕后用数�
     data = mean(data, axis=0)
 
     geoshow('continent')
-    layer = imshowm(data, interpolation='bilinear')
+    layer = imshow(data, interpolation='bilinear')
     colorbar(layer)
     xlim(0, 360)
     ylim(-90, 90)
