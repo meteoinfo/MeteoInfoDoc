@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>MeteoInfo 4.0 was released (2025-3-26) &#8212; MeteoInfo 3.6 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxdoc.css?v=87629129" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=fd3f3429" />
+    <script src="../_static/documentation_options.js?v=7effb3c7"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="MeteoInfo 3.9 was released (2024-7-25)" href="meteoinfo_3.9.html" />
+    <link rel="prev" title="News" href="index.html" /> 
+  </head><body>
+
+<div style="background-color: white; text-align: left; padding: 2px 2px 2px 2px">
+<a href="../index.html"><img src="../_static/logo.jpg" border="0"/></a></div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="meteoinfo_3.9.html" title="MeteoInfo 3.9 was released (2024-7-25)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="News"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">home</a>|&nbsp;</li>
+        <li><a href="index.html">news</a>|&nbsp;</li>
+        <li><a href="../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../docs/index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">News</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">MeteoInfo 4.0 was released (2025-3-26)</a></li> 
+      </ul>
+    </div>
+
+
+    <div class="document">
+
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="meteoinfo-4-0-was-released-2025-3-26">
+<span id="news-meteoinfo-4-0"></span><h1>MeteoInfo 4.0 was released (2025-3-26)<a class="headerlink" href="#meteoinfo-4-0-was-released-2025-3-26" title="Link to this heading">¶</a></h1>
+<blockquote>
+<div><ul class="simple">
+<li><p>Support GRIB data with CCSDS compression</p></li>
+<li><p>Better Bufr data support including multi-category messages in one data file</p></li>
+<li><p>Support avoiding collapse of x-axis labels in ProjLonLatAxis class</p></li>
+<li><p>Add <cite>fft</cite> package for fast fourier transformation</p></li>
+<li><p>Add <cite>frombuffer</cite> function to create ndarray object</p></li>
+<li><p>Add cross_section function in meteolib package</p></li>
+<li><p>Update XYZ tile layer base URL similar with QGIS</p></li>
+<li><p>Update netcdf-java to version 5.8.0-SNAPSHOT</p></li>
+<li><p>Update flatten and ravel functions</p></li>
+<li><p>Update WebImage plot function</p></li>
+<li><p>update Jython to version 2.7.4;</p></li>
+<li><p>update flatlaf to version 3.5.4</p></li>
+<li><p>Some other bugs fixed</p></li>
+</ul>
+</div></blockquote>
+<section id="fast-fourier-transformation-example">
+<h2>Fast Fourier Transformation example<a class="headerlink" href="#fast-fourier-transformation-example" title="Link to this heading">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Read image</span>
+<span class="n">fn</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">migl</span><span class="o">.</span><span class="n">get_sample_folder</span><span class="p">(),</span> <span class="s1">&#39;image&#39;</span><span class="p">,</span> <span class="s1">&#39;Lenna.png&#39;</span><span class="p">)</span>
+<span class="n">lena</span> <span class="o">=</span> <span class="n">imagelib</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">imagelib</span><span class="o">.</span><span class="n">gray_scale</span><span class="p">(</span><span class="n">lena</span><span class="p">)[:,:,</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1">#FFT</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fft2</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+<span class="n">fshift</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fftshift</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">fshift</span><span class="p">))</span>
+
+<span class="c1">#Invert FFT</span>
+<span class="n">ishift</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">ifftshift</span><span class="p">(</span><span class="n">fshift</span><span class="p">)</span>
+<span class="n">iimg</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">ifft2</span><span class="p">(</span><span class="n">ishift</span><span class="p">)</span>
+<span class="n">iimg</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">iimg</span><span class="p">)</span>
+
+<span class="c1">#Plot</span>
+<span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">aspect</span><span class="o">=</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+<span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;cmocean_gray&#39;</span><span class="p">),</span> <span class="n">title</span><span class="p">(</span><span class="s1">&#39;Original Image&#39;</span><span class="p">)</span>
+<span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">aspect</span><span class="o">=</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+<span class="n">imshow</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;cmocean_gray&#39;</span><span class="p">),</span> <span class="n">title</span><span class="p">(</span><span class="s1">&#39;Fourier Image&#39;</span><span class="p">)</span>
+<span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">aspect</span><span class="o">=</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+<span class="n">imshow</span><span class="p">(</span><span class="n">iimg</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;cmocean_gray&#39;</span><span class="p">),</span> <span class="n">title</span><span class="p">(</span><span class="s1">&#39;Inverse Fourier Image&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../_images/fft_1.png" src="../_images/fft_1.png" />
+</section>
+<section id="read-grib-data-with-ccsds-compression">
+<h2>Read GRIB data with CCSDS compression<a class="headerlink" href="#read-grib-data-with-ccsds-compression" title="Link to this heading">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;D:/Temp/grib/ecmwf/20250106180000-0h-oper-fc.grib2&#39;</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;Geopotential_surface&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">axesm</span><span class="p">()</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">)</span>
+<span class="n">imshow</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">colorbar</span><span class="p">()</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;GRIB data with CCSDS compression example&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../_images/grib_ccsds_1.png" src="../_images/grib_ccsds_1.png" />
+</section>
+<section id="read-prepbufr-data-file">
+<h2>Read prepbufr data file<a class="headerlink" href="#read-prepbufr-data-file" title="Link to this heading">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;D:/Temp/bufr/prepbufr.gdas.20230325.t00z.nr&#39;</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">keepopen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">obs</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;SATWND&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">obs</span><span class="o">.</span><span class="n">varnames</span><span class="p">)</span>
+<span class="n">lon</span> <span class="o">=</span> <span class="n">obs</span><span class="p">[</span><span class="s1">&#39;XOB-3&#39;</span><span class="p">][:]</span>
+<span class="n">lat</span> <span class="o">=</span> <span class="n">obs</span><span class="p">[</span><span class="s1">&#39;YOB-3&#39;</span><span class="p">][:]</span>
+<span class="n">sid</span> <span class="o">=</span> <span class="n">obs</span><span class="p">[</span><span class="s1">&#39;SID-3&#39;</span><span class="p">][:]</span>
+<span class="n">typ</span> <span class="o">=</span> <span class="n">obs</span><span class="p">[</span><span class="s1">&#39;TYP-3&#39;</span><span class="p">][:]</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">obs</span><span class="p">[</span><span class="s1">&#39;P___INFO_PRESSURE_INFORMATION&#39;</span><span class="p">]</span>
+<span class="n">vv</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="s1">&#39;P__EVENT_PRESSURE_EVENT_SEQUENCE&#39;</span><span class="p">]</span>
+<span class="n">vvv</span> <span class="o">=</span> <span class="n">vv</span><span class="p">[</span><span class="s1">&#39;POB-3&#39;</span><span class="p">]</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">vvv</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="c1">#Plot</span>
+<span class="n">axesm</span><span class="p">()</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">)</span>
+<span class="n">layer</span> <span class="o">=</span> <span class="n">scatter</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">colorbar</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Bufr data example&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../_images/prepbufr_satwnd.png" src="../_images/prepbufr_satwnd.png" />
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+    <a target="_blank" href="https://github.com/meteoinfo/MeteoInfo">
+        <img style="position: fixed; top: 0; right: 0; border: 0;" 
+        src="../_static/forkme_right_orange_ff7600.png" 
+        alt="Fork me on GitHub">
+    </a>
+    <a target="_blank" href="https://gitter.im/meteoinfo/community">
+        <img style="position: fixed; bottom: 0; right: 0; border: 0;" 
+        src="https://badges.gitter.im/meteoinfo/community.svg"
+        alt="Join the chat at Gitter">
+    </a>
+
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">MeteoInfo 4.0 was released (2025-3-26)</a><ul>
+<li><a class="reference internal" href="#fast-fourier-transformation-example">Fast Fourier Transformation example</a></li>
+<li><a class="reference internal" href="#read-grib-data-with-ccsds-compression">Read GRIB data with CCSDS compression</a></li>
+<li><a class="reference internal" href="#read-prepbufr-data-file">Read prepbufr data file</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="index.html"
+                          title="previous chapter">News</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="meteoinfo_3.9.html"
+                          title="next chapter">MeteoInfo 3.9 was released (2024-7-25)</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/news/meteoinfo_4.0.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="meteoinfo_3.9.html" title="MeteoInfo 3.9 was released (2024-7-25)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="News"
+             >previous</a> |</li>
+        <li><a href="../index.html">home</a>|&nbsp;</li>
+        <li><a href="index.html">news</a>|&nbsp;</li>
+        <li><a href="../examples/index.html">examples</a>|&nbsp;</li>
+        <li><a href="../downloads/index.html">downloads</a>|&nbsp;</li>
+        <li><a href="../docs/index.html">docs</a>|&nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="index.html" >News</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">MeteoInfo 4.0 was released (2025-3-26)</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2010-2023, MeteoInfo developers.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
+    </div>
+  </body>
+</html>

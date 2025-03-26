@@ -16,6 +16,7 @@
 
 ::
 
+    axesm()
     geoshow('continent', facecolor=[204,204,255], edgecolor='gray')
     geoshow('rivers', color='b')
     cities = geoshow('cities', facecolor='m', edgecolor=None, size=4)
@@ -39,6 +40,7 @@
     f = addfile(fn)
     ps = f['PS'][0]
 
+    axesm()
     geoshow('coastline', color=(0,0,255))
     contourf(ps, 20, smooth=False)
     t = f.gettime(0)
@@ -130,12 +132,14 @@
 
 ::
 
-    proj = projinfo(proj='stere', lat_0=90, lon_0=105)
-    axesm(projinfo=proj, gridline=True, gridlabelloc='all', griddx=30,
-        griddy=30, frameon=False, cutoff=10,
+    proj = geolib.Stereographic(central_latitude=90, central_longitude=105,
+        cutoff=10)
+    axesm(projection=proj, frameon=False, axison=False,
         boundaryprop={'facecolor':(102,255,255),'edgesize':1.5})
+    grid(True, color='gray', tickvisible=True, tickposition='all')
     geoshow('country', facecolor='lightgray', edgecolor='gray')
-    axism()
+    xticks(arange(0, 350, 30))
+    axis()
 
 .. image:: ./image/mapaxes_proj_stere.png
 

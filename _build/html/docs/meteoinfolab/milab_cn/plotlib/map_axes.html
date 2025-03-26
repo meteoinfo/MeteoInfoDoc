@@ -1,19 +1,17 @@
-
 <!DOCTYPE html>
 
-<html>
+<html lang="en" data-content_root="../../../../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>地图坐标系 &#8212; MeteoInfo 3.6 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxdoc.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
-    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-    <script src="../../../../_static/jquery.js"></script>
-    <script src="../../../../_static/underscore.js"></script>
-    <script src="../../../../_static/doctools.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxdoc.css?v=87629129" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css?v=fd3f3429" />
+    <script src="../../../../_static/documentation_options.js?v=7effb3c7"></script>
+    <script src="../../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="图形标注和多Y轴" href="text_multi_axis.html" />
@@ -60,7 +58,7 @@
           <div class="body" role="main">
             
   <section id="dos-meteoinfolab-milab-cn-plotlib-map-axes">
-<span id="id1"></span><h1>地图坐标系<a class="headerlink" href="#dos-meteoinfolab-milab-cn-plotlib-map-axes" title="Permalink to this headline">¶</a></h1>
+<span id="id1"></span><h1>地图坐标系<a class="headerlink" href="#dos-meteoinfolab-milab-cn-plotlib-map-axes" title="Link to this heading">¶</a></h1>
 <p>地图坐标系（MapAxes）是描述地理位置的二维坐标系，缺省二维坐标系分别为经度和纬度，经过地图投影后坐标系的单位通常为米（或者公里），
 可以和经纬度进行相互换算。在地图坐标系中绘图需要先用axesm函数创建地图坐标系，然后用二维绘图函数在地图上绘制图形。地图坐标系中
 通常要绘制地理底图作为专业图形信息的地理位置参考，geoshow函数可以用来绘制以Shapefile文件为代表的地理底图，如果之前没有axesm
@@ -69,7 +67,8 @@
 的地图数据图形。下面的例子用geoshow函数分别绘制了世界行政区域、主要河流和主要城市，geoshow函数返回地图图层对象，其addlabels
 方法可以给图层中的地理要素添加标注。axis函数用来设置地图坐标系的经纬度范围，参数是一个列表，其中的要素分别是最小经度、最大经度、
 最小纬度和最大纬度。</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;continent&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="p">[</span><span class="mi">204</span><span class="p">,</span><span class="mi">204</span><span class="p">,</span><span class="mi">255</span><span class="p">],</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">axesm</span><span class="p">()</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;continent&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="p">[</span><span class="mi">204</span><span class="p">,</span><span class="mi">204</span><span class="p">,</span><span class="mi">255</span><span class="p">],</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
 <span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;rivers&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
 <span class="n">cities</span> <span class="o">=</span> <span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;cities&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 <span class="n">cities</span><span class="o">.</span><span class="n">addlabels</span><span class="p">(</span><span class="s1">&#39;NAME&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">yoffset</span><span class="o">=-</span><span class="mi">5</span><span class="p">)</span>
@@ -89,6 +88,7 @@
 <span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
 <span class="n">ps</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;PS&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
 
+<span class="n">axesm</span><span class="p">()</span>
 <span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;coastline&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">))</span>
 <span class="n">contourf</span><span class="p">(</span><span class="n">ps</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">smooth</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">t</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">gettime</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -168,12 +168,14 @@
 进行投影变换。projinfo函数可以生成一个投影设置对象，参数包括投影名称、中央经度、中央纬度等，MeteoInfo的投影功能使用了Proj4j
 库来实现，投影可以用投影字符串来定义，具体可以查阅PROJ项目的文档（<a class="reference external" href="https://proj.org">https://proj.org</a>）。下面的例子生成一个北极为中心点的
 极射赤平投影，并定义在地图坐标系中，在geoshow函数添加地图数据时会自动进行投影变换，形成北极极射赤平投影地图图形。</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">proj</span> <span class="o">=</span> <span class="n">projinfo</span><span class="p">(</span><span class="n">proj</span><span class="o">=</span><span class="s1">&#39;stere&#39;</span><span class="p">,</span> <span class="n">lat_0</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span> <span class="n">lon_0</span><span class="o">=</span><span class="mi">105</span><span class="p">)</span>
-<span class="n">axesm</span><span class="p">(</span><span class="n">projinfo</span><span class="o">=</span><span class="n">proj</span><span class="p">,</span> <span class="n">gridline</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">gridlabelloc</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">griddx</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span>
-    <span class="n">griddy</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">proj</span> <span class="o">=</span> <span class="n">geolib</span><span class="o">.</span><span class="n">Stereographic</span><span class="p">(</span><span class="n">central_latitude</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span> <span class="n">central_longitude</span><span class="o">=</span><span class="mi">105</span><span class="p">,</span>
+    <span class="n">cutoff</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">axesm</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">proj</span><span class="p">,</span> <span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">axison</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
     <span class="n">boundaryprop</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;facecolor&#39;</span><span class="p">:(</span><span class="mi">102</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">),</span><span class="s1">&#39;edgesize&#39;</span><span class="p">:</span><span class="mf">1.5</span><span class="p">})</span>
+<span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">tickvisible</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">tickposition</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
 <span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;lightgray&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
-<span class="n">axism</span><span class="p">()</span>
+<span class="n">xticks</span><span class="p">(</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">350</span><span class="p">,</span> <span class="mi">30</span><span class="p">))</span>
+<span class="n">axis</span><span class="p">()</span>
 </pre></div>
 </div>
 <img alt="../../../../_images/mapaxes_proj_stere.png" src="../../../../_images/mapaxes_proj_stere.png" />
@@ -228,12 +230,16 @@
 
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="polar_plot.html"
-                        title="previous chapter">极坐标图</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="text_multi_axis.html"
-                        title="next chapter">图形标注和多Y轴</a></p>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="polar_plot.html"
+                          title="previous chapter">极坐标图</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="text_multi_axis.html"
+                          title="next chapter">图形标注和多Y轴</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -241,16 +247,16 @@
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
-</div>
-<script>$('#searchbox').show(0);</script>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -284,8 +290,8 @@
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2010-2023, MeteoInfo developers.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
+    &#169; Copyright 2010-2023, MeteoInfo developers.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
     </div>
   </body>
 </html>
