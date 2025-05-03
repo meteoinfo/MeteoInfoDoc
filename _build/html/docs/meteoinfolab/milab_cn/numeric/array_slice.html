@@ -1,17 +1,19 @@
+
 <!DOCTYPE html>
 
-<html lang="en" data-content_root="../../../../">
+<html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
 
     <title>数组索引、切片和迭代 &#8212; MeteoInfo 3.6 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=b76e3c8a" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxdoc.css?v=87629129" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css?v=fd3f3429" />
-    <script src="../../../../_static/documentation_options.js?v=7effb3c7"></script>
-    <script src="../../../../_static/doctools.js?v=9a2dae69"></script>
-    <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxdoc.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="带标签和维度值的多维数组（DimArray）" href="dimarray.html" />
@@ -58,7 +60,7 @@
           <div class="body" role="main">
             
   <section id="dos-meteoinfolab-milab-cn-numeric-array-slice">
-<span id="id1"></span><h1>数组索引、切片和迭代<a class="headerlink" href="#dos-meteoinfolab-milab-cn-numeric-array-slice" title="Link to this heading">¶</a></h1>
+<span id="id1"></span><h1>数组索引、切片和迭代<a class="headerlink" href="#dos-meteoinfolab-milab-cn-numeric-array-slice" title="Permalink to this headline">¶</a></h1>
 <p>和Jython的list类似，NDArray一维数组也有索引、切片和迭代功能。索引是从0开始的，a[2]指数组的从一开始数的第三个元素。
 切片需要冒号，第一个冒号左边是起始索引，右边是结束索引，如果有两个冒号则第二个冒号后是步长。起始索引缺省为0，结束索引
 缺省为维的长度，步长缺省为1。需要注意的是数组切片时起始索引的元素会被包含，而结束索引的元素不会被包含，a[2:5]指取出
@@ -127,16 +129,12 @@
 
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <div>
-    <h4>Previous topic</h4>
-    <p class="topless"><a href="array_operation.html"
-                          title="previous chapter">数组的基本操作</a></p>
-  </div>
-  <div>
-    <h4>Next topic</h4>
-    <p class="topless"><a href="dimarray.html"
-                          title="next chapter">带标签和维度值的多维数组（DimArray）</a></p>
-  </div>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="array_operation.html"
+                        title="previous chapter">数组的基本操作</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="dimarray.html"
+                        title="next chapter">带标签和维度值的多维数组（DimArray）</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -144,16 +142,16 @@
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
-<search id="searchbox" style="display: none" role="search">
+<div id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
     </form>
     </div>
-</search>
-<script>document.getElementById('searchbox').style.display = "block"</script>
+</div>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -187,8 +185,8 @@
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2010-2023, MeteoInfo developers.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
+        &#169; Copyright 2010-2023, MeteoInfo developers.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
     </div>
   </body>
 </html>
