@@ -1,19 +1,17 @@
-
 <!DOCTYPE html>
 
-<html>
+<html lang="en" data-content_root="../../../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Convert WRF out data to ARL data &#8212; MeteoInfo 3.6 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/sphinxdoc.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
-    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/jquery.js"></script>
-    <script src="../../../_static/underscore.js"></script>
-    <script src="../../../_static/doctools.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinxdoc.css?v=87629129" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=fd3f3429" />
+    <script src="../../../_static/documentation_options.js?v=7effb3c7"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Convert GRIB data to ARL data" href="grib2arl.html" />
@@ -59,25 +57,27 @@
           <div class="body" role="main">
             
   <section id="convert-wrf-out-data-to-arl-data">
-<span id="examples-meteoinfolab-trajectory-wrfout2arl"></span><h1>Convert WRF out data to ARL data<a class="headerlink" href="#convert-wrf-out-data-to-arl-data" title="Permalink to this headline">¶</a></h1>
+<span id="examples-meteoinfolab-trajectory-wrfout2arl"></span><h1>Convert WRF out data to ARL data<a class="headerlink" href="#convert-wrf-out-data-to-arl-data" title="Link to this heading">¶</a></h1>
 <p>ARL meteorological data format is specified using in HYSPLIT model. This is an example script
 for converting WRF out netCDF data to ARL data.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#---- Set data folder</span>
-<span class="n">datadir</span> <span class="o">=</span> <span class="s1">&#39;E:/Temp/Yaqiang&#39;</span>
+<span class="n">datadir</span> <span class="o">=</span> <span class="s1">&#39;D:/Temp/nc/wrf&#39;</span>
 <span class="c1">#---- Set output data file</span>
-<span class="n">outfn</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">datadir</span><span class="p">,</span> <span class="s1">&#39;test_wrfout1.arl&#39;</span><span class="p">)</span>
+<span class="n">outfn</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">datadir</span><span class="p">,</span> <span class="s1">&#39;test1_wrfout1.arl&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">outfn</span><span class="p">):</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">outfn</span><span class="p">)</span>
 <span class="c1">#---- Read a netCDF data file</span>
 <span class="n">infn</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">datadir</span><span class="p">,</span> <span class="s1">&#39;wrfout_d01_1984-05-30_12_00_00-subset&#39;</span><span class="p">)</span>
-<span class="nb">print</span> <span class="n">infn</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">infn</span><span class="p">)</span>
 <span class="n">inf</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="n">infn</span><span class="p">)</span>
-<span class="nb">print</span> <span class="s1">&#39;NetCDF file has been opened...&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;NetCDF file has been opened...&#39;</span><span class="p">)</span>
 <span class="c1">#---- Set output ARL data file</span>
 <span class="n">arlf</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="n">outfn</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;arl&#39;</span><span class="p">)</span>
 <span class="c1">#---- Set variable and level list</span>
-<span class="n">wvar2d</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;PSFC&#39;</span><span class="p">,</span><span class="s1">&#39;HGT&#39;</span><span class="p">,</span><span class="s1">&#39;T2&#39;</span><span class="p">,</span><span class="s1">&#39;U10&#39;</span><span class="p">,</span><span class="s1">&#39;V10&#39;</span><span class="p">,</span><span class="s1">&#39;PBLH&#39;</span><span class="p">,</span><span class="s1">&#39;RAINNC&#39;</span><span class="p">]</span>
-<span class="n">wvar3d</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;P&#39;</span><span class="p">,</span><span class="s1">&#39;U&#39;</span><span class="p">,</span><span class="s1">&#39;V&#39;</span><span class="p">,</span><span class="s1">&#39;W&#39;</span><span class="p">,</span><span class="s1">&#39;T&#39;</span><span class="p">,</span><span class="s1">&#39;QVAPOR&#39;</span><span class="p">]</span>
-<span class="n">avar2d</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;PRSS&#39;</span><span class="p">,</span><span class="s1">&#39;SHGT&#39;</span><span class="p">,</span><span class="s1">&#39;T02M&#39;</span><span class="p">,</span><span class="s1">&#39;U10M&#39;</span><span class="p">,</span><span class="s1">&#39;V10M&#39;</span><span class="p">,</span><span class="s1">&#39;PBLH&#39;</span><span class="p">,</span><span class="s1">&#39;TPPA&#39;</span><span class="p">]</span>
-<span class="n">avar3d</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;PRES&#39;</span><span class="p">,</span><span class="s1">&#39;UWND&#39;</span><span class="p">,</span><span class="s1">&#39;VWND&#39;</span><span class="p">,</span><span class="s1">&#39;WWND&#39;</span><span class="p">,</span><span class="s1">&#39;TEMP&#39;</span><span class="p">,</span><span class="s1">&#39;SPHU&#39;</span><span class="p">]</span>
+<span class="n">wvar2d</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;HGT&#39;</span><span class="p">,</span><span class="s1">&#39;PSFC&#39;</span><span class="p">,</span><span class="s1">&#39;PBLH&#39;</span><span class="p">,</span><span class="s1">&#39;UST&#39;</span><span class="p">,</span><span class="s1">&#39;SWDOWN&#39;</span><span class="p">,</span><span class="s1">&#39;HFX&#39;</span><span class="p">,</span><span class="s1">&#39;LH&#39;</span><span class="p">,</span><span class="s1">&#39;T2&#39;</span><span class="p">,</span><span class="s1">&#39;U10&#39;</span><span class="p">,</span><span class="s1">&#39;V10&#39;</span><span class="p">,</span><span class="s1">&#39;RAINNC&#39;</span><span class="p">]</span>
+<span class="n">wvar3d</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;P&#39;</span><span class="p">,</span><span class="s1">&#39;T&#39;</span><span class="p">,</span><span class="s1">&#39;U&#39;</span><span class="p">,</span><span class="s1">&#39;V&#39;</span><span class="p">,</span><span class="s1">&#39;W&#39;</span><span class="p">,</span><span class="s1">&#39;QVAPOR&#39;</span><span class="p">]</span>
+<span class="n">avar2d</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;SHGT&#39;</span><span class="p">,</span><span class="s1">&#39;PRSS&#39;</span><span class="p">,</span><span class="s1">&#39;PBLH&#39;</span><span class="p">,</span><span class="s1">&#39;USTR&#39;</span><span class="p">,</span><span class="s1">&#39;DSWF&#39;</span><span class="p">,</span><span class="s1">&#39;SHTF&#39;</span><span class="p">,</span><span class="s1">&#39;LHTF&#39;</span><span class="p">,</span><span class="s1">&#39;T02M&#39;</span><span class="p">,</span><span class="s1">&#39;U10M&#39;</span><span class="p">,</span><span class="s1">&#39;V10M&#39;</span><span class="p">,</span><span class="s1">&#39;TPPA&#39;</span><span class="p">]</span>
+<span class="n">avar3d</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;PRES&#39;</span><span class="p">,</span><span class="s1">&#39;TEMP&#39;</span><span class="p">,</span><span class="s1">&#39;UWND&#39;</span><span class="p">,</span><span class="s1">&#39;VWND&#39;</span><span class="p">,</span><span class="s1">&#39;WWND&#39;</span><span class="p">,</span><span class="s1">&#39;SPHU&#39;</span><span class="p">]</span>
 <span class="n">wv</span> <span class="o">=</span> <span class="n">inf</span><span class="p">[</span><span class="s1">&#39;P&#39;</span><span class="p">]</span>
 <span class="n">nx</span> <span class="o">=</span> <span class="n">wv</span><span class="o">.</span><span class="n">dimlen</span><span class="p">(</span><span class="n">wv</span><span class="o">.</span><span class="n">ndim</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
 <span class="n">ny</span> <span class="o">=</span> <span class="n">wv</span><span class="o">.</span><span class="n">dimlen</span><span class="p">(</span><span class="n">wv</span><span class="o">.</span><span class="n">ndim</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
@@ -96,19 +96,20 @@ for converting WRF out netCDF data to ARL data.</p>
 <span class="n">arlf</span><span class="o">.</span><span class="n">setx</span><span class="p">(</span><span class="n">wv</span><span class="o">.</span><span class="n">dimvalue</span><span class="p">(</span><span class="n">wv</span><span class="o">.</span><span class="n">ndim</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
 <span class="n">arlf</span><span class="o">.</span><span class="n">sety</span><span class="p">(</span><span class="n">wv</span><span class="o">.</span><span class="n">dimvalue</span><span class="p">(</span><span class="n">wv</span><span class="o">.</span><span class="n">ndim</span> <span class="o">-</span> <span class="mi">2</span><span class="p">))</span>
 <span class="n">tNum</span> <span class="o">=</span> <span class="n">inf</span><span class="o">.</span><span class="n">timenum</span><span class="p">()</span>
-<span class="n">fhour</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="n">fhour</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">tNum</span><span class="p">):</span>
     <span class="nb">print</span> <span class="s1">&#39;Time index: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
     <span class="n">atime</span> <span class="o">=</span> <span class="n">inf</span><span class="o">.</span><span class="n">gettime</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
-    <span class="n">dhead</span> <span class="o">=</span> <span class="n">arlf</span><span class="o">.</span><span class="n">getdatahead</span><span class="p">(</span><span class="n">inf</span><span class="o">.</span><span class="n">proj</span><span class="p">,</span> <span class="s1">&#39;AWRF&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">fhour</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="n">atime</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1"> %H:00&#39;</span><span class="p">)</span>
+    <span class="n">dhead</span> <span class="o">=</span> <span class="n">arlf</span><span class="o">.</span><span class="n">getdatahead</span><span class="p">(</span><span class="n">inf</span><span class="o">.</span><span class="n">proj</span><span class="p">,</span> <span class="s1">&#39;AWRF&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">fhour</span><span class="p">,</span> <span class="n">atime</span><span class="o">.</span><span class="n">minute</span><span class="p">)</span>
     <span class="c1">#Pre-write index record without checksum - will be over-write latter</span>
     <span class="n">arlf</span><span class="o">.</span><span class="n">writeindexrec</span><span class="p">(</span><span class="n">atime</span><span class="p">,</span> <span class="n">dhead</span><span class="p">)</span>
     <span class="c1">#Checksum list</span>
     <span class="n">ksumlist</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="c1"># Write 2d variables</span>
+    <span class="c1">#Write 2d variables</span>
     <span class="n">ksums</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">avname</span><span class="p">,</span><span class="n">wvname</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">avar2d</span><span class="p">,</span> <span class="n">wvar2d</span><span class="p">):</span>
-        <span class="nb">print</span> <span class="n">avname</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">avname</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="n">wvname</span><span class="p">)</span>
         <span class="n">gdata</span> <span class="o">=</span> <span class="n">inf</span><span class="p">[</span><span class="n">wvname</span><span class="p">][</span><span class="n">t</span><span class="p">,:,:]</span>
         <span class="k">if</span> <span class="n">avname</span> <span class="o">==</span> <span class="s1">&#39;PRSS&#39;</span><span class="p">:</span>
             <span class="n">gdata</span> <span class="o">=</span> <span class="n">gdata</span> <span class="o">*</span> <span class="mf">0.01</span>
@@ -117,46 +118,80 @@ for converting WRF out netCDF data to ARL data.</p>
         <span class="n">ksum</span> <span class="o">=</span> <span class="n">arlf</span><span class="o">.</span><span class="n">writedatarec</span><span class="p">(</span><span class="n">atime</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">avname</span><span class="p">,</span> <span class="n">fhour</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="n">gdata</span><span class="p">)</span>
         <span class="n">ksums</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ksum</span><span class="p">)</span>
     <span class="n">ksumlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ksums</span><span class="p">)</span>
-    <span class="c1"># Write 3d variables</span>
+    <span class="c1">#Write 3d variables</span>
+    <span class="n">wwnd_l</span> <span class="o">=</span> <span class="n">inf</span><span class="p">[</span><span class="s1">&#39;W&#39;</span><span class="p">][</span><span class="n">t</span><span class="p">]</span>
+    <span class="n">wwnd_l</span> <span class="o">=</span> <span class="n">meteo</span><span class="o">.</span><span class="n">wrf</span><span class="o">.</span><span class="n">destagger</span><span class="p">(</span><span class="n">wwnd_l</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">lidx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">nz</span><span class="p">):</span>
         <span class="n">ksums</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="nb">print</span> <span class="n">lidx</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">lidx</span><span class="p">)</span>
         <span class="n">pp</span> <span class="o">=</span> <span class="n">inf</span><span class="p">[</span><span class="s1">&#39;P&#39;</span><span class="p">][</span><span class="n">t</span><span class="p">,</span><span class="n">lidx</span><span class="p">,:,:]</span>
         <span class="n">pb</span> <span class="o">=</span> <span class="n">inf</span><span class="p">[</span><span class="s1">&#39;PB&#39;</span><span class="p">][</span><span class="n">t</span><span class="p">,</span><span class="n">lidx</span><span class="p">,:,:]</span>
         <span class="n">pres</span> <span class="o">=</span> <span class="n">pp</span> <span class="o">+</span> <span class="n">pb</span>
         <span class="n">uwnd</span> <span class="o">=</span> <span class="n">inf</span><span class="p">[</span><span class="s1">&#39;U&#39;</span><span class="p">][</span><span class="n">t</span><span class="p">,</span><span class="n">lidx</span><span class="p">,:,:]</span>
+        <span class="n">uwnd</span> <span class="o">=</span> <span class="n">meteo</span><span class="o">.</span><span class="n">wrf</span><span class="o">.</span><span class="n">destagger</span><span class="p">(</span><span class="n">uwnd</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
         <span class="n">vwnd</span> <span class="o">=</span> <span class="n">inf</span><span class="p">[</span><span class="s1">&#39;V&#39;</span><span class="p">][</span><span class="n">t</span><span class="p">,</span><span class="n">lidx</span><span class="p">,:,:]</span>
+        <span class="n">vwnd</span> <span class="o">=</span> <span class="n">meteo</span><span class="o">.</span><span class="n">wrf</span><span class="o">.</span><span class="n">destagger</span><span class="p">(</span><span class="n">vwnd</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span>
         <span class="n">temp</span> <span class="o">=</span> <span class="n">inf</span><span class="p">[</span><span class="s1">&#39;T&#39;</span><span class="p">][</span><span class="n">t</span><span class="p">,</span><span class="n">lidx</span><span class="p">,:,:]</span>
         <span class="c1">#potential to ambient temperature</span>
         <span class="n">temp</span> <span class="o">=</span> <span class="p">(</span><span class="n">temp</span> <span class="o">+</span> <span class="mf">300.</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">pres</span> <span class="o">/</span> <span class="mf">100000.</span><span class="p">)</span> <span class="o">**</span> <span class="n">rovcp</span>
         <span class="n">sphu</span> <span class="o">=</span> <span class="n">inf</span><span class="p">[</span><span class="s1">&#39;QVAPOR&#39;</span><span class="p">][</span><span class="n">t</span><span class="p">,</span><span class="n">lidx</span><span class="p">,:,:]</span>
         <span class="c1">#convert mixing ratio to specific humidity</span>
         <span class="n">sphu</span> <span class="o">=</span> <span class="n">sphu</span> <span class="o">/</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">+</span> <span class="n">sphu</span><span class="p">)</span>
-        <span class="n">wwnd</span> <span class="o">=</span> <span class="n">inf</span><span class="p">[</span><span class="s1">&#39;W&#39;</span><span class="p">][</span><span class="n">t</span><span class="p">,</span><span class="n">lidx</span><span class="o">+</span><span class="mi">1</span><span class="p">,:,:]</span>
+        <span class="n">wwnd</span> <span class="o">=</span> <span class="n">wwnd_l</span><span class="p">[</span><span class="n">lidx</span><span class="p">]</span>
         <span class="c1">#convert vertical velocity from m/s to hPa/s using omega = -W g rho</span>
         <span class="n">wwnd</span> <span class="o">=</span> <span class="o">-</span><span class="n">wwnd</span> <span class="o">*</span> <span class="n">grav</span> <span class="o">*</span> <span class="n">pres</span> <span class="o">*</span> <span class="mf">0.01</span> <span class="o">/</span> <span class="p">(</span><span class="n">rdry</span> <span class="o">*</span> <span class="n">temp</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">+</span> <span class="mf">0.6077</span> <span class="o">*</span> <span class="n">sphu</span><span class="p">))</span>
 
         <span class="n">pres</span> <span class="o">=</span> <span class="n">pres</span> <span class="o">*</span> <span class="mf">0.01</span>
         <span class="n">ksum</span> <span class="o">=</span> <span class="n">arlf</span><span class="o">.</span><span class="n">writedatarec</span><span class="p">(</span><span class="n">atime</span><span class="p">,</span> <span class="n">lidx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;PRES&#39;</span><span class="p">,</span> <span class="n">fhour</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="n">pres</span><span class="p">)</span>
         <span class="n">ksums</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ksum</span><span class="p">)</span>
-        <span class="n">ksum</span> <span class="o">=</span> <span class="n">arlf</span><span class="o">.</span><span class="n">writedatarec</span><span class="p">(</span><span class="n">atime</span><span class="p">,</span> <span class="n">lidx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;UWND&#39;</span><span class="p">,</span> <span class="n">fhour</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="n">uwnd</span><span class="p">[:,:</span><span class="n">nx</span><span class="p">])</span>
+        <span class="n">ksum</span> <span class="o">=</span> <span class="n">arlf</span><span class="o">.</span><span class="n">writedatarec</span><span class="p">(</span><span class="n">atime</span><span class="p">,</span> <span class="n">lidx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;TEMP&#39;</span><span class="p">,</span> <span class="n">fhour</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="n">temp</span><span class="p">)</span>
         <span class="n">ksums</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ksum</span><span class="p">)</span>
-        <span class="n">ksum</span> <span class="o">=</span> <span class="n">arlf</span><span class="o">.</span><span class="n">writedatarec</span><span class="p">(</span><span class="n">atime</span><span class="p">,</span> <span class="n">lidx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;VWND&#39;</span><span class="p">,</span> <span class="n">fhour</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="n">vwnd</span><span class="p">[:</span><span class="n">ny</span><span class="p">,:])</span>
+        <span class="n">ksum</span> <span class="o">=</span> <span class="n">arlf</span><span class="o">.</span><span class="n">writedatarec</span><span class="p">(</span><span class="n">atime</span><span class="p">,</span> <span class="n">lidx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;UWND&#39;</span><span class="p">,</span> <span class="n">fhour</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="n">uwnd</span><span class="p">)</span>
+        <span class="n">ksums</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ksum</span><span class="p">)</span>
+        <span class="n">ksum</span> <span class="o">=</span> <span class="n">arlf</span><span class="o">.</span><span class="n">writedatarec</span><span class="p">(</span><span class="n">atime</span><span class="p">,</span> <span class="n">lidx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;VWND&#39;</span><span class="p">,</span> <span class="n">fhour</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="n">vwnd</span><span class="p">)</span>
         <span class="n">ksums</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ksum</span><span class="p">)</span>
         <span class="n">ksum</span> <span class="o">=</span> <span class="n">arlf</span><span class="o">.</span><span class="n">writedatarec</span><span class="p">(</span><span class="n">atime</span><span class="p">,</span> <span class="n">lidx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;WWND&#39;</span><span class="p">,</span> <span class="n">fhour</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="n">wwnd</span><span class="p">)</span>
-        <span class="n">ksums</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ksum</span><span class="p">)</span>
-        <span class="n">ksum</span> <span class="o">=</span> <span class="n">arlf</span><span class="o">.</span><span class="n">writedatarec</span><span class="p">(</span><span class="n">atime</span><span class="p">,</span> <span class="n">lidx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;TEMP&#39;</span><span class="p">,</span> <span class="n">fhour</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="n">temp</span><span class="p">)</span>
         <span class="n">ksums</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ksum</span><span class="p">)</span>
         <span class="n">ksum</span> <span class="o">=</span> <span class="n">arlf</span><span class="o">.</span><span class="n">writedatarec</span><span class="p">(</span><span class="n">atime</span><span class="p">,</span> <span class="n">lidx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;SPHU&#39;</span><span class="p">,</span> <span class="n">fhour</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="n">sphu</span><span class="p">)</span>
         <span class="n">ksums</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ksum</span><span class="p">)</span>
         <span class="n">ksumlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ksums</span><span class="p">)</span>
     <span class="c1">#Re-write index record with checksum</span>
     <span class="n">arlf</span><span class="o">.</span><span class="n">writeindexrec</span><span class="p">(</span><span class="n">atime</span><span class="p">,</span> <span class="n">dhead</span><span class="p">,</span> <span class="n">ksumlist</span><span class="p">)</span>
-    <span class="n">fhour</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">fhour</span> <span class="o">+=</span> <span class="mi">6</span>
 <span class="n">arlf</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-<span class="nb">print</span> <span class="s1">&#39;Finished!&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Finished!&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>Comparing WRF netCDF data with converted ARL data.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ddir</span> <span class="o">=</span> <span class="s1">&#39;D:/Temp/nc/wrf&#39;</span>
+<span class="n">f1</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">ddir</span><span class="p">,</span> <span class="s1">&#39;wrfout_d01_1984-05-30_12_00_00-subset&#39;</span><span class="p">))</span>
+<span class="n">w1</span> <span class="o">=</span> <span class="n">f1</span><span class="p">[</span><span class="s1">&#39;U&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span>
+<span class="n">w1</span> <span class="o">=</span> <span class="n">meteo</span><span class="o">.</span><span class="n">wrf</span><span class="o">.</span><span class="n">destagger</span><span class="p">(</span><span class="n">w1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="n">addfile</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">ddir</span><span class="p">,</span> <span class="s1">&#39;test1_wrfout1.arl&#39;</span><span class="p">))</span>
+<span class="n">vname</span> <span class="o">=</span> <span class="s1">&#39;UWND&#39;</span>
+<span class="n">w</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="n">vname</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span>
+
+<span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="n">axestype</span><span class="o">=</span><span class="s1">&#39;map&#39;</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">f1</span><span class="o">.</span><span class="n">projection</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">)</span>
+<span class="n">levs</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
+<span class="n">imshow</span><span class="p">(</span><span class="n">w1</span><span class="p">,</span> <span class="n">levs</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">f1</span><span class="o">.</span><span class="n">projection</span><span class="p">)</span>
+<span class="n">colorbar</span><span class="p">()</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;wrf (</span><span class="si">{}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">vname</span><span class="p">))</span>
+
+<span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="n">axestype</span><span class="o">=</span><span class="s1">&#39;map&#39;</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">f</span><span class="o">.</span><span class="n">projection</span><span class="p">)</span>
+<span class="n">geoshow</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">)</span>
+<span class="n">imshow</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">levs</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">f</span><span class="o">.</span><span class="n">projection</span><span class="p">)</span>
+<span class="n">colorbar</span><span class="p">()</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;ARL  (</span><span class="si">{}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">vname</span><span class="p">))</span>
+
+<span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">imshow</span><span class="p">(</span><span class="n">w1</span> <span class="o">-</span> <span class="n">w</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">colorbar</span><span class="p">()</span>
+<span class="n">title</span><span class="p">(</span><span class="s1">&#39;wrf - ARL (</span><span class="si">{}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">vname</span><span class="p">))</span>
+</pre></div>
+</div>
+<img alt="../../../_images/wrf_arl.png" src="../../../_images/wrf_arl.png" />
 </section>
 
 
@@ -177,12 +212,16 @@ for converting WRF out netCDF data to ARL data.</p>
 
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="traj_meteo_data.html"
-                        title="previous chapter">Get meteorological data along trajectory</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="grib2arl.html"
-                        title="next chapter">Convert GRIB data to ARL data</a></p>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="traj_meteo_data.html"
+                          title="previous chapter">Get meteorological data along trajectory</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="grib2arl.html"
+                          title="next chapter">Convert GRIB data to ARL data</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -190,16 +229,16 @@ for converting WRF out netCDF data to ARL data.</p>
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
-</div>
-<script>$('#searchbox').show(0);</script>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -232,8 +271,8 @@ for converting WRF out netCDF data to ARL data.</p>
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2010-2023, MeteoInfo developers.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
+    &#169; Copyright 2010-2023, MeteoInfo developers.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
     </div>
   </body>
 </html>

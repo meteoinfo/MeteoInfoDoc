@@ -188,7 +188,7 @@ recognized as valid DIFF fields (https://ready.arl.noaa.gov/hysplitusersguide/S1
     arlf.close()
     print 'Finished!'
 	
-Comparing ERA5 data with converted ARL data. The two data array are not exactly consistant due
+Comparing ERA5 data with converted ARL data. The two data array are not exactly consistent due
 to the lossy compression algorithm of ARL data format.
 
 ::
